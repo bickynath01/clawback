@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLAWBACK — Am I Losing Money on eBay, Poshmark &amp; Mercari Returns?</title>
+<meta name="description" content="Free calculator: see exactly what a forced return cost you — fees kept, return shipping you paid, and the item's lost value — then get a copy-paste appeal letter and a tax record. eBay, Poshmark, Mercari, Depop. No signup.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://clawback.vercel.app/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CLAWBACK — Reseller Return Loss Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate exactly what you lost on a forced eBay, Poshmark, Mercari, or Depop return — fees kept, return shipping, and item value drop — and get a copy-paste appeal letter plus a tax record. Free, no signup."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is CLAWBACK free, and is my data safe?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no signup and no login. Every number is calculated inside your own browser, so your sale price and return details are never sent to any server."}},
+{"@type":"Question","name":"Do eBay, Poshmark, Mercari or Depop charge a 'return fee'?","acceptedAnswer":{"@type":"Answer","text":"None of them has a line item called a return fee. The real loss on a forced return comes from three places the platforms don't label: selling fees they don't fully refund, return shipping they make you pay, and the drop in the item's value when it comes back damaged or swapped. CLAWBACK adds those three up into one dollar figure."}},
+{"@type":"Question","name":"On eBay, do I get my fees back when an item is returned?","acceptedAnswer":{"@type":"Answer","text":"It depends on the reason. If the buyer simply changed their mind or the item didn't fit, eBay credits the final value fee and the per-order fee. If the return is 'not as described', damaged, or the wrong item, eBay credits the final value percentage but keeps the $0.30–$0.40 per-order fee. If eBay stepped in and ruled against you, or you refunded the buyer outside of eBay, you get no credit at all."}},
+{"@type":"Question","name":"Who pays the return shipping?","acceptedAnswer":{"@type":"Answer","text":"On eBay the seller pays return shipping for 'not as described', damaged, or wrong-item claims. On Mercari the buyer gets a free prepaid label for items up to 50 lbs, but the seller must pay the return label for anything over 50 lbs. Poshmark and Depop generally provide a prepaid return label on approved returns."}},
+{"@type":"Question","name":"Can I write off return losses on my taxes?","acceptedAnswer":{"@type":"Answer","text":"Generally yes — returned, damaged, or unsellable inventory can reduce your taxable income as a cost-of-goods adjustment. The key is documentation: after each loss, use the calculator's 'copy for taxes' line to keep a clean record, then confirm the treatment with a tax professional."}}
+]}
+</script>
+</head>
+
+<body>
+<a class="skip" href="#tool">Skip to the calculator</a>
+<div class="float-sym" aria-hidden="true" style="top:-40px;right:-20px;font-size:320px;">$</div>
+<div class="float-sym" aria-hidden="true" style="bottom:-60px;left:-30px;font-size:280px;">¢</div>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+  <span>EBAY KEEPS THE $0.30–$0.40 PER-ORDER FEE ON "NOT AS DESCRIBED" RETURNS ★ SELLERS PAY RETURN SHIPPING ON INAD CLAIMS ★ A DAMAGED RETURN CAN COST MORE THAN THE SALE ★ MERCARI CHARGES A 10% SELLING FEE AGAIN (2025) ★ DEPOP REFUNDS ALL FEES ON A REFUND ★ KNOW YOUR NUMBER BEFORE YOU APPEAL ★&nbsp;</span><span>EBAY KEEPS THE $0.30–$0.40 PER-ORDER FEE ON "NOT AS DESCRIBED" RETURNS ★ SELLERS PAY RETURN SHIPPING ON INAD CLAIMS ★ A DAMAGED RETURN CAN COST MORE THAN THE SALE ★ MERCARI CHARGES A 10% SELLING FEE AGAIN (2025) ★ DEPOP REFUNDS ALL FEES ON A REFUND ★ KNOW YOUR NUMBER BEFORE YOU APPEAL ★&nbsp;</span>
+</div></div>
+
+<header class="site-head">
+  <div class="head-inner">
+    <a class="brand" href="index.html" aria-label="CLAWBACK home">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
+    <p class="tagline">// am I losing money on this return? find out in 20 seconds — eBay · Poshmark · Mercari · Depop</p>
+    <nav class="main-nav" aria-label="Primary">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
+      <ul id="navlist" class="nav-list">
+        <li><a href="#tool">Calculator</a></li>
+        <li class="has-drop">
+          <a href="platforms.html" aria-haspopup="true">Platforms ▾</a>
+          <ul class="drop">
+            <li><a href="platforms.html#ebay">eBay</a></li>
+            <li><a href="platforms.html#poshmark">Poshmark</a></li>
+            <li><a href="platforms.html#mercari">Mercari</a></li>
+            <li><a href="platforms.html#depop">Depop</a></li>
+          </ul>
+        </li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="workbench" id="tool">
+  <section class="panel" aria-labelledby="formTitle">
+    <h2 id="formTitle">TELL US WHAT HAPPENED</h2>
+    <div class="field">
+      <label id="platLabel">Where did you sell it?</label>
+      <div class="platforms" role="group" aria-labelledby="platLabel">
+        <button type="button" class="platform-btn active" data-platform="ebay">eBay</button>
+        <button type="button" class="platform-btn" data-platform="poshmark">Poshmark</button>
+        <button type="button" class="platform-btn" data-platform="mercari">Mercari</button>
+        <button type="button" class="platform-btn" data-platform="depop">Depop</button>
+      </div>
+      <div class="fee-note" id="feeNote" aria-live="polite"></div>
+    </div>
+    <div class="field"><label for="salePrice">Original sale price</label><input type="number" id="salePrice" min="0" step="0.01" inputmode="decimal" placeholder="45.00"></div>
+    <div class="field"><label for="outcome">What happened with this return?</label>
+      <select id="outcome">
+        <option value="remorse">Buyer changed their mind / doesn't fit — I refunded &amp; they returned it</option>
+        <option value="inad" selected>Not as described / damaged / wrong item — I refunded &amp; they returned it</option>
+        <option value="stepped_in">The platform stepped in &amp; decided against me (or I refunded outside the platform)</option>
+        <option value="unsure">Not sure</option>
+      </select>
+    </div>
+    <div class="field"><label for="returnPayer">Who paid the return shipping?</label>
+      <select id="returnPayer">
+        <option value="me">I did (forced by the platform)</option>
+        <option value="platform">The platform charged me</option>
+        <option value="buyer">The buyer paid</option>
+      </select>
+    </div>
+    <div class="field" id="returnCostRow"><label for="returnCost">Return shipping cost</label><input type="number" id="returnCost" min="0" step="0.01" inputmode="decimal" placeholder="8.50"></div>
+    <div class="field"><label for="condition">What condition came back?</label>
+      <select id="condition">
+        <option value="same">Same as I sent it</option>
+        <option value="damaged" selected>Damaged</option>
+        <option value="different">A different item</option>
+        <option value="empty">Empty box</option>
+      </select>
+    </div>
+    <div class="field" id="valueRow"><label for="currentValue">What's the item worth now?</label><input type="number" id="currentValue" min="0" step="0.01" inputmode="decimal" placeholder="25.00"></div>
+    <button type="button" id="calcBtn">CALCULATE MY LOSS</button>
+  </section>
+
+  <section class="receipt-wrap" aria-labelledby="resultTitle">
+    <h2 id="resultTitle" class="visually-hidden">Your result</h2>
+    <div class="receipt" id="receipt">
+      <div class="r-head"><div class="r-brand">CLAWBACK</div><div class="r-sub">FORCED-RETURN LOSS STATEMENT</div></div>
+      <div class="r-rule"></div>
+      <div class="r-placeholder">Fill in the return on the left.<br>Your itemized loss prints here.</div>
+    </div>
+    <div id="chartWrap" class="chart-wrap" aria-hidden="true"></div>
+    <div class="ad-slot" data-ad-slot="sidebar_desktop" aria-hidden="true"><!-- ad slot: sidebar_desktop --></div>
+    <div class="actions" id="actions">
+      <button type="button" class="action-btn" data-copy="appealLetter">COPY APPEAL LETTER</button>
+      <textarea id="appealLetter" class="letter-box" readonly aria-label="Generated appeal letter"></textarea>
+      <button type="button" class="action-btn" data-copy="taxLine">COPY FOR TAX RECORDS</button>
+      <textarea id="taxLine" class="letter-box short" readonly aria-label="One-line tax record"></textarea>
+      <button type="button" class="action-btn" id="shareBtn">COPY SHAREABLE LINK</button>
+      <input type="text" id="shareLink" class="letter-box short" readonly aria-label="Shareable result link">
+      <a class="aff-btn" data-aff="after_appeal" href="#" rel="nofollow sponsored" aria-hidden="true"></a>
+      <a class="aff-btn" data-aff="after_writeoff" href="#" rel="nofollow sponsored" aria-hidden="true"></a>
+      <details class="evidence" id="evidenceBox"><summary>📸 Photo evidence checklist to win this dispute</summary><ul id="evidenceList"></ul></details>
+    </div>
+    <div class="ad-slot" data-ad-slot="result_after" aria-hidden="true"><!-- ad slot: result_after --></div>
+  </section>
+</main>
+
+<div class="ad-slot wide" data-ad-slot="hub_leaderboard" aria-hidden="true"><!-- ad slot: hub_leaderboard --></div>
+
+<section class="faq" id="faq" aria-labelledby="faqTitle">
+  <h2 class="faq-title" id="faqTitle">STRAIGHT ANSWERS</h2>
+  <details class="faq-item" open><summary>Is CLAWBACK free, and is my data safe?</summary><p>Yes, completely free with <b>no signup and no login</b>. Every number is calculated inside your own browser, so your sale price and return details are never sent to any server. Close the tab and nothing is stored anywhere.</p></details>
+  <details class="faq-item"><summary>Do eBay, Poshmark, Mercari or Depop charge a "return fee"?</summary><p>None of them has a line item called a return fee. The real loss on a forced return comes from three places the platforms don't label: <b>selling fees they don't fully refund, return shipping they make you pay, and the drop in the item's value</b> when it comes back damaged or swapped. CLAWBACK adds those three up into one dollar figure — which is exactly the number every other calculator leaves out.</p></details>
+  <details class="faq-item"><summary>On eBay, do I get my fees back when an item is returned?</summary><p>It depends on the <b>reason</b>. If the buyer simply changed their mind or the item didn't fit, eBay credits the final value fee <i>and</i> the per-order fee. If the return was "not as described", damaged, or the wrong item, eBay credits the final value percentage but <b>keeps the $0.30–$0.40 per-order fee</b>. If eBay stepped in and ruled against you, or you refunded the buyer outside of eBay, you get <b>no credit at all</b>. The "what happened" selector above runs this exact rule.</p></details>
+  <details class="faq-item"><summary>Who pays the return shipping?</summary><p>On <b>eBay</b> the seller pays return shipping for "not as described", damaged, or wrong-item claims. On <b>Mercari</b> the buyer gets a free prepaid label for items up to 50 lbs, but the <b>seller must pay the return label for anything over 50 lbs</b> (and provide it within 3 days or the order is canceled). <b>Poshmark</b> and <b>Depop</b> generally provide a prepaid return label on approved returns.</p></details>
+  <details class="faq-item"><summary>Can I write off return losses on my taxes?</summary><p>Generally yes — returned, damaged, or unsellable inventory can reduce your taxable income as a cost-of-goods adjustment. The key is <b>documentation</b>: after each loss, use the "copy for taxes" line to keep a clean one-line record, so January is painless. Then confirm the exact treatment with a tax professional.</p></details>
+</section>
+
+<noscript><p class="noscript">This calculator needs JavaScript turned on to run the math. The answers above still work without it.</p></noscript>
+
+<footer class="site-foot">
+  <div class="foot-inner">
+    <div class="foot-brand"><div class="brand small">CLAW<span class="slash">BACK</span></div><p>The forced-return loss calculator for resellers. Know your number before you appeal.</p></div>
+    <nav class="foot-col" aria-label="Platforms"><h3>Platforms</h3><ul>
+      <li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li>
+      <li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li>
+    </ul></nav>
+    <nav class="foot-col" aria-label="Guides"><h3>Guides</h3><ul>
+      <li><a href="guides.html">All guides</a></li><li><a href="guides.html#dispute">Win a return dispute</a></li>
+      <li><a href="guides.html#taxes">Tax write-offs</a></li>
+    </ul></nav>
+    <nav class="foot-col" aria-label="Company"><h3>Company</h3><ul>
+      <li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms &amp; Disclaimer</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <nav class="foot-col" aria-label="Resources"><h3>Resources</h3><ul>
+      <li><a href="#faq">FAQ</a></li><li><a href="sources.html">Sources</a></li><li><a href="sitemap.html">Sitemap</a></li>
+    </ul></nav>
+  </div>
+  <div class="foot-legal">
+    <p class="verified">Fee data last verified: <strong>August 2026</strong> · sourced from official platform help pages.</p>
+    <p class="disclaimer">⚠ Estimates only — not legal or tax advice. Platforms change their fees; verify current rates before you appeal. CLAWBACK is an independent tool and is not affiliated with eBay, Poshmark, Mercari, or Depop.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="intel.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "updated": "2026-05-07",
+    "currency": "USD",
+    "source": "Mercari prepaid-label rate card / USPS / UPS / FedEx (screenshots collected Aug 2026)",
+    "_note": "Used by the upcoming weight-based return-cost estimator. Weights are in pounds unless a key ends in 'oz'. 'best' = the discounted prepaid rate shown in black. The calculator does NOT need this file to work today; it is pre-loaded for the next enhancement."
+  },
+
+  "usps_ground_advantage": {
+    "0.25": 4.91, "0.5": 5.66, "0.75": 6.73, "1": 7.48,
+    "2": 12.83, "3": 12.83, "4": 13.90, "5": 14.97,
+    "6": 16.04, "7": 17.11, "8": 18.18, "9": 19.25, "10": 20.32
+  },
+  "usps_priority_mail": {
+    "2": 15.29, "3": 19.25, "4": 22.46, "5": 24.60,
+    "6": 27.81, "7": 29.96, "8": 33.17, "9": 35.31, "10": 38.52
+  },
+  "ups_ground_saver": {
+    "0.25": 7.97, "0.5": 7.97, "0.75": 7.97, "1": 7.97,
+    "2": 7.97, "3": 7.97, "4": 7.97, "5": 7.97
+  },
+  "fedex_economy": {
+    "0.25": 7.97, "0.5": 7.97, "0.75": 7.97, "1": 7.97,
+    "2": 7.97, "3": 7.97, "4": 7.97, "5": 7.97,
+    "6": 11.99, "7": 11.99, "8": 11.99, "9": 11.99, "10": 11.99, "50": 49.99
+  },
+  "fedex_home": {
+    "0.25": 15.99, "0.5": 15.99, "0.75": 15.99, "1": 15.99,
+    "2": 15.99, "3": 15.99, "4": 15.99, "5": 15.99,
+    "6": 15.99, "7": 15.99, "8": 15.99, "9": 15.99, "10": 15.99,
+    "50": 49.99, "100": 120.00
+  },
+  "usps_media_mail": { "1": 4.99, "2": 5.99, "3": 6.99 },
+  "usps_first_class_envelope_oz": { "1": 0.74, "2": 1.03, "3": 1.32 },
+
+  "mercari_return_rule": {
+    "free_return_label_up_to_lbs": 50,
+    "seller_pays_over_lbs": 50,
+    "seller_label_deadline_days": 3,
+    "_note": "On an approved Mercari return, the buyer gets a prepaid label for items up to 50 lbs (actual or dimensional weight). Over 50 lbs the SELLER provides and pays the return label within 3 days or the order is canceled. This is the rule that turns a Mercari return into a shipping loss for heavy-item sellers."
+  },
+
+  "default_suggestion": {
+    "_note": "When the weight-estimator ships, default to usps_ground_advantage (the cheapest common option) and let the seller switch carrier. If they don't know the weight, fall back to the 1 lb row (~$7.48) as a honest middle guess and say so."
+  }
+}
