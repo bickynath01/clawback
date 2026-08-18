@@ -1,0 +1,12 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        { "type": "host", "value": "gotclawback.com" }
+      ],
+      "destination": "https://www.gotclawback.com/:path*",
+      "permanent": true
+    }
+  ]
+}
