@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
-<script>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+<script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+<script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
+<script type="text/plain" data-category="analytics">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-CPRC739GBN');
 </script>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sitemap — CLAWBACK</title>
 <meta name="description" content="Every page on CLAWBACK: the calculator, platform rules, guides, about, sources, and legal pages.">
 <link rel="canonical" href="https://www.gotclawback.com/sitemap.html">
@@ -36,6 +37,78 @@
 </ul></section>
 </main>
 <footer class="site-foot"><div class="foot-legal"><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with eBay, Poshmark, Mercari, or Depop.</p></div></footer>
-<script src="nav.js"></script></body>
+<script src="nav.js"></script>
+
+<script>
+CookieConsent.run({
+  guiOptions: {
+    consentModal: {
+      layout: "box",
+      position: "bottom right",
+      equalWeightButtons: true,
+      flipButtons: false
+    },
+    preferencesModal: {
+      layout: "box",
+      position: "right",
+      equalWeightButtons: true,
+      flipButtons: false
+    }
+  },
+  categories: {
+    necessary: {
+      enabled: true,
+      readOnly: true
+    },
+    analytics: {
+      enabled: false,
+      readOnly: false
+    },
+    advertising: {
+      enabled: false,
+      readOnly: false
+    }
+  },
+  language: {
+    default: "en",
+    autoDetect: "browser",
+    translations: {
+      en: {
+        consentModal: {
+          title: "We use cookies",
+          description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
+          acceptAllBtn: "Accept all",
+          acceptNecessaryBtn: "Reject all",
+          showPreferencesBtn: "Manage preferences"
+        },
+        preferencesModal: {
+          title: "Cookie preferences",
+          acceptAllBtn: "Accept all",
+          acceptNecessaryBtn: "Reject all",
+          savePreferencesBtn: "Save preferences",
+          sections: [
+            {
+              title: "Necessary cookies",
+              description: "These cookies are required for the site to function.",
+              linkedCategory: "necessary"
+            },
+            {
+              title: "Analytics cookies",
+              description: "Help us understand how visitors use our site (Google Analytics).",
+              linkedCategory: "analytics"
+            },
+            {
+              title: "Advertising cookies",
+              description: "Used to show relevant ads (Google AdSense, when enabled).",
+              linkedCategory: "advertising"
+            }
+          ]
+        }
+      }
+    }
+  }
+});
+</script>
+
 </body>
 </html>
