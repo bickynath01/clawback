@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CPRC739GBN');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CLAWBACK — Am I Losing Money on eBay, Poshmark &amp; Mercari Returns?</title>
@@ -176,5 +167,71 @@
 <script src="app.js"></script>
 <script src="intel.js"></script>
 <script src="nav.js"></script>
+
+<!-- Cookie Consent Banner -->
+<div id="cookieBanner" class="cookie-banner hidden">
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <strong>We use cookies</strong> to improve your experience and serve relevant ads. By clicking "Accept," you consent to our use of cookies. <a href="privacy.html">Learn more</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn accept" onclick="acceptCookies()">Accept</button>
+      <button class="cookie-btn reject" onclick="rejectCookies()">Reject</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Cookie Consent Logic
+function getCookie(name){
+  const value=`; ${document.cookie}`;
+  const parts=value.split(`; ${name}=`);
+  if(parts.length===2) return parts.pop().split(';').shift();
+}
+
+function setCookie(name,value,days){
+  const d=new Date();
+  d.setTime(d.getTime()+(days*24*60*60*1000));
+  const expires="expires="+d.toUTCString();
+  document.cookie=name+"="+value+";"+expires+";path=/";
+}
+
+function acceptCookies(){
+  setCookie('cookieConsent','accepted',365);
+  document.getElementById('cookieBanner').classList.add('hidden');
+  loadAnalytics();
+  // When you add AdSense, uncomment this line:
+  // loadAdSense();
+}
+
+function rejectCookies(){
+  setCookie('cookieConsent','rejected',365);
+  document.getElementById('cookieBanner').classList.add('hidden');
+  // Analytics and ads remain blocked
+}
+
+function loadAnalytics(){
+  // Load GA4 only after consent
+  const script=document.createElement('script');
+  script.async=true;
+  script.src='https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN';
+  document.head.appendChild(script);
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-CPRC739GBN');
+}
+
+// Check consent on page load
+window.addEventListener('DOMContentLoaded',function(){
+  const consent=getCookie('cookieConsent');
+  if(!consent){
+    document.getElementById('cookieBanner').classList.remove('hidden');
+  }else if(consent==='accepted'){
+    loadAnalytics();
+  }
+});
+</script>
+
 </body>
 </html>
