@@ -47,7 +47,7 @@ table.data-table th{background:rgba(255,255,255,.08);}
 .bar-merc{background:#4A4A4A;}
 .fee-note{font-size:12px;opacity:.8;margin-top:6px;}
 .confession{background:#282828;color:#FAF7F0;border-left:4px solid #F5B301;padding:14px 16px;margin:18px 0;font-size:14px;line-height:1.6;}
-.stamp{display:inline-block;border:2px solid #F5B301;color:#F5B301;padding:2px 8px;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:1px;transform:rotate(-2deg);margin:4px 6px 4px 0;}
+.vstamp{display:inline-block;border:2px solid #F5B301;color:#F5B301;padding:2px 8px;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:1px;transform:rotate(-2deg);margin:4px 6px 4px 0;background:transparent;}
 .timeline{background:#FAF7F0;color:#282828;border:1px dashed #999;padding:20px;margin:24px 0;box-shadow:0 6px 18px rgba(0,0,0,.3);}
 .timeline h3{font-family:'Archivo Black';margin:0 0 12px;color:#0E3B2C;text-align:center;letter-spacing:1px;}
 .timeline .step{display:flex;gap:14px;margin-bottom:14px;font-size:14px;line-height:1.5;}
@@ -197,8 +197,8 @@ function calcMatrix() {
 
 <div class="fee-chart">
 <div class="fee-row"><span class="fee-name">POSHMARK</span><div class="fee-track"><div class="fee-bar bar-posh" style="width:100%">24.6%</div></div></div>
-<div class="fee-row"><span class="fee-name">DEPOP</span><div class="fee-track"><div class="fee-bar bar-depop" style="width:63%">15.4%</div></div></div>
 <div class="fee-row"><span class="fee-name">EBAY</span><div class="fee-track"><div class="fee-bar bar-ebay" style="width:65%">16.1%</div></div></div>
+<div class="fee-row"><span class="fee-name">DEPOP</span><div class="fee-track"><div class="fee-bar bar-depop" style="width:63%">15.4%</div></div></div>
 <div class="fee-row"><span class="fee-name">MERCARI</span><div class="fee-track"><div class="fee-bar bar-merc" style="width:41%">10.0%</div></div></div>
 <p class="fee-note">Effective fee on a $12 sale. Poshmark's $2.95 flat fee becomes a brutal 24.6% on cheap items. Depop's $0.30 fixed processing fee also hits harder on small sales.</p>
 </div>
@@ -272,10 +272,10 @@ function calcMatrix() {
 <h2>Round 4: Payout Speed — When Does The Money Land?</h2>
 <div class="timeline">
 <h3>THE PAYOUT SPEED RACE</h3>
-<div class="step"><span class="day">1st</span><div class="event"><strong>eBay:</strong> Funds available 1–2 days after payment confirms for established sellers; daily payouts hit the bank in 1–3 business days. <span class="stamp">FASTEST</span></div></div>
+<div class="step"><span class="day">1st</span><div class="event"><strong>eBay:</strong> Funds available 1–2 days after payment confirms for established sellers; daily payouts hit the bank in 1–3 business days. <span class="vstamp">FASTEST</span></div></div>
 <div class="step"><span class="day">2nd</span><div class="event"><strong>Mercari:</strong> Released 3 days after delivery/buyer rating. Direct deposit is now <strong>free</strong>; Instant Pay costs $3.</div></div>
 <div class="step"><span class="day">3rd</span><div class="event"><strong>Poshmark:</strong> Redeemable 3 days after delivery if no case is opened.</div></div>
-<div class="step"><span class="day">4th</span><div class="event"><strong>Depop:</strong> 2–10 working days after delivery; brand-new sellers can face a 21–30 day rolling reserve. <span class="stamp">SLOWEST</span></div></div>
+<div class="step"><span class="day">4th</span><div class="event"><strong>Depop:</strong> 2–10 working days after delivery; brand-new sellers can face a 21–30 day rolling reserve. <span class="vstamp">SLOWEST</span></div></div>
 </div>
 
 <h2>New-Seller Reality: Holds, Reserves & Verification</h2>
@@ -303,11 +303,11 @@ function calcMatrix() {
 </table>
 
 <h2>The Final Verdict: Pick Your Battlefield</h2>
-<p><span class="stamp">BEGINNER, 5 ITEMS → MERCARI</span> Dead-simple listing, free direct deposit, and a forgiving audience. The rhythm of selling gets learned without a 20% bite or a 21-day reserve in the way.</p>
-<p><span class="stamp">Y2K / STREETWEAR → DEPOP</span> Gen-Z buyers who expect 10% pricing and happily pay for shipping. The slow payouts are the price of admission.</p>
-<p><span class="stamp">MALL BRANDS / WOMEN'S → POSHMARK</span> Buyers pay $6.49 shipping and premium prices for the right labels. Just respect the 5lb bundle wall.</p>
-<p><span class="stamp">ELECTRONICS / PARTS / HIGH-TICKET → EBAY</span> The only place serious buyers search by part number, and the fastest payouts once established.</p>
-<p><span class="stamp">HEAVY ITEMS → MERCARI / EBAY</span> 100lb labels beat Poshmark's 5lb wall every single time.</p>
+<p><span class="vstamp">BEGINNER, 5 ITEMS → MERCARI</span> Dead-simple listing, free direct deposit, and a forgiving audience. The rhythm of selling gets learned without a 20% bite or a 21-day reserve in the way.</p>
+<p><span class="vstamp">Y2K / STREETWEAR → DEPOP</span> Gen-Z buyers who expect 10% pricing and happily pay for shipping. The slow payouts are the price of admission.</p>
+<p><span class="vstamp">MALL BRANDS / WOMEN'S → POSHMARK</span> Buyers pay $6.49 shipping and premium prices for the right labels. Just respect the 5lb bundle wall.</p>
+<p><span class="vstamp">ELECTRONICS / PARTS / HIGH-TICKET → EBAY</span> The only place serious buyers search by part number, and the fastest payouts once established.</p>
+<p><span class="vstamp">HEAVY ITEMS → MERCARI / EBAY</span> 100lb labels beat Poshmark's 5lb wall every single time.</p>
 
 <h2>Conclusion: Stop Guessing, Start Calculating</h2>
 <p>The gap between a hobbyist and a professional reseller is knowing what actually hits the bank <em>before</em> buying the inventory. A 20% Poshmark fee can out-earn a 10% Depop fee the moment a buyer absorbs shipping and pays $15 more for the item. Run the numbers every time, price returns in from the start, and let the data — not the loudest opinion in the group — choose the platform.</p>
