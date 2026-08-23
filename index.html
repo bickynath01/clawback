@@ -2,24 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
-<script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CLAWBACK — Am I Losing Money on eBay, Poshmark &amp; Mercari Returns?</title>
-<meta name="description" content="Free return-loss calculator for resellers. See exactly what an eBay, Poshmark, Mercari or Depop return really costs you — itemized like a receipt."><meta name="robots" content="index,follow">
+<meta name="description" content="Free calculator: see exactly what a forced return cost you — fees kept, return shipping you paid, and the item's lost value — then get a copy-paste appeal letter and a tax record. eBay, Poshmark, Mercari, Depop. No signup.">
+<meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.gotclawback.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-
-<script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
-<script type="text/plain" data-category="analytics">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CPRC739GBN');
-</script>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"CLAWBACK — Reseller Return Loss Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate exactly what you lost on a forced eBay, Poshmark, Mercari, or Depop return — fees kept, return shipping, and item value drop — and get a copy-paste appeal letter plus a tax record. Free, no signup."}
@@ -68,7 +59,6 @@
     </nav>
   </div>
 </header>
-  <h1 class="page-title">The Forced-Return Loss Calculator for Resellers</h1>
 
 <main class="workbench" id="tool">
   <section class="panel" aria-labelledby="formTitle">
@@ -176,78 +166,5 @@
 
 <script src="app.js"></script>
 <script src="intel.js"></script>
-<script src="nav.js"></script>
-
-<script>
-CookieConsent.run({
-  guiOptions: {
-    consentModal: {
-      layout: "box",
-      position: "bottom right",
-      equalWeightButtons: true,
-      flipButtons: false
-    },
-    preferencesModal: {
-      layout: "box",
-      position: "right",
-      equalWeightButtons: true,
-      flipButtons: false
-    }
-  },
-  categories: {
-    necessary: {
-      enabled: true,
-      readOnly: true
-    },
-    analytics: {
-      enabled: false,
-      readOnly: false
-    },
-    advertising: {
-      enabled: false,
-      readOnly: false
-    }
-  },
-  language: {
-    default: "en",
-    autoDetect: "browser",
-    translations: {
-      en: {
-        consentModal: {
-          title: "We use cookies",
-          description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
-          acceptAllBtn: "Accept all",
-          acceptNecessaryBtn: "Reject all",
-          showPreferencesBtn: "Manage preferences"
-        },
-        preferencesModal: {
-          title: "Cookie preferences",
-          acceptAllBtn: "Accept all",
-          acceptNecessaryBtn: "Reject all",
-          savePreferencesBtn: "Save preferences",
-          sections: [
-            {
-              title: "Necessary cookies",
-              description: "These cookies are required for the site to function.",
-              linkedCategory: "necessary"
-            },
-            {
-              title: "Analytics cookies",
-              description: "Help us understand how visitors use our site (Google Analytics).",
-              linkedCategory: "analytics"
-            },
-            {
-              title: "Advertising cookies",
-              description: "Used to show relevant ads (Google AdSense, when enabled).",
-              linkedCategory: "advertising"
-            }
-          ]
-        }
-      }
-    }
-  }
-});
-</script>
-
-</body>
+<script src="nav.js"></script></body>
 </html>
