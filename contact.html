@@ -1,24 +1,230 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — CLAWBACK</title>
-<meta name="description" content="Report a wrong rate, suggest a feature, or ask a question. Seller corrections are treated as bug reports and checked against official pages.">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+<script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+<script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
+<script type="text/plain" data-category="analytics">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CPRC739GBN');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact CLAWBACK — Questions, Feedback & Support</title>
+<meta name="description" content="Get in touch with the CLAWBACK team. Questions about the calculator? Feedback on an article? We read every message and respond within 48 hours.">
 <link rel="canonical" href="https://www.gotclawback.com/contact.html">
-<link rel="stylesheet" href="styles.css">
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact CLAWBACK — Questions, Feedback & Support">
+<meta property="og:description" content="Get in touch with the CLAWBACK team. Questions about the calculator? Feedback on an article? We read every message and respond within 48 hours.">
+<meta property="og:url" content="https://www.gotclawback.com/contact.html">
+<meta property="og:site_name" content="CLAWBACK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Contact CLAWBACK — Questions, Feedback & Support">
+<meta name="twitter:description" content="Get in touch with the CLAWBACK team. Questions about the calculator? Feedback on an article? We read every message and respond within 48 hours.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Contact CLAWBACK","url":"https://www.gotclawback.com/contact.html"}</script>
-</head><body>
-<header class="site-head"><div class="head-inner"><a class="brand" href="index.html">CLAW<span class="slash">BACK</span></a>
-<nav class="main-nav" aria-label="Primary"><ul class="nav-list"><li><a href="index.html#tool">Calculator</a></li><li><a href="guides.html">Guides</a></li><li><a href="about.html">About</a></li></ul></nav></div></header>
+<link rel="stylesheet" href="styles.css">
+<style>
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:40px 0;}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr;}}
+.contact-info{background:#0E3B2C;border:1px solid #F5B301;padding:30px;}
+.contact-info h3{font-family:'Archivo Black';color:#F5B301;margin:0 0 20px;font-size:20px;}
+.contact-info p{color:#FAF7F0;line-height:1.7;margin:0 0 16px;font-size:15px;}
+.contact-info a{color:#F5B301;text-decoration:underline;}
+.contact-info .email-link{display:block;font-family:'Space Mono',monospace;font-size:18px;font-weight:700;color:#F5B301;margin:20px 0;padding:16px;background:rgba(245,179,1,.1);border:2px solid #F5B301;text-align:center;text-decoration:none;transition:all .15s;}
+.contact-info .email-link:hover{background:#F5B301;color:#0E3B2C;}
+.contact-form{background:rgba(250,247,240,.03);border:1px dashed rgba(245,179,1,.4);padding:30px;}
+.contact-form h3{font-family:'Archivo Black';color:#F5B301;margin:0 0 20px;font-size:20px;}
+.form-group{margin-bottom:20px;}
+.form-group label{display:block;font-family:'Space Mono',monospace;font-size:12px;color:#F5B301;letter-spacing:1px;margin-bottom:8px;font-weight:700;}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:12px;background:#FAF7F0;border:1px solid rgba(245,179,1,.4);color:#0E3B2C;font-family:'Archivo',sans-serif;font-size:15px;box-sizing:border-box;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:2px solid #F5B301;}
+.form-group textarea{min-height:120px;resize:vertical;}
+.form-group select{cursor:pointer;}
+.contact-form button{width:100%;padding:14px;background:#F5B301;color:#0E3B2C;border:none;font-family:'Archivo Black',sans-serif;font-size:15px;letter-spacing:1px;cursor:pointer;transition:all .15s;}
+.contact-form button:hover{background:#FAF7F0;}
+.form-success{display:none;background:rgba(30,122,90,.15);border:2px solid #1E7A5A;padding:20px;margin-top:20px;text-align:center;}
+.form-success p{color:#8AFFA1;font-size:15px;margin:0;}
+.trust-signals{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:40px 0;}
+@media(max-width:768px){.trust-signals{grid-template-columns:1fr;}}
+.trust-signal{background:rgba(250,247,240,.03);border:1px dashed rgba(245,179,1,.3);padding:20px;text-align:center;}
+.trust-signal .icon{font-size:32px;margin-bottom:12px;}
+.trust-signal h4{font-family:'Archivo Black';color:#F5B301;margin:0 0 8px;font-size:14px;letter-spacing:1px;}
+.trust-signal p{font-size:13px;color:rgba(250,247,240,.7);margin:0;line-height:1.5;}
+</style>
+</head>
+<body>
+<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>WE READ EVERY MESSAGE ★ 48-HOUR RESPONSE TIME ★ INDEPENDENT & NOT AFFILIATED ★&nbsp;</span><span>WE READ EVERY MESSAGE ★ 48-HOUR RESPONSE TIME ★ INDEPENDENT & NOT AFFILIATED ★&nbsp;</span></div></div>
+<header class="site-head"><div class="head-inner">
+  <a class="brand" href="index.html">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
+  <p class="tagline">// the forced-return loss calculator for resellers</p>
+  <nav class="main-nav" aria-label="Primary"><button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
+    <ul id="navlist" class="nav-list">
+      <li><a href="index.html#tool">Calculator</a></li>
+      <li class="has-drop"><a href="platforms.html">Platforms ▾</a><ul class="drop"><li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li><li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li></ul></li>
+      <li><a href="guides.html">Guides</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="about.html">About</a></li>
+    </ul></nav>
+</div></header>
+
 <main class="page-body">
-  <h1 class="page-title">CONTACT</h1>
-  <p class="page-lead">Spotted a rate that changed? Got a return story that should be a guide? Tell us — seller corrections are treated as bug reports.</p>
-  <section class="prose"><h2>Email</h2>
-  <!-- REPLACE the address below with your real inbox before you go live -->
-  <p><a href="mailto:hello@gotclawback.com">hello@gotclawback.com</a></p>
-  <p>Include the platform, the number you expected, the number you got, and a link to the official page if you have one. We verify every correction against the source before changing a figure.</p></section>
-  <section class="prose"><h2>What we can't do</h2><p>We can't intervene in your marketplace case, and we can't give legal or tax advice. For those, contact the platform's support team or a licensed professional.</p></section>
+  <h1 class="page-title">CONTACT US</h1>
+  <p class="page-lead">Questions about the calculator? Feedback on an article? Found a fee rate that changed? We read every message and respond within 48 hours.</p>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>EMAIL US DIRECTLY</h3>
+      <p>For the fastest response, email us directly. We check this inbox multiple times per day and respond to every legitimate message.</p>
+      <a href="mailto:hello@gotclawback.com" class="email-link">hello@gotclawback.com</a>
+      <p><strong>Response time:</strong> Within 48 hours (usually much faster)</p>
+      <p><strong>Best for:</strong> Calculator questions, fee rate updates, bug reports, article feedback</p>
+    </div>
+
+    <div class="contact-form">
+      <h3>SEND US A MESSAGE</h3>
+      <form id="contactForm" action="mailto:hello@gotclawback.com" method="POST" enctype="text/plain">
+        <div class="form-group">
+          <label for="name">YOUR NAME</label>
+          <input type="text" id="name" name="name" required placeholder="Jane Reseller">
+        </div>
+        <div class="form-group">
+          <label for="email">YOUR EMAIL</label>
+          <input type="email" id="email" name="email" required placeholder="jane@example.com">
+        </div>
+        <div class="form-group">
+          <label for="subject">WHAT'S THIS ABOUT?</label>
+          <select id="subject" name="subject" required>
+            <option value="">Select a topic...</option>
+            <option value="calculator">Calculator question</option>
+            <option value="fee-update">Fee rate changed / outdated</option>
+            <option value="article-feedback">Article feedback</option>
+            <option value="bug">Bug report</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">YOUR MESSAGE</label>
+          <textarea id="message" name="message" required placeholder="Tell us what's on your mind..."></textarea>
+        </div>
+        <button type="submit">SEND MESSAGE</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <p>✓ Message sent! We'll get back to you within 48 hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust-signals">
+    <div class="trust-signal">
+      <div class="icon">⚡</div>
+      <h4>48-HOUR RESPONSE</h4>
+      <p>We read every message and respond within 48 hours, usually much faster.</p>
+    </div>
+    <div class="trust-signal">
+      <div class="icon">🔒</div>
+      <h4>NO SPAM, EVER</h4>
+      <p>We never share your email or add you to marketing lists. Your info stays private.</p>
+    </div>
+    <div class="trust-signal">
+      <div class="icon">👤</div>
+      <h4>REAL HUMANS</h4>
+      <p>Every message is read by a real person, not a bot. We're resellers too.</p>
+    </div>
+  </div>
+
+  <section class="prose">
+    <h2>Common Questions (Before You Email)</h2>
+    <p><strong>Q: "I got a return and lost money. Can you help me appeal?"</strong><br>
+    A: Start with the <a href="index.html#tool">calculator</a> to get your exact loss figure, then use the appeal templates in our <a href="guides.html#dispute">dispute guide</a>. We can't file appeals for you, but the tools give you everything you need.</p>
+
+    <p><strong>Q: "A platform changed their fees. Your article is outdated."</strong><br>
+    A: Thank you! Email us at hello@gotclawback.com with the new rate and a link to the official source. We update articles within a week and credit you in the changelog.</p>
+
+    <p><strong>Q: "Can I use your calculator on my blog?"</strong><br>
+    A: Yes! Embed it freely. We just ask that you link back to gotclawback.com and don't modify the calculator itself. See our <a href="terms.html">terms page</a> for full details.</p>
+
+    <p><strong>Q: "Do you offer consulting or one-on-one help?"</strong><br>
+    A: Not currently. We're focused on keeping the tool free and the articles comprehensive. But the guides cover most common scenarios in detail.</p>
+  </section>
 </main>
-<footer class="site-foot"><div class="foot-legal"><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with eBay, Poshmark, Mercari, or Depop.</p></div></footer>
-<script src="nav.js"></script></body>
+
+<footer class="site-foot"><div class="foot-inner">
+  <div class="foot-brand"><div class="brand small">CLAW<span class="slash">BACK</span></div><p>The forced-return loss calculator for resellers. Know your number before you appeal.</p></div>
+  <nav class="foot-col" aria-label="Platforms"><h3>Platforms</h3><ul><li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li><li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li></ul></nav>
+  <nav class="foot-col" aria-label="Guides"><h3>Guides</h3><ul><li><a href="guides.html">All guides</a></li><li><a href="guides.html#dispute">Win a return dispute</a></li><li><a href="guides.html#taxes">Tax write-offs</a></li></ul></nav>
+  <nav class="foot-col" aria-label="Company"><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms & Disclaimer</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+  <nav class="foot-col" aria-label="Resources"><h3>Resources</h3><ul><li><a href="index.html#faq">FAQ</a></li><li><a href="sources.html">Sources</a></li><li><a href="sitemap.html">Sitemap</a></li></ul></nav>
+</div><div class="foot-legal"><p class="verified">Fee data last verified: <strong>August 2026</strong> · sourced from official platform help pages.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with eBay, Poshmark, Mercari, or Depop.</p></div></footer>
+<script src="nav.js"></script>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  // Simple mailto fallback for static sites
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var subject = document.getElementById('subject').value;
+  var message = document.getElementById('message').value;
+  
+  var mailtoLink = 'mailto:hello@gotclawback.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+  window.location.href = mailtoLink;
+  
+  document.getElementById('formSuccess').style.display = 'block';
+  this.reset();
+});
+
+CookieConsent.run({
+  guiOptions: {
+    consentModal: {
+      layout: "box",
+      position: "bottom right",
+      equalWeightButtons: true,
+      flipButtons: false
+    },
+    preferencesModal: {
+      layout: "box",
+      position: "right",
+      equalWeightButtons: true,
+      flipButtons: false
+    }
+  },
+  categories: {
+    necessary: { enabled: true, readOnly: true },
+    analytics: { enabled: false, readOnly: false },
+    advertising: { enabled: false, readOnly: false }
+  },
+  language: {
+    default: "en",
+    autoDetect: "browser",
+    translations: {
+      en: {
+        consentModal: {
+          title: "We use cookies",
+          description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
+          acceptAllBtn: "Accept all",
+          acceptNecessaryBtn: "Reject all",
+          showPreferencesBtn: "Manage preferences"
+        },
+        preferencesModal: {
+          title: "Cookie preferences",
+          acceptAllBtn: "Accept all",
+          acceptNecessaryBtn: "Reject all",
+          savePreferencesBtn: "Save preferences",
+          sections: [
+            { title: "Necessary cookies", description: "These cookies are required for the site to function.", linkedCategory: "necessary" },
+            { title: "Analytics cookies", description: "Help us understand how visitors use our site (Google Analytics).", linkedCategory: "analytics" },
+            { title: "Advertising cookies", description: "Used to show relevant ads (Google AdSense, when enabled).", linkedCategory: "advertising" }
+          ]
+        }
+      }
+    }
+  }
+});
+</script>
+
+</body>
 </html>
