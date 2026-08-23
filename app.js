@@ -275,7 +275,7 @@ function buildShareLink(){
   if($('currentValue').value && $('condition').value !== 'same' && $('condition').value !== 'empty') p.set('cv', $('currentValue').value);
   const base = (location.protocol === 'http:' || location.protocol === 'https:')
     ? (location.origin + location.pathname)
-    : 'https://gotclawback.com/';   // sensible default while testing locally
+    : 'https://www.gotclawback.com/';   // sensible default while testing locally
   $('shareLink').value = base + '?' + p.toString();
 }
 
