@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/depop-refund-fees.html",
+      "destination": "/depop-fees-refunded.html",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         { "type": "host", "value": "gotclawback.com" }
