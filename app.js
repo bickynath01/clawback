@@ -43,7 +43,7 @@ document.querySelectorAll('.platform-btn').forEach(btn => {
 });
 
 /* ---------- conditional fields ---------- */
-function syncCondition(){ $('valueRow').style.display = $('condition').value === 'same' ? 'none' : 'block'; }
+function syncCondition(){ const c = $('condition').value; $('valueRow').style.display = (c === 'same' || c === 'empty') ? 'none' : 'block'; }
 function syncPayer(){ const p = $('returnPayer').value; $('returnCostRow').style.display = (p === 'me' || p === 'platform') ? 'block' : 'none'; }
 $('condition').addEventListener('change', syncCondition);
 $('returnPayer').addEventListener('change', syncPayer);
@@ -77,7 +77,9 @@ function compute(){
   const condition = $('condition').value;
 
   let currentValue = sale;
-  if(condition !== 'same'){
+  if(condition === 'empty'){
+    currentValue = 0;
+  } else if(condition !== 'same'){
     const cv = parseFloat($('currentValue').value);
     if(isNaN(cv)){ flag($('currentValue')); return; }
     currentValue = cv;
@@ -99,6 +101,11 @@ function compute(){
     else if(outcome === 'stepped_in'){ fvCredit = false; perCredit = false; procCredit = false; }
     else if(outcome === 'unsure')    { fvCredit = true;  perCredit = false; procCredit = true;  }
     else                             { fvCredit = true;  perCredit = false; procCredit = true;  }
+  } else if(outcome === 'stepped_in'){
+    /* Platform ruled against you, or you refunded the buyer outside the platform:
+       treat this like an unapproved return — no fee credit, same principle as
+       eBay's "stepped in" case above. */
+    fvCredit = false; perCredit = false; procCredit = false;
   } else {
     fvCredit = !!fee.refund.finalValue; perCredit = !!fee.refund.perOrder; procCredit = !!fee.refund.processing;
   }
@@ -265,10 +272,10 @@ function buildShareLink(){
   p.set('rp', $('returnPayer').value);
   if($('returnCost').value) p.set('rc', $('returnCost').value);
   p.set('c', $('condition').value);
-  if($('currentValue').value && $('condition').value !== 'same') p.set('cv', $('currentValue').value);
+  if($('currentValue').value && $('condition').value !== 'same' && $('condition').value !== 'empty') p.set('cv', $('currentValue').value);
   const base = (location.protocol === 'http:' || location.protocol === 'https:')
     ? (location.origin + location.pathname)
-    : 'https://clawback.vercel.app/';   // sensible default while testing locally
+    : 'https://gotclawback.com/';   // sensible default while testing locally
   $('shareLink').value = base + '?' + p.toString();
 }
 
