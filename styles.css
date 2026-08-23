@@ -374,3 +374,24 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
 .cookie-btn.reject:hover{background:#FAF7F0;color:#0E3B2C;}
 .cookie-btn.customize{background:transparent;color:#F5B301;border:1px solid #F5B301;}
 .cookie-btn.customize:hover{background:#F5B301;color:#0E3B2C;}
+/* ── FIX: make the decorative rotated stamp clearly visible ── */
+.stamp,
+.hero-stamp,
+.stamp-hero,
+.page-stamp,
+.watermark,
+.page-body::before,
+.page-body::after,
+.prose::before,
+.prose::after,
+article::before,
+article::after {
+  color: #F5B301 !important;
+  border-color: #F5B301 !important;
+  background: rgba(14, 59, 44, .95) !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+  text-decoration: none !important;
+  filter: none !important;
+  pointer-events: none !important;
+}
