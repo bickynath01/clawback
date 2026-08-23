@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
-<script>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+<script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+<script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
+<script type="text/plain" data-category="analytics">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-CPRC739GBN');
 </script>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poshmark vs Depop vs Mercari vs eBay: Which Pays More? (2026 Matrix)</title>
-<meta name="description" content="The 2026 Reseller's Matrix: exact fee math on a $40 jacket across Poshmark, Depop, Mercari and eBay — plus the 5lb bundle trap, payout speeds and who wins."><link rel="canonical" href="https://www.gotclawback.com/platform-comparison-2026.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which Platform Pays More? Calculate Your Exact Profit</title>
+<meta name="description" content="Stop guessing which app pays more. Enter your price and weight to see your exact take-home on Poshmark, eBay, Depop and Mercari.">
+<link rel="canonical" href="https://www.gotclawback.com/platform-comparison-2026.html">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Which Platform Pays More? Calculate Your Exact Profit">
+<meta property="og:description" content="Stop guessing which app pays more. Enter your price and weight to see your exact take-home on Poshmark, eBay, Depop and Mercari.">
+<meta property="og:url" content="https://www.gotclawback.com/platform-comparison-2026.html">
+<meta property="og:site_name" content="CLAWBACK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Which Platform Pays More? Calculate Your Exact Profit">
+<meta name="twitter:description" content="Enter your price and weight to see your exact take-home on Poshmark, eBay, Depop and Mercari.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -41,8 +55,21 @@ table.data-table th{background:rgba(255,255,255,.08);}
 .timeline .event{flex:1;}
 .sources{font-size:13px;line-height:1.8;}
 .sources a{color:#F5B301;}
+.mini-calc{background:#FAF7F0;color:#282828;border:1px dashed #999;padding:22px;margin:22px 0;box-shadow:0 6px 18px rgba(0,0,0,.25);}
+.mini-calc h3{font-family:'Archivo Black';margin:0 0 4px;color:#0E3B2C;letter-spacing:1px;text-align:center;}
+.mini-calc .sub{text-align:center;font-size:12px;color:#666;margin-bottom:16px;}
+.mini-calc label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px;}
+.mini-calc input[type="number"]{width:100%;padding:8px;font-family:'Space Mono',monospace;border:1px solid #999;font-size:14px;box-sizing:border-box;}
+.mini-calc .row2{display:flex;gap:12px;}
+.mini-calc .row2 > div{flex:1;}
+.mini-calc .checkrow{display:flex;align-items:center;gap:8px;margin:14px 0;font-size:13px;}
+.mini-calc button{width:100%;background:#0E3B2C;color:#FAF7F0;border:1px solid #F5B301;padding:10px;font-family:'Archivo Black';letter-spacing:1px;cursor:pointer;margin-top:6px;}
+.mini-calc button:hover{background:#164a38;}
+.calc-result{margin-top:16px;padding:14px;background:#fff;border:1px solid rgba(0,0,0,.15);font-size:14px;line-height:1.8;display:none;}
+.calc-result.show{display:block;}
+.calc-result .winner{font-size:16px;font-weight:700;color:#1E7A3F;}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Poshmark vs Depop vs Mercari vs eBay: Which Platform Actually Pays You More? (2026 Matrix)","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-21"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Poshmark vs Depop vs Mercari vs eBay: Which Platform Actually Pays You More? (2026 Matrix)","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-21","dateModified":"2026-08-23"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Which selling platform has the lowest fees in 2026?","acceptedAnswer":{"@type":"Answer","text":"Mercari and Depop have the lowest base selling fees at 10 percent. Poshmark is the most expensive at a flat 20 percent commission for items over 15 dollars, or 2.95 dollars for items under 15 dollars. eBay sits in the middle at 13.6 percent plus a per-order fee."}},
 {"@type":"Question","name":"Which app pays sellers the fastest?","acceptedAnswer":{"@type":"Answer","text":"eBay pays fastest for established sellers, with funds available 1 to 2 days after payment confirms. Mercari and Poshmark release funds about 3 days after delivery. Depop is slowest, holding funds 2 to 10 working days after delivery, and up to 21 to 30 days for brand-new sellers."}},
@@ -55,20 +82,108 @@ table.data-table th{background:rgba(255,255,255,.08);}
 <a class="brand" href="index.html">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
 <p class="tagline">// the forced-return loss calculator for resellers</p>
 <nav class="main-nav" aria-label="Primary"><button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
-<ul id="navlist" class="nav-list"><li><a href="index.html#tool">Calculator</a></li><li><a href="platforms.html#depop">Depop</a></li><li><a href="guides.html">Guides</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="about.html">About</a></li></ul></nav>
+<ul id="navlist" class="nav-list"><li><a href="index.html#tool">Calculator</a></li><li class="has-drop"><a href="platforms.html">Platforms ▾</a><ul class="drop"><li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li><li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li></ul></li><li><a href="guides.html">Guides</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="about.html">About</a></li></ul></nav>
 </div></header>
 
 <main class="page-body"><article class="prose">
-<span class="verified-badge">✓ FEES VERIFIED · AUGUST 2026</span>
+<span class="verified-badge">✓ FEES VERIFIED · AUGUST 23, 2026</span>
 <h1 class="page-title">Poshmark vs Depop vs Mercari vs eBay: Which Platform Actually Pays You More? (The 2026 Matrix)</h1>
-<p class="page-lead">You just spent three hours at the thrift store and found a vintage Levi's jacket. It's beautiful. It's profitable. Then you hit the wall: <em>where do I list this?</em></p>
-<p>Ask any reseller group and you'll get a dozen loud opinions. "eBay has the traffic!" "Poshmark buyers pay more!" "Mercari is easiest!" But almost nobody does the actual math. The truth is there is no single "best" platform — there is only the best platform <strong>for that specific item, at that price, at that weight.</strong></p>
-<p>We pulled the official 2026 fee schedules, shipping policies and return rules from all four platforms, then ran real items through every single one. Welcome to <strong>The Reseller's Matrix</strong>.</p>
+<p class="page-lead">Three hours at the thrift store just paid off — a vintage Levi's jacket, beautiful condition, genuinely profitable. Then the wall hits: <em>where does this actually get listed?</em></p>
+<p>Ask any reseller group and a dozen loud opinions show up instantly. "eBay has the traffic!" "Poshmark buyers pay more!" "Mercari is easiest!" Almost nobody runs the actual math. The truth is there's no single "best" platform — there's only the best platform <strong>for that specific item, at that price, at that weight.</strong> That's not a vague answer, either — it's a calculation, and it's below.</p>
+<p>The official 2026 fee schedules, shipping policies and return rules were pulled from all four platforms, then real items got run through every single one. Welcome to <strong>The Reseller's Matrix.</strong></p>
 
-<div class="callout"><strong>The TL;DR:</strong> Heavy items (shoes, electronics) win on <strong>Mercari or eBay</strong>. Trendy women's vintage wins on <strong>Poshmark</strong> despite the 20% fee. Y2K streetwear wins on <strong>Depop</strong>. But read the shipping traps below before you list a single item — the trap, not the base fee, is usually what kills your profit.</div>
+<div data-nosnippet>
+<div class="callout"><strong>The TL;DR:</strong> Heavy items (shoes, electronics) win on <strong>Mercari or eBay</strong>. Trendy women's vintage wins on <strong>Poshmark</strong> despite the 20% fee. Y2K streetwear wins on <strong>Depop</strong>. But read the shipping traps below before listing a single item — the trap, not the base fee, is usually what actually kills profit.</div>
+</div>
+
+<p>General rules only go so far, though — the real answer depends on the exact item. Plug in a price and weight below to see which platform actually wins for that specific piece, not a generic example.</p>
+
+<div class="mini-calc">
+  <h3>PLATFORM PROFIT CALCULATOR</h3>
+  <div class="sub">Free · no signup · see who really pays more</div>
+  <div class="row2">
+    <div>
+      <label for="itemPriceM">Item price ($)</label>
+      <input type="number" id="itemPriceM" min="0" step="0.01" placeholder="40.00">
+    </div>
+    <div>
+      <label for="itemWeightM">Weight (oz)</label>
+      <input type="number" id="itemWeightM" min="0" step="1" placeholder="32">
+    </div>
+  </div>
+  <div class="checkrow">
+    <input type="checkbox" id="buyerPaysM" checked>
+    <label for="buyerPaysM" style="margin:0;font-weight:400;">Buyer pays shipping (uncheck for free shipping)</label>
+  </div>
+  <button onclick="calcMatrix()">SEE WHO PAYS MORE</button>
+  <div class="calc-result" id="matrixResult"></div>
+</div>
+<script>
+function estLabelMid(oz) {
+  if (!oz || oz <= 0) oz = 16;
+  if (oz <= 4) return 3.40;
+  if (oz <= 8) return 4.10;
+  if (oz <= 16) return 4.90;
+  if (oz <= 32) return 6.15;
+  if (oz <= 48) return 7.25;
+  if (oz <= 80) return 9.25;
+  return 9.25 + Math.ceil((oz - 80) / 16) * 1.85;
+}
+function calcMatrix() {
+  const price = parseFloat(document.getElementById('itemPriceM').value);
+  const oz = parseFloat(document.getElementById('itemWeightM').value) || 16;
+  const buyerPays = document.getElementById('buyerPaysM').checked;
+  const resultBox = document.getElementById('matrixResult');
+  if (!price || price <= 0) {
+    resultBox.innerHTML = "Enter the item price to run the matrix.";
+    resultBox.classList.add('show');
+    return;
+  }
+  const label = buyerPays ? 0 : estLabelMid(oz);
+
+  // Poshmark: buyer always pays flat shipping on Poshmark itself; overweight fee hits seller past 5lb (80oz)
+  const poshFee = price > 15 ? price * 0.20 : 2.95;
+  const poshOverweight = oz > 160 ? 10 : (oz > 80 ? 5 : 0);
+  const poshKeep = price - poshFee - poshOverweight;
+
+  // eBay
+  const ebayPerOrder = price <= 10 ? 0.30 : 0.40;
+  const ebayFee = price * 0.136 + ebayPerOrder;
+  const ebayKeep = price - ebayFee - label;
+
+  // Depop
+  const depopFee = price * 0.10;
+  const depopProcessing = price * 0.029 + 0.30;
+  const depopKeep = price - depopFee - depopProcessing - label;
+
+  // Mercari
+  const mercFee = price * 0.10;
+  const mercKeep = price - mercFee - label;
+
+  const results = [
+    {name: 'Mercari', keep: mercKeep, bar: 'bar-merc'},
+    {name: 'Depop', keep: depopKeep, bar: 'bar-depop'},
+    {name: 'eBay', keep: ebayKeep, bar: 'bar-ebay'},
+    {name: 'Poshmark', keep: poshKeep, bar: 'bar-posh'}
+  ].sort((a, b) => b.keep - a.keep);
+
+  const maxKeep = results[0].keep;
+  let html = `<span class="winner">${results[0].name} wins for this item — you'd keep $${results[0].keep.toFixed(2)}</span><br><br>`;
+  results.forEach(r => {
+    const widthPct = Math.max(15, (r.keep / maxKeep) * 100);
+    html += `<div class="fee-row"><span class="fee-name">${r.name.toUpperCase()}</span><div class="fee-track"><div class="fee-bar ${r.bar}" style="width:${widthPct}%">$${r.keep.toFixed(2)}</div></div></div>`;
+  });
+  if (poshOverweight > 0) {
+    html += `<p class="fee-note" style="color:#C43C2C;">⚠ At ${oz}oz this trips Poshmark's 5lb bundle wall — a $${poshOverweight.toFixed(2)} overweight fee is already included above.</p>`;
+  }
+  html += `<p class="fee-note">Estimates based on this article's published 2026 fee schedules. Label cost for free-shipping scenarios is a weight-based estimate — verify exact rates in-app before listing.</p>`;
+  resultBox.innerHTML = html;
+  resultBox.classList.add('show');
+}
+</script>
 
 <h2>Round 1: The Fee Showdown (Real Numbers, Not Rumors)</h2>
-<p>Most blogs stop at "eBay takes 13%, Poshmark takes 20%." That's dangerously incomplete. Here is the effective fee each platform takes on a <strong>$40 sale</strong> (buyer pays shipping):</p>
+<p>Most blogs stop at "eBay takes 13%, Poshmark takes 20%." That's dangerously incomplete. Here's the effective fee each platform takes on a <strong>$40 sale</strong> (buyer pays shipping):</p>
 
 <div class="fee-chart">
 <div class="fee-row"><span class="fee-name">POSHMARK</span><div class="fee-track"><div class="fee-bar bar-posh" style="width:100%">20.0%</div></div></div>
@@ -78,20 +193,20 @@ table.data-table th{background:rgba(255,255,255,.08);}
 <p class="fee-note">Effective fee on a $40 sale. eBay = 13.6% + $0.30/order. Depop = 10% + ~2.9% + $0.30 processing. Mercari = flat 10%.</p>
 </div>
 
-<p>Now look at what happens on a <strong>cheap $12 item</strong> — this is where the "flat fee" platforms quietly eat you alive:</p>
+<p>Now here's what happens on a <strong>cheap $12 item</strong> — this is where the "flat fee" platforms quietly eat sellers alive:</p>
 
 <div class="fee-chart">
 <div class="fee-row"><span class="fee-name">POSHMARK</span><div class="fee-track"><div class="fee-bar bar-posh" style="width:100%">24.6%</div></div></div>
+<div class="fee-row"><span class="fee-name">DEPOP</span><div class="fee-track"><div class="fee-bar bar-depop" style="width:63%">15.4%</div></div></div>
 <div class="fee-row"><span class="fee-name">EBAY</span><div class="fee-track"><div class="fee-bar bar-ebay" style="width:65%">16.1%</div></div></div>
-<div class="fee-row"><span class="fee-name">DEPOP</span><div class="fee-track"><div class="fee-bar bar-depop" style="width:52%">12.9%</div></div></div>
 <div class="fee-row"><span class="fee-name">MERCARI</span><div class="fee-track"><div class="fee-bar bar-merc" style="width:41%">10.0%</div></div></div>
-<p class="fee-note">Effective fee on a $12 sale. Poshmark's $2.95 flat fee becomes a brutal 24.6% on cheap items.</p>
+<p class="fee-note">Effective fee on a $12 sale. Poshmark's $2.95 flat fee becomes a brutal 24.6% on cheap items. Depop's $0.30 fixed processing fee also hits harder on small sales.</p>
 </div>
 
-<div class="callout red"><strong>The 30-Cent eBay Trap:</strong> eBay adds a $0.30–$0.40 per-order fee on top of the percentage. On a $5 sticker pack, that 30 cents is an extra 6% of your margin. Never sell sub-$10 items solo on eBay — bundle them, or move them to Mercari.</div>
+<div class="callout red"><strong>The 30-Cent eBay Trap:</strong> eBay adds a $0.30–$0.40 per-order fee on top of the percentage. On a $5 sticker pack, that 30 cents is an extra 6% of margin, gone. Never sell sub-$10 items solo on eBay — bundle them, or move them to Mercari.</div>
 
-<h2>The Cheap-Item Problem: Why Your $8 Tee Makes Nothing</h2>
-<p>Let's make the cheap-item math brutal and concrete. You flip a plain $8 band tee. Here is what each platform actually leaves you:</p>
+<h2>The Cheap-Item Problem: Why an $8 Tee Makes Nothing</h2>
+<p>Let's make the cheap-item math brutal and concrete. An $8 band tee flips. Here's what each platform actually leaves behind:</p>
 <table class="data-table">
 <thead><tr><th>Platform</th><th>Fees on $8</th><th>You keep</th><th>Effective cut</th></tr></thead>
 <tbody>
@@ -101,10 +216,10 @@ table.data-table th{background:rgba(255,255,255,.08);}
 <tr><td><strong>Mercari</strong></td><td>$0.80</td><td>$7.20</td><td>10.0%</td></tr>
 </tbody>
 </table>
-<p>On an $8 tee, Poshmark's "small" $2.95 flat fee is a <strong>37% cut</strong> — worse than any percentage fee on the list. This is the single most misunderstood number in reselling. The flat fee is only a deal when the item is cheap <em>and</em> the buyer absorbs shipping; otherwise you're working for free. Cheap items belong on Mercari or Depop, or they belong bundled into a $30 lot.</p>
+<p>On an $8 tee, Poshmark's "small" $2.95 flat fee is a <strong>37% cut</strong> — worse than any percentage fee on this whole list. This is the single most misunderstood number in reselling. The flat fee only works when the item is cheap <em>and</em> the buyer absorbs shipping; otherwise it's basically working for free. Cheap items belong on Mercari or Depop, or bundled into a $30+ lot.</p>
 
 <h2>The Receipt: One $40 Jacket, Four Platforms</h2>
-<p>Enough percentages. Let's watch real dollars. Here is a 2lb vintage jacket that sells for $40 on each app, with the buyer paying shipping:</p>
+<p>Enough percentages — real dollars. Here's a 2lb vintage jacket selling for $40 on each app, buyer paying shipping:</p>
 <table class="data-table">
 <thead><tr><th>Platform</th><th>Fees on $40</th><th>Your shipping cost</th><th>You keep</th></tr></thead>
 <tbody>
@@ -115,24 +230,24 @@ table.data-table th{background:rgba(255,255,255,.08);}
 </tbody>
 </table>
 
-<div class="confession"><strong>Confession time:</strong> I used to assume Poshmark was always the worst because of the 20%. Then I ran the "free shipping" scenario. If you offer free shipping to win the sale, Mercari's prepaid 2lb label costs you <strong>$12.83</strong> and a Depop label runs ~$8.50 — but Poshmark's label is already covered by the buyer's $6.49. Suddenly Poshmark's "expensive" 20% can beat the "cheap" 10% apps. The fee percentage is only half the story; <em>who pays shipping</em> is the other half.</div>
+<div class="confession"><strong>Worth admitting:</strong> the easy assumption is that Poshmark's always the worst because of the 20%. Then the "free shipping" scenario changes the picture entirely. Offering free shipping to win a sale means Mercari's prepaid 2lb label runs about $6.15, and a Depop label costs roughly $6.15 — but Poshmark's label is already covered inside the buyer's $6.49. Suddenly the "expensive" 20% platform can beat the "cheap" 10% apps. The fee percentage is only half the story; <em>who pays shipping</em> is the other half — and it's exactly what the calculator above accounts for.</div>
 
 <h2>The Bundle Economy: Who Actually Profits?</h2>
-<p>Bundles are where resellers quietly win or lose the month. On <strong>Poshmark</strong>, bundles are the whole culture — buyers expect to combine items for one $6.49 label. That's great for moving volume, but remember the 5lb wall: a bundle that tips past 5 lbs triggers a $5–$10 fee deducted from <em>your</em> earnings. Weigh before you accept.</p>
-<p>On <strong>eBay</strong>, combined shipping is your choice. You can offer calculated shipping that automatically discounts when a buyer adds items, protecting your margin. On <strong>Mercari</strong>, bundles are manual — buyers ask, you adjust the price, and you ship one heavier package using a heavier prepaid label. On <strong>Depop</strong>, bundles are informal; you simply agree on a price and ship it yourself. The platform that rewards bundling most is Poshmark; the platform that punishes a heavy bundle most is also Poshmark. Know which side of the 5lb line your closet lives on.</p>
+<p>Bundles are where resellers quietly win or lose the month. On <strong>Poshmark</strong>, bundles are the whole culture — buyers expect to combine items for one $6.49 label. Great for moving volume, but remember the 5lb wall: a bundle tipping past 5 lbs triggers a $5–$10 fee deducted straight from earnings. Weigh before approving.</p>
+<p>On <strong>eBay</strong>, combined shipping is a seller's choice — calculated shipping can automatically discount when a buyer adds items, protecting margin. On <strong>Mercari</strong>, bundles are manual: buyers ask, the price adjusts, one heavier package ships on a heavier prepaid label. On <strong>Depop</strong>, bundles are informal — agree on a price, ship it independently. The platform that rewards bundling most is Poshmark; the platform that punishes a heavy bundle hardest is also Poshmark. Know which side of the 5lb line a closet lives on.</p>
 
 <h2>Round 2: The Shipping Nightmares</h2>
 <h3>Poshmark: The 5-Pound Bundle Trap</h3>
-<p>Poshmark's flat $6.49 buyer shipping and prepaid label are genuinely simple — until a buyer <strong>bundles</strong>. If two pairs of jeans push the package to 5.1 lbs, the flat label is void and Poshmark deducts a <strong>$5 overweight upgrade fee</strong> straight from your earnings. At 10.1 lbs it's <strong>$10</strong>. Always weigh before you approve a bundle.</p>
+<p>Poshmark's flat $6.49 buyer shipping and prepaid label are genuinely simple — until a buyer <strong>bundles</strong>. Two pairs of jeans pushing a package to 5.1 lbs voids the flat label, and Poshmark deducts a <strong>$5 overweight upgrade fee</strong> straight from earnings. At 10.1 lbs it's <strong>$10</strong>. Always weigh before approving a bundle.</p>
 <h3>Mercari: The 100lb Heavyweight Champion</h3>
-<p>Mercari's prepaid labels support packages up to <strong>100 pounds</strong> — unbeatable for shoes, electronics and car parts. Just weigh accurately: underpaid-label overage fees come out of your balance.</p>
+<p>Mercari's prepaid labels support packages up to <strong>100 pounds</strong> — unbeatable for shoes, electronics and car parts. Weigh accurately either way: underpaid-label overage fees come straight out of the balance.</p>
 <h3>Depop & eBay: Calculated Chaos</h3>
-<p>Depop leaves the shipping math entirely to you. eBay's calculated shipping is accurate, but a missed handling-time deadline spikes your Late Shipment Rate and risks your seller standing.</p>
+<p>Depop leaves shipping math entirely up to the seller. eBay's calculated shipping is accurate, but a missed handling-time deadline spikes the Late Shipment Rate and risks seller standing.</p>
 
-<h2>The Forced-Return Math: What A Return Really Costs You</h2>
-<p>This is the part nobody prices in, and it's the entire reason this site exists. A forced "not as described" return on a $40 item is not just a refunded sale — it's return shipping, lost original shipping, and the item's drop in value once it comes back. Here is how each platform distributes that pain:</p>
+<h2>The Forced-Return Math: What A Return Really Costs</h2>
+<p>This is the part nobody prices in, and it's the entire reason this site exists. A forced "not as described" return on a $40 item isn't just a refunded sale — it's return shipping, lost original shipping, and the item's value drop once it comes back. Here's how each platform distributes that pain:</p>
 <table class="data-table">
-<thead><tr><th>Platform</th><th>Who pays return shipping?</th><th>Do you get fees back?</th><th>Typical out-of-pocket on $40</th></tr></thead>
+<thead><tr><th>Platform</th><th>Who pays return shipping?</th><th>Do fees come back?</th><th>Typical out-of-pocket on $40</th></tr></thead>
 <tbody>
 <tr><td><strong>eBay</strong></td><td>Seller (always, for not-as-described)</td><td>Category fee refunded; per-order fee kept</td><td>~$8–9 return label + value drop</td></tr>
 <tr><td><strong>Poshmark</strong></td><td>Prepaid label provided</td><td>Case-by-case</td><td>Lost time + value drop</td></tr>
@@ -140,7 +255,7 @@ table.data-table th{background:rgba(255,255,255,.08);}
 <tr><td><strong>Depop</strong></td><td>Seller usually absorbs</td><td>Rarely</td><td>Return label + value drop</td></tr>
 </tbody>
 </table>
-<p>The platform with the friendliest buyer-return policy is usually the one where <em>you</em> eat the most cost. That's not a reason to avoid a platform — it's a reason to price returns into your listing price. Run your numbers through the calculator below before you list, not after a return lands.</p>
+<p>The platform with the friendliest buyer-return policy is usually the one where <em>the seller</em> eats the most cost. That's not a reason to avoid a platform — it's a reason to price returns into the listing price from day one. Run the numbers through the calculator above before listing, not after a return lands.</p>
 
 <h2>Round 3: Returns — Who Protects The Seller?</h2>
 <table class="data-table">
@@ -148,29 +263,29 @@ table.data-table th{background:rgba(255,255,255,.08);}
 <tbody>
 <tr><td><strong>Poshmark</strong></td><td>NO — all sales final (unless buyer adds Seel Worry-Free, 7 days)</td><td>Yes, within 3 days</td><td>Prepaid label; seller loses original shipping</td></tr>
 <tr><td><strong>Mercari</strong></td><td>NO — all sales final</td><td>Yes, within 3 days</td><td>Mercari mediates; prepaid label if approved</td></tr>
-<tr><td><strong>Depop</strong></td><td>NO, unless you volunteer</td><td>Yes, Depop Protection</td><td>Seller usually absorbs loss</td></tr>
-<tr><td><strong>eBay</strong></td><td>YES, if your policy says 30-day</td><td>Yes, Money Back Guarantee</td><td><strong>Seller always pays</strong> for not-as-described</td></tr>
+<tr><td><strong>Depop</strong></td><td>NO, unless volunteered</td><td>Yes, Depop Protection</td><td>Seller usually absorbs loss</td></tr>
+<tr><td><strong>eBay</strong></td><td>YES, if policy says 30-day</td><td>Yes, Money Back Guarantee</td><td><strong>Seller always pays</strong> for not-as-described</td></tr>
 </tbody>
 </table>
-<div class="callout"><strong>The Seel loophole:</strong> Poshmark now lets buyers add "Worry-Free Returns" (powered by Seel) at checkout, unlocking a 7-day return window for fit issues. Sellers: that bypasses the traditional all-sales-final shield. Price accordingly.</div>
+<div class="callout"><strong>The Seel loophole:</strong> Poshmark now lets buyers add "Worry-Free Returns" (powered by Seel) at checkout, unlocking a 7-day return window for fit issues. That bypasses the traditional all-sales-final shield sellers count on — price accordingly.</div>
 
 <h2>Round 4: Payout Speed — When Does The Money Land?</h2>
 <div class="timeline">
 <h3>THE PAYOUT SPEED RACE</h3>
-<div class="step"><span class="day">1st</span><div class="event"><strong>eBay:</strong> Funds available 1–2 days after payment confirms for established sellers; daily payouts hit your bank in 1–3 business days. <span class="stamp">FASTEST</span></div></div>
+<div class="step"><span class="day">1st</span><div class="event"><strong>eBay:</strong> Funds available 1–2 days after payment confirms for established sellers; daily payouts hit the bank in 1–3 business days. <span class="stamp">FASTEST</span></div></div>
 <div class="step"><span class="day">2nd</span><div class="event"><strong>Mercari:</strong> Released 3 days after delivery/buyer rating. Direct deposit is now <strong>free</strong>; Instant Pay costs $3.</div></div>
 <div class="step"><span class="day">3rd</span><div class="event"><strong>Poshmark:</strong> Redeemable 3 days after delivery if no case is opened.</div></div>
 <div class="step"><span class="day">4th</span><div class="event"><strong>Depop:</strong> 2–10 working days after delivery; brand-new sellers can face a 21–30 day rolling reserve. <span class="stamp">SLOWEST</span></div></div>
 </div>
 
 <h2>New-Seller Reality: Holds, Reserves & Verification</h2>
-<p>Brand-new accounts are treated as fraud risk everywhere, but the severity differs. <strong>Depop</strong> is the strictest: expect a 21–30 day rolling reserve on funds while you build history. <strong>eBay</strong> may place payment holds on new or below-standard accounts and can hold funds until tracking shows an item is on its way. <strong>Mercari</strong> releases funds after the buyer rates you, and Instant Pay requires ID verification. <strong>Poshmark</strong> is the most forgiving for day-one sellers, releasing funds 3 days after delivery. If cash flow is tight and you're brand new, Poshmark and Mercari will feel friendliest in your first month.</p>
+<p>Brand-new accounts get treated as a fraud risk everywhere, but the severity differs. <strong>Depop</strong> is strictest: expect a 21–30 day rolling reserve while history builds. <strong>eBay</strong> may place payment holds on new or below-standard accounts, sometimes until tracking shows an item is moving. <strong>Mercari</strong> releases funds after the buyer rates the sale, and Instant Pay requires ID verification. <strong>Poshmark</strong> is the most forgiving for day-one sellers, releasing funds 3 days after delivery. Tight cash flow as a brand-new seller — Poshmark and Mercari will feel friendliest in month one.</p>
 
 <h2>The 1099-K Tax Angle</h2>
-<p>All four platforms issue a <strong>1099-K</strong> once you cross the IRS reporting threshold. That threshold has changed repeatedly in recent years, so don't trust any single number you read — verify the current IRS rule each tax season. What never changes: you owe tax on the <em>sale date</em>, not the payout date, and you can deduct cost of goods, shipping and fees. Keep a simple log of every sale and every return, because a forced return in January for a December sale is exactly the kind of thing that scrambles self-reported numbers.</p>
+<p>All four platforms issue a <strong>1099-K</strong> once the IRS reporting threshold is crossed. That threshold has changed repeatedly in recent years, so don't trust any single number floating around online — verify the current IRS rule each tax season. What never changes: tax is owed on the <em>sale date</em>, not the payout date, and cost of goods, shipping, and fees are all deductible. Keeping a simple log of every sale and return matters, because a forced return in January for a December sale is exactly the kind of thing that scrambles self-reported numbers.</p>
 
 <h2>Cross-Listing Like A Pro</h2>
-<p>The honest answer for most resellers: list on more than one platform. Cross-listing multiplies your exposure and lets the market tell you where an item is worth the most. The catch is inventory discipline — if the same jacket sells on Poshmark and eBay an hour apart, you're forced to cancel one, and repeated cancellations trigger Mercari's 5% fee and hurt your eBay defect rate. Use a cross-listing tool or a strict spreadsheet, and delist immediately after a sale. Treat cross-listing as a discovery mechanism: after a few weeks you'll see which platform sells <em>your</em> specific inventory fastest, and you'll know where to put your best pieces first.</p>
+<p>The honest answer for most resellers: list on more than one platform. Cross-listing multiplies exposure and lets the market decide where an item is worth the most. The catch is inventory discipline — if the same jacket sells on Poshmark and eBay an hour apart, one sale has to get cancelled, and repeated cancellations trigger Mercari's 5% fee and hurt eBay's defect rate. A cross-listing tool or a strict spreadsheet, plus delisting immediately after a sale, keeps this from becoming a problem. Treat cross-listing as a discovery mechanism — after a few weeks it becomes obvious which platform sells specific inventory fastest, and where the best pieces should go first.</p>
 
 <h2>The Full Category Matrix</h2>
 <table class="data-table">
@@ -188,14 +303,14 @@ table.data-table th{background:rgba(255,255,255,.08);}
 </table>
 
 <h2>The Final Verdict: Pick Your Battlefield</h2>
-<p><span class="stamp">BEGINNER, 5 ITEMS → MERCARI</span> Dead-simple listing, free direct deposit, and a forgiving audience. You'll learn the rhythm of selling without a 20% bite or a 21-day reserve.</p>
+<p><span class="stamp">BEGINNER, 5 ITEMS → MERCARI</span> Dead-simple listing, free direct deposit, and a forgiving audience. The rhythm of selling gets learned without a 20% bite or a 21-day reserve in the way.</p>
 <p><span class="stamp">Y2K / STREETWEAR → DEPOP</span> Gen-Z buyers who expect 10% pricing and happily pay for shipping. The slow payouts are the price of admission.</p>
 <p><span class="stamp">MALL BRANDS / WOMEN'S → POSHMARK</span> Buyers pay $6.49 shipping and premium prices for the right labels. Just respect the 5lb bundle wall.</p>
-<p><span class="stamp">ELECTRONICS / PARTS / HIGH-TICKET → EBAY</span> The only place serious buyers search by part number, and the fastest payouts once you're established.</p>
+<p><span class="stamp">ELECTRONICS / PARTS / HIGH-TICKET → EBAY</span> The only place serious buyers search by part number, and the fastest payouts once established.</p>
 <p><span class="stamp">HEAVY ITEMS → MERCARI / EBAY</span> 100lb labels beat Poshmark's 5lb wall every single time.</p>
 
 <h2>Conclusion: Stop Guessing, Start Calculating</h2>
-<p>The gap between a hobbyist and a professional is knowing what hits your bank <em>before</em> you buy the inventory. A 20% Poshmark fee can out-earn a 10% Depop fee when the buyer absorbs shipping and pays $15 more for the item. Run the numbers every time, price your returns in, and let the data — not the loudest opinion in the group — choose your platform.</p>
+<p>The gap between a hobbyist and a professional reseller is knowing what actually hits the bank <em>before</em> buying the inventory. A 20% Poshmark fee can out-earn a 10% Depop fee the moment a buyer absorbs shipping and pays $15 more for the item. Run the numbers every time, price returns in from the start, and let the data — not the loudest opinion in the group — choose the platform.</p>
 <div class="cta-box"><h3 style="margin-top:0">Run The Reseller's Matrix Yourself.</h3>
 <p style="margin-bottom:14px">Plug in your price, pick the platform, and see your exact true profit. 100% free.</p>
 <a class="btn-primary" href="index.html#tool">CALCULATE MY TRUE PROFIT</a></div>
@@ -204,9 +319,9 @@ table.data-table th{background:rgba(255,255,255,.08);}
 <dl>
 <dt>Which selling platform has the lowest fees in 2026?</dt><dd>Mercari and Depop at a flat 10%. Poshmark is the priciest at 20% over $15 (or $2.95 under $15). eBay sits in the middle at 13.6% plus a per-order fee.</dd>
 <dt>Which app pays sellers the fastest?</dt><dd>eBay for established sellers (1–2 days to available funds). Mercari and Poshmark ~3 days after delivery. Depop 2–10 working days, longer for new sellers.</dd>
-<dt>What is the Poshmark 5-pound shipping trap?</dt><dd>The flat-rate label covers up to 5 lbs. Bundles over 5 lbs trigger a $5–$10 overweight upgrade fee deducted from your earnings.</dd>
-<dt>Should I cross-list my items on multiple platforms?</dt><dd>Yes — it multiplies exposure. Just track inventory so the same item never sells twice, or you'll face cancellation fees (Mercari) and defect-rate damage (eBay).</dd>
-<dt>Do these platforms send a 1099-K?</dt><dd>Yes, all four issue a 1099-K once you cross the IRS threshold. The threshold changes, so verify the current rule and log your sale dates and costs.</dd>
+<dt>What is the Poshmark 5-pound shipping trap?</dt><dd>The flat-rate label covers up to 5 lbs. Bundles over 5 lbs trigger a $5–$10 overweight upgrade fee deducted from earnings.</dd>
+<dt>Should I cross-list my items on multiple platforms?</dt><dd>Yes — it multiplies exposure. Just track inventory so the same item never sells twice, or face cancellation fees (Mercari) and defect-rate damage (eBay).</dd>
+<dt>Do these platforms send a 1099-K?</dt><dd>Yes, all four issue a 1099-K once the IRS threshold is crossed. The threshold changes, so verify the current rule and log sale dates and costs.</dd>
 <dt>Is Poshmark or eBay better for clothes?</dt><dd>Poshmark for mid-tier name-brand women's; eBay for designer, rare vintage and menswear.</dd>
 <dt>Does Mercari charge to cash out?</dt><dd>Direct deposit is free. Instant Pay to a debit card costs $3 per transfer.</dd>
 </dl>
@@ -223,9 +338,63 @@ table.data-table th{background:rgba(255,255,255,.08);}
 </article></main>
 
 <footer class="site-foot"><div class="foot-inner">
-<div class="foot-brand"><div class="brand small">CLAW<span class="slash">BACK</span></div><p>The forced-return loss calculator for resellers.</p></div>
-<nav class="foot-col" aria-label="Guides"><h3>More</h3><ul><li><a href="depop-fees-explained.html">Depop fees explained</a></li><li><a href="depop-fees-refunded.html">Depop refund fees</a></li><li><a href="guides.html">Guides</a></li></ul></nav>
+<div class="foot-brand"><div class="brand small">CLAW<span class="slash">BACK</span></div><p>The forced-return loss calculator for resellers. Know your number before you appeal.</p></div>
+<nav class="foot-col" aria-label="Platforms"><h3>Platforms</h3><ul><li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li><li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li></ul></nav>
+<nav class="foot-col" aria-label="Guides"><h3>Guides</h3><ul><li><a href="guides.html">All guides</a></li><li><a href="guides.html#dispute">Win a return dispute</a></li><li><a href="guides.html#taxes">Tax write-offs</a></li></ul></nav>
 <nav class="foot-col" aria-label="Company"><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
-</div><div class="foot-legal"><p class="verified">Platform policies change — verify on official Poshmark, Depop, Mercari and eBay help pages.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with these platforms.</p></div></footer>
+<nav class="foot-col" aria-label="Resources"><h3>Resources</h3><ul><li><a href="index.html#faq">FAQ</a></li><li><a href="sources.html">Sources</a></li><li><a href="sitemap.html">Sitemap</a></li></ul></nav>
+</div><div class="foot-legal"><p class="verified">Platform policies change — verify on official Poshmark, Depop, Mercari and eBay help pages. Last updated: <strong>August 23, 2026</strong>.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with these platforms.</p></div></footer>
 <script src="nav.js"></script>
-</body></html>
+
+<script>
+CookieConsent.run({
+  guiOptions: {
+    consentModal: {
+      layout: "box",
+      position: "bottom right",
+      equalWeightButtons: true,
+      flipButtons: false
+    },
+    preferencesModal: {
+      layout: "box",
+      position: "right",
+      equalWeightButtons: true,
+      flipButtons: false
+    }
+  },
+  categories: {
+    necessary: { enabled: true, readOnly: true },
+    analytics: { enabled: false, readOnly: false },
+    advertising: { enabled: false, readOnly: false }
+  },
+  language: {
+    default: "en",
+    autoDetect: "browser",
+    translations: {
+      en: {
+        consentModal: {
+          title: "We use cookies",
+          description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
+          acceptAllBtn: "Accept all",
+          acceptNecessaryBtn: "Reject all",
+          showPreferencesBtn: "Manage preferences"
+        },
+        preferencesModal: {
+          title: "Cookie preferences",
+          acceptAllBtn: "Accept all",
+          acceptNecessaryBtn: "Reject all",
+          savePreferencesBtn: "Save preferences",
+          sections: [
+            { title: "Necessary cookies", description: "These cookies are required for the site to function.", linkedCategory: "necessary" },
+            { title: "Analytics cookies", description: "Help us understand how visitors use our site (Google Analytics).", linkedCategory: "analytics" },
+            { title: "Advertising cookies", description: "Used to show relevant ads (Google AdSense, when enabled).", linkedCategory: "advertising" }
+          ]
+        }
+      }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
