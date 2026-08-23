@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
-<script>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+<script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+<script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
+<script type="text/plain" data-category="analytics">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-CPRC739GBN');
 </script>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Depop Shipping Explained: Labels, Costs & Who Pays (2026)</title>
-<meta name="description" content="How does Depop shipping work? Who pays, label costs by weight, the free-shipping trick, packing checklists and international rules — answered like a friend would.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Depop Shipping Calculator: See What Your Label REALLY Costs (2026)</title>
+<meta name="description" content="Free shipping isn't free — it's a $4-10 label eating your margin. Enter your weight and price to see the real cost before you list.">
 <link rel="canonical" href="https://www.gotclawback.com/depop-shipping-explained.html">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Depop Shipping Calculator: See What Your Label REALLY Costs">
+<meta property="og:description" content="Free shipping isn't free — it's a $4-10 label eating your margin. Enter your weight and price to see the real cost.">
+<meta property="og:url" content="https://www.gotclawback.com/depop-shipping-explained.html">
+<meta property="og:site_name" content="CLAWBACK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Depop Shipping Calculator: See What Your Label REALLY Costs">
+<meta name="twitter:description" content="Free shipping isn't free. Enter your weight and price to see the real label cost before you list.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -29,10 +42,26 @@ table.data-table th,table.data-table td{border:1px solid rgba(0,0,0,.15);padding
 table.data-table th{background:rgba(0,0,0,.06);}
 .callout{border-left:4px solid #F5B301;background:rgba(245,179,1,.08);padding:12px 16px;margin:18px 0;}
 .callout.red{border-left-color:#C43C2C;background:rgba(196,60,44,.08);}
+.callout.green{border-left-color:#1E7A5A;background:rgba(30,122,90,.08);}
 .cta-box{background:#0E3B2C;border:1px solid #F5B301;padding:20px;margin:28px 0;text-align:center;}
 blockquote.voice{border-left:3px solid #F5B301;margin:18px 0;padding:8px 16px;font-style:italic;color:rgba(250,247,240,.85);}
+.verified-badge{display:inline-block;background:#0E3B2C;border:1px solid #F5B301;color:#FAF7F0;font-family:'Space Mono',monospace;font-size:11px;padding:4px 12px;border-radius:20px;letter-spacing:1px;margin:0 0 14px;}
+.sources{font-size:13px;line-height:1.8;}
+.sources a{color:#F5B301;}
+.mini-calc{background:#FAF7F0;color:#282828;border:1px dashed #999;padding:22px;margin:22px 0;box-shadow:0 6px 18px rgba(0,0,0,.25);}
+.mini-calc h3{font-family:'Archivo Black';margin:0 0 4px;color:#0E3B2C;letter-spacing:1px;text-align:center;}
+.mini-calc .sub{text-align:center;font-size:12px;color:#666;margin-bottom:16px;}
+.mini-calc label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px;}
+.mini-calc input[type="number"]{width:100%;padding:8px;font-family:'Space Mono',monospace;border:1px solid #999;font-size:14px;box-sizing:border-box;}
+.mini-calc .row2{display:flex;gap:12px;}
+.mini-calc .row2 > div{flex:1;}
+.mini-calc .checkrow{display:flex;align-items:center;gap:8px;margin:14px 0;font-size:13px;}
+.mini-calc button{width:100%;background:#0E3B2C;color:#FAF7F0;border:1px solid #F5B301;padding:10px;font-family:'Archivo Black';letter-spacing:1px;cursor:pointer;margin-top:6px;}
+.mini-calc button:hover{background:#164a38;}
+.calc-result{margin-top:16px;padding:14px;background:#fff;border:1px solid rgba(0,0,0,.15);font-size:14px;line-height:1.7;display:none;}
+.calc-result.show{display:block;}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Depop Shipping Explained: Labels, Costs, Free Shipping & Who Really Pays","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-16"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Depop Shipping Explained: Labels, Costs, Free Shipping & Who Really Pays","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-16","dateModified":"2026-08-23"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Does Depop take a cut of the shipping I charge?","acceptedAnswer":{"@type":"Answer","text":"Yes. Depop's 10% selling fee is calculated on the total transaction, which includes the shipping price you charge the buyer."}},
 {"@type":"Question","name":"Who pays for shipping on Depop?","acceptedAnswer":{"@type":"Answer","text":"Usually the buyer, unless you choose to offer free shipping. If you offer free shipping, you pay the label out of your margin."}},
@@ -47,42 +76,108 @@ blockquote.voice{border-left:3px solid #F5B301;margin:18px 0;padding:8px 16px;fo
 <a class="brand" href="index.html">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
 <p class="tagline">// the forced-return loss calculator for resellers</p>
 <nav class="main-nav" aria-label="Primary"><button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
-<ul id="navlist" class="nav-list"><li><a href="index.html#tool">Calculator</a></li><li><a href="platforms.html#depop">Depop</a></li><li><a href="guides.html">Guides</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="about.html">About</a></li></ul></nav>
+<ul id="navlist" class="nav-list"><li><a href="index.html#tool">Calculator</a></li><li class="has-drop"><a href="platforms.html">Platforms ▾</a><ul class="drop"><li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li><li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li></ul></li><li><a href="guides.html">Guides</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="about.html">About</a></li></ul></nav>
 </div></header>
 
 <main class="page-body"><article class="prose">
+<span class="verified-badge">✓ SOURCED FROM DEPOP HELP CENTER · VERIFIED AUGUST 23, 2026</span>
 <h1 class="page-title">Depop Shipping Explained: Labels, Costs, Free Shipping & Who Really Pays</h1>
 
-<p class="page-lead">Welcome to <strong>The Shipping Desk</strong>. This is the column where I take the exact shipping questions real Depop sellers ask — the ones typed into Google at 1am while a sold item sits unboxed on the kitchen table — and answer them the way a friend who has already lost money on shipping would. No corporate fluff. Just the mechanics, the math, and the mistakes I made so you don't have to.</p>
-<p>Shipping on Depop looks simple until it isn't. The buyer pays, right? But then Depop takes 10% of that shipping too. And someone told you "free shipping gets you more sales," but nobody told you what that does to a $14 tee. So let's sit down at the desk and work through every letter in the pile.</p>
+<p class="page-lead">Welcome to <strong>The Shipping Desk</strong> — the column where the exact shipping questions real Depop sellers ask, the ones typed into Google at 1am while a sold item sits unboxed on the kitchen table, get answered the way a friend who's already lost money on shipping would. No corporate fluff, just mechanics, math, and the mistakes worth skipping.</p>
+<p>Shipping on Depop looks simple until it isn't. The buyer pays, right? Except Depop takes 10% of that shipping too. And somewhere along the way someone said "free shipping gets you more sales," but nobody mentioned what that does to a $14 tee's margin. So — pull up a chair, here's the whole pile of letters, worked through one at a time.</p>
 
-<div class="callout"><strong>How this column works:</strong> each section is a real question from a seller. I give you the one-sentence answer first (so you can grab it and go), then the full explanation, the math, and the fix. If a question links to a deeper guide, follow it — that's where the receipts live.</div>
+<div data-nosnippet>
+<div class="callout"><strong>How this column works:</strong> each section is a real question from a seller. The one-sentence answer comes first (grab it and go), then the full explanation, the math, and the fix. Where a question connects to a deeper guide, that link's included — that's where the receipts live.</div>
+</div>
 
 <h2>First, the mechanics: how Depop shipping actually works</h2>
-<p><strong>The short version:</strong> the buyer usually pays shipping at checkout; Depop either sells you a prepaid label in-app or lets you buy your own and upload tracking; and Depop's 10% fee applies to the shipping you charge, not just the item.</p>
-<p>Here's the flow in plain English. When you list an item, you choose a shipping option: a Depop prepaid label (weight-based), a custom shipping price you set, or "free shipping." At checkout the buyer pays the item price plus whatever shipping you set. If you used a Depop label, the label cost is deducted from your sale. If you set a custom price or free shipping, you're responsible for buying the label yourself out of your proceeds. (<a href="https://www.depop.com/help/" rel="noopener" target="_blank">Depop's official help</a> covers the current label options for your region.)</p>
-<p>The part almost everyone misses is the third bullet: <strong>shipping you charge is taxable by Depop.</strong> Which brings us to the first letter.</p>
+<p><strong>The short version:</strong> the buyer usually pays shipping at checkout; Depop either sells a prepaid label in-app or lets you buy your own and upload tracking; and Depop's 10% fee applies to whatever shipping gets charged, not just the item price.</p>
+<p>Here's the flow in plain English. Listing an item means choosing a shipping option: a Depop prepaid label (weight-based), a custom shipping price, or "free shipping." At checkout the buyer pays the item price plus whatever shipping was set. Using a Depop label means the label cost gets deducted from the sale automatically. Setting a custom price or free shipping means buying the label out of pocket, from the proceeds. (<a href="https://www.depop.com/help/" rel="noopener" target="_blank">Depop's official help</a> covers current label options by region.)</p>
+<p>The part almost everyone misses is that last bit: <strong>shipping charged is taxable by Depop.</strong> Which brings us straight to the first letter.</p>
+
+<p style="font-size:15px;font-weight:600;color:#F5B301;">Before the letters — plug in the actual numbers below to see what a specific item's label really costs and whether free shipping makes sense for it, instead of guessing from a table.</p>
+
+<div class="mini-calc">
+  <h3>SHIPPING COST CALCULATOR</h3>
+  <div class="sub">Free · no signup · weight-based estimate</div>
+  <div class="row2">
+    <div>
+      <label for="itemWeight">Package weight (oz)</label>
+      <input type="number" id="itemWeight" min="0" step="1" placeholder="8">
+    </div>
+    <div>
+      <label for="calcItemPrice">Item price ($)</label>
+      <input type="number" id="calcItemPrice" min="0" step="0.01" placeholder="15.00">
+    </div>
+  </div>
+  <div class="checkrow">
+    <input type="checkbox" id="freeShipToggle">
+    <label for="freeShipToggle" style="margin:0;font-weight:400;">Thinking about offering free shipping?</label>
+  </div>
+  <button onclick="calcShipping()">ESTIMATE MY LABEL COST</button>
+  <div class="calc-result" id="shipResult"></div>
+</div>
+<script>
+function estimateLabelRange(oz) {
+  if (oz <= 4) return [3.00, 3.80];
+  if (oz <= 8) return [3.70, 4.50];
+  if (oz <= 16) return [4.50, 5.30];
+  if (oz <= 32) return [5.50, 6.80];
+  if (oz <= 48) return [6.50, 8.00];
+  if (oz <= 80) return [8.00, 10.50];
+  const extraLb = Math.ceil((oz - 80) / 16);
+  return [10.50 + extraLb * 1.60, 10.50 + extraLb * 2.10];
+}
+function calcShipping() {
+  const oz = parseFloat(document.getElementById('itemWeight').value);
+  const price = parseFloat(document.getElementById('calcItemPrice').value) || 0;
+  const freeShip = document.getElementById('freeShipToggle').checked;
+  const resultBox = document.getElementById('shipResult');
+  if (!oz || oz <= 0) {
+    resultBox.innerHTML = "Enter the package weight in ounces to get an estimate.";
+    resultBox.classList.add('show');
+    return;
+  }
+  const [low, high] = estimateLabelRange(oz);
+  const mid = (low + high) / 2;
+  let html = `<strong>Estimated label cost:</strong> $${low.toFixed(2)} – $${high.toFixed(2)}<br>`;
+  if (price > 0) {
+    const pctOfPrice = ((mid / price) * 100).toFixed(0);
+    html += `That's roughly <strong>${pctOfPrice}%</strong> of the item price.<br>`;
+    if (freeShip) {
+      const sellingFee = price * 0.10;
+      const processing = (price * 0.029) + 0.30;
+      const netFree = price - sellingFee - processing - mid;
+      html += `<br><strong>If shipping is free:</strong> you keep roughly $${netFree.toFixed(2)} after fees and the label.<br>`;
+      html += pctOfPrice > 15
+        ? `<em>That label is eating a large slice of this sale — charging shipping instead is probably the safer call here.</em>`
+        : `<em>At this price point the label is a small enough bite that free shipping can genuinely help conversion.</em>`;
+    }
+  }
+  resultBox.innerHTML = html;
+  resultBox.classList.add('show');
+}
+</script>
 
 <h2>Letter #1 — "Does Depop take a cut of the shipping I charge?"</h2>
 <div class="letter">"I charge $6 shipping and the item is $30. Does Depop take 10% of the $30 or 10% of the $36? Because that changes what I actually make." <span class="who">— @VINTAGE.MARA, OHIO</span></div>
-<p><strong>Answer: the $36.</strong> Depop's 10% selling fee is calculated on the <em>total transaction amount</em>, which includes the shipping price you charge. So on a $30 item + $6 shipping, the fee is 10% of $36 = $3.60, not $3.00.</p>
-<p>That extra sixty cents feels trivial until you multiply it by every sale. If you do 40 sales a month averaging $8 shipping, that's ~$32 a month of fee-on-shipping you never budgeted for. This is exactly why I keep telling people to price shipping honestly and to run the whole sale — item, shipping, both fees — through the <a href="index.html#tool">calculator</a> before listing. (I broke down the full two-bite fee structure in <a href="depop-fees-explained.html">how much Depop takes from a sale</a>.)</p>
-<blockquote class="voice">"The first time I realized the 10% hit my shipping too, I re-priced my whole shop. That one fact paid for my label printer." — a seller in the desk inbox</blockquote>
+<p><strong>Answer: the $36.</strong> Depop's 10% selling fee is calculated on the <em>total transaction amount</em>, which includes the shipping price charged. So on a $30 item + $6 shipping, the fee is 10% of $36 = $3.60, not $3.00.</p>
+<p>That extra sixty cents feels trivial until it's multiplied across a whole month. At 40 sales averaging $8 shipping, that's roughly $32 a month of fee-on-shipping that rarely gets budgeted for. This is exactly why running the whole sale — item, shipping, both fees — through the <a href="index.html#tool">calculator</a> before listing matters more than it seems like it should. (The full two-bite fee structure is broken down in <a href="depop-fees-explained.html">how much Depop takes from a sale</a>.)</p>
 
 <h2>Letter #2 — "Who pays for shipping on Depop, me or the buyer?"</h2>
 <div class="letter">"Every platform is different. On Depop, when I sell something, who is actually supposed to pay the postage?" <span class="who">— @FIRSTFLIP.JAY, TEXAS</span></div>
-<p><strong>Answer: usually the buyer — unless you choose free shipping.</strong> By default, the buyer pays the shipping cost shown at checkout. If you toggle "free shipping," then <em>you</em> pay the label out of your margin. There is no Depop rule forcing you to pay; it's a pricing decision you make per listing.</p>
-<p>The confusion comes from <em>returns</em>, where the rules flip. On a "not as described" return, the seller typically covers return shipping; on a changed-mind return the buyer pays. That's a different conversation — I mapped it platform-by-platform in <a href="who-pays-return-shipping.html">who pays return shipping</a>, and the Depop-specific version in <a href="depop-fees-refunded.html">Depop refund fees</a>. For outbound shipping, though, remember: buyer pays unless you volunteer otherwise.</p>
+<p><strong>Answer: usually the buyer — unless free shipping gets chosen.</strong> By default, the buyer pays whatever shipping cost is shown at checkout. Toggling "free shipping" flips that — the label comes out of the seller's margin instead. There's no Depop rule forcing either choice; it's a per-listing pricing decision.</p>
+<p>The confusion usually comes from <em>returns</em>, where the rules flip again. On a "not as described" return, the seller typically covers return shipping; on a changed-mind return, the buyer pays. That's a different conversation, mapped platform-by-platform in <a href="platform-comparison-2026.html">the 2026 Reseller's Matrix</a>, with the Depop-specific version in <a href="depop-fees-refunded.html">Depop refund fees</a>. For outbound shipping though: buyer pays unless the seller volunteers otherwise.</p>
 
 <h2>Letter #3 — "Is free shipping worth it on Depop?"</h2>
 <div class="letter">"Everyone says free shipping makes items sell faster. But I sell $12-$18 tees. If I eat a $4 label, I'm basically working for free. What's the real play?" <span class="who">— @TEESTACK.LEO, FLORIDA</span></div>
-<p><strong>Answer: free shipping is a marketing cost, not a kindness — only buy it when the margin survives.</strong> Free shipping can lift visibility and conversion because buyers filter for it and hate surprise costs at checkout. But the label doesn't disappear; it just moves from the buyer's line item to your expenses.</p>
-<p>Run Leo's numbers. A $15 tee with a $4.20 label: Depop takes 10% of $15 = $1.50, plus ~$0.60 processing. If the buyer paid shipping, you'd keep ~$15 - $2.10 = $12.90 and the buyer covers the label. If you offer free shipping, you keep $12.90 - $4.20 = $8.70. You just paid $4.20 for the "privilege" of looking attractive in search. On a $15 tee that sourced for $4, your profit collapses. On a $90 jacket with a $6 label, the same trick costs you far less proportionally and may genuinely win the sale.</p>
-<p><strong>The fix:</strong> use free shipping selectively — on higher-priced items where the label is a small percentage — and on cheap items either charge shipping or bake a couple dollars into the price and call it "free." Never offer it blindly.</p>
+<p><strong>Answer: free shipping is a marketing cost, not a kindness — only worth it when the margin survives.</strong> Free shipping can lift visibility and conversion, since buyers filter for it and dislike surprise checkout costs. But the label doesn't disappear; it just moves from the buyer's line item into the seller's expenses.</p>
+<p>Run Leo's numbers through it. A $15 tee with a $4.20 label: Depop takes 10% of $15 = $1.50, plus ~$0.74 processing (2.9% + $0.30). If the buyer pays shipping, the seller keeps roughly $15 − $2.24 = $12.76, and the buyer covers the label separately. Offering free shipping instead means $12.76 − $4.20 = $8.56 kept — paying $4.20 just to look more attractive in search. On a $15 tee sourced for $4, that collapses the profit. On a $90 jacket with a $6 label, the same move costs far less proportionally and may genuinely win the sale.</p>
+<p><strong>The fix:</strong> use free shipping selectively — on higher-priced items where the label is a small percentage — and on cheap items, either charge shipping outright or bake a couple dollars into the price and call it "free." Never offer it blindly; run the number first, the way the calculator above does.</p>
 
 <h2>Letter #4 — "How much is a Depop shipping label, really?"</h2>
 <div class="letter">"The app shows me a label price but I don't know if it's fair. What should a label actually cost by weight so I know I'm not getting ripped off?" <span class="who">— @CLOSETFLIPS.ANA, CALIFORNIA</span></div>
-<p><strong>Answer: labels scale with weight and service; light clothing is a few dollars, heavy parcels climb fast.</strong> Here's a ballpark matrix for US ground services so you can sanity-check whatever the app quotes. (Rates shift — verify against current carrier pricing, but the <em>shape</em> of this table never changes.)</p>
+<p><strong>Answer: labels scale with weight and service; light clothing is a few dollars, heavy parcels climb fast.</strong> Here's a ballpark matrix for US ground services to sanity-check whatever the app quotes. (Rates shift — verify against current carrier pricing, but the <em>shape</em> of this table stays consistent.)</p>
 <table class="data-table">
 <thead><tr><th>Package weight</th><th>Typical ground label (ballpark)</th><th>What fits</th></tr></thead>
 <tbody>
@@ -94,16 +189,16 @@ blockquote.voice{border-left:3px solid #F5B301;margin:18px 0;padding:8px 16px;fo
 <tr><td>5 lb</td><td>~$8.00 – $10.50</td><td>boots, multiple items</td></tr>
 </tbody>
 </table>
-<p>Two takeaways. First, <strong>weigh your item before listing</strong> — guessing "about a pound" and being wrong by 8 oz is the difference between profit and break-even on small sales. Second, the label is a <em>flat tax</em>: it hurts a $12 sale far more than a $90 sale. This is the single biggest reason cheap items quietly lose money. (If you want the full leak math, the <a href="index.html#tool">calculator</a> itemizes it.)</p>
+<p>Two takeaways worth remembering. First, <strong>weigh the item before listing</strong> — guessing "about a pound" and being wrong by 8 oz is the difference between profit and break-even on small sales. Second, the label is a <em>flat tax</em>: it hurts a $12 sale far more than a $90 one. This is the single biggest reason cheap items quietly lose money — use the calculator above to check any specific listing.</p>
 
 <h2>Letter #5 — "Can I use my own label instead of Depop's?"</h2>
 <div class="letter">"The in-app label is convenient but I found cheaper rates on a third-party site. Am I allowed to buy my own label and still sell on Depop?" <span class="who">— @LABELHACK.RUI, NEW JERSEY</span></div>
-<p><strong>Answer: yes — buy your own label and just upload the tracking number.</strong> Depop doesn't force you to use its label. You can purchase a cheaper label from any carrier or discount service, ship the item, and manually enter the tracking number in the app.</p>
-<p>One critical warning, and it's the same one I give in the <a href="depop-scams-seller-protection.html">scams & seller protection guide</a>: <strong>always upload the tracking.</strong> If you ship on your own label and never enter the tracking, Depop has no proof of delivery — and if the buyer claims "item never arrived," you lose the case and the money. Convenience is nice; protection is non-negotiable.</p>
+<p><strong>Answer: yes — buy the label independently and just upload the tracking number.</strong> Depop doesn't force in-app labels. A cheaper label from any carrier or discount service works fine, ship the item, and enter the tracking number manually in the app.</p>
+<p>One critical warning: <strong>always upload the tracking.</strong> Shipping on an outside label and never entering the tracking number means Depop has no proof of delivery — and if the buyer claims "item never arrived," that dispute is essentially unwinnable without it. Convenience is nice; protection is non-negotiable.</p>
 
 <h2>Letter #6 — "How do I pack clothes so they don't come back 'damaged'?"</h2>
 <div class="letter">"I had a buyer claim a hoodie arrived wet and stained and I lost the dispute. How do people pack so this never happens to them?" <span class="who">— @SECONDHAND.SAM, OREGON</span></div>
-<p><strong>Answer: pack for the worst day the postal system can have, and document everything.</strong> Most "damaged in transit" losses are preventable with a boring, repeatable routine. Here's the checklist I wish someone had handed me in year one:</p>
+<p><strong>Answer: pack for the worst day the postal system can have, and document everything.</strong> Most "damaged in transit" losses are preventable with a boring, repeatable routine — here's the checklist worth keeping taped near the packing station:</p>
 <div class="checklist">
 <h3>THE PACK-IT-LIKE-A-PRO CHECKLIST</h3>
 <ul>
@@ -112,59 +207,117 @@ blockquote.voice{border-left:3px solid #F5B301;margin:18px 0;padding:8px 16px;fo
 <li>For fragile or structured items, add a cardboard stiffener or bubble wrap.</li>
 <li>Seal securely; reinforce edges with tape on boxes.</li>
 <li>Include a small thank-you note — it genuinely reduces bad ratings and remorse returns.</li>
-<li>Photograph the item folded AND inside the mailer before sealing (your dispute evidence).</li>
+<li><strong>Photograph the item folded AND inside the mailer before sealing</strong> (dispute evidence).</li>
 <li>Weigh the final package and buy the correct label weight.</li>
 </ul>
 </div>
-<p>That last photo step is the one that wins disputes. When a buyer claims damage, your pre-seal photo showing a clean, dry, well-packed item is the difference between a refund and a win. (See the <a href="depop-scams-seller-protection.html">Evidence Locker</a> for the full system.)</p>
+<p>That photo step is the one that actually wins disputes. When a buyer claims damage, a pre-seal photo showing a clean, dry, well-packed item is usually the difference between a refund and a win.</p>
 
 <h2>Letter #7 — "Does Depop ship internationally — and is it worth it?"</h2>
 <div class="letter">"I keep getting messages from buyers in other countries. Should I ship internationally or is that a scam magnet?" <span class="who">— @GLOBALTHRIFT.KIM, WASHINGTON</span></div>
-<p><strong>Answer: Depop supports international sales, but you'll usually use your own label plus a customs form — and you should price for the risk.</strong> International orders expand your audience, but they add cost, longer transit, customs paperwork, and higher "never arrived" anxiety. If you do it: use tracked service only, fill the customs form accurately (declare real value), and price shipping honestly rather than eating it.</p>
-<p>My honest take: master domestic first. International is a growth lever for established shops with margin to absorb the occasional lost parcel — not a beginner move.</p>
+<p><strong>Answer: Depop supports international sales, but a third-party label plus a customs form is usually needed — and the risk should be priced in.</strong> International orders expand the buyer pool, but add cost, longer transit, customs paperwork, and higher "never arrived" anxiety. Doing it well means tracked service only, an accurately filled customs form (declaring real value), and pricing shipping honestly rather than absorbing it.</p>
+<p>The honest take: master domestic first. International works best as a growth lever for shops with enough margin to absorb the occasional lost parcel — not something to start with.</p>
 
 <h2>Letter #8 — "What if my item is over 5 lbs or bulky?"</h2>
 <div class="letter">"I sell vintage coats and boots. Some packages hit 6-8 lbs and the label price shocks me. How do heavy sellers survive?" <span class="who">— @HEAVYROT.DEE, MICHIGAN</span></div>
-<p><strong>Answer: for heavy items, abandon prepaid convenience and shop your own label rates.</strong> Once you cross ~5 lbs, in-app label pricing often stops being competitive. Compare carrier and discount-service rates, consider slower ground tiers, and <em>charge the buyer accurate shipping</em> instead of offering free. A $120 coat can absorb a $10 label; just make sure the buyer sees it at checkout or your price reflects it.</p>
+<p><strong>Answer: for heavy items, skip prepaid convenience and shop around for actual carrier rates.</strong> Past roughly 5 lbs, in-app label pricing often stops being competitive. Comparing carrier and discount-service rates, considering slower ground tiers, and <em>charging accurate shipping</em> instead of offering free tends to be the difference between profit and a wasted sale. A $120 coat can absorb a $10 label; the buyer just needs to see it clearly at checkout, or the price needs to reflect it upfront.</p>
 
 <h2>The Shipping Desk decision flowchart</h2>
-<p>When you're standing there with the item in hand, use this. It's the whole column compressed into ten seconds:</p>
+<p>Standing there with the item in hand, this is the whole column compressed into ten seconds:</p>
 <div class="flow">
 <b>IF</b> item &lt; 1 lb (tees, light layers) <b>→</b> poly mailer, ground label, charge shipping or bake $3-4 into price.<br>
-<b>IF</b> 1–5 lb <b>→</b> compare in-app label vs your own rate; upload tracking either way.<br>
-<b>IF</b> &gt; 5 lb / bulky <b>→</b> buy your own label, charge accurate shipping, no free shipping.<br>
-<b>IF</b> item &gt; $80 <b>→</b> free shipping is affordable marketing; consider it.<br>
-<b>IF</b> item &lt; $20 <b>→</b> never free shipping; the label is your whole margin.<br>
+<b>IF</b> 1–5 lb <b>→</b> compare in-app label vs independent rate; upload tracking either way.<br>
+<b>IF</b> &gt; 5 lb / bulky <b>→</b> buy an independent label, charge accurate shipping, no free shipping.<br>
+<b>IF</b> item &gt; $80 <b>→</b> free shipping is affordable marketing; worth considering.<br>
+<b>IF</b> item &lt; $20 <b>→</b> never free shipping; the label is most of the margin.<br>
 <b>ALWAYS</b> → weigh, photograph before sealing, upload tracking.
 </div>
 
-<h2>The mistakes that cost me (so they don't cost you)</h2>
-<p>I'll close the desk with my own confessions, because that's the point of this column. I once offered free shipping on a $14 tee "to be competitive" and made $3.10 after fees and the label — less than minimum wage for the packing time. I once guessed a jacket was "about a pound" and it was 1 lb 9 oz, and the label upgrade ate the profit. And I once shipped without entering tracking because I was tired, and when the buyer claimed it never arrived, I had nothing. Every single one of those was avoidable with the checklist above. Shipping isn't glamorous, but it's where small sellers quietly win or lose their month.</p>
+<h2>The mistakes that cost the most (so they don't repeat)</h2>
+<p>Closing the desk with a few honest observations, since that's really the point of this column. Free shipping on a $14 tee "to be competitive" often results in take-home of $3.10 after fees and the label — well under minimum wage for the packing time involved. Guessing "about a pound" when the package is actually 1 lb 9 oz means the label upgrade quietly eats the entire profit. Shipping without uploading tracking means when a buyer claims it never arrived, there's nothing to point to. Every one of those is avoidable with the checklist above. Shipping isn't glamorous, but it's exactly where small sellers quietly win or lose their month.</p>
 
-<h2>Conclusion: price the shipping or eat the shipping — your choice</h2>
-<p>Depop shipping is simple on the surface and sneaky underneath: the buyer usually pays, Depop taxes the shipping you charge, free shipping is a marketing cost, and the label is a flat tax that punishes cheap items. Weigh it, price it, photograph it, track it. Do those four things and shipping stops being a leak and becomes just another line you control.</p>
-<p><strong>While you're here:</strong> the shipping story connects to everything else on this site. Read <a href="depop-fees-explained.html">how much Depop takes</a> to see the fee-on-shipping in context, <a href="depop-fees-refunded.html">Depop refund fees</a> for the return-shipping flip, and <a href="depop-payout-time.html">when Depop pays</a> to understand when the label cost comes back out of your balance. Then run your own numbers in the <a href="index.html#tool">calculator</a>.</p>
+<h2>Conclusion: price the shipping or eat the shipping — the choice is real</h2>
+<p>Depop shipping looks simple on the surface and gets sneaky underneath: the buyer usually pays, Depop taxes whatever shipping gets charged, free shipping is a marketing cost dressed up as generosity, and the label is a flat tax that punishes cheap items hardest. Weigh it, price it, photograph it, track it. Do those four things and shipping stops being a leak and becomes just another line that's fully under control.</p>
 
-<div class="cta-box"><h3 style="margin-top:0">Know your true margin before you print the label.</h3>
+<h2>Sources & Official Policy Pages</h2>
+<p class="sources">Figures verified against official Depop help center articles (August 2026): <em>Shipping on Depop</em>, <em>Depop fees</em>, and <em>How to ship your sold items</em>. See the full list at <a href="sources.html">our sources page</a>. Label costs vary by carrier and change over time — always confirm current rates before pricing.</p>
+
+<p><strong>While here:</strong> the shipping story connects to everything else on this site. <a href="depop-fees-explained.html">How much Depop takes</a> shows the fee-on-shipping in context, <a href="depop-fees-refunded.html">Depop refund fees</a> covers the return-shipping flip, and <a href="depop-payout-time.html">when Depop pays</a> explains when the label cost comes back out of the balance. Then run the real numbers in the <a href="index.html#tool">calculator</a>.</p>
+
+<div class="cta-box"><h3 style="margin-top:0">Know the true margin before printing the label.</h3>
 <p style="margin-bottom:14px">Free. No signup. Itemized like a receipt.</p>
 <a class="btn-primary" href="index.html#tool">CALCULATE MY TRUE PROFIT</a></div>
 
 <h2>FAQ</h2>
 <dl>
 <dt>Does Depop take a cut of the shipping I charge?</dt><dd>Yes — the 10% fee applies to item + shipping.</dd>
-<dt>Who pays for shipping on Depop?</dt><dd>Usually the buyer; you pay only if you offer free shipping.</dd>
-<dt>Does Depop provide shipping labels?</dt><dd>Yes, in-app prepaid labels, or use your own and upload tracking.</dd>
+<dt>Who pays for shipping on Depop?</dt><dd>Usually the buyer; the seller pays only if free shipping is offered.</dd>
+<dt>Does Depop provide shipping labels?</dt><dd>Yes, in-app prepaid labels, or an independent label with the tracking uploaded.</dd>
 <dt>How much is a Depop shipping label?</dt><dd>Weight-based; light clothing ~$3-$5, heavy parcels $8-$10+.</dd>
 <dt>Is free shipping worth it on Depop?</dt><dd>Only when the margin survives; it's a marketing cost, not a kindness.</dd>
-<dt>Can I use my own shipping label on Depop?</dt><dd>Yes — just always upload the tracking number.</dd>
-<dt>Does Depop ship internationally?</dt><dd>Yes, typically via your own label plus a customs form; price for the risk.</dd>
+<dt>Can I use my own shipping label on Depop?</dt><dd>Yes — always upload the tracking number.</dd>
+<dt>Does Depop ship internationally?</dt><dd>Yes, typically via an independent label plus a customs form; price for the risk.</dd>
 </dl>
 </article></main>
 
 <footer class="site-foot"><div class="foot-inner">
-<div class="foot-brand"><div class="brand small">CLAW<span class="slash">BACK</span></div><p>The forced-return loss calculator for resellers.</p></div>
-<nav class="foot-col" aria-label="Guides"><h3>More</h3><ul><li><a href="depop-fees-explained.html">Depop fees explained</a></li><li><a href="depop-fees-refunded.html">Depop refund fees</a></li><li><a href="guides.html">Guides</a></li></ul></nav>
+<div class="foot-brand"><div class="brand small">CLAW<span class="slash">BACK</span></div><p>The forced-return loss calculator for resellers. Know your number before you appeal.</p></div>
+<nav class="foot-col" aria-label="Platforms"><h3>Platforms</h3><ul><li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li><li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li></ul></nav>
+<nav class="foot-col" aria-label="Guides"><h3>Guides</h3><ul><li><a href="guides.html">All guides</a></li><li><a href="guides.html#dispute">Win a return dispute</a></li><li><a href="guides.html#taxes">Tax write-offs</a></li></ul></nav>
 <nav class="foot-col" aria-label="Company"><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
-</div><div class="foot-legal"><p class="verified">Rates change — verify on the official Depop help page.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with Depop.</p></div></footer>
+<nav class="foot-col" aria-label="Resources"><h3>Resources</h3><ul><li><a href="index.html#faq">FAQ</a></li><li><a href="sources.html">Sources</a></li><li><a href="sitemap.html">Sitemap</a></li></ul></nav>
+</div><div class="foot-legal"><p class="verified">Shipping rates change — verify on the official Depop help page. Last updated: <strong>August 23, 2026</strong>.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with Depop.</p></div></footer>
 <script src="nav.js"></script>
-</body></html>
+
+<script>
+CookieConsent.run({
+  guiOptions: {
+    consentModal: {
+      layout: "box",
+      position: "bottom right",
+      equalWeightButtons: true,
+      flipButtons: false
+    },
+    preferencesModal: {
+      layout: "box",
+      position: "right",
+      equalWeightButtons: true,
+      flipButtons: false
+    }
+  },
+  categories: {
+    necessary: { enabled: true, readOnly: true },
+    analytics: { enabled: false, readOnly: false },
+    advertising: { enabled: false, readOnly: false }
+  },
+  language: {
+    default: "en",
+    autoDetect: "browser",
+    translations: {
+      en: {
+        consentModal: {
+          title: "We use cookies",
+          description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
+          acceptAllBtn: "Accept all",
+          acceptNecessaryBtn: "Reject all",
+          showPreferencesBtn: "Manage preferences"
+        },
+        preferencesModal: {
+          title: "Cookie preferences",
+          acceptAllBtn: "Accept all",
+          acceptNecessaryBtn: "Reject all",
+          savePreferencesBtn: "Save preferences",
+          sections: [
+            { title: "Necessary cookies", description: "These cookies are required for the site to function.", linkedCategory: "necessary" },
+            { title: "Analytics cookies", description: "Help us understand how visitors use our site (Google Analytics).", linkedCategory: "analytics" },
+            { title: "Advertising cookies", description: "Used to show relevant ads (Google AdSense, when enabled).", linkedCategory: "advertising" }
+          ]
+        }
+      }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
