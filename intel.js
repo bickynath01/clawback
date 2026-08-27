@@ -23,7 +23,19 @@ const INTEL = {
     'When you refund via Depop Payments, ALL fees (selling, processing, boosting) are reversed automatically.',
     'So a Depop return\u2019s real cost is the item\u2019s value + any return shipping, not fees.',
     'US buyers get a prepaid return label; returns must ship within 7 days of being agreed.'],
-    example:'A $30 tee returned damaged, now worth $10 = <b>$20.00</b> lost — fees fully reversed.'}
+    example:'A $30 tee returned damaged, now worth $10 = <b>$20.00</b> lost — fees fully reversed.'},
+  whatnot:{title:'Whatnot',bullets:[
+    'Commission is 8% on the item price (4% for Coins & Money and Pallets). Eligible categories get 0% on the portion above $1,500.',
+    'The TRAP: payment processing is 2.9% + $0.30 on the GROSS order value — item + buyer shipping + buyer tax — money you never pocket.',
+    'The $0.30 fixed fee is charged PER CHECKOUT, so a 5-item bundle from 5 separate bids costs you 5 × $0.30 = $1.50.',
+    'Carrier weight clawbacks are deducted days after your stream when USPS/UPS re-weighs your package and finds it heavier than you guessed.'],
+    example:'A $100 card with $8 buyer shipping + $5 tax + $4.50 weight clawback = <b>$12.73</b> in hidden fees. Advertised 8%, real take 12.7%.'},
+  vinted:{title:'Vinted',bullets:[
+    '$0 seller fees. No commission, no processing, no listing fee. You keep 100% of your listed price.',
+    'The BUYER pays the platform: $0.70 + 5% Buyer Protection fee plus the prepaid shipping label.',
+    'Returns are handled inside the app; the seller typically pays $0 in return shipping on approved claims.',
+    'Optional paid boosts (Item Boost, Wardrobe Spotlight) are the only seller cost — and they\u2019re purely promotional.'],
+    example:'A $50 item sold on Vinted = you keep <b>$50.00</b>. On Poshmark, the same item leaves you with $40. Vinted is your anchor.'}
 };
 function renderIntel(){
   const active = document.querySelector('.platform-btn.active');
