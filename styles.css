@@ -384,8 +384,8 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
 .page-body::after,
 .prose::before,
 .prose::after,
-article::before,
-article::after {
+.article::before,
+.article::after {
   color: #F5B301 !important;
   border-color: #F5B301 !important;
   background: rgba(14, 59, 44, .95) !important;
@@ -395,3 +395,33 @@ article::after {
   filter: none !important;
   pointer-events: none !important;
 }
+
+/* ============ CLAWBACK v2 PATCH (Whatnot + Vinted additions) ============ */
+:root{--maxw:1280px;}
+.workbench{grid-template-columns:minmax(0,1fr) 470px;gap:28px;align-items:stretch;}
+.panel{height:100%;}
+.platforms{display:grid;grid-template-columns:repeat(3,1fr);}
+.platform-btn{min-width:0;}
+.receipt-wrap{background:linear-gradient(180deg,rgba(0,0,0,.20),rgba(0,0,0,.12));border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:16px;}
+.receipt{max-width:100%;margin:0;transform:rotate(-.4deg);}
+.chart-wrap,.actions,.ad-slot{max-width:100%;margin-left:0;margin-right:0;}
+.wn-fields{border-left:4px solid var(--red);background:rgba(212,64,42,.10);padding:14px 14px 4px;border-radius:0 10px 10px 0;margin:4px 0 14px;}
+.wn-head{font-family:var(--display);font-size:11px;letter-spacing:.14em;color:var(--red);margin:0 0 10px;}
+.wn-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px;}
+.vinted-note{border-left:4px solid var(--green);background:rgba(46,139,87,.12);padding:12px 14px;border-radius:0 10px 10px 0;margin:4px 0 14px;font-family:var(--mono);font-size:12px;color:#BFE6CF;line-height:1.6;}
+.matrix-sec{max-width:var(--maxw);margin:0 auto 46px;padding:0 24px;}
+.matrix-title{font-family:var(--display);font-size:18px;letter-spacing:.12em;color:var(--yellow);margin:0 0 14px;}
+.matrix-card{background:linear-gradient(180deg,var(--desk-2),#0f3f31);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px;overflow-x:auto;}
+.matrix{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12.5px;color:#DCE9DF;}
+.matrix th{font-size:10.5px;letter-spacing:.12em;color:var(--yellow);text-align:left;padding:8px 10px;border-bottom:2px solid rgba(245,179,1,.35);text-transform:uppercase;}
+.matrix td{padding:10px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top;}
+.matrix tr:last-child td{border-bottom:none;}
+.matrix .keep,.matrix .zero{color:var(--green);font-weight:700;}
+.tri-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;}
+.tri-card{background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px;}
+.tri-card h3{font-family:var(--display);font-size:11px;letter-spacing:.14em;color:var(--yellow);margin:0 0 8px;}
+.tri-card p{margin:0;font-size:13px;color:#BFD6C8;line-height:1.6;}
+@media(max-width:980px){.workbench{grid-template-columns:1fr;}.tri-cards{grid-template-columns:1fr;}}
+@media(max-width:520px){.platforms{grid-template-columns:1fr 1fr;}.wn-grid{grid-template-columns:1fr;}}
+.wn-hint{font-family:var(--mono);font-size:11px;color:#E8B4A8;margin:0 0 10px;}
+.wn-label-field{grid-column:1 / -1;}
