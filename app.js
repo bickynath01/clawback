@@ -1,17 +1,14 @@
 /* ============================================================
-   CLAWBACK — app.js  (STEP 4B: COMPLETE)
-   Adds: loss-breakdown donut chart + hover-sync, appeal letter,
-   tax line, shareable link (auto-fills from a shared URL),
-   Print / Save-PDF, and the photo-evidence checklist.
-   This file fully replaces the Step 4A version.
+   CLAWBACK — app.js  (STEP 7: SHIPPING LABEL FIELD ADDED)
    ============================================================ */
 
-/* ---- verified Aug-2026 numbers (safety net for local/offline use) ---- */
 const FALLBACK_FEES = {
   ebay:{label:"eBay",finalValuePct:13.6,finalValuePctOver7500:2.35,flatFee:0,flatFeeUnder:0,perOrderFee:0.40,perOrderFeeLow:0.30,perOrderThreshold:10,processingPct:0,processingFixed:0,disputeFee:20,refund:{finalValue:true,perOrder:false,processing:true},"_note":"eBay US 2026: 13.6% final value fee on most categories (books 15.3%, cards/coins 13.25%); per-order fee $0.30 (≤$10) / $0.40 (>$10); no separate processing fee. Whether fees come back depends on the reason — use the 'what happened' selector."},
   poshmark:{label:"Poshmark",finalValuePct:20,flatFee:2.95,flatFeeUnder:15,perOrderFee:0,processingPct:0,processingFixed:0,refund:{finalValue:true,perOrder:false,processing:true},"_note":"Poshmark 2026: 20% commission ($2.95 flat under $15); commission reversed on an approved return and a prepaid label is provided, so your real loss is the item's value if it comes back damaged. Fit/change-of-mind returns go through Seel and cost you nothing."},
   mercari:{label:"Mercari",finalValuePct:10,flatFee:0,flatFeeUnder:0,perOrderFee:0,processingPct:0,processingFixed:0,refund:{finalValue:true,perOrder:false,processing:true},"_note":"Mercari US 2026: 10% selling fee (back since Jan 2025), no seller processing fee. Prepaid return label is free up to 50 lbs — OVER 50 lbs YOU pay the return label. Your real losses = item value + heavy-item shipping."},
-  depop:{label:"Depop",finalValuePct:0,flatFee:0,flatFeeUnder:0,perOrderFee:0,processingPct:3.3,processingFixed:0.45,refund:{finalValue:true,perOrder:false,processing:true},"_note":"Depop US 2026: no selling fee; processing 3.3% + $0.45. ALL fees are auto-refunded when you refund via Depop Payments — so your real loss is the item's value + return shipping, not fees."}
+  depop:{label:"Depop",finalValuePct:0,flatFee:0,flatFeeUnder:0,perOrderFee:0,processingPct:3.3,processingFixed:0.45,refund:{finalValue:true,perOrder:false,processing:true},"_note":"Depop US 2026: no selling fee; processing 3.3% + $0.45. ALL fees are auto-refunded when you refund via Depop Payments — so your real loss is the item's value + return shipping, not fees."},
+  whatnot:{label:"Whatnot",finalValuePct:8,flatFee:0,flatFeeUnder:0,perOrderFee:0,processingPct:2.9,processingFixed:0.30,processingBase:"gross_order_value",separateCheckoutFixedFee:true,highValueCap:{enabled:true,threshold:1500},categories:{std:{label:"Comics / TCG / Toys / Bags / Jewelry — 8% (cap $1,500)",commissionPct:8,capEligible:true},coins:{label:"Coins & Money — 4% (cap $1,500)",commissionPct:4,capEligible:true},pallets:{label:"Pallets — 4% (no cap)",commissionPct:4,capEligible:false},other:{label:"All other categories — 8% (no cap)",commissionPct:8,capEligible:false}},refund:{finalValue:true,perOrder:false,processing:true},"_note":"Whatnot US 2026: 8% commission on the item's final sale price (4% Coins & Money, 4% Pallets) with 0% on the portion above $1,500 in eligible categories (limited-time promo). Payment processing is 2.9% + $0.30 on the TOTAL order value — item + buyer shipping + buyer sales tax — money you never pocket. Carrier re-weigh adjustments are clawed back days after the stream, and the $0.30 fixed fee is charged per CHECKOUT, so bundled multi-checkout orders pay it every time."},
+  vinted:{label:"Vinted",finalValuePct:0,flatFee:0,flatFeeUnder:0,perOrderFee:0,processingPct:0,processingFixed:0,buyerProtectionPct:5,buyerProtectionFixed:0.70,refund:{finalValue:true,perOrder:false,processing:true},"_note":"Vinted US 2026: $0 seller fees — no commission, no processing, no listing fee. You keep 100% of your listed price. The BUYER pays $0.70 + 5% protection and the prepaid shipping label. Optional paid boosts are the only seller cost. On returns there is no seller return fee — your only risk is the item's value drop, which is exactly what CLAWBACK measures."}
 };
 
 let FEES = FALLBACK_FEES;
@@ -36,6 +33,9 @@ function setPlatform(p){
   document.querySelectorAll('.platform-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
   btn.classList.add('active'); btn.setAttribute('aria-pressed','true');
   currentPlatform = p; setNote();
+  const wnFields = $('wnFields');   if(wnFields)   wnFields.hidden   = (p !== 'whatnot');
+  const vNote    = $('vintedNote'); if(vNote)      vNote.hidden      = (p !== 'vinted');
+  syncReturnFields();
 }
 document.querySelectorAll('.platform-btn').forEach(btn => {
   btn.addEventListener('click', () => setPlatform(btn.dataset.platform));
@@ -43,11 +43,22 @@ document.querySelectorAll('.platform-btn').forEach(btn => {
 });
 
 /* ---------- conditional fields ---------- */
-function syncCondition(){ $('valueRow').style.display = $('condition').value === 'same' ? 'none' : 'block'; }
-function syncPayer(){ const p = $('returnPayer').value; $('returnCostRow').style.display = (p === 'me' || p === 'platform') ? 'block' : 'none'; }
+function syncCondition(){ const vr=$('valueRow'); if(vr) vr.style.display = $('condition').value === 'same' ? 'none' : ''; }
+function syncPayer(){ const p = $('returnPayer').value; const rc=$('returnCostRow'); if(rc) rc.style.display = (p === 'me' || p === 'platform') ? '' : 'none'; }
+/* NEW: hide the whole return block for Whatnot & Vinted (they are payout audits / anchors, not return cases) */
+function syncReturnFields(){
+  const special = (currentPlatform === 'whatnot' || currentPlatform === 'vinted');
+  ['outcome','returnPayer','condition'].forEach(id => {
+    const el = $(id); if(el){ const f = el.closest('.field'); if(f) f.style.display = special ? 'none' : ''; }
+  });
+  if(special){
+    const rc=$('returnCostRow'); if(rc) rc.style.display='none';
+    const vr=$('valueRow'); if(vr) vr.style.display='none';
+  } else { syncCondition(); syncPayer(); }
+}
 $('condition').addEventListener('change', syncCondition);
 $('returnPayer').addEventListener('change', syncPayer);
-syncCondition(); syncPayer(); setNote();
+syncCondition(); syncPayer(); syncReturnFields(); setNote();
 
 /* ---------- feedback ---------- */
 function flag(el){
@@ -58,7 +69,7 @@ function flag(el){
   setTimeout(() => { el.style.borderColor = ''; el.style.boxShadow = ''; }, 950);
 }
 
-/* ---------- calculate (with a short "crunching" beat) ---------- */
+/* ---------- calculate ---------- */
 $('calcBtn').addEventListener('click', () => {
   const sale = parseFloat($('salePrice').value);
   if(!sale || sale <= 0){ flag($('salePrice')); return; }
@@ -71,6 +82,10 @@ $('calcBtn').addEventListener('click', () => {
 function compute(){
   const sale = parseFloat($('salePrice').value);
   const fee = FEES[currentPlatform];
+
+  if(currentPlatform === 'whatnot'){ computeWhatnot(sale, fee); return; }
+  if(currentPlatform === 'vinted'){ computeVinted(sale, fee); return; }
+
   const outcome = $('outcome').value;
   const payer = $('returnPayer').value;
   const returnCost = (payer === 'me' || payer === 'platform') ? (parseFloat($('returnCost').value) || 0) : 0;
@@ -134,7 +149,64 @@ function compute(){
   buildShareLink();
 }
 
-/* ---------- the receipt ---------- */
+/* ---------- Whatnot payout audit (sale price is the only required input) ---------- */
+function computeWhatnot(sale, fee){
+  const cat  = $('wnCategory') ? $('wnCategory').value : 'std';
+  const ship = parseFloat($('wnShip').value) || 0;
+  const tax  = parseFloat($('wnTax').value) || 0;
+  const claw = parseFloat($('wnClaw').value) || 0;
+  const chk  = Math.max(1, Math.round(parseFloat($('wnCheckouts').value) || 1));
+  const label = parseFloat($('wnLabel').value) || 0;
+
+  const catData = fee.categories[cat] || fee.categories.std;
+  const rate = catData.commissionPct / 100;
+  const capped = catData.capEligible && fee.highValueCap.enabled;
+  const commission = (capped && sale > fee.highValueCap.threshold) ? fee.highValueCap.threshold * rate : sale * rate;
+
+  const gross = sale + ship + tax;
+  const processing = gross > 0 ? (gross * (fee.processingPct / 100)) + (fee.processingFixed * chk) : 0;
+
+  const platformTake = commission + processing + claw;
+  const totalCost = platformTake + label;
+  const keep = sale - totalCost;
+  const bite = sale > 0 ? (totalCost / sale) * 100 : 0;
+  const platformBite = sale > 0 ? (platformTake / sale) * 100 : 0;
+
+  const lines = [
+    {label:'HAMMER SALE', amount:'+' + money(sale), cls:'info', cat:''},
+    {label:'COMMISSION (' + Math.round(rate * 100) + '%)', amount:'-' + money(commission), cls:'loss', cat:'fees'},
+    {label:'PROCESSING ON GROSS (' + chk + '× $0.30)', amount:'-' + money(processing), cls:'loss', cat:'fees'},
+    {label:'WEIGHT CLAWBACKS', amount:'-' + money(claw), cls:'loss', cat:'fees'}
+  ];
+  if(label > 0) lines.push({label:'YOUR SHIPPING LABEL', amount:'-' + money(label), cls:'loss', cat:'shipping'});
+
+  lastResult = { sale, feesLost: platformTake, returnCost: label, valueLost: 0, total: totalCost, condition:'same', outcome:'inad', platform:fee.label, lines };
+  renderWhatnotReceipt(lastResult, platformBite, bite, keep, label);
+  renderChart(lastResult);
+  $('actions').style.display = 'flex';
+  updateLetter(lastResult);
+  updateEvidence(lastResult);
+  buildShareLink();
+}
+
+/* ---------- Vinted anchor (keep 100%) ---------- */
+function computeVinted(sale, fee){
+  const buyerPays = fee.buyerProtectionFixed + (sale * (fee.buyerProtectionPct / 100));
+  const lines = [
+    {label:'LISTED PRICE', amount:'+' + money(sale), cls:'info', cat:''},
+    {label:'SELLING FEE', amount:'$0.00', cls:'ok', cat:'fees'},
+    {label:'PROCESSING FEE', amount:'$0.00', cls:'ok', cat:'fees'}
+  ];
+  lastResult = { sale, feesLost: 0, returnCost: 0, valueLost: 0, total: 0, condition:'same', outcome:'remorse', platform:fee.label, lines };
+  renderVintedReceipt(lastResult, buyerPays);
+  renderChart(lastResult);
+  $('actions').style.display = 'flex';
+  updateLetter(lastResult);
+  updateEvidence(lastResult);
+  buildShareLink();
+}
+
+/* ---------- the receipt (standard) ---------- */
 function renderReceipt(r){
   const rec = $('receipt'); rec.innerHTML = '';
   rec.insertAdjacentHTML('beforeend',
@@ -159,7 +231,58 @@ function renderReceipt(r){
   }, after + 480);
 }
 
-/* ---------- the loss-breakdown donut chart ---------- */
+function renderWhatnotReceipt(r, platformBite, totalBite, keep, label){
+  const rec = $('receipt'); rec.innerHTML = '';
+  rec.insertAdjacentHTML('beforeend',
+    `<div class="r-head"><div class="r-brand">CLAWBACK</div><div class="r-sub">WHATNOT PAYOUT AUDIT</div>` +
+    `<div class="r-meta">${r.platform} · ${new Date().toLocaleDateString()}</div></div><div class="r-rule"></div>`);
+  const body = document.createElement('div'); rec.appendChild(body);
+  r.lines.forEach((ln, i) => {
+    setTimeout(() => {
+      body.insertAdjacentHTML('beforeend',
+        `<div class="r-line ${ln.cls}" data-cat="${ln.cat}"><span class="r-label">${ln.label}</span><span class="r-dots"></span><span class="r-amt">${ln.amount}</span></div>`);
+    }, 140 + i * 150);
+  });
+  const after = 140 + r.lines.length * 150 + 220;
+  setTimeout(() => {
+    let biteLabel = label > 0
+      ? `PLATFORM TAKE ${platformBite.toFixed(1)}% · WITH LABEL ${totalBite.toFixed(1)}%`
+      : `ADVERTISED 8% → REAL TAKE ${platformBite.toFixed(1)}%`;
+    rec.insertAdjacentHTML('beforeend',
+      `<div class="r-rule"></div><div class="r-total"><span>YOU KEEP</span><span id="totalAmt" style="color:${keep > 0 ? 'var(--green)' : 'var(--red)'}">${money(keep)}</span></div>` +
+      `<div class="r-line hl"><span class="r-label">${biteLabel}</span><span class="r-dots"></span><span class="r-amt">${totalBite.toFixed(1)}%</span></div>` +
+      `<div class="r-barcode"></div>`);
+  }, after);
+  setTimeout(() => {
+    rec.insertAdjacentHTML('beforeend', `<div class="stamp appeal">CLAWED ${totalBite.toFixed(1)}%</div>`);
+  }, after + 480);
+}
+
+function renderVintedReceipt(r, buyerPays){
+  const rec = $('receipt'); rec.innerHTML = '';
+  rec.insertAdjacentHTML('beforeend',
+    `<div class="r-head"><div class="r-brand">CLAWBACK</div><div class="r-sub">VINTED STATEMENT</div>` +
+    `<div class="r-meta">${r.platform} · ${new Date().toLocaleDateString()}</div></div><div class="r-rule"></div>`);
+  const body = document.createElement('div'); rec.appendChild(body);
+  r.lines.forEach((ln, i) => {
+    setTimeout(() => {
+      body.insertAdjacentHTML('beforeend',
+        `<div class="r-line ${ln.cls}" data-cat="${ln.cat}"><span class="r-label">${ln.label}</span><span class="r-dots"></span><span class="r-amt">${ln.amount}</span></div>`);
+    }, 140 + i * 150);
+  });
+  const after = 140 + r.lines.length * 150 + 220;
+  setTimeout(() => {
+    rec.insertAdjacentHTML('beforeend',
+      `<div class="r-rule"></div><div class="r-total"><span>YOU KEEP</span><span id="totalAmt" style="color:var(--green)">${money(r.sale)}</span></div>` +
+      `<div class="r-line info"><span class="r-label">BUYER PAYS ON TOP</span><span class="r-dots"></span><span class="r-amt">${money(buyerPays)} + shipping</span></div>` +
+      `<div class="r-barcode"></div>`);
+  }, after);
+  setTimeout(() => {
+    rec.insertAdjacentHTML('beforeend', `<div class="stamp writeoff">KEEP 100%</div>`);
+  }, after + 480);
+}
+
+/* ---------- donut chart ---------- */
 function renderChart(r){
   const wrap = $('chartWrap'); wrap.style.display = 'block';
   if(r.total < 0.01){
@@ -197,7 +320,7 @@ function renderChart(r){
   });
 }
 
-/* ---------- hover-sync: chart slice <-> legend <-> receipt line ---------- */
+/* ---------- hover-sync ---------- */
 function hl(cat, on){
   document.querySelectorAll('.seg').forEach(s => { s.classList.toggle('dim', on && s.dataset.cat !== cat); s.classList.toggle('hot', on && s.dataset.cat === cat); });
   document.querySelectorAll('.lg-row').forEach(rw => rw.classList.toggle('hot', on && rw.dataset.cat === cat));
@@ -232,7 +355,7 @@ Thank you for your time,
   $('taxLine').value = `CLAWBACK loss | ${r.platform} | ${new Date().toISOString().slice(0,10)} | total ${money(r.total)} | fees ${money(r.feesLost)} | return shipping ${money(r.returnCost)} | value drop ${money(r.valueLost)} | reason: ${r.outcome} | for tax records`;
 }
 
-/* ---------- photo-evidence checklist (platform + damage aware) ---------- */
+/* ---------- evidence checklist ---------- */
 function updateEvidence(r){
   const base = [
     'Screenshot of your original listing — title, price, the condition you stated, and all photos.',
@@ -250,25 +373,38 @@ function updateEvidence(r){
     ebay:'Keep every message inside eBay Messages (not email or text) and open or respond to the case within the stated window.',
     poshmark:'File within 3 days of delivery and upload JPGs — Poshmark rejects HEIC photos.',
     mercari:'Respond to any request and submit photos within 24 hours, or the case can close against you.',
-    depop:'Raise the issue within 30 days and upload clear, well-lit images that show how the item differs.'
+    depop:'Raise the issue within 30 days and upload clear, well-lit images that show how the item differs.',
+    whatnot:'Save your stream recording and the order receipt — Whatnot receipts show every fee line, including weight adjustments.',
+    vinted:'Keep all communication inside Vinted chat and photograph the item before dropping it at the parcel shop.'
   }[currentPlatform];
   const all = [...base]; if(cond) all.push(cond); if(plat) all.push(plat);
   $('evidenceList').innerHTML = all.map(t => `<li>${t}</li>`).join('');
 }
 
-/* ---------- shareable result link (encodes the inputs) ---------- */
+/* ---------- shareable link ---------- */
 function buildShareLink(){
   const p = new URLSearchParams();
   p.set('p', currentPlatform);
   p.set('s', $('salePrice').value);
-  p.set('o', $('outcome').value);
-  p.set('rp', $('returnPayer').value);
-  if($('returnCost').value) p.set('rc', $('returnCost').value);
-  p.set('c', $('condition').value);
-  if($('currentValue').value && $('condition').value !== 'same') p.set('cv', $('currentValue').value);
+  const special = (currentPlatform === 'whatnot' || currentPlatform === 'vinted');
+  if(!special){
+    p.set('o', $('outcome').value);
+    p.set('rp', $('returnPayer').value);
+    if($('returnCost').value) p.set('rc', $('returnCost').value);
+    p.set('c', $('condition').value);
+    if($('currentValue').value && $('condition').value !== 'same') p.set('cv', $('currentValue').value);
+  }
+  if(currentPlatform === 'whatnot'){
+    if($('wnCategory').value) p.set('wnc', $('wnCategory').value);
+    if($('wnShip').value) p.set('wns', $('wnShip').value);
+    if($('wnTax').value) p.set('wnt', $('wnTax').value);
+    if($('wnClaw').value) p.set('wncl', $('wnClaw').value);
+    if($('wnCheckouts').value) p.set('wnchk', $('wnCheckouts').value);
+    if($('wnLabel').value) p.set('wnl', $('wnLabel').value);
+  }
   const base = (location.protocol === 'http:' || location.protocol === 'https:')
     ? (location.origin + location.pathname)
-    : 'https://clawback.vercel.app/';   // sensible default while testing locally
+    : 'https://clawback.vercel.app/';
   $('shareLink').value = base + '?' + p.toString();
 }
 
@@ -282,7 +418,7 @@ document.querySelectorAll('.action-btn[data-copy]').forEach(btn =>
   btn.addEventListener('click', () => copyText($(btn.dataset.copy).value || '', btn)));
 $('shareBtn').addEventListener('click', () => copyText($('shareLink').value || '', $('shareBtn'), 'COPY SHAREABLE LINK'));
 
-/* ---------- Print / Save-as-PDF button (injected) + print styling ---------- */
+/* ---------- print ---------- */
 function injectPrintStyles(){
   const css = `@media print{
     body{background:#fff!important;color:#000!important;}
@@ -323,7 +459,7 @@ function countUp(el, target, dur){
   })(start);
 }
 
-/* ---------- rebuild a result from a shared link ---------- */
+/* ---------- rebuild from shared link ---------- */
 (function loadFromShare(){
   const q = new URLSearchParams(location.search);
   if(!q.has('s')) return;
@@ -334,6 +470,14 @@ function countUp(el, target, dur){
   if(q.get('rc')) $('returnCost').value = q.get('rc');
   if(q.get('c'))  $('condition').value = q.get('c');
   if(q.get('cv')) $('currentValue').value = q.get('cv');
-  syncCondition(); syncPayer();
+  if(q.get('p') === 'whatnot'){
+    if(q.get('wnc')) $('wnCategory').value = q.get('wnc');
+    if(q.get('wns')) $('wnShip').value = q.get('wns');
+    if(q.get('wnt')) $('wnTax').value = q.get('wnt');
+    if(q.get('wncl')) $('wnClaw').value = q.get('wncl');
+    if(q.get('wnchk')) $('wnCheckouts').value = q.get('wnchk');
+    if(q.get('wnl')) $('wnLabel').value = q.get('wnl');
+  }
+  syncCondition(); syncPayer(); syncReturnFields();
   setTimeout(() => { if(parseFloat($('salePrice').value) > 0) compute(); }, 350);
 })();
