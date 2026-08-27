@@ -2,8 +2,8 @@
   "_meta": {
     "lastVerified": "2026-08",
     "currency": "USD",
-    "scope": "US sellers, full returns where the item comes back (partial refunds are v2)",
-    "_note": "Keys beginning with _ are NOTES for the owner and are NEVER shown or used in math. Edit the numbers here when a platform changes fees; re-check quarterly. The 'refund' object is the DEFAULT/conservative policy; the calculator's 'what happened' selector overrides it for eBay."
+    "scope": "US sellers, full returns where the item comes back. Includes eBay, Poshmark, Mercari, Depop, Whatnot, and Vinted. Partial refunds are v2.",
+    "_note": "Keys beginning with _ are NOTES for the owner and are NEVER shown or used in math. Edit the numbers here when a platform changes fees; re-check quarterly."
   },
 
   "ebay": {
@@ -19,7 +19,7 @@
     "processingFixed": 0,
     "disputeFee": 20,
     "refund": { "finalValue": true, "perOrder": false, "processing": true },
-    "_note": "eBay US 2026: 13.6% final value fee on MOST categories (books 15.3%, trading cards/coins 13.25%) on the part up to $7,500, then 2.35%. Per-order fee is $0.30 for orders of $10 or less and $0.40 above $10 — the calculator computes this from the sale price, no extra field. There is NO separate payment-processing fee (it's bundled). On a return the fee CREDIT depends on the reason: a buyer-remorse refund (changed mind / doesn't fit) credits everything INCLUDING the per-order fee; a 'not as described / damaged / wrong item' refund credits the 13.6% but KEEPS the per-order fee; if eBay stepped in and ruled against you, or you refunded outside eBay, you get NO credit at all. The 'what happened' selector drives this. The $20 dispute fee applies to chargebacks you lose — surfaced in the note/FAQ, not the core math."
+    "_note": "eBay US 2026: 13.6% final value fee on MOST categories (books 15.3%, trading cards/coins 13.25%) on the part up to $7,500, then 2.35%. Per-order fee is $0.30 for orders of $10 or less and $0.40 above $10."
   },
 
   "poshmark": {
@@ -31,7 +31,7 @@
     "processingPct": 0,
     "processingFixed": 0,
     "refund": { "finalValue": true, "perOrder": false, "processing": true },
-    "_note": "Poshmark 2026: 20% commission on sales of $15+, or a flat $2.95 under $15; buyer pays $6.49 flat shipping; no recurring fees. On an approved 'not as described' return your commission is reversed and Poshmark gives a prepaid return label, so you usually pay $0 in fees and $0 in return shipping — your real loss is the ITEM'S VALUE if it comes back worn/damaged. Fit / change-of-mind returns now run through Seel (Worry-Free Returns): Seel refunds the buyer, the item goes to Seel's warehouse, and you KEEP your earnings — those cost you nothing. Overweight label upgrades (5–10 lbs $5, 10–15 lbs $15) are deducted from earnings when YOU ship out, not on returns. Texas sellers pay an extra ~8.25% tax on the commission (since Oct 2025), also reversed on a return — note only, not modeled."
+    "_note": "Poshmark 2026: 20% commission on sales of $15+, or a flat $2.95 under $15; buyer pays $6.49 flat shipping; no recurring fees."
   },
 
   "mercari": {
@@ -43,7 +43,7 @@
     "processingPct": 0,
     "processingFixed": 0,
     "refund": { "finalValue": true, "perOrder": false, "processing": true },
-    "_note": "Mercari US 2026: the selling fee is BACK — 10% of (item price + buyer-paid shipping) for listings created/updated on or after Jan 6, 2025. There is NO separate seller payment-processing fee (the 3.6% buyer-protection fee is on the BUYER). On an approved return under 50 lbs Mercari hands the buyer a prepaid return label, so you pay $0 return shipping; OVER 50 lbs (or over the size limit) YOU must provide and pay the return label within 3 days or the order is canceled — that is your Mercari shipping-loss line. The 10% selling fee is typically reversed on an approved return (sale reversed = fee reversed); if your real case differs, the 'what did the platform refund' fallback still protects the math. Cancellation fee (5%, max $25) and $3 Instant Pay are not return losses — ignored."
+    "_note": "Mercari US 2026: 10% selling fee (back since Jan 6, 2025). There is NO separate seller payment-processing fee."
   },
 
   "depop": {
@@ -55,6 +55,60 @@
     "processingPct": 3.3,
     "processingFixed": 0.45,
     "refund": { "finalValue": true, "perOrder": false, "processing": true },
-    "_note": "Depop US 2026: NO selling fee for US/UK/AUS sellers. Payment processing is 3.3% + $0.45 via Depop Payments (Stripe), charged on price + shipping + tax. Crucially, when you refund a buyer via Depop Payments, ALL fees (selling, processing, boosting) are reversed automatically — so on a return your fee loss is normally $0, and your real loss is the ITEM'S VALUE plus any return shipping. (PayPal sellers outside UK/US/AUS must raise a support ticket to recover the selling fee.) Boosted listings carry a 12% boosting fee (new listings from 23 Mar 2026), also refunded on a refund — note only. US buyers get a prepaid return label; buyers outside the US arrange their own tracked return, reimbursed up to $20; returns must ship within 7 days of being agreed."
+    "_note": "Depop US 2026: NO selling fee for US/UK/AUS sellers. Payment processing is 3.3% + $0.45 via Depop Payments (Stripe)."
+  },
+
+  "whatnot": {
+    "label": "Whatnot",
+    "finalValuePct": 8,
+    "flatFee": 0,
+    "flatFeeUnder": 0,
+    "perOrderFee": 0,
+    "processingPct": 2.9,
+    "processingFixed": 0.30,
+    "processingBase": "gross_order_value",
+    "separateCheckoutFixedFee": true,
+    "highValueCap": {
+      "enabled": true,
+      "threshold": 1500
+    },
+    "categories": {
+      "std": {
+        "label": "Comics / TCG / Toys / Bags / Jewelry — 8% (cap $1,500)",
+        "commissionPct": 8,
+        "capEligible": true
+      },
+      "coins": {
+        "label": "Coins & Money — 4% (cap $1,500)",
+        "commissionPct": 4,
+        "capEligible": true
+      },
+      "pallets": {
+        "label": "Pallets — 4% (no cap)",
+        "commissionPct": 4,
+        "capEligible": false
+      },
+      "other": {
+        "label": "All other categories — 8% (no cap)",
+        "commissionPct": 8,
+        "capEligible": false
+      }
+    },
+    "refund": { "finalValue": true, "perOrder": false, "processing": true },
+    "_note": "Whatnot US 2026: 8% commission (4% Coins & Money, 4% Pallets). Payment processing is 2.9% + $0.30 on gross order value (item + shipping + tax). The $0.30 fixed fee is charged per CHECKOUT. High-value promo: 0% commission on portion above $1,500 in eligible categories."
+  },
+
+  "vinted": {
+    "label": "Vinted",
+    "finalValuePct": 0,
+    "flatFee": 0,
+    "flatFeeUnder": 0,
+    "perOrderFee": 0,
+    "processingPct": 0,
+    "processingFixed": 0,
+    "buyerProtectionPct": 5,
+    "buyerProtectionFixed": 0.70,
+    "refund": { "finalValue": true, "perOrder": false, "processing": true },
+    "_note": "Vinted US 2026: $0 seller fees. Buyer pays $0.70 + 5% protection fee plus shipping."
   }
 }
