@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8">
+<link rel="preload" href="https://fonts.gstatic.com/s/archivo/v19/k3kCo84MPvpLmixcA63oeAL7Iq5O3A.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/spacemono/v14/i7dPIFZifjKcF5UAWdDRYEF8RQ.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
 <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
 <script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
@@ -11,18 +13,17 @@
   gtag('config', 'G-CPRC739GBN');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Depop Payout Tracker: See Exactly When Your Money Clears (2026)</title>
-<meta name="description" content="Enter your delivery date to see the exact calendar day your Depop payout hits your bank — weekend delays and new-seller holds included.">
+<title>When Do You Get Paid on Depop? The 2-10 Day Rule + Payout Calculator (2026)</title>
+<meta name="description" content="When do you get paid on Depop? Tracking says delivered but no money? Depop pays 2-10 working days after delivery (21-30 days for new sellers). Free payout calculator shows your exact deposit date.">
 <link rel="canonical" href="https://www.gotclawback.com/depop-payout-time.html">
 
-<!-- Open Graph / Social Sharing -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="Depop Payout Tracker: See Exactly When Your Money Clears">
-<meta property="og:description" content="Enter your delivery date to see the exact calendar day your Depop payout hits your bank — weekend delays and new-seller holds included.">
+<meta property="og:title" content="When Do You Get Paid on Depop? The 2-10 Day Rule + Free Calculator">
+<meta property="og:description" content="Tracking says delivered but no money? Depop pays 2-10 working days after delivery. Free payout calculator shows your exact deposit date.">
 <meta property="og:url" content="https://www.gotclawback.com/depop-payout-time.html">
 <meta property="og:site_name" content="CLAWBACK">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Depop Payout Tracker: See Exactly When Your Money Clears">
+<meta name="twitter:title" content="When Do You Get Paid on Depop? The 2-10 Day Rule + Free Calculator">
 <meta name="twitter:description" content="Free Depop payout tracker: enter your delivery date, get your real deposit window. No signup.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +32,7 @@
 <style>
 .timeline{background:#FAF7F0;color:#282828;border:1px dashed #999;padding:20px;margin:24px 0;box-shadow:0 6px 18px rgba(0,0,0,.3);}
 .timeline h3{font-family:'Archivo Black';margin:0 0 12px;color:#0E3B2C;text-align:center;letter-spacing:1px;}
-.timeline .step{display:flex;gap:14px;margin-bottom:14px;font-size:14px;line-height:1.5;}
+.timeline .step{display:flex;gap:14px;margin-bottom:14px;font-size:14px;line-height:1.5;padding:10px;border-radius:4px;background:rgba(255,255,255,0.4);}
 .timeline .day{flex-shrink:0;width:60px;font-family:'Space Mono',monospace;font-weight:700;color:#C43C2C;}
 .timeline .event{flex:1;}
 table.data-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;}
@@ -45,7 +46,20 @@ table.data-table th{background:rgba(0,0,0,.06);}
 .sources{font-size:13px;line-height:1.8;margin-top:24px;}
 .sources a{color:#F5B301;}
 
-/* Mini Payout Tracker */
+/* Featured Answer Box */
+.featured-answer{background:linear-gradient(135deg,#F5B301 0%,#E8A800 100%);color:#0E3B2C;padding:24px;margin:0 0 32px;border-left:6px solid #0E3B2C;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+.featured-answer h2{margin:0 0 16px;font-size:20px;font-family:'Archivo Black',sans-serif;text-transform:uppercase;letter-spacing:0.5px;}
+.featured-answer p{margin:0 0 12px;font-size:17px;line-height:1.7;font-weight:600;}
+.featured-answer ul{margin:8px 0 0 20px;font-size:15px;line-height:1.8;font-weight:500;}
+.featured-answer .calculator-note{margin:16px 0 0;font-size:14px;font-style:italic;opacity:0.9;}
+
+/* Quick Stats Row */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin:24px 0;}
+.stat-card{background:rgba(250,247,240,.08);border:1px solid rgba(245,179,1,.3);padding:14px;text-align:center;border-radius:4px;}
+.stat-card .num{font-family:'Archivo Black',sans-serif;font-size:24px;color:#F5B301;display:block;}
+.stat-card .label{font-family:'Space Mono',monospace;font-size:11px;color:rgba(250,247,240,.7);letter-spacing:1px;text-transform:uppercase;margin-top:4px;}
+
+/* Payout Tracker */
 .payout-tracker{background:#0E3B2C;border:1px solid #F5B301;padding:22px;margin:28px 0;max-width:480px;box-shadow:0 8px 24px rgba(0,0,0,.35);}
 .payout-tracker h3{font-family:'Archivo Black';color:#F5B301;margin:0 0 4px;font-size:18px;letter-spacing:.5px;}
 .payout-tracker .pt-sub{font-size:13px;color:rgba(250,247,240,.7);margin:0 0 18px;line-height:1.5;}
@@ -63,16 +77,24 @@ table.data-table th{background:rgba(0,0,0,.06);}
 .pt-result .line.latest strong{color:#F5B301;}
 .pt-result .note{font-size:12px;color:rgba(250,247,240,.6);margin-top:10px;font-style:italic;line-height:1.5;}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"When Do I Get Paid on Depop? Payout Times, Holds & Delays Explained","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-14","dateModified":"2026-08-23"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"When Do You Get Paid on Depop? The 2-10 Day Rule + Payout Calculator","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-14","dateModified":"2026-08-27"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"When do I get paid on Depop?","acceptedAnswer":{"@type":"Answer","text":"Depop typically releases funds to your bank account 2 to 10 working days after the buyer receives the item and tracking shows as delivered."}},
+{"@type":"Question","name":"When do you get paid on Depop?","acceptedAnswer":{"@type":"Answer","text":"Depop pays you 2 to 10 working days after tracking shows Delivered. New sellers face holds of 21 to 30 calendar days. Bank transfers add 1 to 3 business days on top."}},
+{"@type":"Question","name":"When do I get paid from Depop?","acceptedAnswer":{"@type":"Answer","text":"You get paid from Depop 2 to 10 working days after delivery for established sellers, or 21 to 30 days for new sellers. The clock starts the moment tracking shows Delivered, not when you ship."}},
+{"@type":"Question","name":"How long after delivery does Depop pay?","acceptedAnswer":{"@type":"Answer","text":"Depop pays 2 to 10 working days after delivery. Established sellers typically see funds available in 4 to 14 days total (including bank transfer). New sellers wait 25 to 35 days total."}},
 {"@type":"Question","name":"Why is my Depop payout delayed?","acceptedAnswer":{"@type":"Answer","text":"Common reasons for Depop payout delays include missing tracking numbers, the buyer opening a dispute, sudden spikes in your sales volume, or being a brand-new seller subject to initial security holds."}},
 {"@type":"Question","name":"How long does Depop hold funds for new sellers?","acceptedAnswer":{"@type":"Answer","text":"For brand-new accounts, Depop may hold funds for up to 21 to 30 days to establish a selling history and prevent fraud. This hold lifts automatically as you build positive feedback."}},
-{"@type":"Question","name":"Does Depop pay on weekends?","acceptedAnswer":{"@type":"Answer","text":"No. Depop bank transfers are processed on standard banking working days (Monday through Friday, excluding bank holidays)."}},
-{"@type":"Question","name":"What time of day does Depop pay out?","acceptedAnswer":{"@type":"Answer","text":"Depop doesn't publish an exact time, but many sellers report payouts hitting their bank account between 9am and 12pm local time on standard banking days. Weekend and holiday payouts are delayed until the next business day."}},
+{"@type":"Question","name":"Does Depop pay on weekends?","acceptedAnswer":{"@type":"Answer","text":"No. Depop bank transfers are processed on standard banking working days (Monday through Friday, excluding bank holidays). Weekend payouts are delayed until the next business day."}},
+{"@type":"Question","name":"What time does Depop release funds?","acceptedAnswer":{"@type":"Answer","text":"Depop doesn't publish an exact time, but many sellers report payouts hitting their bank account between 9am and 12pm local time on standard banking days."}},
 {"@type":"Question","name":"Does Depop release funds immediately after delivery?","acceptedAnswer":{"@type":"Answer","text":"No. Depop holds funds in escrow for 2 to 10 working days after delivery to protect buyers from not-as-described disputes. Funds are never released immediately, even for established sellers."}},
 {"@type":"Question","name":"Why does Depop take so long to pay sellers?","acceptedAnswer":{"@type":"Answer","text":"Depop uses an escrow system to protect buyers. They hold your money until the buyer has had time to inspect the item and confirm it matches the listing. Banking network delays (ACH in the US, BACS in the UK) add another 1 to 3 business days."}},
-{"@type":"Question","name":"How long does a Depop withdrawal take?","acceptedAnswer":{"@type":"Answer","text":"Once funds are released to your available balance, the withdrawal to your bank account typically takes 1 to 3 business days depending on your bank's processing times. Depop initiates the transfer within 24 hours of your withdrawal request."}}]}</script>
+{"@type":"Question","name":"How long does it take for my Depop balance to be available?","acceptedAnswer":{"@type":"Answer","text":"Your Depop balance moves from Pending to Available 2 to 10 working days after delivery for established sellers. Once Available, you can withdraw to your bank (1 to 3 additional business days). If still Pending after 10 days, verify tracking shows Delivered and no disputes are open."}},
+{"@type":"Question","name":"How long does a Depop withdrawal take?","acceptedAnswer":{"@type":"Answer","text":"Once funds are released to your available balance, the withdrawal to your bank account typically takes 1 to 3 business days depending on your bank's processing times."}},
+{"@type":"Question","name":"How do I check my Depop payout status?","acceptedAnswer":{"@type":"Answer","text":"Open the Depop app, tap your profile icon, then tap your balance. You'll see Available (ready to withdraw) and Pending (still in the holding period). If funds are pending, the countdown timer shows how many days remain."}},
+{"@type":"Question","name":"Can I get paid faster on Depop?","acceptedAnswer":{"@type":"Answer","text":"You can't bypass Depop's 2-10 day holding period, but you can avoid delays by uploading tracking immediately, shipping within 24 hours, and messaging buyers on delivery day to encourage quick ratings."}},
+{"@type":"Question","name":"Does Depop hold money longer for expensive items?","acceptedAnswer":{"@type":"Answer","text":"Depop doesn't officially publish item-value-based holds, but sellers report that transactions over $500 sometimes trigger additional security reviews. These typically resolve within 3 to 5 business days once Depop verifies the item matches the listing."}},
+{"@type":"Question","name":"Why is my Depop balance negative?","acceptedAnswer":{"@type":"Answer","text":"A negative Depop balance usually means you issued a refund that exceeded your available funds. Depop charges the refund to your linked top-up card, but if that fails, your balance goes negative. You must resolve this before withdrawing future earnings."}}
+]}</script>
 </head><body>
 <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>THE TRACKING SAYS DELIVERED ★ SO WHERE IS THE MONEY? ★&nbsp;</span><span>THE TRACKING SAYS DELIVERED ★ SO WHERE IS THE MONEY? ★&nbsp;</span></div></div>
 <header class="site-head"><div class="head-inner">
@@ -83,10 +105,30 @@ table.data-table th{background:rgba(0,0,0,.06);}
 </div></header>
 
 <main class="page-body"><article class="prose">
-<span class="verified-badge">✓ SOURCED FROM DEPOP HELP CENTER · VERIFIED AUGUST 23, 2026</span>
-<h1 class="page-title">Depop Payout Tracker: When Your Money Actually Clears</h1>
-<p class="page-lead">You did everything right. You photographed the jacket, priced it carefully (after figuring out <a href="depop-fees-explained.html">exactly what Depop takes in 2026</a>), packed it securely, and dropped it in the mail. The tracking just updated to "Delivered." You open your Depop app expecting to see that cash sitting in your balance, ready to be withdrawn. But it's not there. Or worse — it says "Pending" and the Withdraw button is greyed out. You refresh. Refresh again. Still nothing.</p>
-<p>If you've ever sat there asking <strong>"when does Depop actually pay me?"</strong> or <strong>"is my money stuck?"</strong> — you're not crazy, and you're not alone. This is the single most frustrating part of Depop for resellers. The official rules are buried in help pages, and the payout timelines feel completely random until you understand the clock behind them. This is the plain-English guide to exactly when your money hits your bank, plus a live tracker so you can stop refreshing and start planning.</p>
+<span class="verified-badge">✓ SOURCED FROM DEPOP HELP CENTER · VERIFIED AUGUST 27, 2026</span>
+<h1 class="page-title">When Do You Get Paid on Depop? The 2-10 Day Rule Explained</h1>
+
+<div class="featured-answer">
+<h2>Quick Answer: When Do You Get Paid on Depop?</h2>
+<p>Depop pays you <strong>2 to 10 working days after delivery</strong> (once tracking shows "Delivered"). New sellers face holds of <strong>21 to 30 calendar days</strong>. Bank transfers add 1-3 business days on top.</p>
+<p><strong>Total timeline:</strong></p>
+<ul>
+<li><strong>Established sellers:</strong> 4-14 days from delivery to bank</li>
+<li><strong>New sellers:</strong> 25-35 days from delivery to bank</li>
+</ul>
+<p class="calculator-note">↓ Use the calculator below to see your exact payout date based on your delivery date.</p>
+</div>
+
+<div class="stats-row">
+<div class="stat-card"><span class="num">2-10</span><span class="label">Working days hold</span></div>
+<div class="stat-card"><span class="num">21-30</span><span class="label">New seller hold</span></div>
+<div class="stat-card"><span class="num">1-3</span><span class="label">Bank transfer days</span></div>
+<div class="stat-card"><span class="num">~$0</span><span class="label">Weekend payouts</span></div>
+</div>
+
+<p class="page-lead">You did everything right. You photographed the jacket, priced it carefully (after figuring out <a href="depop-fees-explained.html">exactly what Depop takes in 2026</a>), packed it securely, and dropped it in the mail. The tracking just updated to "Delivered." You open your Depop app expecting to see that cash sitting in your balance, ready to be withdrawn. But it's not there. Or worse — it says "Pending" and the Withdraw button is greyed out.</p>
+
+<p>If you've ever sat there asking <strong>"when do I get paid from Depop?"</strong> or <strong>"is my money stuck?"</strong> — you're not crazy, and you're not alone. This is the single most frustrating part of Depop for resellers. The official rules are buried in help pages, and the payout timelines feel completely random until you understand the clock behind them. This is the plain-English guide to exactly when your money hits your bank, plus a live tracker so you can stop refreshing and start planning.</p>
 
 <p style="font-size:15px;font-weight:600;color:#F5B301;">That's the general rule — but your exact payout date depends on whether you're a new seller, if your delivery landed on a weekend, and how your bank processes transfers. Enter your details below to see your real calendar window.</p>
 
@@ -116,60 +158,88 @@ table.data-table th{background:rgba(0,0,0,.06);}
 <div class="callout"><strong>The short answer:</strong> For established sellers, Depop releases funds <strong>2 to 10 working days</strong> after the tracking shows "Delivered." For brand-new sellers, funds can be held for <strong>up to 21 to 30 days</strong> while Depop verifies your account. Bank transfers then take an additional 1 to 3 business days to clear.</div>
 </div>
 
-<h2>The Anatomy of a Depop Payout: Day by Day</h2>
+<h2>How Long Does It Take for Depop to Pay You?</h2>
 <p>To understand when you get paid, you have to understand that Depop doesn't release the money the second the buyer clicks "Buy." They hold it in escrow to protect the buyer. Here is the exact timeline of a standard Depop payout:</p>
 
 <div class="timeline">
-<h3>THE STANDARD PAYOUT TIMELINE</h3>
-<div class="step"><span class="day">DAY 1</span><div class="event"><strong>The Sale.</strong> The buyer pays. Depop takes their money and holds it securely. You see a "Sold" notification, but the funds are <em>pending</em>.</div></div>
-<div class="step"><span class="day">DAY 2-4</span><div class="event"><strong>The Shipping Window.</strong> You pack and ship the item. Once you buy your shipping label or upload the tracking number, Depop knows the item is actually moving.</div></div>
-<div class="step"><span class="day">DAY 5-7</span><div class="event"><strong>Delivery.</strong> The carrier scans the package as "Delivered." This is the trigger event. The clock for your payout officially starts here.</div></div>
-<div class="step"><span class="day">DAY 7-10</span><div class="event"><strong>The Release.</strong> Depop waits a few days after delivery to ensure the buyer doesn't open a "Not As Described" dispute. If all is quiet, the funds are released to your available balance.</div></div>
-<div class="step"><span class="day">DAY 11+</span><div class="event"><strong>Bank Transfer.</strong> You click withdraw. The money moves from Depop to your bank account, taking 1 to 3 business days depending on your bank.</div></div>
+<h3>THE STANDARD DEPOP PAYOUT TIMELINE (14 DAYS)</h3>
+<div class="step"><span class="day">DAY 1</span><div class="event"><strong>💰 Sale Confirmed</strong><br>The buyer pays. Depop holds funds in escrow. Your balance shows "Pending."</div></div>
+<div class="step"><span class="day">DAY 2-4</span><div class="event"><strong>📦 Ship the Item</strong><br>You pack and ship. Once tracking is uploaded to Depop, the clock can officially start.</div></div>
+<div class="step"><span class="day">DAY 5-7</span><div class="event"><strong>✅ Tracking Shows "Delivered"</strong><br>This is the trigger event. The 2-10 working day countdown officially begins here.</div></div>
+<div class="step"><span class="day">DAY 7-17</span><div class="event"><strong>⏳ Holding Period</strong><br>Depop waits to ensure no "Not As Described" disputes. Established sellers: 2-10 days. New sellers: 21-30 days.</div></div>
+<div class="step"><span class="day">DAY 17-20</span><div class="event"><strong>🏦 Bank Transfer</strong><br>Funds move to "Available." You click "Withdraw." ACH/BACS takes 1-3 business days.</div></div>
+<div class="step" style="background:#1E7A5A;color:#FAF7F0;"><span class="day" style="color:#FAF7F0;">DAY 21</span><div class="event"><strong>💵 Money in Your Bank Account</strong><br>Finally! The payout clears. Total time: ~3 weeks for most established sellers.</div></div>
 </div>
 
-<h2>What Time of Day Does Depop Pay Out?</h2>
+<h2>How Long After Delivery Does Depop Pay?</h2>
+<p>The clock starts the <strong>moment your tracking shows "Delivered"</strong> — not when you ship, not when the buyer confirms receipt. Here's what happens next, day by day:</p>
+
+<table class="data-table">
+<thead><tr><th>Days After Delivery</th><th>What's Happening</th><th>Your Balance Status</th></tr></thead>
+<tbody>
+<tr><td><strong>Day 1-2</strong></td><td>Depop confirms delivery scan</td><td>Pending (greyed out)</td></tr>
+<tr><td><strong>Day 2-10</strong></td><td>Escrow holding period (established sellers)</td><td>Pending</td></tr>
+<tr><td><strong>Day 10-17</strong></td><td>Funds release to "Available" balance</td><td>✅ Available to withdraw</td></tr>
+<tr><td><strong>Day 17-20</strong></td><td>Bank transfer (ACH/BACS processing)</td><td>Money in transit</td></tr>
+<tr><td><strong>Day 20+</strong></td><td>Money hits your bank account</td><td>✅ In your bank</td></tr>
+</tbody>
+</table>
+
+<div class="callout green">
+<strong>Pro tip:</strong> If it's been more than 10 working days after delivery and your funds are still "Pending," check these 4 things:
+<ol style="margin:8px 0 0 20px;font-size:14px;line-height:1.8;">
+<li>Did you upload the tracking number to Depop?</li>
+<li>Is the tracking showing "Delivered" (not just "In Transit")?</li>
+<li>Did the buyer open a dispute or return request?</li>
+<li>Are you a new seller still in the 21-30 day hold period?</li>
+</ol>
+</div>
+
+<h2>What Time Does Depop Release Funds?</h2>
 <p>This is one of the most common questions in Depop seller communities: <em>"What time does Depop pay out today?"</em> The honest answer is that Depop doesn't publish an exact time. However, many sellers report payouts hitting their bank accounts between <strong>9am and 12pm local time</strong> on standard banking days.</p>
 <p>If your funds are released on a Friday afternoon, the actual bank transfer might not initiate until Monday morning, meaning you won't see the money until Tuesday or Wednesday. Depop payouts are processed through standard banking networks (ACH in the US, BACS in the UK), which <strong>do not operate on weekends or bank holidays</strong>. Always calculate your cash flow around business days, not calendar days.</p>
 
-<h2>Does Depop Release Funds Immediately After Delivery?</h2>
+<h2>When Will Depop Pay Me? (Does Depop Pay Immediately After Delivery?)</h2>
 <p>No. Depop <strong>never</strong> releases funds immediately, even for established sellers with thousands of 5-star reviews. The platform operates on an escrow system, which means your money is held in a secure vault until the buyer has had adequate time to inspect the item. The minimum waiting period is 2 working days after delivery, even in the best-case scenario.</p>
 <p>If you were hoping to list an item, sell it, and withdraw the cash the same day — Depop is not that platform. If you need instant payouts, you're better off selling on eBay (for established sellers) or using local marketplaces like Facebook Marketplace.</p>
 
-<h2>Why is my Depop payout delayed? (The 4 Red Flags)</h2>
+<h2>Why Is My Depop Payout Delayed? (The 4 Red Flags)</h2>
 <p>If it's been over 10 days since delivery and your Depop funds are still pending or on hold, one of these four things is happening. Don't panic — most of these are automatic security measures, not something you did wrong.</p>
 
 <h3>1. You forgot to add the tracking number</h3>
 <p>This is the #1 reason for delayed payouts. If you bought a label outside of Depop (like at the post office) and just mailed it without typing the tracking number into the app, <strong>Depop has no idea the item was delivered.</strong> Without a "Delivered" scan from an integrated carrier, Depop will hold the funds indefinitely or until the buyer manually confirms receipt. Always, always upload the tracking number.</p>
 
 <h3>2. The buyer opened a dispute or requested a refund</h3>
-<p>If the buyer claims the item never arrived, or they open a case saying it's <a href="depop-fees-refunded.html">not as described</a>, Depop immediately freezes the payout. The funds will not be released until the dispute is resolved. This is why photographing your items before shipping is non-negotiable.</p>
+<p>If the buyer claims the item never arrived, or they open a case saying it's <a href="depop-fees-refunded.html">not as described</a>, Depop immediately freezes the payout. The funds will not be released until the dispute is resolved. This is why photographing your items before shipping is non-negotiable. Our <a href="index.html#tool">return loss calculator</a> can help you quantify exactly what a dispute costs you.</p>
 
 <h3>3. You are a brand-new seller (The 21–30 Day Hold)</h3>
 <p>When you first open a Depop shop, you are a massive fraud risk in their eyes. Scammers frequently create new accounts, sell fake designer goods, take the money, and vanish. To combat this, Depop places a <strong>new seller rolling reserve</strong> on your account. They may hold your funds for 21 to 30 days to ensure you are a legitimate seller shipping real items. As you build up 5-star reviews, this hold shrinks and eventually disappears.</p>
 
-<div class="callout green"><strong>Relief note for new sellers:</strong> this isn't personal. Every single reseller on Depop went through this exact holding pattern. The 21–30 day window feels like forever when you're first starting out, but as you build a track record of clean sales and 5-star reviews, the hold shrinks and eventually disappears. The first month is just tuition. Push through it and the payouts normalize permanently.</div>
+<div class="callout green"><strong>Relief note for new sellers:</strong> this isn't personal. Every single reseller on Depop went through this exact holding pattern. The 21–30 day window feels like forever when you're first starting out, but as you build a track record of clean sales and 5-star reviews, the hold shrinks and eventually disappears. The first month is just tuition. Push through it and the payouts normalize permanently. While you wait, learn <a href="depop-fees-explained.html">exactly what Depop takes in fees</a> so you can price your items correctly from day one.</div>
 
 <h3>4. You had a sudden spike in sales</h3>
 <p>If you normally sell two items a week, and suddenly you sell $2,000 worth of vintage denim in a single weekend, Depop's automated security bots will flag your account. A sudden spike looks like a hacked account or a scammer cashing out. They will temporarily pause your payouts while they manually review your account. If this happens, just verify your identity in the app settings and the hold will lift.</p>
 
-<h2>Depop Payout Schedule vs. Other Platforms</h2>
+<h2>Depop vs Other Platforms: Payout Speed Comparison</h2>
 <p>How does Depop's payout speed actually compare to the rest of the market? If cash flow is your main concern, here is the reality:</p>
+
 <table class="data-table">
-<thead><tr><th>Platform</th><th>Standard Payout Trigger</th><th>Typical Time to Bank</th></tr></thead>
+<thead><tr><th>Platform</th><th>Time to Available Funds</th><th>Time to Bank</th><th>Weekend Payouts?</th></tr></thead>
 <tbody>
-<tr><td><strong>Depop</strong></td><td>2-10 days after "Delivered"</td><td>~10 to 14 days total</td></tr>
-<tr><td><strong>Poshmark</strong></td><td>3 days after "Delivered" (or auto-accept)</td><td>~4 to 7 days total</td></tr>
-<tr><td><strong>eBay</strong></td><td>1-2 days after "Delivered" (for established sellers)</td><td>~3 to 5 days total</td></tr>
-<tr><td><strong>Mercari</strong></td><td>3 days after "Delivered" (once buyer rates)</td><td>~4 to 7 days total</td></tr>
+<tr><td><strong>Depop</strong></td><td>2-10 working days</td><td>4-14 days total</td><td>❌ No</td></tr>
+<tr><td><strong>eBay</strong></td><td>1-2 days (established)</td><td>3-5 days total</td><td>❌ No</td></tr>
+<tr><td><strong>Poshmark</strong></td><td>3 days after delivery</td><td>4-7 days total</td><td>❌ No</td></tr>
+<tr><td><strong>Mercari</strong></td><td>3 days after delivery</td><td>4-7 days total</td><td>❌ No</td></tr>
+<tr><td><strong>Whatnot</strong></td><td>Instant after delivery</td><td>1-3 days total</td><td>✅ Yes</td></tr>
+<tr><td><strong>Vinted</strong></td><td>2-5 days after delivery</td><td>3-7 days total</td><td>❌ No</td></tr>
 </tbody>
 </table>
-<p class="callout red"><strong>The Reality Check:</strong> Depop is currently one of the <em>slower</em> platforms to pay out. If you rely on daily cash flow to buy new inventory, Depop's 10-day waiting period can pinch. You have to factor this "cash lag" into your business model.</p>
+<p class="callout red"><strong>The Reality Check:</strong> Depop is currently one of the <em>slower</em> platforms to pay out. If you rely on daily cash flow to buy new inventory, Depop's 10-day waiting period can pinch. You have to factor this "cash lag" into your business model. Want to see the full picture? Check out our <a href="platform-comparison-2026.html">complete 6-platform comparison matrix</a> — fees, shipping, and payout speed all in one view.</p>
 
-<h2>Does Depop pay on weekends or holidays?</h2>
+<h2>Does Depop Pay on Weekends or Holidays?</h2>
 <p>No. Depop payouts are processed through standard banking networks (like ACH in the US or BACS in the UK). These networks <strong>do not operate on weekends or bank holidays</strong>. If your funds are released on a Friday afternoon, the actual bank transfer might not initiate until Monday morning, meaning you won't see the money until Tuesday or Wednesday. Always calculate your cash flow around business days, not calendar days.</p>
 
-<h2>How to get paid faster on Depop (Pro Tips)</h2>
+<h2>How to Get Paid Faster on Depop (Pro Tips)</h2>
 <p>You can't change Depop's core rules, but you can avoid the delays that sellers accidentally trigger. Do these three things on every single sale:</p>
 <ol>
 <li><strong>Ship within 24 hours.</strong> The faster it gets marked "Delivered," the faster the 2-to-10-day clock starts.</li>
@@ -180,7 +250,7 @@ table.data-table th{background:rgba(0,0,0,.06);}
 <h2>The Tax Reality of Depop Payouts</h2>
 <p>Just because Depop holds your money for 10 days doesn't mean it's not "yours" for tax purposes. In the eyes of the IRS (and most tax authorities), <strong>you earned the income the moment the sale was made</strong>, not the moment the money hit your bank account. When you are tracking your yearly revenue for taxes, log the <em>sale date</em>, not the <em>payout date</em>. Otherwise, your December sales that get paid in January will mess up your accounting. (<a href="guides.html#taxes">Read the full reseller tax guide here.</a>)</p>
 
-<h2>Conclusion: Stop refreshing, start tracking</h2>
+<h2>Conclusion: Stop Refreshing, Start Tracking</h2>
 <p>The anxiety of waiting for a Depop payout is a rite of passage for every seller. The money is there, it's just moving through the banking and security gears. Understand the 2-to-10-day window, always upload your tracking, and accept that as a new seller, the first few payouts will take a month. Once you establish yourself, the rhythm becomes predictable, and you can focus on sourcing instead of refreshing your app.</p>
 
 <h2>Sources & Official Policy Pages</h2>
@@ -194,15 +264,21 @@ table.data-table th{background:rgba(0,0,0,.06);}
 
 <h2>FAQ</h2>
 <dl>
-<dt>When do I get paid on Depop?</dt><dd>Funds are typically released 2 to 10 working days after the item's tracking shows as "Delivered."</dd>
+<dt>When do you get paid on Depop?</dt><dd>Depop pays you 2 to 10 working days after tracking shows "Delivered." New sellers face holds of 21 to 30 calendar days. Bank transfers add 1 to 3 business days on top.</dd>
+<dt>When do I get paid from Depop?</dt><dd>You get paid from Depop 2 to 10 working days after delivery for established sellers, or 21 to 30 days for new sellers. The clock starts the moment tracking shows "Delivered," not when you ship.</dd>
+<dt>How long after delivery does Depop pay?</dt><dd>Depop pays 2 to 10 working days after delivery. Established sellers typically see funds available in 4 to 14 days total (including bank transfer). New sellers wait 25 to 35 days total.</dd>
 <dt>Why is my Depop payout delayed?</dt><dd>Common reasons include missing tracking numbers, open buyer disputes, sudden sales spikes, or being a new seller on a security hold.</dd>
 <dt>How long does Depop hold funds for new sellers?</dt><dd>Depop may hold funds for new accounts for up to 21 to 30 days to verify the seller is legitimate and prevent fraud.</dd>
 <dt>Does Depop pay on weekends?</dt><dd>No. Payouts are processed on standard banking working days (Monday-Friday, excluding holidays).</dd>
-<dt>How do I withdraw money from Depop?</dt><dd>Once funds are released to your available balance, go to your profile, tap your balance, and select "Withdraw" to transfer it to your linked bank account.</dd>
-<dt>What time of day does Depop pay out?</dt><dd>Depop doesn't publish an exact time, but many sellers report payouts hitting their bank account between 9am and 12pm local time on standard banking days. Weekend and holiday payouts are delayed until the next business day.</dd>
-<dt>Does Depop release funds immediately after delivery?</dt><dd>No. Depop holds funds in escrow for 2 to 10 working days after delivery to protect buyers from not-as-described disputes. Funds are never released immediately, even for established sellers.</dd>
-<dt>Why does Depop take so long to pay?</dt><dd>Depop uses an escrow system to protect buyers. They hold your money until the buyer has had time to inspect the item and confirm it matches the listing. Banking network delays (ACH in the US, BACS in the UK) add another 1 to 3 business days.</dd>
-<dt>How long does a Depop withdrawal take?</dt><dd>Once funds are released to your available balance, the withdrawal to your bank account typically takes 1 to 3 business days depending on your bank's processing times. Depop initiates the transfer within 24 hours of your withdrawal request.</dd>
+<dt>What time does Depop release funds?</dt><dd>Depop doesn't publish an exact time, but many sellers report payouts hitting their bank account between 9am and 12pm local time on standard banking days.</dd>
+<dt>Does Depop release funds immediately after delivery?</dt><dd>No. Depop holds funds in escrow for 2 to 10 working days after delivery. Funds are never released immediately, even for established sellers.</dd>
+<dt>How long does it take for my Depop balance to be available?</dt><dd>Your Depop balance moves from "Pending" to "Available" 2 to 10 working days after delivery for established sellers. Once Available, you can withdraw to your bank (1 to 3 additional business days).</dd>
+<dt>Why does Depop take so long to pay?</dt><dd>Depop uses an escrow system to protect buyers. They hold your money until the buyer has had time to inspect the item. Banking network delays add another 1 to 3 business days.</dd>
+<dt>How long does a Depop withdrawal take?</dt><dd>Once funds are released to your available balance, the withdrawal to your bank account typically takes 1 to 3 business days.</dd>
+<dt>How do I check my Depop payout status?</dt><dd>Open the Depop app, tap your profile icon, then tap your balance. You'll see "Available" (ready to withdraw) and "Pending" (still in the holding period).</dd>
+<dt>Can I get paid faster on Depop?</dt><dd>You can't bypass Depop's 2-10 day holding period, but you can avoid delays by uploading tracking immediately, shipping within 24 hours, and messaging buyers on delivery day.</dd>
+<dt>Does Depop hold money longer for expensive items?</dt><dd>Depop doesn't officially publish item-value-based holds, but sellers report that transactions over $500 sometimes trigger additional security reviews.</dd>
+<dt>Why is my Depop balance negative?</dt><dd>A negative Depop balance usually means you issued a refund that exceeded your available funds. Depop charges the refund to your linked top-up card, but if that fails, your balance goes negative.</dd>
 </dl>
 </article></main>
 
@@ -212,7 +288,7 @@ table.data-table th{background:rgba(0,0,0,.06);}
 <nav class="foot-col" aria-label="Guides"><h3>Guides</h3><ul><li><a href="guides.html">All guides</a></li><li><a href="guides.html#dispute">Win a return dispute</a></li><li><a href="guides.html#taxes">Tax write-offs</a></li></ul></nav>
 <nav class="foot-col" aria-label="Company"><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
 <nav class="foot-col" aria-label="Resources"><h3>Resources</h3><ul><li><a href="index.html#faq">FAQ</a></li><li><a href="sources.html">Sources</a></li><li><a href="sitemap.html">Sitemap</a></li></ul></nav>
-</div><div class="foot-legal"><p class="verified">Payout data last verified: <strong>August 23, 2026</strong> · sourced from official Depop help pages.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with Depop.</p></div></footer>
+</div><div class="foot-legal"><p class="verified">Payout data last verified: <strong>August 27, 2026</strong> · sourced from official Depop help pages.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with Depop.</p></div></footer>
 <script src="nav.js"></script>
 
 <script>
@@ -244,12 +320,10 @@ function calcPayout(){
   }
   var status = document.querySelector('input[name="pt-status"]:checked').value;
 
-  // Established sellers: 2-10 WORKING days. New sellers: 21-30 CALENDAR days.
   var holdWorking = (status !== 'new');
   var holdMin = holdWorking ? 2 : 21;
   var holdMax = holdWorking ? 10 : 30;
 
-  // Bank transfer adds 1-3 working days on top
   var earliest = addDays(addDays(deliveryDate, holdMin, holdWorking), 1, true);
   var latest = addDays(addDays(deliveryDate, holdMax, holdWorking), 3, true);
 
