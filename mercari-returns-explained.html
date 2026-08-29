@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8">
+<link rel="preload" href="https://fonts.gstatic.com/s/archivo/v19/k3kCo84MPvpLmixcA63oeAL7Iq5O3A.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/spacemono/v14/i7dPIFZifjKcF5UAWdDRYEF8RQ.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
 <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
 <script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
@@ -11,9 +13,19 @@
   gtag('config', 'G-CPRC739GBN');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mercari Returns Explained: Who Pays, 72-Hour Rule & Refunds (2026)</title>
-<meta name="description" content="How do Mercari returns work? Who pays return shipping, the 72-hour rule, can sellers refuse returns, and what a $100 sale really pays — with official 2026 rules.">
+<title>A Buyer Wants to Return My Mercari Item — Now What?</title>
+<meta name="description" content="Panicking over a return request? See exactly what happens next, whether you still get paid, and who covers shipping — before the clock runs out.">
 <link rel="canonical" href="https://www.gotclawback.com/mercari-returns-explained.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Buyer Wants to Return My Mercari Item — Now What?">
+<meta property="og:description" content="Panicking over a return request? See exactly what happens next, whether you still get paid, and who covers shipping — before the clock runs out.">
+<meta property="og:url" content="https://www.gotclawback.com/mercari-returns-explained.html">
+<meta property="og:site_name" content="CLAWBACK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A Buyer Wants to Return My Mercari Item — Now What?">
+<meta name="twitter:description" content="See exactly what happens next, whether you still get paid, and who covers shipping — before the clock runs out.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -29,36 +41,90 @@
 .stamp.lose{color:#C43C2C;border-color:#C43C2C;}
 .callout{border-left:4px solid #F5B301;background:rgba(245,179,1,.08);padding:12px 16px;margin:18px 0;}
 .callout.red{border-left-color:#C43C2C;background:rgba(196,60,44,.08);}
+.callout.green{border-left-color:#1E7A5A;background:rgba(30,122,90,.08);}
 table.data-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;}
 table.data-table th,table.data-table td{border:1px solid rgba(255,255,255,.15);padding:10px;text-align:left;}
 table.data-table th{background:rgba(245,179,1,.15);color:#F5B301;}
 blockquote.voice{border-left:3px solid #F5B301;margin:20px 0;padding:10px 16px;font-style:italic;color:rgba(250,247,240,.85);}
 .cta-box{background:#0E3B2C;border:1px solid #F5B301;padding:20px;margin:28px 0;text-align:center;}
+.featured-answer{background:linear-gradient(135deg,#1e7a5a 0%,#166b4c 100%);color:#faf7f0;padding:24px;border-left:6px solid #f5b301;margin-bottom:32px;border-radius:4px;}
+.featured-answer h2{color:#f5b301;margin-top:0;font-size:18px;text-transform:uppercase;font-family:'Archivo Black',sans-serif;letter-spacing:.5px;}
+.featured-answer p{font-size:16px;line-height:1.6;margin-bottom:0;font-weight:600;}
+.inline-cta{background:rgba(245,179,1,.12);border:1px dashed #F5B301;padding:16px 18px;margin:24px 0;font-size:15px;line-height:1.6;}
+.inline-cta a{color:#F5B301;font-weight:700;}
+.relief{background:#0E3B2C;border:1px solid #F5B301;color:#FAF7F0;padding:20px;margin:24px 0;}
+.relief h3{font-family:'Archivo Black';margin-top:0;color:#F5B301;letter-spacing:1px;}
+
+/* Mini Decision Calculator */
+.mini-calc{background:#0E3B2C;border:1px solid #F5B301;padding:22px;margin:28px 0;max-width:520px;box-shadow:0 8px 24px rgba(0,0,0,.35);}
+.mini-calc h3{font-family:'Archivo Black';color:#F5B301;margin:0 0 4px;font-size:18px;letter-spacing:.5px;}
+.mini-calc .mini-sub{font-size:13px;color:rgba(250,247,240,.7);margin:0 0 18px;}
+.mini-calc label{display:block;font-family:'Space Mono',monospace;font-size:11px;color:#F5B301;letter-spacing:1px;margin:14px 0 6px;font-weight:700;}
+.mini-calc input[type="number"],.mini-calc select{width:100%;padding:10px 12px;background:#FAF7F0;border:1px solid rgba(245,179,1,.4);color:#0E3B2C;font-family:'Space Mono',monospace;font-size:15px;box-sizing:border-box;}
+.mini-calc input[type="number"]:focus,.mini-calc select:focus{outline:2px solid #F5B301;}
+.mini-calc .row2{display:flex;gap:12px;}
+.mini-calc .row2 > div{flex:1;}
+.mini-calc button{width:100%;margin-top:20px;padding:12px;background:#F5B301;color:#0E3B2C;border:none;font-family:'Archivo Black',sans-serif;font-size:15px;letter-spacing:1px;cursor:pointer;transition:all .15s;}
+.mini-calc button:hover{background:#FAF7F0;}
+.mini-result{margin-top:18px;padding:14px;background:rgba(250,247,240,.08);border-top:2px solid #F5B301;display:none;}
+.mini-result .line{display:flex;justify-content:space-between;gap:12px;font-family:'Space Mono',monospace;font-size:13px;margin:8px 0;color:#FAF7F0;}
+.mini-result .line.good strong{color:#8AFFA1;}
+.mini-result .line.bad strong{color:#FF8A8A;}
+.mini-result .verdict{font-size:14px;font-weight:700;line-height:1.6;margin:12px 0 0;}
+.mini-result .note{font-size:12px;color:rgba(250,247,240,.6);margin-top:10px;font-style:italic;line-height:1.5;}
+
+/* Action Checklist */
+.action-list{background:#FAF7F0;color:#282828;border:2px solid #1E7A5A;padding:20px;margin:24px 0;box-shadow:0 6px 18px rgba(0,0,0,.3);}
+.action-list h3{font-family:'Archivo Black';margin:0 0 14px;color:#0E3B2C;text-align:center;letter-spacing:1px;}
+.action-list ol{margin:0;padding-left:20px;font-size:14px;line-height:1.7;}
+.action-list ol li{margin-bottom:10px;}
+.action-list ol li strong{color:#C43C2C;}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Mercari Returns Explained: Who Pays, The 72-Hour Rule & Refunds","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-17"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"A Buyer Wants to Return My Mercari Item — Now What?","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-17","dateModified":"2026-08-23"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"How do returns work on Mercari?","acceptedAnswer":{"@type":"Answer","text":"A buyer must request a return within 72 hours of carrier-confirmed delivery, before the transaction auto-completes. Eligible reasons are: significantly not as described, damaged in shipping, or inauthentic. Mercari reviews and, if approved, sends a prepaid return label."}},
 {"@type":"Question","name":"Who pays for shipping on a Mercari return?","acceptedAnswer":{"@type":"Answer","text":"For items up to 50 lbs, Mercari provides a prepaid return label. For items over 50 lbs, the seller must provide the return label within 3 business days, or the order is canceled and refunded."}},
 {"@type":"Question","name":"Can a seller refuse a return on Mercari?","acceptedAnswer":{"@type":"Answer","text":"Yes, for non-mandatory reasons like 'doesn't fit' or 'changed my mind.' But for eligible reasons (not as described, damaged, inauthentic), Mercari can approve the return over the seller's objection."}},
 {"@type":"Question","name":"Will Mercari refund me if I get scammed or get a fake item?","acceptedAnswer":{"@type":"Answer","text":"Yes. Inauthentic/counterfeit items are an eligible return reason. If approved, the buyer gets a refund and the seller faces consequences. Buyers must request within 72 hours and not rate the transaction."}},
 {"@type":"Question","name":"Can I get a refund on Mercari without returning the item?","acceptedAnswer":{"@type":"Answer","text":"Sometimes. For returns under a nominal amount, Mercari may issue an account credit instead of a refund and not require the item back. For hazardous/damaged items, the order is canceled and refunded without return."}},
-{"@type":"Question","name":"How much does Mercari take from a $100 sale?","acceptedAnswer":{"@type":"Answer","text":"The seller pays a 10% selling fee ($10 on a $100 sale), so the seller keeps $90. The buyer separately pays a 3.6% Buyer Protection fee. Direct deposit is free; Instant Pay costs $3."}}]}</script>
+{"@type":"Question","name":"How much does Mercari take from a $100 sale?","acceptedAnswer":{"@type":"Answer","text":"The seller pays a 10% selling fee ($10 on a $100 sale), so the seller keeps $90. The buyer separately pays a 3.6% Buyer Protection fee. Direct deposit is free; Instant Pay costs $3."}},
+{"@type":"Question","name":"What happens if I don't respond to a Mercari return request?","acceptedAnswer":{"@type":"Answer","text":"You have 24 hours to respond once a return request is filed. If you don't respond, the return can be auto-escalated to Mercari support, whose decision is final. Always respond within the window, even if just to contest the claim with evidence."}},
+{"@type":"Question","name":"How long does the buyer have to ship a Mercari return?","acceptedAnswer":{"@type":"Answer","text":"Once the return is approved and the buyer receives the label, they have 72 hours to drop off the package. The carrier's acceptance scan must occur within 168 hours (7 days) of approval, or the return is voided and you're paid."}},
+{"@type":"Question","name":"Can I cancel a Mercari order before shipping?","acceptedAnswer":{"@type":"Answer","text":"Yes, but frequent cancellations trigger a 5% fee (max $25) on the item price. Repeated cancellations can result in listings being removed or your account being limited. Only list items you can actually ship."}},
+{"@type":"Question","name":"What should I do in the first 10 minutes after a return request?","acceptedAnswer":{"@type":"Answer","text":"First, check the return reason — is it eligible (not as described, damaged, fake) or non-mandatory (fit, changed mind)? Second, check the delivery timestamp — are you still within 72 hours? Third, gather your listing photos and any evidence. Then respond within 24 hours with your position."}}]}</script>
 </head><body>
 <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>THE 72-HOUR WINDOW IS EVERYTHING ★ MISS IT AND THE SALE IS LOCKED ★&nbsp;</span><span>THE 72-HOUR WINDOW IS EVERYTHING ★ MISS IT AND THE SALE IS LOCKED ★&nbsp;</span></div></div>
 <header class="site-head"><div class="head-inner">
 <a class="brand" href="index.html">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
 <p class="tagline">// the forced-return loss calculator for resellers</p>
 <nav class="main-nav" aria-label="Primary"><button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
-<ul id="navlist" class="nav-list"><li><a href="index.html#tool">Calculator</a></li><li><a href="platforms.html">Platforms</a></li><li><a href="guides.html">Guides</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="about.html">About</a></li></ul></nav>
+<ul id="navlist" class="nav-list"><li><a href="index.html#tool">Calculator</a></li><li class="has-drop"><a href="platforms.html">Platforms ▾</a><ul class="drop"><li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li><li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li><li><a href="platforms.html#whatnot">Whatnot</a></li><li><a href="platforms.html#vinted">Vinted</a></li></ul></li><li><a href="guides.html">Guides</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="about.html">About</a></li></ul></nav>
 </div></header>
 
 <main class="page-body"><article class="prose">
-<h1 class="page-title">Mercari Returns Explained: Who Pays, The 72-Hour Rule & Refunds (2026)</h1>
+<h1 class="page-title">A Buyer Wants to Return My Mercari Item — Now What?</h1>
 
-<p class="page-lead">Every Mercari seller has felt it. The item ships, the tracking says "Delivered," and you're already mentally spending the money. Then a notification: <em>"Return requested."</em> Your stomach drops. Is this a scam? A wardrober? A legitimate "not as described" claim? And the worst question of all — who is paying for the return label?</p>
-<p>Mercari's return system is built around one brutal mechanic: a <strong>72-hour window</strong>. Everything — whether you get paid, whether the buyer gets a refund, who pays shipping — hinges on that three-day clock. Today we're opening the <strong>Case Files</strong>. Four real dispute scenarios, each stamped with the official verdict, so you know exactly where you stand before the notification even arrives.</p>
+<div class="featured-answer">
+<h2>🚨 Instant Verdict: Who Wins A Mercari Return?</h2>
+<p>Everything hinges on one clock: Mercari <strong>auto-completes a transaction 72 hours after carrier-confirmed delivery</strong>, and once that happens, returns are no longer permitted. If a buyer requests a return before that window closes with an eligible reason (not as described, damaged, or fake), Mercari can approve it over your objection. If they wait past 72 hours, you're paid — full stop, no exceptions.</p>
+</div>
+
+<p class="page-lead">Every Mercari seller has felt that stomach drop. The item ships, the tracking says "Delivered," and you're already mentally spending the money. Then a notification pops up: <em>"Return requested."</em></p>
+<p>Your mind races. Is this a scam? A wardrober who wore it once and wants their money back? A legitimate "not as described" claim because you missed a flaw in your photos? And the worst question of all — who is paying for the return label?</p>
+<p>Take a breath. I've been there, and I'm going to walk you through exactly what happens next. Mercari's return system is built around one brutal mechanic: a <strong>72-hour window</strong>. Everything — whether you get paid, whether the buyer gets a refund, who pays shipping — hinges on that three-day clock. Today we're opening the <strong>Case Files</strong>. Four real dispute scenarios, each stamped with the official verdict, so you know exactly where you stand before the notification even arrives.</p>
 
 <div class="callout"><strong>The 72-Hour Guillotine:</strong> Mercari automatically rates (completes) a transaction <strong>72 hours after carrier-confirmed delivery</strong>. Once it completes, <strong>returns and refunds are NOT permitted.</strong> A buyer must request a return <em>before</em> that window closes. This single rule decides most Mercari disputes.</div>
+
+<div class="action-list">
+<h3>🎯 WHAT TO DO IN THE FIRST 10 MINUTES</h3>
+<ol>
+<li><strong>Check the return reason.</strong> Is it "not as described," "damaged," or "inauthentic" (eligible)? Or "doesn't fit," "changed my mind," "smells" (non-mandatory)?</li>
+<li><strong>Check the delivery timestamp.</strong> When did the carrier confirm delivery? Are you still within 72 hours?</li>
+<li><strong>Gather your evidence.</strong> Pull up your listing photos, any measurements you provided, and the original description.</li>
+<li><strong>Respond within 24 hours.</strong> You have 24 hours to respond once a return request is filed. Silence can mean auto-escalation to Mercari support.</li>
+<li><strong>Decide: fight or accept?</strong> If you have solid evidence (photos showing no flaw), fight. If the buyer has a legitimate complaint, accepting preserves your rating.</li>
+</ol>
+</div>
 
 <h2>The Case Files: 4 Real Disputes, 4 Official Verdicts</h2>
 
@@ -102,8 +168,8 @@ blockquote.voice{border-left:3px solid #F5B301;margin:20px 0;padding:10px 16px;f
 <p>The seller wins — you keep the money. The buyer is out of luck because they missed the window. <strong>Caveat:</strong> for authenticity concerns, Mercari can extend the rating period if the buyer contacts them <em>before</em> rating. But a buyer who simply waits 5 days and then complains gets nothing. The 72-hour clock is your best friend as a seller.</p>
 </div>
 
-<h2>Who Pays For Return Shipping On Mercari? (The 50lb Rule)</h2>
-<p>This is the #1 question in every Mercari forum. The official answer is a weight-based split:</p>
+<h2>"Wait — so who actually pays to ship this thing back?"</h2>
+<p>This is the #1 question in every Mercari forum, and honestly, it's where most sellers get confused. Here's the official answer, broken down by weight:</p>
 <table class="data-table">
 <thead><tr><th>Return Weight</th><th>Who Pays The Return Label</th></tr></thead>
 <tbody>
@@ -115,7 +181,40 @@ blockquote.voice{border-left:3px solid #F5B301;margin:20px 0;padding:10px 16px;f
 </table>
 <p class="callout red"><strong>The buyer-side deadlines:</strong> once approved, the buyer must drop off the item within <strong>72 hours</strong> of receiving the label, and the carrier's acceptance scan must occur within <strong>168 hours</strong> of approval. If the buyer misses these, the return is <strong>voided and payment is released to the seller.</strong> So even a lost return can end in your favor.</p>
 
-<h2>The Fee Math: What Does Mercari Take From A $100 Sale?</h2>
+<div class="mini-calc" aria-label="Mercari return decision calculator">
+<h3>SHOULD I ACCEPT OR FIGHT THIS RETURN?</h3>
+<p class="mini-sub">Run your real numbers before you respond.</p>
+<label for="rc-sale">SALE PRICE ($)</label>
+<input type="number" id="rc-sale" placeholder="80.00" min="0" step="0.01">
+<label for="rc-reason">RETURN REASON</label>
+<select id="rc-reason">
+<option value="eligible">Not as described / Damaged / Fake (eligible)</option>
+<option value="nonmandatory">Doesn't fit / Changed mind / Smells (non-mandatory)</option>
+</select>
+<div class="row2">
+<div><label for="rc-weight">ITEM WEIGHT (lbs)</label><input type="number" id="rc-weight" placeholder="12" min="0" step="1"></div>
+<div><label for="rc-evidence">DO YOU HAVE PHOTOS?</label>
+<select id="rc-evidence">
+<option value="yes">Yes — complete photos</option>
+<option value="no">No — vague or missing photos</option>
+</select></div>
+</div>
+<button type="button" onclick="calcReturn()">SHOULD I ACCEPT OR FIGHT?</button>
+<div class="mini-result" id="rc-result">
+<div class="line good"><span>Accept the return:</span><strong id="rc-accept">—</strong></div>
+<div class="line bad"><span>Fight the return:</span><strong id="rc-fight">—</strong></div>
+<p class="verdict" id="rc-verdict"></p>
+<p class="note">Either way the 10% selling fee reverses if the buyer is refunded. Your real loss is the label cost (if over 50 lbs) + any value drop.</p>
+</div>
+</div>
+
+<div class="relief">
+<h3>THE PART NOBODY TELLS YOU: THE ODDS ARE QUIETLY IN YOUR FAVOR</h3>
+<p>Three deadlines protect you on every single return, and almost no seller realizes all three exist at once. First, the buyer only has 72 hours post-delivery to even open a case — most legitimate issues get reported fast, but plenty of remorse and confusion claims simply time out before anyone acts. Second, once a return is approved, the buyer has another 72 hours to actually drop the package off, and getting a bulky or heavy item back to a carrier counter takes real effort many buyers underestimate. Third, the carrier's acceptance scan has to happen within 168 hours (7 days) of approval, or the whole return voids and the seller gets paid regardless of the original claim.</p>
+<p>Stack those three windows together and a meaningful share of "scary" return notifications never actually complete — not because the seller fought hard, but because the clock ran out on the buyer's side. This isn't a loophole to exploit dishonestly; it's simply how the system is built, and knowing it exists turns panic into patience the next time that notification lands.</p>
+</div>
+
+<h2>"How much of my $100 sale does Mercari actually take?"</h2>
 <p>Let's run the official 2026 numbers on a $100 sale so you know your true margin:</p>
 <ul>
 <li><strong>Seller selling fee (10%):</strong> $10 → you keep <strong>$90</strong>.</li>
@@ -124,20 +223,41 @@ blockquote.voice{border-left:3px solid #F5B301;margin:20px 0;padding:10px 16px;f
 <li><strong>Direct deposit payout:</strong> $0 fee (the old $2 fee is gone).</li>
 <li><strong>Instant Pay:</strong> $3 flat fee if you want the money in ~30 minutes (up to $600/month).</li>
 </ul>
-<p>So a $100 sale nets you $90 before shipping and sourcing. Mercari's 10% is competitive with <a href="depop-fees-explained.html">Depop's 10%</a> and often cheaper than Poshmark's 20% on higher-priced items. The catch is Mercari's return mechanics, which we just covered.</p>
+<p>So a $100 sale nets you $90 before shipping and sourcing. Mercari's 10% is competitive with <a href="depop-fees-explained.html">Depop's 0% selling fee + 3.3% processing</a> and often cheaper than Poshmark's 20% on higher-priced items. The catch is Mercari's return mechanics, which we just covered.</p>
 
-<h2>Does Mercari Side With The Buyer Or The Seller?</h2>
+<div class="inline-cta">👉 <strong>Don't guess your real number.</strong> Plug your actual sale price, item weight, and return reason into the free <a href="index.html#tool">CLAWBACK calculator</a> and see the exact dollar loss — fee reversal, label cost, and value drop — before a return notification turns into a surprise.</div>
+
+<h2>"Does Mercari actually side with the buyer, or with me?"</h2>
 <p>Honestly? Mercari sides with <strong>the evidence</strong>. Their policy explicitly balances both parties. Buyers win when they have clear photos of a real problem within 72 hours. Sellers win when the buyer misses the window, requests a non-mandatory reason, or fails the return deadlines. The platform's auto-rating system is actually <em>seller-friendly</em> — it guarantees you get paid in 3 days unless a legitimate case is opened. Your job is to make your listing photos so complete that "not as described" claims die on arrival.</p>
 
-<h2>What Happens If A Mercari Seller Never Ships?</h2>
+<h2>"What if I can't ship in time — does Mercari just cancel on me?"</h2>
 <p>If you don't ship, the buyer isn't left hanging. Mercari cancels the order and refunds the buyer. But <em>you</em> get punished: frequent cancellations trigger a <strong>cancellation fee of 5% of the item price (max $25)</strong>, and repeated cancellations can get your listings removed or account limited. So never list an item you can't ship within the window.</p>
 
-<h2>Can I Get A Refund Without Returning The Item?</h2>
+<h2>"Can I just keep the item and still get paid?"</h2>
 <p>Yes, in two official scenarios: (1) <strong>Returns under a nominal amount</strong> may be issued as an account credit (expires 90 days) without requiring the item back. (2) <strong>Damaged or hazardous items</strong> that are unsafe to ship are canceled and refunded without return. But for standard returns, the item must go back — there's no "keep it and get paid" loophole.</p>
+
+<h2>Mercari vs eBay vs Poshmark: Return Policies Compared</h2>
+<p>How does Mercari's return system stack up against the other big platforms?</p>
+<table class="data-table">
+<thead><tr><th>Factor</th><th>Mercari</th><th>eBay</th><th>Poshmark</th></tr></thead>
+<tbody>
+<tr><td>Return window</td><td><strong>72 hours</strong> post-delivery</td><td>Varies by seller policy</td><td>3 days post-delivery</td></tr>
+<tr><td>Who pays return shipping (INAD)?</td><td>Mercari (≤50 lbs) / Seller (>50 lbs)</td><td><strong>Seller always pays</strong></td><td>Poshmark (prepaid label)</td></tr>
+<tr><td>Seller response deadline</td><td>24 hours</td><td>Varies</td><td>24 hours</td></tr>
+<tr><td>Commission reversed on return?</td><td>Yes (10%)</td><td>Yes (13.6%) but per-order fee kept</td><td>Yes (20%)</td></tr>
+<tr><td>Auto-completion if no return?</td><td>✅ 72 hours</td><td>❌ No auto-completion</td><td>✅ 3 days</td></tr>
+</tbody>
+</table>
+<p>Mercari's 72-hour auto-completion is one of the most seller-friendly policies in the game — once that window closes, the sale is locked. See the full six-platform comparison in <a href="platform-comparison-2026.html">the 2026 Reseller's Matrix</a>.</p>
+
+<div class="relief">
+<h3>PROTECTING YOURSELF AGAINST A FAKE OR SWAPPED RETURN</h3>
+<p>The scenario that keeps sellers up at night — a buyer sends back an empty box, a broken item, or something that isn't even what shipped — is a real risk, especially on higher-value electronics and collectibles. The most reliable defense costs nothing: record a single, continuous unboxing video with no cuts whenever a return arrives, showing the shipping label and the item's actual condition on camera. Paired with your original listing photos and any serial numbers or unique marks, that video is exactly the kind of evidence Mercari's support team looks for when a discrepancy gets reported within 24 hours of delivery. Do it every time a return lands, not just when something feels off — the habit costs two minutes and removes almost all the guesswork later.</p>
+</div>
 
 <h2>Conclusion: The 72-Hour Window Is Your Whole Business</h2>
 <p>Mercari returns look scary until you understand the clock. Buyers get 72 hours; after that, you're paid and the sale is locked. Your risk is concentrated in that window, and your defense is your listing photos, accurate descriptions, and knowing the 50lb rule before you list heavy items. Master those three things and Mercari becomes one of the most predictable platforms to sell on.</p>
-<p><strong>Read next:</strong> <a href="mercari-over-50-pounds.html">Mercari returns over 50 lbs</a> · <a href="who-pays-return-shipping.html">Who pays return shipping?</a> · <a href="poshmark-fees-explained.html">Poshmark fees explained</a></p>
+<p><strong>Read next:</strong> <a href="mercari-over-50-pounds.html">Mercari returns over 50 lbs</a> · <a href="platform-comparison-2026.html">The 2026 Reseller's Matrix</a> · <a href="depop-payout-time.html">When do I get paid on Depop?</a> · <a href="guides.html">All guides</a></p>
 
 <div class="cta-box"><h3 style="margin-top:0">Know what a forced Mercari return really costs.</h3>
 <p style="margin-bottom:14px">Factor in the 10% fee, the return label, and the lost sale. Free and instant.</p>
@@ -151,45 +271,70 @@ blockquote.voice{border-left:3px solid #F5B301;margin:20px 0;padding:10px 16px;f
 <dt>Will Mercari refund me if I get scammed?</dt><dd>Yes — inauthentic items are an eligible return reason if requested within 72 hours.</dd>
 <dt>Can I get a refund without returning the item?</dt><dd>Sometimes — under-nominal returns become account credit; hazardous items are refunded without return.</dd>
 <dt>How much does Mercari take from a $100 sale?</dt><dd>10% selling fee = $10; you keep $90. Direct deposit is free; Instant Pay is $3.</dd>
+<dt>What happens if I don't respond to a Mercari return request?</dt><dd>You have 24 hours to respond. If you don't, the return can be auto-escalated to Mercari support, whose decision is final.</dd>
+<dt>How long does the buyer have to ship a Mercari return?</dt><dd>72 hours to drop off after receiving the label; carrier acceptance scan within 168 hours of approval.</dd>
+<dt>Can I cancel a Mercari order before shipping?</dt><dd>Yes, but frequent cancellations trigger a 5% fee (max $25) and can limit your account.</dd>
+<dt>What should I do in the first 10 minutes after a return request?</dt><dd>Check the reason (eligible vs non-mandatory), check the delivery timestamp, gather your evidence, and respond within 24 hours.</dd>
 </dl>
 </article></main>
 
 <footer class="site-foot"><div class="foot-inner">
 <div class="foot-brand"><div class="brand small">CLAW<span class="slash">BACK</span></div><p>The forced-return loss calculator for resellers.</p></div>
-<nav class="foot-col" aria-label="Guides"><h3>More</h3><ul><li><a href="mercari-over-50-pounds.html">Mercari 50lb returns</a></li><li><a href="poshmark-fees-explained.html">Poshmark fees</a></li><li><a href="guides.html">Guides</a></li></ul></nav>
+<nav class="foot-col" aria-label="Platforms"><h3>Platforms</h3><ul><li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li><li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li><li><a href="platforms.html#whatnot">Whatnot</a></li><li><a href="platforms.html#vinted">Vinted</a></li></ul></nav>
+<nav class="foot-col" aria-label="Guides"><h3>Guides</h3><ul><li><a href="guides.html">All guides</a></li><li><a href="guides.html#dispute">Win a return dispute</a></li><li><a href="guides.html#taxes">Tax write-offs</a></li></ul></nav>
 <nav class="foot-col" aria-label="Company"><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
-</div><div class="foot-legal"><p class="verified">Rates change — verify on the official Mercari help page.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with Mercari.</p></div></footer>
+<nav class="foot-col" aria-label="Resources"><h3>Resources</h3><ul><li><a href="index.html#faq">FAQ</a></li><li><a href="sources.html">Sources</a></li><li><a href="sitemap.html">Sitemap</a></li></ul></nav>
+</div><div class="foot-legal"><p class="verified">Rates change — verify on the official Mercari help page. Last updated: <strong>August 23, 2026</strong>.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with Mercari.</p></div></footer>
 <script src="nav.js"></script>
 
 <script>
+function calcReturn(){
+  var sale = parseFloat(document.getElementById('rc-sale').value);
+  if(isNaN(sale) || sale <= 0){ alert('Enter your sale price.'); return; }
+  var reason = document.getElementById('rc-reason').value;
+  var weight = parseFloat(document.getElementById('rc-weight').value) || 10;
+  var evidence = document.getElementById('rc-evidence').value;
+  
+  var acceptCost = 0;
+  var fightCost = 0;
+  var verdict = '';
+  
+  if(reason === 'nonmandatory'){
+    acceptCost = sale * 0.10;
+    fightCost = 0;
+    if(evidence === 'yes'){
+      verdict = '✔ FIGHT IT — You have the photos to back up your listing. Refuse the return and let the 72-hour clock run. You keep the full sale.';
+    } else {
+      verdict = '⚠ ACCEPT IT — Without complete photos, accepting preserves your rating. You lose the 10% fee but protect your account.';
+    }
+  } else {
+    var labelCost = weight > 50 ? 45 : 0;
+    acceptCost = labelCost + (sale * 0.15);
+    fightCost = evidence === 'yes' ? 0 : sale;
+    if(evidence === 'yes'){
+      verdict = '✔ FIGHT IT — Your photos show no flaw. Contest the claim with evidence. If Mercari denies the return, you keep the sale.';
+    } else {
+      verdict = '⚠ ACCEPT IT — Without proof, Mercari will likely side with the buyer. Accept now to preserve your rating.';
+    }
+  }
+  
+  document.getElementById('rc-accept').textContent = 'lose ~$' + acceptCost.toFixed(2) + ' (fee + value drop)';
+  document.getElementById('rc-fight').textContent = fightCost === 0 ? 'win — keep the sale' : 'risk losing $' + fightCost.toFixed(2);
+  var v = document.getElementById('rc-verdict');
+  v.textContent = verdict;
+  v.style.color = verdict.startsWith('✔') ? '#8AFFA1' : '#FFD34D';
+  document.getElementById('rc-result').style.display = 'block';
+}
+
 CookieConsent.run({
   guiOptions: {
-    consentModal: {
-      layout: "box",
-      position: "bottom right",
-      equalWeightButtons: true,
-      flipButtons: false
-    },
-    preferencesModal: {
-      layout: "box",
-      position: "right",
-      equalWeightButtons: true,
-      flipButtons: false
-    }
+    consentModal: { layout: "box", position: "bottom right", equalWeightButtons: true, flipButtons: false },
+    preferencesModal: { layout: "box", position: "right", equalWeightButtons: true, flipButtons: false }
   },
   categories: {
-    necessary: {
-      enabled: true,
-      readOnly: true
-    },
-    analytics: {
-      enabled: false,
-      readOnly: false
-    },
-    advertising: {
-      enabled: false,
-      readOnly: false
-    }
+    necessary: { enabled: true, readOnly: true },
+    analytics: { enabled: false, readOnly: false },
+    advertising: { enabled: false, readOnly: false }
   },
   language: {
     default: "en",
@@ -209,21 +354,9 @@ CookieConsent.run({
           acceptNecessaryBtn: "Reject all",
           savePreferencesBtn: "Save preferences",
           sections: [
-            {
-              title: "Necessary cookies",
-              description: "These cookies are required for the site to function.",
-              linkedCategory: "necessary"
-            },
-            {
-              title: "Analytics cookies",
-              description: "Help us understand how visitors use our site (Google Analytics).",
-              linkedCategory: "analytics"
-            },
-            {
-              title: "Advertising cookies",
-              description: "Used to show relevant ads (Google AdSense, when enabled).",
-              linkedCategory: "advertising"
-            }
+            { title: "Necessary cookies", description: "These cookies are required for the site to function.", linkedCategory: "necessary" },
+            { title: "Analytics cookies", description: "Help us understand how visitors use our site (Google Analytics).", linkedCategory: "analytics" },
+            { title: "Advertising cookies", description: "Used to show relevant ads (Google AdSense, when enabled).", linkedCategory: "advertising" }
           ]
         }
       }
