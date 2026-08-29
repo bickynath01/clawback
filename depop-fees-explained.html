@@ -29,18 +29,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-.myth{background:#FAF7F0;color:#282828;border:1px dashed #999;padding:16px;margin:22px 0;box-shadow:0 6px 18px rgba(0,0,0,.3);}
-.myth .m{font-family:'Space Mono',monospace;font-size:12px;color:#C43C2C;font-weight:700;letter-spacing:1px;}
-.myth .r{font-family:'Space Mono',monospace;font-size:12px;color:#1E7A3F;font-weight:700;letter-spacing:1px;}
-.myth h3{font-family:'Archivo Black';margin:6px 0;color:#0E3B2C;}
-.receipt{background:#FAF7F0;color:#282828;font-family:'Space Mono',monospace;max-width:420px;margin:24px auto;padding:22px;border:1px dashed #999;box-shadow:0 8px 24px rgba(0,0,0,.35);}
-.receipt h3{font-family:'Archivo Black';letter-spacing:1px;text-align:center;margin:0 0 4px;}
-.receipt .sub{text-align:center;font-size:11px;color:#777;margin-bottom:14px;}
-.receipt .row{display:flex;justify-content:space-between;font-size:13px;margin:6px 0;}
-.receipt .row .neg{color:#C43C2C;font-weight:700;}
-.receipt .row .pos{color:#1E7A3F;font-weight:700;}
-.receipt .row .zero{color:#1E7A3F;font-weight:700;}
-.receipt .total{border-top:2px solid #282828;margin-top:12px;padding-top:10px;font-size:16px;font-weight:700;}
+/* ===== MYTH FIX: force dark readable text on the white myth cards ===== */
+.myth{background:#FAF7F0;color:#282828;border:1px solid #999;padding:16px 18px;margin:22px 0;box-shadow:0 6px 18px rgba(0,0,0,.3);max-width:100%;box-sizing:border-box;}
+.myth .m{font-family:'Space Mono',monospace;font-size:12px;color:#C43C2C !important;font-weight:700;letter-spacing:1px;}
+.myth .r{display:block;font-family:'Space Mono',monospace;font-size:12px;color:#1E7A3F !important;font-weight:700;letter-spacing:1px;margin:10px 0 4px;}
+.myth h3{font-family:'Archivo Black';margin:6px 0;color:#0E3B2C !important;}
+.myth p,.prose .myth p{font-size:14px;line-height:1.65;margin:4px 0;color:#3d3d3d !important;}
+
+/* ===== RECEIPT FIX: straight, centered, proper box (no rotation, no torn strips) ===== */
+.receipt{background:#FAF7F0;color:#282828 !important;font-family:'Space Mono',monospace;max-width:420px;margin:24px auto;padding:22px;border:1px solid #999;box-shadow:0 8px 24px rgba(0,0,0,.35);transform:none !important;rotate:none !important;position:relative;box-sizing:border-box;}
+.receipt::before,.receipt::after{display:none !important;content:none !important;}
+.receipt h3{font-family:'Archivo Black';letter-spacing:1px;text-align:center;margin:0 0 4px;color:#282828 !important;}
+.receipt .sub{text-align:center;font-size:11px;color:#777 !important;margin-bottom:14px;}
+.receipt .row{display:flex;justify-content:space-between;gap:12px;font-size:13px;margin:6px 0;color:#282828 !important;}
+.receipt .row span:first-child{color:#282828 !important;}
+.receipt .row .neg{color:#C43C2C !important;font-weight:700;}
+.receipt .row .pos{color:#1E7A3F !important;font-weight:700;}
+.receipt .row .zero{color:#1E7A3F !important;font-weight:700;}
+.receipt .total{border-top:2px solid #282828;margin-top:12px;padding-top:10px;font-size:16px;font-weight:700;color:#282828 !important;}
+
 table.data-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;}
 table.data-table th,table.data-table td{border:1px solid rgba(0,0,0,.15);padding:8px 10px;text-align:left;}
 table.data-table th{background:rgba(0,0,0,.06);}
@@ -53,15 +60,15 @@ table.data-table th{background:rgba(0,0,0,.06);}
 .mini-calc{background:#FAF7F0;color:#282828;border:1px dashed #999;padding:22px;margin:22px 0;box-shadow:0 6px 18px rgba(0,0,0,.25);}
 .mini-calc h3{font-family:'Archivo Black';margin:0 0 4px;color:#0E3B2C;letter-spacing:1px;text-align:center;}
 .mini-calc .sub{text-align:center;font-size:12px;color:#666;margin-bottom:16px;}
-.mini-calc label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px;}
+.mini-calc label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px;color:#282828;}
 .mini-calc input[type="number"]{width:100%;padding:8px;font-family:'Space Mono',monospace;border:1px solid #999;font-size:14px;box-sizing:border-box;}
 .mini-calc .row2{display:flex;gap:12px;}
-.mini-calc .row2 > div{flex:1;}
+.mini-calc .row2 > div{flex:1;min-width:0;}
 .mini-calc .toggle-row{display:flex;align-items:center;gap:8px;margin:14px 0;font-size:13px;}
 .mini-calc .toggle-row input[type="checkbox"]{width:18px;height:18px;accent-color:#0E3B2C;}
 .mini-calc button{width:100%;background:#0E3B2C;color:#FAF7F0;border:1px solid #F5B301;padding:10px;font-family:'Archivo Black';letter-spacing:1px;cursor:pointer;margin-top:6px;}
 .mini-calc button:hover{background:#164a38;}
-.calc-result{margin-top:16px;padding:14px;background:#fff;border:1px solid rgba(0,0,0,.15);font-size:14px;line-height:1.7;display:none;}
+.calc-result{margin-top:16px;padding:14px;background:#fff;border:1px solid rgba(0,0,0,.15);font-size:14px;line-height:1.7;display:none;color:#282828;}
 .calc-result.show{display:block;}
 .calc-result .kept{font-size:20px;font-weight:700;color:#1E7A3F;}
 </style>
