@@ -29,12 +29,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-.letter{background:#FAF7F0;color:#282828;border-left:4px solid #C43C2C;padding:14px 18px;margin:26px 0;font-size:15px;font-style:italic;box-shadow:0 6px 18px rgba(0,0,0,.3);}
-.letter .who{display:block;font-style:normal;font-family:'Space Mono',monospace;font-size:11px;color:#777;margin-top:6px;letter-spacing:1px;}
-.checklist{background:#FAF7F0;color:#282828;border:1px dashed #999;padding:18px;margin:24px 0;box-shadow:0 6px 18px rgba(0,0,0,.3);}
-.checklist h3{font-family:'Archivo Black';margin:0 0 10px;color:#0E3B2C;}
-.checklist li{margin:8px 0;font-size:14px;line-height:1.5;list-style:none;padding-left:26px;position:relative;}
+/* ===== VISIBILITY FIX: force dark readable text on all white cards ===== */
+.letter{background:#FAF7F0;color:#282828 !important;border-left:4px solid #C43C2C;padding:14px 18px;margin:26px 0;font-size:15px;font-style:italic;box-shadow:0 6px 18px rgba(0,0,0,.3);}
+.letter strong{color:#0E3B2C !important;}
+.letter .who{display:block;font-style:normal;font-family:'Space Mono',monospace;font-size:11px;color:#777 !important;margin-top:6px;letter-spacing:1px;}
+.checklist{background:#FAF7F0;color:#282828 !important;border:1px dashed #999;padding:18px;margin:24px 0;box-shadow:0 6px 18px rgba(0,0,0,.3);}
+.checklist h3{font-family:'Archivo Black';margin:0 0 10px;color:#0E3B2C !important;}
+.checklist li{margin:8px 0;font-size:14px;line-height:1.5;list-style:none;padding-left:26px;position:relative;color:#282828 !important;}
 .checklist li:before{content:"☐";position:absolute;left:0;color:#C43C2C;font-weight:700;}
+.checklist li strong{color:#0E3B2C !important;}
 .flow{background:#0E3B2C;border:1px solid #F5B301;padding:18px;margin:24px 0;color:#FAF7F0;font-family:'Space Mono',monospace;font-size:13px;line-height:1.9;}
 .flow b{color:#F5B301;}
 table.data-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;}
@@ -47,19 +50,21 @@ table.data-table th{background:rgba(0,0,0,.06);}
 .verified-badge{display:inline-block;background:#0E3B2C;border:1px solid #F5B301;color:#FAF7F0;font-family:'Space Mono',monospace;font-size:11px;padding:4px 12px;border-radius:20px;letter-spacing:1px;margin:0 0 14px;}
 .sources{font-size:13px;line-height:1.8;}
 .sources a{color:#F5B301;}
-.mini-calc{background:#FAF7F0;color:#282828;border:1px dashed #999;padding:22px;margin:22px 0;box-shadow:0 6px 18px rgba(0,0,0,.25);}
-.mini-calc h3{font-family:'Archivo Black';margin:0 0 4px;color:#0E3B2C;letter-spacing:1px;text-align:center;}
-.mini-calc .sub{text-align:center;font-size:12px;color:#666;margin-bottom:16px;}
-.mini-calc label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px;}
+.mini-calc{background:#FAF7F0;color:#282828 !important;border:1px dashed #999;padding:22px;margin:22px 0;box-shadow:0 6px 18px rgba(0,0,0,.25);}
+.mini-calc h3{font-family:'Archivo Black';margin:0 0 4px;color:#0E3B2C !important;letter-spacing:1px;text-align:center;}
+.mini-calc .sub{text-align:center;font-size:12px;color:#666 !important;margin-bottom:16px;}
+.mini-calc label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px;color:#282828 !important;}
 .mini-calc input[type="number"]{width:100%;padding:8px;font-family:'Space Mono',monospace;border:1px solid #999;font-size:14px;box-sizing:border-box;}
 .mini-calc .row2{display:flex;gap:12px;}
-.mini-calc .row2 > div{flex:1;}
-.mini-calc .checkrow{display:flex;align-items:center;gap:8px;margin:14px 0;font-size:13px;}
+.mini-calc .row2 > div{flex:1;min-width:0;}
+.mini-calc .checkrow{display:flex;align-items:center;gap:8px;margin:14px 0;font-size:13px;color:#282828 !important;}
 .mini-calc button{width:100%;background:#0E3B2C;color:#FAF7F0;border:1px solid #F5B301;padding:10px;font-family:'Archivo Black';letter-spacing:1px;cursor:pointer;margin-top:6px;}
 .mini-calc button:hover{background:#164a38;}
-.calc-result{margin-top:16px;padding:14px;background:#fff;border:1px solid rgba(0,0,0,.15);font-size:14px;line-height:1.7;display:none;}
+.calc-result{margin-top:16px;padding:14px;background:#fff;border:1px solid rgba(0,0,0,.15);font-size:14px;line-height:1.7;display:none;color:#282828 !important;}
 .calc-result.show{display:block;}
-.calc-result .alt{color:#1E7A3F;font-weight:600;}
+.calc-result strong{color:#0E3B2C !important;}
+.calc-result em{color:#555 !important;}
+.calc-result .alt{color:#1E7A3F !important;font-weight:600;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Depop Shipping Explained: Labels, Costs, Free Shipping & Who Really Pays","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-16","dateModified":"2026-08-23"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -110,6 +115,16 @@ table.data-table th{background:rgba(0,0,0,.06);}
       <input type="number" id="calcItemPrice" min="0" step="0.01" placeholder="15.00">
     </div>
   </div>
+  <div class="row2">
+    <div>
+      <label for="calcShipCharge">Shipping charged to buyer ($)</label>
+      <input type="number" id="calcShipCharge" min="0" step="0.01" placeholder="6.00">
+    </div>
+    <div>
+      <label for="calcItemCost">Item cost ($, optional)</label>
+      <input type="number" id="calcItemCost" min="0" step="0.01" placeholder="4.00">
+    </div>
+  </div>
   <div class="checkrow">
     <input type="checkbox" id="freeShipToggle">
     <label for="freeShipToggle" style="margin:0;font-weight:400;">Thinking about offering free shipping?</label>
@@ -133,6 +148,8 @@ function calcShipping() {
   const ozInput = parseFloat(document.getElementById('itemWeight').value);
   const price = parseFloat(document.getElementById('calcItemPrice').value) || 0;
   const freeShip = document.getElementById('freeShipToggle').checked;
+  const shipChargedInput = parseFloat(document.getElementById('calcShipCharge').value) || 0;
+  const itemCost = parseFloat(document.getElementById('calcItemCost').value) || 0;
   const resultBox = document.getElementById('shipResult');
 
   let oz = ozInput;
@@ -141,6 +158,7 @@ function calcShipping() {
   const lb = oz / 16;
   const g = gaRate(lb);
   const alt = altRate(lb);
+  const effective = (alt && alt.rate < g.rate) ? alt.rate : g.rate;
 
   let html = '';
   if (guessed) html += `<em>No weight entered — using the 1 lb row as an honest middle guess. Weigh the package for the exact number.</em><br>`;
@@ -149,17 +167,21 @@ function calcShipping() {
     html += `<span class="alt">Cheaper on the prepaid rate card: ~$${alt.rate.toFixed(2)} via ${alt.name} — if you can access those rates, that's your real label cost.</span><br>`;
   }
   if (price > 0) {
-    const effective = (alt && alt.rate < g.rate) ? alt.rate : g.rate;
-    const pctOfPrice = ((effective / price) * 100).toFixed(0);
-    html += `That's roughly <strong>${pctOfPrice}%</strong> of the item price.<br>`;
+    const pctNum = (effective / price) * 100;
+    html += `That's roughly <strong>${pctNum.toFixed(0)}%</strong> of the item price.<br>`;
+    const shipCharged = freeShip ? 0 : shipChargedInput;
+    const gross = price + shipCharged;
+    const processing = (gross * 0.033) + 0.45;
+    const net = gross - processing - effective;
+    const profit = net - itemCost;
+    html += `<br><strong>${freeShip ? 'With FREE shipping' : 'Charging $' + shipCharged.toFixed(2) + ' shipping'}:</strong> processing fee $${processing.toFixed(2)} (3.3% + $0.45 on item + shipping) → you keep ~<strong>$${net.toFixed(2)}</strong>` +
+      (itemCost > 0 ? ` → profit after item cost ~<strong>$${profit.toFixed(2)}</strong>` : '') + `<br>`;
     if (freeShip) {
-      // 2026 US: no selling fee; processing 3.3% + $0.45 on the item (shipping charged = $0)
-      const processing = (price * 0.033) + 0.45;
-      const netFree = price - processing - effective;
-      html += `<br><strong>If shipping is free:</strong> you keep roughly $${netFree.toFixed(2)} after the $${processing.toFixed(2)} processing fee and the label (no selling fee for US sellers in 2026).<br>`;
-      html += pctOfPrice > 15
+      html += pctNum > 15
         ? `<em>That label is eating a large slice of this sale — charging shipping instead is probably the safer call here.</em>`
         : `<em>At this price point the label is a small enough bite that free shipping can genuinely help conversion.</em>`;
+    } else if (shipChargedInput === 0) {
+      html += `<em>Tip: enter what you plan to charge the buyer for shipping (or tick free shipping) to see your true keep.</em>`;
     }
   }
   resultBox.innerHTML = html;
