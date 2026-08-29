@@ -30,29 +30,49 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-/* ===== FIX: kill horizontal overflow (the blank strip on the right) ===== */
+/* ===== page overflow guard ===== */
 html,body{overflow-x:hidden;max-width:100%;}
 .page-body{max-width:900px;}
 .prose p,.prose li,.casefile p{overflow-wrap:break-word;word-wrap:break-word;}
 
-/* ===== FIX: tables scroll inside their own box instead of stretching the page ===== */
+/* ===== tables scroll inside their own box ===== */
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;margin:18px 0;}
 .table-wrap table.data-table{margin:0;}
 
-.casefile{background:#FAF7F0;color:#282828;border:1px solid #999;padding:52px 20px 20px;margin:28px 0;position:relative;box-shadow:0 6px 18px rgba(0,0,0,.3);max-width:100%;box-sizing:border-box;}
-.casefile .cf-num{font-family:'Space Mono',monospace;font-size:11px;color:#777;letter-spacing:1px;}
-.casefile h3{font-family:'Archivo Black';color:#0E3B2C;margin:4px 0 6px;padding-right:0;}
-.casefile .claim{font-style:italic;color:#555;margin-bottom:10px;}
-.casefile h4{font-family:'Space Mono',monospace;font-size:12px;color:#0E3B2C;border-bottom:1px solid #ccc;margin:12px 0 4px;letter-spacing:1px;}
-.casefile p{font-size:14px;line-height:1.55;margin:4px 0;}
+/* ===== case files ===== */
+.casefile{background:#FAF7F0;color:#282828;border:1px solid #999;padding:20px;margin:28px 0;position:relative;box-shadow:0 6px 18px rgba(0,0,0,.3);max-width:100%;box-sizing:border-box;}
+.casefile .cf-num{display:block;font-family:'Space Mono',monospace;font-size:11px;color:#777 !important;letter-spacing:1px;margin-top:10px;}
+.casefile h3{font-family:'Archivo Black';color:#0E3B2C !important;margin:4px 0 6px;}
+.casefile .claim{font-style:italic;color:#555 !important;margin-bottom:10px;}
+.casefile h4{font-family:'Space Mono',monospace;font-size:12px;color:#0E3B2C !important;border-bottom:1px solid #ccc;margin:12px 0 4px;letter-spacing:1px;}
+.casefile p{font-size:14px;line-height:1.55;margin:4px 0;color:#444444 !important;}
+.prose .casefile p{color:#444444 !important;}
+.prose .casefile .claim{color:#555555 !important;}
 
-/* ===== FIX: stamp now straddles the TOP BORDER of the card — it can never cover the title ===== */
-.stamp{position:absolute;top:-16px;right:14px;font-family:'Archivo Black';font-size:12px;letter-spacing:2px;padding:5px 10px;border:3px solid;transform:rotate(6deg);background:#FAF7F0;box-shadow:0 3px 10px rgba(0,0,0,.3);z-index:2;}
-.stamp.win{color:#1E7A3F;border-color:#1E7A3F;}
-.stamp.lose{color:#C43C2C;border-color:#C43C2C;}
+/* ===== STAMP FIX: compact inline badge in normal flow — can never stretch or overlap ===== */
+.casefile .stamp{
+  position:static !important;
+  display:inline-block !important;
+  width:auto !important;
+  max-width:max-content !important;
+  top:auto !important;right:auto !important;left:auto !important;bottom:auto !important;
+  transform:rotate(-3deg) !important;
+  background:#FFFFFF !important;
+  box-shadow:0 2px 6px rgba(0,0,0,.18) !important;
+  z-index:auto !important;
+  white-space:nowrap !important;
+  font-family:'Space Mono',monospace !important;
+  font-weight:700 !important;
+  font-size:11px !important;
+  letter-spacing:2px !important;
+  padding:6px 12px !important;
+  border:3px solid !important;
+  margin:0 !important;
+}
+.casefile .stamp.win{color:#1E7A3F !important;border-color:#1E7A3F !important;}
+.casefile .stamp.lose{color:#C43C2C !important;border-color:#C43C2C !important;}
 @media (max-width:560px){
-  .stamp{font-size:10px;letter-spacing:1px;padding:4px 8px;top:-14px;right:10px;border-width:2px;}
-  .casefile{padding-top:44px;}
+  .casefile .stamp{font-size:10px !important;letter-spacing:1px !important;padding:4px 8px !important;border-width:2px !important;}
 }
 
 .callout{border-left:4px solid #F5B301;background:rgba(245,179,1,.08);padding:12px 16px;margin:18px 0;}
@@ -93,7 +113,7 @@ blockquote.voice{border-left:3px solid #F5B301;margin:20px 0;padding:10px 16px;f
 .action-list{background:#FAF7F0;color:#282828;border:2px solid #1E7A5A;padding:20px;margin:24px 0;box-shadow:0 6px 18px rgba(0,0,0,.3);box-sizing:border-box;}
 .action-list h3{font-family:'Archivo Black';margin:0 0 14px;color:#0E3B2C;text-align:center;letter-spacing:1px;}
 .action-list ol{margin:0;padding-left:20px;font-size:14px;line-height:1.7;}
-.action-list ol li{margin-bottom:10px;}
+.action-list ol li{margin-bottom:10px;color:#282828;}
 .action-list ol li strong{color:#C43C2C;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"A Buyer Wants to Return My Mercari Item — Now What?","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-17","dateModified":"2026-08-23"}</script>
