@@ -26,27 +26,36 @@
 
   b.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
 })();
+
 /* ============================================================
    CLAWBACK — add Whatnot & Vinted everywhere (footer + header)
+   v2: NO DUPLICATES — moves hardcoded links to the right column
    ============================================================ */
 (function addMissingPlatforms(){
-  /* FOOTER: keep the 4 old platforms left, put Whatnot & Vinted on the RIGHT */
+  /* FOOTER: 4 old platforms left, Whatnot & Vinted on the RIGHT */
   var footNav = document.querySelector('footer .foot-col[aria-label="Platforms"]');
-  if (footNav) {
+  if (footNav && !footNav.querySelector('.foot-plat')) {
     var firstUl = footNav.querySelector('ul');
-    if (firstUl && !footNav.querySelector('.foot-plat')) {
+    if (firstUl) {
+      var secondUl = document.createElement('ul');
+      var existing = firstUl.querySelectorAll('a[href="platforms.html#whatnot"], a[href="platforms.html#vinted"]');
+      if (existing.length) {
+        /* Page already has them hardcoded (index.html) → MOVE them out of the left column */
+        existing.forEach(function(a){ secondUl.appendChild(a.closest('li')); });
+      } else {
+        /* Page doesn't have them (guides.html etc.) → CREATE them on the right */
+        secondUl.innerHTML =
+          '<li><a href="platforms.html#whatnot">Whatnot</a></li>' +
+          '<li><a href="platforms.html#vinted">Vinted</a></li>';
+      }
       var wrap = document.createElement('div');
       wrap.className = 'foot-plat';
-      var secondUl = document.createElement('ul');
-      secondUl.innerHTML =
-        '<li><a href="platforms.html#whatnot">Whatnot</a></li>' +
-        '<li><a href="platforms.html#vinted">Vinted</a></li>';
       firstUl.parentNode.insertBefore(wrap, firstUl);
       wrap.appendChild(firstUl);
       wrap.appendChild(secondUl);
     }
   }
-  /* HEADER dropdown: add them on older pages that only show 4 platforms */
+  /* HEADER dropdown: add them only where missing */
   var drop = document.querySelector('.main-nav .drop');
   if (drop && !drop.querySelector('a[href="platforms.html#whatnot"]')) {
     drop.insertAdjacentHTML('beforeend',
