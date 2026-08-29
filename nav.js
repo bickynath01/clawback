@@ -26,3 +26,31 @@
 
   b.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
 })();
+/* ============================================================
+   CLAWBACK — add Whatnot & Vinted everywhere (footer + header)
+   ============================================================ */
+(function addMissingPlatforms(){
+  /* FOOTER: keep the 4 old platforms left, put Whatnot & Vinted on the RIGHT */
+  var footNav = document.querySelector('footer .foot-col[aria-label="Platforms"]');
+  if (footNav) {
+    var firstUl = footNav.querySelector('ul');
+    if (firstUl && !footNav.querySelector('.foot-plat')) {
+      var wrap = document.createElement('div');
+      wrap.className = 'foot-plat';
+      var secondUl = document.createElement('ul');
+      secondUl.innerHTML =
+        '<li><a href="platforms.html#whatnot">Whatnot</a></li>' +
+        '<li><a href="platforms.html#vinted">Vinted</a></li>';
+      firstUl.parentNode.insertBefore(wrap, firstUl);
+      wrap.appendChild(firstUl);
+      wrap.appendChild(secondUl);
+    }
+  }
+  /* HEADER dropdown: add them on older pages that only show 4 platforms */
+  var drop = document.querySelector('.main-nav .drop');
+  if (drop && !drop.querySelector('a[href="platforms.html#whatnot"]')) {
+    drop.insertAdjacentHTML('beforeend',
+      '<li><a href="platforms.html#whatnot">Whatnot</a></li>' +
+      '<li><a href="platforms.html#vinted">Vinted</a></li>');
+  }
+})();
