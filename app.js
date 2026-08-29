@@ -1,5 +1,5 @@
 /* ============================================================
-   CLAWBACK — app.js  (STEP 7: SHIPPING LABEL FIELD ADDED)
+   CLAWBACK — app.js  (STEP 8: REGIONS + VAT + PROFIT MARGIN + GA EVENTS)
    ============================================================ */
 
 const FALLBACK_FEES = {
@@ -11,6 +11,13 @@ const FALLBACK_FEES = {
   vinted:{label:"Vinted",finalValuePct:0,flatFee:0,flatFeeUnder:0,perOrderFee:0,processingPct:0,processingFixed:0,buyerProtectionPct:5,buyerProtectionFixed:0.70,refund:{finalValue:true,perOrder:false,processing:true},"_note":"Vinted US 2026: $0 seller fees — no commission, no processing, no listing fee. You keep 100% of your listed price. The BUYER pays $0.70 + 5% protection and the prepaid shipping label. Optional paid boosts are the only seller cost. On returns there is no seller return fee — your only risk is the item's value drop, which is exactly what CLAWBACK measures."}
 };
 
+/* ---------- Whatnot region rates (verified Aug 2026; UK/EU include 20% VAT on fees) ---------- */
+const WN_REGIONS = {
+  us:{symbol:'$',name:'US',commission:{std:8,coins:4,pallets:4,other:8},cap:{std:true,coins:true,pallets:false,other:false},capThreshold:1500,procPct:2.9,procFixed:0.30,vatPct:0},
+  uk:{symbol:'£',name:'UK',commission:{std:6.67,coins:4,pallets:6.67,other:6.67},cap:{std:false,coins:false,pallets:false,other:false},capThreshold:0,procPct:2.42,procFixed:0.25,vatPct:20},
+  eu:{symbol:'€',name:'EU',commission:{std:6.67,coins:4,pallets:6.67,other:6.67},cap:{std:false,coins:false,pallets:false,other:false},capThreshold:0,procPct:2.42,procFixed:0.25,vatPct:20}
+};
+
 let FEES = FALLBACK_FEES;
 let currentPlatform = 'ebay';
 let lastResult = null;
@@ -18,6 +25,11 @@ let lastResult = null;
 const $ = id => document.getElementById(id);
 const money = n => '$' + (Math.round(n * 100) / 100).toFixed(2);
 const noteOf = f => f['_note'] || f.note || '';
+
+/* ---------- privacy-safe analytics: fires ONLY if the visitor consented & gtag loaded ---------- */
+function trackEvent(name, params){
+  try{ if(typeof window.gtag === 'function'){ window.gtag('event', name, params || {}); } }catch(e){}
+}
 
 function setNote(){ const f = FEES[currentPlatform]; const el = $('feeNote'); if(el) el.textContent = noteOf(f); }
 
@@ -45,7 +57,6 @@ document.querySelectorAll('.platform-btn').forEach(btn => {
 /* ---------- conditional fields ---------- */
 function syncCondition(){ const vr=$('valueRow'); if(vr) vr.style.display = $('condition').value === 'same' ? 'none' : ''; }
 function syncPayer(){ const p = $('returnPayer').value; const rc=$('returnCostRow'); if(rc) rc.style.display = (p === 'me' || p === 'platform') ? '' : 'none'; }
-/* NEW: hide the whole return block for Whatnot & Vinted (they are payout audits / anchors, not return cases) */
 function syncReturnFields(){
   const special = (currentPlatform === 'whatnot' || currentPlatform === 'vinted');
   ['outcome','returnPayer','condition'].forEach(id => {
@@ -75,7 +86,7 @@ $('calcBtn').addEventListener('click', () => {
   if(!sale || sale <= 0){ flag($('salePrice')); return; }
   const btn = $('calcBtn'); const old = btn.textContent;
   btn.textContent = 'CALCULATING…'; btn.disabled = true; btn.style.filter = 'brightness(.85)';
-  setTimeout(() => { compute(); btn.textContent = old; btn.disabled = false; btn.style.filter = ''; }, 260);
+  setTimeout(() => { compute(); trackEvent('calculate', {platform: currentPlatform}); btn.textContent = old; btn.disabled = false; btn.style.filter = ''; }, 260);
 });
 
 /* ---------- the math ---------- */
@@ -149,39 +160,49 @@ function compute(){
   buildShareLink();
 }
 
-/* ---------- Whatnot payout audit (sale price is the only required input) ---------- */
+/* ---------- Whatnot payout audit (region-aware, VAT-aware, profit-aware) ---------- */
 function computeWhatnot(sale, fee){
-  const cat  = $('wnCategory') ? $('wnCategory').value : 'std';
+  const R = WN_REGIONS[($('wnRegion') ? $('wnRegion').value : 'us')] || WN_REGIONS.us;
+  const sym = R.symbol;
+  const m = n => sym + (Math.round(n * 100) / 100).toFixed(2);
+  const cat = $('wnCategory') ? $('wnCategory').value : 'std';
   const ship = parseFloat($('wnShip').value) || 0;
   const tax  = parseFloat($('wnTax').value) || 0;
   const claw = parseFloat($('wnClaw').value) || 0;
   const chk  = Math.max(1, Math.round(parseFloat($('wnCheckouts').value) || 1));
   const label = parseFloat($('wnLabel').value) || 0;
+  const itemCost = parseFloat($('wnCost').value) || 0;
 
-  const catData = fee.categories[cat] || fee.categories.std;
-  const rate = catData.commissionPct / 100;
-  const capped = catData.capEligible && fee.highValueCap.enabled;
-  const commission = (capped && sale > fee.highValueCap.threshold) ? fee.highValueCap.threshold * rate : sale * rate;
+  const catMeta = (fee.categories && fee.categories[cat]) || (fee.categories && fee.categories.std) || {capEligible:false};
+  const pct = (R.commission[cat] != null ? R.commission[cat] : R.commission.std);
+  const capped = R.cap[cat] && catMeta.capEligible && fee.highValueCap && fee.highValueCap.enabled && sale > (R.capThreshold || fee.highValueCap.threshold || 1500);
+  const commission = capped ? (R.capThreshold || 1500) * (pct / 100) : sale * (pct / 100);
+  const commVat = commission * (R.vatPct / 100);
 
   const gross = sale + ship + tax;
-  const processing = gross > 0 ? (gross * (fee.processingPct / 100)) + (fee.processingFixed * chk) : 0;
+  const processing = gross > 0 ? (gross * (R.procPct / 100)) + (R.procFixed * chk) : 0;
+  const procVat = processing * (R.vatPct / 100);
 
-  const platformTake = commission + processing + claw;
+  const platformTake = commission + commVat + processing + procVat + claw;
   const totalCost = platformTake + label;
   const keep = sale - totalCost;
   const bite = sale > 0 ? (totalCost / sale) * 100 : 0;
   const platformBite = sale > 0 ? (platformTake / sale) * 100 : 0;
+  const profit = keep - itemCost;
+  const margin = sale > 0 ? (profit / sale) * 100 : 0;
 
   const lines = [
-    {label:'HAMMER SALE', amount:'+' + money(sale), cls:'info', cat:''},
-    {label:'COMMISSION (' + Math.round(rate * 100) + '%)', amount:'-' + money(commission), cls:'loss', cat:'fees'},
-    {label:'PROCESSING ON GROSS (' + chk + '× $0.30)', amount:'-' + money(processing), cls:'loss', cat:'fees'},
-    {label:'WEIGHT CLAWBACKS', amount:'-' + money(claw), cls:'loss', cat:'fees'}
+    {label:'HAMMER SALE (' + R.name + ')', amount:'+' + m(sale), cls:'info', cat:''},
+    {label:'COMMISSION (' + pct + '%' + (capped ? ' · CAP' : '') + ')', amount:'-' + m(commission), cls:'loss', cat:'fees'}
   ];
-  if(label > 0) lines.push({label:'YOUR SHIPPING LABEL', amount:'-' + money(label), cls:'loss', cat:'shipping'});
+  if(commVat > 0) lines.push({label:'VAT ON COMMISSION (' + R.vatPct + '%)', amount:'-' + m(commVat), cls:'loss', cat:'fees'});
+  lines.push({label:'PROCESSING ON GROSS (' + chk + '× ' + sym + R.procFixed.toFixed(2) + ')', amount:'-' + m(processing), cls:'loss', cat:'fees'});
+  if(procVat > 0) lines.push({label:'VAT ON PROCESSING (' + R.vatPct + '%)', amount:'-' + m(procVat), cls:'loss', cat:'fees'});
+  if(claw > 0) lines.push({label:'WEIGHT CLAWBACKS', amount:'-' + m(claw), cls:'loss', cat:'fees'});
+  if(label > 0) lines.push({label:'YOUR SHIPPING LABEL', amount:'-' + m(label), cls:'loss', cat:'shipping'});
 
   lastResult = { sale, feesLost: platformTake, returnCost: label, valueLost: 0, total: totalCost, condition:'same', outcome:'inad', platform:fee.label, lines };
-  renderWhatnotReceipt(lastResult, platformBite, bite, keep, label);
+  renderWhatnotReceipt(lastResult, {sym, bite, platformBite, keep, label, itemCost, profit, margin});
   renderChart(lastResult);
   $('actions').style.display = 'flex';
   updateLetter(lastResult);
@@ -231,7 +252,7 @@ function renderReceipt(r){
   }, after + 480);
 }
 
-function renderWhatnotReceipt(r, platformBite, totalBite, keep, label){
+function renderWhatnotReceipt(r, meta){
   const rec = $('receipt'); rec.innerHTML = '';
   rec.insertAdjacentHTML('beforeend',
     `<div class="r-head"><div class="r-brand">CLAWBACK</div><div class="r-sub">WHATNOT PAYOUT AUDIT</div>` +
@@ -245,16 +266,20 @@ function renderWhatnotReceipt(r, platformBite, totalBite, keep, label){
   });
   const after = 140 + r.lines.length * 150 + 220;
   setTimeout(() => {
-    let biteLabel = label > 0
-      ? `PLATFORM TAKE ${platformBite.toFixed(1)}% · WITH LABEL ${totalBite.toFixed(1)}%`
-      : `ADVERTISED 8% → REAL TAKE ${platformBite.toFixed(1)}%`;
+    const biteLabel = meta.label > 0
+      ? `PLATFORM TAKE ${meta.platformBite.toFixed(1)}% · WITH LABEL ${meta.bite.toFixed(1)}%`
+      : `ADVERTISED RATE → REAL TAKE ${meta.bite.toFixed(1)}%`;
+    const profitLine = meta.itemCost > 0
+      ? `<div class="r-line ${meta.profit >= 0 ? 'ok' : 'loss'}"><span class="r-label">PROFIT AFTER COST (${meta.margin.toFixed(0)}% MARGIN)</span><span class="r-dots"></span><span class="r-amt">${meta.profit < 0 ? '-' : ''}${meta.sym}${Math.abs(meta.profit).toFixed(2)}</span></div>`
+      : '';
     rec.insertAdjacentHTML('beforeend',
-      `<div class="r-rule"></div><div class="r-total"><span>YOU KEEP</span><span id="totalAmt" style="color:${keep > 0 ? 'var(--green)' : 'var(--red)'}">${money(keep)}</span></div>` +
-      `<div class="r-line hl"><span class="r-label">${biteLabel}</span><span class="r-dots"></span><span class="r-amt">${totalBite.toFixed(1)}%</span></div>` +
+      `<div class="r-rule"></div><div class="r-total"><span>YOU KEEP</span><span id="totalAmt" style="color:${meta.keep > 0 ? 'var(--green)' : 'var(--red)'}">${meta.sym}${meta.keep.toFixed(2)}</span></div>` +
+      profitLine +
+      `<div class="r-line hl"><span class="r-label">${biteLabel}</span><span class="r-dots"></span><span class="r-amt">${meta.bite.toFixed(1)}%</span></div>` +
       `<div class="r-barcode"></div>`);
   }, after);
   setTimeout(() => {
-    rec.insertAdjacentHTML('beforeend', `<div class="stamp appeal">CLAWED ${totalBite.toFixed(1)}%</div>`);
+    rec.insertAdjacentHTML('beforeend', `<div class="stamp appeal">CLAWED ${meta.bite.toFixed(1)}%</div>`);
   }, after + 480);
 }
 
@@ -395,12 +420,14 @@ function buildShareLink(){
     if($('currentValue').value && $('condition').value !== 'same') p.set('cv', $('currentValue').value);
   }
   if(currentPlatform === 'whatnot'){
+    if($('wnRegion').value) p.set('wnr', $('wnRegion').value);
     if($('wnCategory').value) p.set('wnc', $('wnCategory').value);
     if($('wnShip').value) p.set('wns', $('wnShip').value);
     if($('wnTax').value) p.set('wnt', $('wnTax').value);
     if($('wnClaw').value) p.set('wncl', $('wnClaw').value);
     if($('wnCheckouts').value) p.set('wnchk', $('wnCheckouts').value);
     if($('wnLabel').value) p.set('wnl', $('wnLabel').value);
+    if($('wnCost').value) p.set('wncost', $('wnCost').value);
   }
   const base = (location.protocol === 'http:' || location.protocol === 'https:')
     ? (location.origin + location.pathname)
@@ -410,7 +437,7 @@ function buildShareLink(){
 
 /* ---------- copy buttons ---------- */
 function copyText(text, btn, label){
-  const done = () => { const o = label || btn.textContent; btn.textContent = 'COPIED ✓'; setTimeout(() => btn.textContent = o, 1600); };
+  const done = () => { const o = label || btn.textContent; btn.textContent = 'COPIED ✓'; trackEvent('copy', {target: btn.dataset.copy || btn.id}); setTimeout(() => btn.textContent = o, 1600); };
   const fb = () => { const el = btn.dataset.copy ? $(btn.dataset.copy) : null; if(el){ el.select(); el.setSelectionRange && el.setSelectionRange(0, 9999); document.execCommand('copy'); } done(); };
   if(navigator.clipboard){ navigator.clipboard.writeText(text).then(done).catch(fb); } else fb();
 }
@@ -471,12 +498,14 @@ function countUp(el, target, dur){
   if(q.get('c'))  $('condition').value = q.get('c');
   if(q.get('cv')) $('currentValue').value = q.get('cv');
   if(q.get('p') === 'whatnot'){
+    if(q.get('wnr')) $('wnRegion').value = q.get('wnr');
     if(q.get('wnc')) $('wnCategory').value = q.get('wnc');
     if(q.get('wns')) $('wnShip').value = q.get('wns');
     if(q.get('wnt')) $('wnTax').value = q.get('wnt');
     if(q.get('wncl')) $('wnClaw').value = q.get('wncl');
     if(q.get('wnchk')) $('wnCheckouts').value = q.get('wnchk');
     if(q.get('wnl')) $('wnLabel').value = q.get('wnl');
+    if(q.get('wncost')) $('wnCost').value = q.get('wncost');
   }
   syncCondition(); syncPayer(); syncReturnFields();
   setTimeout(() => { if(parseFloat($('salePrice').value) > 0) compute(); }, 350);
