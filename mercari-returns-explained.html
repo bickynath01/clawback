@@ -30,19 +30,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-.casefile{background:#FAF7F0;color:#282828;border:1px solid #999;padding:20px;margin:28px 0;position:relative;box-shadow:0 6px 18px rgba(0,0,0,.3);}
+/* ===== FIX: kill horizontal overflow (the blank strip on the right) ===== */
+html,body{overflow-x:hidden;max-width:100%;}
+.page-body{max-width:900px;}
+.prose p,.prose li,.casefile p{overflow-wrap:break-word;word-wrap:break-word;}
+
+/* ===== FIX: tables scroll inside their own box instead of stretching the page ===== */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;margin:18px 0;}
+.table-wrap table.data-table{margin:0;}
+
+.casefile{background:#FAF7F0;color:#282828;border:1px solid #999;padding:52px 20px 20px;margin:28px 0;position:relative;box-shadow:0 6px 18px rgba(0,0,0,.3);max-width:100%;box-sizing:border-box;}
 .casefile .cf-num{font-family:'Space Mono',monospace;font-size:11px;color:#777;letter-spacing:1px;}
-.casefile h3{font-family:'Archivo Black';color:#0E3B2C;margin:4px 0 6px;}
+.casefile h3{font-family:'Archivo Black';color:#0E3B2C;margin:4px 0 6px;padding-right:0;}
 .casefile .claim{font-style:italic;color:#555;margin-bottom:10px;}
 .casefile h4{font-family:'Space Mono',monospace;font-size:12px;color:#0E3B2C;border-bottom:1px solid #ccc;margin:12px 0 4px;letter-spacing:1px;}
 .casefile p{font-size:14px;line-height:1.55;margin:4px 0;}
-.stamp{position:absolute;top:14px;right:16px;font-family:'Archivo Black';font-size:13px;letter-spacing:2px;padding:6px 12px;border:3px solid;transform:rotate(8deg);background:rgba(255,255,255,.6);}
+
+/* ===== FIX: stamp now straddles the TOP BORDER of the card — it can never cover the title ===== */
+.stamp{position:absolute;top:-16px;right:14px;font-family:'Archivo Black';font-size:12px;letter-spacing:2px;padding:5px 10px;border:3px solid;transform:rotate(6deg);background:#FAF7F0;box-shadow:0 3px 10px rgba(0,0,0,.3);z-index:2;}
 .stamp.win{color:#1E7A3F;border-color:#1E7A3F;}
 .stamp.lose{color:#C43C2C;border-color:#C43C2C;}
+@media (max-width:560px){
+  .stamp{font-size:10px;letter-spacing:1px;padding:4px 8px;top:-14px;right:10px;border-width:2px;}
+  .casefile{padding-top:44px;}
+}
+
 .callout{border-left:4px solid #F5B301;background:rgba(245,179,1,.08);padding:12px 16px;margin:18px 0;}
 .callout.red{border-left-color:#C43C2C;background:rgba(196,60,44,.08);}
 .callout.green{border-left-color:#1E7A5A;background:rgba(30,122,90,.08);}
-table.data-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;}
+table.data-table{width:100%;border-collapse:collapse;font-size:14px;}
 table.data-table th,table.data-table td{border:1px solid rgba(255,255,255,.15);padding:10px;text-align:left;}
 table.data-table th{background:rgba(245,179,1,.15);color:#F5B301;}
 blockquote.voice{border-left:3px solid #F5B301;margin:20px 0;padding:10px 16px;font-style:italic;color:rgba(250,247,240,.85);}
@@ -56,14 +72,14 @@ blockquote.voice{border-left:3px solid #F5B301;margin:20px 0;padding:10px 16px;f
 .relief h3{font-family:'Archivo Black';margin-top:0;color:#F5B301;letter-spacing:1px;}
 
 /* Mini Decision Calculator */
-.mini-calc{background:#0E3B2C;border:1px solid #F5B301;padding:22px;margin:28px 0;max-width:520px;box-shadow:0 8px 24px rgba(0,0,0,.35);}
+.mini-calc{background:#0E3B2C;border:1px solid #F5B301;padding:22px;margin:28px 0;max-width:520px;box-shadow:0 8px 24px rgba(0,0,0,.35);box-sizing:border-box;}
 .mini-calc h3{font-family:'Archivo Black';color:#F5B301;margin:0 0 4px;font-size:18px;letter-spacing:.5px;}
 .mini-calc .mini-sub{font-size:13px;color:rgba(250,247,240,.7);margin:0 0 18px;}
 .mini-calc label{display:block;font-family:'Space Mono',monospace;font-size:11px;color:#F5B301;letter-spacing:1px;margin:14px 0 6px;font-weight:700;}
 .mini-calc input[type="number"],.mini-calc select{width:100%;padding:10px 12px;background:#FAF7F0;border:1px solid rgba(245,179,1,.4);color:#0E3B2C;font-family:'Space Mono',monospace;font-size:15px;box-sizing:border-box;}
 .mini-calc input[type="number"]:focus,.mini-calc select:focus{outline:2px solid #F5B301;}
 .mini-calc .row2{display:flex;gap:12px;}
-.mini-calc .row2 > div{flex:1;}
+.mini-calc .row2 > div{flex:1;min-width:0;}
 .mini-calc button{width:100%;margin-top:20px;padding:12px;background:#F5B301;color:#0E3B2C;border:none;font-family:'Archivo Black',sans-serif;font-size:15px;letter-spacing:1px;cursor:pointer;transition:all .15s;}
 .mini-calc button:hover{background:#FAF7F0;}
 .mini-result{margin-top:18px;padding:14px;background:rgba(250,247,240,.08);border-top:2px solid #F5B301;display:none;}
@@ -74,7 +90,7 @@ blockquote.voice{border-left:3px solid #F5B301;margin:20px 0;padding:10px 16px;f
 .mini-result .note{font-size:12px;color:rgba(250,247,240,.6);margin-top:10px;font-style:italic;line-height:1.5;}
 
 /* Action Checklist */
-.action-list{background:#FAF7F0;color:#282828;border:2px solid #1E7A5A;padding:20px;margin:24px 0;box-shadow:0 6px 18px rgba(0,0,0,.3);}
+.action-list{background:#FAF7F0;color:#282828;border:2px solid #1E7A5A;padding:20px;margin:24px 0;box-shadow:0 6px 18px rgba(0,0,0,.3);box-sizing:border-box;}
 .action-list h3{font-family:'Archivo Black';margin:0 0 14px;color:#0E3B2C;text-align:center;letter-spacing:1px;}
 .action-list ol{margin:0;padding-left:20px;font-size:14px;line-height:1.7;}
 .action-list ol li{margin-bottom:10px;}
@@ -170,6 +186,7 @@ blockquote.voice{border-left:3px solid #F5B301;margin:20px 0;padding:10px 16px;f
 
 <h2>"Wait — so who actually pays to ship this thing back?"</h2>
 <p>This is the #1 question in every Mercari forum, and honestly, it's where most sellers get confused. Here's the official answer, broken down by weight:</p>
+<div class="table-wrap">
 <table class="data-table">
 <thead><tr><th>Return Weight</th><th>Who Pays The Return Label</th></tr></thead>
 <tbody>
@@ -179,6 +196,7 @@ blockquote.voice{border-left:3px solid #F5B301;margin:20px 0;padding:10px 16px;f
 <tr><td>Damaged / hazardous item</td><td>Order canceled + refunded, item NOT returned</td></tr>
 </tbody>
 </table>
+</div>
 <p class="callout red"><strong>The buyer-side deadlines:</strong> once approved, the buyer must drop off the item within <strong>72 hours</strong> of receiving the label, and the carrier's acceptance scan must occur within <strong>168 hours</strong> of approval. If the buyer misses these, the return is <strong>voided and payment is released to the seller.</strong> So even a lost return can end in your favor.</p>
 
 <div class="mini-calc" aria-label="Mercari return decision calculator">
@@ -238,6 +256,7 @@ blockquote.voice{border-left:3px solid #F5B301;margin:20px 0;padding:10px 16px;f
 
 <h2>Mercari vs eBay vs Poshmark: Return Policies Compared</h2>
 <p>How does Mercari's return system stack up against the other big platforms?</p>
+<div class="table-wrap">
 <table class="data-table">
 <thead><tr><th>Factor</th><th>Mercari</th><th>eBay</th><th>Poshmark</th></tr></thead>
 <tbody>
@@ -248,6 +267,7 @@ blockquote.voice{border-left:3px solid #F5B301;margin:20px 0;padding:10px 16px;f
 <tr><td>Auto-completion if no return?</td><td>✅ 72 hours</td><td>❌ No auto-completion</td><td>✅ 3 days</td></tr>
 </tbody>
 </table>
+</div>
 <p>Mercari's 72-hour auto-completion is one of the most seller-friendly policies in the game — once that window closes, the sale is locked. See the full six-platform comparison in <a href="platform-comparison-2026.html">the 2026 Reseller's Matrix</a>.</p>
 
 <div class="relief">
@@ -294,11 +314,11 @@ function calcReturn(){
   var reason = document.getElementById('rc-reason').value;
   var weight = parseFloat(document.getElementById('rc-weight').value) || 10;
   var evidence = document.getElementById('rc-evidence').value;
-  
+
   var acceptCost = 0;
   var fightCost = 0;
   var verdict = '';
-  
+
   if(reason === 'nonmandatory'){
     acceptCost = sale * 0.10;
     fightCost = 0;
@@ -317,7 +337,7 @@ function calcReturn(){
       verdict = '⚠ ACCEPT IT — Without proof, Mercari will likely side with the buyer. Accept now to preserve your rating.';
     }
   }
-  
+
   document.getElementById('rc-accept').textContent = 'lose ~$' + acceptCost.toFixed(2) + ' (fee + value drop)';
   document.getElementById('rc-fight').textContent = fightCost === 0 ? 'win — keep the sale' : 'risk losing $' + fightCost.toFixed(2);
   var v = document.getElementById('rc-verdict');
