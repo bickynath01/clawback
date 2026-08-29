@@ -425,3 +425,7 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
 @media(max-width:520px){.platforms{grid-template-columns:1fr 1fr;}.wn-grid{grid-template-columns:1fr;}}
 .wn-hint{font-family:var(--mono);font-size:11px;color:#E8B4A8;margin:0 0 10px;}
 .wn-label-field{grid-column:1 / -1;}
+/* ===== Footer Platforms: two columns — Whatnot & Vinted on the RIGHT ===== */
+.foot-plat{display:flex;gap:36px;}
+.foot-plat ul{list-style:none;margin:0;padding:0;}
+@media (max-width:420px){ .foot-plat{gap:24px;} }
