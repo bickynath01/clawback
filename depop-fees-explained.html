@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
@@ -71,6 +71,10 @@ table.data-table th{background:rgba(0,0,0,.06);}
 .calc-result{margin-top:16px;padding:14px;background:#fff;border:1px solid rgba(0,0,0,.15);font-size:14px;line-height:1.7;display:none;color:#282828;}
 .calc-result.show{display:block;}
 .calc-result .kept{font-size:20px;font-weight:700;color:#1E7A3F;}
+
+/* Bundle callout */
+.bundle-note{background:#FAF7F0;color:#282828;border-left:4px solid #C43C2C;padding:14px 18px;margin:22px 0;font-size:14px;line-height:1.65;}
+.bundle-note strong{color:#0E3B2C;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How Much Does Depop Take From a Sale? Depop Fees Explained (2026)","author":{"@type":"Organization","name":"CLAWBACK Team"},"datePublished":"2026-08-13","dateModified":"2026-08-23"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -83,8 +87,9 @@ table.data-table th{background:rgba(0,0,0,.06);}
 {"@type":"Question","name":"How much is the Depop boosting fee in 2026?","acceptedAnswer":{"@type":"Answer","text":"The boosting fee is 12% in the US and UK for new listings from 23 March 2026. Australia uses an 8% boosting fee. Outside the UK, US and Australia, Depop's current policy lists an 8% boosting fee. Boosting fees apply when the boosted listing qualifies as a boosting sale."}},
 {"@type":"Question","name":"Does Depop charge a monthly or listing fee?","acceptedAnswer":{"@type":"Answer","text":"Depop's seller fees page does not list a monthly subscription or standard listing fee. Applicable transaction fees are charged when a sale occurs."}},
 {"@type":"Question","name":"Can Depop fees be refunded?","acceptedAnswer":{"@type":"Answer","text":"Yes. Depop says that when a sale is refunded, the selling fee, payment processing fees and boosting fees are reversed. Depop Payments handles the reversal automatically; PayPal sellers outside the UK, US and Australia may need to contact Support for a selling-fee refund."}},
-{"@type":"Question","name":"Why was I charged a Depop fee I don't recognize?","acceptedAnswer":{"@type":"Answer","text":"Check the sale receipt in Depop. Depop says sellers can review the fee breakdown from their sold item receipt, including payment processing, selling fees where applicable, and boosting fees."}}
-]}</script>
+{"@type":"Question","name":"Why was I charged a Depop fee I don't recognize?","acceptedAnswer":{"@type":"Answer","text":"Check the sale receipt in Depop. Depop says sellers can review the fee breakdown from their sold item receipt, including payment processing, selling fees where applicable, and boosting fees."}},
+{"@type":"Question","name":"How are Depop fees deducted?","acceptedAnswer":{"@type":"Answer","text":"If you use Depop Payments (via Stripe), all fees are deducted before your sale proceeds are paid to your bank. If you sell via PayPal, proceeds are sent to your PayPal account, then the selling fee and PayPal processing fee are deducted as separate charges."}},
+{"@type":"Question","name":"How does Depop charge fees on bundle sales?","acceptedAnswer":{"@type":"Answer","text":"For sellers outside the UK and US, Depop's policy states that selling fees apply per item in a bundle, while the payment processing fee applies once per bundle transaction. Always review your bundle receipt to confirm how many selling-fee charges were applied."}}]}</script>
 </head><body>
 <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>THE 10% IS GONE ★ ONE BITE LEFT ★ KNOW IT BEFORE YOU PRICE ★&nbsp;</span><span>THE 10% IS GONE ★ ONE BITE LEFT ★ KNOW IT BEFORE YOU PRICE ★&nbsp;</span></div></div>
 <header class="site-head"><div class="head-inner">
@@ -239,6 +244,19 @@ function calcDepopFees() {
 }
 </script>
 
+<h2>How Depop Actually Deducts Fees (When They Hit)</h2>
+<p>The fee percentages matter, but <strong>when</strong> they come out of your money is just as important for cash flow. Depop's policy distinguishes between the two payment methods:</p>
+
+<table class="data-table">
+<thead><tr><th>Payment method</th><th>How fees are deducted</th></tr></thead>
+<tbody>
+<tr><td><strong>Depop Payments (via Stripe)</strong></td><td>All fees (selling, processing, boosting) are deducted <strong>before</strong> your sale proceeds are paid to your bank account.</td></tr>
+<tr><td><strong>PayPal</strong></td><td>Sale proceeds are sent to your PayPal account first. The Depop selling fee and PayPal's processing fee are then deducted as <strong>separate charges</strong> from your PayPal account.</td></tr>
+</tbody>
+</table>
+
+<p>That distinction matters for cash flow: Depop Payments sellers see fees removed before the money ever lands, while PayPal sellers see the full amount arrive and then fees come out later. Both end up with the same net, but the timing feels different — especially if you are reconciling balances manually.</p>
+
 <h2>The 2026 Depop fee menu: what sellers actually pay</h2>
 <table class="data-table">
 <thead><tr><th>Fee</th><th>UK</th><th>US</th><th>Australia</th><th>Outside UK / US / Australia</th></tr></thead>
@@ -255,6 +273,17 @@ function calcDepopFees() {
 <div class="callout green">
 <strong>Australia changed in July 2026.</strong> Depop's current fee page states that selling fees were removed in Australia on <strong>July 22, 2026</strong>. If you are using an older article or forum post that still says Australian sellers pay a 10% selling fee, check the date before relying on it.
 </div>
+
+<h2>What About Bundle Sales? (The Multi-Item Fee Trap)</h2>
+<p>Bundle sales — multiple items sold to one buyer in a single order — have a specific fee rule that catches many sellers off guard. Depop's current policy is explicit:</p>
+
+<div class="bundle-note">
+<strong>For sellers outside the UK and US:</strong> if you sell a bundle on Depop, Depop selling fees apply <strong>for each item</strong> in the bundle. These will show separately on your receipt, so make sure you review how many items were charged. The payment processing fee, by contrast, applies <strong>once per bundle transaction</strong>.
+</div>
+
+<p>That means on a three-item bundle for a seller outside the UK and US, you could see three separate 10% selling-fee lines on your receipt but only one payment-processing charge. UK, US and Australian sellers (who have no selling fee) only see the one processing fee regardless of how many items are in the bundle — so bundles are particularly fee-friendly in those markets.</p>
+
+<p><strong>Seller-safe rule:</strong> when a bundle sale completes, open the receipt and count the fee line items. If you sold a three-item bundle and only see one selling-fee line (in markets where one applies), something is off. If you see three selling-fee lines and one processing line, that's the policy working as designed.</p>
 
 <h2>Myth vs. reality: 8 things sellers still get wrong</h2>
 
@@ -349,6 +378,8 @@ function calcDepopFees() {
 <dt>Why does Depop say I pay a fee if the selling fee is zero?</dt><dd>No selling fee and no fees at all are different things. Payment processing and qualifying boosting fees can still apply.</dd>
 <dt>Why was I charged a Depop fee I don't recognize?</dt><dd>Open the sold-item receipt in Depop and review the fee breakdown. Depop says receipts show the applicable transaction fees.</dd>
 <dt>Can Depop fees be refunded?</dt><dd>Depop says that when a sale is refunded, selling, payment processing and boosting fees are reversed. See the separate refund-fee guide for the full refund workflow.</dd>
+<dt>How are Depop fees deducted?</dt><dd>Depop Payments deducts all fees before proceeds reach your bank. PayPal sends proceeds first, then deducts selling and processing fees as separate charges.</dd>
+<dt>How does Depop charge fees on bundle sales?</dt><dd>For sellers outside the UK and US, selling fees apply per item in a bundle; processing applies once per bundle transaction. UK/US/Australian sellers only pay processing regardless of item count.</dd>
 </dl>
 </article></main>
 
