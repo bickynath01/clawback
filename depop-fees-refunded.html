@@ -1,375 +1,306 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<meta charset="UTF-8">
-<link rel="preload" href="https://fonts.gstatic.com/s/archivo/v19/k3kCo84MPvpLmixcA63oeAL7Iq5O3A.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="https://fonts.gstatic.com/s/spacemono/v14/i7dPIFZifjKcF5UAWdDRYEF8RQ.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
-<script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
-<script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
-<script type="text/plain" data-category="analytics">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CPRC739GBN');
-</script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Does Depop Refund Fees on Returns? Yes — All of Them (2026 Math Inside)</title>
-<meta name="description" content="When you refund a buyer on Depop, ALL fees reverse automatically — selling, processing, and boosting. See the exact refund math and the two losses you STILL eat (shipping + item value).">
-<link rel="canonical" href="https://www.gotclawback.com/depop-fees-refunded.html">
-
-<meta property="og:type" content="article">
-<meta property="og:title" content="Does Depop Refund Fees on Returns? Yes — All of Them (2026 Math)">
-<meta property="og:description" content="When you refund a buyer on Depop, ALL fees reverse automatically. See the exact refund math and the two losses you still eat.">
-<meta property="og:url" content="https://www.gotclawback.com/depop-fees-refunded.html">
-<meta property="og:site_name" content="CLAWBACK">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Does Depop Refund Fees on Returns? Yes — All of Them">
-<meta name="twitter:description" content="Every Depop fee reverses on a refund in 2026. The real loss is the label + value drop. Run your numbers.">
-
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Are Depop Fees Refunded When You Refund a Buyer? (2026)</title>
+<meta name="description" content="Refunded a Depop buyer and worried you lost the fees? Depop says all selling, payment-processing and boosting fees are reversed when a sale is refunded. Here is exactly what sellers get back.">
+<link rel="canonical" href="https://gotclawback.com/depop-fees-refunded.html">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght=400;500;600;700&family=Archivo+Black&family=Space+Mono:wght=400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>
-table.data-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;}
-table.data-table th,table.data-table td{border:1px solid rgba(255,255,255,.18);padding:8px 10px;text-align:left;}
-table.data-table th{background:rgba(255,255,255,.08);}
-.callout{border-left:4px solid #F5B301;background:rgba(245,179,1,.08);padding:12px 16px;margin:18px 0;}
-.callout.red{border-left-color:#C43C2C;background:rgba(196,60,44,.08);}
-.callout.green{border-left-color:#1E7A5A;background:rgba(30,122,90,.08);}
-.cta-box{background:#0E3B2C;border:1px solid #F5B301;padding:20px;margin:28px 0;text-align:center;}
-.verified-badge{display:inline-block;background:#0E3B2C;border:1px solid #F5B301;color:#FAF7F0;font-family:'Space Mono',monospace;font-size:11px;padding:4px 12px;border-radius:20px;letter-spacing:1px;margin:0 0 14px;}
-.steps{background:#FAF7F0;color:#282828;border:1px dashed #999;padding:20px;margin:24px 0;}
-.steps h3{font-family:'Archivo Black';margin:0 0 12px;color:#0E3B2C;letter-spacing:1px;}
-.steps ol{margin:0;padding-left:20px;font-size:14px;line-height:1.7;}
-.steps code{font-family:'Space Mono',monospace;background:rgba(14,59,44,.1);padding:1px 5px;}
-.sources{font-size:13px;line-height:1.8;}
-.sources a{color:#F5B301;}
-.scenario{background:#FAF7F0;color:#282828;border:1px dashed #999;padding:18px 20px;margin:20px 0;font-size:14px;line-height:1.7;}
-.scenario .tag{display:block;font-family:'Space Mono',monospace;font-size:11px;color:#C43C2C;letter-spacing:1px;margin-bottom:8px;}
-
-/* Featured Answer Box */
-.featured-answer{background:linear-gradient(135deg,#1E7A5A 0%,#166B4C 100%);color:#FAF7F0;padding:24px;margin:0 0 32px;border-left:6px solid #F5B301;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
-.featured-answer h2{margin:0 0 16px;font-size:20px;font-family:'Archivo Black',sans-serif;text-transform:uppercase;letter-spacing:0.5px;color:#F5B301;}
-.featured-answer p{margin:0 0 12px;font-size:17px;line-height:1.7;font-weight:600;}
-.featured-answer ul{margin:8px 0 0 20px;font-size:15px;line-height:1.8;font-weight:500;}
-.featured-answer .calculator-note{margin:16px 0 0;font-size:14px;font-style:italic;opacity:0.9;}
-
-/* Quick Stats Row */
-.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin:24px 0;}
-.stat-card{background:rgba(250,247,240,.08);border:1px solid rgba(245,179,1,.3);padding:14px;text-align:center;border-radius:4px;}
-.stat-card .num{font-family:'Archivo Black',sans-serif;font-size:24px;color:#F5B301;display:block;}
-.stat-card .label{font-family:'Space Mono',monospace;font-size:11px;color:rgba(250,247,240,.7);letter-spacing:1px;text-transform:uppercase;margin-top:4px;}
-
-/* Mini Calculator Styles */
-.mini-calc{background:#0E3B2C;border:1px solid #F5B301;padding:22px;margin:28px 0;max-width:480px;box-shadow:0 8px 24px rgba(0,0,0,.35);}
-.mini-calc h3{font-family:'Archivo Black';color:#F5B301;margin:0 0 4px;font-size:18px;letter-spacing:.5px;}
-.mini-calc .mini-sub{font-size:13px;color:rgba(250,247,240,.7);margin:0 0 18px;}
-.mini-calc label{display:block;font-family:'Space Mono',monospace;font-size:11px;color:#F5B301;letter-spacing:1px;margin:14px 0 6px;font-weight:700;}
-.mini-calc input[type="number"]{width:100%;padding:10px 12px;background:#FAF7F0;border:1px solid rgba(245,179,1,.4);color:#0E3B2C;font-family:'Space Mono',monospace;font-size:15px;box-sizing:border-box;}
-.mini-calc input[type="number"]:focus{outline:2px solid #F5B301;}
-.mini-calc .radio-group{display:flex;gap:10px;margin-top:6px;}
-.mini-calc .radio-group label{flex:1;display:flex;align-items:center;gap:6px;padding:10px;background:rgba(250,247,240,.05);border:1px solid rgba(245,179,1,.3);color:#FAF7F0;font-family:'Archivo',sans-serif;font-size:13px;font-weight:500;cursor:pointer;margin:0;letter-spacing:0;}
-.mini-calc .radio-group input[type="radio"]{accent-color:#F5B301;}
-.mini-calc .toggle-row{display:flex;align-items:center;gap:10px;margin-top:6px;}
-.mini-calc .toggle-row input[type="checkbox"]{width:18px;height:18px;accent-color:#F5B301;}
-.mini-calc .toggle-row span{font-family:'Archivo',sans-serif;font-size:14px;color:#FAF7F0;}
-.mini-calc button{width:100%;margin-top:20px;padding:12px;background:#F5B301;color:#0E3B2C;border:none;font-family:'Archivo Black',sans-serif;font-size:15px;letter-spacing:1px;cursor:pointer;transition:all .15s;}
-.mini-calc button:hover{background:#FAF7F0;}
-.mini-result{margin-top:18px;padding:14px;background:rgba(250,247,240,.08);border-top:2px solid #F5B301;display:none;}
-.mini-result .line{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:14px;margin:6px 0;color:#FAF7F0;gap:12px;}
-.mini-result .line.back{color:#8AFFA1;}
-.mini-result .line.gone{color:#FF8A8A;}
-.mini-result .note{font-size:12px;color:rgba(250,247,240,.6);margin-top:10px;font-style:italic;line-height:1.5;}
-</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Does Depop Refund Fees on Returns? Yes — All of Them (2026 Math Inside)","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-22","dateModified":"2026-08-27"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to refund a buyer on Depop and get your fees back","step":[{"@type":"HowToStep","position":1,"text":"Open the Depop app. On iOS go to My Depop and tap the Sold tab. On Android go to Selling Hub, then Sold items."},{"@type":"HowToStep","position":2,"text":"Select the order and tap Refund sale, then choose full or partial refund and confirm."},{"@type":"HowToStep","position":3,"text":"If the buyer paid with Depop Payments, the processing fee and any boosting fees are reversed automatically when the refund processes — US sellers pay no selling fee at all in 2026."},{"@type":"HowToStep","position":4,"text":"Verify the reversal under My Depop, My Account, Depop Balance, Latest Transactions."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Does Depop refund fees when I refund a buyer in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Depop's official policy states that when a sale is refunded, all fees are reversed. For US sellers on Depop Payments that means the 3.3% + $0.45 processing fee and any 12% boosting fee come back automatically."}},
-{"@type":"Question","name":"Does Depop refund the selling fee?","acceptedAnswer":{"@type":"Answer","text":"Not for US, UK or AUS sellers — the selling fee was removed for those countries in 2026, so there is nothing to refund. Sellers outside the UK, US and AUS still pay 10%, refunded via a support ticket when selling through PayPal."}},
-{"@type":"Question","name":"What happens to boosting fees if I refund a buyer?","acceptedAnswer":{"@type":"Answer","text":"Boosting fees are reversed too. Depop's policy lists the selling fee, payments processing fees and boosting fees as all being reversed when a sale is refunded."}},
-{"@type":"Question","name":"Does Depop charge a refund fee?","acceptedAnswer":{"@type":"Answer","text":"No. Depop does not charge a separate refund fee. It simply reverses the fees it already collected. Your real leftover cost is return shipping and any value drop in the item."}},
-{"@type":"Question","name":"Do I get fees back on a partial refund on Depop?","acceptedAnswer":{"@type":"Answer","text":"Depop's help page confirms full-refund reversals but does not spell out partial refunds. Check the transaction breakdown in your Depop Balance after issuing a partial refund, since partials do not require the buyer to return the item."}},
-{"@type":"Question","name":"How do I get a Depop fee refund if I sold through PayPal?","acceptedAnswer":{"@type":"Answer","text":"Sellers outside the UK, US and AUS can get the Depop selling fee refunded by raising a support ticket with their account email, both @usernames, and proof of the completed refund. PayPal's own processing fee is charged separately by PayPal."}},
-{"@type":"Question","name":"How long does a Depop refund take to process?","acceptedAnswer":{"@type":"Answer","text":"Refunds issued through Depop Payments typically process within a few hours and the fee reversals appear in Latest Transactions the same day. Bank-to-bank transfers can take 1 to 3 business days for the buyer to see the funds."}},
-{"@type":"Question","name":"What is a top-up card on Depop?","acceptedAnswer":{"@type":"Answer","text":"A top-up card is a connected card that lets you refund buyers even when your Depop Balance is too low. Depop requires you to add one before you can issue refunds."}},
-{"@type":"Question","name":"Does refunding a buyer protect my seller standing?","acceptedAnswer":{"@type":"Answer","text":"Resolving issues quickly keeps disputes out of escalation. If you do not respond to a not-as-described issue within 48 hours it is automatically escalated to Depop, whose decision is final."}},
-{"@type":"Question","name":"What fees does Depop charge on a return?","acceptedAnswer":{"@type":"Answer","text":"Depop charges no fees on a return — all fees reverse automatically. Your only costs are return shipping (if you pay it) and any drop in the item's resale value."}},
-{"@type":"Question","name":"Does Depop refund processing fees?","acceptedAnswer":{"@type":"Answer","text":"Yes. The 3.3% + $0.45 processing fee (US rate) reverses automatically when you refund a buyer through Depop Payments."}},
-{"@type":"Question","name":"What happens if I don't respond to a Depop dispute in 48 hours?","acceptedAnswer":{"@type":"Answer","text":"The dispute auto-escalates to Depop support, whose decision is final. Depop may refund the buyer without requiring a return, meaning you lose the item, the sale, and any chance to contest."}},
-{"@type":"Question","name":"Does Depop refund shipping costs on returns?","acceptedAnswer":{"@type":"Answer","text":"For not-as-described returns, US buyers get a prepaid return label at no cost to the seller. For other reasons or international sales, return shipping costs may fall on the seller."}},
-{"@type":"Question","name":"Can I dispute a Depop refund decision?","acceptedAnswer":{"@type":"Answer","text":"Once Depop makes a final decision on an escalated dispute, there is no further appeal process within Depop. This is why responding within the 48-hour window is critical."}},
-{"@type":"Question","name":"How do I check if my Depop fees were refunded?","acceptedAnswer":{"@type":"Answer","text":"Go to My Depop, My Account, Depop Balance, then scroll to Latest Transactions. Fee reversals appear the same day the refund processes through Depop Payments."}}
+{"@type":"Question","name":"Are Depop fees refunded when I refund a buyer?","acceptedAnswer":{"@type":"Answer","text":"Yes. Depop's current Seller fees and charges policy says that if a sale is refunded, all fees — selling fees, payment-processing fees and boosting fees — are reversed. For Depop Payments, this happens automatically when the refund is processed."}},
+{"@type":"Question","name":"Does Depop refund the payment processing fee?","acceptedAnswer":{"@type":"Answer","text":"Yes. Depop's current policy says payment-processing fees are reversed when a sale is refunded. This corrects older advice that said sellers permanently lose the processing fee."}},
+{"@type":"Question","name":"Does Depop refund the 10% selling fee?","acceptedAnswer":{"@type":"Answer","text":"Where a 10% Depop selling fee applies, Depop says it is reversed when the sale is refunded. Sellers in the UK, US and Australia currently have no Depop selling fee."}},
+{"@type":"Question","name":"Does Depop refund the boosting fee?","acceptedAnswer":{"@type":"Answer","text":"Yes. Depop's current Boosted Listings Policy says that if the buyer is refunded, all fees, including boosting fees, selling fees and payment-processing fees, are refunded to the seller."}},
+{"@type":"Question","name":"How do I get my Depop fee refund?","acceptedAnswer":{"@type":"Answer","text":"If the buyer paid with Depop Payments, the applicable fees are automatically reversed when the refund is processed. If the sale was paid through PayPal and you are outside the UK, US or Australia, Depop says you need to contact Support and provide the requested refund proof for a selling-fee refund."}},
+{"@type":"Question","name":"I refunded a Depop buyer but the fee has not come back. What should I do?","acceptedAnswer":{"@type":"Answer","text":"First check the sale receipt and Depop Balance for the refund and fee reversal. If you used Depop Payments and the refund has processed but the fees have not been reversed, contact Depop Support with the transaction details. If you used PayPal outside the UK, US or Australia, follow Depop's Support process for the fee refund."}},
+{"@type":"Question","name":"Do I get all my Depop fees back on a partial refund?","acceptedAnswer":{"@type":"Answer","text":"Depop's fee policy states that if a sale is refunded, all fees are reversed. The exact result for a partial refund should be checked against the transaction receipt because only part of the buyer's payment is being refunded."}},
+{"@type":"Question","name":"Why did I think Depop keeps the processing fee?","acceptedAnswer":{"@type":"Answer","text":"Older guides and forum posts may say that processing fees were not refunded. Depop's current fee policy says payment-processing fees are reversed when a sale is refunded, so older advice can be outdated."}}
 ]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Are Depop Fees Refunded When You Refund a Buyer? (2026)","author":{"@type":"Organization","name":"CLAWBACK Team"},"publisher":{"@type":"Organization","name":"CLAWBACK"},"datePublished":"2026-08-07","dateModified":"2026-08-18","description":"A seller-focused explanation of Depop fee refunds, including selling, payment-processing and boosting fees."}</script>
 </head><body>
-<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>ALL FEES REVERSED ★ PROCESSING + BOOSTING ★ THE LABEL IS THE REAL LOSS ★&nbsp;</span><span>ALL FEES REVERSED ★ PROCESSING + BOOSTING ★ THE LABEL IS THE REAL LOSS ★&nbsp;</span></div></div>
+<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>DEPOP RETURNS THE SELLING FEE — BUT NOT ALWAYS THE PROCESSING ★ KNOW YOUR NUMBER ★&nbsp;</span><span>DEPOP RETURNS THE SELLING FEE — BUT NOT ALWAYS THE PROCESSING ★ KNOW YOUR NUMBER ★&nbsp;</span></div></div>
 <header class="site-head"><div class="head-inner">
 <a class="brand" href="index.html">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
 <p class="tagline">// the forced-return loss calculator for resellers</p>
 <nav class="main-nav" aria-label="Primary"><button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
-<ul id="navlist" class="nav-list"><li><a href="index.html#tool">Calculator</a></li><li class="has-drop"><a href="platforms.html">Platforms ▾</a><ul class="drop"><li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li><li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li></ul></li><li><a href="guides.html">Guides</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="about.html">About</a></li></ul></nav>
+<ul id="navlist" class="nav-list"><li><a href="index.html#tool">Calculator</a></li><li><a href="platforms.html#depop">Depop</a></li><li><a href="guides.html">Guides</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="about.html">About</a></li></ul></nav>
 </div></header>
+<main class="page-body">
+<article class="prose">
+<span class="verified-badge">✓ VERIFIED AGAINST DEPOP FEE & REFUND POLICIES · AUGUST 18, 2026</span>
 
-<main class="page-body"><article class="prose">
-<span class="verified-badge">✓ VERIFIED AGAINST DEPOP "SELLER FEES AND CHARGES" + REFUND POLICY · AUGUST 27, 2026</span>
-<h1 class="page-title">Does Depop Refund Fees on Returns? Yes — All of Them</h1>
+<h1 class="page-title">Are Depop Fees Refunded When You Refund a Buyer?</h1>
 
-<div class="featured-answer">
-<h2>Quick Answer: Does Depop Refund Fees?</h2>
-<p><strong>Yes.</strong> When you refund a buyer on Depop in 2026, <strong>all fees reverse automatically</strong> — processing (3.3% + $0.45), boosting (12%), and selling (already $0 for US/UK/AUS).</p>
-<p><strong>Your real costs on a Depop return:</strong></p>
+<p class="page-lead">If you just refunded a Depop buyer and your first thought was <strong>"Did I just lose all the fees too?"</strong>, there is good news: <strong>Depop's current policy says the fees are reversed when a sale is refunded.</strong> That includes the selling fee where one applies, payment-processing fees, and boosting fees.</p>
+
+<div class="callout green">
+<strong>Seller relief, first:</strong> Depop's current <em>Seller fees and charges</em> policy says that when a sale is refunded, <strong>all fees are reversed</strong> — selling fees, payment-processing fees and boosting fees. If you used Depop Payments, the reversal happens automatically when the refund is processed. citeturn0search1turn0search0
+</div>
+
+<div class="callout">
+<strong>Last checked: August 18, 2026.</strong> This article is maintained by the <strong>CLAWBACK Team</strong> and focuses only on Depop fee refunds. Depop can change its policies, so your transaction receipt and current Depop Help Centre remain the final reference for a specific sale.
+</div>
+
+<h2>So, Does Depop Refund the Fees or Not?</h2>
+
+<p><strong>Yes.</strong> This is one of those Depop questions where old forum answers can make the situation sound worse than it is.</p>
+
+<p>Depop's current fee policy says:</p>
+
 <ul>
-<li><strong>Return shipping</strong> — you pay if not-as-described or international</li>
-<li><strong>Item value drop</strong> — whatever the item is worth when it comes back</li>
-<li><strong>48-hour response window</strong> — miss it and Depop auto-refunds without a return</li>
+<li><strong>Selling fees:</strong> reversed when the sale is refunded, where a selling fee applied.</li>
+<li><strong>Payment-processing fees:</strong> reversed when the sale is refunded.</li>
+<li><strong>Boosting fees:</strong> reversed when the sale is refunded.</li>
 </ul>
-<p class="calculator-note">↓ Use the calculator below to see your exact refund cost before you tap "Refund."</p>
-</div>
 
-<div class="stats-row">
-<div class="stat-card"><span class="num">$0</span><span class="label">Fees kept on refund</span></div>
-<div class="stat-card"><span class="num">3.3% + $0.45</span><span class="label">Processing (reversed)</span></div>
-<div class="stat-card"><span class="num">12%</span><span class="label">Boosting (reversed)</span></div>
-<div class="stat-card"><span class="num">48hrs</span><span class="label">Dispute response window</span></div>
-</div>
+<p>For sellers using <strong>Depop Payments</strong>, Depop says the reversal happens automatically. citeturn0search1turn0search0</p>
 
-<p class="page-lead">A buyer messages: "it doesn't fit." Your stomach drops — because every reseller forum has told you that refunding means eating the platform fees on top of the sale. So you brace for the double hit… and then it never comes. In 2026, US sellers pay <em>no selling fee at all</em>, and the one fee they do pay reverses the moment the refund processes. The real damage on a return was never the fees — it's the label and whatever the item is worth once it comes back. Enter your sale below to see the real total.</p>
+<p>So if you are searching <strong>"does Depop refund fees on returns?"</strong>, <strong>"does Depop refund the processing fee?"</strong>, or <strong>"I refunded a buyer on Depop, do I get the fees back?"</strong>, the current answer is reassuring: <strong>the fees themselves are not supposed to become a permanent loss simply because you refunded the sale.</strong></p>
 
-<div class="mini-calc" aria-label="Depop fee refund mini-calculator">
-<h3>DEPOP REFUND FEE AUDIT (2026)</h3>
-<p class="mini-sub">See what comes back to you on a refund, based on your actual sale.</p>
-
-<label for="mc-sale">SALE PRICE ($)</label>
-<input type="number" id="mc-sale" placeholder="40.00" min="0" step="0.01">
-
-<label>HOW THE BUYER PAID</label>
-<div class="radio-group">
-  <label><input type="radio" name="mc-method" value="depop" checked> Depop Payments (US/UK/AUS)</label>
-  <label><input type="radio" name="mc-method" value="paypal"> PayPal (outside UK/US/AUS)</label>
-</div>
-
-<label>WAS THE ITEM BOOSTED?</label>
-<div class="toggle-row">
-  <input type="checkbox" id="mc-boosted">
-  <span>Yes — 12% boost (US/UK) · 8% elsewhere</span>
-</div>
-
-<button type="button" onclick="runMiniCalc()">RUN MY REFUND AUDIT</button>
-
-<div class="mini-result" id="mc-result">
-  <div class="line back"><span>Fees you get back:</span><span id="mc-back">$0.00</span></div>
-  <div class="line gone"><span>Fees you don't get back:</span><span id="mc-gone">$0.00</span></div>
-  <p class="note" id="mc-note"></p>
-</div>
-</div>
-
-<div data-nosnippet>
-<div class="callout"><strong>The short answer (2026):</strong> If the buyer paid through Depop Payments, Depop hands back everything it took — the 3.3% + $0.45 processing fee and any boosting fee — automatically, the second the refund goes through. US sellers pay no selling fee at all, so there's nothing else to recover. Sold via PayPal outside the UK/US/AUS? The 10% selling fee comes back through a support ticket, but PayPal keeps its own processing fee. Either way, the fees were never the danger. The real damage is the return shipping and whatever the item is worth once it comes back.</div>
-</div>
-
-<p>That's the short version, and it kills a myth half the reseller forums still repeat. Below: the receipts at three price points, the PayPal catch nobody explains well, the boosting-fee detail almost nobody mentions, exact steps to check the reversal yourself, and the traps that <em>actually</em> cost sellers money on returns — which usually aren't the fees.</p>
-
-<div class="callout green"><strong>The myth worth killing:</strong> a lot of reseller blogs still repeat that "Depop eats your fees on every refund," and older ones add "plus the 10% selling fee." Both statements describe a Depop that no longer exists for US sellers. The selling fee is gone (UK/US/AUS), and the processing fee reverses automatically on Depop Payments. The advice that's actually worth your time in 2026 is about the label, the value drop, and the 48-hour dispute clock — all covered below.</div>
-
-<h2>What Depop's Official Policy Actually Says About Fee Refunds</h2>
-<p>Depop spells it out plainly in its help center: <em>"If your sale is refunded, all fees (the selling fee, payments processing fees and boosting fees) will be reversed too. This happens automatically for transactions using Depop Payments."</em> And the fee page confirms US, UK and AUS sellers pay <strong>no selling fee</strong> in 2026 — just the regional processing fee (US: 3.3% + $0.45 on item + shipping + tax). Sellers outside those countries paying through PayPal get the 10% selling fee back after filing a ticket with proof of the refund — PayPal's own processing cut stays with PayPal, separate from anything Depop controls.</p>
-<p>This policy is newer than a lot of people realize, which is exactly why the old advice is still floating around. Older threads describe the pre-2026 setup with the 10% selling fee and the earlier Depop-Stripe-UK arrangement, where a processing charge really could stick around after a refund. Once Depop Payments rolled out and the selling fee was removed for UK/US/AUS sellers, the rule changed for the better — a lot of the internet just hasn't caught up yet. When in doubt, trust the current help page over an old thread.</p>
-
-<div class="callout"><strong>Why this trips people up:</strong> the "Depop eats your fees on every refund" advice was accurate for an older payment setup and got repeated so widely it's still the default assumption in a lot of seller communities. It's worth actually checking your own Latest Transactions after a refund rather than trusting the old rule of thumb — the processing line reverses same-day under Depop Payments, and seeing it happen once is usually enough to retire the myth for good.</div>
-
-<h2>The Receipts: What A Refund Costs You At 3 Price Tiers (US, Depop Payments)</h2>
-<table class="data-table">
-<thead><tr><th>Sale price</th><th>Processing (3.3% + $0.45)</th><th>Boosting (12% if on)</th><th>Fee loss on refund</th><th>Outside UK/US/AUS (PayPal)</th></tr></thead>
-<tbody>
-<tr><td><strong>$15</strong></td><td>$0.95</td><td>$1.80 if boosted</td><td><strong>$0</strong> — all reversed</td><td>10% selling fee back via ticket; PayPal processing stays</td></tr>
-<tr><td><strong>$40</strong></td><td>$1.77</td><td>$4.80 if boosted</td><td><strong>$0</strong> — all reversed</td><td>10% selling fee back via ticket; PayPal processing stays</td></tr>
-<tr><td><strong>$120</strong></td><td>$4.41</td><td>$14.40 if boosted</td><td><strong>$0</strong> — all reversed</td><td>10% selling fee back via ticket; PayPal processing stays</td></tr>
-</tbody>
-</table>
-<p class="fee-note" style="font-size:12px;opacity:.8;">US processing rate shown (UK 2.9% + £0.30 · AUS 2.6% + $0.30 AUD). Boosting is optional and only applies if the listing was toggled on; see <a href="depop-fees-explained.html">Depop fees explained</a> for the full math.</p>
-
-<h2>Does Depop Refund the Boosting Fee? (Yes — The 12% Gotcha)</h2>
-<p>There's a clause almost nobody quotes from the help page: <em>"If your sale is refunded, all fees (the selling fee, payments processing fees <strong>and boosting fees</strong>) will be reversed too."</em> That last part matters more than ever in 2026, because the US/UK boosting fee rose to <strong>12%</strong> for new listings from 23 March 2026. If a buyer returns a boosted $70 jacket, that's an $8.40 boosting charge that comes back automatically on Depop Payments — genuinely more generous than most platforms, where ad spend rarely reverses on a refund.</p>
-<p>The practical habit worth building: after refunding a boosted item, check Latest Transactions specifically for the boosting line. If it hasn't reversed within 48 hours, a quick support ticket with the transaction ID usually clears it up — it should happen automatically, but the occasional glitch is normal.</p>
-
-<div class="scenario"><span class="tag">EXAMPLE · THE TWO-DAY BOOSTING LAG</span>Say you boost a $70 jacket for a weekend and it sells, then the buyer returns it. The processing fee ($2.76) typically reverses within the day — but the boosting charge ($8.40) can occasionally take a couple of extra days to show as reversed. It does clear, but that gap can feel like a charge that's gone for good if you're not expecting it. Worth screenshotting the reversal once it appears, just to have the record.</div>
-
-<h2>Depop vs eBay vs Poshmark vs Mercari: Who Refunds Fees on Returns?</h2>
-<p>How does Depop's fee refund policy compare to other major resale platforms? Here's the breakdown:</p>
+<h2>What Fees Does Depop Refund After a Sale Is Refunded?</h2>
 
 <table class="data-table">
-<thead><tr><th>Platform</th><th>Selling Fee Refunded?</th><th>Processing Fee Refunded?</th><th>Who Pays Return Shipping?</th></tr></thead>
+<thead>
+<tr><th>Fee</th><th>Refunded when the sale is refunded?</th><th>What the seller should know</th></tr>
+</thead>
 <tbody>
-<tr><td><strong>Depop</strong></td><td>$0 selling fee (US/UK/AUS)</td><td>✅ Yes (auto-reversed)</td><td>US buyers: prepaid label · Others: reimbursed to $20</td></tr>
-<tr><td><strong>eBay</strong></td><td>✅ Yes (on buyer remorse)</td><td>N/A (bundled)</td><td>❌ Seller pays on not-as-described</td></tr>
-<tr><td><strong>Poshmark</strong></td><td>✅ Yes (on approved returns)</td><td>N/A (bundled)</td><td>✅ Prepaid label provided</td></tr>
-<tr><td><strong>Mercari</strong></td><td>✅ Yes (on approved returns)</td><td>N/A (bundled)</td><td>✅ Prepaid label (under 50lb)</td></tr>
+<tr><td><strong>Selling fee</strong></td><td>Yes</td><td>Reversed where a selling fee applied. UK, US and Australia currently have no Depop selling fee.</td></tr>
+<tr><td><strong>Payment-processing fee</strong></td><td>Yes</td><td>Depop's current policy says payment-processing fees are reversed when the sale is refunded.</td></tr>
+<tr><td><strong>Boosting fee</strong></td><td>Yes</td><td>Depop's Boosted Listings Policy says all fees are refunded if the buyer is refunded.</td></tr>
+<tr><td><strong>Shipping / label cost</strong></td><td>Not a Depop fee</td><td>Do not confuse a shipping-label charge with a platform fee. Whether a separate shipping cost is recovered depends on the circumstances of the order and refund.</td></tr>
 </tbody>
 </table>
-<p class="fee-note" style="font-size:12px;opacity:.8;">Depop is the only platform with a $0 selling fee for US sellers in 2026. For a full comparison of fees, shipping, and payout speed across all 6 major platforms, see our <a href="platform-comparison-2026.html">2026 Reseller's Matrix</a>.</p>
 
-<h2>Three Return Traps Sellers Don't See Coming (Not the Fees)</h2>
-<p>The fee math above covers the obvious stuff. But the traps that actually cost money on returns are smaller, weirder, and almost never about the fees.</p>
+<p>The key distinction is simple: <strong>fee reversal and recovery of every other cost are not the same thing.</strong> Depop's fee policy answers the first question. It does not turn a shipping-label purchase, packaging cost, or other seller expense into a platform fee refund. citeturn0search1turn0search0</p>
 
-<div class="scenario"><span class="tag">SCENARIO · THE PAYPAL TICKET LOOP (OUTSIDE UK/US/AUS)</span>Picture a seller based in Canada who sold a $60 sweater through PayPal. The buyer returns it, the refund goes out through PayPal — smooth. But the $6 Depop selling fee doesn't reverse automatically for PayPal sales. It only comes back after filing a support ticket with the account email, both @usernames, and a screenshot proving the refund completed. Skip the ticket (or lose the screenshot) and that $6 is simply gone. The habit: take the proof screenshot the same minute you refund, and file the ticket the same day.</div>
+<h2>Does Depop Refund the Payment Processing Fee?</h2>
 
-<div class="scenario"><span class="tag">SCENARIO · THE BUNDLE WEIGHT TRAP</span>Say a buyer bundles three or four hoodies into one order, the app estimates the weight, and auto-generates a shipping label. Everything ships fine, the sale closes, and the seller moves on. Then the buyer returns the bundle — and the return label reflects the real weight, not the estimate. On a not-as-described return the seller typically absorbs that label cost, and a 3 lb return can run $12.83 or more on USPS Ground Advantage rates. The habit that saves sellers here is simple: weigh bundles before trusting any auto-estimate, and price the return risk into the listing.</div>
+<p><strong>Yes — according to Depop's current policy.</strong></p>
 
-<div class="scenario"><span class="tag">SCENARIO · CROSS-BORDER EXCHANGE SLUMP</span>International sales carry their own quiet cost. Say a US seller ships a $50 shirt to a buyer in Canada, and a couple of days later it comes back for a refund. In the 48 hours between the sale and the return processing, the currency exchange rate shifts slightly — and the seller ends up covering a small amount out of pocket just to fully clear the buyer's balance back to zero. Depop isn't charging this on purpose; it's simply what happens when a refund crosses currencies and the rate isn't locked at the original sale price.</div>
+<p>This is the part that needs the clearest correction because older reseller content often says the opposite. Depop's current <em>Seller fees and charges</em> page specifically states that when a sale is refunded, <strong>all fees, including payment-processing fees, are reversed too.</strong> citeturn0search1</p>
 
-<h2>Full Refund vs Partial Refund vs Return: Which Hurts Least?</h2>
-<p><strong>Full refund (Depop Payments):</strong> the buyer gets everything back and every fee line reverses. The real loss is return shipping (if any) plus whatever value the item lost.</p>
-<p><strong>Partial refund:</strong> the buyer keeps the item and gets some money back — Depop's page confirms partials are agreed between buyer and seller and don't require a return. The official policy doesn't spell out proportional fee reversals here, so it's worth double-checking the transaction breakdown afterward. Partials are usually the cheapest way out: no label, no value drop, no relisting.</p>
-<div class="scenario"><span class="tag">SCENARIO · THE LOCKED LABEL REFUND QUEUE</span>Here's a timing trap that catches even careful sellers: a seller prints a real shipping label for a $65 order, has it ready to go, and the buyer cancels minutes before it makes it to the post office. The refund to the buyer processes instantly — that part's smooth. But the money already spent on the label itself doesn't just bounce back the same day. It drops into a manual carrier refund queue that can take up to 14 days to clear, because the carrier has to confirm the label was genuinely never used before releasing the funds. So for two weeks, that shipping cost is just gone from working cash flow, even though the sale itself was refunded same-day.</div>
-<p><strong>Return + refund:</strong> on a not-as-described dispute, US buyers get a prepaid return label; buyers outside the US arrange tracked shipping and Depop reimburses them up to $20/£20. Items need to go back within 7 days of the agreed return. The real exposure here is time and the item's condition on arrival — photographing everything before and after shipping is the cheapest insurance available.</p>
+<p>So if you sold an item for $40, paid a payment-processing fee, and later fully refunded the buyer, you should not assume that the processing fee is automatically your permanent loss.</p>
 
-<h2>What Happens If I Don't Respond to a Depop Dispute in 48 Hours?</h2>
-<p><strong>Changed mind / doesn't fit:</strong> Depop Protection doesn't cover remorse. The official policy lists what's actually covered — lost and damaged items, incorrect sizes, wrong colors, counterfeits, severe damage, major undisclosed wear, incorrect items, missing bundle pieces. Fit, smell, and "the material looks different in photos" aren't on that list, so there's no obligation to refund. Choosing to anyway still gets every fee reversed on Depop Payments.</p>
-<p><strong>Not as described / never arrived:</strong> the buyer can raise an issue within 30 days. Sellers get 48 hours to respond with a solution — silence auto-escalates straight to Depop, whose decision is final, including refunding without a return. That auto-escalation window is a real risk worth setting a reminder for; a single missed notification can turn a $40 jacket into a total loss.</p>
-<p><strong>Depop stepped in:</strong> once escalated, the outcome follows Depop's own review. If the buyer's claim is upheld without a return, the item, the sale, and the return shipping are all gone — but the fees still come back. The calculator above helps model exactly that worst-case scenario before it happens.</p>
+<div class="myth">
+<span class="m">OLD ADVICE</span>
+<h3>"Depop keeps the payment-processing fee when I refund."</h3>
+<span class="r">CURRENT DEPOP POLICY</span>
+<p>Depop's current fee policy says <strong>payment-processing fees are reversed when a sale is refunded.</strong> If you are reading an older article or Reddit answer saying you always lose the processing fee, check its date before relying on it. citeturn0search1</p>
+</div>
 
-<div class="scenario"><span class="tag">SCENARIO · THE MISSED ESCALATION WINDOW</span>Say a seller misses the 48-hour response window on a not-as-described claim, because the notification got buried under other alerts. The claim auto-escalates, Depop sides with the buyer, and an $85 jacket gets refunded without a return. The fees reverse — but the item, the sale, and any chance to contest it are gone. It's the kind of loss that's entirely preventable with one habit: setting a reminder the moment any "issue opened" notification comes in, since the clock is the real risk here, not the fees.</div>
+<h2>Does Depop Refund the 10% Selling Fee?</h2>
 
-<h2>How To Refund A Buyer on Depop (Exact Steps, iOS + Android)</h2>
-<div class="steps">
-<h3>REFUND + FEE REVERSAL WALKTHROUGH</h3>
+<p><strong>Yes, where that 10% selling fee applies.</strong> Depop says that when a sale is refunded, the selling fee is reversed too. citeturn0search1</p>
+
+<p>There is an important 2026 detail, though: sellers based in the <strong>UK, US and Australia currently have no Depop selling fee</strong>. That means a US seller asking "does Depop refund my 10% fee?" may actually have <strong>$0 of selling fee to refund</strong>; their relevant transaction fees may instead be payment processing or boosting. citeturn0search1</p>
+
+<p>That is why the seller's country and the actual sale receipt matter more than a generic "Depop takes 10%" rule.</p>
+
+<h2>Does Depop Refund the Boosting Fee?</h2>
+
+<p><strong>Yes.</strong> This is explicitly covered by Depop's current Boosted Listings Policy.</p>
+
+<p>Depop says that if the buyer is refunded, <strong>all fees — including boosting fees, selling fees and payment-processing fees — are refunded to the seller.</strong> citeturn0search0</p>
+
+<p>So if you are searching <strong>"does Depop refund the 12% boosting fee?"</strong> or <strong>"I refunded a boosted Depop sale"</strong>, you do not need to assume that the boost fee is permanently gone.</p>
+
+<div class="callout green">
+<strong>Good news for boosted listings:</strong> Depop's current Boosted Listings Policy expressly says the boosting fee is refunded when the buyer is refunded. citeturn0search0
+</div>
+
+<h2>I Refunded a Depop Buyer — What Happens to My Money?</h2>
+
+<p>Think of the refund as two separate events:</p>
+
 <ol>
-<li><strong>Open the app.</strong> iOS: tap <code>My Depop</code> → <code>Sold</code> → <code>All</code>. Android: tap <code>Selling Hub</code> → <code>Sold items</code>.</li>
-<li><strong>Select the order</strong> and tap <code>Refund sale</code>. For a partial, switch to the partial tab and enter the amount.</li>
-<li><strong>Confirm.</strong> If the buyer paid with Depop Payments, the refund comes out of the Depop Balance — or the connected top-up card if the balance is too low.</li>
-<li><strong>Verify the reversal.</strong> Go to <code>My Depop</code> → <code>My Account</code> → <code>Depop Balance</code> → scroll to <code>Latest Transactions</code>. The original fee lines should flip back within the same day.</li>
+<li><strong>The buyer gets the refund.</strong></li>
+<li><strong>The fees associated with the refunded sale are reversed.</strong></li>
 </ol>
+
+<p>For a Depop Payments transaction, the refund is taken from your available Depop Balance or, if your balance is not enough, from your connected top-up card. Depop's refund instructions say the money is returned to the buyer's original payment method. citeturn1search0turn1search2</p>
+
+<p>That means a seller can temporarily see a lower or even negative balance while the refund is being funded. That is a <strong>cash-flow issue</strong>, not evidence that Depop has permanently kept the transaction fees.</p>
+
+<h2>What If I Don't See My Depop Fee Refund?</h2>
+
+<p>Don't panic and don't refund the buyer a second time just because the fee line is confusing.</p>
+
+<p>Use this checklist:</p>
+
+<ol>
+<li><strong>Confirm the buyer refund actually processed.</strong> Check the order in your Depop app.</li>
+<li><strong>Open the sale receipt.</strong> Depop says sellers can review the fee breakdown from their sold-item receipts. citeturn0search2</li>
+<li><strong>Check Depop Balance.</strong> Depop Balance shows sales and refunds and the amount available for payout. citeturn1search2</li>
+<li><strong>Look for the fee reversal.</strong> The relevant selling, processing and/or boosting fee should be reversed as part of the refunded transaction under the current policy.</li>
+<li><strong>If you used PayPal outside the UK, US or Australia, follow Depop's separate support process.</strong> Depop says sellers using PayPal in those markets need to contact Support for a selling-fee refund and provide the requested proof. citeturn0search1turn1search1</li>
+<li><strong>If the refund processed but the fee reversal is missing, contact Depop Support.</strong> Include the transaction receipt and refund confirmation so Support can identify the sale.</li>
+</ol>
+
+<div class="callout">
+<strong>Most important:</strong> Don't calculate your final loss from the original sale receipt alone. After a refund, check the <strong>updated transaction / Depop Balance</strong> because the fee reversals are part of the final picture.
 </div>
-<p>PayPal-sold items get refunded through PayPal directly (desktop only). Sellers outside the UK/US/AUS then file a support ticket to bring the Depop selling fee back separately. Slower, but it works — just keep the screenshots handy.</p>
 
-<h2>Why This Article Matters Right Now (2026 Fee Changes)</h2>
-<p>Depop's acquisition by eBay, the Depop Payments rollout, and the 2026 fee overhaul (selling fee removed for UK/US/AUS sellers) have shifted the ground under sellers twice in a short time. Refund advice written before 2025 is describing a version of Depop that doesn't fully exist anymore — which is exactly why the "fees never come back" myth is still so common even though it's out of date.</p>
-<p>That's part of why a dedicated <strong>eBay × Depop hub article</strong> is coming next — and why this page is meant to anchor it. Sellers who understand both platforms' refund math before the policies fully merge will price returns smarter than everyone still working off outdated blog posts. Anyone selling on both eBay and Depop should read <a href="ebay-per-order-fee-return.html">does eBay refund the per-order fee on a return?</a> next — the contrast between the two is genuinely the whole lesson.</p>
+<h2>What If I Used PayPal?</h2>
 
-<h2>How Long Does A Depop Refund Take to Process?</h2>
-<p>Refunds through Depop Payments typically process within a few hours, with the fee reversals showing up in Latest Transactions the same day. Bank-to-bank transfers can take 1-3 business days for the buyer to actually see the funds. PayPal refunds usually process in minutes on PayPal's end but can take up to 5 business days to hit the buyer's card.</p>
-<p>The "when will my money actually show up" anxiety is real on both sides of a transaction — the full payout timeline, including the new-seller reserve, is broken down in <a href="depop-payout-time.html">when do I get paid on Depop?</a> A refund doesn't extend the payout window, but an open dispute does freeze funds until it's resolved.</p>
+<p>This is the one case where the "it happens automatically" answer needs a qualification.</p>
 
-<h2>Conclusion: Price The Risk, Not The Myth</h2>
-<p>The processing fee, the boosting fee — on Depop Payments in 2026, they all come back on a refund, and US sellers never paid a selling fee to begin with. What doesn't come back is the return label, whatever value the item lost, and the 48-hour response window if a dispute opens. That's the real math worth building into pricing, not the outdated "fees never come back" myth that cost sellers sleep for longer than it should have.</p>
+<p>Depop says that if you sold through <strong>PayPal</strong> and are outside the UK, US or Australia, you need to contact Depop Support for a refund of the Depop selling fee. Depop asks for information including the email linked to your account, your Depop @username, the buyer's @username, and proof of the full refund in PayPal. citeturn1search1turn0search1</p>
 
-<div class="cta-box"><h3 style="margin-top:0">Run the real math on your next refund.</h3>
-<p style="margin-bottom:14px">Plug in the item price, the refund reason, and the shipping cost. See the true leftover loss before hitting refund.</p>
-<a class="btn-primary" href="index.html#tool">CALCULATE MY TRUE LOSS</a></div>
+<p>So:</p>
 
-<h2>FAQ</h2>
+<table class="data-table">
+<thead><tr><th>Payment route</th><th>Fee-refund process</th></tr></thead>
+<tbody>
+<tr><td><strong>Depop Payments</strong></td><td>Fee reversals happen automatically when the refund is processed.</td></tr>
+<tr><td><strong>PayPal — outside UK/US/AUS</strong></td><td>Contact Depop Support for the Depop selling-fee refund and provide the requested proof.</td></tr>
+</tbody>
+</table>
+
+<p>That distinction is worth including because a seller searching <strong>"Depop refunded buyer but fee not returned"</strong> may simply be following the wrong process for their payment method.</p>
+
+<h2>What If I Give a Partial Refund?</h2>
+
+<p>A partial refund is different from a full refund because the buyer keeps the item and receives only part of their payment back.</p>
+
+<p>Depop's seller refund instructions distinguish a partial refund from a full refund: a partial refund can be used when the buyer keeps the item and receives some money back. citeturn1search0</p>
+
+<p>Depop's fee policy says that <strong>if a sale is refunded, all fees are reversed</strong>. However, because a partial refund only returns part of the buyer's payment, do not promise yourself a particular dollar-for-dollar fee reversal without checking the actual transaction receipt. citeturn0search1</p>
+
+<div class="callout">
+<strong>Seller-safe answer:</strong> for a partial refund, check the transaction after it processes rather than assuming the same fee calculation as a full refund. The receipt is the best way to confirm what Depop actually reversed.
+</div>
+
+<h2>Example: You Sold a $40 Item and Refunded It</h2>
+
+<p>Suppose you sold a $40 item and the buyer later receives a full refund.</p>
+
+<p>Under Depop's current policy, the relevant selling fee (if one applied), payment-processing fee, and boosting fee (if applicable) are reversed when the sale is refunded. citeturn0search1turn0search0</p>
+
+<table class="data-table">
+<thead><tr><th>Line</th><th>What happens after a full refund?</th></tr></thead>
+<tbody>
+<tr><td>Buyer payment</td><td>Returned to the buyer.</td></tr>
+<tr><td>Depop selling fee</td><td>Reversed, where applicable.</td></tr>
+<tr><td>Payment-processing fee</td><td>Reversed.</td></tr>
+<tr><td>Boosting fee</td><td>Reversed, if applicable.</td></tr>
+<tr><td>Shipping / label expense</td><td>Separate from the fee reversal; check the order circumstances and shipping arrangement.</td></tr>
+</tbody>
+</table>
+
+<p>The important takeaway is that <strong>you should not automatically subtract the original Depop fees from your final refund loss.</strong> Those fees are supposed to be reversed under the current policy.</p>
+
+<h2>So What Do I Actually Lose on a Depop Refund?</h2>
+
+<p>This is the question sellers usually care about more than the wording of the fee policy.</p>
+
+<p>For a refunded order, separate your costs into two buckets:</p>
+
+<h3>Bucket 1 — Depop transaction fees</h3>
+<ul>
+<li>Selling fee, where applicable</li>
+<li>Payment-processing fee</li>
+<li>Boosting fee, where applicable</li>
+</ul>
+
+<p><strong>Current Depop policy says these are reversed when the sale is refunded.</strong> citeturn0search1turn0search0</p>
+
+<h3>Bucket 2 — Other seller costs</h3>
+<ul>
+<li>Shipping or return-label costs</li>
+<li>Packaging already used</li>
+<li>Time spent handling the return</li>
+<li>Potential loss in item value if the item comes back damaged or altered</li>
+</ul>
+
+<p>Those are not automatically transformed into "fee refunds." They need to be considered separately when you calculate your actual business loss.</p>
+
+<div class="callout green">
+<strong>This is the relief point:</strong> If you were worried that Depop's selling, processing and boosting fees would simply disappear forever after you refunded the buyer, the current Depop policy says otherwise. The fee portion is reversed. Your remaining loss, if any, comes from the other costs and circumstances of the return.
+</div>
+
+<h2>How to Check Whether Depop Actually Returned Your Fees</h2>
+
+<ol>
+<li>Open <strong>My Depop</strong>.</li>
+<li>Open your <strong>Depop Balance</strong> / sold transaction area.</li>
+<li>Find the refunded transaction.</li>
+<li>Open the transaction receipt and review the fee lines.</li>
+<li>Compare the original transaction with the post-refund transaction.</li>
+</ol>
+
+<p>Depop says sellers using Depop Payments can view their activity through <strong>My Depop → Depop Balance → Latest Transactions</strong>. It also says sellers can review a sold item's receipt from the Sold section. citeturn1search2turn0search2</p>
+
+<h2>Quick Answers Sellers Search for</h2>
+
 <dl>
-<dt>Does Depop refund fees when I refund a buyer in 2026?</dt>
-<dd>Yes. On Depop Payments every fee reverses automatically — the 3.3% + $0.45 processing fee and any 12% boosting fee for US sellers.</dd>
-<dt>Does Depop refund the selling fee?</dt>
-<dd>Not for US/UK/AUS sellers — the selling fee was removed in 2026. Sellers elsewhere still pay 10%, refunded via a support ticket on PayPal sales.</dd>
-<dt>What happens to boosting fees if I refund a buyer?</dt>
-<dd>Boosting fees are reversed too — 12% in the US/UK (new listings from 23 Mar 2026), 8% elsewhere. Verify the boosting line in Latest Transactions.</dd>
-<dt>Does Depop charge a refund fee?</dt>
-<dd>No. Depop reverses the fees it already collected. Your real leftover cost is return shipping and any value drop in the item.</dd>
-<dt>Do I get fees back on a partial refund on Depop?</dt>
-<dd>Depop's help page confirms full-refund reversals but does not spell out partial refunds. Check the transaction breakdown in your Depop Balance afterward.</dd>
-<dt>How do I get a Depop fee refund if I sold through PayPal?</dt>
-<dd>Sellers outside the UK/US/AUS file a support ticket with their account email, both @usernames, and proof of the completed refund. PayPal's own processing fee is charged separately by PayPal.</dd>
-<dt>How long does a Depop refund take to process?</dt>
-<dd>Refunds issued through Depop Payments typically process within a few hours and the fee reversals appear in Latest Transactions the same day. Bank-to-bank transfers can take 1 to 3 business days for the buyer to see the funds.</dd>
-<dt>What is a top-up card on Depop?</dt>
-<dd>A top-up card is a connected card that lets you refund buyers even when your Depop Balance is too low. Depop requires you to add one before you can issue refunds.</dd>
-<dt>Does refunding a buyer protect my seller standing?</dt>
-<dd>Resolving issues quickly keeps disputes out of escalation. If you do not respond to a not-as-described issue within 48 hours it is automatically escalated to Depop, whose decision is final.</dd>
-<dt>What fees does Depop charge on a return?</dt>
-<dd>Depop charges no fees on a return — all fees reverse automatically. Your only costs are return shipping (if you pay it) and any drop in the item's resale value.</dd>
-<dt>Does Depop refund processing fees?</dt>
-<dd>Yes. The 3.3% + $0.45 processing fee (US rate) reverses automatically when you refund a buyer through Depop Payments.</dd>
-<dt>What happens if I don't respond to a Depop dispute in 48 hours?</dt>
-<dd>The dispute auto-escalates to Depop support, whose decision is final. Depop may refund the buyer without requiring a return, meaning you lose the item, the sale, and any chance to contest.</dd>
-<dt>Does Depop refund shipping costs on returns?</dt>
-<dd>For not-as-described returns, US buyers get a prepaid return label at no cost to the seller. For other reasons or international sales, return shipping costs may fall on the seller.</dd>
-<dt>Can I dispute a Depop refund decision?</dt>
-<dd>Once Depop makes a final decision on an escalated dispute, there is no further appeal process within Depop. This is why responding within the 48-hour window is critical.</dd>
-<dt>How do I check if my Depop fees were refunded?</dt>
-<dd>Go to My Depop, My Account, Depop Balance, then scroll to Latest Transactions. Fee reversals appear the same day the refund processes through Depop Payments.</dd>
+<dt>Does Depop refund fees when you refund a buyer?</dt>
+<dd><strong>Yes.</strong> Depop's current policy says all fees are reversed when a sale is refunded.</dd>
+
+<dt>Does Depop refund the payment processing fee?</dt>
+<dd><strong>Yes.</strong> The current Depop fee policy explicitly includes payment-processing fees in the reversal.</dd>
+
+<dt>Does Depop refund the 10% selling fee?</dt>
+<dd><strong>Yes, where that selling fee applies.</strong> UK, US and Australia currently have no Depop selling fee.</dd>
+
+<dt>Does Depop refund the boosting fee?</dt>
+<dd><strong>Yes.</strong> Depop's Boosted Listings Policy explicitly says boosting fees are refunded when the buyer is refunded.</dd>
+
+<dt>I refunded my buyer on Depop — will I get the fee back automatically?</dt>
+<dd>If you used Depop Payments, Depop says the applicable fees are automatically reversed when the refund is processed.</dd>
+
+<dt>Why does my Depop refund look like I lost money?</dt>
+<dd>Check the updated transaction and Depop Balance. The original fee deductions may not represent the final position after the refund and fee reversal.</dd>
+
+<dt>What if my Depop fee was not refunded?</dt>
+<dd>Check the transaction receipt first. If you used Depop Payments and the refund processed but the fee reversal is missing, contact Depop Support with the transaction details. PayPal sellers outside the UK, US and Australia have a separate Support process.</dd>
+
+<dt>Are Depop refunds and fee refunds the same thing?</dt>
+<dd>No. The buyer refund returns the buyer's payment. The fee reversal is the separate adjustment that returns applicable Depop transaction fees to the seller.</dd>
+
+<dt>Can I see the fee reversal in Depop Balance?</dt>
+<dd>Yes. Depop says Depop Balance shows sales, refunds and transaction activity for Depop Payments.</dd>
 </dl>
 
-<h2>Sources & Official Policy Pages</h2>
-<p class="sources">Figures verified against Depop's official help pages (August 2026): <em>Seller fees and charges</em> (no selling fee for UK/US/AUS; US processing 3.3% + $0.45; boosting 12% US/UK · 8% elsewhere), <em>Getting a fee refund</em>, <em>How to refund a buyer</em>, and <em>Depop Protection</em>. Return-label costs reference USPS Ground Advantage rates collected Aug 2026. See the full list at <a href="sources.html">our sources page</a>. The scenario boxes above are illustrative examples built from official platform mechanics, not individual reported incidents — always confirm current numbers in-app before refunding.</p>
+<h2>Bottom Line: You Don't Need to Panic About the Depop Fee</h2>
 
-<p><strong>Read next:</strong> <a href="depop-fees-explained.html">How much does Depop take from a sale?</a> · <a href="depop-payout-time.html">When do I get paid on Depop?</a> · <a href="platform-comparison-2026.html">The 2026 Reseller's Matrix</a> · <a href="guides.html">All guides</a></p>
-</article></main>
+<p>If you just refunded a buyer, the first thing to know is simple: <strong>Depop's current policy says the selling fee, payment-processing fee and boosting fee are reversed when a sale is refunded.</strong> citeturn0search1turn0search0</p>
 
-<footer class="site-foot"><div class="foot-inner">
-<div class="foot-brand"><div class="brand small">CLAW<span class="slash">BACK</span></div><p>The forced-return loss calculator for resellers. Know your number before you appeal.</p></div>
-<nav class="foot-col" aria-label="Platforms"><h3>Platforms</h3><ul><li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li><li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li></ul></nav>
-<nav class="foot-col" aria-label="Guides"><h3>Guides</h3><ul><li><a href="guides.html">All guides</a></li><li><a href="guides.html#dispute">Win a return dispute</a></li><li><a href="guides.html#taxes">Tax write-offs</a></li></ul></nav>
+<p>So don't assume that your original fee deduction is your permanent loss.</p>
+
+<p>Check the refund, check the updated transaction, and check your Depop Balance. If the fee reversal is missing after the refund has processed, use the transaction details to contact Depop Support.</p>
+
+<p>And if what you really want to know is <strong>"How much did this particular return cost me?"</strong>, use the CLAWBACK calculator to separate the refunded platform fees from the other costs that can actually remain with you.</p>
+
+<div class="callout green">
+<strong>You're not starting from zero.</strong> A refunded sale does not automatically mean you lost every Depop fee you paid. Under the current policy, the applicable Depop transaction fees are reversed. citeturn0search1turn0search0
+</div>
+
+<h2>Sources & Official Depop Policies</h2>
+
+<p class="sources">
+<strong>Primary sources checked:</strong>
+<a href="https://depophelp.zendesk.com/hc/en-gb/articles/360001791127-Seller-fees-and-charges" rel="nofollow noopener" target="_blank">Depop — Seller fees and charges</a> ·
+<a href="https://depophelp.zendesk.com/hc/en-gb/articles/9253129255569-Boosted-Listings-Policy" rel="nofollow noopener" target="_blank">Depop — Boosted Listings Policy</a> ·
+<a href="https://depophelp.zendesk.com/hc/en-gb/articles/360001772068-How-do-I-refund-a-buyer" rel="nofollow noopener" target="_blank">Depop — How do I refund a buyer?</a> ·
+<a href="https://depophelp.zendesk.com/hc/en-gb/articles/360001772468-How-do-I-get-a-refund" rel="nofollow noopener" target="_blank">Depop — How do I get a refund?</a> ·
+<a href="https://depophelp.zendesk.com/hc/en-gb/articles/4410092765073-Depop-Balance-top-up-cards-and-adjustments" rel="nofollow noopener" target="_blank">Depop — Depop Balance, top-up cards and adjustments</a>.
+<strong>Last checked: August 18, 2026.</strong>
+</p>
+
+<div class="cta-box">
+<h3 style="margin-top:0">Still want to know your exact loss?</h3>
+<p style="margin-bottom:14px">Separate the fee reversal from shipping, return and item-value costs.</p>
+<a class="btn-primary" href="index.html#tool">CALCULATE YOUR DEPOP RETURN LOSS</a>
+</div>
+
+<p class="disclaimer" style="margin-top:22px;">CLAWBACK is independent and not affiliated with Depop. Fee policies can change. This article is informational and is not legal or tax advice.</p>
+
+</article>
+</main><footer class="site-foot"><div class="foot-inner">
+<div class="foot-brand"><div class="brand small">CLAW<span class="slash">BACK</span></div><p>The forced-return loss calculator for resellers.</p></div>
+<nav class="foot-col" aria-label="Guides"><h3>More</h3><ul><li><a href="platforms.html#depop">Depop</a></li><li><a href="poshmark-damaged-return.html">Poshmark returns</a></li><li><a href="guides.html">Guides</a></li></ul></nav>
 <nav class="foot-col" aria-label="Company"><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
-<nav class="foot-col" aria-label="Resources"><h3>Resources</h3><ul><li><a href="index.html#faq">FAQ</a></li><li><a href="sources.html">Sources</a></li><li><a href="sitemap.html">Sitemap</a></li></ul></nav>
-</div><div class="foot-legal"><p class="verified">Fee data last verified: <strong>August 27, 2026</strong> · sourced from official Depop help pages.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with Depop.</p></div></footer>
+</div><div class="foot-legal"><p class="verified">Rates change — verify the current Depop fee and refund policy before acting.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with Depop.</p></div></footer>
 <script src="nav.js"></script>
-
-<script>
-function runMiniCalc(){
-  var sale = parseFloat(document.getElementById('mc-sale').value);
-  if(isNaN(sale) || sale <= 0){
-    alert('Please enter a valid sale amount.');
-    return;
-  }
-  var method = document.querySelector('input[name="mc-method"]:checked').value;
-  var boosted = document.getElementById('mc-boosted').checked;
-  var noteBox = document.getElementById('mc-note');
-
-  if(method === 'depop'){
-    var processing = (sale * 0.033) + 0.45;
-    var boost = boosted ? (sale * 0.12) : 0;
-    document.getElementById('mc-back').textContent = '$' + (processing + boost).toFixed(2);
-    document.getElementById('mc-gone').textContent = '$0.00';
-    noteBox.textContent = 'US rate shown (UK 2.9% + £0.30 · AUS 2.6% + $0.30). On Depop Payments every fee reverses automatically — your real leftover cost is the return label (~$5–$13 by weight) plus any drop in the item\'s resale value.';
-  } else {
-    var selling = sale * 0.10;
-    var boost2 = boosted ? (sale * 0.08) : 0;
-    document.getElementById('mc-back').textContent = '$' + (selling + boost2).toFixed(2);
-    document.getElementById('mc-gone').textContent = 'PayPal processing (varies)';
-    noteBox.textContent = 'Selling fee comes back via a support ticket with proof of the refund; boosting reverses. PayPal\'s own processing fee is charged separately by PayPal and stays — check your PayPal account for the exact rate.';
-  }
-  document.getElementById('mc-result').style.display = 'block';
-}
-
-CookieConsent.run({
-  guiOptions: {
-    consentModal: { layout: "box", position: "bottom right", equalWeightButtons: true, flipButtons: false },
-    preferencesModal: { layout: "box", position: "right", equalWeightButtons: true, flipButtons: false }
-  },
-  categories: {
-    necessary: { enabled: true, readOnly: true },
-    analytics: { enabled: false, readOnly: false },
-    advertising: { enabled: false, readOnly: false }
-  },
-  language: {
-    default: "en",
-    autoDetect: "browser",
-    translations: {
-      en: {
-        consentModal: {
-          title: "We use cookies",
-          description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
-          acceptAllBtn: "Accept all",
-          acceptNecessaryBtn: "Reject all",
-          showPreferencesBtn: "Manage preferences"
-        },
-        preferencesModal: {
-          title: "Cookie preferences",
-          acceptAllBtn: "Accept all",
-          acceptNecessaryBtn: "Reject all",
-          savePreferencesBtn: "Save preferences",
-          sections: [
-            { title: "Necessary cookies", description: "These cookies are required for the site to function.", linkedCategory: "necessary" },
-            { title: "Analytics cookies", description: "Help us understand how visitors use our site (Google Analytics).", linkedCategory: "analytics" },
-            { title: "Advertising cookies", description: "Used to show relevant ads (Google AdSense, when enabled).", linkedCategory: "advertising" }
-          ]
-        }
-      }
-    }
-  }
-});
-</script>
-
-</body>
-</html>
+</body></html>
