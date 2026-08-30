@@ -91,8 +91,7 @@ table.data-table th{background:rgba(0,0,0,.06);}
 {"@type":"Question","name":"Why is my Depop payout pending?","acceptedAnswer":{"@type":"Answer","text":"Depop says Pending means the buyer has paid but your funds are waiting to clear. In the US, Depop specifically lists an item that has not yet been delivered as one reason a payment can remain pending."}},
 {"@type":"Question","name":"Why is my Depop payout on hold?","acceptedAnswer":{"@type":"Answer","text":"Depop says On hold means the buyer has raised an issue with the purchase and your funds are being held until the issue is resolved."}},
 {"@type":"Question","name":"Why is my Depop balance negative?","acceptedAnswer":{"@type":"Answer","text":"Depop says a negative balance can happen when a refund is issued while your balance is low or zero. Future payments can be used to clear the negative balance, and Depop's Balance guidance also describes automatic top-ups in applicable situations."}},
-{"@type":"Question","name":"Why haven't I received my Depop payout?","acceptedAnswer":{"@type":"Answer","text":"Depop says missing or incorrect payment information can affect payouts. Check your connected bank account, account verification and whether your Depop Balance is negative. In Australia, Depop also lists failed bank details, unsupported or restricted bank accounts and currency mismatches among possible failed-payout reasons."}}
-]}</script>
+{"@type":"Question","name":"Why haven't I received my Depop payout?","acceptedAnswer":{"@type":"Answer","text":"Depop says missing or incorrect payment information can affect payouts. Check your connected bank account, account verification and whether your Depop Balance is negative. In Australia, Depop also lists failed bank details, unsupported or restricted bank accounts and currency mismatches among possible failed-payout reasons."}}]}</script>
 </head><body>
 <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>THE TRACKING SAYS DELIVERED ★ SO WHERE IS THE MONEY? ★&nbsp;</span><span>THE TRACKING SAYS DELIVERED ★ SO WHERE IS THE MONEY? ★&nbsp;</span></div></div>
 <header class="site-head"><div class="head-inner">
@@ -463,6 +462,44 @@ function calcPayout(){
   warn.classList.add('show');
   document.getElementById('payout-result').style.display = 'block';
 }
+
+CookieConsent.run({
+  guiOptions: {
+    consentModal: { layout: "box", position: "bottom right", equalWeightButtons: true, flipButtons: false },
+    preferencesModal: { layout: "box", position: "right", equalWeightButtons: true, flipButtons: false }
+  },
+  categories: {
+    necessary: { enabled: true, readOnly: true },
+    analytics: { enabled: false, readOnly: false },
+    advertising: { enabled: false, readOnly: false }
+  },
+  language: {
+    default: "en",
+    autoDetect: "browser",
+    translations: {
+      en: {
+        consentModal: {
+          title: "We use cookies",
+          description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
+          acceptAllBtn: "Accept all",
+          acceptNecessaryBtn: "Reject all",
+          showPreferencesBtn: "Manage preferences"
+        },
+        preferencesModal: {
+          title: "Cookie preferences",
+          acceptAllBtn: "Accept all",
+          acceptNecessaryBtn: "Reject all",
+          savePreferencesBtn: "Save preferences",
+          sections: [
+            { title: "Necessary cookies", description: "These cookies are required for the site to function.", linkedCategory: "necessary" },
+            { title: "Analytics cookies", description: "Help us understand how visitors use our site (Google Analytics).", linkedCategory: "analytics" },
+            { title: "Advertising cookies", description: "Used to show relevant ads (Google AdSense, when enabled).", linkedCategory: "advertising" }
+          ]
+        }
+      }
+    }
+  }
+});
 </script>
 
 </body>
