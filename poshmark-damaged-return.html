@@ -1,286 +1,609 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poshmark Damaged Returns: What Sellers Lose & What to Do (2026) | CLAWBACK</title>
+<meta name="description" content="Poshmark damaged returns explained for sellers: the 72-hour case window, what to photograph before shipping and after the return arrives, swapped-item evidence, and how to calculate your real damaged-return loss.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.gotclawback.com/poshmark-damaged-return.html">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
 <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
 <script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
 <script type="text/plain" data-category="analytics">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CPRC739GBN');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CPRC739GBN');
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What Do I Lose on a Poshmark Damaged Return? The 72-Hour Breakdown (2026)</title>
-<meta name="description" content="Poshmark reverses the 20% commission on damaged returns — your real loss is value drop, shipping, and the Texas tax. See the exact math at 3 price tiers.">
-<link rel="canonical" href="https://www.gotclawback.com/poshmark-damaged-return.html">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
 <style>
-table.data-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;}
-table.data-table th,table.data-table td{border:1px solid rgba(255,255,255,.18);padding:8px 10px;text-align:left;}
-table.data-table th{background:rgba(255,255,255,.08);}
-.callout{border-left:4px solid #F5B301;background:rgba(245,179,1,.08);padding:12px 16px;margin:18px 0;}
-.callout.red{border-left-color:#C43C2C;background:rgba(196,60,44,.08);}
-.callout.green{border-left-color:#0E3B2C;background:rgba(14,59,44,.08);}
-.cta-box{background:#0E3B2C;border:1px solid #F5B301;padding:20px;margin:28px 0;text-align:center;}
-.confession{background:#282828;color:#FAF7F0;border-left:4px solid #F5B301;padding:14px 16px;margin:18px 0;font-size:14px;line-height:1.6;}
-.verified-badge{display:inline-block;background:#0E3B2C;border:1px solid #F5B301;color:#FAF7F0;font-family:'Space Mono',monospace;font-size:11px;padding:4px 12px;border-radius:20px;letter-spacing:1px;margin:0 0 14px;}
-.sources{font-size:13px;line-height:1.8;}
-.sources a{color:#F5B301;}
-.timeline{background:#FAF7F0;color:#282828;border:1px dashed #999;padding:20px;margin:24px 0;box-shadow:0 6px 18px rgba(0,0,0,.3);}
-.timeline h3{font-family:'Archivo Black';margin:0 0 14px;color:#0E3B2C;text-align:center;letter-spacing:1px;}
-.timeline .step{display:flex;gap:14px;margin-bottom:14px;font-size:14px;line-height:1.5;}
-.timeline .hour{flex-shrink:0;width:70px;font-family:'Space Mono',monospace;font-weight:700;color:#C43C2C;}
-.timeline .event{flex:1;}
+body{background-color:#0E3B2C;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;color:#CFE3D6;font-family:'Archivo',system-ui,sans-serif;margin:0;}
+.float-sym{position:fixed;z-index:0;pointer-events:none;user-select:none;font-family:'Archivo Black',Archivo,sans-serif;color:rgba(251,247,238,.05);line-height:1;}
+.ticker,.site-head,main,.site-foot{position:relative;z-index:1;}
+.ticker{background:#F5B301;color:#0E3B2C;font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.05em;overflow:hidden;white-space:nowrap;padding:8px 0;border-bottom:2px solid #0E3B2C;}
+.ticker-track{display:inline-block;animation:tick 40s linear infinite;}
+@keyframes tick{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.site-head{padding:28px 0 18px;border-bottom:1px solid rgba(245,179,1,.25);background:rgba(14,59,44,.92);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100;}
+.head-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.brand{font-family:'Archivo Black',Archivo,sans-serif;font-size:34px;color:#FAF7EF;text-decoration:none;display:flex;align-items:center;gap:8px;}
+.brand .slash{color:#D4402A;}
+.badge{background:#F5B301;color:#0E3B2C;font-family:'Space Mono',monospace;font-weight:700;font-size:10px;padding:4px 8px;border-radius:3px;letter-spacing:.1em;transform:translateY(-10px) rotate(-2deg);}
+.tagline{font-family:'Space Mono',monospace;font-size:12px;color:#9DBFA9;margin:0;width:100%;}
+.main-nav ul{list-style:none;padding:0;margin:0;display:flex;gap:24px;}
+.main-nav a{font-family:'Space Mono',monospace;font-weight:700;font-size:14px;color:#FAF7EF;text-decoration:none;}
+.main-nav a:hover{color:#F5B301;}
+.nav-toggle{display:none;cursor:pointer;background:none;border:1px solid #F5B301;color:#F5B301;padding:8px 16px;font-family:'Archivo Black',Archivo,sans-serif;font-size:12px;border-radius:4px;}
+.has-drop{position:relative;}
+.main-nav .drop{display:none;position:absolute;top:100%;left:0;background:#0A2A20;border:1px solid rgba(245,179,1,.3);border-radius:8px;padding:10px 14px;min-width:170px;flex-direction:column;gap:10px;z-index:120;}
+.has-drop:hover .drop,.has-drop:focus-within .drop{display:flex;}
+.art-wrap{max-width:880px;margin:0 auto;padding:36px 18px 70px;}
+.art-crumb{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#7FA892;text-transform:uppercase;margin-bottom:16px;}
+.art-crumb a{color:#F5B301;text-decoration:none;}
+h1.art-h1{font-family:'Archivo Black',Archivo,sans-serif;font-size:clamp(26px,4.6vw,40px);line-height:1.15;color:#FAF7EF;margin:0 0 14px;}
+.art-lede{font-size:16.5px;line-height:1.75;color:#CFE3D6;margin:0 0 10px;}
+.art-lede strong{color:#FAF7EF;}
+.art-meta{font-family:'Space Mono',monospace;font-size:11px;color:#7FA892;letter-spacing:.1em;margin:10px 0 0;}
+.art-sec{margin:36px 0;}
+.art-sec h2{font-family:'Archivo Black',Archivo,sans-serif;font-size:22px;letter-spacing:.02em;color:#FAF7EF;margin:0 0 12px;border-left:4px solid #F5B301;padding-left:12px;}
+.art-sec h3{font-family:'Space Mono',monospace;font-size:12.5px;letter-spacing:.12em;color:#F5B301;text-transform:uppercase;margin:20px 0 8px;}
+.art-sec p{color:#CFE3D6;line-height:1.75;margin:0 0 12px;font-size:15.5px;}
+.art-sec p strong{color:#FAF7EF;}
+.art-sec ul,.art-sec ol{color:#CFE3D6;line-height:1.75;margin:0 0 12px;padding-left:22px;font-size:15px;}
+.art-sec li{margin-bottom:6px;}
+.art-sec li strong{color:#FAF7EF;}
+.art-sec a{color:#F5B301;}
+.art-quote{font-family:'Space Mono',monospace;font-size:13px;color:#F3E9C8;background:rgba(0,0,0,.25);border-left:3px solid #F5B301;padding:10px 14px;border-radius:0 6px 6px 0;margin:12px 0;}
+.callout{border-left:4px solid #F5B301;background:rgba(0,0,0,.25);padding:12px 16px;border-radius:0 8px 8px 0;color:#F3E9C8;font-size:14.5px;line-height:1.65;margin:16px 0;}
+.callout strong{color:#FAF7EF;}
+.art-table{width:100%;border-collapse:collapse;font-family:'Space Mono',monospace;font-size:12.5px;margin:16px 0;}
+.art-table th{background:#0A2A20;color:#F5B301;text-align:left;padding:10px;letter-spacing:.1em;text-transform:uppercase;font-size:10.5px;}
+.art-table td{border:1px solid rgba(255,255,255,.12);padding:10px;color:#DCE9DF;vertical-align:top;}
+.art-table tr:nth-child(even) td{background:rgba(255,255,255,.03);}
+.stage-flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0;font-family:'Space Mono',monospace;font-size:12.5px;color:#CFE3D6;}
+.stage-flow span{background:rgba(0,0,0,.25);padding:6px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.08);}
+.stage-flow i{color:#F5B301;font-style:normal;padding:0;font-size:14px;}
+.pc-card{background:rgba(0,0,0,.25);border:1px solid rgba(245,179,1,.35);border-radius:14px;padding:24px;margin:34px 0;box-shadow:0 8px 24px rgba(0,0,0,.35);}
+.pc-kicker{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#7FA892;text-transform:uppercase;margin:0 0 6px;}
+.pc-title{font-family:'Archivo Black',Archivo,sans-serif;font-size:18px;letter-spacing:.05em;color:#F5B301;margin:0 0 8px;}
+.pc-sub{font-family:'Space Mono',monospace;font-size:11.5px;color:#9DBFA9;line-height:1.7;margin:0 0 18px;}
+.pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:640px){.pc-grid{grid-template-columns:1fr;}}
+.pc-field label{display:block;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#9DBFA9;text-transform:uppercase;margin-bottom:6px;}
+.pc-field select,.pc-field input{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);color:#FAF7EF;border-radius:6px;padding:10px;font-family:'Space Mono',monospace;font-size:13px;}
+.pc-field select{color-scheme:dark;}
+.pc-field select option{background:#0E3B2C;color:#FBF7EE;}
+.pc-field select option:checked{background:#0E3B2C;color:#F5B301;}
+.pc-field select:focus,.pc-field input:focus{outline:2px solid #F5B301;outline-offset:1px;}
+.pc-btn{margin-top:16px;width:100%;background:#D4402A;color:#FFF6EE;border:none;font-family:'Archivo Black',Archivo,sans-serif;font-size:13px;letter-spacing:.1em;padding:14px;border-radius:8px;cursor:pointer;box-shadow:0 4px 0 rgba(0,0,0,.35);transition:transform .12s;}
+.pc-btn:hover{transform:translateY(-2px);}
+.pc-out{margin-top:20px;border-top:1px dashed rgba(245,179,1,.4);padding-top:18px;}
+.pc-sub-head{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;color:#9DBFA9;text-transform:uppercase;margin:12px 0 4px;}
+.pc-sub-head:first-child{margin-top:0;}
+.pc-line{display:flex;justify-content:space-between;gap:12px;font-family:'Space Mono',monospace;font-size:12.5px;color:#DCE9DF;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07);}
+.pc-line b{color:#F5B301;font-weight:700;text-align:right;}
+.pc-line.total b{font-size:14px;}
+.pc-line.loss b{color:#E8734A;}
+.pc-line.ok b{color:#2E8B57;}
+.pc-verdict{margin:14px 0 0;font-size:14.5px;line-height:1.7;color:#FAF7EF;background:rgba(14,59,44,.55);border:1px solid rgba(46,139,87,.4);border-radius:8px;padding:12px 14px;}
+.pc-note{font-family:'Space Mono',monospace;font-size:10.5px;color:#7FA892;margin-top:14px;line-height:1.7;}
+.pc-cta{margin-top:14px;font-size:13.5px;color:#CFE3D6;}
+.pc-cta a{color:#F5B301;}
+.next-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;}
+@media(max-width:640px){.next-grid{grid-template-columns:1fr;}}
+.next-card{display:block;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.10);border-radius:10px;padding:16px;text-decoration:none;transition:border-color .15s,transform .15s;}
+.next-card:hover{border-color:#F5B301;transform:translateY(-2px);}
+.next-card b{display:block;font-family:'Archivo Black',Archivo,sans-serif;font-size:13.5px;color:#FAF7EF;margin-bottom:6px;letter-spacing:.02em;}
+.next-card span{font-size:13px;color:#9DBFA9;line-height:1.6;display:block;}
+.src-list{list-style:none;margin:14px 0;padding:0;font-family:'Space Mono',monospace;font-size:12px;}
+.src-list li{margin-bottom:8px;padding-left:18px;position:relative;color:#CFE3D6;}
+.src-list li::before{content:"→";position:absolute;left:0;color:#F5B301;}
+.src-list a{color:#CFE3D6;text-decoration:none;border-bottom:1px dotted rgba(245,179,1,.5);}
+.src-list a:hover{color:#F5B301;}
+.faq-item{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1);border-radius:8px;margin-bottom:10px;transition:border-color .15s;}
+.faq-item[open]{border-color:#F5B301;}
+.faq-item summary{padding:14px 16px;font-family:'Archivo Black',Archivo,sans-serif;font-size:14px;color:#FAF7EF;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:"+";font-size:20px;color:#F5B301;}
+.faq-item[open] summary::after{content:"−";}
+.faq-item p{padding:0 16px 16px;color:#CFE3D6;line-height:1.6;font-size:14px;margin:0;}
+.faq-item p strong{color:#FAF7EF;}
+.site-foot{background:#0A2A20;color:#CFE3D6;padding:60px 20px 30px;margin-top:80px;border-top:1px solid rgba(245,179,1,.25);}
+.foot-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
+.foot-brand .brand{color:#FAF7EF;font-size:24px;margin-bottom:16px;}
+.foot-brand p{font-size:14px;line-height:1.5;margin:0;color:#CFE3D6;}
+.foot-col h3{font-family:'Archivo Black',Archivo,sans-serif;font-size:14px;color:#F5B301;margin:0 0 16px;letter-spacing:.05em;}
+.foot-col ul{list-style:none;padding:0;margin:0;}
+.foot-col li{margin-bottom:10px;}
+.foot-col a{color:#CFE3D6;text-decoration:none;font-size:14px;}
+.foot-col a:hover{color:#F5B301;}
+.foot-legal{max-width:1200px;margin:40px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;font-family:'Space Mono',monospace;color:#7FA892;text-align:center;}
+@media(max-width:768px){
+.main-nav ul{display:none;flex-direction:column;width:100%;margin-top:16px;gap:16px;}
+.main-nav ul.nav-open{display:flex;}
+.main-nav .drop{position:static;border:none;padding:6px 0 0 12px;min-width:0;}
+.nav-open .has-drop .drop{display:flex;}
+.nav-toggle{display:block;}
+.head-inner{flex-direction:column;align-items:flex-start;}
+.foot-inner{grid-template-columns:1fr 1fr;}
+}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What Do I Lose on a Poshmark Damaged Return? The 72-Hour Breakdown","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-22"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"What do I lose on a Poshmark damaged return?","acceptedAnswer":{"@type":"Answer","text":"Poshmark reverses the 20 percent commission when a return is approved. Your real losses are the drop in the item's value when it comes back damaged, any overweight shipping fee you paid, and the Texas Seller Fee Tax on the commission if you ship from Texas."}},
-{"@type":"Question","name":"Does Poshmark refund the 20% commission on a return?","acceptedAnswer":{"@type":"Answer","text":"Yes. When a return is approved and the buyer is refunded, Poshmark reverses the 20 percent commission (or the 2.95 dollar flat fee for sales under 15 dollars) on the refunded amount. Unlike eBay, Poshmark does not keep a per-order fee on returns."}},
-{"@type":"Question","name":"What is the 3-day rule on Poshmark returns?","acceptedAnswer":{"@type":"Answer","text":"Buyers have 3 days from the delivery date to open a return request for items not as described. Once the buyer accepts the order or the 3 days pass, no return can be filed. Sellers then have 24 hours to respond to a return request before Poshmark steps in."}},
-{"@type":"Question","name":"Who pays return shipping on Poshmark?","acceptedAnswer":{"@type":"Answer","text":"Poshmark provides a prepaid return label for approved returns. The label cost is generally absorbed by the platform, not the seller. However, sellers lose the value of the item if it returns damaged, and sellers pay any overweight bundle fees out of their own earnings."}},
-{"@type":"Question","name":"Does Poshmark side with the buyer or seller?","acceptedAnswer":{"@type":"Answer","text":"Poshmark sides with whoever has better evidence. Cases with clear pre-shipment photos, serial numbers, and documented flaws tend to go to the seller. Cases with only the buyer's word tend to go to the buyer. Documentation is the whole game."}},
-{"@type":"Question","name":"Does Seel Worry-Free Returns hurt Poshmark sellers?","acceptedAnswer":{"@type":"Answer","text":"No. When a buyer uses Seel to return an item for fit or change-of-mind reasons, Seel pays the refund and the item goes to Seel's warehouse, not back to you. You keep your full earnings. Seel returns do not affect your payout timing or earnings."}},
-{"@type":"Question","name":"What is the Texas Seller Fee Tax on Poshmark?","acceptedAnswer":{"@type":"Answer","text":"Effective October 1, 2025, Texas-based sellers pay an additional 8.25 percent tax on 80 percent of Poshmark's commission. On a 100 dollar sale, the extra tax is about 1 dollar 32 cents. It is deducted at the time of sale and shown separately in your sales report."}},
-{"@type":"Question","name":"Can I write off Poshmark return losses on my taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Value drop on damaged returns, overweight bundle fees, and any return-related shipping costs you absorbed are deductible as ordinary business expenses on Schedule C. Track them with your return records and confirm treatment with a tax professional."}}]}</script>
-</head><body>
-<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>72 HOURS TO SAVE THE SALE ★ THE 20% COMES BACK ★ THE VALUE DOESN'T ★&nbsp;</span><span>72 HOURS TO SAVE THE SALE ★ THE 20% COMES BACK ★ THE VALUE DOESN'T ★&nbsp;</span></div></div>
-<header class="site-head"><div class="head-inner">
-<a class="brand" href="index.html">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
-<p class="tagline">// the forced-return loss calculator for resellers</p>
-<nav class="main-nav" aria-label="Primary"><button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
-<ul id="navlist" class="nav-list"><li><a href="index.html#tool">Calculator</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li><li><a href="guides.html">Guides</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="about.html">About</a></li></ul></nav>
-</div></header>
-<main class="page-body">
-<span class="verified-badge">✓ SOURCED FROM POSHMARK HELP CENTER · VERIFIED AUGUST 22, 2026</span>
-<h1 class="page-title">What Do I Lose on a Poshmark Damaged Return? (The 72-Hour Breakdown)</h1>
 
-<p class="page-lead"><strong>You lose three things:</strong> the drop in the item's value when it comes back worse, any overweight shipping fee you paid (the $5–$10 bundle trap), and the new Texas Seller Fee Tax if you ship from Texas. You do <em>not</em> lose the 20% commission — Poshmark reverses it when a return is approved. The buyer has 72 hours to open a case, you have 24 hours to respond, and the damage happens somewhere in between. This is the full 2026 picture.</p>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Poshmark Damaged Returns: What Sellers Lose, What to Do When an Item Comes Back Worse (2026)","description":"Poshmark damaged returns explained for sellers: the 72-hour case window, what to photograph before shipping and after the return arrives, swapped-item evidence, and how to calculate your real damaged-return loss.","dateModified":"2026-09","author":{"@type":"Organization","name":"CLAWBACK"},"publisher":{"@type":"Organization","name":"CLAWBACK"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How long does a buyer have to open a Poshmark return case?","acceptedAnswer":{"@type":"Answer","text":"Under Poshmark's current Posh Protect policy, a buyer has 72 hours from delivery — measured using the tracking information on the shipping label — to open a return case with supporting photos. If approved, Poshmark provides the return label and the buyer must ship within five days of approval."}},
+{"@type":"Question","name":"Does Poshmark allow returns for fit or change of mind?","acceptedAnswer":{"@type":"Answer","text":"Generally no. Posh Protect covers specific problems such as undisclosed damage, an incorrect or missing item, an item not as described, or an authenticity issue — not ordinary buyer's remorse or fit issues."}},
+{"@type":"Question","name":"What should I do if a Poshmark return arrives damaged?","acceptedAnswer":{"@type":"Answer","text":"Document before you clean, repair or wash anything. Photograph the package, the shipping label, the packaging condition, the opening if appropriate, the entire returned item and every discrepancy, then report the discrepancy through Poshmark's support process."}},
+{"@type":"Question","name":"What if the returned item is not the item I shipped?","acceptedAnswer":{"@type":"Answer","text":"Build an evidence package: original listing photos, fresh pre-shipment photos, shipping photos connecting item to package, tags and labels, accessories and packaging. Compare identifying details and report the discrepancy through Poshmark's support process."}},
+{"@type":"Question","name":"Who is liable if damage happened during return shipping?","acceptedAnswer":{"@type":"Answer","text":"It depends on the cause. Poshmark's policy says sellers are responsible for proper packaging and that Poshmark is not liable for damage caused by improper or inadequate seller packaging, so photograph the packaging before opening it to establish what arrived."}},
+{"@type":"Question","name":"Does Poshmark refund the selling fee on an approved return?","acceptedAnswer":{"@type":"Answer","text":"Reconcile your transaction first. The important seller calculation is the loss that remains after the transaction itself has been reconciled — do not automatically count the original 20% or $2.95 fee as a damaged-return loss without checking what Poshmark actually credited or charged."}},
+{"@type":"Question","name":"How do I calculate the loss on a damaged Poshmark return?","acceptedAnswer":{"@type":"Answer","text":"Return loss = change in the item's resale value + unrecovered transaction costs + other documented seller costs. Track the difference between what the item was worth before shipment and what it is worth after the return, plus any unrecovered seller costs."}},
+{"@type":"Question","name":"Should I clean or repair a damaged return before photographing it?","acceptedAnswer":{"@type":"Answer","text":"No. Evidence first, fixing second. Cleaning, repairing or discarding packaging before photographing can destroy evidence of the condition in which the item arrived."}}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#article">Skip to the article</a>
+<div class="float-sym" aria-hidden="true" style="top:-40px;right:-20px;font-size:320px;">$</div>
+<div class="float-sym" aria-hidden="true" style="bottom:-60px;left:-30px;font-size:280px;">¢</div>
 
-<div class="callout"><strong>The TL;DR for impatient sellers:</strong> A $50 dress that comes back stained and now worth $20 costs you <strong>$30 in value drop</strong>. The 20% commission comes back, the buyer's $6.49 shipping stays with Poshmark, and you eat the damage. That's the real cost most Poshmark sellers never add up.</div>
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+<span>EBAY KEEPS THE $0.30–$0.40 PER-ORDER FEE ON "NOT AS DESCRIBED" RETURNS ★ SELLERS PAY RETURN SHIPPING ON INAD CLAIMS ★ WHATNOT TAKES 2.9% ON BUYER SHIPPING &amp; TAX — MONEY YOU NEVER SEE ★ MERCARI CHARGES A 10% SELLING FEE AGAIN (2025) ★ DEPOP REFUNDS ALL FEES ON A REFUND ★ VINTED CHARGES $0 IN SELLER SELLING FEES ★ KNOW YOUR NUMBER BEFORE YOU APPEAL ★&nbsp;</span><span>EBAY KEEPS THE $0.30–$0.40 PER-ORDER FEE ON "NOT AS DESCRIBED" RETURNS ★ SELLERS PAY RETURN SHIPPING ON INAD CLAIMS ★ WHATNOT TAKES 2.9% ON BUYER SHIPPING &amp; TAX — MONEY YOU NEVER SEE ★ MERCARI CHARGES A 10% SELLING FEE AGAIN (2025) ★ DEPOP REFUNDS ALL FEES ON A REFUND ★ VINTED CHARGES $0 IN SELLER SELLING FEES ★ KNOW YOUR NUMBER BEFORE YOU APPEAL ★&nbsp;</span>
+</div></div>
 
-<h2>First — Bust The Myth About Commission</h2>
-<p>Almost every reseller blog and Facebook group repeats the same line: "Poshmark keeps the 20% on returns." <strong>That's wrong in 2026.</strong> When a return is approved and the buyer is refunded, Poshmark reverses the commission — both the 20% on sales over $15 and the $2.95 flat fee on sales under $15. Unlike eBay, there's no per-order fee that stays gone.</p>
-<p>So what do you <em>actually</em> lose? Three things, all of which happen outside the commission line: the item's value drop, the overweight bundle fee (if any), and — since October 1, 2025 — the Texas Seller Fee Tax on the commission that was originally deducted.</p>
-
-<h2>The 72-Hour Time Bomb: Hour by Hour</h2>
-<p>Poshmark's return window is brutal because it's so short. Most sellers don't realize how fast the clock moves. Here's exactly what happens, hour by hour, when a buyer claims an item is damaged or not as described:</p>
-
-<div class="timeline">
-<h3>THE 3-DAY COUNTDOWN</h3>
-<div class="step"><span class="hour">DAY 0</span><div class="event"><strong>Delivery confirmed by USPS.</strong> The 3-day clock starts. The buyer has until this moment plus 72 hours to open a case. Until then, the item sits in their house and you have no idea what's happening.</div></div>
-<div class="step"><span class="hour">DAY 1-3</span><div class="event"><strong>Buyer opens "Order Not as Described" case.</strong> They must upload clear, well-lit photos (natural lighting, JPG only — Poshmark's system doesn't accept HEIC files). They can also include video for electronics.</div></div>
-<div class="step"><span class="hour">+24 HRS</span><div class="event"><strong>Your response window.</strong> You have 24 hours to respond to the case. You can accept the return, offer a partial refund, or reject it. If you don't respond, <strong>Poshmark's team takes over</strong> and decides for you.</div></div>
-<div class="step"><span class="hour">DAY 4-7</span><div class="event"><strong>Poshmark reviews.</strong> Their team evaluates the evidence. If they side with the buyer, a prepaid return label is generated. The buyer ships the item back to you.</div></div>
-<div class="step"><span class="hour">DAY 8+</span><div class="event"><strong>You receive the item.</strong> This is where you find out what you actually lost. Is it still wearable? Stained? Swapped? This is also where you appeal if the item came back worse than it left.</div></div>
+<header class="site-head">
+<div class="head-inner">
+<a class="brand" href="index.html" aria-label="CLAWBACK home">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
+<p class="tagline">// am I losing money on this return? find out in 20 seconds — eBay · Poshmark · Mercari · Depop · Whatnot · Vinted</p>
+<nav class="main-nav" aria-label="Primary">
+<button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
+<ul id="navlist" class="nav-list">
+<li><a href="index.html#tool">Calculator</a></li>
+<li class="has-drop">
+<a href="platforms.html" aria-haspopup="true">Platforms ▾</a>
+<ul class="drop">
+<li><a href="platforms.html#ebay">eBay</a></li>
+<li><a href="platforms.html#poshmark">Poshmark</a></li>
+<li><a href="platforms.html#mercari">Mercari</a></li>
+<li><a href="platforms.html#depop">Depop</a></li>
+<li><a href="platforms.html#whatnot">Whatnot</a></li>
+<li><a href="platforms.html#vinted">Vinted</a></li>
+</ul>
+</li>
+<li><a href="guides.html">Guides</a></li>
+<li><a href="index.html#faq">FAQ</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+</nav>
 </div>
+</header>
 
-<p>The entire dance happens in under two weeks. And the critical 24-hour seller response window is where most damaged returns are decided. If you're asleep at the wheel, Poshmark decides for you — and they tend to side with whoever has better evidence.</p>
+<main class="art-wrap" id="article">
+<p class="art-crumb"><a href="index.html">CLAWBACK</a> / <a href="guides.html">Guides</a> / Poshmark damaged returns</p>
+<h1 class="art-h1">Poshmark Damaged Returns: What Sellers Lose, What to Do When an Item Comes Back Worse (2026)</h1>
+<p class="art-lede">A Poshmark return is one problem. A Poshmark return that arrives back damaged, altered, incomplete, or different from what you shipped is a completely different problem.</p>
+<p class="art-lede">The buyer may have already received a refund. The original sale may be gone. And now you are holding an item that may be worth less than it was when you sent it. That is the part most Poshmark return guides don't explain.</p>
+<p class="art-lede">This guide is specifically for sellers dealing with a damaged or suspicious return: what Poshmark's rules actually say, what to document before shipping, what to do when the package comes back, and how to calculate the financial loss if the item's resale value has changed.</p>
+<p class="art-meta">LAST CHECKED: SEPTEMBER 2026</p>
 
-<h2>The Three Real Losses (At 3 Price Tiers)</h2>
-<p>The commission reversal is the good news. The bad news is everything else. Here's what a damaged return actually costs you at three common price points:</p>
+<section class="art-sec">
+<h2>The short answer</h2>
+<p>Under Poshmark's current Posh Protect policy, a buyer has 72 hours from delivery, based on the tracking information on the shipping label, to open a return case for issues such as undisclosed damage, an incorrect or missing item, an item not as described, or an authenticity issue. The buyer must provide supporting photos. If Poshmark approves the return, Poshmark provides the return label, and the buyer must ship the return within five days of approval.</p>
+<p>The difficult seller scenario comes after that:</p>
+<div class="art-quote">You receive the returned package and the item is now worse than when you shipped it.</div>
+<p>Maybe there is a new stain. Maybe a tag is missing. Maybe the item has a cut or tear. Maybe parts of a bundle are missing. Maybe you suspect the returned item is not the same item you originally shipped.</p>
+<p>At that point, don't start with an angry message.</p>
+<p><strong>Start with evidence.</strong></p>
+</section>
 
-<table class="data-table">
-<thead><tr><th>Sale price</th><th>Commission (reversed)</th><th>Value drop (KEPT)</th><th>Bundle fee (if any)</th><th>Texas tax</th><th>Total loss</th></tr></thead>
+<section class="art-sec">
+<h2>What counts as a Poshmark return problem?</h2>
+<p>Poshmark's current return policy covers specific problems rather than ordinary buyer's remorse. The listed grounds include:</p>
+<ul>
+<li>undisclosed damage</li>
+<li>incorrect or missing item</li>
+<li>item not as described</li>
+<li>item not authentic</li>
+</ul>
+<p>Buyers generally cannot use Posh Protect simply because an item does not fit or they changed their mind. That distinction matters to sellers because a return request does not automatically mean the buyer is entitled to return the item for any reason.</p>
+<p>But once a return is approved, the seller's next concern becomes different:</p>
+<div class="callout"><strong>What condition will the item be in when it comes back?</strong></div>
+</section>
+
+<section class="art-sec">
+<h2>The seller problem nobody explains: the return can create a second loss</h2>
+<p>Imagine this: you sell a dress for $80. You photograph it before shipping. It has no stains, no holes and no visible damage. The buyer opens a Poshmark case. The return is approved. The item comes back with a new stain and you estimate that it could now sell for only $35.</p>
+<p>The important number is not simply the original $80 sale price. The seller's economic problem is the change in the item's resale value.</p>
+<table class="art-table">
+<thead><tr><th>Before shipment</th><th>After return</th></tr></thead>
 <tbody>
-<tr><td><strong>$30</strong> (lightweight tee)</td><td>$6.00 back ✓</td><td>$15 (stained)</td><td>$0</td><td>$0.40 (if TX)</td><td><strong>$15.40</strong></td></tr>
-<tr><td><strong>$60</strong> (dress, 3 lbs)</td><td>$12.00 back ✓</td><td>$30 (makeup mark)</td><td>$0</td><td>$0.79 (if TX)</td><td><strong>$30.79</strong></td></tr>
-<tr><td><strong>$120</strong> (heavy coat, 6 lbs bundle)</td><td>$24.00 back ✓</td><td>$50 (worn)</td><td>$5.00 (overweight fee)</td><td>$1.58 (if TX)</td><td><strong>$56.58</strong></td></tr>
+<tr><td>Estimated resale value: $80</td><td>Estimated resale value after damage: $35</td></tr>
+<tr><td colspan="2">Value reduction: $45</td></tr>
 </tbody>
 </table>
+<p>That $45 does not appear as a neat line in your Poshmark account saying "damaged-return loss." You have to identify it yourself. That is exactly where a return-loss calculator is useful.</p>
+</section>
 
-<p class="fee-note" style="font-size:12px;opacity:.8;">Texas Seller Fee Tax calculated at 8.25% on 80% of commission. Non-Texas sellers skip that column — it doesn't apply to you.</p>
+<section class="art-sec">
+<h2>First: don't confuse a normal return with a damaged return</h2>
+<h3>Normal approved return</h3>
+<p>The item comes back in essentially the condition in which it was sent. Your main issue is the reversed transaction and the time spent handling it.</p>
+<h3>Damaged return</h3>
+<p>The item comes back with a new condition problem. Now you have an additional economic question:</p>
+<div class="art-quote">What is this item worth now compared with what it was worth before the return?</div>
+<h3>Suspicious return</h3>
+<p>The returned item appears to be: a different size, a different color, a different model, missing accessories, missing tags, missing pieces from a bundle, materially more worn, or newly damaged. This is not something you should simply treat as a normal return.</p>
+<p><strong>Document it immediately.</strong></p>
+</section>
 
-<div class="confession"><strong>Confession:</strong> For my first six months on Poshmark, I only counted the commission when a return came in. I'd see "commission reversed" and think I was whole. It wasn't until I started photographing every item before shipping and comparing those photos to what came back that I realized the real loss was the value drop. A $60 dress that came back with a lipstick stain on the collar was suddenly a $25 dress. That $35 loss never showed up in my Poshmark statement — it just vanished into thin air. Tracking it separately changed my entire pricing strategy.</div>
-
-<h2>Commission DOES Come Back (The Myth, Busted)</h2>
-<p>Let's be explicit, because this is where most reseller content is wrong: when Poshmark approves a return and refunds the buyer, they <strong>reverse the commission</strong> on the refunded amount. That means:</p>
+<section class="art-sec">
+<h2>What to do before you ship the original order</h2>
+<p>The best damaged-return defense happens before the buyer ever receives the package. You want a record of what you actually shipped.</p>
+<h3>1. Photograph the item immediately before packing</h3>
 <ul>
-<li><strong>Sales over $15:</strong> The 20% commission is credited back to you.</li>
-<li><strong>Sales under $15:</strong> The $2.95 flat fee is credited back to you.</li>
-<li><strong>No per-order fee:</strong> Unlike eBay's $0.30/$0.40 per-order charge that stays gone, Poshmark has no equivalent. You get a clean reversal.</li>
+<li>Front, back, sides</li>
+<li>Close-ups of important areas</li>
+<li>Labels, size tags, brand tags</li>
+<li>Serial numbers where applicable</li>
+<li>Hardware, soles, zippers, closures</li>
+<li>Accessories</li>
+<li>Existing flaws</li>
 </ul>
+<p>For valuable or easily substituted items, photograph identifying details that make the item distinguishable from another example of the same product. Don't rely entirely on your listing photos. Take a fresh set immediately before shipment.</p>
+<h3>2. Photograph the item and the shipping package together</h3>
+<p>You want a record connecting the exact item → the packaging → the shipment. For example: item front, item back, identifying detail, item inside packaging, sealed package, shipping label. The goal isn't a dramatic "proof video" — it's a simple evidence trail.</p>
+<h3>3. Keep your original listing intact</h3>
+<p>Your original listing can contain useful evidence: original photographs, condition description, measurements, disclosed flaws, color, size, included accessories. Poshmark's Seller Policy says that images and descriptions provided in listings and other parts of the platform may be reviewed and considered by Poshmark staff in a dispute. So don't casually delete or replace the original listing photos after a sale.</p>
+</section>
 
-<p>This is one of the reasons Poshmark can be more seller-friendly than eBay for high-value items. On a $200 coat, eBay keeps $0.40 of the per-order fee plus any Very High INAD penalty exposure. Poshmark reverses everything on the commission side. The tradeoff is that Poshmark's flat $6.49 buyer-paid shipping means the buyer always covers outbound shipping — so your cost exposure starts <em>after</em> the sale.</p>
+<section class="art-sec">
+<h2>What recent sellers are actually worried about</h2>
+<p>Recent Poshmark seller discussions show recurring concerns around new damage appearing after a return, suspected item substitutions, and what evidence sellers can use when they believe the returned condition differs from what they shipped.</p>
+<p>In March 2026, a seller reported receiving a sweater back with large new holes after a return. Other commenters recommended contacting Poshmark with before-and-after photographs. In January 2026, another seller reported a suspected jacket substitution and said they had photographs taken immediately before packaging. In March 2026, another seller reported receiving a damaged item back and described escalating the issue after Poshmark approved the buyer's return.</p>
+<p>These are community reports, not proof that Poshmark routinely sides with buyers or sellers. But they reveal a recurring seller concern:</p>
+<div class="art-quote">"How do I prove what I actually shipped if the item comes back different?"</div>
+</section>
 
-<h2>The 5lb Bundle Trap: Where Returns Get Expensive</h2>
-<p>This is the part almost nobody talks about. Poshmark's flat-rate $6.49 shipping covers packages up to 5 pounds. When a buyer bundles multiple items and the package tips past 5 lbs, Poshmark makes <em>you</em> generate an overweight label upgrade, and the fee comes out of <em>your</em> earnings:</p>
+<section class="art-sec">
+<h2>The moment your return arrives: stop and document</h2>
+<p>If you receive a suspicious return, don't immediately clean it, repair it, wash it, remove anything, or throw away the packaging. First document the condition.</p>
+<h3>Photograph the package</h3>
+<ul>
+<li>The outside of the package</li>
+<li>The shipping label</li>
+<li>Visible damage to the package</li>
+<li>Any unusual opening or resealing</li>
+<li>The package before you open it</li>
+</ul>
+<h3>Then document the opening</h3>
+<p>For a high-value or particularly suspicious return, recording the opening can create a chronological record of what you received: package → label → opening → contents → condition. This is especially useful when the issue is not simply "the item is damaged" but "this isn't the item I shipped."</p>
+</section>
 
-<table class="data-table">
-<thead><tr><th>Bundle weight</th><th>Upgrade fee</th><th>When this bites</th></tr></thead>
+<section class="art-sec">
+<h2>What if the buyer returned a different item?</h2>
+<p>Suppose you shipped a black leather jacket, size M, with a specific zipper pull and stitching detail — and the returned package contains a similar black jacket but different size, different zipper hardware or different condition. Don't turn the response into an argument about the buyer. Build an evidence package.</p>
+<table class="art-table">
+<thead><tr><th>Evidence</th><th>What you're looking for</th></tr></thead>
 <tbody>
-<tr><td>Up to 5 lbs</td><td>$0</td><td>Normal bundle</td></tr>
-<tr><td>5.01–10 lbs</td><td><strong>$5.00</strong></td><td>Two pairs of jeans, or shoes + clothing</td></tr>
-<tr><td>10.01–15 lbs</td><td><strong>$10.00</strong></td><td>Heavy winter coat bundle</td></tr>
+<tr><td>Original listing</td><td>Exact item shown</td></tr>
+<tr><td>Pre-shipment photos</td><td>Condition and identifying details</td></tr>
+<tr><td>Shipping photos</td><td>Item connected to package</td></tr>
+<tr><td>Returned item</td><td>Differences from original</td></tr>
+<tr><td>Tags / labels</td><td>Size, brand, identifying information</td></tr>
+<tr><td>Accessories</td><td>Missing or substituted pieces</td></tr>
+<tr><td>Packaging</td><td>Evidence of what arrived</td></tr>
 </tbody>
 </table>
+<p>Then report the discrepancy through Poshmark's support process. A January 2026 seller discussion describes this exact concern: the seller said they had taken timestamped photos immediately before packaging, then the buyer alleged both damage and that the seller had sent a different jacket. That is anecdotal, but it illustrates why identifying details can matter more than simply photographing the item once.</p>
+</section>
 
-<p>Now here's the damaged-return wrinkle: if you paid a $5 or $10 overweight fee on the outbound shipment and the item comes back damaged, <strong>you've already spent that money and can't get it back</strong>. The upgrade fee is deducted at the time of label generation, and it's gone even when the sale reverses. On a $120 coat bundle that tips to 6 lbs, your total loss on a damaged return becomes $56.58 — not $51.58. The $5 overweight fee is a permanent sunk cost.</p>
+<section class="art-sec">
+<h2>What if the buyer damaged the item?</h2>
+<p>Examples include: new stain, new hole, cut fabric, marker or writing, broken hardware, missing tag, missing accessory, excessive wear, altered condition. Your first question should be:</p>
+<div class="callout"><strong>Can I demonstrate that this condition was different before shipment?</strong></div>
+<p>That's why before-and-after evidence matters: before shipment, a clear photograph of the area, the listing photograph, the condition description, identifying details and date/time information where available; after return, the same area photographed again, a close-up of new damage, complete item photographs and packaging photographs. The closer the comparison, the easier it is for a reviewer to understand the actual dispute.</p>
+</section>
 
-<h2>The Texas Seller Fee Tax (New October 2025)</h2>
-<p>Effective October 1, 2025, Poshmark began collecting an additional tax on sellers based in Texas. It's 8.25% (6.25% state + ~2% local) applied to <strong>80% of the seller fee</strong>, not the full sale. On a $100 sale:</p>
+<section class="art-sec">
+<h2>What if the damage happened during shipping?</h2>
+<p>Don't automatically assume the buyer caused it. There are several possibilities: damage existed before shipment, buyer caused the damage, return shipping caused the damage, packaging was inadequate, or the evidence is inconclusive.</p>
+<p>Poshmark's current policy says sellers are responsible for proper packaging and states that Poshmark is not liable for damage caused by improper or inadequate seller packaging. So if the package itself arrives damaged, photograph the packaging before opening it. That creates evidence for a different type of dispute.</p>
+</section>
+
+<section class="art-sec">
+<h2>What if the buyer says the item was already damaged?</h2>
+<p>Don't respond with "You're lying." Instead answer the actual claim. For example:</p>
+<div class="art-quote">"The listing photographs show this area without the damage described in the claim. I have also attached photographs taken immediately before shipment showing the same condition."</div>
+<p>That is stronger because it gives the reviewer something concrete to compare. Poshmark's Seller Policy specifically states that images and descriptions can be reviewed and considered by Poshmark staff in a dispute.</p>
+</section>
+
+<section class="art-sec">
+<h2>Your 72-hour clock is the buyer's clock — not your evidence window</h2>
+<p>The buyer's current Posh Protect deadline is 72 hours after delivery, measured using the tracking information on the shipping label. That doesn't mean you should wait three days to prepare. If a return case appears, start collecting your evidence immediately. And if a returned item arrives damaged, don't assume the original case automatically tells the whole story.</p>
+<p><strong>Treat the condition of the returned item as its own evidence problem.</strong></p>
+</section>
+
+<section class="art-sec">
+<h2>What happens after a return is approved?</h2>
+<p>Poshmark's current policy says that, when a return is approved, Poshmark provides the buyer with a return label. The buyer must ship the return within five days of approval to remain eligible for a refund. The seller's practical checklist is therefore:</p>
+<h3>Before the return arrives</h3>
 <ul>
-<li>Poshmark's commission: $20 (20%)</li>
-<li>Taxable portion: $16 (80% of $20)</li>
-<li>Texas tax: $1.32 ($16 × 8.25%)</li>
+<li>Save the case information</li>
+<li>Save your original listing photos</li>
+<li>Save your pre-shipment photographs</li>
+<li>Note the exact problem claimed by the buyer</li>
+<li>Don't delete relevant messages</li>
 </ul>
-<p>This tax is deducted at the time of sale and shows up separately in your My Sales Report under "Texas Seller Fee Tax." When a return reverses the commission, <strong>the Texas tax is also reversed</strong> — but you've already been out that cash for the duration of the return process. For high-volume Texas sellers, this tax compounds across hundreds of transactions.</p>
-
-<h2>Seel Worry-Free Returns: When You Lose $0</h2>
-<p>Here's the most important change on Poshmark in years — and almost no reseller has internalized it yet. <strong>Seel Worry-Free Returns</strong> is an optional add-on buyers can purchase at checkout. If they do, and they return the item for fit or change-of-mind reasons:</p>
-
+<h3>When the return arrives</h3>
 <ul>
-<li><strong>Seel pays the refund, not you.</strong> Your earnings stay exactly where they were.</li>
-<li><strong>The item goes to Seel's warehouse, not back to you.</strong> You don't have to receive it, inspect it, or relist it.</li>
-<li><strong>Your payout timing doesn't change.</strong> You get paid on the standard 3-day-after-acceptance schedule.</li>
-<li><strong>You can't opt out.</strong> Sellers don't control whether buyers add Seel protection.</li>
+<li>Photograph the package</li>
+<li>Photograph the shipping label</li>
+<li>Photograph the packaging condition</li>
+<li>Document the opening if appropriate</li>
+<li>Photograph the entire returned item</li>
+<li>Photograph every new problem</li>
+<li>Compare the item with your original evidence</li>
+<li>Contact Poshmark through the appropriate support channel</li>
 </ul>
+<h3>Don't make this mistake: cleaning the item first</h3>
+<p>If a returned garment has a stain, your first instinct may be to wash it. Wait. Photograph it first. If the item has a hole, don't repair it first. If a tag is missing, don't throw away the remaining packaging. If an accessory is missing, photograph the complete returned package and contents.</p>
+<div class="callout"><strong>Evidence first. Fixing the item second.</strong></div>
+</section>
 
-<div class="callout green"><strong>What this means for you:</strong> A buyer adding Seel protection on a $60 dress is effectively buying insurance against <em>their</em> fit uncertainty — and it costs you nothing. The only return types that still hurt you are "not as described" cases handled by Poshmark itself. Seel returns are a gift; Poshmark returns are a fight.</div>
-
-<h2>How To Fight Back: The Photo Evidence Method</h2>
-<p>The sellers who win Poshmark return cases share one habit: <strong>they photograph every item before shipping.</strong> Front, back, collar, inside label, any flaws, and serial numbers for high-value items. Natural lighting, JPG format (Poshmark's system rejects HEIC).</p>
-
-<p>When a buyer claims "damaged" or "not as described," you upload your pre-shipment photos alongside whatever they sent. If your photos show the item in perfect condition and theirs show damage, you have a strong case. If they return the item and it's worse than it left, photograph it again immediately — side-by-side with your pre-shipment shots — and open a case with Poshmark support. Sellers who itemize with photos win. Sellers who send paragraphs of angry text don't.</p>
-
-<p>We have a full walkthrough of the photo-evidence method in <a href="guides.html#dispute">how to win a return dispute</a>. The short version: one photo per angle, timestamped, uploaded within the 24-hour seller response window.</p>
-
-<h2>Poshmark vs eBay vs Depop: Damaged Return Comparison</h2>
-<p>Damaged returns hit differently on each platform. Here's how the three big platforms treat you on a damaged-item return:</p>
-
-<table class="data-table">
-<thead><tr><th>Factor</th><th>Poshmark</th><th>eBay</th><th>Depop</th></tr></thead>
+<section class="art-sec">
+<h2>How much does a damaged Poshmark return actually cost?</h2>
+<p>This is where the seller conversation usually stops too early. The original sale price is not automatically your loss. A useful way to think about the economic damage is:</p>
+<div class="art-quote">Return loss = change in item value + unrecovered transaction costs + other documented seller costs</div>
+<table class="art-table">
+<thead><tr><th>Example</th><th>Sold for</th><th>Value before</th><th>Value after return</th><th>Value reduction</th></tr></thead>
 <tbody>
-<tr><td>Commission on refund</td><td><strong>Reversed</strong> ✓</td><td>Reversed ✓</td><td><strong>All fees reversed</strong> ✓</td></tr>
-<tr><td>Per-order fee</td><td>None</td><td><strong>Kept ($0.30/$0.40)</strong></td><td>None</td></tr>
-<tr><td>Return shipping</td><td>Poshmark provides label</td><td>Seller pays, often deducted</td><td>Varies by market</td></tr>
-<tr><td>Response window</td><td><strong>24 hours</strong></td><td>3 business days</td><td>48 hours</td></tr>
-<tr><td>Buyer claim window</td><td><strong>3 days</strong></td><td>30 days</td><td>30 days</td></tr>
-<tr><td>"Change of mind" returns</td><td>NO (unless Seel)</td><td>If policy says 30-day</td><td>NO, unless you volunteer</td></tr>
+<tr><td>$40 item</td><td>$40</td><td>$40</td><td>$15</td><td>$25</td></tr>
+<tr><td>$100 item</td><td>$100</td><td>$100</td><td>$55</td><td>$45</td></tr>
+<tr><td>$150 luxury item</td><td>$150</td><td>$150</td><td>$80</td><td>$70</td></tr>
 </tbody>
 </table>
+<p>The important point is that the platform transaction record may not show the economic value of the damage. That's why sellers need to track it separately.</p>
+</section>
 
-<p>Poshmark's 3-day claim window is the tightest of the three — which is great for sellers who want closure fast, and terrible for sellers who travel or check their phone infrequently. eBay gives buyers a month to complain. Poshmark gives them 72 hours. Know your clock before you list.</p>
+<!-- ============ MINI CALC ============ -->
+<section class="pc-card" id="damagedCalc" aria-labelledby="pdTitle">
+<p class="pc-kicker">Free mini tool · no signup</p>
+<h2 class="pc-title" id="pdTitle">POSHMARK DAMAGED-RETURN LOSS CHECKER</h2>
+<p class="pc-sub">Works the same way the CLAWBACK Poshmark engine does: refund exposure + seller-paid costs − recovered item value − confirmed reimbursement, floored at $0.00. Reimbursements are never auto-filled — enter only what Poshmark actually paid you.</p>
+<div class="pc-grid">
+<div class="pc-field"><label for="pdSale">Original sale price</label>
+<input type="number" id="pdSale" min="0" step="0.01" inputmode="decimal" placeholder="80.00"></div>
+<div class="pc-field"><label for="pdOutcome">Refund outcome</label>
+<select id="pdOutcome">
+<option value="full" selected>Full refund — item returned</option>
+<option value="partial">Partial refund — buyer kept item</option>
+</select></div>
+<div class="pc-field" id="pdPartialWrap" hidden><label for="pdPartial">Partial refund amount</label>
+<input type="number" id="pdPartial" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+<div class="pc-field" id="pdAfterWrap"><label for="pdAfter">Estimated resale value after return</label>
+<input type="number" id="pdAfter" min="0" step="0.01" inputmode="decimal" placeholder="35.00"></div>
+<div class="pc-field"><label for="pdCosts">Seller-paid costs (return shipping, packaging)</label>
+<input type="number" id="pdCosts" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0"></div>
+<div class="pc-field"><label for="pdReimb">Confirmed Poshmark reimbursement (optional)</label>
+<input type="number" id="pdReimb" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0"></div>
+</div>
+<button type="button" class="pc-btn" id="pdRun">CALCULATE MY DAMAGED-RETURN LOSS</button>
+<div class="pc-out" id="pdOut" hidden></div>
+<p class="pc-cta">Need the full itemized loss with an appeal letter? Use the <a href="index.html#tool">CLAWBACK calculator</a>. Need the fee math? Read <a href="poshmark-fees-explained.html">Poshmark Fees Explained</a>.</p>
+</section>
 
-<h2>The Tax Angle: Damaged Returns Are Deductible</h2>
-<p>The value drop on a damaged return is an <strong>ordinary business expense</strong> — deductible on Schedule C. So are any overweight bundle fees you paid that became sunk costs, and any return-related costs you absorbed. The problem: most sellers don't track these because they happen outside the Poshmark statement.</p>
-<p>The fix is simple: after every return, use the <a href="index.html#tool">CLAWBACK calculator</a> to generate a one-line tax record. It captures the sale price, value drop, fees, and shipping in a format your tax professional can drop straight into Schedule C. At year-end, what looks like dozens of tiny losses becomes one clean deduction.</p>
+<section class="art-sec">
+<h2>What about the Poshmark selling fee?</h2>
+<p>Poshmark's current U.S. seller fee is 20% on sales of $15 or more and $2.95 on sales under $15. But don't automatically count the original 20% commission as a damaged-return loss. First reconcile what happened to the transaction and what Poshmark actually credited or charged. The important seller calculation is the loss that remains after the transaction itself has been reconciled. That is why the sale price alone is not enough to calculate the damage.</p>
+</section>
 
-<h2>FAQ</h2>
-<dl>
-<dt>What do I lose on a Poshmark damaged return?</dt>
-<dd>The commission is reversed, so you don't lose the 20%. You lose the value drop (item worth less when it comes back), any overweight bundle fee you paid, and the Texas Seller Fee Tax if you ship from Texas.</dd>
+<section class="art-sec">
+<h2>The three return scenarios sellers should never mix together</h2>
+<h3>Scenario 1: Buyer returns the item in the same condition</h3>
+<p>A normal approved return. The economic problem is primarily the reversed transaction and the time spent handling it.</p>
+<h3>Scenario 2: Buyer returns the item damaged</h3>
+<p>The core subject of this page. Your evidence should establish: what condition the item was in before shipment → what condition it is in now.</p>
+<h3>Scenario 3: Buyer returns a different or incomplete item</h3>
+<p>A different evidence problem. You need to establish: what item you shipped → what item/package you received. A damaged item, a missing accessory, a wrong item and shipping damage should not all be treated as the same dispute.</p>
+</section>
 
-<dt>Does Poshmark refund the 20% commission on a return?</dt>
-<dd>Yes. When a return is approved and the buyer is refunded, Poshmark reverses the 20% commission (or $2.95 for sub-$15 sales). Unlike eBay, Poshmark has no per-order fee that stays gone.</dd>
+<section class="art-sec">
+<h2>A better way to think about Poshmark damaged returns</h2>
+<p>Think of every disputed return as having three snapshots:</p>
+<div class="stage-flow">
+<span>SNAPSHOT 1 — BEFORE SHIPMENT: What did I actually send?</span><i>→</i><span>SNAPSHOT 2 — BUYER'S CLAIM: What does the buyer say is wrong?</span><i>→</i><span>SNAPSHOT 3 — RETURNED PACKAGE: What did I actually receive back?</span>
+</div>
+<p>Your job is to make those three snapshots easy to compare. That's much more useful than sending Poshmark a long paragraph explaining how frustrated you are.</p>
+</section>
 
-<dt>What is the 3-day rule on Poshmark returns?</dt>
-<dd>Buyers have 3 days from delivery to open a case for "not as described." After that, no return can be filed. Sellers then have 24 hours to respond to any opened case.</dd>
+<section class="art-sec">
+<h2>What not to do when a return goes bad</h2>
+<ul>
+<li><strong>Don't immediately accuse the buyer of fraud.</strong> Your evidence is more useful than the accusation.</li>
+<li><strong>Don't rely only on the original listing.</strong> Fresh pre-shipment photographs establish condition immediately before shipment.</li>
+<li><strong>Don't throw away the packaging</strong> — not until you've documented it.</li>
+<li><strong>Don't repair or clean the item before photographing it.</strong> You may destroy evidence of the condition in which it arrived.</li>
+<li><strong>Don't calculate your loss from the original sale price alone.</strong> The relevant question is what the item was worth before the return versus after, plus unrecovered seller costs.</li>
+<li><strong>Don't assume every return problem is the same.</strong> Damaged item, missing accessory, wrong item and shipping damage are different evidence problems.</li>
+</ul>
+</section>
 
-<dt>Who pays return shipping on Poshmark?</dt>
-<dd>Poshmark provides a prepaid return label for approved returns. The label cost is absorbed by the platform, not you. But you lose the value of the item if it returns damaged, and any overweight bundle fee you paid outbound is a sunk cost.</dd>
+<section class="art-sec">
+<h2>Calculate the loss instead of guessing</h2>
+<p>If the returned item is worth less than it was before shipment, record the difference. For example: before $75 estimated resale value, after $35 estimated resale value, value reduction $40. Then add any other documented seller costs that actually remain unrecovered. That's the number worth tracking — and the mini calculator above works through it as an itemized number rather than a guess from the original sale price.</p>
+</section>
 
-<dt>Does Poshmark side with the buyer or seller?</dt>
-<dd>Whoever has better evidence. Clear pre-shipment photos with serial numbers and documented flaws tend to go to the seller. Buyer-only claims with weak evidence tend to go to the buyer.</dd>
+<section class="art-sec faq" id="faq">
+<h2>Frequently asked questions</h2>
+<details class="faq-item" open><summary>How long does a buyer have to open a Poshmark return case?</summary><p>Under Poshmark's current Posh Protect policy, a buyer has 72 hours from delivery — measured using the tracking information on the shipping label — to open a return case with supporting photos. If approved, Poshmark provides the return label and the buyer must ship within five days of approval.</p></details>
+<details class="faq-item" open><summary>Does Poshmark allow returns for fit or change of mind?</summary><p>Generally no. Posh Protect covers specific problems such as undisclosed damage, an incorrect or missing item, an item not as described, or an authenticity issue — not ordinary buyer's remorse or fit issues.</p></details>
+<details class="faq-item" open><summary>What should I do if a Poshmark return arrives damaged?</summary><p>Document before you clean, repair or wash anything. Photograph the package, the shipping label, the packaging condition, the opening if appropriate, the entire returned item and every discrepancy, then report the discrepancy through Poshmark's support process.</p></details>
+<details class="faq-item" open><summary>What if the returned item is not the item I shipped?</summary><p>Build an evidence package: original listing photos, fresh pre-shipment photos, shipping photos connecting item to package, tags and labels, accessories and packaging. Compare identifying details and report the discrepancy through Poshmark's support process.</p></details>
+<details class="faq-item" open><summary>Who is liable if damage happened during return shipping?</summary><p>It depends on the cause. Poshmark's policy says sellers are responsible for proper packaging and that Poshmark is not liable for damage caused by improper or inadequate seller packaging, so photograph the packaging before opening it to establish what arrived.</p></details>
+<details class="faq-item" open><summary>Does Poshmark refund the selling fee on an approved return?</summary><p>Reconcile your transaction first. The important seller calculation is the loss that remains after the transaction itself has been reconciled — do not automatically count the original 20% or $2.95 fee as a damaged-return loss without checking what Poshmark actually credited or charged.</p></details>
+<details class="faq-item" open><summary>How do I calculate the loss on a damaged Poshmark return?</summary><p>Return loss = change in the item's resale value + unrecovered transaction costs + other documented seller costs. Track the difference between what the item was worth before shipment and what it is worth after the return, plus any unrecovered seller costs.</p></details>
+<details class="faq-item" open><summary>Should I clean or repair a damaged return before photographing it?</summary><p>No. Evidence first, fixing second. Cleaning, repairing or discarding packaging before photographing can destroy evidence of the condition in which the item arrived.</p></details>
+</section>
 
-<dt>Does Seel Worry-Free Returns hurt Poshmark sellers?</dt>
-<dd>No. Seel returns for fit or change-of-mind reasons cost sellers nothing. Seel pays the refund, the item goes to Seel's warehouse, and your earnings stay put.</dd>
+<section class="art-sec">
+<h2>The seller rule worth remembering</h2>
+<div class="art-quote">Photograph before you ship. Photograph when the return arrives. Compare the two.</div>
+<p>If the item comes back worse, the most useful question isn't "Why would a buyer do this?" It's: "What evidence can I show that proves the condition changed?" And once the evidence is documented, calculate the actual change in value. That is the part of a damaged Poshmark return that the normal transaction screen doesn't tell you.</p>
+</section>
 
-<dt>What is the Texas Seller Fee Tax on Poshmark?</dt>
-<dd>Effective October 1, 2025, Texas sellers pay 8.25% tax on 80% of the commission. On a $100 sale, that's about $1.32. It's deducted at sale time and reversed on returns.</dd>
+<section class="art-sec">
+<h2>Read next</h2>
+<div class="next-grid">
+<a class="next-card" href="poshmark-fees-explained.html"><b>Poshmark Fees Explained (2026)</b><span>The current 20% / $2.95 fee structure and what happens to fees on refunds.</span></a>
+<a class="next-card" href="platform-comparison-2026.html"><b>The 2026 Reseller's Matrix</b><span>Compare Poshmark with the other major resale platforms.</span></a>
+<a class="next-card" href="index.html#tool"><b>Calculate My True Profit</b><span>See what a sale actually leaves you after platform costs, shipping and returns.</span></a>
+<a class="next-card" href="guides.html"><b>All Guides</b><span>Browse the rest of CLAWBACK's seller guides.</span></a>
+</div>
+</section>
 
-<dt>Can I write off Poshmark return losses on my taxes?</dt>
-<dd>Yes. Value drop on damaged returns, overweight bundle fees, and any absorbed return shipping are all deductible as ordinary business expenses on Schedule C.</dd>
-</dl>
-
-<h2>Sources & Official Policy Pages</h2>
-<p class="sources">Figures verified against official Poshmark help center articles (August 2026): <a href="https://poshmark.com/help" rel="noopener" target="_blank">Poshmark Help Center</a> · <a href="https://poshmark.com/selling-fees" rel="noopener" target="_blank">Selling Fees</a> · <a href="https://poshmark.com/shipping" rel="noopener" target="_blank">Shipping & Labels</a> · <a href="https://poshmark.com/returns" rel="noopener" target="_blank">Returns Policy</a>. Texas Seller Fee Tax verified against October 2025 policy update. See the full list at <a href="sources.html">our sources page</a>. Policies change — always confirm in-app before appealing.</p>
-
-<p><strong>Read next:</strong> <a href="poshmark-fees-explained.html">How much does Poshmark take? The 20% fee explained</a> · <a href="platform-comparison-2026.html">The 2026 Reseller's Matrix</a> · <a href="ebay-return-policy-sellers.html">eBay return policy: 12 hidden costs</a> · <a href="guides.html">All guides</a></p>
-
-<div class="cta-box"><h3 style="margin-top:0">Calculate your exact Poshmark return loss in 20 seconds.</h3>
-<p style="margin-bottom:14px">See what you're really losing — value drop, bundle fees, Texas tax. Free. No signup. Itemized like a receipt.</p>
-<a class="btn-primary" href="index.html#tool">CALCULATE MY POSHMARK RETURN LOSS</a></div>
+<section class="art-sec">
+<h2>Sources</h2>
+<ul class="src-list">
+<li><a href="https://help.poshmark.com/" rel="noopener nofollow">Poshmark — Posh Protect (case window, return label, 5-day ship rule)</a></li>
+<li><a href="https://help.poshmark.com/" rel="noopener nofollow">Poshmark — Return policy (eligible return grounds)</a></li>
+<li><a href="https://help.poshmark.com/" rel="noopener nofollow">Poshmark — Seller Policy (listing evidence in disputes, packaging responsibility)</a></li>
+<li><a href="https://help.poshmark.com/" rel="noopener nofollow">Poshmark seller community discussions (anecdotal; Jan &amp; Mar 2026)</a></li>
+</ul>
+<p class="art-meta">LAST UPDATED: SEPTEMBER 2026</p>
+<p class="art-lede" style="font-size:13.5px;color:#9DBFA9;">Disclaimer: CLAWBACK is independent and not affiliated with Poshmark. Poshmark's policies can change. Your current Poshmark case, transaction record and the official Poshmark Help Center / Posh Protect policy are the final references for an individual dispute. Community experiences are anecdotal and do not guarantee how Poshmark will decide a particular case. This article is informational and is not legal or tax advice.</p>
+</section>
 </main>
-<footer class="site-foot"><div class="foot-inner">
+
+<footer class="site-foot">
+<div class="foot-inner">
 <div class="foot-brand"><div class="brand small">CLAW<span class="slash">BACK</span></div><p>The forced-return loss calculator for resellers. Know your number before you appeal.</p></div>
-<nav class="foot-col" aria-label="Guides"><h3>More</h3><ul><li><a href="poshmark-fees-explained.html">Poshmark fees</a></li><li><a href="platform-comparison-2026.html">2026 Matrix</a></li><li><a href="guides.html">Guides</a></li></ul></nav>
-<nav class="foot-col" aria-label="Company"><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
-</div><div class="foot-legal"><p class="verified">Fee data last verified: <strong>August 22, 2026</strong> · sourced from official Poshmark help pages.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with Poshmark.</p></div></footer>
+<nav class="foot-col" aria-label="Platforms"><h3>Platforms</h3><ul>
+<li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li>
+<li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li>
+<li><a href="platforms.html#whatnot">Whatnot</a></li><li><a href="platforms.html#vinted">Vinted</a></li>
+</ul></nav>
+<nav class="foot-col" aria-label="Guides"><h3>Guides</h3><ul>
+<li><a href="guides.html">All guides</a></li><li><a href="guides.html#dispute">Win a return dispute</a></li>
+<li><a href="guides.html#taxes">Tax write-offs</a></li>
+</ul></nav>
+<nav class="foot-col" aria-label="Company"><h3>Company</h3><ul>
+<li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms &amp; Disclaimer</a></li><li><a href="contact.html">Contact</a></li>
+</ul></nav>
+<nav class="foot-col" aria-label="Resources"><h3>Resources</h3><ul>
+<li><a href="index.html#faq">FAQ</a></li><li><a href="sources.html">Sources</a></li><li><a href="sitemap.html">Sitemap</a></li>
+</ul></nav>
+</div>
+<div class="foot-legal">
+<p class="verified">Fee data last verified: <strong>August 2026</strong> · sourced from official platform help pages.</p>
+<p class="disclaimer">⚠ Estimates only — not legal or tax advice. Platforms change their fees; verify current rates before you appeal. CLAWBACK is an independent tool and is not affiliated with eBay, Poshmark, Mercari, Depop, Whatnot, or Vinted.</p>
+</div>
+</footer>
+
 <script src="nav.js"></script>
+
+<!-- ========== MINI CALC LOGIC (formulas unchanged) ========== -->
+<script>
+(function(){
+function el(id){ return document.getElementById(id); }
+function num(id){ var v = parseFloat(el(id).value); return isNaN(v) ? 0 : v; }
+function money(n){ return '$' + (Math.round((+n||0)*100)/100).toFixed(2); }
+
+function sync(){
+  var outcome = el('pdOutcome').value;
+  el('pdPartialWrap').hidden = (outcome !== 'partial');
+  el('pdAfterWrap').hidden = (outcome !== 'full');
+}
+
+el('pdRun').addEventListener('click', function(){
+  var out = el('pdOut');
+  var sale = num('pdSale');
+  if(sale <= 0){ out.hidden = false; out.innerHTML = '<p class="pc-note">Enter the original sale price first.</p>'; return; }
+  var outcome = el('pdOutcome').value;
+  var costs = num('pdCosts');
+  var reimb = num('pdReimb');
+  var h = '';
+
+  if(outcome === 'partial'){
+    var p = num('pdPartial');
+    if(p <= 0){ out.hidden = false; out.innerHTML = '<p class="pc-note">Enter the partial refund amount.</p>'; return; }
+    var lossP = Math.max(0, p + costs - reimb);
+    h += '<div class="pc-sub-head">Partial refund — buyer kept the item</div>';
+    h += '<div class="pc-line loss"><span>Partial refund paid</span><b>' + money(p) + '</b></div>';
+    if(costs > 0) h += '<div class="pc-line loss"><span>Seller-paid costs</span><b>' + money(costs) + '</b></div>';
+    if(reimb > 0) h += '<div class="pc-line ok"><span>Confirmed Poshmark reimbursement</span><b>-' + money(reimb) + '</b></div>';
+    h += '<div class="pc-line total"><span>ESTIMATED LOSS</span><b>' + money(lossP) + '</b></div>';
+    h += '<p class="pc-verdict">The buyer kept the item, so no recovered-value subtraction applies. Your exposure is the partial refund plus any unrecovered seller-paid costs.</p>';
+  } else {
+    var after = num('pdAfter');
+    var loss = Math.max(0, sale + costs - after - reimb);
+    h += '<div class="pc-sub-head">Full refund — item returned</div>';
+    h += '<div class="pc-line loss"><span>Refund exposure (sale price)</span><b>' + money(sale) + '</b></div>';
+    if(costs > 0) h += '<div class="pc-line loss"><span>Seller-paid costs</span><b>' + money(costs) + '</b></div>';
+    if(after > 0) h += '<div class="pc-line ok"><span>Recovered value after return</span><b>-' + money(after) + '</b></div>';
+    if(reimb > 0) h += '<div class="pc-line ok"><span>Confirmed Poshmark reimbursement</span><b>-' + money(reimb) + '</b></div>';
+    h += '<div class="pc-line total"><span>ESTIMATED LOSS</span><b>' + money(loss) + '</b></div>';
+    h += '<p class="pc-verdict">Your damaged-return loss is the refund exposure plus unrecovered seller-paid costs, minus what the item is still worth and any confirmed reimbursement.</p>';
+  }
+
+  h += '<p class="pc-note">Fee reconciliation: On an approved return, reconcile the original transaction in your Poshmark account and confirm what was actually credited or charged before treating any seller fee as a loss. Reimbursements are never auto-filled. Evidence first: photograph package, label, packaging, item and every discrepancy before cleaning or repairing.</p>';
+
+  out.hidden = false;
+  out.innerHTML = h;
+});
+
+el('pdOutcome').addEventListener('change', sync);
+sync();
+})();
+</script>
 
 <script>
 CookieConsent.run({
-  guiOptions: {
-    consentModal: {
-      layout: "box",
-      position: "bottom right",
-      equalWeightButtons: true,
-      flipButtons: false
-    },
-    preferencesModal: {
-      layout: "box",
-      position: "right",
-      equalWeightButtons: true,
-      flipButtons: false
-    }
-  },
-  categories: {
-    necessary: {
-      enabled: true,
-      readOnly: true
-    },
-    analytics: {
-      enabled: false,
-      readOnly: false
-    },
-    advertising: {
-      enabled: false,
-      readOnly: false
-    }
-  },
-  language: {
-    default: "en",
-    autoDetect: "browser",
-    translations: {
-      en: {
-        consentModal: {
-          title: "We use cookies",
-          description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
-          acceptAllBtn: "Accept all",
-          acceptNecessaryBtn: "Reject all",
-          showPreferencesBtn: "Manage preferences"
-        },
-        preferencesModal: {
-          title: "Cookie preferences",
-          acceptAllBtn: "Accept all",
-          acceptNecessaryBtn: "Reject all",
-          savePreferencesBtn: "Save preferences",
-          sections: [
-            {
-              title: "Necessary cookies",
-              description: "These cookies are required for the site to function.",
-              linkedCategory: "necessary"
-            },
-            {
-              title: "Analytics cookies",
-              description: "Help us understand how visitors use our site (Google Analytics).",
-              linkedCategory: "analytics"
-            },
-            {
-              title: "Advertising cookies",
-              description: "Used to show relevant ads (Google AdSense, when enabled).",
-              linkedCategory: "advertising"
-            }
-          ]
-        }
-      }
-    }
-  }
+guiOptions: {
+consentModal: { layout: "box", position: "bottom right", equalWeightButtons: true, flipButtons: false },
+preferencesModal: { layout: "box", position: "right", equalWeightButtons: true, flipButtons: false }
+},
+categories: {
+necessary: { enabled: true, readOnly: true },
+analytics: { enabled: false, readOnly: false },
+advertising: { enabled: false, readOnly: false }
+},
+language: {
+default: "en",
+autoDetect: "browser",
+translations: {
+en: {
+consentModal: {
+title: "We use cookies",
+description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
+acceptAllBtn: "Accept all",
+acceptNecessaryBtn: "Reject all",
+showPreferencesBtn: "Manage preferences"
+},
+preferencesModal: {
+title: "Cookie preferences",
+acceptAllBtn: "Accept all",
+acceptNecessaryBtn: "Reject all",
+savePreferencesBtn: "Save preferences",
+sections: [
+{ title: "Necessary cookies", description: "These cookies are required for the site to function.", linkedCategory: "necessary" },
+{ title: "Analytics cookies", description: "Help us understand how visitors use our site (Google Analytics).", linkedCategory: "analytics" },
+{ title: "Advertising cookies", description: "Used to show relevant ads (Google AdSense, when enabled).", linkedCategory: "advertising" }
+]
+}
+}
+}
+}
 });
 </script>
-
 </body>
 </html>
