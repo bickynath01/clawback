@@ -1,298 +1,687 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who Pays Return Shipping on eBay When an Item Is "Not as Described"? [2026] | CLAWBACK</title>
+<meta name="description" content="eBay INAD returns explained: why the seller generally pays return shipping, how 'no returns' listings still get pulled in, fee credits, the 50% deduction rule, appeals, and how to calculate your real dollar loss.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.gotclawback.com/ebay-not-as-described-shipping.html">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
 <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
 <script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
 <script type="text/plain" data-category="analytics">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CPRC739GBN');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CPRC739GBN');
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Who Pays Return Shipping on eBay "Not as Described"? (2026 Answer: Usually You)</title>
-<meta name="description" content="On eBay NAD claims, you pay return shipping — often deducted from your refund before you see it. See the exact label costs, when you can fight it, and how to prevent NAD claims.">
-<link rel="canonical" href="https://www.gotclawback.com/ebay-not-as-described-shipping.html">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
 <style>
-table.data-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;}
-table.data-table th,table.data-table td{border:1px solid rgba(0,0,0,.15);padding:8px 10px;text-align:left;}
-table.data-table th{background:rgba(0,0,0,.06);}
-.callout{border-left:4px solid #F5B301;background:rgba(245,179,1,.08);padding:12px 16px;margin:18px 0;}
-.callout.red{border-left-color:#C43C2C;background:rgba(196,60,44,.08);}
-.callout.green{border-left-color:#1E7A3F;background:rgba(30,122,63,.08);}
-.cta-box{background:#0E3B2C;border:1px solid #F5B301;padding:20px;margin:28px 0;text-align:center;}
-.confession{background:#282828;color:#FAF7F0;border-left:4px solid #F5B301;padding:14px 16px;margin:18px 0;font-size:14px;line-height:1.6;}
-.verified-badge{display:inline-block;background:#0E3B2C;border:1px solid #F5B301;color:#FAF7F0;font-family:'Space Mono',monospace;font-size:11px;padding:4px 12px;border-radius:20px;letter-spacing:1px;margin:0 0 14px;}
-.sources{font-size:13px;line-height:1.8;}
-.sources a{color:#F5B301;}
-.autopsy{background:#FAF7F0;color:#282828;border:1px dashed #999;padding:18px;margin:26px 0;box-shadow:0 6px 18px rgba(0,0,0,.3);}
-.autopsy h3{font-family:'Archivo Black';margin:0 0 12px;color:#0E3B2C;}
-.autopsy .step{border-left:3px solid #0E3B2C;background:rgba(14,59,44,.07);padding:8px 12px;font-size:13px;margin:10px 0;}
-.autopsy .cost{font-family:'Space Mono',monospace;color:#C43C2C;font-weight:700;}
+/* ============ CLAWBACK DARK IDENTITY + ARTICLE LAYOUT ============ */
+body{background-color:#0E3B2C;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;color:#CFE3D6;font-family:'Archivo',system-ui,sans-serif;margin:0;}
+.float-sym{position:fixed;z-index:0;pointer-events:none;user-select:none;font-family:'Archivo Black',Archivo,sans-serif;color:rgba(251,247,238,.05);line-height:1;}
+.ticker,.site-head,main,.site-foot{position:relative;z-index:1;}
+.ticker{background:#F5B301;color:#0E3B2C;font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.05em;overflow:hidden;white-space:nowrap;padding:8px 0;border-bottom:2px solid #0E3B2C;}
+.ticker-track{display:inline-block;animation:tick 40s linear infinite;}
+@keyframes tick{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.site-head{padding:28px 0 18px;border-bottom:1px solid rgba(245,179,1,.25);background:rgba(14,59,44,.92);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100;}
+.head-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.brand{font-family:'Archivo Black',Archivo,sans-serif;font-size:34px;color:#FAF7EF;text-decoration:none;display:flex;align-items:center;gap:8px;}
+.brand .slash{color:#D4402A;}
+.badge{background:#F5B301;color:#0E3B2C;font-family:'Space Mono',monospace;font-weight:700;font-size:10px;padding:4px 8px;border-radius:3px;letter-spacing:.1em;transform:translateY(-10px) rotate(-2deg);}
+.tagline{font-family:'Space Mono',monospace;font-size:12px;color:#9DBFA9;margin:0;width:100%;}
+.main-nav ul{list-style:none;padding:0;margin:0;display:flex;gap:24px;}
+.main-nav a{font-family:'Space Mono',monospace;font-weight:700;font-size:14px;color:#FAF7EF;text-decoration:none;}
+.main-nav a:hover{color:#F5B301;}
+.nav-toggle{display:none;cursor:pointer;background:none;border:1px solid #F5B301;color:#F5B301;padding:8px 16px;font-family:'Archivo Black',Archivo,sans-serif;font-size:12px;border-radius:4px;}
+.has-drop{position:relative;}
+.main-nav .drop{display:none;position:absolute;top:100%;left:0;background:#0A2A20;border:1px solid rgba(245,179,1,.3);border-radius:8px;padding:10px 14px;min-width:170px;flex-direction:column;gap:10px;z-index:120;}
+.has-drop:hover .drop,.has-drop:focus-within .drop{display:flex;}
+
+.art-wrap{max-width:880px;margin:0 auto;padding:36px 18px 70px;}
+.art-crumb{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#7FA892;text-transform:uppercase;margin-bottom:16px;}
+.art-crumb a{color:#F5B301;text-decoration:none;}
+h1.art-h1{font-family:'Archivo Black',Archivo,sans-serif;font-size:clamp(26px,4.6vw,40px);line-height:1.15;color:#FAF7EF;margin:0 0 14px;}
+.art-lede{font-size:16.5px;line-height:1.75;color:#CFE3D6;margin:0 0 10px;}
+.art-lede strong{color:#FAF7EF;}
+.art-meta{font-family:'Space Mono',monospace;font-size:11px;color:#7FA892;letter-spacing:.1em;margin:10px 0 0;}
+.art-sec{margin:36px 0;}
+.art-sec h2{font-family:'Archivo Black',Archivo,sans-serif;font-size:22px;letter-spacing:.02em;color:#FAF7EF;margin:0 0 12px;border-left:4px solid #F5B301;padding-left:12px;}
+.art-sec h3{font-family:'Space Mono',monospace;font-size:12.5px;letter-spacing:.12em;color:#F5B301;text-transform:uppercase;margin:20px 0 8px;}
+.art-sec p{color:#CFE3D6;line-height:1.75;margin:0 0 12px;font-size:15.5px;}
+.art-sec p strong{color:#FAF7EF;}
+.art-sec ul,.art-sec ol{color:#CFE3D6;line-height:1.75;margin:0 0 12px;padding-left:22px;font-size:15px;}
+.art-sec li{margin-bottom:6px;}
+.art-sec li strong{color:#FAF7EF;}
+.art-sec a{color:#F5B301;}
+.art-quote{font-family:'Space Mono',monospace;font-size:13px;color:#F3E9C8;background:rgba(0,0,0,.25);border-left:3px solid #F5B301;padding:10px 14px;border-radius:0 6px 6px 0;margin:12px 0;}
+.callout{border-left:4px solid #F5B301;background:rgba(0,0,0,.25);padding:12px 16px;border-radius:0 8px 8px 0;color:#F3E9C8;font-size:14.5px;line-height:1.65;margin:16px 0;}
+.callout strong{color:#FAF7EF;}
+.art-table{width:100%;border-collapse:collapse;font-family:'Space Mono',monospace;font-size:12.5px;margin:16px 0;}
+.art-table th{background:#0A2A20;color:#F5B301;text-align:left;padding:10px;letter-spacing:.1em;text-transform:uppercase;font-size:10.5px;}
+.art-table td{border:1px solid rgba(255,255,255,.12);padding:10px;color:#DCE9DF;vertical-align:top;}
+.art-table tr:nth-child(even) td{background:rgba(255,255,255,.03);}
+.stage-flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0;font-family:'Space Mono',monospace;font-size:12.5px;color:#CFE3D6;}
+.stage-flow span{background:rgba(0,0,0,.25);padding:6px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.08);}
+.stage-flow i{color:#F5B301;font-style:normal;padding:0;font-size:14px;}
+
+/* ============ MINI CALC — EBAY INAD RETURN LOSS CHECKER ============ */
+.pc-card{background:rgba(0,0,0,.25);border:1px solid rgba(245,179,1,.35);border-radius:14px;padding:24px;margin:34px 0;box-shadow:0 8px 24px rgba(0,0,0,.35);}
+.pc-kicker{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#7FA892;text-transform:uppercase;margin:0 0 6px;}
+.pc-title{font-family:'Archivo Black',Archivo,sans-serif;font-size:18px;letter-spacing:.05em;color:#F5B301;margin:0 0 8px;}
+.pc-sub{font-family:'Space Mono',monospace;font-size:11.5px;color:#9DBFA9;line-height:1.7;margin:0 0 18px;}
+.pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:640px){.pc-grid{grid-template-columns:1fr;}}
+.pc-field label{display:block;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#9DBFA9;text-transform:uppercase;margin-bottom:6px;}
+.pc-field select,.pc-field input{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);color:#FAF7EF;border-radius:6px;padding:10px;font-family:'Space Mono',monospace;font-size:13px;}
+.pc-field select{color-scheme:dark;}
+.pc-field select option{background:#0E3B2C;color:#FBF7EE;}
+.pc-field select option:checked{background:#0E3B2C;color:#F5B301;}
+.pc-field select:focus,.pc-field input:focus{outline:2px solid #F5B301;outline-offset:1px;}
+.pc-hint{font-family:'Space Mono',monospace;font-size:10px;color:#7FA892;margin-top:5px;line-height:1.5;}
+.pc-btn{margin-top:16px;width:100%;background:#D4402A;color:#FFF6EE;border:none;font-family:'Archivo Black',Archivo,sans-serif;font-size:13px;letter-spacing:.1em;padding:14px;border-radius:8px;cursor:pointer;box-shadow:0 4px 0 rgba(0,0,0,.35);transition:transform .12s;}
+.pc-btn:hover{transform:translateY(-2px);}
+.pc-out{margin-top:20px;border-top:1px dashed rgba(245,179,1,.4);padding-top:18px;}
+.pc-sub-head{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;color:#9DBFA9;text-transform:uppercase;margin:12px 0 4px;}
+.pc-sub-head:first-child{margin-top:0;}
+.pc-line{display:flex;justify-content:space-between;gap:12px;font-family:'Space Mono',monospace;font-size:12.5px;color:#DCE9DF;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07);}
+.pc-line b{color:#F5B301;font-weight:700;text-align:right;}
+.pc-line.total b{font-size:14px;}
+.pc-line.ok b{color:#2E8B57;}
+.pc-line.loss b{color:#D4402A;}
+.pc-verdict{margin:14px 0 0;font-size:14.5px;line-height:1.7;color:#FAF7EF;background:rgba(14,59,44,.55);border:1px solid rgba(46,139,87,.4);border-radius:8px;padding:12px 14px;}
+.pc-note{font-family:'Space Mono',monospace;font-size:10.5px;color:#7FA892;margin-top:14px;line-height:1.7;}
+.pc-cta{margin-top:14px;font-size:13.5px;color:#CFE3D6;}
+.pc-cta a{color:#F5B301;}
+
+/* ============ READ NEXT + SOURCES + FAQ ============ */
+.next-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;}
+@media(max-width:640px){.next-grid{grid-template-columns:1fr;}}
+.next-card{display:block;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.10);border-radius:10px;padding:16px;text-decoration:none;transition:border-color .15s,transform .15s;}
+.next-card:hover{border-color:#F5B301;transform:translateY(-2px);}
+.next-card b{display:block;font-family:'Archivo Black',Archivo,sans-serif;font-size:13.5px;color:#FAF7EF;margin-bottom:6px;letter-spacing:.02em;}
+.next-card span{font-size:13px;color:#9DBFA9;line-height:1.6;display:block;}
+.src-list{list-style:none;margin:14px 0;padding:0;font-family:'Space Mono',monospace;font-size:12px;}
+.src-list li{margin-bottom:8px;padding-left:18px;position:relative;color:#CFE3D6;}
+.src-list li::before{content:"→";position:absolute;left:0;color:#F5B301;}
+.src-list a{color:#CFE3D6;text-decoration:none;border-bottom:1px dotted rgba(245,179,1,.5);}
+.src-list a:hover{color:#F5B301;}
+.faq-item{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1);border-radius:8px;margin-bottom:10px;transition:border-color .15s;}
+.faq-item[open]{border-color:#F5B301;}
+.faq-item summary{padding:14px 16px;font-family:'Archivo Black',Archivo,sans-serif;font-size:14px;color:#FAF7EF;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:"+";font-size:20px;color:#F5B301;}
+.faq-item[open] summary::after{content:"−";}
+.faq-item p{padding:0 16px 16px;color:#CFE3D6;line-height:1.6;font-size:14px;margin:0;}
+.faq-item p strong{color:#FAF7EF;}
+
+.site-foot{background:#0A2A20;color:#CFE3D6;padding:60px 20px 30px;margin-top:80px;border-top:1px solid rgba(245,179,1,.25);}
+.foot-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
+.foot-brand .brand{color:#FAF7EF;font-size:24px;margin-bottom:16px;}
+.foot-brand p{font-size:14px;line-height:1.5;margin:0;color:#CFE3D6;}
+.foot-col h3{font-family:'Archivo Black',Archivo,sans-serif;font-size:14px;color:#F5B301;margin:0 0 16px;letter-spacing:.05em;}
+.foot-col ul{list-style:none;padding:0;margin:0;}
+.foot-col li{margin-bottom:10px;}
+.foot-col a{color:#CFE3D6;text-decoration:none;font-size:14px;}
+.foot-col a:hover{color:#F5B301;}
+.foot-legal{max-width:1200px;margin:40px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;font-family:'Space Mono',monospace;color:#7FA892;text-align:center;}
+@media(max-width:768px){
+.main-nav ul{display:none;flex-direction:column;width:100%;margin-top:16px;gap:16px;}
+.main-nav ul.nav-open{display:flex;}
+.main-nav .drop{position:static;border:none;padding:6px 0 0 12px;min-width:0;}
+.nav-open .has-drop .drop{display:flex;}
+.nav-toggle{display:block;}
+.head-inner{flex-direction:column;align-items:flex-start;}
+.foot-inner{grid-template-columns:1fr 1fr;}
+}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Who Pays Return Shipping on eBay Not as Described? (2026 Guide)","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-22"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Who pays return shipping on an eBay not-as-described claim?","acceptedAnswer":{"@type":"Answer","text":"Usually the seller. On a not-as-described return, eBay generates a return label and the cost is typically deducted from the seller's funds or from the refund amount."}},
-{"@type":"Question","name":"How much does an eBay return label cost?","acceptedAnswer":{"@type":"Answer","text":"Return label costs vary by weight and distance. A 1-pound item shipped 500 miles costs around $6-8 via USPS Ground Advantage. A 5-pound item shipped cross-country can cost $12-18. eBay uses USPS Ground Advantage for most returns."}},
-{"@type":"Question","name":"Can I provide my own return label on eBay NAD?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can upload your own label instead of using eBay's. This can save money if you have access to discounted shipping rates (like through Pirateship or ShipStation). But the buyer must still be able to return the item easily."}},
-{"@type":"Question","name":"What if the buyer is wrong about not-as-described?","acceptedAnswer":{"@type":"Answer","text":"You can appeal after the return completes. Document the item's condition with photos before shipping and after return. If you can prove the item matches your listing, eBay may reverse the label cost and refund you."}},
-{"@type":"Question","name":"Does free returns change who pays NAD shipping?","acceptedAnswer":{"@type":"Answer","text":"With free returns enabled, you pay return shipping on ALL eligible returns including NAD. Without free returns, you still pay on NAD claims because eBay Money Back Guarantee overrides your return policy settings."}},
-{"@type":"Question","name":"How do I reduce NAD claims?","acceptedAnswer":{"@type":"Answer","text":"Accurate photos from every angle, detailed measurements, listing any flaws clearly, and responding to buyer questions before purchase. NAD claims often come from expectation mismatches, not actual problems."}},
-{"@type":"Question","name":"Does NAD shipping cost hurt my seller metrics?","acceptedAnswer":{"@type":"Answer","text":"The cost itself doesn't hurt metrics, but the NAD claim does. If your Item Not As Described rate is evaluated as Very High on the 20th of the month, you're charged an additional 5% on final value fees the following month."}},
-{"@type":"Question","name":"Who pays return shipping on changed-mind returns?","acceptedAnswer":{"@type":"Answer","text":"If you have free returns disabled, the buyer pays. If you have free returns enabled, you pay. But on NAD claims, you pay regardless of your free returns setting."}}]}</script>
-</head><body>
-<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>NAD MEANS YOU PAY THE LABEL ★ DEDUCTED BEFORE YOU SEE THE REFUND ★ KNOW YOUR NUMBER ★&nbsp;</span><span>NAD MEANS YOU PAY THE LABEL ★ DEDUCTED BEFORE YOU SEE THE REFUND ★ KNOW YOUR NUMBER ★&nbsp;</span></div></div>
-<header class="site-head"><div class="head-inner">
-<a class="brand" href="index.html">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
-<p class="tagline">// the forced-return loss calculator for resellers</p>
-<nav class="main-nav" aria-label="Primary"><button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
-<ul id="navlist" class="nav-list"><li><a href="index.html#tool">Calculator</a></li><li><a href="platforms.html#ebay">eBay</a></li><li><a href="guides.html">Guides</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="about.html">About</a></li></ul></nav>
-</div></header>
-<main class="page-body">
-<span class="verified-badge">✓ SOURCED FROM EBAY HELP CENTER · VERIFIED AUGUST 22, 2026</span>
-<h1 class="page-title">Who Pays Return Shipping on eBay "Not as Described"? (2026 Answer: Usually You)</h1>
-<p class="page-lead">On an eBay "not as described" (NAD) return, <strong>you pay the return shipping</strong> — and here's the part that catches every seller off guard: the label cost is often <strong>deducted from your refund before you even see it</strong>. You sell a $60 jacket, the buyer claims it doesn't match the listing, eBay generates a $9 return label, and when the refund processes you see $51 instead of $60. The label came out of your funds automatically. This is the hidden cost that turns a simple return into a real loss, and it happens on virtually every NAD claim regardless of your return policy settings.</p>
 
-<div class="callout"><strong>The brutal truth:</strong> Your "No Returns Accepted" policy means nothing on NAD claims. eBay Money Back Guarantee overrides it completely. You can set your policy to "No Returns," "30-Day Returns," or "60-Day Returns" — on a not-as-described claim, you're paying the return shipping every single time. This is by design.</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Who Pays Return Shipping on eBay When an Item Is \"Not as Described\"? [2026]","description":"eBay INAD returns explained: why the seller generally pays return shipping, how 'no returns' listings still get pulled in, fee credits, the 50% deduction rule, appeals, and how to calculate your real dollar loss.","dateModified":"2026-10","author":{"@type":"Organization","name":"CLAWBACK"},"publisher":{"@type":"Organization","name":"CLAWBACK"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Does eBay make sellers pay return shipping for an item not as described?","acceptedAnswer":{"@type":"Answer","text":"Generally, yes. If the buyer's reason is that the item was damaged, faulty, didn't match the listing, or was the wrong item, eBay's current seller guidance says the seller is generally responsible for the return shipping."}},
+{"@type":"Question","name":"What if my eBay listing says no returns?","acceptedAnswer":{"@type":"Answer","text":"A no-returns policy doesn't necessarily prevent an INAD return. eBay says buyers can still submit a return request, and covered INAD situations generally require the seller to accept the return."}},
+{"@type":"Question","name":"Does eBay refund the final value fee when a buyer says an item is not as described?","acceptedAnswer":{"@type":"Answer","text":"Eligible INAD-related full refunds can receive a credit for the variable final value fee under eBay's fee-credit rules. However, the fixed per-order fee isn't credited in those situations."}},
+{"@type":"Question","name":"Does eBay refund the per-order fee on an INAD return?","acceptedAnswer":{"@type":"Answer","text":"Not for the INAD-type full-refund situations covered by eBay's current fee-credit policy. The variable final value fee can be credited, but the per-order fixed amount is not credited."}},
+{"@type":"Question","name":"What happens if the buyer returns the item damaged?","acceptedAnswer":{"@type":"Answer","text":"Eligible sellers may be able to deduct up to 50% of the buyer's refund to recover lost value caused by buyer use, alteration or damage. Specific eligibility and timing requirements apply."}},
+{"@type":"Question","name":"Can I deduct the return shipping cost from the buyer's refund?","acceptedAnswer":{"@type":"Answer","text":"Don't confuse the seller's return-shipping responsibility with the separate protection for lost item value. eBay says the deduction protection is for loss in value caused by the item's changed condition; it isn't a general deduction for return postage or market losses."}},
+{"@type":"Question","name":"What if the buyer falsely claims the item was not as described?","acceptedAnswer":{"@type":"Answer","text":"Document the listing, condition, photographs, messages and returned item, then use eBay's return/reporting process. eBay says sellers can report a buyer when they believe a false claim has been made, and certain eligible seller protections may apply if eBay determines the claim was false."}},
+{"@type":"Question","name":"Can I appeal if eBay rules against me?","acceptedAnswer":{"@type":"Answer","text":"If eBay has stepped in and closed the case, sellers can appeal by providing new information within 30 calendar days of the case being closed."}},
+{"@type":"Question","name":"How long do I have to respond to an eBay return request?","acceptedAnswer":{"@type":"Answer","text":"eBay currently says sellers generally have 3 business days to respond and work toward resolving the return."}},
+{"@type":"Question","name":"What if the buyer sends back a different item?","acceptedAnswer":{"@type":"Answer","text":"Document the discrepancy immediately. Compare serial numbers, identifying marks, accessories, photographs and condition with the evidence you kept before shipping. Then provide that evidence through the appropriate eBay return process."}},
+{"@type":"Question","name":"Can an INAD return affect my seller metrics?","acceptedAnswer":{"@type":"Answer","text":"It can, depending on the circumstances and your overall service metrics. However, don't assume that one return automatically creates a serious account problem. eBay has specific rules and exclusions for its \"Item not as described\" metric."}},
+{"@type":"Question","name":"How can I reduce INAD returns?","acceptedAnswer":{"@type":"Answer","text":"Make the listing difficult to misunderstand: use accurate photos, disclose flaws, include measurements where useful, identify the exact model/version, list included accessories, and keep your description consistent with the photographs."}}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#article">Skip to the article</a>
+<div class="float-sym" aria-hidden="true" style="top:-40px;right:-20px;font-size:320px;">$</div>
+<div class="float-sym" aria-hidden="true" style="bottom:-60px;left:-30px;font-size:280px;">¢</div>
 
-<h2>The Shipping Label Autopsy: What Actually Happens</h2>
-<p>Most sellers never see the process behind the scenes. Here's exactly what happens when a buyer opens an NAD claim, step by step:</p>
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+<span>EBAY KEEPS THE $0.30–$0.40 PER-ORDER FEE ON "NOT AS DESCRIBED" RETURNS ★ SELLERS PAY RETURN SHIPPING ON INAD CLAIMS ★ WHATNOT TAKES 2.9% ON BUYER SHIPPING &amp; TAX — MONEY YOU NEVER SEE ★ MERCARI CHARGES A 10% SELLING FEE AGAIN (2025) ★ DEPOP REFUNDS ALL FEES ON A REFUND ★ VINTED CHARGES $0 IN SELLER SELLING FEES ★ KNOW YOUR NUMBER BEFORE YOU APPEAL ★&nbsp;</span><span>EBAY KEEPS THE $0.30–$0.40 PER-ORDER FEE ON "NOT AS DESCRIBED" RETURNS ★ SELLERS PAY RETURN SHIPPING ON INAD CLAIMS ★ WHATNOT TAKES 2.9% ON BUYER SHIPPING &amp; TAX — MONEY YOU NEVER SEE ★ MERCARI CHARGES A 10% SELLING FEE AGAIN (2025) ★ DEPOP REFUNDS ALL FEES ON A REFUND ★ VINTED CHARGES $0 IN SELLER SELLING FEES ★ KNOW YOUR NUMBER BEFORE YOU APPEAL ★&nbsp;</span>
+</div></div>
 
-<div class="autopsy">
-<h3>THE LABEL GENERATION PROCESS</h3>
-<div class="step"><strong>Step 1:</strong> Buyer opens return with reason "Doesn't match description or photos." eBay's system flags this as NAD and automatically assigns shipping responsibility to the seller.</div>
-<div class="step"><strong>Step 2:</strong> You have 3 business days to respond with a resolution (accept return, offer partial refund, or provide your own label). If you don't respond, the buyer can ask eBay to step in.</div>
-<div class="step"><strong>Step 3:</strong> eBay generates a USPS Ground Advantage return label using the buyer's zip code and your return address. The system calculates weight based on your original listing.</div>
-<div class="step"><strong>Step 4:</strong> The label cost is calculated and <strong>reserved against your funds</strong>. You don't see it as a separate charge — it's just deducted when the refund processes.</div>
-<div class="step"><strong>Step 5:</strong> Buyer ships the item back within the return window (typically 7 days after label is provided).</div>
-<div class="step"><strong>Step 6:</strong> You receive the item, and the refund processes: original sale price minus the label cost. You see a lower number than expected.</div>
-<p class="cost">Example: $60 sale - $9 label = $51 in your funds. You also lost the $0.40 per-order fee. Total loss: $9.40 before any value drop.</p>
+<header class="site-head">
+<div class="head-inner">
+<a class="brand" href="index.html" aria-label="CLAWBACK home">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
+<p class="tagline">// am I losing money on this return? find out in 20 seconds — eBay · Poshmark · Mercari · Depop · Whatnot · Vinted</p>
+<nav class="main-nav" aria-label="Primary">
+<button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
+<ul id="navlist" class="nav-list">
+<li><a href="index.html#tool">Calculator</a></li>
+<li class="has-drop">
+<a href="platforms.html" aria-haspopup="true">Platforms ▾</a>
+<ul class="drop">
+<li><a href="platforms.html#ebay">eBay</a></li>
+<li><a href="platforms.html#poshmark">Poshmark</a></li>
+<li><a href="platforms.html#mercari">Mercari</a></li>
+<li><a href="platforms.html#depop">Depop</a></li>
+<li><a href="platforms.html#whatnot">Whatnot</a></li>
+<li><a href="platforms.html#vinted">Vinted</a></li>
+</ul>
+</li>
+<li><a href="guides.html">Guides</a></li>
+<li><a href="index.html#faq">FAQ</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+</nav>
 </div>
+</header>
 
-<p>This automatic deduction is why so many sellers are surprised by the math. They see "refund processed" and assume they got their money back minus the sale. They don't realize the label cost came out separately. The <a href="index.html#tool">CLAWBACK calculator</a> shows you exactly what you're losing so there are no surprises.</p>
+<main class="art-wrap" id="article">
+<p class="art-crumb"><a href="index.html">CLAWBACK</a> / <a href="guides.html">Guides</a> / eBay INAD return shipping</p>
+<h1 class="art-h1">Who Pays Return Shipping on eBay When an Item Is "Not as Described"?</h1>
+<p class="art-lede">Getting an eBay return that says <strong>"item not as described"</strong> can be frustrating, especially when you know the listing was accurate. And the first question is usually pretty simple:</p>
+<div class="art-quote">"Wait — why am I paying for this return?"</div>
+<p class="art-lede">Here's the important part: if the buyer says the item was damaged, faulty, the wrong item, or didn't match your listing description, eBay generally requires the seller to accept the return — even if the listing says <strong>"no returns."</strong> In these situations, the seller is also generally responsible for the return shipping.</p>
+<p class="art-lede">But the shipping label is only part of the cost. A return can also affect your refund, fee credits, resale value, and the amount of money you ultimately recover. This guide breaks down what actually happens, what to document, what to do if you think the buyer is wrong, and how to work out your <strong>real dollar loss</strong>.</p>
+<p class="art-meta">LAST UPDATED: OCTOBER 2026</p>
 
-<h2>Real Label Costs: What You're Actually Paying</h2>
-<p>Return label costs vary dramatically by weight and distance. Here are actual USPS Ground Advantage rates (as of August 2026) for common return scenarios:</p>
-
-<table class="data-table">
-<thead><tr><th>Item Weight</th><th>Distance</th><th>Label Cost</th><th>Common Items</th></tr></thead>
+<section class="art-sec">
+<h2>Quick answer: Who pays eBay return shipping for "not as described"?</h2>
+<p>If the buyer's reason is that the item doesn't match the listing description, arrived damaged, is faulty, is missing parts or accessories, or is the wrong item, the seller will generally need to accept the return and <strong>cover the return shipping cost</strong>. This can apply even when the seller's normal return policy says they don't accept returns.</p>
+<table class="art-table">
+<thead><tr><th>Return situation</th><th>Who normally handles return shipping?</th></tr></thead>
 <tbody>
-<tr><td>1 lb</td><td>Same state (100 mi)</td><td>$5.50</td><td>T-shirts, phone cases</td></tr>
-<tr><td>1 lb</td><td>Cross-country (2,500 mi)</td><td>$7.80</td><td>T-shirts, phone cases</td></tr>
-<tr><td>3 lb</td><td>Same state (100 mi)</td><td>$7.20</td><td>Jeans, hoodies</td></tr>
-<tr><td>3 lb</td><td>Cross-country (2,500 mi)</td><td>$11.50</td><td>Jeans, hoodies</td></tr>
-<tr><td>5 lb</td><td>Same state (100 mi)</td><td>$8.90</td><td>Shoes, jackets</td></tr>
-<tr><td>5 lb</td><td>Cross-country (2,500 mi)</td><td>$14.75</td><td>Shoes, jackets</td></tr>
-<tr><td>10 lb</td><td>Same state (100 mi)</td><td>$12.40</td><td>Electronics, boots</td></tr>
-<tr><td>10 lb</td><td>Cross-country (2,500 mi)</td><td>$21.30</td><td>Electronics, boots</td></tr>
+<tr><td>Item not as described</td><td><strong>Seller</strong></td></tr>
+<tr><td>Item arrived damaged</td><td><strong>Seller</strong></td></tr>
+<tr><td>Item is faulty</td><td><strong>Seller</strong></td></tr>
+<tr><td>Wrong item sent</td><td><strong>Seller</strong></td></tr>
+<tr><td>Buyer changed their mind</td><td>Depends on the listing's return policy</td></tr>
+<tr><td>Buyer ordered the wrong item</td><td>Depends on the listing's return policy</td></tr>
+<tr><td>Item doesn't fit</td><td>Depends on the actual return reason and listing policy</td></tr>
 </tbody>
 </table>
+<p>The key distinction is <strong>why the buyer is returning the item</strong>.</p>
+</section>
 
-<p>Notice the pattern: <strong>weight and distance both matter.</strong> A 10-pound item shipped cross-country costs nearly $22 in return shipping. That's on top of the sale price you're refunding, the per-order fee eBay keeps, and any value drop when the item comes back. We break down the full 12 hidden costs in <a href="ebay-return-policy-sellers.html">eBay return policy for sellers</a>.</p>
+<section class="art-sec">
+<h2>"But my listing says no returns. Why do I have to accept it?"</h2>
+<p>This catches a lot of sellers off guard. Your return policy controls many <strong>change-of-mind</strong> situations, but it doesn't necessarily override eBay's buyer-protection process.</p>
+<p>eBay says buyers can still submit a return request even when a seller doesn't accept returns. If the reason is that the item was damaged, faulty, didn't match the listing, or the wrong item was received, the seller generally needs to accept the return.</p>
+<p>So these are two different situations:</p>
+<div class="art-quote">Buyer: "I changed my mind." → Your return policy may determine whether you have to accept that return.</div>
+<div class="art-quote">Buyer: "This item doesn't match the description." → That's a different type of return and can fall under eBay's Money Back Guarantee even when you don't normally accept returns.</div>
+<p>That's why simply writing <strong>"NO RETURNS"</strong> in a listing isn't a complete shield against INAD claims.</p>
+</section>
 
-<h2>Can You Provide Your Own Label? (Yes, And It Can Save Money)</h2>
-<p>Here's something most sellers don't know: <strong>you can upload your own return label instead of using eBay's.</strong> If you have access to discounted shipping rates through services like Pirateship, ShipStation, or your own USPS business account, you can generate a cheaper label and upload it to the return case.</p>
-<p>The catch: the buyer still needs to be able to return the item easily. You can't make them drive 50 miles to drop it off. But if you can generate a label that's $3-5 cheaper than eBay's, that's real savings — especially at scale. A seller doing 50 returns per month could save $150-250 monthly just by providing their own labels.</p>
+<section class="art-sec">
+<h2>What counts as "not as described" on eBay?</h2>
+<p>The phrase can cover several different problems. For example:</p>
+<ul>
+<li>the listing said "excellent condition" but the item arrived damaged</li>
+<li>the listing showed one model but a different model was shipped</li>
+<li>an important defect wasn't disclosed</li>
+<li>an accessory shown in the listing wasn't included</li>
+<li>the item doesn't match the photos or description</li>
+<li>the buyer received something materially different from what was advertised</li>
+</ul>
+<p>The important thing for sellers is not just the label on the return. <strong>Look at the actual complaint.</strong> Open the return request and check exactly what the buyer says is wrong. eBay's seller workflow shows the buyer's stated reason, comments, and any photos they provided.</p>
+</section>
 
-<div class="confession"><strong>Confession:</strong> For the first year I sold on eBay, I let eBay generate every return label. Then I realized I was paying $8-12 per return when Pirateship could generate the same label for $5-8. I switched to uploading my own labels and saved about $200/month. The process takes an extra 2 minutes per return but the savings are real. Now it's automatic: NAD claim comes in, I generate a label on Pirateship, upload it to the case, done.</div>
+<section class="art-sec">
+<h2>How much can an eBay "not as described" return actually cost?</h2>
+<p>A $100 sale doesn't necessarily mean a $100 loss. Your actual exposure can involve several different pieces:</p>
+<h3>1. Return shipping</h3>
+<p>For an INAD-type return, the seller is generally responsible for the return shipping.</p>
+<h3>2. The refund</h3>
+<p>Depending on how the return is resolved, you may refund the buyer for the purchase.</p>
+<h3>3. Selling-fee credits</h3>
+<p>Eligible fee credits can reduce the financial impact, but they don't necessarily work the same way for every refund situation.</p>
+<h3>4. Lost item value</h3>
+<p>If the item comes back in worse condition, the financial hit may be larger than the shipping cost alone.</p>
+<h3>5. Your time</h3>
+<p>This one doesn't appear neatly on an eBay statement, but sellers know it is real: messages, photographs, return tracking, documentation, appeals, and relisting the item all take time.</p>
+<p>That's why looking only at the refund amount can give you the wrong picture.</p>
+</section>
 
-<h2>When You CAN Fight The Label Cost</h2>
-<p>Most sellers assume the label cost is gone forever. But there are specific scenarios where you can appeal and get it refunded:</p>
+<section class="art-sec">
+<h2>Does eBay refund the selling fees on an INAD return?</h2>
+<p><strong>Sometimes — and the details matter.</strong></p>
+<p>eBay's current fee-credit policy says that when a buyer returns an item because it arrived damaged, was defective, was the wrong item, or didn't match the description/photos, a qualifying full refund can receive a credit for the <strong>variable final value fee</strong>. However, eBay says the <strong>per-order fixed fee is not credited</strong> in those INAD-type refund situations.</p>
+<p>For a partial refund, the calculation is different again: eBay says eligible fee credits are proportional to the amount refunded. Its current example shows the refund percentage being applied to the eligible variable fees, while the fixed per-order amount is not credited.</p>
+<p>So don't assume:</p>
+<div class="art-quote">"I refunded the buyer, therefore every eBay fee disappeared."</div>
+<p>That's not necessarily what happens. If you're specifically trying to understand the fixed fee: <a href="ebay-per-order-fee-return.html">See our eBay per-order-fee return guide →</a> That article goes deeper into the fee-credit calculation without making this return-shipping article unnecessarily complicated.</p>
+</section>
 
-<p><strong>Scenario 1: Item matches your listing exactly.</strong> If the buyer claimed "not as described" but you have clear photos showing the item matches your listing, you can appeal after the return completes. Document with side-by-side photos: your listing photo vs. the item when it came back. If eBay sees the item is unchanged and matches your description, they may reverse the label cost.</p>
+<section class="art-sec">
+<h2>What if the buyer's "not as described" claim isn't true?</h2>
+<p>This is probably the part sellers worry about most. Maybe the listing clearly showed the flaw, the measurements were included, the item was exactly as photographed, the buyer misunderstood the description, the buyer simply changed their mind, or something about the returned item doesn't match what you originally shipped.</p>
+<p>Your first instinct might be:</p>
+<div class="art-quote">"This buyer is lying."</div>
+<p>But that's not the strongest way to approach the situation with eBay. <strong>Evidence is stronger than frustration.</strong> Instead of arguing about who is telling the truth, build a record that lets someone else compare the two sides.</p>
+</section>
 
-<p><strong>Scenario 2: Buyer returned a different item.</strong> If the serial number doesn't match, or the item is clearly different from what you sent, that's return fraud. Photograph everything and open a case immediately. eBay takes swap scams seriously and will often refund the label cost plus the sale price.</p>
+<section class="art-sec">
+<h2>What evidence should an eBay seller keep?</h2>
+<h3>Before shipping</h3>
+<ul>
+<li>listing photos and condition description</li>
+<li>measurements and model numbers</li>
+<li>serial numbers where applicable</li>
+<li>identifying marks and included accessories</li>
+<li>visible flaws and important listing details</li>
+</ul>
+<h3>When packing</h3>
+<ul>
+<li>the actual item and its serial number</li>
+<li>included parts and condition</li>
+<li>packaging</li>
+</ul>
+<h3>During the return</h3>
+<ul>
+<li>buyer's return reason and messages</li>
+<li>buyer-provided photographs</li>
+<li>tracking and return-label information</li>
+</ul>
+<h3>When the item arrives back</h3>
+<ul>
+<li>condition and missing accessories</li>
+<li>new damage and signs of use</li>
+<li>different serial numbers or identifying marks</li>
+<li>whether the returned item appears to be the same item you shipped</li>
+</ul>
+<p>The goal isn't to create a mountain of paperwork. The goal is to preserve the few pieces of evidence that answer the central question:</p>
+<div class="callout"><strong>"Is the returned item actually the same item, in the same condition, that I sent?"</strong></div>
+</section>
 
-<p><strong>Scenario 3: Buyer used the item (wardrobing).</strong> If the item comes back worn, stained, or damaged in a way that wasn't there when you shipped it, document with photos and appeal. You may get a partial refund of the label cost or a full reversal.</p>
+<section class="art-sec">
+<h2>What if the buyer returns the item damaged?</h2>
+<p>This is where eBay's seller protections can become important. eBay says that if an eligible seller accepts a return and the item comes back in a different condition, the seller may be able to <strong>deduct up to 50% of the buyer's refund</strong> to recover lost value caused by the buyer's use, alteration, or damage. Eligibility and other requirements apply.</p>
+<p>There is an important catch:</p>
+<div class="callout"><strong>Don't treat that deduction as a general way to recover every cost of the return.</strong> eBay says sellers may use the protection to recover lost value caused by the item's changed condition — not simply to recover return postage or ordinary market losses. And if eBay steps in to resolve the return, the seller may lose the ability to make that deduction.</div>
+<p>So if the returned item genuinely comes back damaged or materially different, document it promptly.</p>
+</section>
 
-<p>The key to winning these appeals: <strong>itemized evidence with photos.</strong> Sellers who send angry paragraphs lose. Sellers who send clear photos with timestamps and descriptions win. We cover the appeal process in detail in <a href="ebay-return-policy-sellers.html">eBay return policy: 12 hidden costs</a>.</p>
+<section class="art-sec">
+<h2>What if the buyer sends back a different item?</h2>
+<p>This is one of those situations where your original documentation becomes extremely valuable. Suppose you sold a collectible with a serial number. You photographed the serial number before shipping. The returned item has a different number. That's much stronger evidence than simply writing:</p>
+<div class="art-quote">"The buyer sent me the wrong item."</div>
+<p>The same principle applies to electronics, shoes, handbags, collectibles, cameras, watches, parts — anything with identifying marks. If an item is difficult to identify visually, documenting the identifying details before shipment can make a major difference if a return later becomes disputed.</p>
+</section>
 
-<h2>The Free Returns Badge: Does It Change NAD Shipping?</h2>
-<p>Many sellers enable "free returns" for the search visibility boost. Here's how it affects NAD shipping:</p>
+<section class="art-sec">
+<h2>What should you do when an INAD return is opened?</h2>
+<p>Don't ignore it. eBay says sellers generally have <strong>3 business days to respond</strong> to a return request and try to resolve the issue.</p>
+<h3>Step 1 — Read the buyer's exact reason</h3>
+<p>Don't respond based only on the notification headline. Read the explanation and look at the buyer's photos.</p>
+<h3>Step 2 — Compare it with your listing</h3>
+<p>Check description, photographs, condition, measurements, model/version, and included accessories.</p>
+<h3>Step 3 — Respond through eBay</h3>
+<p>Keep your communication factual. Instead of "You're lying. I know exactly what I sent." try:</p>
+<div class="art-quote">"The listing photographs show the item's condition before shipment, including the mark on the lower-left corner. The buyer's return request says the mark was not disclosed."</div>
+<p>The second version gives eBay something concrete to evaluate.</p>
+<h3>Step 4 — Preserve your evidence</h3>
+<p>Don't wait until the return has already become a dispute. Save what you have while the transaction is still fresh.</p>
+</section>
 
-<table class="data-table">
-<thead><tr><th>Return Type</th><th>Free Returns Disabled</th><th>Free Returns Enabled</th></tr></thead>
-<tbody>
-<tr><td><strong>Changed Mind / Doesn't Fit</strong></td><td>Buyer pays</td><td><strong>You pay</strong></td></tr>
-<tr><td><strong>Not As Described</strong></td><td><strong>You pay</strong></td><td><strong>You pay</strong></td></tr>
-<tr><td><strong>Damaged in Transit</strong></td><td>Depends on case</td><td>Depends on case</td></tr>
-</tbody>
-</table>
+<section class="art-sec">
+<h2>What if you and the buyer can't agree?</h2>
+<p>If you respond to the request but don't reach an agreement after the applicable response period, you or the buyer can ask eBay to step in. eBay's current seller guidance says sellers generally have 3 business days to respond before this escalation can occur.</p>
+<p>If eBay steps in, the outcome can matter beyond the immediate refund. For example, eBay says that when it steps in, an eligible seller may no longer be able to use the deduction for a returned item that came back used or damaged. That's another reason to handle the return carefully rather than simply letting the deadline pass.</p>
+</section>
 
-<p>Notice: <strong>on NAD claims, you pay regardless of your free returns setting.</strong> The badge only affects changed-mind returns. So if you're paying for free returns thinking it protects you from NAD shipping costs, it doesn't. You're just paying for visibility. We cover the math on whether free returns are worth it in <a href="platform-comparison-2026.html">The 2026 Reseller's Matrix</a>.</p>
+<section class="art-sec">
+<h2>Can you appeal an eBay return decision?</h2>
+<p>Yes, in eligible situations. If eBay has stepped in and you disagree with the resolution, eBay currently says sellers can appeal by providing <strong>new information within 30 calendar days of the case being closed</strong>. The important word is <strong>new</strong>. An appeal isn't simply "I disagree with the decision."</p>
+<p>Useful supporting information can include tracking information, proof that a returned item was lost or delivered incorrectly, documents showing that the item matched the listing, proof of a refund, and other relevant information that wasn't previously considered.</p>
+<p>If you're going to appeal, make the evidence easy to understand. A short timeline can help:</p>
+<div class="stage-flow">
+<span>Listed</span><i>→</i><span>Shipped</span><i>→</i><span>Buyer claim</span><i>→</i><span>Return</span><i>→</i><span>Returned condition</span><i>→</i><span>Evidence</span><i>→</i><span>Requested resolution</span>
+</div>
+</section>
 
-<h2>How NAD Claims Hurt Your Seller Metrics (The Hidden Cost)</h2>
-<p>The label cost is the obvious expense. The hidden cost is how NAD claims affect your seller performance standing. Here's the mechanism:</p>
+<section class="art-sec">
+<h2>What if you don't respond to the return?</h2>
+<p>This is one situation where ignoring the notification can create a much bigger headache. eBay says that if a seller doesn't respond to an INAD-type return request, eBay may refund the buyer and seek reimbursement from the seller, in some cases without requiring the buyer to return the item.</p>
+<div class="callout"><strong>Don't simply disappear from the return request.</strong> Respond through the eBay process and preserve your evidence.</div>
+</section>
 
-<p>eBay tracks your <strong>Item Not As Described (INAD) return rate</strong> as a percentage of your total transactions. On the 20th of each month, eBay evaluates your metrics. If your INAD rate is classified as "Very High" compared to other sellers in your category, you're charged an <strong>additional 5% on final value fees</strong> for sales in those categories the following month. Four consecutive months of Very High bumps it to 6%.</p>
+<section class="art-sec">
+<h2>Does an INAD return affect your eBay seller metrics?</h2>
+<p>It can. But don't assume that <strong>one return automatically means your account is suddenly in trouble</strong>. eBay has specific service-metric rules around its "Item not as described" rate and seller performance. There are also circumstances where a return may be excluded from that metric, including certain situations involving abusive buyer activity or seller protections.</p>
+<p>The important takeaway is: <strong>pay attention to patterns, not just one isolated return.</strong> If you're seeing repeated INAD claims, look for patterns in condition descriptions, measurements, photographs, compatibility information, packaging, missing accessories, and recurring buyer misunderstandings.</p>
+<p>Sometimes the best defense against the next INAD isn't fighting the current one. It's making the next listing harder to misunderstand.</p>
+</section>
 
-<div class="callout red"><strong>The compound effect:</strong> Let's say you sell $10,000/month in a category that gets hit with the 5% penalty. That's $500 in additional fees the next month — just from having too many NAD claims. The label costs are bad, but the penalty fees can be catastrophic. This is why preventing NAD claims is more important than fighting them after the fact.</div>
+<section class="art-sec">
+<h2>How to reduce eBay "not as described" returns</h2>
+<ul>
+<li><strong>Show the actual item.</strong> For used goods, don't rely entirely on stock images. Show the exact condition of the item you're shipping.</li>
+<li><strong>Photograph flaws.</strong> If there's a scratch, stain, crease, chip, repair, discoloration, or other imperfection, show it clearly.</li>
+<li><strong>Use measurements.</strong> Particularly useful for clothing, shoes, furniture and other items where buyers interpret size differently.</li>
+<li><strong>Identify the exact model.</strong> For electronics, parts and collectibles, model numbers and identifying marks prevent confusion.</li>
+<li><strong>Don't hide behind vague condition language.</strong> Explain what "good" actually means for that particular item.</li>
+<li><strong>Keep your listing consistent.</strong> Title, photos, description and item specifics should tell the same story.</li>
+</ul>
+</section>
 
-<p>We explain the full penalty structure in <a href="ebay-per-order-fee-return.html">Does eBay refund the per-order fee?</a> and how it compounds across your account.</p>
+<section class="art-sec">
+<h2>The part sellers often miss: your "loss" isn't always the refund</h2>
+<p>Let's say you sold an item for $100. The buyer opens an INAD return. You refund the buyer. At first glance, it looks like: <strong>"I lost $100."</strong> But that's not necessarily your final economic loss.</p>
+<p>You may recover some eligible eBay fees. The item may come back and still be worth $100 — or it may come back worth $70. You may have paid return shipping. You may have a fixed fee that isn't credited. You may be able to recover some lost value if an eligible returned item comes back damaged. Those pieces matter.</p>
+<p>That's exactly why looking only at the buyer's refund can be misleading.</p>
+</section>
 
-<h2>How To Prevent NAD Claims (The Real Fix)</h2>
-<p>Fighting label costs after the fact is playing defense. The real fix is preventing NAD claims from happening in the first place. Here's what actually works:</p>
+<!-- ============ MINI CALC ============ -->
+<section class="pc-card" id="inadCalc" aria-labelledby="inadTitle">
+<p class="pc-kicker">Free mini tool · no signup</p>
+<h2 class="pc-title" id="inadTitle">EBAY INAD RETURN LOSS CHECKER</h2>
+<p class="pc-sub">Mirrors the locked CLAWBACK eBay engine for "not as described" returns: final value fee credited on eligible full refunds, per-order fee kept, proportional credit on partials, deduction override, and return shipping counted only when you were actually charged.</p>
+<div class="pc-grid">
+<div class="pc-field"><label for="inadSale">Original sale price</label>
+<input type="number" id="inadSale" min="0" step="0.01" inputmode="decimal" placeholder="100.00"></div>
+<div class="pc-field"><label for="inadShip">Buyer-paid shipping</label>
+<input type="number" id="inadShip" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0"></div>
+<div class="pc-field"><label for="inadTax">Buyer-paid sales tax (optional)</label>
+<input type="number" id="inadTax" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0"></div>
+<div class="pc-field"><label for="inadType">Refund type</label>
+<select id="inadType">
+<option value="full" selected>Full refund</option>
+<option value="partial">Partial refund</option>
+</select></div>
+<div class="pc-field" id="inadPartialWrap" hidden><label for="inadPartial">Total refunded to buyer (incl. tax)</label>
+<input type="number" id="inadPartial" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+<p class="pc-hint">Partial credit ratio = total refund ÷ total sale (price + shipping + tax). Per-order fee is never prorated.</p></div>
+<div class="pc-field" id="inadReturnedWrap"><label for="inadReturned">Did the item come back?</label>
+<select id="inadReturned">
+<option value="yes" selected>Yes</option>
+<option value="no">No</option>
+</select></div>
+<div class="pc-field" id="inadValueWrap"><label for="inadValue">Current resale value</label>
+<input type="number" id="inadValue" min="0" step="0.01" inputmode="decimal" placeholder="70.00" value="0"></div>
+<div class="pc-field"><label for="inadPayer">Who was charged return shipping?</label>
+<select id="inadPayer">
+<option value="me" selected>Me</option>
+<option value="buyer">Buyer</option>
+<option value="ebay">eBay</option>
+<option value="no_one">No one</option>
+</select></div>
+<div class="pc-field" id="inadCostWrap"><label for="inadCost">Return shipping cost</label>
+<input type="number" id="inadCost" min="0" step="0.01" inputmode="decimal" placeholder="8.50" value="0"></div>
+<div class="pc-field"><label for="inadDed">Did you deduct money from the refund?</label>
+<select id="inadDed">
+<option value="no" selected>No</option>
+<option value="yes">Yes</option>
+</select>
+<p class="pc-hint">A deduction offsets lost item value but removes normal fee credits on a full refund.</p></div>
+<div class="pc-field" id="inadDedAmtWrap" hidden><label for="inadDedAmt">Amount deducted</label>
+<input type="number" id="inadDedAmt" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0"></div>
+</div>
+<button type="button" class="pc-btn" id="inadRun">CALCULATE MY INAD RETURN LOSS</button>
+<div class="pc-out" id="inadOut" hidden></div>
+<p class="pc-cta">Need category-precise fees (Books 15.3%, Coins 13.25%, Shoes 8% over $150…), the appeal letter and the one-page PDF report? Use the <a href="index.html#tool">full CLAWBACK calculator</a> (eBay mode).</p>
+</section>
 
-<p><strong>1. Photograph from every angle.</strong> Front, back, sides, close-ups of any flaws, tags, serial numbers. The more photos, the harder it is for a buyer to claim "not as described" when you have proof.</p>
+<section class="art-sec">
+<h2>A simple example</h2>
+<p>Imagine: item sold for <strong>$100</strong>; buyer opens an INAD return; you pay the return shipping; buyer receives a full refund; the item comes back in roughly the same condition; eligible fee credits reduce part of the fee impact; a fixed per-order fee isn't credited.</p>
+<p>Your loss isn't simply "$100." The calculation needs to separate:</p>
+<div class="stage-flow">
+<span>Money refunded</span><i>vs</i><span>Money recovered</span><i>vs</i><span>Costs that remain with you</span>
+</div>
+<p>That's the difference between a refund amount and a true seller-loss calculation.</p>
+</section>
 
-<p><strong>2. Measure everything.</strong> Don't just say "medium." Give chest, waist, length, sleeve measurements in inches. Buyers who know the exact fit are less likely to claim it doesn't match.</p>
+<section class="art-sec">
+<h2>What I would save for every return</h2>
+<p>If you sell enough on eBay, having a simple return folder can save you a lot of headaches. For each significant return, keep:</p>
+<ul>
+<li><strong>Listing:</strong> screenshots, photos, description, item specifics</li>
+<li><strong>Transaction:</strong> order details, refund amount, fee information</li>
+<li><strong>Return:</strong> buyer's reason, messages, tracking, return information</li>
+<li><strong>Returned item:</strong> photos, condition, serial/identifying information, missing parts</li>
+<li><strong>Resolution:</strong> refund, fee credits, eBay decision, appeal information if applicable</li>
+</ul>
+<p>You don't need to archive every $8 transaction forever. But for expensive, fragile, collectible, or high-risk items, this documentation can be worth the few minutes it takes.</p>
+</section>
 
-<p><strong>3. List flaws prominently.</strong> If there's a small stain, say it in the first line of the description and show it in a photo. Buyers who know about flaws before buying can't claim surprise later.</p>
+<section class="art-sec faq" id="faq">
+<h2>eBay "Not as Described" Return FAQ</h2>
+<details class="faq-item" open><summary>Does eBay make sellers pay return shipping for an item not as described?</summary><p>Generally, yes. If the buyer's reason is that the item was damaged, faulty, didn't match the listing, or was the wrong item, eBay's current seller guidance says the seller is generally responsible for the return shipping.</p></details>
+<details class="faq-item" open><summary>What if my eBay listing says no returns?</summary><p>A no-returns policy doesn't necessarily prevent an INAD return. eBay says buyers can still submit a return request, and covered INAD situations generally require the seller to accept the return.</p></details>
+<details class="faq-item" open><summary>Does eBay refund the final value fee when a buyer says an item is not as described?</summary><p>Eligible INAD-related full refunds can receive a credit for the variable final value fee under eBay's fee-credit rules. However, the fixed per-order fee isn't credited in those situations.</p></details>
+<details class="faq-item" open><summary>Does eBay refund the per-order fee on an INAD return?</summary><p>Not for the INAD-type full-refund situations covered by eBay's current fee-credit policy. The variable final value fee can be credited, but the per-order fixed amount is not credited.</p></details>
+<details class="faq-item" open><summary>What happens if the buyer returns the item damaged?</summary><p>Eligible sellers may be able to deduct up to 50% of the buyer's refund to recover lost value caused by buyer use, alteration or damage. Specific eligibility and timing requirements apply.</p></details>
+<details class="faq-item" open><summary>Can I deduct the return shipping cost from the buyer's refund?</summary><p>Don't confuse the seller's return-shipping responsibility with the separate protection for lost item value. eBay says the deduction protection is for loss in value caused by the item's changed condition; it isn't a general deduction for return postage or market losses.</p></details>
+<details class="faq-item" open><summary>What if the buyer falsely claims the item was not as described?</summary><p>Document the listing, condition, photographs, messages and returned item, then use eBay's return/reporting process. eBay says sellers can report a buyer when they believe a false claim has been made, and certain eligible seller protections may apply if eBay determines the claim was false.</p></details>
+<details class="faq-item" open><summary>Can I appeal if eBay rules against me?</summary><p>If eBay has stepped in and closed the case, sellers can appeal by providing new information within 30 calendar days of the case being closed.</p></details>
+<details class="faq-item" open><summary>How long do I have to respond to an eBay return request?</summary><p>eBay currently says sellers generally have 3 business days to respond and work toward resolving the return.</p></details>
+<details class="faq-item" open><summary>What if the buyer sends back a different item?</summary><p>Document the discrepancy immediately. Compare serial numbers, identifying marks, accessories, photographs and condition with the evidence you kept before shipping. Then provide that evidence through the appropriate eBay return process.</p></details>
+<details class="faq-item" open><summary>Can an INAD return affect my seller metrics?</summary><p>It can, depending on the circumstances and your overall service metrics. However, don't assume that one return automatically creates a serious account problem. eBay has specific rules and exclusions for its "Item not as described" metric.</p></details>
+<details class="faq-item" open><summary>How can I reduce INAD returns?</summary><p>Make the listing difficult to misunderstand: use accurate photos, disclose flaws, include measurements where useful, identify the exact model/version, list included accessories, and keep your description consistent with the photographs.</p></details>
+</section>
 
-<p><strong>4. Respond to questions fast.</strong> Buyers who ask questions and get detailed answers are less likely to open NAD claims. They feel informed. Buyers who don't get answers often buy anyway and then claim "not as described" when it's not what they expected.</p>
+<section class="art-sec">
+<h2>Bottom line</h2>
+<p>An eBay <strong>"item not as described"</strong> return isn't just a shipping problem. For a seller, the real question is:</p>
+<div class="art-quote">After the refund, shipping, fee credits, returned-item condition and any protection are all accounted for — what did this transaction actually cost me?</div>
+<p>That's the number worth knowing. And once you know that number, you can start looking for patterns: which returns are costing you the most, which problems keep repeating, which listings need better descriptions, and which types of items carry the biggest return risk. That's much more useful than simply knowing that a buyer opened a return.</p>
+<p><a href="index.html#tool"><strong>Calculate your actual eBay return loss with CLAWBACK →</strong></a></p>
+<h3>Related CLAWBACK guides</h3>
+<ul>
+<li><a href="ebay-per-order-fee-return.html">eBay Per-Order Fee on Returns</a></li>
+<li><a href="ebay-return-policy-sellers.html">eBay Returns for Sellers: What They Really Cost</a></li>
+<li><a href="platform-comparison-2026.html">The 2026 Reseller's Matrix</a></li>
+<li><a href="index.html#tool">eBay Return Loss Calculator</a></li>
+</ul>
+</section>
 
-<p><strong>5. Use video for high-value items.</strong> For anything over $100, a short video showing the item from all angles is the ultimate proof. It's much harder to dispute than photos.</p>
+<section class="art-sec">
+<h2>Read next</h2>
+<div class="next-grid">
+<a class="next-card" href="ebay-per-order-fee-return.html"><b>Does eBay Refund the Per-Order Fee on a Return?</b><span>Which refunds credit the $0.30/$0.40 — and which quietly keep it.</span></a>
+<a class="next-card" href="ebay-return-policy-sellers.html"><b>eBay Returns for Sellers: What They Really Cost</b><span>Fees, deductions, stepped-in cases and the evidence that wins.</span></a>
+<a class="next-card" href="platform-comparison-2026.html"><b>The 2026 Reseller's Matrix</b><span>Compare return rules, seller fees and loss scenarios across six platforms.</span></a>
+<a class="next-card" href="index.html#tool"><b>Calculate My True Profit</b><span>See what a sale actually leaves you after fees, shipping and returns.</span></a>
+</div>
+</section>
 
-<h2>Comparison: How Other Platforms Handle NAD Shipping</h2>
-<p>eBay isn't the only platform where you pay NAD shipping, but the mechanisms differ:</p>
-
-<table class="data-table">
-<thead><tr><th>Platform</th><th>NAD Shipping Cost</th><th>How It's Charged</th></tr></thead>
-<tbody>
-<tr><td><strong>eBay</strong></td><td>Usually seller</td><td>Deducted from refund or funds</td></tr>
-<tr><td><strong>Depop</strong></td><td>Seller (US gets prepaid label)</td><td>Label provided, cost absorbed</td></tr>
-<tr><td><strong>Poshmark</strong></td><td>Poshmark provides label</td><td>Seller loses original shipping cost</td></tr>
-<tr><td><strong>Mercari</strong></td><td>Under 50 lbs: prepaid label</td><td>Over 50 lbs: seller pays within 3 days</td></tr>
-</tbody>
-</table>
-
-<p>Poshmark is the most seller-friendly on NAD shipping: they provide the label and you don't pay directly (though you lose the original shipping you paid). Mercari has the 50-lb threshold where heavy items become your problem. Depop provides prepaid labels for US buyers. eBay's automatic deduction is the most "hidden" — you don't see it as a separate charge, it just reduces your refund.</p>
-
-<h2>The Tax Angle: Return Shipping Is Deductible</h2>
-<p>The return shipping you pay on NAD claims is an <strong>ordinary business expense</strong> and is deductible on Schedule C. Track every label cost with your return records — one line per return showing the shipping cost paid. At year-end, that's a real deduction.</p>
-
-<p>Most sellers never track it because they don't see it as a separate charge. They see "refund processed" and assume the math is done. But that $9 label you paid is a business expense you can write off. We explain the full tax write-off process in <a href="reseller-tax-writeoffs-returns.html">reseller tax write-offs</a>.</p>
-
-<h2>Real Scenarios: Three NAD Returns, Three Different Outcomes</h2>
-
-<p><strong>Scenario 1: The Honest Mistake ($40 sale)</strong></p>
-<p>Buyer claimed a vintage t-shirt "didn't match the color in photos." You check your listing — the shirt is clearly a faded red, and you said "faded red" in the description. The item comes back and matches your photos exactly. You appeal with side-by-side photos and eBay reverses the $7 label cost. Total loss: $0.40 per-order fee only.</p>
-
-<p><strong>Scenario 2: The Wardrober ($80 sale)</strong></p>
-<p>Buyer claimed a dress "had a stain not shown in photos." The dress comes back with a faint makeup mark on the collar that wasn't there when you shipped. You have pre-shipment photos showing the collar was clean. You appeal with the photos and eBay gives you a partial refund of the label cost ($5 of $9). Total loss: $4 label + $0.40 per-order = $4.40.</p>
-
-<p><strong>Scenario 3: The Legitimate Claim ($120 sale)</strong></p>
-<p>Buyer claimed a camera lens "had fungus not mentioned in listing." You check your listing — you didn't mention it because you didn't see it. The lens comes back and you inspect it with a flashlight. There's faint fungus you missed. The claim is legitimate. You absorb the $14 label cost and the $30 value drop. Total loss: $14 label + $0.40 per-order + $30 value = $44.40.</p>
-
-<p>The pattern: <strong>documentation determines your outcome.</strong> Sellers with photos win appeals. Sellers without photos absorb the full cost. We cover the photo evidence method in <a href="guides.html#dispute">how to win a return dispute</a>.</p>
-
-<h2>FAQ</h2>
-<dl>
-<dt>Who pays return shipping on an eBay not-as-described claim?</dt>
-<dd>Usually the seller. eBay generates a return label and the cost is typically deducted from the seller's funds or from the refund amount.</dd>
-
-<dt>How much does an eBay return label cost?</dt>
-<dd>Return label costs vary by weight and distance. A 1-pound item shipped 500 miles costs around $6-8 via USPS Ground Advantage. A 5-pound item shipped cross-country can cost $12-18.</dd>
-
-<dt>Can I provide my own return label on eBay NAD?</dt>
-<dd>Yes, you can upload your own label instead of using eBay's. This can save money if you have access to discounted shipping rates through services like Pirateship or ShipStation.</dd>
-
-<dt>What if the buyer is wrong about not-as-described?</dt>
-<dd>You can appeal after the return completes. Document the item's condition with photos before shipping and after return. If you can prove the item matches your listing, eBay may reverse the label cost.</dd>
-
-<dt>Does free returns change who pays NAD shipping?</dt>
-<dd>With free returns enabled, you pay return shipping on ALL eligible returns including NAD. Without free returns, you still pay on NAD claims because eBay Money Back Guarantee overrides your return policy settings.</dd>
-
-<dt>How do I reduce NAD claims?</dt>
-<dd>Accurate photos from every angle, detailed measurements, listing any flaws clearly, and responding to buyer questions before purchase. NAD claims often come from expectation mismatches, not actual problems.</dd>
-
-<dt>Does NAD shipping cost hurt my seller metrics?</dt>
-<dd>The cost itself doesn't hurt metrics, but the NAD claim does. If your Item Not As Described rate is evaluated as Very High on the 20th of the month, you're charged an additional 5% on final value fees the following month.</dd>
-
-<dt>Who pays return shipping on changed-mind returns?</dt>
-<dd>If you have free returns disabled, the buyer pays. If you have free returns enabled, you pay. But on NAD claims, you pay regardless of your free returns setting.</dd>
-</dl>
-
-<h2>Sources & Official Policy Pages</h2>
-<p class="sources">Figures verified against official eBay help center articles (August 2026): <a href="https://www.ebay.com/help/selling/returns-refunds/returns" rel="noopener" target="_blank">Returns for sellers</a> · <a href="https://www.ebay.com/help/selling/returns-refunds/return-shipping-for-sellers" rel="noopener" target="_blank">Return shipping for sellers</a> · <a href="https://www.ebay.com/help/selling/performance-standards/" rel="noopener" target="_blank">Performance standards</a>. See the full list at <a href="sources.html">our sources page</a>. Policies change — always confirm in-app before appealing.</p>
-
-<p><strong>Read next:</strong> <a href="ebay-per-order-fee-return.html">Does eBay refund the per-order fee on a return?</a> · <a href="ebay-return-policy-sellers.html">eBay return policy: 12 hidden costs</a> · <a href="platform-comparison-2026.html">The 2026 Reseller's Matrix</a> · <a href="guides.html">All guides</a></p>
-
-<div class="cta-box"><h3 style="margin-top:0">Calculate your exact NAD return loss in 20 seconds.</h3>
-<p style="margin-bottom:14px">See what you're really losing — label cost, per-order fee, value drop. Free. No signup. Itemized like a receipt.</p>
-<a class="btn-primary" href="index.html#tool">CALCULATE MY NAD RETURN LOSS</a></div>
+<section class="art-sec">
+<h2>Sources</h2>
+<ul class="src-list">
+<li><a href="https://www.ebay.com/help/" rel="noopener nofollow">eBay — Returns for sellers &amp; "item not as described" responsibility</a></li>
+<li><a href="https://www.ebay.com/help/selling/fees-credits-invoices/selling-fees?id=4128" rel="noopener nofollow">eBay — Fee credits on refunds (final value vs per-order)</a></li>
+<li><a href="https://www.ebay.com/help/selling/selling-fees/selling-fees?id=4822" rel="noopener nofollow">eBay — Selling fees (final value fee &amp; per-order fee)</a></li>
+<li><a href="https://www.ebay.com/help/" rel="noopener nofollow">eBay — Seller protections: deduction for returned used/damaged items</a></li>
+<li><a href="https://www.ebay.com/help/" rel="noopener nofollow">eBay — Asking eBay to step in &amp; appealing a case decision</a></li>
+</ul>
+<p class="art-meta">LAST UPDATED: OCTOBER 2026</p>
+<p class="art-lede" style="font-size:13.5px;color:#9DBFA9;">Platform rules and fees can change. This guide is based on eBay's current published seller and fee documentation reviewed in October 2026. Always check the current eBay help page for the transaction-specific rules that apply to your account and listing. CLAWBACK is independent and not affiliated with eBay.</p>
+</section>
 </main>
-<footer class="site-foot"><div class="foot-inner">
+
+<footer class="site-foot">
+<div class="foot-inner">
 <div class="foot-brand"><div class="brand small">CLAW<span class="slash">BACK</span></div><p>The forced-return loss calculator for resellers. Know your number before you appeal.</p></div>
-<nav class="foot-col" aria-label="Guides"><h3>More</h3><ul><li><a href="ebay-per-order-fee-return.html">Per-order fee refund</a></li><li><a href="ebay-return-policy-sellers.html">12 hidden costs</a></li><li><a href="guides.html">Guides</a></li></ul></nav>
-<nav class="foot-col" aria-label="Company"><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
-</div><div class="foot-legal"><p class="verified">Fee data last verified: <strong>August 22, 2026</strong> · sourced from official eBay help pages.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with eBay.</p></div></footer>
+<nav class="foot-col" aria-label="Platforms"><h3>Platforms</h3><ul>
+<li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li>
+<li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li>
+<li><a href="platforms.html#whatnot">Whatnot</a></li><li><a href="platforms.html#vinted">Vinted</a></li>
+</ul></nav>
+<nav class="foot-col" aria-label="Guides"><h3>Guides</h3><ul>
+<li><a href="guides.html">All guides</a></li><li><a href="guides.html#dispute">Win a return dispute</a></li>
+<li><a href="guides.html#taxes">Tax write-offs</a></li>
+</ul></nav>
+<nav class="foot-col" aria-label="Company"><h3>Company</h3><ul>
+<li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms &amp; Disclaimer</a></li><li><a href="contact.html">Contact</a></li>
+</ul></nav>
+<nav class="foot-col" aria-label="Resources"><h3>Resources</h3><ul>
+<li><a href="index.html#faq">FAQ</a></li><li><a href="sources.html">Sources</a></li><li><a href="sitemap.html">Sitemap</a></li>
+</ul></nav>
+</div>
+<div class="foot-legal">
+<p class="verified">Fee data last verified: <strong>August 2026</strong> · sourced from official platform help pages.</p>
+<p class="disclaimer">⚠ Estimates only — not legal or tax advice. Platforms change their fees; verify current rates before you appeal. CLAWBACK is an independent tool and is not affiliated with eBay, Poshmark, Mercari, Depop, Whatnot, or Vinted.</p>
+</div>
+</footer>
+
 <script src="nav.js"></script>
+
+<!-- ========== MINI CALC LOGIC (mirrors locked ebay-calc.js INAD rules) ========== -->
+<script>
+(function(){
+function el(id){ return document.getElementById(id); }
+function money(n){ return '$' + (Math.round((+n||0)*100)/100).toFixed(2); }
+function num(id){ var v = parseFloat(el(id).value); return isNaN(v) ? 0 : v; }
+
+/* Most-categories tiered final value fee: 13.6% up to $7,500, 2.35% above */
+function fvf(base){
+  var fee = Math.min(base, 7500) * 0.136;
+  if(base > 7500) fee += (base - 7500) * 0.0235;
+  return Math.round(fee * 100) / 100;
+}
+function perOrder(base){ return base <= 10 ? 0.30 : 0.40; }
+
+function sync(){
+  var type = el('inadType').value;
+  var returned = el('inadReturned').value;
+  var ded = el('inadDed').value;
+  el('inadPartialWrap').hidden = (type !== 'partial');
+  el('inadValueWrap').hidden = (returned !== 'yes');
+  el('inadCostWrap').hidden = (el('inadPayer').value !== 'me');
+  el('inadDedAmtWrap').hidden = (ded !== 'yes');
+}
+
+function run(){
+  var out = el('inadOut');
+  var sale = num('inadSale');
+  if(sale <= 0){ out.hidden = false; out.innerHTML = '<p class="pc-note">Enter the original sale price first.</p>'; return; }
+  var ship = num('inadShip'), tax = num('inadTax');
+  var type = el('inadType').value;
+  var returned = el('inadReturned').value;
+  var value = num('inadValue');
+  var payer = el('inadPayer').value;
+  var cost = (payer === 'me') ? num('inadCost') : 0;
+  var ded = el('inadDed').value;
+  var dedAmt = (ded === 'yes') ? num('inadDedAmt') : 0;
+
+  var base = sale + ship + tax;
+  var variableFee = fvf(base);
+  var perFee = perOrder(base);
+
+  var varLost, perLost, actualRefund;
+  if(type === 'partial'){
+    var rAmt = num('inadPartial');
+    if(rAmt <= 0){ out.hidden = false; out.innerHTML = '<p class="pc-note">For a partial refund, enter the total amount refunded to the buyer (including any tax refund).</p>'; return; }
+    actualRefund = rAmt;
+    var p = base > 0 ? Math.min(1, rAmt / base) : 0;   /* total refund ÷ total sale */
+    varLost = Math.round(variableFee * (1 - p) * 100) / 100;
+    perLost = perFee;                                    /* never prorated */
+  } else {
+    actualRefund = sale;
+    if(ded === 'yes'){ varLost = variableFee; perLost = perFee; }  /* deduction override kills credits */
+    else { varLost = 0; perLost = perFee; }                        /* INAD full refund: FVF credited, per-order kept */
+  }
+
+  var valueLost = 0;
+  if(returned === 'yes'){ valueLost = Math.max(0, actualRefund - value); }
+  else { valueLost = actualRefund; }
+  if(type === 'full' && ded === 'yes'){ valueLost = Math.max(0, valueLost - dedAmt); }
+
+  var total = Math.max(0, varLost + perLost + cost + valueLost);
+
+  var h = '';
+  h += '<div class="pc-sub-head">Fee impact (INAD refund on eBay)</div>';
+  h += '<div class="pc-line ' + (varLost < 0.005 ? 'ok' : 'loss') + '"><span>Final value fee (' + (varLost < 0.005 ? 'credited' : 'kept') + ')</span><b>' + (varLost < 0.005 ? '$0.00' : money(varLost)) + '</b></div>';
+  h += '<div class="pc-line loss"><span>Per-order fee (kept)</span><b>' + money(perLost) + '</b></div>';
+  h += '<div class="pc-sub-head">Money out / recovered</div>';
+  if(payer === 'me'){ h += '<div class="pc-line loss"><span>Return shipping you paid</span><b>' + money(cost) + '</b></div>'; }
+  else { h += '<div class="pc-line ok"><span>Return shipping (payer: ' + payer.toUpperCase() + ')</span><b>NOT CHARGED TO YOU</b></div>'; }
+  if(returned === 'yes'){ h += '<div class="pc-line ' + (valueLost > 0 ? 'loss' : 'ok') + '"><span>Item value drop (refund − current value)</span><b>' + money(valueLost) + '</b></div>'; }
+  else { h += '<div class="pc-line loss"><span>Item not recovered</span><b>' + money(valueLost) + '</b></div>'; }
+  if(type === 'full' && dedAmt > 0){ h += '<div class="pc-line ok"><span>Deduction kept from refund</span><b>-' + money(dedAmt) + '</b></div>'; }
+  h += '<div class="pc-line total"><span>ESTIMATED SELLER LOSS</span><b>' + money(total) + '</b></div>';
+
+  var verdict = 'On an INAD return eBay generally puts the return label on you: ';
+  verdict += (payer === 'me') ? 'the ' + money(cost) + ' shipping cost is a real out-of-pocket loss. ' : 'you entered ' + payer.toUpperCase() + ', so no return-shipping loss is counted. ';
+  if(type === 'partial'){ verdict += 'The partial refund credits the final value fee proportionally (' + Math.round((num('inadPartial') / base) * 1000) / 10 + '%), but the ' + money(perFee) + ' per-order fee stays with eBay.'; }
+  else if(ded === 'yes'){ verdict += 'Because you deducted from the refund, normal fee credits do not apply — the deduction offsets the item-value loss instead.'; }
+  else { verdict += 'The final value fee is credited on an eligible full refund, but the ' + money(perFee) + ' per-order fee is kept by eBay.'; }
+  h += '<p class="pc-verdict">' + verdict + '</p>';
+  h += '<p class="pc-note">Rates shown are Most Categories (13.6% / 2.35% over $7,500) with the $0.30/$0.40 per-order fee on price + shipping + tax. Return shipping counted only when payer = "me". Deductions and credits are estimates; eBay\'s case decision is final. Other categories differ — use the full calculator for category-precise math.</p>';
+
+  out.hidden = false;
+  out.innerHTML = h;
+}
+
+['inadType','inadReturned','inadPayer','inadDed'].forEach(function(id){ el(id).addEventListener('change', sync); });
+el('inadRun').addEventListener('click', run);
+sync();
+})();
+</script>
 
 <script>
 CookieConsent.run({
-  guiOptions: {
-    consentModal: {
-      layout: "box",
-      position: "bottom right",
-      equalWeightButtons: true,
-      flipButtons: false
-    },
-    preferencesModal: {
-      layout: "box",
-      position: "right",
-      equalWeightButtons: true,
-      flipButtons: false
-    }
-  },
-  categories: {
-    necessary: {
-      enabled: true,
-      readOnly: true
-    },
-    analytics: {
-      enabled: false,
-      readOnly: false
-    },
-    advertising: {
-      enabled: false,
-      readOnly: false
-    }
-  },
-  language: {
-    default: "en",
-    autoDetect: "browser",
-    translations: {
-      en: {
-        consentModal: {
-          title: "We use cookies",
-          description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
-          acceptAllBtn: "Accept all",
-          acceptNecessaryBtn: "Reject all",
-          showPreferencesBtn: "Manage preferences"
-        },
-        preferencesModal: {
-          title: "Cookie preferences",
-          acceptAllBtn: "Accept all",
-          acceptNecessaryBtn: "Reject all",
-          savePreferencesBtn: "Save preferences",
-          sections: [
-            {
-              title: "Necessary cookies",
-              description: "These cookies are required for the site to function.",
-              linkedCategory: "necessary"
-            },
-            {
-              title: "Analytics cookies",
-              description: "Help us understand how visitors use our site (Google Analytics).",
-              linkedCategory: "analytics"
-            },
-            {
-              title: "Advertising cookies",
-              description: "Used to show relevant ads (Google AdSense, when enabled).",
-              linkedCategory: "advertising"
-            }
-          ]
-        }
-      }
-    }
-  }
+guiOptions: {
+consentModal: { layout: "box", position: "bottom right", equalWeightButtons: true, flipButtons: false },
+preferencesModal: { layout: "box", position: "right", equalWeightButtons: true, flipButtons: false }
+},
+categories: {
+necessary: { enabled: true, readOnly: true },
+analytics: { enabled: false, readOnly: false },
+advertising: { enabled: false, readOnly: false }
+},
+language: {
+default: "en",
+autoDetect: "browser",
+translations: {
+en: {
+consentModal: {
+title: "We use cookies",
+description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
+acceptAllBtn: "Accept all",
+acceptNecessaryBtn: "Reject all",
+showPreferencesBtn: "Manage preferences"
+},
+preferencesModal: {
+title: "Cookie preferences",
+acceptAllBtn: "Accept all",
+acceptNecessaryBtn: "Reject all",
+savePreferencesBtn: "Save preferences",
+sections: [
+{ title: "Necessary cookies", description: "These cookies are required for the site to function.", linkedCategory: "necessary" },
+{ title: "Analytics cookies", description: "Help us understand how visitors use our site (Google Analytics).", linkedCategory: "analytics" },
+{ title: "Advertising cookies", description: "Used to show relevant ads (Google AdSense, when enabled).", linkedCategory: "advertising" }
+]
+}
+}
+}
+}
 });
 </script>
-
 </body>
 </html>
