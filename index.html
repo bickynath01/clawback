@@ -8,11 +8,8 @@
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.gotclawback.com/">
 
-<!-- Cookie Consent library -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
 <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
-
-<!-- Google Analytics 4 — loads ONLY after analytics consent -->
 <script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
 <script type="text/plain" data-category="analytics">
   window.dataLayer = window.dataLayer || [];
@@ -25,20 +22,538 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+.yn-row{display:flex;gap:10px;margin-top:6px;}
+.yn-btn{flex:1;padding:12px;font-family:'Space Mono',monospace;font-weight:700;letter-spacing:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.25);color:#FAF7F0;border-radius:6px;cursor:pointer;}
+.yn-btn.active{background:#F5B301;color:#0E3B2C;border-color:#F5B301;}
+
+/* ============ SELLER LOSS COMMAND CENTER ============ */
+#commandCenter{display:flex;flex-direction:column;gap:18px;max-width:470px;margin:0 auto;}
+
+/* A. FINAL LOSS HERO */
+.cc-hero{
+  background:linear-gradient(180deg,var(--paper),#F2EFE7);
+  color:var(--ink);
+  padding:28px 24px;
+  border-radius:12px;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
+  position:relative;
+  overflow:hidden;
+}
+.cc-hero-head{
+  font-family:var(--display);
+  font-size:11px;
+  letter-spacing:.16em;
+  color:#8a857a;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+.cc-hero-meta{
+  font-family:var(--mono);
+  font-size:12px;
+  color:#6b675c;
+  letter-spacing:.05em;
+  margin-bottom:18px;
+  line-height:1.5;
+}
+.cc-hero-label{
+  font-family:var(--display);
+  font-size:14px;
+  color:#3c3a35;
+  margin-bottom:8px;
+  letter-spacing:.04em;
+}
+.cc-hero-amount{
+  font-family:var(--display);
+  font-size:52px;
+  color:var(--red);
+  line-height:1;
+  letter-spacing:-.02em;
+}
+.cc-hero.zero-loss .cc-hero-amount{color:var(--green);}
+.cc-hero-stamp{
+  position:absolute;
+  top:50%;
+  right:18px;
+  transform:translateY(-50%) rotate(-12deg);
+  font-family:var(--display);
+  font-size:14px;
+  letter-spacing:.06em;
+  padding:6px 12px;
+  border:3px solid var(--red);
+  border-radius:6px;
+  color:var(--red);
+  opacity:.85;
+  pointer-events:none;
+  white-space:nowrap;
+}
+.cc-hero.zero-loss .cc-hero-stamp{border-color:var(--green);color:var(--green);}
+
+/* B. LOSS BREAKDOWN */
+.cc-breakdown{
+  background:rgba(0,0,0,.22);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:10px;
+  padding:18px;
+}
+.cc-breakdown-head{
+  font-family:var(--display);
+  font-size:12px;
+  letter-spacing:.14em;
+  color:var(--yellow);
+  margin-bottom:14px;
+  text-transform:uppercase;
+}
+.cc-breakdown-section{margin-bottom:14px;}
+.cc-breakdown-section:last-child{margin-bottom:0;}
+.cc-breakdown-title{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.1em;
+  color:#A9C7B6;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.cc-breakdown-line{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  padding:5px 0;
+  font-family:var(--mono);
+  font-size:13px;
+  color:#DCE9DF;
+}
+.cc-breakdown-line.loss .cc-amt{color:var(--red);}
+.cc-breakdown-line.recovery .cc-amt{color:var(--green);}
+.cc-breakdown-line.final{
+  border-top:2px solid var(--yellow);
+  margin-top:10px;
+  padding-top:10px;
+  font-family:var(--display);
+  font-size:15px;
+  color:var(--paper);
+}
+.cc-breakdown-line.final .cc-amt{color:var(--red);font-size:20px;}
+
+/* C. WHAT TO DO NEXT */
+.cc-next{
+  background:rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:10px;
+  padding:18px;
+}
+.cc-next-head{
+  font-family:var(--display);
+  font-size:12px;
+  letter-spacing:.14em;
+  color:var(--yellow);
+  margin-bottom:12px;
+  text-transform:uppercase;
+}
+.cc-next-item{
+  padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.cc-next-item:last-child{border-bottom:none;}
+.cc-next-title{
+  font-family:var(--mono);
+  font-weight:700;
+  font-size:12px;
+  color:var(--yellow);
+  margin-bottom:4px;
+  letter-spacing:.03em;
+}
+.cc-next-desc{
+  font-family:var(--body);
+  font-size:12.5px;
+  color:#BFD6C8;
+  line-height:1.5;
+}
+
+/* D. EVIDENCE TO KEEP */
+.cc-evidence{
+  background:rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:10px;
+  padding:18px;
+}
+.cc-evidence-head{
+  font-family:var(--display);
+  font-size:12px;
+  letter-spacing:.14em;
+  color:var(--yellow);
+  margin-bottom:12px;
+  text-transform:uppercase;
+}
+.cc-evidence-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  font-family:var(--mono);
+  font-size:12px;
+  color:#BFD6C8;
+  line-height:1.7;
+  columns:2;
+  column-gap:16px;
+}
+.cc-evidence-list li{
+  padding-left:22px;
+  position:relative;
+  margin-bottom:6px;
+  break-inside:avoid;
+}
+.cc-evidence-list li::before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--yellow);
+  font-size:14px;
+}
+
+/* E. QUICK ACTIONS */
+.cc-actions{
+  background:rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:10px;
+  padding:18px;
+}
+.cc-actions-head{
+  font-family:var(--display);
+  font-size:12px;
+  letter-spacing:.14em;
+  color:var(--yellow);
+  margin-bottom:14px;
+  text-transform:uppercase;
+}
+.cc-actions-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.cc-action-btn{
+  background:transparent;
+  border:2px solid var(--yellow);
+  color:var(--yellow);
+  font-family:var(--display);
+  font-size:11px;
+  letter-spacing:.07em;
+  padding:10px 8px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:background .18s,color .18s,transform .15s;
+  text-align:center;
+}
+.cc-action-btn:hover{
+  background:var(--yellow);
+  color:var(--ink);
+  transform:translateY(-2px);
+}
+.cc-action-btn.primary{
+  background:var(--red);
+  border-color:var(--red);
+  color:#FFF6EE;
+}
+.cc-action-btn.primary:hover{
+  background:var(--red-deep);
+  border-color:var(--red-deep);
+}
+
+/* Hidden original sections (data source) */
+#originalReceipt,#originalActions{
+  position:absolute;
+  left:-9999px;
+  top:-9999px;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+/* Responsive */
+@media(max-width:980px){
+  #commandCenter{max-width:100%;}
+  .cc-evidence-list{columns:1;}
+}
+@media(max-width:520px){
+  .cc-actions-grid{grid-template-columns:1fr;}
+  .cc-hero-amount{font-size:40px;}
+}
+
+/* ============ FINAL POLISH PHASE — COMMAND CENTER & FAQ ============ */
+
+/* Command Center section wrappers */
+.command-section{
+  background:rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:12px;
+  padding:18px;
+  margin-top:16px;
+}
+.command-section:first-child { margin-top: 0; }
+.command-section-head{
+  font-family:var(--display);
+  font-size:12px;
+  letter-spacing:.14em;
+  color:var(--yellow);
+  margin:0 0 12px;
+  text-transform:uppercase;
+}
+
+/* What To Do Next - context-sensitive actions */
+.next-actions{display:flex;flex-direction:column;gap:8px;}
+.next-action-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:8px;
+  font-family:var(--mono);
+  font-size:12.5px;
+  color:#CFE3D6;
+  cursor:pointer;
+  transition:background .15s,transform .15s,border-color .15s;
+}
+.next-action-item:hover{
+  background:rgba(245,179,1,.12);
+  border-color:var(--yellow);
+  transform:translateX(3px);
+}
+.next-action-icon{
+  width:28px;
+  height:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--yellow);
+  color:var(--ink);
+  border-radius:6px;
+  font-size:14px;
+  flex:none;
+}
+.next-action-label{flex:1;}
+
+/* FAQ grouping */
+.faq-group{margin-bottom:28px;}
+.faq-group-title{
+  font-family:var(--display);
+  font-size:15px;
+  letter-spacing:.12em;
+  color:var(--yellow);
+  margin:0 0 14px;
+  padding-bottom:8px;
+  border-bottom:2px solid rgba(245,179,1,.3);
+}
+.faq-item.key{border-color:rgba(245,179,1,.4);}
+.faq-item.key[open]{border-color:var(--yellow);}
+
+/* Receipt money direction enhancement (visual cues) */
+.r-line.money-out .r-label::before{
+  content:"↓ ";
+  color:var(--red);
+  font-weight:700;
+}
+.r-line.money-recovered .r-label::before{
+  content:"↑ ";
+  color:var(--green);
+  font-weight:700;
+}
+
+/* Enhanced Evidence Checklist */
+.evidence-enhanced{
+  background:rgba(0,0,0,.22);
+  border:1px solid rgba(255,255,255,.12);
+  border-left:4px solid var(--yellow);
+  border-radius:0 10px 10px 0;
+  padding:16px 18px;
+  margin-top:16px;
+}
+.evidence-checklist{
+  margin:0;
+  padding:0;
+  list-style:none;
+  counter-reset:evidence;
+}
+.evidence-checklist li{
+  counter-increment:evidence;
+  margin:0 0 10px;
+  padding:0 0 0 32px;
+  position:relative;
+  font-family:var(--mono);
+  font-size:12.5px;
+  color:#BFD6C8;
+  line-height:1.6;
+}
+.evidence-checklist li::before{
+  content:counter(evidence);
+  position:absolute;
+  left:0;
+  top:0;
+  width:22px;
+  height:22px;
+  background:var(--yellow);
+  color:var(--ink);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px;
+  font-weight:700;
+}
+
+/* Print Final Action Styling */
+.print-final-btn {
+  width: 100%;
+  background: var(--yellow);
+  color: var(--ink);
+  border: none;
+  font-family: var(--display);
+  font-size: 13px;
+  letter-spacing: .07em;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0,0,0,.3);
+  transition: transform .12s, box-shadow .12s;
+  margin-top: 10px;
+}
+.print-final-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(0,0,0,.3);
+}
+
+/* Mobile adjustments for Command Center */
+@media(max-width:760px){
+  .command-section{padding:14px;}
+}
+
+/* ============ ONE-PAGE COLOR LOSS REPORT (PRINT/DOWNLOAD ONLY) ============ */
+#clawback-print-report{display:none;color:#1E2A24;font-family:'Archivo',system-ui,sans-serif;}
+/* Screen-scope copies so html2canvas can see colors/layout (element stays display:none on screen) */
+.pr-head{ background:#0E3B2C; color:#FBF7EE; padding:14px 18px; border-radius:6px; }
+.pr-brand{ font-family:'Archivo Black',Archivo,sans-serif; font-size:20pt; letter-spacing:.02em; }
+.pr-brand em{ font-style:normal; color:#F5B301; }
+.pr-title{ font-family:'Space Mono',monospace; font-size:8.5pt; letter-spacing:.22em; color:#F5B301; margin-top:4px; }
+.pr-meta{ font-family:'Space Mono',monospace; font-size:8pt; color:#CFE3D6; margin-top:6px; letter-spacing:.06em; }
+.pr-hero{ text-align:center; padding:14px 0 10px; border-bottom:2px solid #D9A400; flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; }
+.pr-hero-label{ font-family:'Space Mono',monospace; font-size:9pt; letter-spacing:.28em; color:#0E3B2C; }
+.pr-hero-amt{ font-family:'Archivo Black',Archivo,sans-serif; font-size:30pt; color:#C0392B; line-height:1.3; margin-top:2px; margin-bottom:8px; }
+.pr-hero.zero .pr-hero-amt{ color:#2E8B57; }
+.pr-hero-sub{ font-family:'Space Mono',monospace; font-size:7.5pt; letter-spacing:.18em; color:#6B7A70; margin-top:2px; }
+.pr-sec{ margin-top:10px; }
+.pr-sec-head{ font-family:'Space Mono',monospace; font-size:8.5pt; letter-spacing:.2em; color:#0E3B2C; border-left:3px solid #D9A400; padding-left:8px; margin-bottom:6px; }
+.pr-cols{ display:flex; gap:14px; }
+.pr-col{ flex:1; background:#FFFFFF; border:1px solid #E4DCC8; border-radius:5px; padding:8px 10px; }
+.pr-col-head{ font-family:'Space Mono',monospace; font-size:7.5pt; letter-spacing:.16em; margin-bottom:4px; }
+.pr-col.out .pr-col-head{ color:#C0392B; }
+.pr-col.rec .pr-col-head{ color:#2E8B57; }
+.pr-row{ display:flex; justify-content:space-between; gap:8px; font-size:8.5pt; padding:2px 0; color:#33413A; }
+.pr-row .amt{ font-family:'Space Mono',monospace; text-align:right; }
+.pr-col.out .amt{ color:#C0392B; }
+.pr-col.rec .amt{ color:#2E8B57; }
+.pr-final{ display:flex; justify-content:space-between; align-items:baseline; background:#0E3B2C; color:#FBF7EE; border-radius:5px; padding:8px 12px; margin-top:8px; }
+.pr-final .lbl{ font-family:'Space Mono',monospace; font-size:9pt; letter-spacing:.2em; }
+.pr-final .amt{ font-family:'Archivo Black',Archivo,sans-serif; font-size:16pt; color:#F5B301; }
+.pr-tx{ display:flex; flex-wrap:wrap; gap:2px 18px; }
+.pr-tx .pr-row{ flex:1 1 45%; }
+.pr-next{ font-size:9pt; color:#33413A; line-height:1.45; }
+.pr-ev{ display:flex; flex-wrap:wrap; gap:2px 16px; font-size:8.5pt; color:#33413A; }
+.pr-ev span{ flex:1 1 45%; }
+.pr-note{ margin-top:10px; margin-bottom:8px; border-top:1px solid #D9A400; padding-top:6px; font-size:7.5pt; color:#6B7A70; line-height:1.4; }
+.pr-foot{ margin-top:auto; background:#0E3B2C; color:#CFE3D6; border-radius:5px; padding:8px 12px; font-size:7.5pt; }
+.pr-foot b{ color:#FBF7EE; font-family:'Archivo Black',Archivo,sans-serif; font-size:9pt; letter-spacing:.04em; }
+.pr-stats{ display:flex; gap:10px; margin-top:12px; }
+.pr-stat{ flex:1; background:#FFFFFF; border:1px solid #E4DCC8; border-radius:5px; padding:6px 8px; text-align:center; }
+.pr-stat .k{ font-family:'Space Mono',monospace; font-size:6.5pt; letter-spacing:.14em; color:#6B7A70; }
+.pr-stat .v{ font-family:'Archivo Black',Archivo,sans-serif; font-size:10pt; color:#0E3B2C; margin-top:2px; }
+.pr-stat .v.red{ color:#C0392B; }
+.pr-stat .v.green{ color:#2E8B57; }
+.pr-bar{ display:flex; height:10px; border-radius:5px; overflow:hidden; background:#E4DCC8; }
+.pr-bar span{ display:block; height:100%; }
+.pr-bar .seg-fees{ background:#E8734A; }
+.pr-bar .seg-ship{ background:#D4402A; }
+.pr-bar .seg-value{ background:#8E2420; }
+.pr-barlegend{ display:flex; flex-wrap:wrap; gap:4px 12px; margin-top:5px; font-family:'Space Mono',monospace; font-size:6.5pt; color:#6B7A70; }
+.pr-barlegend .dot{ display:inline-block; width:7px; height:7px; border-radius:2px; margin-right:4px; }
+.pr-formula{ margin-top:6px; font-family:'Space Mono',monospace; font-size:7pt; color:#6B7A70; line-height:1.4; }
+.cc-print-help{margin:10px 0 0;font-family:var(--mono);font-size:10.5px;color:#9DBFA9;letter-spacing:.04em;}
+#ccPrintBtn{grid-column:1/-1;}
+@media print{
+  @page{ size: Letter portrait; margin:0 !important; }
+  html{ background:#FBF7EE !important; }
+  body > *:not(#clawback-print-report){ display:none !important; }
+  #clawback-print-report{
+    display:flex !important; flex-direction:column;
+    position:absolute; left:0; top:0; width:100%;
+    min-height:11in; max-height:11in; overflow:hidden; box-sizing:border-box;
+    padding:0.5in 0.6in 0.4in;
+    background:#FBF7EE; color:#1E2A24;
+    font-family:'Archivo',system-ui,sans-serif;
+    -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important;
+  }
+  #clawback-print-report *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  .pr-head{ background:#0E3B2C; color:#FBF7EE; padding:14px 18px; border-radius:6px; }
+  .pr-brand{ font-family:'Archivo Black',Archivo,sans-serif; font-size:20pt; letter-spacing:.02em; }
+  .pr-brand em{ font-style:normal; color:#F5B301; }
+  .pr-title{ font-family:'Space Mono',monospace; font-size:8.5pt; letter-spacing:.22em; color:#F5B301; margin-top:4px; }
+  .pr-meta{ font-family:'Space Mono',monospace; font-size:8pt; color:#CFE3D6; margin-top:6px; letter-spacing:.06em; }
+  .pr-hero{ text-align:center; padding:14px 0 10px; border-bottom:2px solid #D9A400; flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; }
+  .pr-hero-label{ font-family:'Space Mono',monospace; font-size:9pt; letter-spacing:.28em; color:#0E3B2C; }
+  .pr-hero-amt{ font-family:'Archivo Black',Archivo,sans-serif; font-size:30pt; color:#C0392B; line-height:1.3; margin-top:2px; margin-bottom:8px; }
+  .pr-hero.zero .pr-hero-amt{ color:#2E8B57; }
+  .pr-hero-sub{ font-family:'Space Mono',monospace; font-size:7.5pt; letter-spacing:.18em; color:#6B7A70; margin-top:2px; }
+  .pr-sec{ margin-top:10px; }
+  .pr-sec-head{ font-family:'Space Mono',monospace; font-size:8.5pt; letter-spacing:.2em; color:#0E3B2C; border-left:3px solid #D9A400; padding-left:8px; margin-bottom:6px; }
+  .pr-cols{ display:flex; gap:14px; }
+  .pr-col{ flex:1; background:#FFFFFF; border:1px solid #E4DCC8; border-radius:5px; padding:8px 10px; }
+  .pr-col-head{ font-family:'Space Mono',monospace; font-size:7.5pt; letter-spacing:.16em; margin-bottom:4px; }
+  .pr-col.out .pr-col-head{ color:#C0392B; }
+  .pr-col.rec .pr-col-head{ color:#2E8B57; }
+  .pr-row{ display:flex; justify-content:space-between; gap:8px; font-size:8.5pt; padding:2px 0; color:#33413A; }
+  .pr-row .amt{ font-family:'Space Mono',monospace; text-align:right; }
+  .pr-col.out .amt{ color:#C0392B; }
+  .pr-col.rec .amt{ color:#2E8B57; }
+  .pr-final{ display:flex; justify-content:space-between; align-items:baseline; background:#0E3B2C; color:#FBF7EE; border-radius:5px; padding:8px 12px; margin-top:8px; }
+  .pr-final .lbl{ font-family:'Space Mono',monospace; font-size:9pt; letter-spacing:.2em; }
+  .pr-final .amt{ font-family:'Archivo Black',Archivo,sans-serif; font-size:16pt; color:#F5B301; }
+  .pr-tx{ display:flex; flex-wrap:wrap; gap:2px 18px; }
+  .pr-tx .pr-row{ flex:1 1 45%; }
+  .pr-next{ font-size:9pt; color:#33413A; line-height:1.45; }
+  .pr-ev{ display:flex; flex-wrap:wrap; gap:2px 16px; font-size:8.5pt; color:#33413A; }
+  .pr-ev span{ flex:1 1 45%; }
+  .pr-note{ margin-top:10px; margin-bottom:8px; border-top:1px solid #D9A400; padding-top:6px; font-size:7.5pt; color:#6B7A70; line-height:1.4; }
+  .pr-foot{ margin-top:auto; background:#0E3B2C; color:#CFE3D6; border-radius:5px; padding:8px 12px; font-size:7.5pt; }
+  .pr-foot b{ color:#FBF7EE; font-family:'Archivo Black',Archivo,sans-serif; font-size:9pt; letter-spacing:.04em; }
+.pr-stats{ display:flex; gap:10px; margin-top:12px; }
+.pr-stat{ flex:1; background:#FFFFFF; border:1px solid #E4DCC8; border-radius:5px; padding:6px 8px; text-align:center; }
+.pr-stat .k{ font-family:'Space Mono',monospace; font-size:6.5pt; letter-spacing:.14em; color:#6B7A70; }
+.pr-stat .v{ font-family:'Archivo Black',Archivo,sans-serif; font-size:10pt; color:#0E3B2C; margin-top:2px; }
+.pr-stat .v.red{ color:#C0392B; }
+.pr-stat .v.green{ color:#2E8B57; }
+.pr-bar{ display:flex; height:10px; border-radius:5px; overflow:hidden; background:#E4DCC8; }
+.pr-bar span{ display:block; height:100%; }
+.pr-bar .seg-fees{ background:#E8734A; }
+.pr-bar .seg-ship{ background:#D4402A; }
+.pr-bar .seg-value{ background:#8E2420; }
+.pr-barlegend{ display:flex; flex-wrap:wrap; gap:4px 12px; margin-top:5px; font-family:'Space Mono',monospace; font-size:6.5pt; color:#6B7A70; }
+.pr-barlegend .dot{ display:inline-block; width:7px; height:7px; border-radius:2px; margin-right:4px; }
+.pr-formula{ margin-top:6px; font-family:'Space Mono',monospace; font-size:7pt; color:#6B7A70; line-height:1.4; }
+}
+</style>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"CLAWBACK — Reseller Return Loss Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate exactly what you lost on a forced eBay, Poshmark, Mercari, Depop, Whatnot, or Vinted return — fees kept, return shipping, and item value drop — and get a copy-paste appeal letter plus a tax record. Free, no signup."}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Is CLAWBACK free, and is my data safe?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no signup and no login. Every number is calculated inside your own browser, so your sale price and return details are never sent to any server."}},
-{"@type":"Question","name":"Do eBay, Poshmark, Mercari or Depop charge a 'return fee'?","acceptedAnswer":{"@type":"Answer","text":"None of them has a line item called a return fee. The real loss on a forced return comes from three places the platforms don't label: selling fees they don't fully refund, return shipping they make you pay, and the drop in the item's value when it comes back damaged or swapped. CLAWBACK adds those three up into one dollar figure."}},
+{"@type":"Question","name":"Is CLAWBACK free, and is my data safe?","acceptedAnswer":{"@type":"Answer","text":"Yes. CLAWBACK is free to use with no signup or login. Your calculations are performed in your browser, and CLAWBACK does not require you to submit your sale or return details to use the calculator."}},
+{"@type":"Question","name":"Do eBay, Poshmark, Mercari or Depop charge a 'return fee'?","acceptedAnswer":{"@type":"Answer","text":"These platforms generally don't charge a separate line item called a 'return fee.' A forced return can still cost you through the refund, seller-paid return expenses, and loss in recoverable item value. Platform fee credits can also vary by reason."}},
 {"@type":"Question","name":"On eBay, do I get my fees back when an item is returned?","acceptedAnswer":{"@type":"Answer","text":"It depends on the reason. If the buyer simply changed their mind or the item didn't fit, eBay credits the final value fee and the per-order fee. If the return is 'not as described', damaged, or the wrong item, eBay credits the final value percentage but keeps the $0.30–$0.40 per-order fee. If eBay stepped in and ruled against you, or you refunded the buyer outside of eBay, you get no credit at all."}},
 {"@type":"Question","name":"Who pays the return shipping?","acceptedAnswer":{"@type":"Answer","text":"On eBay the seller pays return shipping for 'not as described', damaged, or wrong-item claims. On Mercari the buyer gets a free prepaid label for items up to 50 lbs, but the seller must pay the return label for anything over 50 lbs. Poshmark and Depop generally provide a prepaid return label on approved returns."}},
-{"@type":"Question","name":"Can I write off return losses on my taxes?","acceptedAnswer":{"@type":"Answer","text":"Generally yes — returned, damaged, or unsellable inventory can reduce your taxable income as a cost-of-goods adjustment. The key is documentation: after each loss, use the calculator's 'copy for taxes' line to keep a clean record, then confirm the treatment with a tax professional."}},
-{"@type":"Question","name":"Does Whatnot really take 8%, or is it more?","acceptedAnswer":{"@type":"Answer","text":"Whatnot advertises 8% commission, but payment processing is 2.9% + $0.30 on the gross order value — item plus buyer shipping plus buyer sales tax. On a $100 card with $8 shipping and $5 tax, the real take is about 12.7% before carrier weight clawbacks. Eligible categories get 0% commission on the portion above $1,500."}},
-{"@type":"Question","name":"Does Whatnot charge VAT on fees?","acceptedAnswer":{"@type":"Answer","text":"Yes, for UK and EU sellers. Whatnot adds 20% VAT on top of both the commission and the payment processing fee. CLAWBACK's Whatnot mode calculates VAT on both fee lines automatically when you select the UK or EU region."}},
-{"@type":"Question","name":"Does Vinted charge sellers any fees?","acceptedAnswer":{"@type":"Answer","text":"No. Vinted charges $0 seller fees in 2026 — no commission, no processing, no listing fee. The buyer pays a $0.70 + 5% protection fee plus shipping. Sellers keep 100% of their listed price."}}
+{"@type":"Question","name":"Can I write off return losses on my taxes?","acceptedAnswer":{"@type":"Answer","text":"Potentially, but don't treat every return as an automatic tax write-off. Tax treatment depends on your jurisdiction, accounting method, cost basis, and reimbursements. Keep records of refunds, returns, shipping, item costs, and reimbursements and confirm the treatment with a tax professional."}},
+{"@type":"Question","name":"Does Whatnot really take 8%, or is it more?","acceptedAnswer":{"@type":"Answer","text":"It depends on category and order total. In the US, many categories have an 8% commission, while some have lower rates. Payment processing is 2.9% + $0.30 based on total order value, which can include buyer-paid shipping and taxes. Your effective cost can therefore exceed the headline commission."}},
+{"@type":"Question","name":"Does Vinted charge sellers any fees?","acceptedAnswer":{"@type":"Answer","text":"No. Vinted charges $0 in seller selling fees in 2026 — no commission, no processing, no listing fee. When your sale completes, you receive the full selling price in your Vinted Wallet. The buyer pays the Buyer Protection fee plus shipping, neither of which is counted as seller loss. Optional paid promotions can cost sellers extra, and custom-shipping sellers may also pay shipping costs upfront."}}
 ]}
 </script>
 </head>
@@ -49,7 +564,7 @@
 <div class="float-sym" aria-hidden="true" style="bottom:-60px;left:-30px;font-size:280px;">¢</div>
 
 <div class="ticker" aria-hidden="true"><div class="ticker-track">
-  <span>EBAY KEEPS THE $0.30–$0.40 PER-ORDER FEE ON "NOT AS DESCRIBED" RETURNS ★ SELLERS PAY RETURN SHIPPING ON INAD CLAIMS ★ WHATNOT TAKES 2.9% ON BUYER SHIPPING &amp; TAX — MONEY YOU NEVER SEE ★ MERCARI CHARGES A 10% SELLING FEE AGAIN (2025) ★ DEPOP REFUNDS ALL FEES ON A REFUND ★ VINTED KEEPS YOU 100% — ZERO SELLER FEES ★ KNOW YOUR NUMBER BEFORE YOU APPEAL ★&nbsp;</span><span>EBAY KEEPS THE $0.30–$0.40 PER-ORDER FEE ON "NOT AS DESCRIBED" RETURNS ★ SELLERS PAY RETURN SHIPPING ON INAD CLAIMS ★ WHATNOT TAKES 2.9% ON BUYER SHIPPING &amp; TAX — MONEY YOU NEVER SEE ★ MERCARI CHARGES A 10% SELLING FEE AGAIN (2025) ★ DEPOP REFUNDS ALL FEES ON A REFUND ★ VINTED KEEPS YOU 100% — ZERO SELLER FEES ★ KNOW YOUR NUMBER BEFORE YOU APPEAL ★&nbsp;</span>
+  <span>EBAY KEEPS THE $0.30–$0.40 PER-ORDER FEE ON "NOT AS DESCRIBED" RETURNS ★ SELLERS PAY RETURN SHIPPING ON INAD CLAIMS ★ WHATNOT TAKES 2.9% ON BUYER SHIPPING &amp; TAX — MONEY YOU NEVER SEE ★ MERCARI CHARGES A 10% SELLING FEE AGAIN (2025) ★ DEPOP REFUNDS ALL FEES ON A REFUND ★ VINTED CHARGES $0 IN SELLER SELLING FEES ★ KNOW YOUR NUMBER BEFORE YOU APPEAL ★&nbsp;</span><span>EBAY KEEPS THE $0.30–$0.40 PER-ORDER FEE ON "NOT AS DESCRIBED" RETURNS ★ SELLERS PAY RETURN SHIPPING ON INAD CLAIMS ★ WHATNOT TAKES 2.9% ON BUYER SHIPPING &amp; TAX — MONEY YOU NEVER SEE ★ MERCARI CHARGES A 10% SELLING FEE AGAIN (2025) ★ DEPOP REFUNDS ALL FEES ON A REFUND ★ VINTED CHARGES $0 IN SELLER SELLING FEES ★ KNOW YOUR NUMBER BEFORE YOU APPEAL ★&nbsp;</span>
 </div></div>
 
 <header class="site-head">
@@ -94,37 +609,606 @@
       </div>
       <div class="fee-note" id="feeNote" aria-live="polite"></div>
 
-      <!-- WHATNOT extra fields -->
+      <!-- ========== EBAY CONDITIONAL DECISION-TREE UI ========== -->
+      <div class="wn-fields" id="ebayFields" hidden>
+        <p class="wn-head">⚠ EBAY FORCED-RETURN LOSS — ANSWER ONLY WHAT APPLIES</p>
+        <p class="wn-hint">Questions appear based on your scenario. Irrelevant fields stay hidden and never affect your result.</p>
+
+        <div class="field"><label for="ebaySalePrice">Original sale price</label>
+          <input type="number" id="ebaySalePrice" min="0" step="0.01" inputmode="decimal" placeholder="45.00" required></div>
+
+        <div class="field"><label for="ebayBuyerShipping">Buyer-paid shipping (optional)</label>
+          <input type="number" id="ebayBuyerShipping" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0">
+          <p class="wn-hint">Enter the shipping amount the buyer paid on the order, if any.</p></div>
+
+        <div class="field"><label for="ebayRefundReason">Why did the buyer get a refund?</label>
+          <select id="ebayRefundReason" required>
+            <option value="" selected disabled>Select a reason…</option>
+            <option value="inad">Item not as described</option>
+            <option value="damaged">Arrived damaged</option>
+            <option value="wrong_item">Wrong item received</option>
+            <option value="defective">Missing parts / defective</option>
+            <option value="changed_mind">Buyer changed mind</option>
+            <option value="ordered_wrong">Ordered wrong item</option>
+            <option value="not_received">Item not received</option>
+            <option value="other">Other</option>
+          </select></div>
+
+        <!-- Group D: other outcome -->
+        <div class="field" id="ebayOtherOutcomeWrap" hidden><label for="ebayOtherOutcome">What happened to the item?</label>
+          <select id="ebayOtherOutcome">
+            <option value="" selected disabled>Select…</option>
+            <option value="kept">Buyer kept the item</option>
+            <option value="returned">Buyer returned the item</option>
+            <option value="never">Item was never received</option>
+            <option value="other">Other</option>
+          </select></div>
+        <div class="field" id="ebayOtherDetailsWrap" hidden><label for="ebayOtherDetails">Additional details (optional, for your statement only)</label>
+          <input type="text" id="ebayOtherDetails" placeholder="Brief note — not used in the math"></div>
+
+        <!-- Returned? (groups A & B) -->
+        <div class="field" id="ebayReturnedWrap" hidden><label for="ebayItemReturned">Did the item come back to you?</label>
+          <select id="ebayItemReturned">
+            <option value="" selected disabled>Select…</option>
+            <option value="yes">Yes, I received it</option>
+            <option value="no">No, I never got it back</option>
+          </select></div>
+
+        <!-- Returned-YES branch (reordered per scenario) -->
+        <div id="ebayBranch">
+          <div class="field" id="ebayConditionWrap" hidden><label for="ebayReturnedCondition">What condition did it come back in?</label>
+            <select id="ebayReturnedCondition">
+              <option value="" selected disabled>Select…</option>
+              <option value="same">Same condition</option>
+              <option value="minor">Minor damage</option>
+              <option value="major">Major damage</option>
+              <option value="unusable">Unusable</option>
+              <option value="different">Different item</option>
+            </select></div>
+          <div class="field" id="ebayCurrentValueWrap" hidden><label for="ebayCurrentItemValue">What could you sell it for now?</label>
+            <input type="number" id="ebayCurrentItemValue" min="0" step="0.01" inputmode="decimal" placeholder="25.00">
+            <p class="wn-hint">Estimate what you could realistically sell the returned item for today.</p></div>
+          <div class="field" id="ebayShipPayerWrap" hidden><label for="ebayReturnShippingPayer">Who was charged for return shipping?</label>
+            <select id="ebayReturnShippingPayer">
+              <option value="" selected disabled>Select…</option>
+              <option value="me">Me</option>
+              <option value="buyer">Buyer</option>
+              <option value="ebay">eBay</option>
+              <option value="no_one">No one</option>
+            </select></div>
+          <div class="field" id="ebayShipCostWrap" hidden><label for="ebayReturnShippingCost">Return shipping cost</label>
+            <input type="number" id="ebayReturnShippingCost" min="0" step="0.01" inputmode="decimal" placeholder="8.50"></div>
+          <div class="field" id="ebayDedEnabledWrap" hidden><label for="ebayDeductionEnabled">Did you deduct money from the refund?</label>
+            <select id="ebayDeductionEnabled">
+              <option value="no" selected>No</option>
+              <option value="yes">Yes</option>
+            </select></div>
+          <div class="field" id="ebayDeductionWrap" hidden><label for="ebayRefundDeduction">Amount deducted</label>
+            <input type="number" id="ebayRefundDeduction" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+        </div>
+
+        <!-- Refund handling -->
+        <div class="field" id="ebayHandlerWrap" hidden><label for="ebayRefundHandler">How was the refund handled?</label>
+          <select id="ebayRefundHandler">
+            <option value="" selected disabled>Select…</option>
+            <option value="on_ebay">I refunded the buyer on eBay</option>
+            <option value="stepped_in">eBay stepped in</option>
+            <option value="outside">I refunded outside eBay</option>
+          </select></div>
+        <div class="field" id="ebayRefundTypeWrap" hidden><label for="ebayRefundType">Was it a full or partial refund?</label>
+          <select id="ebayRefundType">
+            <option value="" selected disabled>Select…</option>
+            <option value="full">Full refund</option>
+            <option value="partial">Partial refund</option>
+          </select></div>
+        <div class="field" id="ebayRefundAmountWrap" hidden><label for="ebayRefundAmount">Total amount refunded to buyer (including tax, if shown)</label>
+<input type="number" id="ebayRefundAmount" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+<p class="wn-hint">Use the total refund amount shown in your eBay transaction/refund record. eBay's fee-credit calculation is based on the total amount refunded to the buyer.</p></div>
+
+        <!-- Advanced (optional, collapsed) -->
+        <details class="evidence" id="ebayAdvanced">
+          <summary>More precise eBay fee (optional)</summary>
+          <div class="field"><label for="ebayCategory">eBay fee category</label>
+            <select id="ebayCategory">
+              <option value="most" selected>Most categories</option>
+              <option value="books">Books / Magazines / Movies &amp; TV / Music</option>
+              <option value="coins">Coins &amp; Paper Money</option>
+              <option value="bags">Women's Bags &amp; Handbags</option>
+              <option value="jewelry">Jewelry &amp; Watches</option>
+              <option value="watches">Watches, Parts &amp; Accessories</option>
+              <option value="shoes">Athletic Shoes</option>
+              <option value="custom">Other / Custom rate</option>
+            </select></div>
+          <div class="field" id="ebayCustomRateWrap" hidden><label for="ebayCustomFeeRate">Custom final value fee rate (%)</label>
+            <input type="number" id="ebayCustomFeeRate" min="0" max="100" step="0.01" placeholder="13.6"></div>
+          <div class="field"><label for="ebaySalesTax">Buyer-paid sales tax (optional)</label>
+            <input type="number" id="ebaySalesTax" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0">
+            <p class="wn-hint">Optional. Add sales tax if you want a more precise eBay fee estimate.</p></div>
+        </details>
+
+        <!-- eBay result containers (hidden until calc engine loads) -->
+        <div id="ebayResult" hidden>
+          <div class="r-total"><span>TOTAL LOSS</span><span id="ebayLossAmount">$0.00</span></div>
+          <div id="ebayBreakdown"></div>
+        </div>
+      </div>
+      <!-- ========== /EBAY DECISION TREE ========== -->
+
+      <!-- ========== DEPOP CONDITIONAL DECISION-TREE UI ========== -->
+      <div class="wn-fields" id="depopFields" hidden>
+        <p class="wn-head">⚠ DEPOP FORCED-RETURN LOSS — ANSWER ONLY WHAT APPLIES</p>
+        <p class="wn-hint">Questions appear based on your scenario. Irrelevant fields stay hidden and never affect your result.</p>
+
+        <div class="field"><label for="depopMarket">Seller market</label>
+          <select id="depopMarket" required>
+            <option value="US" selected>United States (USD)</option>
+            <option value="UK">United Kingdom (GBP)</option>
+            <option value="AU">Australia (AUD)</option>
+            <option value="OTHER">Other (PayPal / 10% selling fee)</option>
+          </select>
+          <p class="wn-hint" id="depopMarketHint">US/UK/AU: 0% selling fee. Other: 10% selling fee + PayPal (rate unknown).</p></div>
+
+        <div class="field"><label for="depopSalePrice">Original item sale price</label>
+          <input type="number" id="depopSalePrice" min="0" step="0.01" inputmode="decimal" placeholder="45.00" required></div>
+
+        <div class="field"><label for="depopBuyerShipping">Buyer-paid shipping (optional)</label>
+          <input type="number" id="depopBuyerShipping" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0">
+          <p class="wn-hint">Enter the shipping amount the buyer paid on the order, if any.</p></div>
+
+        <div class="field"><label for="depopShipMethod">Shipping method</label>
+          <select id="depopShipMethod" required>
+            <option value="" selected disabled>Select…</option>
+            <option value="depop">Depop Shipping (generated label)</option>
+            <option value="seller">Seller-arranged shipping</option>
+          </select></div>
+
+        <div class="field"><label for="depopRefundStatus">Was the buyer actually refunded?</label>
+          <select id="depopRefundStatus" required>
+            <option value="" selected disabled>Select…</option>
+            <option value="no">No refund</option>
+            <option value="partial">Partial refund</option>
+            <option value="full">Full refund</option>
+          </select></div>
+
+        <!-- PARTIAL branch -->
+        <div class="field" id="depopPartialAmountWrap" hidden><label for="depopRefundAmount">Actual refund amount</label>
+          <input type="number" id="depopRefundAmount" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+          <p class="wn-hint">The buyer keeps the item on a partial refund — no return questions needed.</p></div>
+
+        <!-- FULL branch: Did item come back? -->
+        <div class="field" id="depopReturnedWrap" hidden><label for="depopItemReturned">Did the item come back to you?</label>
+          <select id="depopItemReturned">
+            <option value="" selected disabled>Select…</option>
+            <option value="yes">Yes, I received it</option>
+            <option value="no">No, I never got it back</option>
+          </select></div>
+
+        <!-- FULL + RETURNED: optional exact refund, recovered value, seller-paid return shipping -->
+        <div id="depopFullReturnedBranch">
+          <div class="field" id="depopActualRefundWrap" hidden><label for="depopActualRefundAmount">Exact amount refunded (optional — leave blank to derive)</label>
+            <input type="number" id="depopActualRefundAmount" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+            <p class="wn-hint">If you know the exact amount the buyer got back, enter it. Otherwise we derive it from your sale price + buyer shipping.</p></div>
+          <div class="field" id="depopRecoveredValueWrap" hidden><label for="depopRecoveredValue">What is the item worth to you now?</label>
+            <input type="number" id="depopRecoveredValue" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+            <p class="wn-hint">Your CLAWBACK seller estimate — not an official Depop valuation.</p></div>
+          <div class="field" id="depopSellerPaidShipWrap" hidden><label for="depopSellerPaidReturnShip">Did you pay return shipping out of pocket?</label>
+            <select id="depopSellerPaidReturnShip">
+              <option value="" selected disabled>Select…</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></div>
+          <div class="field" id="depopReturnShipCostWrap" hidden><label for="depopReturnShipCost">Actual return shipping cost</label>
+            <input type="number" id="depopReturnShipCost" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+        </div>
+
+        <!-- FULL + NOT RETURNED: Why not? -->
+        <div class="field" id="depopNotReturnedWhyWrap" hidden><label for="depopNotReturnedWhy">Why did the item not come back?</label>
+          <select id="depopNotReturnedWhy">
+            <option value="" selected disabled>Select…</option>
+            <option value="transit">Transit loss / damage</option>
+            <option value="other">Other / not returned</option>
+          </select></div>
+
+        <!-- FULL + NOT RETURNED + TRANSIT: protection check + compensation -->
+        <div class="field" id="depopProtectionCheckWrap" hidden><label for="depopProtectionCheck">Depop Seller Protection check</label>
+          <select id="depopProtectionCheck">
+            <option value="" selected disabled>Select…</option>
+            <option value="eligible">Eligible (Depop Shipping + Buy Button + within deadline + correct address)</option>
+            <option value="ineligible">Ineligible / not covered</option>
+            <option value="unknown">Not sure</option>
+          </select>
+          <p class="wn-hint" id="depopProtectionHint">Protection limits (not guaranteed compensation): £250 / $300 / A$450. Only applies if all eligibility conditions are met.</p></div>
+        <div class="field" id="depopCompensationWrap" hidden><label for="depopCompensationReceived">Actual compensation received (optional)</label>
+          <input type="number" id="depopCompensationReceived" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+          <p class="wn-hint">Enter what you actually got back — never auto-filled from protection limits.</p></div>
+
+        <!-- Depop result containers -->
+        <div id="depopResult" hidden>
+          <div class="r-total"><span>TOTAL LOSS</span><span id="depopLossAmount">$0.00</span></div>
+          <div id="depopBreakdown"></div>
+        </div>
+      </div>
+      <!-- ========== /DEPOP DECISION TREE ========== -->
+
+      <!-- ========== MERCARI CONDITIONAL DECISION-TREE UI ========== -->
+      <div class="wn-fields" id="mercariFields" hidden>
+        <p class="wn-head">⚠ MERCARI FORCED-RETURN LOSS — ANSWER ONLY WHAT APPLIES</p>
+        <p class="wn-hint">Questions appear based on your scenario. Irrelevant fields stay hidden and never affect your result.</p>
+
+        <div class="field"><label for="mercariSalePrice">Original sale price</label>
+          <input type="number" id="mercariSalePrice" min="0" step="0.01" inputmode="decimal" placeholder="45.00" required></div>
+
+        <div class="field"><label for="mercariBuyerShipping">Buyer-paid shipping</label>
+          <input type="number" id="mercariBuyerShipping" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0">
+          <p class="wn-hint">Enter the shipping amount the buyer paid at checkout. Do not include the buyer's Protection fee.</p></div>
+
+        <div class="field"><label for="mercariActualRefund">Actual buyer refund (optional — leave blank to derive)</label>
+          <input type="number" id="mercariActualRefund" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+          <p class="wn-hint">If you know the exact refund Mercari issued, enter it. Otherwise we derive it from sale price + buyer-paid shipping.</p></div>
+
+        <div class="field"><label for="mercariRefundReason">Why was the buyer refunded?</label>
+          <select id="mercariRefundReason" required>
+            <option value="" selected disabled>Select reason…</option>
+            <option value="snad">Item significantly not as described</option>
+            <option value="damaged">Item arrived damaged</option>
+            <option value="wrong">Wrong item / materially incorrect</option>
+            <option value="inauthentic">Inauthentic / counterfeit</option>
+            <option value="other">Other</option>
+          </select>
+          <p class="wn-hint">Scenario classification only — this never creates a percentage deduction.</p></div>
+
+        <div class="field"><label>Was the item returned to you?</label>
+          <div class="yn-row">
+            <button type="button" class="yn-btn mercari-yn-returned" data-val="yes">YES</button>
+            <button type="button" class="yn-btn mercari-yn-returned" data-val="no">NO</button>
+          </div></div>
+
+        <!-- YES branch -->
+        <div class="field" id="mercariCurrentValueWrap" hidden><label for="mercariCurrentItemValue">What is the item worth to you now?</label>
+          <input type="number" id="mercariCurrentItemValue" min="0" step="0.01" inputmode="decimal" placeholder="20.00">
+          <p class="wn-hint">Estimate what you could realistically recover from the item now.</p></div>
+
+        <div class="field" id="mercariReturnShipPayerWrap" hidden><label for="mercariReturnShipPayer">Who paid return shipping?</label>
+          <select id="mercariReturnShipPayer">
+            <option value="" selected disabled>Select…</option>
+            <option value="mercari">Mercari</option>
+            <option value="buyer">Buyer</option>
+            <option value="seller">Seller</option>
+            <option value="no_one">No one</option>
+          </select></div>
+
+        <div class="field" id="mercariReturnShipCostWrap" hidden><label for="mercariReturnShipCost">Return shipping cost</label>
+          <input type="number" id="mercariReturnShipCost" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+
+        <!-- NO branch -->
+        <div class="field" id="mercariNotReturnedWhyWrap" hidden><label for="mercariNotReturnedWhy">Why didn't you get the item back?</label>
+          <select id="mercariNotReturnedWhy">
+            <option value="" selected disabled>Select…</option>
+            <option value="transit">Lost/damaged in transit</option>
+            <option value="buyer_kept">Buyer did not return it</option>
+            <option value="other">Other</option>
+          </select></div>
+
+        <div class="field" id="mercariShipMethodWrap" hidden><label>Shipping method</label>
+          <div class="yn-row">
+            <button type="button" class="yn-btn mercari-yn-method" data-val="prepaid">Mercari prepaid label</button>
+            <button type="button" class="yn-btn mercari-yn-method" data-val="seller">Seller-arranged shipping</button>
+          </div></div>
+
+        <div class="field" id="mercariReimbursedWrap" hidden><label>Did Mercari reimburse you?</label>
+          <div class="yn-row">
+            <button type="button" class="yn-btn mercari-yn-reimb" data-val="yes">YES</button>
+            <button type="button" class="yn-btn mercari-yn-reimb" data-val="no">NO</button>
+          </div></div>
+
+        <div class="field" id="mercariReimbursementWrap" hidden><label for="mercariReimbursement">Actual Mercari reimbursement</label>
+          <input type="number" id="mercariReimbursement" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+          <p class="wn-hint">Enter the actual reimbursement Mercari paid you. Don't enter the maximum protection amount unless that is what you actually received.</p></div>
+
+        <div class="field" id="mercariSellerArrangedNote" hidden><p class="wn-hint">Seller-arranged shipments are not covered by Mercari Shipping Protection.</p></div>
+
+        <!-- Mercari result containers -->
+        <div id="mercariResult" hidden>
+          <div class="r-total"><span>ESTIMATED FORCED-RETURN LOSS</span><span id="mercariLossAmount">$0.00</span></div>
+          <div id="mercariBreakdown"></div>
+          <p class="wn-hint" id="mercariFeeNote2" style="margin-top:10px;"></p>
+          <p class="wn-hint" id="mercariProtectionNote" style="margin-top:6px;"></p>
+        </div>
+      </div>
+      <!-- ========== /MERCARI DECISION TREE ========== -->
+
+      <!-- ========== POSHMARK CONDITIONAL DECISION-TREE UI ========== -->
+      <div class="wn-fields" id="poshmarkFields" hidden>
+        <p class="wn-head">⚠ POSHMARK RETURN LOSS — LET'S FIGURE OUT WHAT YOU REALLY LOST</p>
+        <div class="field"><label for="poshmarkSalePrice">What was the sale price?</label>
+          <input type="number" id="poshmarkSalePrice" min="0" step="0.01" placeholder="45.00" required>
+          <p class="wn-hint" id="poshmarkFeeDisplay">Poshmark selling fee: $0.00</p></div>
+        <div class="field"><label for="poshmarkBuyerShipping">How much shipping did the buyer pay?</label>
+          <input type="number" id="poshmarkBuyerShipping" min="0" step="0.01" value="6.49">
+          <p class="wn-hint">Context only — separate from your seller-paid return costs.</p></div>
+        <div class="field"><label for="poshmarkWhatHappened">What happened to this order?</label>
+          <select id="poshmarkWhatHappened" required>
+            <option value="" selected disabled>Select…</option>
+            <option value="full">Buyer got a full refund</option>
+            <option value="partial">Buyer got a partial refund</option>
+            <option value="no">No refund was completed</option>
+          </select></div>
+        <!-- PARTIAL -->
+        <div class="field" id="poshmarkPartialAmountWrap" hidden><label for="poshmarkPartialAmount">How much did you refund the buyer?</label>
+          <input type="number" id="poshmarkPartialAmount" min="0" step="0.01" placeholder="15.00"></div>
+        <div class="field" id="poshmarkPExpenseWrap" hidden><label>Did you personally pay anything else on this case?</label>
+          <div class="yn-row"><button type="button" class="yn-btn poshmark-yn-p-expense" data-val="no">NO</button><button type="button" class="yn-btn poshmark-yn-p-expense" data-val="yes">YES</button></div></div>
+        <div class="field" id="poshmarkPExpenseCostWrap" hidden><label for="poshmarkPartialExpenseCost">How much?</label>
+          <input type="number" id="poshmarkPartialExpenseCost" min="0" step="0.01" placeholder="0.00"></div>
+        <div class="field" id="poshmarkPReimbWrap" hidden><label>Did Poshmark reimburse you anything?</label>
+          <div class="yn-row"><button type="button" class="yn-btn poshmark-yn-p-reimb" data-val="no">NO</button><button type="button" class="yn-btn poshmark-yn-p-reimb" data-val="yes">YES</button></div></div>
+        <div class="field" id="poshmarkPReimbAmtWrap" hidden><label for="poshmarkPartialReimbAmt">How much?</label>
+          <input type="number" id="poshmarkPartialReimbAmt" min="0" step="0.01" placeholder="0.00"></div>
+        <!-- FULL -->
+        <div class="field" id="poshmarkReturnedWrap" hidden><label>Did you get the item back?</label>
+          <div class="yn-row"><button type="button" class="yn-btn poshmark-yn-returned" data-val="yes">YES</button><button type="button" class="yn-btn poshmark-yn-returned" data-val="no">NO</button></div></div>
+        <div class="field" id="poshmarkFullActualRefundWrap" hidden><label for="poshmarkFullActualRefund">Actual amount refunded (optional — leave blank to use sale price)</label>
+          <input type="number" id="poshmarkFullActualRefund" min="0" step="0.01" placeholder="0.00"></div>
+        <div class="field" id="poshmarkCurrentValueWrap" hidden><label for="poshmarkCurrentValue">What could you realistically sell it for now?</label>
+          <input type="number" id="poshmarkCurrentValue" min="0" step="0.01" placeholder="20.00"></div>
+        <div class="field" id="poshmarkConditionWrap" hidden><label for="poshmarkCondition">What condition did it come back in?</label>
+          <select id="poshmarkCondition">
+            <option value="" selected disabled>Select…</option>
+            <option value="same">Same condition</option>
+            <option value="minor">Minor damage</option>
+            <option value="major">Major damage</option>
+            <option value="unusable">Unusable</option>
+            <option value="different">Different item</option>
+          </select></div>
+        <div class="field" id="poshmarkExpenseWrap" hidden><label>Did you personally pay anything to get the item back?</label>
+          <div class="yn-row"><button type="button" class="yn-btn poshmark-yn-expense" data-val="no">NO</button><button type="button" class="yn-btn poshmark-yn-expense" data-val="yes">YES</button></div></div>
+        <div class="field" id="poshmarkExpenseCostWrap" hidden><label for="poshmarkExpenseCost">How much?</label>
+          <input type="number" id="poshmarkExpenseCost" min="0" step="0.01" placeholder="0.00"></div>
+        <div class="field" id="poshmarkReimbWrap" hidden><label>Did Poshmark reimburse you anything?</label>
+          <div class="yn-row"><button type="button" class="yn-btn poshmark-yn-reimb" data-val="no">NO</button><button type="button" class="yn-btn poshmark-yn-reimb" data-val="yes">YES</button></div></div>
+        <div class="field" id="poshmarkReimbAmtWrap" hidden><label for="poshmarkReimbAmt">How much?</label>
+          <input type="number" id="poshmarkReimbAmt" min="0" step="0.01" placeholder="0.00"></div>
+        <!-- FULL + NOT RETURNED -->
+        <div class="field" id="poshmarkNotReturnedWhyWrap" hidden><label for="poshmarkNotReturnedWhy">Why don't you have the item?</label>
+          <select id="poshmarkNotReturnedWhy">
+            <option value="" selected disabled>Select…</option>
+            <option value="never_received">Order never received</option>
+            <option value="transit">Item lost/damaged in transit</option>
+            <option value="buyer_kept">Buyer never returned it</option>
+            <option value="other">Other</option>
+          </select></div>
+        <div class="field" id="poshmarkNReimbWrap" hidden><label>Did you receive any reimbursement?</label>
+          <div class="yn-row"><button type="button" class="yn-btn poshmark-yn-n-reimb" data-val="no">NO</button><button type="button" class="yn-btn poshmark-yn-n-reimb" data-val="yes">YES</button></div></div>
+        <div class="field" id="poshmarkNReimbAmtWrap" hidden><label for="poshmarkNotReimbAmt">How much?</label>
+          <input type="number" id="poshmarkNotReimbAmt" min="0" step="0.01" placeholder="0.00"></div>
+        <!-- WHY layer -->
+        <div class="field" id="poshmarkReasonWrap" hidden><label for="poshmarkReason">Why did the buyer receive the refund?</label>
+          <select id="poshmarkReason">
+            <option value="" selected disabled>Select…</option>
+            <option value="not_as_described">Item not as described</option>
+            <option value="damaged">Item arrived damaged</option>
+            <option value="wrong_missing">Wrong / missing item</option>
+            <option value="not_authentic">Item not authentic</option>
+            <option value="never_received">Order never received</option>
+            <option value="other">Other</option>
+          </select></div>
+        <div id="poshmarkResult" hidden>
+          <div class="r-total"><span id="poshmarkHeadline">THIS RETURN COST YOU</span><span id="poshmarkLossAmount">$0.00</span></div>
+          <div id="poshmarkBreakdown"></div>
+          <p class="wn-hint" id="poshmarkExplanation" style="margin-top:10px;"></p>
+          <p class="wn-hint" id="poshmarkFeeNote" style="margin-top:6px;"></p>
+        </div>
+      </div>
+      <!-- ========== /POSHMARK DECISION TREE ========== -->
+
+<!-- WHATNOT extra fields -->
       <div class="wn-fields" id="wnFields" hidden>
-        <p class="wn-head">⚠ WHATNOT PAYOUT AUDIT — MONEY YOU NEVER POCKET</p>
-        <p class="wn-hint">Only the sale price is required — the rest defaults to 0. Fill in what you know for a sharper number.</p>
-        <div class="field"><label for="wnRegion">Region</label>
+        <p class="wn-head">⚠ WHATNOT FORCED-RETURN LOSS — ANSWER ONLY WHAT APPLIES</p>
+        <p class="wn-hint">Questions appear based on your scenario. Irrelevant fields stay hidden and never affect your result.</p>
+        <div class="field"><label for="wnSalePrice">Final sale price</label>
+          <input type="number" id="wnSalePrice" min="0" step="0.01" placeholder="45.00" required></div>
+        <div class="field"><label for="wnBuyerShipping">Buyer-paid shipping</label>
+          <input type="number" id="wnBuyerShipping" min="0" step="0.01" placeholder="0.00" value="0"></div>
+        <div class="field"><label for="wnBuyerTax">Buyer-paid tax (optional)</label>
+          <input type="number" id="wnBuyerTax" min="0" step="0.01" placeholder="0.00" value="0"></div>
+        <div class="field"><label for="wnRegion">Seller country / region</label>
           <select id="wnRegion">
             <option value="us" selected>United States</option>
+            <option value="ca">Canada</option>
+            <option value="au">Australia</option>
             <option value="uk">United Kingdom</option>
             <option value="eu">Europe</option>
-          </select>
-          <p class="wn-hint" style="margin:6px 0 0;">Canada &amp; Australia rates change often — we only publish verified rates. Verify those in-app.</p>
-        </div>
+            <option value="jp">Japan</option>
+          </select></div>
         <div class="field"><label for="wnCategory">Category</label>
           <select id="wnCategory">
-            <option value="std" selected>Comics/TCG/Toys/Bags/Jewelry — 8% (cap $1,500)</option>
-            <option value="coins">Coins &amp; Money — 4% (cap $1,500)</option>
-            <option value="pallets">Pallets — 4% (no cap)</option>
-            <option value="other">All other categories — 8% (no cap)</option>
+            <option value="std" selected>Comics / TCG / Sports / Toys &amp; Hobbies</option>
+            <option value="coins">Coins &amp; Money</option>
+            <option value="pallets">Pallets</option>
+            <option value="other">All other categories</option>
           </select></div>
-        <div class="wn-grid">
-          <div class="field"><label for="wnShip">Buyer shipping paid</label><input type="number" id="wnShip" min="0" step="0.01" placeholder="7.50"></div>
-          <div class="field"><label for="wnTax">Buyer sales tax</label><input type="number" id="wnTax" min="0" step="0.01" placeholder="0.00"></div>
-          <div class="field"><label for="wnClaw">Carrier clawbacks</label><input type="number" id="wnClaw" min="0" step="0.01" placeholder="4.50"></div>
-          <div class="field"><label for="wnCheckouts">Separate checkouts</label><input type="number" id="wnCheckouts" min="1" step="1" value="1"></div>
-          <div class="field"><label for="wnLabel">Your shipping label</label><input type="number" id="wnLabel" min="0" step="0.01" placeholder="9.00"></div>
-          <div class="field"><label for="wnCost">Item cost (optional)</label><input type="number" id="wnCost" min="0" step="0.01" placeholder="12.00"></div>
+        <p class="wn-hint" id="wnFeeDisplay">Estimated Whatnot fees: —</p>
+        <div class="field"><label for="wnWhatHappened">What happened?</label>
+          <select id="wnWhatHappened" required>
+            <option value="" selected disabled>Select…</option>
+            <option value="no">No refund</option>
+            <option value="partial">Partial refund</option>
+            <option value="full">Full refund</option>
+          </select></div>
+        <div class="field" id="wnPartialAmountWrap" hidden><label for="wnPartialAmount">Actual partial refund amount</label>
+          <input type="number" id="wnPartialAmount" min="0" step="0.01" placeholder="0.00"></div>
+        <div class="field" id="wnPartialExpenseWrap" hidden><label for="wnPartialExpenseCost">Seller-paid expense to resolve (optional)</label>
+          <input type="number" id="wnPartialExpenseCost" min="0" step="0.01" placeholder="0.00"></div>
+        <div class="field" id="wnReturnedWrap" hidden><label>Was the item returned to you?</label>
+          <div class="yn-row"><button type="button" class="yn-btn wn-yn-returned" data-val="yes">YES</button><button type="button" class="yn-btn wn-yn-returned" data-val="no">NO</button></div></div>
+        <div class="field" id="wnFullActualRefundWrap" hidden><label for="wnFullActualRefund">Actual refund / billback amount (optional)</label>
+          <input type="number" id="wnFullActualRefund" min="0" step="0.01" placeholder="0.00">
+          <p class="wn-hint">Leave blank to derive from Whatnot SPS rules.</p></div>
+        <div class="field" id="wnCurrentValueWrap" hidden><label for="wnCurrentValue">Current resale / recovery value</label>
+          <input type="number" id="wnCurrentValue" min="0" step="0.01" placeholder="0.00">
+          <p class="wn-hint">Your estimated recovery value — not an official Whatnot valuation.</p></div>
+        <div class="field" id="wnConditionWrap" hidden><label for="wnCondition">Returned item condition</label>
+          <select id="wnCondition">
+            <option value="" selected disabled>Select…</option>
+            <option value="same">Same / sellable</option>
+            <option value="minor">Minor damage</option>
+            <option value="major">Major damage</option>
+            <option value="unsellable">Unsellable</option>
+          </select></div>
+        <div class="field" id="wnReturnShippingWrap" hidden><label for="wnReturnShipping">Seller-paid return shipping</label>
+          <input type="number" id="wnReturnShipping" min="0" step="0.01" placeholder="0.00"></div>
+        <div class="field" id="wnNotReturnedWhyWrap" hidden><label for="wnNotReturnedWhy">Why wasn't the item returned?</label>
+          <select id="wnNotReturnedWhy">
+            <option value="" selected disabled>Select…</option>
+            <option value="seller_chose">Seller chose refund without return</option>
+            <option value="buyer_did_not">Buyer did not return it</option>
+            <option value="item_lost">Item was lost</option>
+            <option value="transit">Damaged/lost in transit</option>
+            <option value="rts">Returned-to-sender</option>
+            <option value="other">Other</option>
+          </select></div>
+        <div class="field" id="wnProtStatusWrap" hidden><label for="wnProtStatus">Has Whatnot confirmed any reimbursement/coverage?</label>
+          <select id="wnProtStatus">
+            <option value="" selected disabled>Select…</option>
+            <option value="yes">Yes — enter confirmed amount</option>
+            <option value="no">No</option>
+            <option value="undecided">Not yet decided</option>
+          </select></div>
+        <div class="field" id="wnProtAmountWrap" hidden><label for="wnProtAmount">Confirmed reimbursement amount</label>
+          <input type="number" id="wnProtAmount" min="0" step="0.01" placeholder="0.00"></div>
+        <div class="field" id="wnCarrierOutsideWrap" hidden><label>Was the carrier failure confirmed outside your control?</label>
+          <div class="yn-row"><button type="button" class="yn-btn wn-yn-carrier" data-val="yes">YES</button><button type="button" class="yn-btn wn-yn-carrier" data-val="no">NO</button></div></div>
+        <div class="field" id="wnProofShipWrap" hidden><label>Do you have valid proof of shipment/drop-off?</label>
+          <div class="yn-row"><button type="button" class="yn-btn wn-yn-proof" data-val="yes">YES</button><button type="button" class="yn-btn wn-yn-proof" data-val="no">NO</button></div></div>
+        <div class="field" id="wnReasonWrap" hidden><label for="wnReason">Refund / support reason</label>
+          <select id="wnReason">
+            <option value="" selected disabled>Select…</option>
+            <option value="not_as_described">Item not as described</option>
+            <option value="condition">Condition did not match</option>
+            <option value="wrong">Wrong item / size / color</option>
+            <option value="missing">Missing item</option>
+            <option value="damaged_transit">Damaged in transit</option>
+            <option value="defective">Defective / doesn't work / expired</option>
+            <option value="delayed">Delayed / not shipped</option>
+            <option value="rts">Returned to Sender</option>
+            <option value="counterfeit">Counterfeit / prohibited</option>
+            <option value="remorse">Buyer remorse / other</option>
+          </select></div>
+        <div id="wnResult" hidden>
+          <div class="r-total"><span id="wnHeadline">ESTIMATED SELLER LOSS</span><span id="wnLossAmount">$0.00</span></div>
+          <div id="wnBreakdown"></div>
+          <p class="wn-hint" id="wnExposureNote" style="margin-top:8px;"></p>
+          <p class="wn-hint" id="wnProtectionNote" style="margin-top:6px;"></p>
+          <p class="wn-hint" id="wnFeeNote" style="margin-top:6px;"></p>
         </div>
       </div>
 
+      <!-- ========== VINTED CONDITIONAL DECISION-TREE UI ========== -->
+      <div class="wn-fields" id="vintedFields" hidden>
+        <p class="wn-head">⚠ VINTED SELLER LOSS — ANSWER ONLY WHAT APPLIES</p>
+        <p class="wn-hint">Vinted charges $0 in seller selling fees — when your sale completes, you receive the full selling price. Loss only comes from refunds, return costs, and unrecovered item value.</p>
+        <div class="field"><label for="vtSalePrice">Selling price</label>
+          <input type="number" id="vtSalePrice" min="0" step="0.01" placeholder="100.00" required></div>
+        <div class="field"><label for="vtScenario">What happened to this order?</label>
+          <select id="vtScenario" required>
+            <option value="" selected disabled>Select…</option>
+            <option value="no_refund">No refund / completed normally</option>
+            <option value="partial">Partial refund (buyer keeps item)</option>
+            <option value="full_keep">Full refund — buyer keeps item</option>
+            <option value="full_return">Full refund — return required</option>
+            <option value="lost_transit">Lost in transit</option>
+            <option value="damaged_transit">Damaged in transit</option>
+            <option value="rts">Returned to sender</option>
+            <option value="return_parcel">Return parcel lost/damaged</option>
+            <option value="snad">Significantly not as described (SNAD)</option>
+            <option value="remorse">Buyer remorse / doesn't fit (voluntary)</option>
+          </select></div>
+        <div class="field" id="vtSubChoiceWrap" hidden><label for="vtSubChoice">How was it resolved?</label>
+          <select id="vtSubChoice">
+            <option value="" selected disabled>Select…</option>
+            <option value="no_refund">No refund given</option>
+            <option value="partial">Partial refund (buyer keeps item)</option>
+            <option value="full_keep">Full refund — buyer keeps item</option>
+            <option value="full_return">Full refund — item returned</option>
+          </select>
+          <p class="wn-hint">For SNAD: select how the issue was actually resolved. For buyer remorse / doesn't fit: this is a voluntary-resolution estimate — Vinted does not automatically require a refund for fit or preference.</p>
+        </div>
+        <div class="field" id="vtPartialAmountWrap" hidden><label for="vtPartialAmount">Partial refund amount</label>
+          <input type="number" id="vtPartialAmount" min="0" step="0.01" placeholder="0.00"></div>
+        <div class="field" id="vtFullActualWrap" hidden><label for="vtFullActual">Actual refund / seller exposure (optional)</label>
+          <input type="number" id="vtFullActual" min="0" step="0.01" placeholder="0.00">
+          <p class="wn-hint">Leave blank to use the selling price as your exposure.</p></div>
+        <div class="field" id="vtRtsReceivedWrap" hidden><label for="vtRtsReceived">Did you receive the item back?</label>
+          <select id="vtRtsReceived">
+            <option value="" selected disabled>Select…</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select></div>
+        <div class="field" id="vtReturnConditionWrap" hidden><label for="vtReturnCondition">Returned item condition</label>
+          <select id="vtReturnCondition">
+            <option value="" selected disabled>Select…</option>
+            <option value="same">Same / sellable</option>
+            <option value="minor">Minor damage</option>
+            <option value="major">Major damage</option>
+            <option value="unsellable">Unsellable</option>
+            <option value="not_received">Not received</option>
+          </select></div>
+        <div class="field" id="vtRecoverValueWrap" hidden><label for="vtRecoverValue">Current recoverable / resale value</label>
+          <input type="number" id="vtRecoverValue" min="0" step="0.01" placeholder="0.00">
+          <p class="wn-hint">Your estimated recovery or resale value for the returned item — not an official Vinted valuation. If the item was not recovered, enter $0.</p></div>
+        <div class="field" id="vtExpenseWrap" hidden><label for="vtExpense">Seller-paid expenses (return shipping, labels, etc.)</label>
+          <input type="number" id="vtExpense" min="0" step="0.01" placeholder="0.00" value="0">
+          <p class="wn-hint">Default $0. Seller-paid expenses are counted in your loss ONLY when you enter an amount you actually paid.</p></div>
+        <div class="field" id="vtShipMethodWrap" hidden><label for="vtShipMethod">Shipping method</label>
+          <select id="vtShipMethod">
+            <option value="" selected disabled>Select…</option>
+            <option value="integrated">Vinted-generated integrated label</option>
+            <option value="custom">Custom shipping</option>
+          </select></div>
+        <div class="field" id="vtPackedWrap" hidden><label for="vtPacked">Was the package packed properly?</label>
+          <select id="vtPacked">
+            <option value="" selected disabled>Select…</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select></div>
+        <div class="field" id="vtCarrierConfirmedWrap" hidden><label for="vtCarrierConfirmed">Has the carrier confirmed the loss/damage?</label>
+          <select id="vtCarrierConfirmed">
+            <option value="" selected disabled>Select…</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="pending">Pending / not decided</option>
+          </select></div>
+        <div class="field" id="vtProviderWrap" hidden><label for="vtProvider">Shipping provider</label>
+          <select id="vtProvider">
+            <option value="" selected disabled>Select…</option>
+            <option value="usps">USPS (up to $100)</option>
+            <option value="better">Better Trucks (up to $30)</option>
+            <option value="speedx">SpeedX (up to $15)</option>
+            <option value="fedex">FedEx (up to $100)</option>
+            <option value="intl">International USPS/SpeedX (up to $27)</option>
+          </select>
+          <p class="wn-hint">Maximums are stated compensation caps, NOT guaranteed payouts. Enter only your confirmed amount.</p></div>
+        <div class="field" id="vtCompStatusWrap" hidden><label for="vtCompStatus">Vinted compensation status</label>
+          <select id="vtCompStatus">
+            <option value="" selected disabled>Select…</option>
+            <option value="none">No compensation</option>
+            <option value="confirmed">Confirmed — enter amount</option>
+            <option value="pending">Pending / not decided</option>
+          </select></div>
+        <div class="field" id="vtCompAmountWrap" hidden><label for="vtCompAmount">Confirmed compensation amount</label>
+          <input type="number" id="vtCompAmount" min="0" step="0.01" placeholder="0.00">
+          <p class="wn-hint">Enter the actual confirmed amount — never the carrier maximum.</p></div>
+        <div id="vtResult" hidden>
+          <div class="r-total"><span id="vtHeadline">VINTED SELLER LOSS</span><span id="vtLossAmount">$0.00</span></div>
+          <div id="vtBreakdown"></div>
+          <p class="wn-hint" id="vtProtectionNote" style="margin-top:8px;"></p>
+          <p class="wn-hint" id="vtFeeNote" style="margin-top:6px;"></p>
+        </div>
+      </div>
+      <!-- ========== /VINTED DECISION TREE ========== -->
+
       <!-- VINTED info block -->
-      <div class="vinted-note" id="vintedNote" hidden>🟢 VINTED: $0 seller fees — you keep 100% of your listed price. The buyer pays $0.70 + 5% protection + shipping. Nothing to calculate here; the point is the comparison.</div>
+      <div class="vinted-note" id="vintedNote" hidden>🟢 VINTED: Vinted charges $0 in seller selling fees — when your sale completes, you receive the full selling price. The buyer pays the Buyer Protection fee and shipping, neither of which counts as seller loss.</div>
     </div>
 
     <div class="field"><label for="salePrice">Original sale price</label><input type="number" id="salePrice" min="0" step="0.01" inputmode="decimal" placeholder="45.00"></div>
@@ -158,29 +1242,91 @@
 
   <section class="receipt-wrap" aria-labelledby="resultTitle">
     <h2 id="resultTitle" class="visually-hidden">Your result</h2>
-    <div class="receipt" id="receipt">
-      <div class="r-head"><div class="r-brand">CLAWBACK</div><div class="r-sub">FORCED-RETURN LOSS STATEMENT</div></div>
-      <div class="r-rule"></div>
-      <div class="r-placeholder">Fill in the return on the left.<br>Your itemized loss prints here.</div>
+    
+    <!-- NEW: COMMAND CENTER STRUCTURE -->
+    <div id="commandCenter">
+      <!-- A. FINAL LOSS HERO -->
+      <div class="cc-hero" id="ccHero">
+        <div class="cc-hero-head">LOSS RECEIPT</div>
+        <div class="cc-hero-meta" id="ccMeta">AWAITING CALCULATION</div>
+        <div class="cc-hero-label">YOU LOST</div>
+        <div class="cc-hero-amount" id="ccHeroAmount">$0.00</div>
+        <div class="cc-hero-stamp" id="ccStamp" style="display:none;">APPEAL IT</div>
+      </div>
+
+      <!-- B. LOSS BREAKDOWN -->
+      <div class="cc-breakdown" id="ccBreakdown">
+        <div class="cc-breakdown-head">LOSS BREAKDOWN</div>
+        <div class="cc-breakdown-section">
+          <div class="cc-breakdown-title">MONEY OUT</div>
+          <div id="ccMoneyOut"></div>
+        </div>
+        <div class="cc-breakdown-section">
+          <div class="cc-breakdown-title">MONEY RECOVERED</div>
+          <div id="ccMoneyRecovered"></div>
+        </div>
+        <div class="cc-breakdown-section">
+          <div class="cc-breakdown-line final">
+            <span class="cc-label">FINAL LOSS</span>
+            <span class="cc-amt" id="ccFinalLoss">$0.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- C. WHAT TO DO NEXT -->
+      <div class="cc-next" id="ccNext">
+        <div class="cc-next-head">WHAT TO DO NEXT</div>
+        <div id="ccNextActions"></div>
+      </div>
+
+      <!-- D. EVIDENCE TO KEEP -->
+      <div class="cc-evidence" id="ccEvidence">
+        <div class="cc-evidence-head">EVIDENCE TO KEEP</div>
+        <ul class="cc-evidence-list" id="ccEvidenceList"></ul>
+      </div>
+
+      <!-- E. QUICK ACTIONS -->
+      <div class="cc-actions" id="ccActions">
+        <div class="cc-actions-head">QUICK ACTIONS</div>
+        <div class="cc-actions-grid">
+          <button type="button" class="cc-action-btn primary" data-copy="appealLetter">COPY APPEAL</button>
+          <button type="button" class="cc-action-btn" data-copy="taxLine">COPY TAX RECORD</button>
+                    <button type="button" class="cc-action-btn" id="ccShareBtn">COPY SHARE LINK</button>
+          <button type="button" class="cc-action-btn" id="ccPrintBtn">DOWNLOAD LOSS REPORT</button>
+        </div>
+        <p class="cc-print-help">Download your one-page CLAWBACK loss report.</p>
+      </div>
     </div>
-    <div id="chartWrap" class="chart-wrap" aria-hidden="true"></div>
-    <div class="ad-slot" data-ad-slot="sidebar_desktop" aria-hidden="true"><!-- ad slot: sidebar_desktop --></div>
-    <div class="actions" id="actions">
-      <button type="button" class="action-btn" data-copy="appealLetter">COPY APPEAL LETTER</button>
-      <textarea id="appealLetter" class="letter-box" readonly aria-label="Generated appeal letter"></textarea>
-      <button type="button" class="action-btn" data-copy="taxLine">COPY FOR TAX RECORDS</button>
-      <textarea id="taxLine" class="letter-box short" readonly aria-label="One-line tax record"></textarea>
-      <button type="button" class="action-btn" id="shareBtn">COPY SHAREABLE LINK</button>
-      <input type="text" id="shareLink" class="letter-box short" readonly aria-label="Shareable result link">
-      <a class="aff-btn" data-aff="after_appeal" href="#" rel="nofollow sponsored" aria-hidden="true"></a>
-      <a class="aff-btn" data-aff="after_writeoff" href="#" rel="nofollow sponsored" aria-hidden="true"></a>
-      <details class="evidence" id="evidenceBox"><summary>📸 Photo evidence checklist to win this dispute</summary><ul id="evidenceList"></ul></details>
+
+    <!-- HIDDEN: Original receipt and actions (data source) -->
+    <div id="originalReceipt">
+      <div class="receipt" id="receipt">
+        <div class="r-head"><div class="r-brand">CLAWBACK</div><div class="r-sub">FORCED-RETURN LOSS STATEMENT</div></div>
+        <div class="r-rule"></div>
+        <div class="r-placeholder">Fill in the return on the left.<br>Your itemized loss prints here.</div>
+      </div>
+      <div id="chartWrap" class="chart-wrap" aria-hidden="true"></div>
     </div>
-    <div class="ad-slot" data-ad-slot="result_after" aria-hidden="true"><!-- ad slot: result_after --></div>
+
+    <div class="ad-slot" data-ad-slot="sidebar_desktop" aria-hidden="true"></div>
+
+    <div id="originalActions">
+      <div class="actions" id="actions">
+        <button type="button" class="action-btn" data-copy="appealLetter">COPY APPEAL LETTER</button>
+        <textarea id="appealLetter" class="letter-box" readonly aria-label="Generated appeal letter"></textarea>
+        <button type="button" class="action-btn" data-copy="taxLine">COPY FOR TAX RECORDS</button>
+        <textarea id="taxLine" class="letter-box short" readonly aria-label="One-line tax record"></textarea>
+        <button type="button" class="action-btn" id="shareBtn">COPY SHAREABLE LINK</button>
+        <input type="text" id="shareLink" class="letter-box short" readonly aria-label="Shareable result link">
+        <a class="aff-btn" data-aff="after_appeal" href="#" rel="nofollow sponsored" aria-hidden="true"></a>
+        <a class="aff-btn" data-aff="after_writeoff" href="#" rel="nofollow sponsored" aria-hidden="true"></a>
+        <details class="evidence" id="evidenceBox"><summary>📸 Photo evidence checklist to win this dispute</summary><ul id="evidenceList"></ul></details>
+      </div>
+    </div>
+    <div class="ad-slot" data-ad-slot="result_after" aria-hidden="true"></div>
   </section>
 </main>
 
-<!-- NEW: 6-PLATFORM MATRIX -->
 <section class="matrix-sec" aria-labelledby="matrixTitle">
   <h2 class="matrix-title" id="matrixTitle">SAME $50 ITEM — SIX PLATFORMS, ONE TRUTH</h2>
   <div class="matrix-card">
@@ -188,14 +1334,14 @@
       <thead><tr><th>Platform</th><th>Selling fee</th><th>Processing</th><th>Fees on $50</th><th>You keep</th></tr></thead>
       <tbody>
         <tr><td>Vinted</td><td class="zero">$0 — ever</td><td>$0</td><td>$0.00</td><td class="keep">$50.00</td></tr>
-        <tr><td>Depop</td><td>0% (US 2026)</td><td>3.3% + $0.45</td><td>$2.10</td><td class="keep">$47.90</td></tr>
-        <tr><td>Whatnot</td><td>8% (cap $1,500)</td><td>2.9% + $0.30 on GROSS</td><td>$5.75*</td><td class="keep">$44.25*</td></tr>
-        <tr><td>Mercari</td><td>10%</td><td>2.9% + $0.50</td><td>$6.95</td><td class="keep">$43.05</td></tr>
-        <tr><td>eBay</td><td>13.6%</td><td>$0.40 per order</td><td>$7.20</td><td class="keep">$42.80</td></tr>
+        <tr><td>Depop</td><td>No selling fee (US)</td><td>3.3% + $0.45</td><td>$2.10</td><td class="keep">$47.90</td></tr>
+        <tr><td>Whatnot</td><td>Tiered by 4-week sales</td><td>2.9% + $0.30 on GROSS</td><td>Varies*</td><td class="keep">Varies*</td></tr>
+        <tr><td>Mercari</td><td>10%</td><td>—</td><td>$5.00</td><td class="keep">$45.00</td></tr>
+        <tr><td>eBay</td><td>13.6%*</td><td>$0.40 per order</td><td>$7.20</td><td class="keep">$42.80</td></tr>
         <tr><td>Poshmark</td><td>20% over $15</td><td>—</td><td>$10.00</td><td class="keep">$40.00</td></tr>
       </tbody>
     </table>
-    <p class="intel-ex">*Whatnot example assumes no buyer shipping/tax — real take is lower. Verified Aug 2026 from official help pages.</p>
+    <p class="intel-ex">*Whatnot commission varies by seller tier and category under the four-week sales structure effective September 21, 2026, so no single $50 commission/keep amount is shown. Processing is 2.9% + $0.30 on the applicable gross order value. *eBay/other examples use a $50 item with no buyer-paid shipping or tax and assume the standard applicable fee rate; actual fees can vary by category and the total amount of the sale. Fee examples verified October 2026 from official platform sources. Actual fees can vary by category, shipping, taxes, seller tier, and optional services.</p>
   </div>
   <div class="tri-cards">
     <div class="tri-card"><h3>WHY "FREE" RETURNS AREN'T FREE</h3><p>Fees kept + return shipping + value drop = your real loss. CLAWBACK adds all three into one number.</p></div>
@@ -204,18 +1350,55 @@
   </div>
 </section>
 
-<div class="ad-slot wide" data-ad-slot="hub_leaderboard" aria-hidden="true"><!-- ad slot: hub_leaderboard --></div>
+<div class="ad-slot wide" data-ad-slot="hub_leaderboard" aria-hidden="true"></div>
 
 <section class="faq" id="faq" aria-labelledby="faqTitle">
   <h2 class="faq-title" id="faqTitle">STRAIGHT ANSWERS</h2>
-  <details class="faq-item" open><summary>Is CLAWBACK free, and is my data safe?</summary><p>Yes, completely free with <b>no signup and no login</b>. Every number is calculated inside your own browser, so your sale price and return details are never sent to any server. Close the tab and nothing is stored anywhere.</p></details>
-  <details class="faq-item"><summary>Do eBay, Poshmark, Mercari or Depop charge a "return fee"?</summary><p>None of them has a line item called a return fee. The real loss on a forced return comes from three places the platforms don't label: <b>selling fees they don't fully refund, return shipping they make you pay, and the drop in the item's value</b> when it comes back damaged or swapped. CLAWBACK adds those three up into one dollar figure — which is exactly the number every other calculator leaves out.</p></details>
-  <details class="faq-item"><summary>On eBay, do I get my fees back when an item is returned?</summary><p>It depends on the <b>reason</b>. If the buyer simply changed their mind or the item didn't fit, eBay credits the final value fee <i>and</i> the per-order fee. If the return was "not as described", damaged, or the wrong item, eBay credits the final value percentage but <b>keeps the $0.30–$0.40 per-order fee</b>. If eBay stepped in and ruled against you, or you refunded the buyer outside of eBay, you get <b>no credit at all</b>. The "what happened" selector above runs this exact rule.</p></details>
-  <details class="faq-item"><summary>Who pays the return shipping?</summary><p>On <b>eBay</b> the seller pays return shipping for "not as described", damaged, or wrong-item claims. On <b>Mercari</b> the buyer gets a free prepaid label for items up to 50 lbs, but the <b>seller must pay the return label for anything over 50 lbs</b> (and provide it within 3 days or the order is canceled). <b>Poshmark</b> and <b>Depop</b> generally provide a prepaid return label on approved returns.</p></details>
-  <details class="faq-item"><summary>Can I write off return losses on my taxes?</summary><p>Generally yes — returned, damaged, or unsellable inventory can reduce your taxable income as a cost-of-goods adjustment. The key is <b>documentation</b>: after each loss, use the "copy for taxes" line to keep a clean one-line record, so January is painless. Then confirm the exact treatment with a tax professional.</p></details>
-  <details class="faq-item"><summary>Does Whatnot really take 8%, or is it more?</summary><p>Whatnot advertises <b>8% commission</b>, but payment processing is <b>2.9% + $0.30 on the gross order value</b> — item + buyer shipping + buyer sales tax — money you never pocket. On a $100 card with $8 shipping and $5 tax, the real take is ≈ <b>12.7%</b> before carrier weight clawbacks. Eligible categories get 0% commission on the portion above $1,500. The calculator shows your true "bite ratio" instantly.</p></details>
-  <details class="faq-item"><summary>Does Whatnot charge VAT on fees?</summary><p>Yes — for <b>UK and EU sellers</b>. Whatnot adds <b>20% VAT</b> on top of both the commission and the payment processing fee (a £3.33 commission becomes £4.00 after VAT). The calculator applies VAT automatically when you select the UK or EU region. US sellers pay no VAT on fees.</p></details>
-  <details class="faq-item"><summary>Does Vinted charge sellers any fees?</summary><p>No. Vinted charges <b>$0 seller fees</b> in 2026 — no commission, no processing, no listing fee. The <b>buyer</b> pays a $0.70 + 5% protection fee plus shipping, and you keep 100% of your listed price. That's why Vinted is the anchor in our 6-platform comparison. Optional paid boosts are the only seller cost.</p></details>
+
+  <!-- GENERAL GROUP -->
+  <div class="faq-group">
+    <h3 class="faq-group-title">GENERAL</h3>
+    <details class="faq-item key" open><summary>Is CLAWBACK free, and is my data safe?</summary><p>Yes. CLAWBACK is free to use with <b>no signup or login</b>. Your calculations are performed in your browser, and CLAWBACK does not require you to submit your sale or return details to use the calculator.</p></details>
+    <details class="faq-item" open><summary>Do eBay, Poshmark, Mercari or Depop charge a "return fee"?</summary><p>These platforms generally don't charge a separate line item called a 'return fee.' A forced return can still cost you through the <b>refund, seller-paid return expenses, and loss in recoverable item value</b>. Platform fee credits can also vary by reason.</p></details>
+    <details class="faq-item" open><summary>Can I write off return losses on my taxes?</summary><p>Potentially, but don't treat every return as an automatic tax write-off. Tax treatment depends on your jurisdiction, accounting method, cost basis, and reimbursements. <b>Keep records</b> of refunds, returns, shipping, item costs, and reimbursements and confirm the treatment with a tax professional.</p></details>
+  </div>
+
+  <!-- EBAY GROUP -->
+  <div class="faq-group">
+    <h3 class="faq-group-title">EBAY</h3>
+    <details class="faq-item" open><summary>On eBay, do I get my fees back when an item is returned?</summary><p>For eligible full refunds handled through eBay, buyer-remorse reasons such as changed mind, ordered by mistake, doesn't fit, or found a better price can qualify for credits of the final value fee and per-order fee. Item-problem refunds generally qualify for the final value fee but not the per-order fee. If eBay stepped in and ruled against you, or you refunded the buyer outside of eBay, you get <b>no credit at all</b>.</p></details>
+    <details class="faq-item" open><summary>Who pays eBay return shipping?</summary><p>On <b>eBay</b> the seller pays return shipping for "not as described", damaged, or wrong-item claims. Buyer remorse returns may be subject to your specific return policy settings.</p></details>
+  </div>
+
+  <!-- MERCARI GROUP -->
+  <div class="faq-group">
+    <h3 class="faq-group-title">MERCARI</h3>
+    <details class="faq-item" open><summary>Who pays Mercari return shipping?</summary><p>Approved returns use a <b>prepaid label for eligible returns up to 50 lbs</b>; heavier returns may require seller-provided shipping. Mercari's 10% selling fee is generally refunded on approved returns.</p></details>
+  </div>
+
+  <!-- DEPOP GROUP -->
+  <div class="faq-group">
+    <h3 class="faq-group-title">DEPOP</h3>
+    <details class="faq-item" open><summary>Who pays Depop return shipping?</summary><p><b>US buyers</b> receive a prepaid return label for qualifying in-app returns. <b>International buyers</b> may arrange tracked shipping and receive reimbursement subject to Depop's limits. Depop refunds all selling and processing fees on approved returns.</p></details>
+  </div>
+
+  <!-- POSHMARK GROUP -->
+  <div class="faq-group">
+    <h3 class="faq-group-title">POSHMARK</h3>
+    <details class="faq-item" open><summary>How do Poshmark returns affect sellers?</summary><p>Poshmark generally provides a <b>prepaid return label</b> on approved returns and refunds the 20% commission. Your real loss is usually limited to the item's value if it comes back damaged or swapped.</p></details>
+  </div>
+
+  <!-- WHATNOT GROUP -->
+  <div class="faq-group">
+    <h3 class="faq-group-title">WHATNOT</h3>
+    <details class="faq-item" open><summary>Does Whatnot really take 8%, or is it more?</summary><p>It depends on category and order total. In the US, many categories have an <b>8% commission</b>, while some have lower rates. Payment processing is <b>2.9% + $0.30 based on total order value</b>, which can include buyer-paid shipping and taxes. Your effective cost can therefore exceed the headline commission.</p></details>
+  </div>
+
+  <!-- VINTED GROUP -->
+  <div class="faq-group">
+    <h3 class="faq-group-title">VINTED</h3>
+    <details class="faq-item" open><summary>Does Vinted charge sellers any fees?</summary><p>No. Vinted charges <b>$0 in seller selling fees</b> in 2026 — no commission, no processing, no listing fee. When your sale completes, you receive the full selling price in your Vinted Wallet. The buyer pays the Buyer Protection fee plus shipping, neither of which is counted as seller loss. <b>Optional paid promotions</b> can cost sellers extra, and custom-shipping sellers may also pay shipping costs upfront.</p></details>
+  </div>
 </section>
 
 <noscript><p class="noscript">This calculator needs JavaScript turned on to run the math. The answers above still work without it.</p></noscript>
@@ -246,9 +1429,1097 @@
   </div>
 </footer>
 
+<!-- PRINT/DOWNLOAD-ONLY ONE-PAGE LOSS REPORT -->
+<div id="clawback-print-report" aria-hidden="true"></div>
+
+<!-- Core scripts (protected — not modified) -->
 <script src="app.js"></script>
 <script src="intel.js"></script>
 <script src="nav.js"></script>
+
+<!-- Platform-specific calculation engines -->
+<script src="ebay-calc.js" defer onerror="console.info('ebay-calc.js not yet deployed — eBay mode uses shared calc until built.')"></script>
+<script src="depop-calc.js" defer onerror="console.info('depop-calc.js not yet deployed — Depop mode uses shared calc until built.')"></script>
+<script src="mercari-calc.js" defer onerror="console.info('mercari-calc.js not yet deployed — Mercari mode uses shared calc until built.')"></script>
+<script src="poshmark-calc.js" defer onerror="console.info('poshmark-calc.js not yet deployed — Poshmark mode uses shared calc until built.')"></script>
+<script src="whatnot-calc.js" defer onerror="console.info('whatnot-calc.js not yet deployed — Whatnot mode uses shared calc until built.')"></script>
+<script src="vinted-calc.js" defer onerror="console.info('vinted-calc.js not yet deployed — Vinted mode uses shared calc until built.')"></script>
+
+<!-- ========== COMMAND CENTER BUILDER (presentation layer; reads rendered result) ========== -->
+<script>
+(function(){
+  function el(id){ return document.getElementById(id); }
+  var money = function(n){ return '$' + (Math.round((+n||0) * 100) / 100).toFixed(2); };
+
+  function fallbackCopy(node){
+    try{
+      if(node.select) node.select();
+      if(node.setSelectionRange) node.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+    }catch(e){}
+  }
+
+  function copyFrom(id, btn){
+    var node = el(id);
+    if(!node) return;
+    var txt = (node.value !== undefined && node.value !== '') ? node.value : (node.textContent || '');
+    var label = btn.getAttribute('data-label') || btn.textContent;
+    function done(){
+      btn.textContent = 'COPIED ✓';
+      setTimeout(function(){ btn.textContent = label; }, 1600);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(done, function(){ fallbackCopy(node); done(); });
+    } else {
+      fallbackCopy(node);
+      done();
+    }
+  }
+
+  function placeholder(){
+    var meta=el('ccMeta'), amt=el('ccHeroAmount'), hero=el('ccHero'), stamp=el('ccStamp'),
+        out=el('ccMoneyOut'), rec=el('ccMoneyRecovered'), fin=el('ccFinalLoss'),
+        next=el('ccNextActions'), ev=el('ccEvidenceList');
+
+    if(!meta || !amt || !hero) return;
+
+    meta.textContent='AWAITING CALCULATION';
+    amt.textContent='$0.00';
+    hero.classList.remove('zero-loss');
+
+    if(stamp) stamp.style.display='none';
+
+    if(out) out.innerHTML='<div class="cc-breakdown-line"><span class="cc-label">No result yet</span><span class="cc-amt">—</span></div>';
+    if(rec) rec.innerHTML='<div class="cc-breakdown-line"><span class="cc-label">No result yet</span><span class="cc-amt">—</span></div>';
+    if(fin) fin.textContent='$0.00';
+
+    if(next){
+      next.innerHTML='<div class="cc-next-item"><div class="cc-next-title">CALCULATE YOUR LOSS</div><div class="cc-next-desc">Fill in the return on the left, then press CALCULATE MY LOSS.</div></div>';
+    }
+
+    if(ev){
+      ev.innerHTML='<li>Calculate to generate your scenario checklist.</li>';
+    }
+  }
+
+  function buildCommandCenter(){
+    var r = window.__cbResult || null;
+    if(!r || typeof r !== 'object'){
+      placeholder();
+      return;
+    }
+
+    var hero=el('ccHero'), meta=el('ccMeta'), amt=el('ccHeroAmount'), stamp=el('ccStamp'),
+        out=el('ccMoneyOut'), rec=el('ccMoneyRecovered'), fin=el('ccFinalLoss'),
+        next=el('ccNextActions'), ev=el('ccEvidenceList');
+
+    if(!hero || !meta || !amt) return;
+
+    var platform = String(r.platform || 'PLATFORM').toUpperCase();
+    var outcome = String(r.outcome || 'SCENARIO').replace(/_/g,' ').toUpperCase();
+
+    meta.textContent = platform + ' · ' + outcome + ' · SALE ' + money(r.sale||0);
+    amt.textContent = money(r.total||0);
+
+    if((r.total||0) < 0.01){
+      hero.classList.add('zero-loss');
+      if(stamp){
+        stamp.textContent='NO LOSS';
+        stamp.style.display='';
+        stamp.style.borderColor='var(--green)';
+        stamp.style.color='var(--green)';
+      }
+    } else if((r.total||0) >= 25){
+      hero.classList.remove('zero-loss');
+      if(stamp){
+        stamp.textContent='APPEAL IT';
+        stamp.style.display='';
+        stamp.style.borderColor='var(--red)';
+        stamp.style.color='var(--red)';
+      }
+    } else {
+      hero.classList.remove('zero-loss');
+      if(stamp) stamp.style.display='none';
+    }
+
+    var outHTML='', recHTML='';
+
+    (r.lines||[]).forEach(function(line){
+      if(line.cls === 'loss'){
+        outHTML += '<div class="cc-breakdown-line loss"><span class="cc-label">'+line.label+'</span><span class="cc-amt">'+line.amount+'</span></div>';
+      } else if(line.cls === 'ok'){
+        recHTML += '<div class="cc-breakdown-line recovery"><span class="cc-label">'+line.label+'</span><span class="cc-amt">'+line.amount+'</span></div>';
+      }
+    });
+
+    if(!outHTML) outHTML='<div class="cc-breakdown-line"><span class="cc-label">No money out recorded</span><span class="cc-amt">$0.00</span></div>';
+    if(!recHTML) recHTML='<div class="cc-breakdown-line"><span class="cc-label">Nothing recovered</span><span class="cc-amt">$0.00</span></div>';
+
+    if(out) out.innerHTML=outHTML;
+    if(rec) rec.innerHTML=recHTML;
+    if(fin) fin.textContent = money(r.total||0);
+
+    var nextHTML='';
+
+    if((r.total||0) >= 25){
+      nextHTML += '<div class="cc-next-item"><div class="cc-next-title">REVIEW THE DECISION</div><div class="cc-next-desc">Check the platform\'s reason and keep your supporting evidence.</div></div>';
+      nextHTML += '<div class="cc-next-item"><div class="cc-next-title">COPY APPEAL</div><div class="cc-next-desc">Prepare the generated appeal using the facts entered above.</div></div>';
+    }
+
+    if((r.returnCost||0) > 0){
+      nextHTML += '<div class="cc-next-item"><div class="cc-next-title">SAVE RETURN TRACKING</div><div class="cc-next-desc">Keep the return shipment record with the order documentation.</div></div>';
+    }
+
+    if((r.valueLost||0) > 0 && r.condition && r.condition !== 'same'){
+      nextHTML += '<div class="cc-next-item"><div class="cc-next-title">DOCUMENT THE CONDITION</div><div class="cc-next-desc">Photograph the returned item before altering or relisting it.</div></div>';
+    }
+
+    if((r.total||0) < 0.01){
+      nextHTML = '<div class="cc-next-item"><div class="cc-next-title">SAVE THE RECORD</div><div class="cc-next-desc">Keep the transaction result for your records.</div></div>';
+    }
+
+    if(next){
+      next.innerHTML = nextHTML || '<div class="cc-next-item"><div class="cc-next-title">SAVE THE RECORD</div><div class="cc-next-desc">Keep the transaction result for your records.</div></div>';
+    }
+
+    var srcEv=el('evidenceList');
+    if(ev){
+      ev.innerHTML = (srcEv && srcEv.innerHTML) ? srcEv.innerHTML : '<li>Calculate to generate your scenario checklist.</li>';
+    }
+  }
+
+  function installRenderHooks(){
+    ['renderReceipt','renderWhatnotReceipt','renderVintedReceipt'].forEach(function(fn){
+      if(typeof window[fn] === 'function' && !window[fn].__cbWrapped){
+        var orig = window[fn];
+        var wrapped = function(r){
+          if(r && typeof r === 'object') window.__cbResult = r;
+          var out = orig.apply(this, arguments);
+          setTimeout(buildCommandCenter, 350);
+          setTimeout(buildPrintReport, 400);
+          return out;
+        };
+        wrapped.__cbWrapped = true;
+        window[fn] = wrapped;
+      }
+    });
+  }
+
+  function esc(s){
+    return String(s==null?'':s)
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;');
+  }
+
+  function scenText(o){
+    var m={
+      full:'Full refund',
+      partial:'Partial refund',
+      no:'No refund',
+      no_refund:'No refund',
+      full_keep:'Full refund — buyer keeps item',
+      full_return:'Full refund — item returned',
+      lost_transit:'Lost in transit',
+      damaged_transit:'Damaged in transit',
+      rts:'Returned to sender',
+      return_parcel:'Return parcel lost/damaged',
+      snad:'Significantly not as described',
+      remorse:'Buyer remorse / voluntary return',
+      inad:'Not as described',
+      damaged:'Damaged',
+      wrong_item:'Wrong item',
+      defective:'Missing parts / defective',
+      changed_mind:'Buyer changed mind',
+      ordered_wrong:'Ordered wrong item',
+      not_received:'Item not received',
+      other:'Other'
+    };
+    if(m[o]) return m[o];
+    return String(o||'').replace(/_/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();});
+  }
+
+  function activePlatform(){
+    var b=document.querySelector('.platform-btn.active');
+    return b ? (b.getAttribute('data-platform')||'') : '';
+  }
+
+  function reasonText(){
+    var map={
+      ebay:'ebayRefundReason',
+      mercari:'mercariRefundReason',
+      poshmark:'poshmarkReason',
+      whatnot:'wnReason',
+      vinted:'vtScenario',
+      depop:'depopRefundStatus'
+    };
+
+    var sel=el(map[activePlatform()]||'');
+
+    if(sel && sel.selectedIndex>=0 && sel.options[sel.selectedIndex] && !sel.options[sel.selectedIndex].disabled){
+      var t=(sel.options[sel.selectedIndex].text||'').trim();
+      if(t) return t;
+    }
+
+    return '—';
+  }
+
+  function protText(r){
+    var reimb=(r.lines||[]).some(function(l){
+      return /reimburse|compensation/i.test(l.label) && /^-?\$/.test(l.amount);
+    });
+
+    if(reimb) return 'Confirmed';
+
+    var p=activePlatform(), v='';
+
+    if(p==='whatnot'){
+      var w=el('wnProtStatus');
+      v=w?w.value:'';
+    } else if(p==='vinted'){
+      var c=el('vtCompStatus');
+      v=c?c.value:'';
+    }
+
+    if(v==='undecided'||v==='pending') return 'Undetermined';
+    return 'Not confirmed';
+  }
+
+  function buildPrintReport(){
+var box=el('clawback-print-report');
+if(!box) return;
+var d=new Date();
+var dateStr=(d.getMonth()+1<10?'0':'')+(d.getMonth()+1)+'/'+
+(d.getDate()<10?'0':'')+d.getDate()+'/'+String(d.getFullYear()).slice(2);
+var ref='CB-'+String(d.getFullYear()).slice(2)+(d.getMonth()+1<10?'0':'')+(d.getMonth()+1)+(d.getDate()<10?'0':'')+d.getDate()+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
+var r=window.__cbResult||null;
+if(!r){
+box.innerHTML=
+'<div class="pr-head"><div class="pr-brand">CLAW<em>BACK</em></div><div class="pr-title">FORCED-RETURN LOSS REPORT</div><div class="pr-meta">NO RESULT YET · '+dateStr+'</div></div>'+
+'<div class="pr-hero zero"><div class="pr-hero-label">NO RESULT</div><div class="pr-hero-amt">$0.00</div><div class="pr-hero-sub">CALCULATE TO GENERATE YOUR REPORT</div></div>'+
+'<div class="pr-note">CLAWBACK ESTIMATE — Based on the transaction details entered into CLAWBACK. Actual platform decisions, reimbursements, and recoverable value may differ.</div>'+
+'<div class="pr-foot"><b>CLAWBACK</b> · Forced-return loss calculator for resellers.</div>';
+return;
+}
+var scen=scenText(r.outcome);
+var zero=(r.total||0)<0.01;
+var prot=protText(r);
+/* Display-only: on eBay the Scenario row shows refund type + handling so it
+   doesn't just repeat the Reason row. All logic below still uses `scen`. */
+var scenDisplay=scen;
+if(activePlatform()==='ebay'){
+var rtSel=el('ebayRefundType'), hdSel=el('ebayRefundHandler');
+var rtT=(rtSel&&rtSel.selectedIndex>=0&&rtSel.options[rtSel.selectedIndex]&&!rtSel.options[rtSel.selectedIndex].disabled)?rtSel.options[rtSel.selectedIndex].text:'';
+var hdT=(hdSel&&hdSel.selectedIndex>=0&&hdSel.options[hdSel.selectedIndex]&&!hdSel.options[hdSel.selectedIndex].disabled)?hdSel.options[hdSel.selectedIndex].text:'';
+var combo=[rtT,hdT].filter(Boolean).join(' · ');
+if(combo) scenDisplay=combo;
+}
+var outRows=(r.lines||[]).filter(function(l){ return l.cls==='loss'; });
+var recRows=(r.lines||[]).filter(function(l){ return l.cls==='ok' && /^-\$/.test(l.amount); })
+.map(function(l){ return {label:l.label, amount:l.amount.replace(/^-/,'')}; });
+var recoveredSum=recRows.reduce(function(acc,l){ return acc + (parseFloat(String(l.amount).replace(/[^0-9.]/g,''))||0); },0);
+var ratio=(r.sale||0)>0 ? Math.round(((r.total||0)/(r.sale||0))*100) : 0;
+/* Heavy-loss (>100%) clarification — fires on EVERY platform, worded per platform. */
+var heavyNote='';
+if(ratio>100){
+var pNow=activePlatform();
+if(pNow==='vinted'){
+heavyNote='A loss above 100% of the sale price happens when the refund exposure and any seller-paid costs stack on top of the item\'s unrecovered value. Vinted charges no seller fees, so no fees are included in this loss.';
+} else if(pNow==='depop'){
+heavyNote='A loss above 100% of the sale price happens when the refund exposure and any seller-paid costs stack on top of the item\'s unrecovered value. Depop reverses selling and processing fees on refund, so no kept fees are included in this loss.';
+} else {
+heavyNote='A loss above 100% of the sale price happens when kept fees and seller-paid costs stack on top of the item\'s unrecovered value.';
+}
+}
+var f=(+r.feesLost||0), sh=(+r.returnCost||0), v=(+r.valueLost||0);
+if(f+sh+v<=0){
+(r.lines||[]).forEach(function(l){
+if(l.cls!=='loss') return;
+var amt=parseFloat(String(l.amount).replace(/[^0-9.]/g,''))||0;
+if(l.cat==='fees') f+=amt; else if(l.cat==='shipping') sh+=amt; else v+=amt;
+});
+}
+var T=f+sh+v;
+var segs='', legend='';
+if(T>0){
+if(f>0){ segs+='<span class="seg-fees" style="width:'+(f/T*100).toFixed(2)+'%"></span>'; legend+='<span><i class="dot" style="background:#E8734A"></i>Fees kept '+money(f)+'</span>'; }
+if(sh>0){ segs+='<span class="seg-ship" style="width:'+(sh/T*100).toFixed(2)+'%"></span>'; legend+='<span><i class="dot" style="background:#D4402A"></i>Seller-paid shipping '+money(sh)+'</span>'; }
+if(v>0){ segs+='<span class="seg-value" style="width:'+(v/T*100).toFixed(2)+'%"></span>'; legend+='<span><i class="dot" style="background:#8E2420"></i>Unrecovered item value '+money(v)+'</span>'; }
+}
+var formula='Estimated loss = money out (refund exposure + seller-paid expenses) − money recovered (item value + confirmed reimbursement), floored at $0.00.';
+var h='';
+h+='<div class="pr-head"><div class="pr-brand">CLAW<em>BACK</em></div><div class="pr-title">FORCED-RETURN LOSS REPORT</div>'+
+'<div class="pr-meta">'+esc(String(r.platform||'').toUpperCase())+' · '+esc(scenDisplay.toUpperCase())+' · '+dateStr+' · REF '+ref+'</div></div>';
+h+='<div class="pr-hero'+(zero?' zero':'')+'"><div class="pr-hero-label">'+(zero?'NO LOSS':'YOU LOST')+'</div>'+
+'<div class="pr-hero-amt">'+money(r.total||0)+'</div><div class="pr-hero-sub">ESTIMATED SELLER LOSS</div>'+
+'<div class="pr-stats">'+
+'<div class="pr-stat"><div class="k">LOSS RATIO</div><div class="v'+(zero?' green':' red')+'">'+ratio+'% OF SALE</div></div>'+
+'<div class="pr-stat"><div class="k">RECOVERED</div><div class="v green">'+money(recoveredSum)+'</div></div>'+
+'<div class="pr-stat"><div class="k">PROTECTION</div><div class="v">'+esc(prot)+'</div></div>'+
+'</div>'+
+(heavyNote ? '<div class="pr-formula">'+heavyNote+'</div>' : '')+
+'</div>';
+h+='<div class="pr-sec"><div class="pr-sec-head">LOSS BREAKDOWN</div><div class="pr-cols">'+
+'<div class="pr-col out"><div class="pr-col-head">MONEY OUT</div>'+
+(outRows.length ? outRows.map(function(l){
+return '<div class="pr-row"><span>'+esc(l.label)+'</span><span class="amt">'+esc(l.amount)+'</span></div>';
+}).join('') : '<div class="pr-row"><span>Refund / exposure</span><span class="amt">—</span></div>')+
+'</div>'+
+'<div class="pr-col rec"><div class="pr-col-head">MONEY RECOVERED</div>'+
+(recRows.length ? recRows.map(function(l){
+return '<div class="pr-row"><span>'+esc(l.label)+'</span><span class="amt">'+esc(l.amount)+'</span></div>';
+}).join('') : '<div class="pr-row"><span>Nothing recovered</span><span class="amt">—</span></div>')+
+'</div></div>'+
+'<div class="pr-final"><span class="lbl">FINAL LOSS</span><span class="amt">'+money(r.total||0)+'</span></div></div>';
+h+='<div class="pr-sec"><div class="pr-sec-head">WHERE THE MONEY WENT</div>'+
+(T>0 ? '<div class="pr-bar">'+segs+'</div><div class="pr-barlegend">'+legend+'</div>'
+: '<div class="pr-formula">No loss components to display for this scenario.</div>')+
+'<div class="pr-formula">'+formula+'</div></div>';
+h+='<div class="pr-sec"><div class="pr-sec-head">TRANSACTION</div><div class="pr-tx">'+
+'<div class="pr-row"><span>Sale price</span><span class="amt">'+money(r.sale||0)+'</span></div>'+
+'<div class="pr-row"><span>Platform</span><span class="amt">'+esc(r.platform||'—')+'</span></div>'+
+'<div class="pr-row"><span>Scenario</span><span class="amt">'+esc(scenDisplay)+'</span></div>'+
+'<div class="pr-row"><span>Reason</span><span class="amt">'+esc(reasonText())+'</span></div>'+
+'<div class="pr-row"><span>Protection status</span><span class="amt">'+esc(prot)+'</span></div>'+
+'<div class="pr-row"><span>Report ref</span><span class="amt">'+esc(ref)+'</span></div>'+
+'</div></div>';
+var next;
+if(/lost|transit|parcel|sender/i.test(scen)){
+next='Keep the shipping receipt, tracking record, and carrier confirmation with the order.';
+} else if(recRows.length && /damaged|minor|major|unsellable|different/i.test((r.condition||'')+' '+scen)){
+next='Photograph the returned item and preserve the return tracking and original listing.';
+} else if(/partial/i.test(scen)){
+next='Save the partial-refund record and document any seller-paid expense.';
+} else if(zero){
+next='Keep the transaction result for your records.';
+} else {
+next='Keep the refund record and preserve the evidence supporting the transaction.';
+}
+h+='<div class="pr-sec"><div class="pr-sec-head">WHAT TO DO NEXT</div><div class="pr-next">'+esc(next)+' Attach this one-page report to your appeal or tax records.</div></div>';
+var ev=['Original listing / photos','Order / refund record','Relevant tracking'];
+if(recRows.length){
+ev.push('Return tracking','Returned-item photos');
+}
+if((r.total||0)>0.005){
+ev.push('Buyer / platform messages');
+}
+ev=ev.slice(0,6);
+h+='<div class="pr-sec"><div class="pr-sec-head">EVIDENCE TO KEEP</div><div class="pr-ev">'+
+ev.map(function(t){return '<span>☐ '+esc(t)+'</span>';}).join('')+
+'</div></div>';
+h+='<div class="pr-note">CLAWBACK ESTIMATE — Based on the transaction details entered into CLAWBACK. Actual platform decisions, reimbursements, and recoverable value may differ.</div>';
+h+='<div class="pr-foot"><b>CLAWBACK</b> · Forced-return loss calculator for resellers.</div>';
+box.innerHTML=h;
+}
+
+  async function generatePDF(){
+    var rep=el('clawback-print-report');
+    if(!rep) return;
+
+    buildPrintReport();
+
+    rep.style.cssText =
+      'display:flex !important;' +
+      'flex-direction:column !important;' +
+      'position:absolute !important;' +
+      'left:0 !important;' +
+      'top:0 !important;' +
+      'width:816px !important;' +
+      'height:1056px !important;' +
+      'overflow:hidden !important;' +
+      'background:#FBF7EE !important;' +
+      'color:#1E2A24 !important;' +
+      'padding:48px 58px 38px !important;' +
+      'box-sizing:border-box !important;' +
+      'z-index:99999 !important;' +
+      'opacity:1 !important;' +
+      'visibility:visible !important;';
+
+    await new Promise(function(resolve){ setTimeout(resolve, 350); });
+
+    try {
+      if(!window.html2canvas || !window.jspdf || !window.jspdf.jsPDF){
+        alert('PDF library did not load yet. Please refresh and try again.');
+        return;
+      }
+
+      var canvas = await html2canvas(rep, {
+        scale: 2,
+        useCORS: true,
+        logging: false,
+        backgroundColor: '#FBF7EE',
+        width: 816,
+        height: 1056,
+        windowWidth: 816,
+        windowHeight: 1056,
+        x: 0,
+        y: 0,
+        scrollX: 0,
+        scrollY: 0
+      });
+
+      var jsPDF = window.jspdf.jsPDF;
+      var pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'in',
+        format: 'letter'
+      });
+
+      var imgData = canvas.toDataURL('image/png', 1.0);
+      pdf.addImage(imgData, 'PNG', 0, 0, 8.5, 11);
+      pdf.save('clawback-loss-report.pdf');
+
+    } catch(err) {
+      console.error('PDF generation failed:', err);
+      alert('PDF generation failed. Please refresh and try again.');
+    } finally {
+      rep.style.cssText='display:none;';
+    }
+  }
+
+  document.querySelectorAll('.cc-action-btn[data-copy]').forEach(function(btn){
+    btn.setAttribute('data-label', btn.textContent);
+    btn.addEventListener('click', function(){
+      copyFrom(btn.getAttribute('data-copy'), btn);
+    });
+  });
+
+  var sb=el('ccShareBtn');
+  if(sb){
+    sb.setAttribute('data-label', sb.textContent);
+    sb.addEventListener('click', function(){
+      copyFrom('shareLink', sb);
+    });
+  }
+
+  var pb=el('ccPrintBtn');
+  if(pb){
+    pb.addEventListener('click', generatePDF);
+  }
+
+  installRenderHooks();
+  window.addEventListener('load', function(){
+    installRenderHooks();
+    buildCommandCenter();
+    buildPrintReport();
+  });
+
+  window.addEventListener('beforeprint', buildPrintReport);
+
+  window.__cbBuildCommandCenter = buildCommandCenter;
+  window.__cbPlaceholder = placeholder;
+  window.__cbBuildPrintReport = buildPrintReport;
+
+  placeholder();
+  buildPrintReport();
+})();
+</script>
+<!-- ========== EBAY, DEPOP, MERCARI, POSHMARK, WHATNOT, VINTED DECISION-TREE VISIBILITY (UI only, no calc logic) ========== -->
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var GROUP_A=['inad','damaged','wrong_item','defective'];
+  var GROUP_B=['changed_mind','ordered_wrong'];
+  var DAMAGE=['minor','major','unusable','different'];
+
+  function setField(wrapId,inputId,show,required){
+    var w=$(wrapId), i=$(inputId);
+    if(!w) return;
+    w.hidden=!show;
+    if(i){ i.required = !!(show && required); if(!show){ i.value=''; } }
+  }
+
+  function updateEbayTree(){
+    var reason=$('ebayRefundReason').value;
+    var group = GROUP_A.indexOf(reason)>-1 ? 'A'
+              : GROUP_B.indexOf(reason)>-1 ? 'B'
+              : reason==='not_received' ? 'C'
+              : reason==='other' ? 'D' : null;
+
+    var show={returned:false,otherOutcome:false,otherDetails:false,condition:false,value:false,
+              shipPayer:false,shipCost:false,dedEnabled:false,deduction:false,
+              handler:true,refundType:false,refundAmount:false,customRate:false};
+
+    var returned='', condition='', payer='', ded='', oc='';
+
+    if(group==='A'||group==='B'){
+      show.returned=true;
+      returned=$('ebayItemReturned').value;
+      if(returned==='yes'){
+        show.condition=true; show.value=true; show.shipPayer=true;
+        condition=$('ebayReturnedCondition').value;
+        payer=$('ebayReturnShippingPayer').value;
+        if(payer==='me') show.shipCost=true;
+        if(DAMAGE.indexOf(condition)>-1){ show.dedEnabled=true;
+          ded=$('ebayDeductionEnabled').value; if(ded==='yes') show.deduction=true; }
+      }
+    } else if(group==='D'){
+      show.otherOutcome=true;
+      oc=$('ebayOtherOutcome').value;
+      if(oc==='returned'){
+        show.condition=true; show.value=true; show.shipPayer=true;
+        condition=$('ebayReturnedCondition').value;
+        payer=$('ebayReturnShippingPayer').value;
+        if(payer==='me') show.shipCost=true;
+        if(DAMAGE.indexOf(condition)>-1){ show.dedEnabled=true;
+          ded=$('ebayDeductionEnabled').value; if(ded==='yes') show.deduction=true; }
+      } else if(oc==='other'){ show.otherDetails=true; }
+    }
+
+    var handler=$('ebayRefundHandler').value;
+    if(handler==='on_ebay'){ show.refundType=true;
+      if($('ebayRefundType').value==='partial') show.refundAmount=true; }
+    else if(handler==='stepped_in'||handler==='outside'){ show.refundAmount=true; }
+
+    if($('ebayCategory').value==='custom') show.customRate=true;
+
+    setField('ebayReturnedWrap','ebayItemReturned',show.returned,true);
+    setField('ebayOtherOutcomeWrap','ebayOtherOutcome',show.otherOutcome,true);
+    setField('ebayOtherDetailsWrap','ebayOtherDetails',show.otherDetails,false);
+    setField('ebayConditionWrap','ebayReturnedCondition',show.condition,true);
+    setField('ebayCurrentValueWrap','ebayCurrentItemValue',show.value,true);
+    setField('ebayShipPayerWrap','ebayReturnShippingPayer',show.shipPayer,true);
+    setField('ebayShipCostWrap','ebayReturnShippingCost',show.shipCost,true);
+    setField('ebayDedEnabledWrap','ebayDeductionEnabled',show.dedEnabled,false);
+    setField('ebayDeductionWrap','ebayRefundDeduction',show.deduction,false);
+    setField('ebayHandlerWrap','ebayRefundHandler',true,true);
+    setField('ebayRefundTypeWrap','ebayRefundType',show.refundType,true);
+    setField('ebayRefundAmountWrap','ebayRefundAmount',show.refundAmount,true);
+    setField('ebayCustomRateWrap','ebayCustomFeeRate',show.customRate,false);
+
+    var branch=$('ebayBranch');
+    var order = (group==='B')
+      ? ['ebayShipPayerWrap','ebayShipCostWrap','ebayConditionWrap','ebayCurrentValueWrap','ebayDedEnabledWrap','ebayDeductionWrap']
+      : ['ebayConditionWrap','ebayCurrentValueWrap','ebayShipPayerWrap','ebayShipCostWrap','ebayDedEnabledWrap','ebayDeductionWrap'];
+    order.forEach(function(id){ var w=$(id); if(w) branch.appendChild(w); });
+  }
+
+  /* ===== DEPOP DECISION-TREE VISIBILITY ===== */
+  function setDepopField(wrapId, inputId, show, required){
+    var w=$(wrapId), i=$(inputId);
+    if(!w) return;
+    w.hidden = !show;
+    if(i){ i.required = !!(show && required); if(!show){ i.value=''; } }
+  }
+
+  function updateDepopTree(){
+    var status = $('depopRefundStatus') ? $('depopRefundStatus').value : '';
+    var returned = $('depopItemReturned') ? $('depopItemReturned').value : '';
+    var notReturnedWhy = $('depopNotReturnedWhy') ? $('depopNotReturnedWhy').value : '';
+    var sellerPaid = $('depopSellerPaidReturnShip') ? $('depopSellerPaidReturnShip').value : '';
+
+    var show = {
+      partialAmount: false,
+      returned: false,
+      actualRefund: false,
+      recoveredValue: false,
+      sellerPaidShip: false,
+      returnShipCost: false,
+      notReturnedWhy: false,
+      protectionCheck: false,
+      compensation: false
+    };
+
+    if(status === 'partial'){
+      show.partialAmount = true;
+    } else if(status === 'full'){
+      show.returned = true;
+      show.actualRefund = true;
+      if(returned === 'yes'){
+        show.recoveredValue = true;
+        show.sellerPaidShip = true;
+        if(sellerPaid === 'yes') show.returnShipCost = true;
+      } else if(returned === 'no'){
+        show.notReturnedWhy = true;
+        if(notReturnedWhy === 'transit'){
+          show.protectionCheck = true;
+          show.compensation = true;
+        }
+      }
+    }
+
+    setDepopField('depopPartialAmountWrap', 'depopRefundAmount', show.partialAmount, true);
+    setDepopField('depopReturnedWrap', 'depopItemReturned', show.returned, true);
+    setDepopField('depopActualRefundWrap', 'depopActualRefundAmount', show.actualRefund, false);
+    setDepopField('depopRecoveredValueWrap', 'depopRecoveredValue', show.recoveredValue, true);
+    setDepopField('depopSellerPaidShipWrap', 'depopSellerPaidReturnShip', show.sellerPaidShip, true);
+    setDepopField('depopReturnShipCostWrap', 'depopReturnShipCost', show.returnShipCost, true);
+    setDepopField('depopNotReturnedWhyWrap', 'depopNotReturnedWhy', show.notReturnedWhy, true);
+    setDepopField('depopProtectionCheckWrap', 'depopProtectionCheck', show.protectionCheck, true);
+    setDepopField('depopCompensationWrap', 'depopCompensationReceived', show.compensation, false);
+
+    var market = $('depopMarket') ? $('depopMarket').value : 'US';
+    var hint = $('depopProtectionHint');
+    if(hint){
+      var limits = { US:'$300', UK:'£250', AU:'A$450', OTHER:'not available' };
+      hint.textContent = 'Protection limit (not guaranteed compensation): ' + (limits[market] || 'not available') + '. Only applies if all eligibility conditions are met.';
+    }
+    var mhint = $('depopMarketHint');
+    if(mhint){
+      if(market === 'OTHER'){
+        mhint.textContent = 'OTHER market: 10% selling fee. PayPal processing rate is UNKNOWN and is not estimated — enter fees manually if known.';
+      } else {
+        mhint.textContent = 'US/UK/AU: 0% selling fee; Depop Payments reverses all applicable fees (selling, processing, boosting) on refund.';
+      }
+    }
+  }
+
+  /* ===== MERCARI DECISION-TREE VISIBILITY ===== */
+  var mReturned='', mShipMethod='', mReimbursed='';
+
+  function bindMercariYn(cls, setter){
+    document.querySelectorAll('.'+cls).forEach(function(b){
+      b.addEventListener('click', function(){
+        document.querySelectorAll('.'+cls).forEach(function(x){ x.classList.remove('active'); });
+        b.classList.add('active');
+        setter(b.getAttribute('data-val'));
+        updateMercariTree();
+      });
+    });
+  }
+
+  function updateMercariTree(){
+    var payer = $('mercariReturnShipPayer') ? $('mercariReturnShipPayer').value : '';
+    var why = $('mercariNotReturnedWhy') ? $('mercariNotReturnedWhy').value : '';
+    var show = { cur:false, payer:false, shipCost:false, why:false, method:false, reimb:false, reimbAmt:false, note:false };
+
+    if(mReturned === 'yes'){
+      show.cur = true; show.payer = true;
+      if(payer === 'seller') show.shipCost = true;
+    } else if(mReturned === 'no'){
+      show.why = true;
+      if(why === 'transit'){
+        show.method = true;
+        if(mShipMethod === 'prepaid'){ show.reimb = true; if(mReimbursed === 'yes') show.reimbAmt = true; }
+        else if(mShipMethod === 'seller'){ show.note = true; }
+      }
+    }
+
+    setField('mercariCurrentValueWrap','mercariCurrentItemValue',show.cur,true);
+    setField('mercariReturnShipPayerWrap','mercariReturnShipPayer',show.payer,true);
+    setField('mercariReturnShipCostWrap','mercariReturnShipCost',show.shipCost,true);
+    setField('mercariNotReturnedWhyWrap','mercariNotReturnedWhy',show.why,true);
+    setField('mercariShipMethodWrap',null,show.method,false);
+    setField('mercariReimbursedWrap',null,show.reimb,false);
+    setField('mercariReimbursementWrap','mercariReimbursement',show.reimbAmt,true);
+    setField('mercariSellerArrangedNote',null,show.note,false);
+  }
+
+  function setMercariMode(on){
+    $('ebayFields').hidden=true;
+    $('depopFields').hidden=true;
+    $('mercariFields').hidden=!on;
+    if($('poshmarkFields')) $('poshmarkFields').hidden=true;
+    if($('wnFields')) $('wnFields').hidden=true;
+    if($('vintedFields')) $('vintedFields').hidden=true;
+    ['salePrice','outcome','returnPayer','returnCost','condition','currentValue'].forEach(function(id){
+      var i=$(id); if(i){ var f=i.closest('.field'); if(f) f.style.display = on?'none':''; }
+    });
+    if(on) updateMercariTree();
+  }
+
+  bindMercariYn('mercari-yn-returned', function(v){ mReturned=v; });
+  bindMercariYn('mercari-yn-method', function(v){ mShipMethod=v; });
+  bindMercariYn('mercari-yn-reimb', function(v){ mReimbursed=v; });
+  ['mercariReturnShipPayer','mercariNotReturnedWhy'].forEach(function(id){
+    var el=$(id); if(el) el.addEventListener('change', updateMercariTree);
+  });
+
+  /* ===== POSHMARK DECISION-TREE VISIBILITY ===== */
+  function bindPmYn(cls, fn){ document.querySelectorAll('.'+cls).forEach(function(b){
+    b.addEventListener('click', function(){ document.querySelectorAll('.'+cls).forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); fn(b.getAttribute('data-val')); updatePoshmarkTree(); }); }); }
+
+  function updatePoshmarkTree(){
+    var sale = parseFloat($('poshmarkSalePrice').value) || 0;
+    var fd = $('poshmarkFeeDisplay'); if(fd) fd.textContent = 'Poshmark selling fee: ' + (sale < 15 ? '$2.95' : '$' + (sale*0.20).toFixed(2));
+    var h = $('poshmarkWhatHappened') ? $('poshmarkWhatHappened').value : '';
+    var ret = ynPm('poshmark-yn-returned');
+    var show = {
+      partialAmount: h==='partial', pExpense: h==='partial', pExpenseCost: h==='partial' && ynPm('poshmark-yn-p-expense')==='yes',
+      pReimb: h==='partial', pReimbAmt: h==='partial' && ynPm('poshmark-yn-p-reimb')==='yes',
+      returned: h==='full', fullActualRefund: h==='full',
+      currentValue: h==='full' && ret==='yes', condition: h==='full' && ret==='yes',
+      expense: h==='full' && ret==='yes', expenseCost: h==='full' && ret==='yes' && ynPm('poshmark-yn-expense')==='yes',
+      reimb: h==='full' && ret==='yes', reimbAmt: h==='full' && ret==='yes' && ynPm('poshmark-yn-reimb')==='yes',
+      notReturnedWhy: h==='full' && ret==='no', nReimb: h==='full' && ret==='no', nReimbAmt: h==='full' && ret==='no' && ynPm('poshmark-yn-n-reimb')==='yes',
+      reason: h==='partial' || h==='full'
+    };
+    
+    /* FIX #1: Clear returned-item branch state when switching away from YES */
+    if(h==='full' && ret!=='yes'){
+      /* Clear all returned-item YES/NO buttons */
+      document.querySelectorAll('.poshmark-yn-expense').forEach(function(b){ b.classList.remove('active'); });
+      document.querySelectorAll('.poshmark-yn-reimb').forEach(function(b){ b.classList.remove('active'); });
+      /* Reset to default NO */
+      var expNo = document.querySelector('.poshmark-yn-expense[data-val="no"]');
+      if(expNo) expNo.classList.add('active');
+      var reimbNo = document.querySelector('.poshmark-yn-reimb[data-val="no"]');
+      if(reimbNo) reimbNo.classList.add('active');
+      /* Clear associated input values */
+      var expCost = $('poshmarkExpenseCost'); if(expCost) expCost.value = '';
+      var reimbAmt = $('poshmarkReimbAmt'); if(reimbAmt) reimbAmt.value = '';
+      var curVal = $('poshmarkCurrentValue'); if(curVal) curVal.value = '';
+      var cond = $('poshmarkCondition'); if(cond) cond.selectedIndex = 0;
+      var actualRef = $('poshmarkFullActualRefund'); if(actualRef) actualRef.value = '';
+    }
+    
+    setField('poshmarkPartialAmountWrap','poshmarkPartialAmount',show.partialAmount,true);
+    setField('poshmarkPExpenseWrap',null,show.pExpense,false);
+    setField('poshmarkPExpenseCostWrap','poshmarkPartialExpenseCost',show.pExpenseCost,true);
+    setField('poshmarkPReimbWrap',null,show.pReimb,false);
+    setField('poshmarkPReimbAmtWrap','poshmarkPartialReimbAmt',show.pReimbAmt,true);
+    setField('poshmarkReturnedWrap',null,show.returned,false);
+    setField('poshmarkFullActualRefundWrap','poshmarkFullActualRefund',show.fullActualRefund,false);
+    setField('poshmarkCurrentValueWrap','poshmarkCurrentValue',show.currentValue,true);
+    setField('poshmarkConditionWrap','poshmarkCondition',show.condition,true);
+    setField('poshmarkExpenseWrap',null,show.expense,false);
+    setField('poshmarkExpenseCostWrap','poshmarkExpenseCost',show.expenseCost,true);
+    setField('poshmarkReimbWrap',null,show.reimb,false);
+    setField('poshmarkReimbAmtWrap','poshmarkReimbAmt',show.reimbAmt,true);
+    setField('poshmarkNotReturnedWhyWrap','poshmarkNotReturnedWhy',show.notReturnedWhy,true);
+    setField('poshmarkNReimbWrap',null,show.nReimb,false);
+    setField('poshmarkNReimbAmtWrap','poshmarkNotReimbAmt',show.nReimbAmt,true);
+    setField('poshmarkReasonWrap','poshmarkReason',show.reason,false);
+  }
+  
+  function ynPm(cls){ var el = document.querySelector('.'+cls+'.active'); return el ? el.getAttribute('data-val') : ''; }
+
+  function setPoshmarkMode(on){
+    $('ebayFields').hidden=true; $('depopFields').hidden=true;
+    if($('mercariFields')) $('mercariFields').hidden=true;
+    $('poshmarkFields').hidden=!on;
+    if($('wnFields')) $('wnFields').hidden=true;
+    if($('vintedFields')) $('vintedFields').hidden=true;
+    ['salePrice','outcome','returnPayer','returnCost','condition','currentValue'].forEach(function(id){
+      var i=$(id); if(i){ var f=i.closest('.field'); if(f) f.style.display = on?'none':''; } });
+    if(on) updatePoshmarkTree();
+  }
+  bindPmYn('poshmark-yn-returned', function(){});
+  bindPmYn('poshmark-yn-p-expense', function(){});
+  bindPmYn('poshmark-yn-p-reimb', function(){});
+  bindPmYn('poshmark-yn-expense', function(){});
+  bindPmYn('poshmark-yn-reimb', function(){});
+  bindPmYn('poshmark-yn-n-reimb', function(){});
+  ['poshmarkWhatHappened','poshmarkCondition','poshmarkNotReturnedWhy','poshmarkReason'].forEach(function(id){
+    var el=$(id); if(el) el.addEventListener('change', updatePoshmarkTree); });
+  var psp=$('poshmarkSalePrice'); if(psp) psp.addEventListener('input', updatePoshmarkTree);
+
+  /* ===== WHATNOT DECISION-TREE VISIBILITY ===== */
+  function bindWnYn(cls){ document.querySelectorAll('.'+cls).forEach(function(b){
+    b.addEventListener('click', function(){ document.querySelectorAll('.'+cls).forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active'); updateWhatnotTree(); }); }); }
+  function wnYnVis(cls){ var el=document.querySelector('.'+cls+'.active'); return el?el.getAttribute('data-val'):''; }
+
+  function updateWhatnotTree(){
+    if(typeof window.wnPreviewFees==='function') window.wnPreviewFees();
+    var h=$('wnWhatHappened')?$('wnWhatHappened').value:'';
+    var ret=wnYnVis('wn-yn-returned');
+    var prot=$('wnProtStatus')?$('wnProtStatus').value:'';
+    var reason=$('wnReason')?$('wnReason').value:'';
+    var why=$('wnNotReturnedWhy')?$('wnNotReturnedWhy').value:'';
+    var carrierRelated=(reason==='damaged_transit'||reason==='delayed');
+    var proofRelevant=(reason==='delayed');
+    var show={
+      partialAmount:h==='partial', partialExpense:h==='partial',
+      returned:h==='full', fullActualRefund:h==='full',
+      currentValue:h==='full'&&ret==='yes', condition:h==='full'&&ret==='yes', returnShipping:h==='full'&&ret==='yes',
+      notReturnedWhy:h==='full'&&ret==='no',
+      protStatus:h==='partial'||h==='full', protAmount:(h==='partial'||h==='full')&&prot==='yes',
+      carrierOutside:carrierRelated, proofShip:reason==='delayed',
+      reason:h==='partial'||h==='full'
+    };
+   
+    /* Clear carrier state when reason is not carrier-related */
+    if(!show.carrierOutside){
+      document.querySelectorAll('.wn-yn-carrier').forEach(function(b){b.classList.remove('active');});
+    }
+    /* Clear proof state when reason is not delayed */
+    if(!show.proofShip){
+      document.querySelectorAll('.wn-yn-proof').forEach(function(b){b.classList.remove('active');});
+    }
+    /* Clear returned-item branch state when switching away */
+       /* ALWAYS reset carrier/proof STATE (not just visibility) when current reason doesn't require them */
+    if(!carrierRelated){ document.querySelectorAll('.wn-yn-carrier').forEach(function(b){b.classList.remove('active');}); }
+    if(!proofRelevant){ document.querySelectorAll('.wn-yn-proof').forEach(function(b){b.classList.remove('active');}); }
+    if(h==='full'&&ret!=='yes'){
+      var cv=$('wnCurrentValue'); if(cv)cv.value='';
+      var cd=$('wnCondition'); if(cd)cd.selectedIndex=0;
+      var rs=$('wnReturnShipping'); if(rs)rs.value='';
+    }
+    
+    if(h!=='full'){ 
+      document.querySelectorAll('.wn-yn-returned').forEach(function(b){b.classList.remove('active');}); 
+    }
+    setField('wnPartialAmountWrap','wnPartialAmount',show.partialAmount,true);
+    setField('wnPartialExpenseWrap','wnPartialExpenseCost',show.partialExpense,false);
+    setField('wnReturnedWrap',null,show.returned,false);
+    setField('wnFullActualRefundWrap','wnFullActualRefund',show.fullActualRefund,false);
+    setField('wnCurrentValueWrap','wnCurrentValue',show.currentValue,true);
+    setField('wnConditionWrap','wnCondition',show.condition,true);
+    setField('wnReturnShippingWrap','wnReturnShipping',show.returnShipping,true);
+    setField('wnNotReturnedWhyWrap','wnNotReturnedWhy',show.notReturnedWhy,true);
+    setField('wnProtStatusWrap','wnProtStatus',show.protStatus,true);
+    setField('wnProtAmountWrap','wnProtAmount',show.protAmount,true);
+    setField('wnCarrierOutsideWrap',null,show.carrierOutside,false);
+    setField('wnProofShipWrap',null,show.proofShip,false);
+    setField('wnReasonWrap','wnReason',show.reason,false);
+  }
+
+  function setWhatnotMode(on){
+    $('ebayFields').hidden=true; $('depopFields').hidden=true;
+    if($('mercariFields')) $('mercariFields').hidden=true;
+    if($('poshmarkFields')) $('poshmarkFields').hidden=true;
+    $('wnFields').hidden=!on;
+    if($('vintedFields')) $('vintedFields').hidden=true;
+    ['salePrice','outcome','returnPayer','returnCost','condition','currentValue'].forEach(function(id){
+      var i=$(id); if(i){ var f=i.closest('.field'); if(f) f.style.display = on?'none':''; } });
+    if(on) updateWhatnotTree();
+  }
+  bindWnYn('wn-yn-returned'); bindWnYn('wn-yn-carrier'); bindWnYn('wn-yn-proof');
+  ['wnRegion','wnCategory','wnWhatHappened','wnProtStatus','wnReason','wnNotReturnedWhy','wnCondition'].forEach(function(id){ var el=$(id); if(el) el.addEventListener('change', updateWhatnotTree); });
+  ['wnSalePrice','wnBuyerShipping','wnBuyerTax'].forEach(function(id){ var el=$(id); if(el) el.addEventListener('input', updateWhatnotTree); });
+
+  /* ===== VINTED DECISION-TREE VISIBILITY ===== */
+  function updateVintedTree(){
+    var sc=$('vtScenario')?$('vtScenario').value:'';
+    var sub=$('vtSubChoice')?$('vtSubChoice').value:'';
+    var branch=(sc==='snad'||sc==='remorse')?sub:sc;
+    var rtsRec=$('vtRtsReceived')?$('vtRtsReceived').value:'';
+    var cond=$('vtReturnCondition')?$('vtReturnCondition').value:'';
+    var ship=$('vtShipMethod')?$('vtShipMethod').value:'';
+    var compSt=$('vtCompStatus')?$('vtCompStatus').value:'';
+    var transit=(branch==='lost_transit'||branch==='damaged_transit');
+    var integrated=transit&&ship==='integrated';
+    var show={
+      subChoice:(sc==='snad'||sc==='remorse'),
+      partialAmount:branch==='partial',
+      fullActual:(branch==='full_keep'||branch==='lost_transit'||branch==='rts'||branch==='return_parcel'),
+      rtsReceived:branch==='rts',
+      returnCondition:(branch==='full_return'||(branch==='rts'&&rtsRec==='yes')),
+      recoverValue:((branch==='full_return'&&cond!=='not_received')||branch==='damaged_transit'||(branch==='rts'&&rtsRec==='yes')||branch==='return_parcel'),
+      expense:(branch==='partial'||branch==='full_return'||branch==='damaged_transit'||(branch==='rts'&&rtsRec==='yes')||branch==='return_parcel'),
+      shipMethod:transit, packed:integrated, carrierConfirmed:integrated, provider:integrated,
+      compStatus:(branch!==''&&branch!=='no_refund'),
+      compAmount:compSt==='confirmed'
+    };
+    setField('vtSubChoiceWrap','vtSubChoice',show.subChoice,true);
+    setField('vtPartialAmountWrap','vtPartialAmount',show.partialAmount,true);
+    setField('vtFullActualWrap','vtFullActual',show.fullActual,false);
+    setField('vtRtsReceivedWrap','vtRtsReceived',show.rtsReceived,true);
+    setField('vtReturnConditionWrap','vtReturnCondition',show.returnCondition,true);
+    setField('vtRecoverValueWrap','vtRecoverValue',show.recoverValue,false);
+    setField('vtExpenseWrap','vtExpense',show.expense,false);
+    setField('vtShipMethodWrap','vtShipMethod',show.shipMethod,true);
+    setField('vtPackedWrap','vtPacked',show.packed,true);
+    setField('vtCarrierConfirmedWrap','vtCarrierConfirmed',show.carrierConfirmed,true);
+    setField('vtProviderWrap','vtProvider',show.provider,false);
+    setField('vtCompStatusWrap','vtCompStatus',show.compStatus,true);
+    setField('vtCompAmountWrap','vtCompAmount',show.compAmount,true);
+  }
+  function setVintedMode(on){
+    $('ebayFields').hidden=true; $('depopFields').hidden=true;
+    if($('mercariFields')) $('mercariFields').hidden=true;
+    if($('poshmarkFields')) $('poshmarkFields').hidden=true;
+    if($('wnFields')) $('wnFields').hidden=true;
+    if($('vintedFields')) $('vintedFields').hidden=!on;
+    ['salePrice','outcome','returnPayer','returnCost','condition','currentValue'].forEach(function(id){
+      var i=$(id); if(i){ var f=i.closest('.field'); if(f) f.style.display = on?'none':''; } });
+    if(on) updateVintedTree();
+  }
+  ['vtScenario','vtSubChoice','vtRtsReceived','vtReturnCondition','vtShipMethod','vtCompStatus'].forEach(function(id){ var el=$(id); if(el) el.addEventListener('change', updateVintedTree); });
+
+  function setEbayMode(on){
+    $('ebayFields').hidden=!on;
+    $('depopFields').hidden=true;
+    if($('mercariFields')) $('mercariFields').hidden=true;
+    if($('poshmarkFields')) $('poshmarkFields').hidden=true;
+    if($('wnFields')) $('wnFields').hidden=true;
+    if($('vintedFields')) $('vintedFields').hidden=true;
+    ['salePrice','outcome','returnPayer','returnCost','condition','currentValue'].forEach(function(id){
+      var i=$(id); if(i){ var f=i.closest('.field'); if(f) f.style.display = on?'none':''; }
+    });
+    if(on) updateEbayTree();
+  }
+
+  function setDepopMode(on){
+    $('ebayFields').hidden=true;
+    $('depopFields').hidden=!on;
+    if($('mercariFields')) $('mercariFields').hidden=true;
+    if($('poshmarkFields')) $('poshmarkFields').hidden=true;
+    if($('wnFields')) $('wnFields').hidden=true;
+    if($('vintedFields')) $('vintedFields').hidden=true;
+    ['salePrice','outcome','returnPayer','returnCost','condition','currentValue'].forEach(function(id){
+      var i=$(id); if(i){ var f=i.closest('.field'); if(f) f.style.display = on?'none':''; }
+    });
+    if(on) updateDepopTree();
+  }
+
+  /* eBay listeners */
+  ['ebayRefundReason','ebayItemReturned','ebayOtherOutcome','ebayReturnedCondition',
+   'ebayReturnShippingPayer','ebayDeductionEnabled','ebayRefundHandler','ebayRefundType','ebayCategory']
+   .forEach(function(id){ var el=$(id); if(el) el.addEventListener('change',updateEbayTree); });
+
+  /* Depop listeners */
+  ['depopMarket','depopRefundStatus','depopItemReturned','depopNotReturnedWhy',
+   'depopSellerPaidReturnShip','depopProtectionCheck']
+   .forEach(function(id){ var el=$(id); if(el) el.addEventListener('change',updateDepopTree); });
+
+    var activePlatformKey = 'ebay';
+
+  function resetInputToDefault(input){
+    if(!input) return;
+
+    var tag = (input.tagName || '').toLowerCase();
+    var type = (input.type || '').toLowerCase();
+
+    if(tag === 'select'){
+      var foundDefault = false;
+      for(var i=0;i<input.options.length;i++){
+        if(input.options[i].defaultSelected){
+          input.selectedIndex = i;
+          foundDefault = true;
+          break;
+        }
+      }
+      if(!foundDefault) input.selectedIndex = 0;
+      return;
+    }
+
+    if(type === 'checkbox' || type === 'radio'){
+      input.checked = input.defaultChecked;
+      return;
+    }
+
+    input.value = input.defaultValue || '';
+  }
+
+  function resetPlatformState(platform){
+    var map = {
+      ebay: 'ebayFields',
+      depop: 'depopFields',
+      mercari: 'mercariFields',
+      poshmark: 'poshmarkFields',
+      whatnot: 'wnFields',
+      vinted: 'vintedFields'
+    };
+
+    var root = $(map[platform]);
+    if(root){
+      root.querySelectorAll('input, select, textarea').forEach(function(input){
+        resetInputToDefault(input);
+      });
+
+      root.querySelectorAll('.yn-btn.active').forEach(function(btn){
+        btn.classList.remove('active');
+      });
+
+      root.querySelectorAll('[id$="Result"]').forEach(function(resultBox){
+        resultBox.hidden = true;
+      });
+
+      root.querySelectorAll('[id$="Breakdown"]').forEach(function(box){
+        box.innerHTML = '';
+      });
+    }
+
+    if(platform === 'mercari'){
+      mReturned='';
+      mShipMethod='';
+      mReimbursed='';
+    }
+
+    window.__cbResult = null;
+
+    var receipt = document.getElementById('receipt');
+    if(receipt){
+      receipt.innerHTML =
+        '<div class="r-head"><div class="r-brand">CLAWBACK</div><div class="r-sub">FORCED-RETURN LOSS STATEMENT</div></div>' +
+        '<div class="r-rule"></div>' +
+        '<div class="r-placeholder">Fill in the return on the left.<br>Your itemized loss prints here.</div>';
+    }
+
+    var chart = document.getElementById('chartWrap');
+    if(chart) chart.innerHTML = '';
+
+    var appeal = document.getElementById('appealLetter');
+    if(appeal) appeal.value = '';
+
+    var tax = document.getElementById('taxLine');
+    if(tax) tax.value = '';
+
+    var share = document.getElementById('shareLink');
+    if(share) share.value = '';
+
+    if(typeof window.__cbPlaceholder === 'function') window.__cbPlaceholder();
+    if(typeof window.__cbBuildPrintReport === 'function') window.__cbBuildPrintReport();
+  }
+
+  document.querySelectorAll('.platform-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      var p = b.getAttribute('data-platform');
+
+      if(p && p !== activePlatformKey){
+        resetPlatformState(activePlatformKey);
+        activePlatformKey = p;
+      }
+
+      if(p === 'ebay') setEbayMode(true);
+      else if(p === 'depop') setDepopMode(true);
+      else if(p === 'mercari') setMercariMode(true);
+      else if(p === 'poshmark') setPoshmarkMode(true);
+      else if(p === 'whatnot') setWhatnotMode(true);
+      else if(p === 'vinted') setVintedMode(true);
+      else {
+        $('ebayFields').hidden = true;
+        $('depopFields').hidden = true;
+        if($('mercariFields')) $('mercariFields').hidden = true;
+        if($('poshmarkFields')) $('poshmarkFields').hidden = true;
+        if($('wnFields')) $('wnFields').hidden = true;
+        if($('vintedFields')) $('vintedFields').hidden = true;
+        ['salePrice','outcome','returnPayer','returnCost','condition','currentValue'].forEach(function(id){
+          var i=$(id); if(i){ var f=i.closest('.field'); if(f) f.style.display=''; }
+        });
+      }
+    });
+  });
+
+  setEbayMode(true);
+
+  /* ===== CALC BUTTON DELEGATION ===== */
+  (function wireCalcDelegation(){
+    document.addEventListener('click', function(e){
+      var btn = e.target && e.target.closest ? e.target.closest('#calcBtn') : null;
+      if(!btn) return;
+      if(!$('ebayFields').hidden && typeof window.calculateEbay === 'function'){
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        window.calculateEbay();
+      } else if(!$('depopFields').hidden && typeof window.calculateDepop === 'function'){
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        window.calculateDepop();
+      } else if(!$('mercariFields').hidden && typeof window.calculateMercari === 'function'){
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        window.calculateMercari();
+      } else if(!$('poshmarkFields').hidden && typeof window.calculatePoshmark === 'function'){
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        window.calculatePoshmark();
+      } else if(!$('wnFields').hidden && typeof window.calculateWhatnot === 'function'){
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        window.calculateWhatnot();
+      } else if(!$('vintedFields').hidden && typeof window.calculateVinted === 'function'){
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        window.calculateVinted();
+      }
+    }, true);
+  })();
+})();
+</script>
 
 <script>
 CookieConsent.run({
@@ -289,6 +2560,47 @@ CookieConsent.run({
   }
 });
 </script>
-
+<script>
+/* === PLATFORM FEE-NOTE DISPLAY OVERRIDE (content only — no math, no protected files) === */
+(function(){
+  var NOTES = {
+    ebay: `eBay US: 13.6% final value fee on most categories; Books, Magazines, Movies & TV and certain Music categories are 15.3%, while most Coins & Paper Money and select collectibles are 13.25%. The per-order fee is $0.30 for orders of $10 or less and $0.40 for orders over $10. eBay calculates the final value fee on the total amount of the sale, which can include the item price, shipping, sales tax, and other applicable amounts. There is no separate seller payment-processing fee. Whether fees are credited after a refund depends on the reason and circumstances — use the "what happened" selector.`,
+    poshmark: `Poshmark US: the standard seller fee is 20% on sales of $15 or more and $2.95 on sales under $15. Posh Protect covers eligible issues such as undisclosed damage, incorrect or missing items, items not as described, authenticity issues, and orders that never arrive; approved returns use a Poshmark return label. Fit and change-of-mind returns are not covered by standard Posh Protect. Poshmark is testing optional buyer-paid Seel Worry-Free Returns for eligible U.S. orders, which can cover fit or change-of-mind returns without affecting the seller's earnings or payout. Your actual loss depends on the specific return outcome, returned-item condition, and any seller-paid expenses.`,
+    mercari: `Mercari US: 10% selling fee on the completed item price and buyer-paid shipping, with no additional seller payment-processing fee. Approved returns use a prepaid Mercari return label for eligible items up to 50 lbs; for returns over 50 lbs in actual or dimensional weight, the seller must provide the return label. Your actual loss can depend on the item's recovered value and any seller-paid return or other expenses.`,
+    depop: `Depop US: no Depop selling fee; payment processing is 3.3% + $0.45. If you refund a Depop Payments sale, applicable selling, payment-processing, and boosting fees are reversed automatically. Your remaining loss can come from the refund itself, return shipping or other seller-paid expenses, and any drop in the item's recoverable value.`,
+    whatnot: `Whatnot US: 8% commission on the item's final sale price in most categories; Coins & Money is 4%, and Pallets are 4% under a limited-time promotion. Eligible categories can receive 0% commission on the portion above $1,500 under the current limited-time promotion. Payment processing is 2.9% + $0.30 on total order value, which can include the item price, buyer-paid shipping, and applicable buyer sales tax. Fees are applied at each checkout, even when purchases are later bundled.`,
+    vinted: `Vinted US: $0 seller fees — no commission, no processing, no listing fee. When your sale completes, you receive the full selling price. The BUYER pays the $0.70 + 5% Buyer Protection fee and standard prepaid shipping. Optional paid boosts can cost sellers extra, and custom shipping can also create seller shipping costs. Vinted does not charge a separate seller return fee, but refunds, seller-paid return expenses, and loss in recoverable item value can still create a seller loss — which is exactly what CLAWBACK measures.`
+  };
+  var noteEl = document.getElementById('feeNote');
+  function currentPlatform(){
+    var b = document.querySelector('.platform-btn.active');
+    return b ? b.getAttribute('data-platform') : 'ebay';
+  }
+  function apply(){
+    if(!noteEl) return;
+    var txt = NOTES[currentPlatform()];
+    if(txt && noteEl.textContent !== txt) noteEl.textContent = txt;
+  }
+  document.addEventListener('click', function(){ setTimeout(apply, 0); }, true);
+  if(noteEl && typeof MutationObserver !== 'undefined'){
+    new MutationObserver(function(){ setTimeout(apply, 0); }).observe(noteEl, {childList:true, characterData:true, subtree:true});
+  }
+  apply();
+})();
+</script>
+<script>
+/* Removes the browser's default print header (date + page title) and
+   footer (file URL + page number) from the saved PDF.
+   Those are painted by the browser inside the page-margin area.
+   app.js (protected) injects @page{margin:14mm} at runtime, which created
+   that space. This rule is appended AFTER app.js's style, so it wins and
+   sets margin:0 → no room left for header/footer. */
+(function(){
+  var s = document.createElement('style');
+  s.id = 'cbPageRule';
+  s.textContent = '@media print{ @page{ size: Letter portrait; margin:0; } }';
+  (document.head || document.documentElement).appendChild(s);
+})();
+</script>
 </body>
 </html>
