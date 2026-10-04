@@ -1,244 +1,569 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Does eBay Refund the Per-Order Fee on a Return? 2026 Seller Guide | CLAWBACK</title>
+<meta name="description" content="Does eBay refund the $0.30 or $0.40 per-order fee on a return? It depends on the reason, partial refunds, and who handled the case. See the 2026 fee-credit rules and calculate your exact loss.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.gotclawback.com/ebay-per-order-fee-return.html">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
 <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
 <script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
 <script type="text/plain" data-category="analytics">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CPRC739GBN');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CPRC739GBN');
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Does eBay Refund the Per-Order Fee on a Return? (2026 Answer: No)</title>
-<meta name="description" content="eBay keeps the $0.30/$0.40 per-order fee on every return — even full refunds. See exactly what you lose, when it IS refunded, and how it compares to other platforms.">
-<link rel="canonical" href="https://www.gotclawback.com/ebay-per-order-fee-return.html">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
 <style>
-table.data-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;}
-table.data-table th,table.data-table td{border:1px solid rgba(0,0,0,.15);padding:8px 10px;text-align:left;}
-table.data-table th{background:rgba(0,0,0,.06);}
-.callout{border-left:4px solid #F5B301;background:rgba(245,179,1,.08);padding:12px 16px;margin:18px 0;}
-.callout.red{border-left-color:#C43C2C;background:rgba(196,60,44,.08);}
-.callout.green{border-left-color:#1E7A3F;background:rgba(30,122,63,.08);}
-.cta-box{background:#0E3B2C;border:1px solid #F5B301;padding:20px;margin:28px 0;text-align:center;}
-.confession{background:#282828;color:#FAF7F0;border-left:4px solid #F5B301;padding:14px 16px;margin:18px 0;font-size:14px;line-height:1.6;}
-.verified-badge{display:inline-block;background:#0E3B2C;border:1px solid #F5B301;color:#FAF7F0;font-family:'Space Mono',monospace;font-size:11px;padding:4px 12px;border-radius:20px;letter-spacing:1px;margin:0 0 14px;}
-.sources{font-size:13px;line-height:1.8;}
-.sources a{color:#F5B301;}
+/* ============ CLAWBACK DARK IDENTITY + ARTICLE LAYOUT ============ */
+body{
+background-color:#0E3B2C;
+background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+background-size:44px 44px;
+color:#CFE3D6;
+font-family:'Archivo',system-ui,sans-serif;
+margin:0;
+}
+.float-sym{position:fixed;z-index:0;pointer-events:none;user-select:none;font-family:'Archivo Black',Archivo,sans-serif;color:rgba(251,247,238,.05);line-height:1;}
+.ticker,.site-head,main,.site-foot{position:relative;z-index:1;}
+.ticker{background:#F5B301;color:#0E3B2C;font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.05em;overflow:hidden;white-space:nowrap;padding:8px 0;border-bottom:2px solid #0E3B2C;}
+.ticker-track{display:inline-block;animation:tick 40s linear infinite;}
+@keyframes tick{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.site-head{padding:28px 0 18px;border-bottom:1px solid rgba(245,179,1,.25);background:rgba(14,59,44,.92);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100;}
+.head-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.brand{font-family:'Archivo Black',Archivo,sans-serif;font-size:34px;color:#FAF7EF;text-decoration:none;display:flex;align-items:center;gap:8px;}
+.brand .slash{color:#D4402A;}
+.badge{background:#F5B301;color:#0E3B2C;font-family:'Space Mono',monospace;font-weight:700;font-size:10px;padding:4px 8px;border-radius:3px;letter-spacing:.1em;transform:translateY(-10px) rotate(-2deg);}
+.tagline{font-family:'Space Mono',monospace;font-size:12px;color:#9DBFA9;margin:0;width:100%;}
+.main-nav ul{list-style:none;padding:0;margin:0;display:flex;gap:24px;}
+.main-nav a{font-family:'Space Mono',monospace;font-weight:700;font-size:14px;color:#FAF7EF;text-decoration:none;}
+.main-nav a:hover{color:#F5B301;}
+.nav-toggle{display:none;cursor:pointer;background:none;border:1px solid #F5B301;color:#F5B301;padding:8px 16px;font-family:'Archivo Black',Archivo,sans-serif;font-size:12px;border-radius:4px;}
+.has-drop{position:relative;}
+.main-nav .drop{display:none;position:absolute;top:100%;left:0;background:#0A2A20;border:1px solid rgba(245,179,1,.3);border-radius:8px;padding:10px 14px;min-width:170px;flex-direction:column;gap:10px;z-index:120;}
+.has-drop:hover .drop,.has-drop:focus-within .drop{display:flex;}
+
+.art-wrap{max-width:880px;margin:0 auto;padding:36px 18px 70px;}
+.art-crumb{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#7FA892;text-transform:uppercase;margin-bottom:16px;}
+.art-crumb a{color:#F5B301;text-decoration:none;}
+h1.art-h1{font-family:'Archivo Black',Archivo,sans-serif;font-size:clamp(26px,4.6vw,40px);line-height:1.15;color:#FAF7EF;margin:0 0 14px;}
+.art-lede{font-size:16.5px;line-height:1.75;color:#CFE3D6;margin:0 0 10px;}
+.art-lede strong{color:#FAF7EF;}
+.art-meta{font-family:'Space Mono',monospace;font-size:11px;color:#7FA892;letter-spacing:.1em;margin:10px 0 0;}
+.art-sec{margin:36px 0;}
+.art-sec h2{font-family:'Archivo Black',Archivo,sans-serif;font-size:22px;letter-spacing:.02em;color:#FAF7EF;margin:0 0 12px;border-left:4px solid #F5B301;padding-left:12px;}
+.art-sec h3{font-family:'Space Mono',monospace;font-size:12.5px;letter-spacing:.12em;color:#F5B301;text-transform:uppercase;margin:20px 0 8px;}
+.art-sec p{color:#CFE3D6;line-height:1.75;margin:0 0 12px;font-size:15.5px;}
+.art-sec p strong{color:#FAF7EF;}
+.art-sec ul,.art-sec ol{color:#CFE3D6;line-height:1.75;margin:0 0 12px;padding-left:22px;font-size:15px;}
+.art-sec li{margin-bottom:6px;}
+.art-sec li strong{color:#FAF7EF;}
+.art-sec a{color:#F5B301;}
+.art-quote{font-family:'Space Mono',monospace;font-size:13px;color:#F3E9C8;background:rgba(0,0,0,.25);border-left:3px solid #F5B301;padding:10px 14px;border-radius:0 6px 6px 0;margin:12px 0;}
+.callout{border-left:4px solid #F5B301;background:rgba(0,0,0,.25);padding:12px 16px;border-radius:0 8px 8px 0;color:#F3E9C8;font-size:14.5px;line-height:1.65;margin:16px 0;}
+.callout strong{color:#FAF7EF;}
+.art-table{width:100%;border-collapse:collapse;font-family:'Space Mono',monospace;font-size:12.5px;margin:16px 0;}
+.art-table th{background:#0A2A20;color:#F5B301;text-align:left;padding:10px;letter-spacing:.1em;text-transform:uppercase;font-size:10.5px;}
+.art-table td{border:1px solid rgba(255,255,255,.12);padding:10px;color:#DCE9DF;vertical-align:top;}
+.art-table tr:nth-child(even) td{background:rgba(255,255,255,.03);}
+.art-table .credit{color:#2E8B57;font-weight:700;}
+.art-table .no-credit{color:#D4402A;font-weight:700;}
+.stage-flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0;font-family:'Space Mono',monospace;font-size:12.5px;color:#CFE3D6;}
+.stage-flow span{background:rgba(0,0,0,.25);padding:6px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.08);}
+.stage-flow i{color:#F5B301;font-style:normal;padding:0;font-size:14px;}
+
+/* ============ MINI CALC — EBAY PER-ORDER FEE CHECKER ============ */
+.pc-card{background:rgba(0,0,0,.25);border:1px solid rgba(245,179,1,.35);border-radius:14px;padding:24px;margin:34px 0;box-shadow:0 8px 24px rgba(0,0,0,.35);}
+.pc-kicker{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#7FA892;text-transform:uppercase;margin:0 0 6px;}
+.pc-title{font-family:'Archivo Black',Archivo,sans-serif;font-size:18px;letter-spacing:.05em;color:#F5B301;margin:0 0 8px;}
+.pc-sub{font-family:'Space Mono',monospace;font-size:11.5px;color:#9DBFA9;line-height:1.7;margin:0 0 18px;}
+.pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:640px){.pc-grid{grid-template-columns:1fr;}}
+.pc-field label{display:block;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#9DBFA9;text-transform:uppercase;margin-bottom:6px;}
+.pc-field select,.pc-field input{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);color:#FAF7EF;border-radius:6px;padding:10px;font-family:'Space Mono',monospace;font-size:13px;}
+.pc-field select{color-scheme:dark;}
+.pc-field select option{background:#0E3B2C;color:#FBF7EE;}
+.pc-field select option:checked{background:#0E3B2C;color:#F5B301;}
+.pc-field select:focus,.pc-field input:focus{outline:2px solid #F5B301;outline-offset:1px;}
+.pc-btn{margin-top:16px;width:100%;background:#D4402A;color:#FFF6EE;border:none;font-family:'Archivo Black',Archivo,sans-serif;font-size:13px;letter-spacing:.1em;padding:14px;border-radius:8px;cursor:pointer;box-shadow:0 4px 0 rgba(0,0,0,.35);transition:transform .12s;}
+.pc-btn:hover{transform:translateY(-2px);}
+.pc-out{margin-top:20px;border-top:1px dashed rgba(245,179,1,.4);padding-top:18px;}
+.pc-sub-head{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;color:#9DBFA9;text-transform:uppercase;margin:12px 0 4px;}
+.pc-sub-head:first-child{margin-top:0;}
+.pc-line{display:flex;justify-content:space-between;gap:12px;font-family:'Space Mono',monospace;font-size:12.5px;color:#DCE9DF;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07);}
+.pc-line b{color:#F5B301;font-weight:700;text-align:right;}
+.pc-line.loss b{color:#D4402A;}
+.pc-line.ok b{color:#2E8B57;}
+.pc-verdict{margin:14px 0 0;font-size:14.5px;line-height:1.7;color:#FAF7EF;background:rgba(14,59,44,.55);border:1px solid rgba(46,139,87,.4);border-radius:8px;padding:12px 14px;}
+.pc-note{font-family:'Space Mono',monospace;font-size:10.5px;color:#7FA892;margin-top:14px;line-height:1.7;}
+
+/* ============ READ NEXT + SOURCES + FAQ ============ */
+.next-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;}
+@media(max-width:640px){.next-grid{grid-template-columns:1fr;}}
+.next-card{display:block;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.10);border-radius:10px;padding:16px;text-decoration:none;transition:border-color .15s,transform .15s;}
+.next-card:hover{border-color:#F5B301;transform:translateY(-2px);}
+.next-card b{display:block;font-family:'Archivo Black',Archivo,sans-serif;font-size:13.5px;color:#FAF7EF;margin-bottom:6px;letter-spacing:.02em;}
+.next-card span{font-size:13px;color:#9DBFA9;line-height:1.6;display:block;}
+.src-list{list-style:none;margin:14px 0;padding:0;font-family:'Space Mono',monospace;font-size:12px;}
+.src-list li{margin-bottom:8px;padding-left:18px;position:relative;color:#CFE3D6;}
+.src-list li::before{content:"→";position:absolute;left:0;color:#F5B301;}
+.src-list a{color:#CFE3D6;text-decoration:none;border-bottom:1px dotted rgba(245,179,1,.5);}
+.src-list a:hover{color:#F5B301;}
+.faq-item{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1);border-radius:8px;margin-bottom:10px;transition:border-color .15s;}
+.faq-item[open]{border-color:#F5B301;}
+.faq-item summary{padding:14px 16px;font-family:'Archivo Black',Archivo,sans-serif;font-size:14px;color:#FAF7EF;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:"+";font-size:20px;color:#F5B301;}
+.faq-item[open] summary::after{content:"−";}
+.faq-item p{padding:0 16px 16px;color:#CFE3D6;line-height:1.6;font-size:14px;margin:0;}
+.faq-item p strong{color:#FAF7EF;}
+
+.site-foot{background:#0A2A20;color:#CFE3D6;padding:60px 20px 30px;margin-top:80px;border-top:1px solid rgba(245,179,1,.25);}
+.foot-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
+.foot-brand .brand{color:#FAF7EF;font-size:24px;margin-bottom:16px;}
+.foot-brand p{font-size:14px;line-height:1.5;margin:0;color:#CFE3D6;}
+.foot-col h3{font-family:'Archivo Black',Archivo,sans-serif;font-size:14px;color:#F5B301;margin:0 0 16px;letter-spacing:.05em;}
+.foot-col ul{list-style:none;padding:0;margin:0;}
+.foot-col li{margin-bottom:10px;}
+.foot-col a{color:#CFE3D6;text-decoration:none;font-size:14px;}
+.foot-col a:hover{color:#F5B301;}
+.foot-legal{max-width:1200px;margin:40px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;font-family:'Space Mono',monospace;color:#7FA892;text-align:center;}
+@media(max-width:768px){
+.main-nav ul{display:none;flex-direction:column;width:100%;margin-top:16px;gap:16px;}
+.main-nav ul.nav-open{display:flex;}
+.main-nav .drop{position:static;border:none;padding:6px 0 0 12px;min-width:0;}
+.nav-open .has-drop .drop{display:flex;}
+.nav-toggle{display:block;}
+.head-inner{flex-direction:column;align-items:flex-start;}
+.foot-inner{grid-template-columns:1fr 1fr;}
+}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Does eBay Refund the Per-Order Fee on a Return? (2026 Answer)","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-22"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Does eBay refund the per-order fee on a return?","acceptedAnswer":{"@type":"Answer","text":"No. eBay credits the final value fee on the refunded amount, but the per-order fee ($0.30 for orders $10 or less, $0.40 for orders over $10) is not refunded on returns. It is only credited on cancellations."}},
-{"@type":"Question","name":"Is the eBay per-order fee $0.30 or $0.40?","acceptedAnswer":{"@type":"Answer","text":"For orders $10.00 or less the per-order fee is $0.30. For orders over $10.00 the per-order fee is $0.40. This applies to most categories."}},
-{"@type":"Question","name":"Does eBay refund the per-order fee if I cancel an order?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you cancel an order before it ships (buyer requested, out of stock, or problem with address), eBay credits both the final value fee and the per-order fee. The per-order fee is only kept on returns, not cancellations."}},
-{"@type":"Question","name":"Why doesn't eBay refund the per-order fee on returns?","acceptedAnswer":{"@type":"Answer","text":"The per-order fee covers the transaction infrastructure for that specific order. Since the order existed and was processed, eBay considers the fee earned regardless of whether the sale completes or is returned."}},
-{"@type":"Question","name":"How much do I lose in per-order fees across many returns?","acceptedAnswer":{"@type":"Answer","text":"At $0.40 per return, 100 returns in a year costs you $40 in non-refunded per-order fees. At 500 returns, that's $200. This compounds with return shipping and value drop."}},
-{"@type":"Question","name":"Can I write off the non-refunded per-order fee on my taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes. The per-order fee you paid on a returned sale is an ordinary business expense and is deductible on Schedule C. Track it with your return records."}},
-{"@type":"Question","name":"Do other platforms keep fees on returns like eBay does?","acceptedAnswer":{"@type":"Answer","text":"Depop refunds all fees (selling + processing + boosting) on Depop Payments refunds. Poshmark reverses the 20% commission on approved returns. Mercari reverses the 10% selling fee. eBay is unique in keeping a per-order fee that other platforms don't have."}},
-{"@type":"Question","name":"Does the per-order fee apply to eBay Store subscribers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Store subscribers still pay the per-order fee on every order, and it is still not refunded on returns. Store subscriptions lower the final value fee percentage but do not eliminate the per-order fee."}}]}</script>
-</head><body>
-<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>THE $0.40 NEVER COMES BACK ★ 100 RETURNS = $40 GONE ★ CHECK YOUR EXACT LOSS ★&nbsp;</span><span>THE $0.40 NEVER COMES BACK ★ 100 RETURNS = $40 GONE ★ CHECK YOUR EXACT LOSS ★&nbsp;</span></div></div>
-<header class="site-head"><div class="head-inner">
-<a class="brand" href="index.html">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
-<p class="tagline">// the forced-return loss calculator for resellers</p>
-<nav class="main-nav" aria-label="Primary"><button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
-<ul id="navlist" class="nav-list"><li><a href="index.html#tool">Calculator</a></li><li><a href="platforms.html#ebay">eBay</a></li><li><a href="guides.html">Guides</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="about.html">About</a></li></ul></nav>
-</div></header>
-<main class="page-body">
-<span class="verified-badge">✓ SOURCED FROM EBAY HELP CENTER · VERIFIED AUGUST 22, 2026</span>
-<h1 class="page-title">Does eBay Refund the Per-Order Fee on a Return? (2026 Answer: No)</h1>
-<p class="page-lead">Short answer: <strong>no.</strong> When you refund a buyer, eBay credits the final value fee (13.6% in most categories) on the refunded amount — but the per-order fee stays gone. It's <strong>$0.30 for orders $10 or less</strong> and <strong>$0.40 for orders over $10</strong>, and eBay only credits it on cancellations, not returns. Here's exactly what you keep losing, when you CAN get it back, and how this compares to every other platform.</p>
 
-<div class="callout"><strong>The one-liner:</strong> eBay charges the per-order fee per order, not per dollar. A refund doesn't cancel the order — it just reverses the sale. So the fee stays with eBay. The final value fee is percentage-based and comes back proportionally. The per-order fee is flat and doesn't.</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Does eBay Refund the Per-Order Fee on a Return? 2026 Seller Guide","description":"Does eBay refund the $0.30 or $0.40 per-order fee on a return? It depends on the reason, partial refunds, and who handled the case. See the 2026 fee-credit rules and calculate your exact loss.","dateModified":"2026-10","author":{"@type":"Organization","name":"CLAWBACK"},"publisher":{"@type":"Organization","name":"CLAWBACK"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Does eBay refund the per-order fee on a return?","acceptedAnswer":{"@type":"Answer","text":"Sometimes. For eligible full refunds involving certain buyer-requested return reasons, eBay lists the per-order fixed amount among the fees that can be credited. For seller-responsibility returns, partial refunds and several other situations, it isn't credited."}},
+{"@type":"Question","name":"Is the eBay per-order fee $0.30 or $0.40?","acceptedAnswer":{"@type":"Answer","text":"It's $0.30 for orders of $10 or less and $0.40 for orders over $10 under eBay's current basic fee structure. Some categories have different overall fee structures, so check your category as well."}},
+{"@type":"Question","name":"Does eBay refund the per-order fee for buyer's remorse?","acceptedAnswer":{"@type":"Answer","text":"For eligible full refunds using the applicable eBay refund process, eBay lists buyer-requested reasons such as changed mind, doesn't fit, ordered by mistake and found a better price among situations where the per-order fixed amount can be credited."}},
+{"@type":"Question","name":"Does eBay refund the per-order fee for INAD returns?","acceptedAnswer":{"@type":"Answer","text":"No, under the current fee-credit policy. For seller-responsibility reasons such as an item not matching the description/photos, eBay lists the variable final value fee as eligible but says the per-order fixed amount isn't credited."}},
+{"@type":"Question","name":"Does eBay refund the per-order fee on a partial refund?","acceptedAnswer":{"@type":"Answer","text":"No. eBay's partial-refund examples show proportional credits for eligible percentage-based fees, while the per-order fixed amount is not eligible for credit."}},
+{"@type":"Question","name":"How long does an eBay fee credit take?","acceptedAnswer":{"@type":"Answer","text":"eBay says credits for the per-order fixed amount can take up to 10 days to appear in your transaction history."}},
+{"@type":"Question","name":"What happens to the final value fee on a partial refund?","acceptedAnswer":{"@type":"Answer","text":"For eligible partial refunds, eBay says fee credits are proportional to the amount refunded. Its published example calculates the refund as a percentage of the original total sale and applies that percentage to eligible fees."}},
+{"@type":"Question","name":"What if eBay stepped in and refunded the buyer?","acceptedAnswer":{"@type":"Answer","text":"eBay lists cases where it stepped in and the buyer received a full or partial refund among situations that don't qualify for seller fee credits."}},
+{"@type":"Question","name":"What if I refunded the buyer outside eBay?","acceptedAnswer":{"@type":"Answer","text":"eBay says refunds issued outside eBay don't qualify for the fee credits described in its policy."}},
+{"@type":"Question","name":"Does the per-order fee apply to every eBay category?","acceptedAnswer":{"@type":"Answer","text":"The basic fee structure uses the $0.30/$0.40 per-order fee, but eBay has category-specific fee exceptions. For example, some athletic-shoe sales at qualifying prices have no per-order fee. Always check the fee table for your category."}}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#article">Skip to the article</a>
+<div class="float-sym" aria-hidden="true" style="top:-40px;right:-20px;font-size:320px;">$</div>
+<div class="float-sym" aria-hidden="true" style="bottom:-60px;left:-30px;font-size:280px;">¢</div>
 
-<h2>The Two eBay Fees, And What Happens On A Refund</h2>
-<p>eBay charges two things on most sales: a <strong>final value fee</strong> (a percentage of the total sale amount including shipping and tax) and a small <strong>per-order fee</strong>. When you refund a buyer, eBay credits back the final-value-fee portion tied to the refund. The per-order fee is <em>not</em> refunded — it's charged per order, not per dollar, so a return doesn't cancel it.</p>
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+<span>EBAY KEEPS THE $0.30–$0.40 PER-ORDER FEE ON "NOT AS DESCRIBED" RETURNS ★ SELLERS PAY RETURN SHIPPING ON INAD CLAIMS ★ WHATNOT TAKES 2.9% ON BUYER SHIPPING &amp; TAX — MONEY YOU NEVER SEE ★ MERCARI CHARGES A 10% SELLING FEE AGAIN (2025) ★ DEPOP REFUNDS ALL FEES ON A REFUND ★ VINTED CHARGES $0 IN SELLER SELLING FEES ★ KNOW YOUR NUMBER BEFORE YOU APPEAL ★&nbsp;</span><span>EBAY KEEPS THE $0.30–$0.40 PER-ORDER FEE ON "NOT AS DESCRIBED" RETURNS ★ SELLERS PAY RETURN SHIPPING ON INAD CLAIMS ★ WHATNOT TAKES 2.9% ON BUYER SHIPPING &amp; TAX — MONEY YOU NEVER SEE ★ MERCARI CHARGES A 10% SELLING FEE AGAIN (2025) ★ DEPOP REFUNDS ALL FEES ON A REFUND ★ VINTED CHARGES $0 IN SELLER SELLING FEES ★ KNOW YOUR NUMBER BEFORE YOU APPEAL ★&nbsp;</span>
+</div></div>
 
-<table class="data-table">
-<thead><tr><th>Fee Type</th><th>Amount</th><th>On Return</th><th>On Cancellation</th></tr></thead>
-<tbody>
-<tr><td>Final Value Fee (most categories)</td><td>13.6%</td><td><strong>Credited</strong> proportionally</td><td><strong>Credited</strong> in full</td></tr>
-<tr><td>Final Value Fee (books/movies/music)</td><td>15.3%</td><td><strong>Credited</strong> proportionally</td><td><strong>Credited</strong> in full</td></tr>
-<tr><td>Final Value Fee (coins/trading cards)</td><td>13.25%</td><td><strong>Credited</strong> proportionally</td><td><strong>Credited</strong> in full</td></tr>
-<tr><td>Final Value Fee (athletic shoes ≥$150)</td><td>8%</td><td><strong>Credited</strong> proportionally</td><td><strong>Credited</strong> in full</td></tr>
-<tr><td>Per-Order Fee (≤$10)</td><td>$0.30</td><td><strong>KEPT</strong></td><td>Credited</td></tr>
-<tr><td>Per-Order Fee (>$10)</td><td>$0.40</td><td><strong>KEPT</strong></td><td>Credited</td></tr>
-</tbody>
-</table>
-
-<p>On a clean return, the per-order fee is the only fee leak. On a messier one (paid return shipping, damaged item, wardrobing), the leak gets much bigger. We break down the full picture in <a href="ebay-return-policy-sellers.html">eBay return policy for sellers: 12 hidden costs</a>.</p>
-
-<h2>Worked Example: The $0.40 That Never Comes Back</h2>
-<p>Say you sold an item for <strong>$60</strong>, the buyer opened a return claiming "doesn't fit," and everything else went smoothly. eBay refunds the buyer and credits the final value fee — but the <strong>$0.40 per-order fee is kept</strong>. Result: even a "perfect" return costs you $0.40. Now add return shipping you paid ($8.50 average) and any drop in the item's value, and that's your real loss.</p>
-
-<div class="callout red"><strong>The math that matters:</strong> 100 returns per year × $0.40 = <strong>$40 gone</strong> in per-order fees alone. 500 returns = $200. Scale that to a high-volume seller doing 2,000 returns annually, and you're looking at $800 evaporating from a fee most sellers don't even know exists. This is before return shipping, value drop, and the potential 5% Very High INAD penalty.</div>
-
-<h2>When DOES eBay Refund The Per-Order Fee? (Cancellations)</h2>
-<p>Here's the exception most sellers miss: <strong>the per-order fee IS credited on cancellations.</strong> If you cancel an order before it ships — whether the buyer requested it, you're out of stock, or there's a problem with the address — eBay credits both the final value fee and the per-order fee. The distinction is that a cancellation means the order never completed, while a return means the order completed and was then reversed.</p>
-<p>This creates a weird incentive: if you know a sale is going to be returned (buyer messages "I ordered the wrong size"), you might be better off cancelling and relisting than letting it ship and come back. The per-order fee comes back on the cancellation. Of course, repeated cancellations hurt your seller metrics, so this isn't a strategy — just a fact worth knowing.</p>
-
-<div class="confession"><strong>Confession:</strong> I didn't know about the cancellation vs return distinction for the first year I sold on eBay. I let dozens of "wrong size" orders ship and come back, losing $0.40 each time. Once I started cancelling and relisting when buyers admitted the mistake pre-shipment, I saved maybe $15/month. Not huge, but it's free money I was leaving on the table.</div>
-
-<h2>How This Compares To Other Platforms</h2>
-<p>eBay is unique in having a per-order fee that doesn't refund. Other platforms handle it differently:</p>
-
-<table class="data-table">
-<thead><tr><th>Platform</th><th>Fee Structure</th><th>On Return</th></tr></thead>
-<tbody>
-<tr><td><strong>eBay</strong></td><td>13.6% FVF + $0.30/$0.40 per-order</td><td>FVF credited, per-order <strong>KEPT</strong></td></tr>
-<tr><td><strong>Depop</strong></td><td>10% selling + ~2.9% + $0.30 processing</td><td><strong>All fees reversed</strong> on Depop Payments refunds</td></tr>
-<tr><td><strong>Poshmark</strong></td><td>20% commission (or $2.95 flat under $15)</td><td><strong>Commission reversed</strong> on approved returns</td></tr>
-<tr><td><strong>Mercari</strong></td><td>10% selling fee</td><td><strong>Selling fee reversed</strong> on approved returns</td></tr>
-</tbody>
-</table>
-
-<p>Depop is the most generous: when you refund via Depop Payments, <em>all</em> fees come back — selling, processing, even boosting fees. Poshmark and Mercari reverse their percentage fees. eBay is the only one that keeps a flat fee regardless. We break down the full platform comparison in <a href="platform-comparison-2026.html">The 2026 Reseller's Matrix</a>.</p>
-
-<h2>Does The Per-Order Fee Apply To Store Subscribers?</h2>
-<p>Yes. eBay Store subscribers (Starter, Basic, Premium, Anchor, Enterprise) still pay the per-order fee on every order, and it is still not refunded on returns. Store subscriptions lower the final value fee percentage (from 13.6% down to 12.7% or lower depending on tier and category) but do not eliminate the per-order fee. So even if you're paying $21.95/month for a Basic Store, you're still losing $0.40 on every return.</p>
-<p>The math on whether a Store subscription is worth it depends on your volume and categories. We cover the Store subscription math in <a href="platform-comparison-2026.html">The 2026 Reseller's Matrix</a>.</p>
-
-<h2>The Tax Angle: This Fee Is Deductible</h2>
-<p>Here's the silver lining: the per-order fee you paid on a returned sale is an <strong>ordinary business expense</strong> and is deductible on Schedule C. You paid it, it wasn't refunded, and it was a cost of doing business. Track it with your return records — one line per return showing the per-order fee lost — and you can deduct it at year-end.</p>
-<p>The problem: most sellers never track it because they don't know it exists. They see the final value fee credit and assume "the fees came back." They don't realize $0.40 stayed with eBay. Over 100 returns, that's $40 of deductible expenses you never claimed. We explain the full tax write-off process in <a href="reseller-tax-writeoffs-returns.html">reseller tax write-offs</a>.</p>
-
-<h2>The Real Loss: Per-Order Fee Is Just The Tip</h2>
-<p>The per-order fee is the smallest leak on a return, but it's the one that <em>never</em> comes back. The bigger leaks are:</p>
-<ul>
-<li><strong>Return shipping you paid:</strong> On "not as described" returns, eBay generates a label and deducts the cost from your funds. Average cost: $8-12 depending on weight and distance.</li>
-<li><strong>Value drop:</strong> The item comes back worn, stained, or damaged. A $60 dress that sold in December comes back in January with a makeup mark on the collar — now worth $25. That's $35 lost.</li>
-<li><strong>Very High INAD penalty:</strong> If your Item Not As Described rate is evaluated as "Very High" on the 20th of the month, eBay charges you an additional 5% on final value fees for sales in affected categories the following month. Four consecutive months bumps it to 6%.</li>
-<li><strong>Time:</strong> Processing the return, repacking the item, relisting it. This is opportunity cost you can't get back.</li>
+<header class="site-head">
+<div class="head-inner">
+<a class="brand" href="index.html" aria-label="CLAWBACK home">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
+<p class="tagline">// am I losing money on this return? find out in 20 seconds — eBay · Poshmark · Mercari · Depop · Whatnot · Vinted</p>
+<nav class="main-nav" aria-label="Primary">
+<button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
+<ul id="navlist" class="nav-list">
+<li><a href="index.html#tool">Calculator</a></li>
+<li class="has-drop">
+<a href="platforms.html" aria-haspopup="true">Platforms ▾</a>
+<ul class="drop">
+<li><a href="platforms.html#ebay">eBay</a></li>
+<li><a href="platforms.html#poshmark">Poshmark</a></li>
+<li><a href="platforms.html#mercari">Mercari</a></li>
+<li><a href="platforms.html#depop">Depop</a></li>
+<li><a href="platforms.html#whatnot">Whatnot</a></li>
+<li><a href="platforms.html#vinted">Vinted</a></li>
 </ul>
-<p>We break down all 12 hidden costs in <a href="ebay-return-policy-sellers.html">eBay return policy for sellers: 12 hidden costs</a>, with a real seller's January case study showing how $69.60 evaporated from what looked like a profitable month.</p>
+</li>
+<li><a href="guides.html">Guides</a></li>
+<li><a href="index.html#faq">FAQ</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+</nav>
+</div>
+</header>
 
-<h2>How To Track Your Per-Order Fee Loss</h2>
-<p>eBay doesn't give you a clean report of "per-order fees lost on returns." You have to track it manually:</p>
+<main class="art-wrap" id="article">
+<p class="art-crumb"><a href="index.html">CLAWBACK</a> / <a href="guides.html">Guides</a> / eBay per-order fee on returns</p>
+<h1 class="art-h1">Does eBay Refund the Per-Order Fee on a Return? 2026 Seller Guide</h1>
+<div class="callout"><strong>Short answer:</strong> sometimes. If you're looking at an eBay refund and wondering, "Why did I get some of my fees back but not the $0.30/$0.40?", the answer depends on why the buyer returned the item and how the refund was handled.</div>
+<p class="art-lede">For some eligible full refunds, eBay credits the per-order fixed amount along with the eligible final value fee. But for seller-responsibility returns, partial refunds, certain deductions, and cases where eBay steps in, the per-order fee is <strong>not</strong> credited.</p>
+<p class="art-lede">So don't use the old rule of thumb that says "eBay never refunds the per-order fee." That's too broad for the current policy. Here's the useful version: <strong>the return reason matters.</strong></p>
+<p class="art-meta">LAST REVIEWED: OCTOBER 2026</p>
+
+<section class="art-sec">
+<h2>The eBay per-order fee in plain English</h2>
+<p>eBay's final value fee has two pieces:</p>
 <ol>
-<li>Go to <strong>My eBay &gt; Orders &gt; Sold</strong></li>
-<li>For each returned order, check the transaction details</li>
-<li>Note the per-order fee that was charged and not credited</li>
-<li>Add it to a running total in a spreadsheet or use the <a href="index.html#tool">CLAWBACK calculator</a> to generate a "copy for taxes" line</li>
+<li>a percentage-based final value fee, and</li>
+<li>a fixed per-order fee.</li>
 </ol>
-<p>At year-end, you'll have the exact number to deduct. Most sellers skip this step because it's tedious. The calculator does it for you — one line per return, timestamped, ready for your tax professional.</p>
+<p>For orders of $10 or less, the per-order fee is <strong>$0.30</strong>. For orders over $10, it is <strong>$0.40</strong>. eBay says the total amount of the sale used for the percentage fee can include the item price, buyer-paid shipping, sales tax and other applicable amounts.</p>
+<p>That fixed fee is easy to miss because it is tiny compared with the percentage fee. But when you're trying to reconcile a refund, that tiny line can be exactly what makes the numbers look wrong.</p>
+</section>
 
-<h2>FAQ</h2>
-<dl>
-<dt>Does eBay refund the per-order fee on a return?</dt>
-<dd>No. The final value fee is credited on the refunded amount, but the per-order fee is not refunded on returns. It is only credited on cancellations.</dd>
+<section class="art-sec">
+<h2>When does eBay refund the per-order fee?</h2>
+<p>A refund does not automatically mean every fee comes back. eBay has different rules for different refund situations.</p>
+<table class="art-table">
+<thead><tr><th>What happened</th><th>Per-order fee</th></tr></thead>
+<tbody>
+<tr><td>Full refund for eligible buyer-requested return reason</td><td class="credit">Credited</td></tr>
+<tr><td>Buyer ordered by mistake</td><td class="credit">Credited if the refund qualifies</td></tr>
+<tr><td>Buyer changed their mind</td><td class="credit">Credited if the refund qualifies</td></tr>
+<tr><td>Buyer doesn't like the item / doesn't fit</td><td class="credit">Credited if the refund qualifies</td></tr>
+<tr><td>Buyer found a better price</td><td class="credit">Credited if the refund qualifies</td></tr>
+<tr><td>Seller-responsibility return such as INAD</td><td class="no-credit">Not credited</td></tr>
+<tr><td>Item arrived damaged / defective / wrong item</td><td class="no-credit">Not credited</td></tr>
+<tr><td>Item not received refund</td><td class="no-credit">Not credited</td></tr>
+<tr><td>Seller-issued partial refund</td><td class="no-credit">Not credited</td></tr>
+<tr><td>eBay steps in and refunds buyer</td><td class="no-credit">Not credited</td></tr>
+<tr><td>Refund issued outside eBay</td><td class="no-credit">Not credited</td></tr>
+<tr><td>Eligible buyer-requested cancellation outside seller's control</td><td class="credit">Credited</td></tr>
+<tr><td>Seller-controlled cancellation such as out-of-stock/damaged</td><td class="no-credit">Not credited</td></tr>
+</tbody>
+</table>
+<div class="callout"><strong>Important:</strong> "Credited" doesn't necessarily mean you see the credit instantly. eBay says credits for the per-order fixed amount can take up to <strong>10 days</strong> to appear in your transaction history.</div>
+</section>
 
-<dt>Is it $0.30 or $0.40?</dt>
-<dd>For orders $10.00 or less the per-order fee is $0.30. For orders over $10.00 the per-order fee is $0.40. This applies to most categories.</dd>
+<section class="art-sec">
+<h2>The easiest example: buyer changes their mind</h2>
+<p>Imagine you sell a jacket for $60. The buyer receives it and opens a return because: <strong>"Doesn't fit."</strong></p>
+<p>You receive the item back and issue the eligible full refund through eBay. In this type of buyer-requested return, eBay's current policy says the eligible final value fee and the per-order fixed amount can be credited.</p>
+<p>So this is not the situation where you should automatically assume the $0.40 is gone. That's an important correction to a lot of older seller explanations of eBay returns.</p>
+</section>
 
-<dt>Does eBay refund the per-order fee if I cancel an order?</dt>
-<dd>Yes. If you cancel an order before it ships (buyer requested, out of stock, or problem with address), eBay credits both the final value fee and the per-order fee. The per-order fee is only kept on returns, not cancellations.</dd>
+<section class="art-sec">
+<h2>But an INAD return is different</h2>
+<p>Now change just one thing. The buyer says: <strong>"Item doesn't match the description."</strong></p>
+<p>That's a seller-responsibility return category. If you fully refund the buyer for one of the seller-responsibility reasons listed by eBay — including damaged, defective, wrong item, missing parts, or not matching the description/photos — eBay says it credits the eligible variable final value fee, but <strong>does not credit the per-order fixed amount</strong>.</p>
+<p>So on a $100 order, the $0.40 can remain part of your cost. And that's where sellers often look at the transaction and think:</p>
+<div class="art-quote">"Wait. I refunded the entire order. Why didn't everything reverse?"</div>
+<p>Because "full refund" and "full fee credit" aren't necessarily the same thing.</p>
+</section>
 
-<dt>Why doesn't eBay refund the per-order fee on returns?</dt>
-<dd>The per-order fee covers the transaction infrastructure for that specific order. Since the order existed and was processed, eBay considers the fee earned regardless of whether the sale completes or is returned.</dd>
+<section class="art-sec">
+<h2>What about a partial refund?</h2>
+<p>This is another place where the $0.40 gets confusing. Suppose:</p>
+<ul>
+<li>Original order total: $68.05</li>
+<li>Buyer receives a partial refund: $5.49</li>
+<li>The refund represents about 8.1% of the original order</li>
+</ul>
+<p>eBay's own example shows that the eligible percentage-based final value fee is credited proportionally — but the $0.40 per-order fee is <strong>not eligible for credit</strong> on that partial refund.</p>
+<div class="callout"><strong>Partial refund ≠ 8.1% of every fee.</strong> The percentage-based eligible fee can be prorated. The fixed per-order amount isn't. This is also why the CLAWBACK eBay calculator treats the per-order fee separately from the proportional fee calculation.</div>
+</section>
 
-<dt>How much do I lose in per-order fees across many returns?</dt>
-<dd>At $0.40 per return, 100 returns in a year costs you $40 in non-refunded per-order fees. At 500 returns, that's $200. This compounds with return shipping and value drop.</dd>
+<section class="art-sec">
+<h2>Why does my eBay refund look different from the amount I originally paid?</h2>
+<p>This is probably one of the most useful questions to answer because sellers aren't usually looking at policy language when they're confused. They're looking at a transaction record.</p>
+<p>You might see something like:</p>
+<div class="stage-flow">
+<span>Original sale: $100.00</span><i>→</i><span>Final value fee: -$13.60</span><i>→</i><span>Per-order fee: -$0.40</span>
+</div>
+<p>Then the buyer receives a full refund. If the return qualifies for the appropriate fee credits, the percentage-based fee may be credited and, depending on the return situation, the per-order amount may also be credited. But if the return falls into a category where the fixed amount isn't eligible, that $0.40 doesn't come back.</p>
+<p>That's why it's better to look at the transaction-level fee credit, rather than assuming: <em>"I refunded $100, therefore all $14 disappeared and came back."</em></p>
+</section>
 
-<dt>Can I write off the non-refunded per-order fee on my taxes?</dt>
-<dd>Yes. The per-order fee you paid on a returned sale is an ordinary business expense and is deductible on Schedule C. Track it with your return records.</dd>
+<section class="art-sec">
+<h2>What if eBay steps in?</h2>
+<p>If eBay steps in to help with a return or item-not-received request and the case ends with a full or partial refund to the buyer, eBay says that situation <strong>does not qualify for seller fee credits</strong> under its listed exclusions.</p>
+<p>So if you are reconciling a case where eBay took over, don't use the normal voluntary-refund calculation. That's a different bucket.</p>
+<h3>What if I refunded the buyer outside eBay?</h3>
+<p>Also different. If you send the buyer money outside eBay — for example, through another payment service — eBay says you aren't eligible for the fee credits covered by this policy. How the refund was processed matters.</p>
+</section>
 
-<dt>Do other platforms keep fees on returns like eBay does?</dt>
-<dd>Depop refunds all fees (selling + processing + boosting) on Depop Payments refunds. Poshmark reverses the 20% commission on approved returns. Mercari reverses the 10% selling fee. eBay is unique in keeping a per-order fee that other platforms don't have.</dd>
+<section class="art-sec">
+<h2>What if the buyer returned the item damaged?</h2>
+<p>eBay says fee credits aren't issued when you deduct part of the buyer's refund because the returned item was used or damaged, subject to the eligibility rules around those deductions.</p>
+<p>That means a seller shouldn't look at the deduction amount alone and assume the normal fee-credit calculation applies. If you're dealing with a damaged return, keep the transaction record and the evidence together:</p>
+<ul>
+<li>original listing photos &amp; item description</li>
+<li>order details &amp; return request</li>
+<li>return tracking &amp; photos/video of the returned item</li>
+<li>messages with the buyer &amp; refund calculation</li>
+<li>eBay's case/decision record</li>
+</ul>
+</section>
 
-<dt>Does the per-order fee apply to eBay Store subscribers?</dt>
-<dd>Yes. Store subscribers still pay the per-order fee on every order, and it is still not refunded on returns. Store subscriptions lower the final value fee percentage but do not eliminate the per-order fee.</dd>
-</dl>
+<section class="art-sec">
+<h2>What about cancellations?</h2>
+<p>Don't mix cancellations and returns when you're calculating the fee. eBay's current policy says an eligible cancellation for a reason outside the seller's control — such as the buyer requesting cancellation or a problem with the buyer's shipping address — can receive the per-order fixed amount credit.</p>
+<p>But a seller-controlled cancellation, such as an item being out of stock or damaged, <strong>does not</strong> receive that per-order fee credit.</p>
+<p>The important distinction isn't simply <em>return vs cancellation</em>. It's: <strong>What happened, why did it happen, and which eBay workflow was used?</strong></p>
+</section>
 
-<h2>Sources & Official Policy Pages</h2>
-<p class="sources">Figures verified against official eBay help center articles (August 2026): <a href="https://www.ebay.com/help/selling/fees-credits-invoices/selling-fees" rel="noopener" target="_blank">Selling fees</a> · <a href="https://www.ebay.com/help/selling/fees-credits-invoices/fee-credits" rel="noopener" target="_blank">Fee credits</a>. See the full list at <a href="sources.html">our sources page</a>. Policies change — always confirm in-app before appealing.</p>
+<section class="art-sec">
+<h2>How much is the eBay per-order fee?</h2>
+<p>For eBay.com, the current basic fee structure says:</p>
+<ul>
+<li><strong>$0.30</strong> for orders of $10 or less</li>
+<li><strong>$0.40</strong> for orders over $10</li>
+</ul>
+<p>The percentage final value fee varies substantially by category, so don't treat 13.6% as a universal eBay rate. eBay's current fee table lists different rates for categories such as books, coins, handbags, jewelry, athletic shoes and others. That's why this article focuses on the fixed per-order fee, rather than pretending one percentage applies to every eBay sale.</p>
+</section>
 
-<p><strong>Read next:</strong> <a href="ebay-not-as-described-shipping.html">Who pays return shipping on eBay "not as described"?</a> · <a href="ebay-return-policy-sellers.html">eBay return policy: 12 hidden costs</a> · <a href="platform-comparison-2026.html">The 2026 Reseller's Matrix</a> · <a href="guides.html">All guides</a></p>
+<!-- ============ MINI CALC ============ -->
+<section class="pc-card" id="ebayPOFCalc" aria-labelledby="pofTitle">
+<p class="pc-kicker">Free mini tool · no signup</p>
+<h2 class="pc-title" id="pofTitle">EBAY PER-ORDER FEE CHECKER</h2>
+<p class="pc-sub">Find out if the $0.30 / $0.40 fixed fee comes back to you or stays in your loss column. Mirrors the CLAWBACK eBay engine logic.</p>
+<div class="pc-grid">
+<div class="pc-field"><label for="pofTotal">Total sale amount (price + ship + tax)</label>
+<input type="number" id="pofTotal" min="0" step="0.01" inputmode="decimal" placeholder="68.05"></div>
+<div class="pc-field"><label for="pofReason">Return / Cancellation reason</label>
+<select id="pofReason">
+<option value="remorse" selected>Buyer remorse / changed mind / doesn't fit</option>
+<option value="buyer_cancel">Buyer requested cancellation</option>
+<option value="inad">Item not as described (INAD)</option>
+<option value="damage">Arrived damaged / defective / wrong item</option>
+<option value="not_received">Item not received</option>
+<option value="seller_cancel">Seller cancelled (out of stock / damaged)</option>
+</select></div>
+<div class="pc-field"><label for="pofType">Refund type</label>
+<select id="pofType">
+<option value="full" selected>Full refund</option>
+<option value="partial">Partial refund</option>
+</select></div>
+<div class="pc-field"><label for="pofHandler">How was it handled?</label>
+<select id="pofHandler">
+<option value="on_ebay" selected>I refunded on eBay</option>
+<option value="stepped_in">eBay stepped in</option>
+<option value="outside">I refunded outside eBay</option>
+</select></div>
+<div class="pc-field"><label for="pofDed">Did you deduct money for damage?</label>
+<select id="pofDed">
+<option value="no" selected>No</option>
+<option value="yes">Yes</option>
+</select></div>
+</div>
+<button type="button" class="pc-btn" id="pofRun">CHECK MY PER-ORDER FEE</button>
+<div class="pc-out" id="pofOut" hidden></div>
+<p class="pc-note" style="margin-top:14px;">The $0.40 isn't usually your biggest return loss. Your real loss involves return shipping and unrecovered item value. Use the <a href="index.html#tool" style="color:#F5B301;">full CLAWBACK calculator</a> to see the whole picture.</p>
+</section>
 
-<div class="cta-box"><h3 style="margin-top:0">Calculate your exact eBay return loss in 20 seconds.</h3>
-<p style="margin-bottom:14px">See what eBay keeps on your specific return — fees, shipping, value drop. Free. No signup. Itemized like a receipt.</p>
-<a class="btn-primary" href="index.html#tool">CALCULATE MY EBAY RETURN LOSS</a></div>
+<section class="art-sec">
+<h2>What should I check if eBay didn't credit my fee?</h2>
+<p>Before contacting eBay, check these five things:</p>
+<ol>
+<li><strong>What was the buyer's return reason?</strong> Don't rely on what the buyer told you in a message. Look at the actual return/request record.</li>
+<li><strong>Was it a full or partial refund?</strong> Partial refunds use a different fee-credit calculation.</li>
+<li><strong>Did eBay step in?</strong> If eBay intervened, the fee-credit rules are different.</li>
+<li><strong>Did you issue the refund through eBay?</strong> An outside payment doesn't qualify for the listed fee credits.</li>
+<li><strong>Has enough time passed?</strong> eBay says per-order fee credits can take up to 10 days to appear in transaction history.</li>
+</ol>
+</section>
+
+<section class="art-sec">
+<h2>A simple way to audit one returned order</h2>
+<p>If you're doing this for multiple returns, don't just look at the refund amount. Make a small record for each order:</p>
+<table class="art-table">
+<thead><tr><th>Check</th><th>What to record</th></tr></thead>
+<tbody>
+<tr><td>Sale</td><td>Original order total</td></tr>
+<tr><td>Return reason</td><td>Exact reason shown by eBay</td></tr>
+<tr><td>Refund</td><td>Full or partial</td></tr>
+<tr><td>Final value fee</td><td>Original amount</td></tr>
+<tr><td>Fee credit</td><td>Amount actually credited</td></tr>
+<tr><td>Per-order fee</td><td>$0.30 or $0.40</td></tr>
+<tr><td>Per-order credit</td><td>Credited or not</td></tr>
+<tr><td>Return shipping</td><td>Who paid</td></tr>
+<tr><td>Item condition</td><td>Returned as expected or not</td></tr>
+<tr><td>Recovery value</td><td>What the item is worth now</td></tr>
+<tr><td>Final loss</td><td>Your actual unrecovered amount</td></tr>
+</tbody>
+</table>
+<p>This is much more useful than simply writing: <em>"Buyer returned $100 item."</em> Because $100 refunded to the buyer does not automatically mean you lost $100.</p>
+</section>
+
+<section class="art-sec">
+<h2>One important correction to older eBay articles</h2>
+<p>You'll find older posts and seller discussions saying: <strong>"eBay never refunds the $0.30/$0.40 per-order fee."</strong></p>
+<p>That explanation is outdated as a blanket rule. Current eBay documentation specifically lists eligible full refunds where the per-order fixed amount is included in the fee credits, while separately listing situations where it isn't credited.</p>
+<p>Seller discussions also show why this remains confusing in practice: sellers often describe the fixed fee, final value fee and promotional fees separately when reconciling refunds. Those community experiences are useful for identifying confusion, but eBay's current fee-credit documentation should be the source of truth for the actual rule.</p>
+</section>
+
+<section class="art-sec faq" id="faq">
+<h2>Frequently Asked Questions</h2>
+<details class="faq-item" open><summary>Does eBay refund the per-order fee on a return?</summary><p>Sometimes. For eligible full refunds involving certain buyer-requested return reasons, eBay lists the per-order fixed amount among the fees that can be credited. For seller-responsibility returns, partial refunds and several other situations, it isn't credited.</p></details>
+<details class="faq-item" open><summary>Is the eBay per-order fee $0.30 or $0.40?</summary><p>It's $0.30 for orders of $10 or less and $0.40 for orders over $10 under eBay's current basic fee structure. Some categories have different overall fee structures, so check your category as well.</p></details>
+<details class="faq-item" open><summary>Does eBay refund the per-order fee for buyer's remorse?</summary><p>For eligible full refunds using the applicable eBay refund process, eBay lists buyer-requested reasons such as changed mind, doesn't fit, ordered by mistake and found a better price among situations where the per-order fixed amount can be credited.</p></details>
+<details class="faq-item" open><summary>Does eBay refund the per-order fee for INAD returns?</summary><p>No, under the current fee-credit policy. For seller-responsibility reasons such as an item not matching the description/photos, eBay lists the variable final value fee as eligible but says the per-order fixed amount isn't credited.</p></details>
+<details class="faq-item" open><summary>Does eBay refund the per-order fee on a partial refund?</summary><p>No. eBay's partial-refund examples show proportional credits for eligible percentage-based fees, while the per-order fixed amount is not eligible for credit.</p></details>
+<details class="faq-item" open><summary>How long does an eBay fee credit take?</summary><p>eBay says credits for the per-order fixed amount can take up to 10 days to appear in your transaction history.</p></details>
+<details class="faq-item" open><summary>What happens to the final value fee on a partial refund?</summary><p>For eligible partial refunds, eBay says fee credits are proportional to the amount refunded. Its published example calculates the refund as a percentage of the original total sale and applies that percentage to eligible fees.</p></details>
+<details class="faq-item" open><summary>What if eBay stepped in and refunded the buyer?</summary><p>eBay lists cases where it stepped in and the buyer received a full or partial refund among situations that don't qualify for seller fee credits.</p></details>
+<details class="faq-item" open><summary>What if I refunded the buyer outside eBay?</summary><p>eBay says refunds issued outside eBay don't qualify for the fee credits described in its policy.</p></details>
+<details class="faq-item" open><summary>Does the per-order fee apply to every eBay category?</summary><p>The basic fee structure uses the $0.30/$0.40 per-order fee, but eBay has category-specific fee exceptions. For example, some athletic-shoe sales at qualifying prices have no per-order fee. Always check the fee table for your category.</p></details>
+</section>
+
+<section class="art-sec">
+<h2>What did your return actually cost you?</h2>
+<p>If you're reading this because you have a real returned order in front of you, this is the part that matters. Don't stop at "eBay refunded the buyer."</p>
+<div class="stage-flow">
+<span>Refund exposure</span><i>+</i><span>Seller-paid costs</span><i>+</i><span>Unrecovered item value</span><i>−</i><span>Applicable credits</span><i>=</i><span>Your actual loss</span>
+</div>
+<p>That's what CLAWBACK is designed to make visible.</p>
+<p>And if your loss came from an INAD return, the next question is usually not the $0.40 fee — it's who paid the return shipping and what happened to the item's value.</p>
+<h3>Read next</h3>
+<div class="next-grid">
+<a class="next-card" href="ebay-not-as-described-shipping.html"><b>eBay Item Not as Described: Who Pays Return Shipping?</b><span>How the "Item Not As Described" reason shifts the return label cost to the seller.</span></a>
+<a class="next-card" href="ebay-return-policy-sellers.html"><b>eBay Returns: The Hidden Costs Sellers Miss</b><span>Why getting the item back doesn't mean the transaction cost you nothing.</span></a>
+<a class="next-card" href="platforms.html#ebay"><b>The Full eBay Loss Calculator</b><span>Enter your transaction details and separate the pieces of the loss instead of treating the whole refund as one number.</span></a>
+<a class="next-card" href="platform-comparison-2026.html"><b>The 2026 Reseller's Matrix</b><span>Compare return rules, seller fees and loss scenarios across six platforms.</span></a>
+</div>
+</section>
+
+<section class="art-sec">
+<h2>Sources &amp; methodology</h2>
+<p>This guide was checked against eBay's current Fee Credits and Selling Fees documentation. eBay's fee-credit page is the primary source for determining whether a particular refund situation qualifies for the per-order fixed-fee credit. eBay's selling-fees page is the source for the current basic $0.30/$0.40 fee structure and category-specific fee variations.</p>
+<p>Seller discussions were used only to understand the questions and confusion sellers encounter; they should not override eBay's published policy.</p>
+<ul class="src-list">
+<li><a href="https://www.ebay.com/help/" rel="noopener nofollow">eBay — Fee Credits on Refunds &amp; Cancellations</a></li>
+<li><a href="https://www.ebay.com/help/" rel="noopener nofollow">eBay — Selling Fees &amp; Category Rate Tables</a></li>
+<li><a href="https://www.ebay.com/help/" rel="noopener nofollow">eBay — Seller Protections &amp; Deductions for Damaged Returns</a></li>
+</ul>
+<p class="art-meta">LAST VERIFIED: OCTOBER 2026</p>
+<p class="art-lede" style="font-size:13.5px;color:#9DBFA9;"><strong>Disclaimer:</strong> CLAWBACK is independent and not affiliated with eBay. eBay's policies can change. Your current return case instructions and the official eBay Help pages are the final references for an individual transaction. This article is informational and is not legal or tax advice.</p>
+</section>
 </main>
-<footer class="site-foot"><div class="foot-inner">
+
+<footer class="site-foot">
+<div class="foot-inner">
 <div class="foot-brand"><div class="brand small">CLAW<span class="slash">BACK</span></div><p>The forced-return loss calculator for resellers. Know your number before you appeal.</p></div>
-<nav class="foot-col" aria-label="Guides"><h3>More</h3><ul><li><a href="ebay-not-as-described-shipping.html">NAD return shipping</a></li><li><a href="ebay-return-policy-sellers.html">12 hidden costs</a></li><li><a href="guides.html">Guides</a></li></ul></nav>
-<nav class="foot-col" aria-label="Company"><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
-</div><div class="foot-legal"><p class="verified">Fee data last verified: <strong>August 22, 2026</strong> · sourced from official eBay help pages.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with eBay.</p></div></footer>
+<nav class="foot-col" aria-label="Platforms"><h3>Platforms</h3><ul>
+<li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li>
+<li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li>
+<li><a href="platforms.html#whatnot">Whatnot</a></li><li><a href="platforms.html#vinted">Vinted</a></li>
+</ul></nav>
+<nav class="foot-col" aria-label="Guides"><h3>Guides</h3><ul>
+<li><a href="guides.html">All guides</a></li><li><a href="guides.html#dispute">Win a return dispute</a></li>
+<li><a href="guides.html#taxes">Tax write-offs</a></li>
+</ul></nav>
+<nav class="foot-col" aria-label="Company"><h3>Company</h3><ul>
+<li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms &amp; Disclaimer</a></li><li><a href="contact.html">Contact</a></li>
+</ul></nav>
+<nav class="foot-col" aria-label="Resources"><h3>Resources</h3><ul>
+<li><a href="index.html#faq">FAQ</a></li><li><a href="sources.html">Sources</a></li><li><a href="sitemap.html">Sitemap</a></li>
+</ul></nav>
+</div>
+<div class="foot-legal">
+<p class="verified">Fee data last verified: <strong>August 2026</strong> · sourced from official platform help pages.</p>
+<p class="disclaimer">⚠ Estimates only — not legal or tax advice. Platforms change their fees; verify current rates before you appeal. CLAWBACK is an independent tool and is not affiliated with eBay, Poshmark, Mercari, Depop, Whatnot, or Vinted.</p>
+</div>
+</footer>
+
 <script src="nav.js"></script>
+
+<!-- ========== MINI CALC LOGIC (mirrors locked ebay-calc.js per-order fee rules) ========== -->
+<script>
+(function(){
+  function el(id){ return document.getElementById(id); }
+  function money(n){ return '$' + (Math.round((+n||0)*100)/100).toFixed(2); }
+  
+  el('pofRun').addEventListener('click', function(){
+    var out = el('pofOut');
+    var total = parseFloat(el('pofTotal').value) || 0;
+    if(total <= 0){ out.hidden = false; out.innerHTML = '<p class="pc-note">Enter the total sale amount first.</p>'; return; }
+    
+    var reason = el('pofReason').value;
+    var type = el('pofType').value;
+    var handler = el('pofHandler').value;
+    var ded = el('pofDed').value;
+    
+    // Fee logic matching fees.json threshold
+    var fee = total <= 10 ? 0.30 : 0.40;
+    var credited = true;
+    var reasonText = '';
+    
+    // Override rules matching ebay-calc.js
+    if(handler === 'stepped_in' || handler === 'outside'){
+      credited = false;
+      reasonText = 'No fee credits apply when eBay steps in or when you refund outside the platform.';
+    } else if(type === 'partial'){
+      credited = false;
+      reasonText = 'The per-order fee is never prorated or credited on partial refunds.';
+    } else if(ded === 'yes'){
+      credited = false;
+      reasonText = 'Applying a deduction for a damaged return overrides normal fee credits.';
+    } else if(reason === 'remorse' || reason === 'buyer_cancel'){
+      credited = true;
+      reasonText = 'Eligible buyer-requested return or cancellation: the per-order fee can be credited.';
+    } else {
+      credited = false;
+      reasonText = 'Seller-responsibility reason (INAD, damaged, not received, seller-cancel): eBay keeps the per-order fee.';
+    }
+    
+    var h = '<div class="pc-sub-head">Per-Order Fee Result</div>';
+    h += '<div class="pc-line"><span>Fixed per-order fee</span><b>' + money(fee) + '</b></div>';
+    h += '<div class="pc-line ' + (credited ? 'ok' : 'loss') + '"><span>Status</span><b>' + (credited ? 'CREDITED' : 'KEPT BY EBAY') + '</b></div>';
+    h += '<p class="pc-verdict">' + reasonText + '</p>';
+    h += '<p class="pc-note">eBay states per-order fee credits can take up to 10 days to appear in your transaction history. The $0.30/$0.40 is just one part of your loss — use the full CLAWBACK calculator to see return shipping and item value drop.</p>';
+    
+    out.hidden = false;
+    out.innerHTML = h;
+  });
+})();
+</script>
 
 <script>
 CookieConsent.run({
-  guiOptions: {
-    consentModal: {
-      layout: "box",
-      position: "bottom right",
-      equalWeightButtons: true,
-      flipButtons: false
-    },
-    preferencesModal: {
-      layout: "box",
-      position: "right",
-      equalWeightButtons: true,
-      flipButtons: false
-    }
-  },
-  categories: {
-    necessary: {
-      enabled: true,
-      readOnly: true
-    },
-    analytics: {
-      enabled: false,
-      readOnly: false
-    },
-    advertising: {
-      enabled: false,
-      readOnly: false
-    }
-  },
-  language: {
-    default: "en",
-    autoDetect: "browser",
-    translations: {
-      en: {
-        consentModal: {
-          title: "We use cookies",
-          description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
-          acceptAllBtn: "Accept all",
-          acceptNecessaryBtn: "Reject all",
-          showPreferencesBtn: "Manage preferences"
-        },
-        preferencesModal: {
-          title: "Cookie preferences",
-          acceptAllBtn: "Accept all",
-          acceptNecessaryBtn: "Reject all",
-          savePreferencesBtn: "Save preferences",
-          sections: [
-            {
-              title: "Necessary cookies",
-              description: "These cookies are required for the site to function.",
-              linkedCategory: "necessary"
-            },
-            {
-              title: "Analytics cookies",
-              description: "Help us understand how visitors use our site (Google Analytics).",
-              linkedCategory: "analytics"
-            },
-            {
-              title: "Advertising cookies",
-              description: "Used to show relevant ads (Google AdSense, when enabled).",
-              linkedCategory: "advertising"
-            }
-          ]
-        }
-      }
-    }
-  }
+guiOptions: {
+consentModal: { layout: "box", position: "bottom right", equalWeightButtons: true, flipButtons: false },
+preferencesModal: { layout: "box", position: "right", equalWeightButtons: true, flipButtons: false }
+},
+categories: {
+necessary: { enabled: true, readOnly: true },
+analytics: { enabled: false, readOnly: false },
+advertising: { enabled: false, readOnly: false }
+},
+language: {
+default: "en",
+autoDetect: "browser",
+translations: {
+en: {
+consentModal: {
+title: "We use cookies",
+description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
+acceptAllBtn: "Accept all",
+acceptNecessaryBtn: "Reject all",
+showPreferencesBtn: "Manage preferences"
+},
+preferencesModal: {
+title: "Cookie preferences",
+acceptAllBtn: "Accept all",
+acceptNecessaryBtn: "Reject all",
+savePreferencesBtn: "Save preferences",
+sections: [
+{ title: "Necessary cookies", description: "These cookies are required for the site to function.", linkedCategory: "necessary" },
+{ title: "Analytics cookies", description: "Help us understand how visitors use our site (Google Analytics).", linkedCategory: "analytics" },
+{ title: "Advertising cookies", description: "Used to show relevant ads (Google AdSense, when enabled).", linkedCategory: "advertising" }
+]
+}
+}
+}
+}
 });
 </script>
-
 </body>
 </html>
