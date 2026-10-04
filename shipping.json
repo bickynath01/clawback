@@ -1,18 +1,17 @@
 {
   "_meta": {
-    "updated": "2026-05-07",
+    "updated": "2026-10-03",
     "currency": "USD",
-    "source": "Mercari prepaid-label rate card / USPS / UPS / FedEx (screenshots collected Aug 2026)",
-    "_note": "Used by the upcoming weight-based return-cost estimator. Weights are in pounds unless a key ends in 'oz'. 'best' = the discounted prepaid rate shown in black. The calculator does NOT need this file to work today; it is pre-loaded for the next enhancement."
+    "source": "Existing carrier/rate tables preserved from supplied file. Platform shipping/return rules updated only where verified against current official help/policy pages checked 2026-10-03.",
+    "_note": "This file is data-only. Existing carrier rate tables are preserved and are not represented as current universal platform rates. Platform return-loss inputs should use actual seller-paid return shipping when applicable; do not invent a carrier rate from these rules."
   },
-
   "usps_ground_advantage": {
     "0.25": 4.91, "0.5": 5.66, "0.75": 6.73, "1": 7.48,
-    "2": 12.83, "3": 12.83, "4": 13.90, "5": 14.97,
+    "2": 12.83, "3": 12.83, "4": 13.9, "5": 14.97,
     "6": 16.04, "7": 17.11, "8": 18.18, "9": 19.25, "10": 20.32
   },
   "usps_priority_mail": {
-    "2": 15.29, "3": 19.25, "4": 22.46, "5": 24.60,
+    "2": 15.29, "3": 19.25, "4": 22.46, "5": 24.6,
     "6": 27.81, "7": 29.96, "8": 33.17, "9": 35.31, "10": 38.52
   },
   "ups_ground_saver": {
@@ -28,19 +27,161 @@
     "0.25": 15.99, "0.5": 15.99, "0.75": 15.99, "1": 15.99,
     "2": 15.99, "3": 15.99, "4": 15.99, "5": 15.99,
     "6": 15.99, "7": 15.99, "8": 15.99, "9": 15.99, "10": 15.99,
-    "50": 49.99, "100": 120.00
+    "50": 49.99, "100": 120.0
   },
   "usps_media_mail": { "1": 4.99, "2": 5.99, "3": 6.99 },
   "usps_first_class_envelope_oz": { "1": 0.74, "2": 1.03, "3": 1.32 },
-
   "mercari_return_rule": {
     "free_return_label_up_to_lbs": 50,
     "seller_pays_over_lbs": 50,
     "seller_label_deadline_days": 3,
-    "_note": "On an approved Mercari return, the buyer gets a prepaid label for items up to 50 lbs (actual or dimensional weight). Over 50 lbs the SELLER provides and pays the return label within 3 days or the order is canceled. This is the rule that turns a Mercari return into a shipping loss for heavy-item sellers."
+    "return_request_deadline_hours": 72,
+    "shipping_protection": {
+      "prepaid_label_standard_max": 200,
+      "prepaid_label_first_class_envelope_max": 20,
+      "seller_arranged_coverage": 0,
+      "_note": "Seller-arranged shipping has NO Mercari Shipping Protection. Reimbursement is the ACTUAL amount received, up to these limits. Never auto-calculate the maximum."
+    },
+    "_note": "Official Mercari US returns policy: approved returns use a Mercari prepaid return label for items up to 50 lb. For items over 50 lb, the seller must provide the return label within 3 business days. The buyer must drop off the return within 72 hours of receiving the label, and tracking must show the required scan within 168 hours of approval. Do not infer a dollar return-shipping cost from these rules; use the actual seller-paid amount if one exists.",
+    "seller_label_deadline_business_days": 3,
+    "buyer_return_dropoff_deadline_hours": 72,
+    "return_tracking_deadline_hours": 168
   },
-
+  "ebay_return_shipping": {
+    "platform": "ebay",
+    "country": "US",
+    "currency": "USD",
+    "schema_version": 1,
+    "_note": "Return-shipping RESPONSIBILITY rules only. Contains NO dollar amounts and NO carrier/weight/distance calculations. The user-entered ebayReturnShippingCost is the only cost used by the loss calculation. This section explains/compares the normal eBay rule; it NEVER overrides the payer the user actually selected.",
+    "actual_cost_source": "ebayReturnShippingCost",
+    "payer_options": ["me", "buyer", "ebay", "no_one"],
+    "reasons": {
+      "item_not_as_described": { "label": "Item not as described", "category": "item_problem", "seller_responsibility": true, "buyer_responsibility": false, "responsibility_type": "seller_required", "policy_dependent": false, "return_shipping_applicable": true, "explanation": "When the item doesn't match the listing description, the seller generally covers return shipping." },
+      "arrived_damaged": { "label": "Arrived damaged", "category": "item_problem", "seller_responsibility": true, "buyer_responsibility": false, "responsibility_type": "seller_required", "policy_dependent": false, "return_shipping_applicable": true, "explanation": "For items damaged in transit, the seller generally covers return shipping." },
+      "wrong_item": { "label": "Wrong item received", "category": "item_problem", "seller_responsibility": true, "buyer_responsibility": false, "responsibility_type": "seller_required", "policy_dependent": false, "return_shipping_applicable": true, "explanation": "When the buyer received the wrong item, the seller generally covers return shipping." },
+      "missing_parts_defective": { "label": "Missing parts / defective", "category": "item_problem", "seller_responsibility": true, "buyer_responsibility": false, "responsibility_type": "seller_required", "policy_dependent": false, "return_shipping_applicable": true, "explanation": "For missing parts or defective items, the seller generally covers return shipping." },
+      "buyer_changed_mind": { "label": "Buyer changed mind", "category": "buyer_remorse", "seller_responsibility": false, "buyer_responsibility": false, "responsibility_type": "seller_policy", "policy_dependent": true, "return_shipping_applicable": true, "explanation": "Buyer-remorse return shipping depends on the seller's return policy. If the seller offered free returns, the seller may be responsible; otherwise the buyer may be responsible. Neither party is assumed automatically." },
+      "ordered_wrong_item": { "label": "Ordered wrong item", "category": "buyer_remorse", "seller_responsibility": false, "buyer_responsibility": false, "responsibility_type": "seller_policy", "policy_dependent": true, "return_shipping_applicable": true, "explanation": "Buyer-remorse return shipping depends on the seller's return policy. If the seller offered free returns, the seller may be responsible; otherwise the buyer may be responsible. Neither party is assumed automatically." },
+      "item_not_received": { "label": "Item not received", "category": "no_return", "seller_responsibility": false, "buyer_responsibility": false, "responsibility_type": "not_applicable", "policy_dependent": false, "return_shipping_applicable": false, "explanation": "No return shipment applies because the buyer did not receive the item." },
+      "other": { "label": "Other", "category": "unspecified", "seller_responsibility": null, "buyer_responsibility": null, "responsibility_type": "unknown", "policy_dependent": true, "return_shipping_applicable": true, "explanation": "Responsibility cannot be determined from a generic reason. Use the payer the seller actually reports." }
+    },
+    "loss_rule": {
+      "_note": "seller_return_shipping_loss = the user-entered ebayReturnShippingCost only when the seller was actually charged (payer = 'me'); otherwise 0. Never infer a shipping cost from responsibility alone.",
+      "count_cost_when_payer": "me",
+      "otherwise": 0
+    },
+    "stale_state": {
+      "_note": "If 'returned' changes Yes->No, or the payer changes away from 'me', the previously entered return shipping cost must be cleared and must not affect the calculation. Enforced by calculator JavaScript."
+    }
+  },
+  "depop": {
+    "shippingMethods": {
+      "depopShipping": {
+        "label": "Depop Shipping",
+        "prepaidLabel": true,
+        "tracked": true,
+        "sellerMustUseGeneratedLabel": true,
+        "markets": {
+          "US": { "carrier": "USPS" },
+          "UK": { "carrier": "Evri" },
+          "AU": { "carrier": null }
+        }
+      },
+      "sellerArranged": {
+        "label": "Seller-arranged shipping",
+        "prepaidLabel": false,
+        "sellerPaysShipping": true,
+        "trackedRequiredOrRecommended": true,
+        "sellerProvidesTracking": true
+      }
+    },
+    "returns": {
+      "US": { "buyerReturnLabel": "prepaid", "sellerOutOfPocketReturnShipping": false },
+      "outsideUS": {
+        "buyerArrangesReturn": true,
+        "tracked": true,
+        "depopBuyerShippingReimbursementCap": { "USD": 20, "GBP": 20 }
+      },
+      "returnDeadlineDays": 7,
+      "issueReportDeadlineDays": 30,
+      "returnShipmentDeadlineDays": 7,
+      "returnDeadlineBasis": "within 7 days of return being agreed",
+      "_note": "Official Depop help: eligible issues must be raised within 30 days of the transaction/purchase. If a return is agreed, the buyer must send it back within 7 days. US buyers receive a prepaid return label; buyers outside the US arrange tracked return shipping and Depop reimburses eligible return shipping up to $20/£20."
+    },
+    "sellerProtection": {
+      "eligibleMarkets": ["UK", "US", "AU"],
+      "requiresDepopShipping": true,
+      "requiresBuyButton": true,
+      "shipmentDeadlineDays": 5,
+      "correctBuyerAddressRequired": true,
+      "coveredEvents": ["lost_in_transit", "damaged_in_transit", "return_lost_in_transit", "return_damaged_in_transit"],
+      "limits": { "GBP": 250, "USD": 300, "AUD": 450 },
+      "limitIncludes": ["item_price", "shipping_fees", "applicable_taxes"],
+      "bundleCountsAsSingleTransaction": true,
+      "guaranteedCompensation": false
+    },
+    "sellerArrangedLostShipment": {
+      "carrierClaimRequired": true,
+      "actualCarrierCompensationInput": true,
+      "depopSellerProtection": false
+    },
+    "shippingCancellation": {
+      "US": { "shipWithinDays": 10, "failureResult": "order_cancelled_and_buyer_refunded" }
+    },
+    "unknowns": {
+      "ordinaryRefundDepopShippingLabelRecovery": null,
+      "ordinaryRefundSellerOutboundShippingRecovery": null,
+      "sellerProtectionActualCompensation": null
+    }
+  },
   "default_suggestion": {
     "_note": "When the weight-estimator ships, default to usps_ground_advantage (the cheapest common option) and let the seller switch carrier. If they don't know the weight, fall back to the 1 lb row (~$7.48) as a honest middle guess and say so."
+  },
+  "poshmark_return_shipping": {
+    "platform": "poshmark",
+    "country": "US",
+    "currency": "USD",
+    "schema_version": 1,
+    "_note": "Official Poshmark support states that when a return is processed, a return label is sent to the buyer. Official support also states sellers receive a prepaid, pre-addressed label for outbound sales. This file does not assign a seller out-of-pocket return-shipping dollar amount because the reviewed official source does not state one.",
+    "outbound_shipping": {
+      "seller_shipping_label": "prepaid_poshmark_label",
+      "seller_out_of_pocket_shipping_for_standard_label": null
+    },
+    "return": {
+      "buyer_receives_return_label": true,
+      "seller_out_of_pocket_return_shipping": null,
+      "actual_cost_source": "actual seller charge only if documented"
+    }
+  },
+  "vinted_return_shipping": {
+    "platform": "vinted",
+    "country": "US",
+    "currency": "USD",
+    "schema_version": 1,
+    "_note": "Official Vinted Refund Policy: buyers normally pay return shipping. Sellers may choose to cover return shipping by providing a Vinted-generated label. A buyer has 2 calendar days to report an issue, and when a return is required it must be sent within 5 business days of the seller requesting it. No fixed seller return-shipping dollar amount is assumed.",
+    "return": {
+      "buyer_pays_by_default": true,
+      "seller_may_cover": true,
+      "seller_out_of_pocket_default": 0,
+      "actual_cost_source": "seller-entered actual return shipping cost"
+    },
+    "issue_report_deadline_calendar_days": 2,
+    "return_shipment_deadline_business_days": 5
+  },
+  "whatnot_return_shipping": {
+    "platform": "whatnot",
+    "country": "US",
+    "currency": "USD",
+    "schema_version": 1,
+    "_note": "Official Whatnot Seller Provided Support: when a seller chooses a refund that requires the item to be returned, the seller is responsible for return shipping costs and the return-shipping cost is included in the ledger adjustment. This file intentionally does not invent a carrier rate; use the actual return-shipping cost.",
+    "return": {
+      "seller_pays_when_return_required": true,
+      "buyer_pays_return_shipping": false,
+      "actual_cost_source": "seller-entered actual return shipping cost"
+    },
+    "outbound_shipping": {
+      "buyer_pays_by_default": true,
+      "seller_may_offer_free_or_discounted_shipping": true
+    }
   }
 }
