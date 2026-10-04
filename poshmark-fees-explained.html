@@ -1,310 +1,604 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Much Does Poshmark Take? Poshmark Fees Explained (2026) | CLAWBACK</title>
+<meta name="description" content="Poshmark's 2026 seller fees explained: 20% on sales of $15+, $2.95 flat under $15, buyer-paid $6.49 shipping up to 5 lbs, seller-paid overweight upgrades, and how buyer-side checkout charges are separate from your seller payout. Calculate your exact payout.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.gotclawback.com/poshmark-fees-explained.html">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
 <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
 <script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
 <script type="text/plain" data-category="analytics">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CPRC739GBN');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CPRC739GBN');
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How Much Does Poshmark Take? Poshmark Fees & Shipping Explained (2026)</title>
-<meta name="description" content="How much does Poshmark take? The 20% commission, $2.95 flat fee, 5lb shipping trap & 2026 Texas tax — with real seller ledgers and Seel changes."><link rel="canonical" href="https://www.gotclawback.com/poshmark-fees-explained.html">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
 <style>
-.ledger{background:#0E3B2C;color:#FAF7F0;border:1px solid #F5B301;padding:24px;margin:28px 0;font-family:'Space Mono',monospace;box-shadow:0 10px 30px rgba(0,0,0,.4);}
-.ledger h3{color:#F5B301;font-family:'Archivo Black';margin:0 0 14px;text-align:center;letter-spacing:1px;font-size:18px;}
-.ledger .store{text-align:center;font-size:11px;color:rgba(250,247,240,.6);margin-bottom:14px;letter-spacing:1px;}
-.ledger .entry{display:flex;justify-content:space-between;border-bottom:1px dashed rgba(245,179,1,.25);padding:8px 0;font-size:14px;}
-.ledger .entry:last-child{border-bottom:none;font-weight:bold;font-size:16px;color:#F5B301;padding-top:12px;}
-.ledger .neg{color:#FF8A8A;}
-.ledger .pos{color:#8AFFA1;}
-.callout{border-left:4px solid #F5B301;background:rgba(245,179,1,.08);padding:12px 16px;margin:18px 0;}
-.callout.red{border-left-color:#C43C2C;background:rgba(196,60,44,.08);}
-.callout.green{border-left-color:#0E3B2C;background:rgba(14,59,44,.08);}
-table.data-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;}
-table.data-table th,table.data-table td{border:1px solid rgba(255,255,255,.15);padding:10px;text-align:left;}
-table.data-table th{background:rgba(245,179,1,.15);color:#F5B301;}
-blockquote.voice{border-left:3px solid #F5B301;margin:20px 0;padding:10px 16px;font-style:italic;color:rgba(250,247,240,.85);font-size:15px;}
-.confession{background:#282828;color:#FAF7F0;border-left:4px solid #F5B301;padding:14px 16px;margin:18px 0;font-size:14px;line-height:1.6;}
-.cta-box{background:#0E3B2C;border:1px solid #F5B301;padding:20px;margin:28px 0;text-align:center;}
-.verified-badge{display:inline-block;background:#0E3B2C;border:1px solid #F5B301;color:#FAF7F0;font-family:'Space Mono',monospace;font-size:11px;padding:4px 12px;border-radius:20px;letter-spacing:1px;margin:0 0 14px;}
-.sources{font-size:13px;line-height:1.8;}
-.sources a{color:#F5B301;}
+body{background-color:#0E3B2C;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;color:#CFE3D6;font-family:'Archivo',system-ui,sans-serif;margin:0;}
+.float-sym{position:fixed;z-index:0;pointer-events:none;user-select:none;font-family:'Archivo Black',Archivo,sans-serif;color:rgba(251,247,238,.05);line-height:1;}
+.ticker,.site-head,main,.site-foot{position:relative;z-index:1;}
+.ticker{background:#F5B301;color:#0E3B2C;font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.05em;overflow:hidden;white-space:nowrap;padding:8px 0;border-bottom:2px solid #0E3B2C;}
+.ticker-track{display:inline-block;animation:tick 40s linear infinite;}
+@keyframes tick{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.site-head{padding:28px 0 18px;border-bottom:1px solid rgba(245,179,1,.25);background:rgba(14,59,44,.92);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100;}
+.head-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.brand{font-family:'Archivo Black',Archivo,sans-serif;font-size:34px;color:#FAF7EF;text-decoration:none;display:flex;align-items:center;gap:8px;}
+.brand .slash{color:#D4402A;}
+.badge{background:#F5B301;color:#0E3B2C;font-family:'Space Mono',monospace;font-weight:700;font-size:10px;padding:4px 8px;border-radius:3px;letter-spacing:.1em;transform:translateY(-10px) rotate(-2deg);}
+.tagline{font-family:'Space Mono',monospace;font-size:12px;color:#9DBFA9;margin:0;width:100%;}
+.main-nav ul{list-style:none;padding:0;margin:0;display:flex;gap:24px;}
+.main-nav a{font-family:'Space Mono',monospace;font-weight:700;font-size:14px;color:#FAF7EF;text-decoration:none;}
+.main-nav a:hover{color:#F5B301;}
+.nav-toggle{display:none;cursor:pointer;background:none;border:1px solid #F5B301;color:#F5B301;padding:8px 16px;font-family:'Archivo Black',Archivo,sans-serif;font-size:12px;border-radius:4px;}
+.has-drop{position:relative;}
+.main-nav .drop{display:none;position:absolute;top:100%;left:0;background:#0A2A20;border:1px solid rgba(245,179,1,.3);border-radius:8px;padding:10px 14px;min-width:170px;flex-direction:column;gap:10px;z-index:120;}
+.has-drop:hover .drop,.has-drop:focus-within .drop{display:flex;}
+.art-wrap{max-width:880px;margin:0 auto;padding:36px 18px 70px;}
+.art-crumb{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#7FA892;text-transform:uppercase;margin-bottom:16px;}
+.art-crumb a{color:#F5B301;text-decoration:none;}
+h1.art-h1{font-family:'Archivo Black',Archivo,sans-serif;font-size:clamp(26px,4.6vw,40px);line-height:1.15;color:#FAF7EF;margin:0 0 14px;}
+.art-lede{font-size:16.5px;line-height:1.75;color:#CFE3D6;margin:0 0 10px;}
+.art-lede strong{color:#FAF7EF;}
+.art-meta{font-family:'Space Mono',monospace;font-size:11px;color:#7FA892;letter-spacing:.1em;margin:10px 0 0;}
+.art-sec{margin:36px 0;}
+.art-sec h2{font-family:'Archivo Black',Archivo,sans-serif;font-size:22px;letter-spacing:.02em;color:#FAF7EF;margin:0 0 12px;border-left:4px solid #F5B301;padding-left:12px;}
+.art-sec h3{font-family:'Space Mono',monospace;font-size:12.5px;letter-spacing:.12em;color:#F5B301;text-transform:uppercase;margin:20px 0 8px;}
+.art-sec p{color:#CFE3D6;line-height:1.75;margin:0 0 12px;font-size:15.5px;}
+.art-sec p strong{color:#FAF7EF;}
+.art-sec ul,.art-sec ol{color:#CFE3D6;line-height:1.75;margin:0 0 12px;padding-left:22px;font-size:15px;}
+.art-sec li{margin-bottom:6px;}
+.art-sec li strong{color:#FAF7EF;}
+.art-sec a{color:#F5B301;}
+.art-quote{font-family:'Space Mono',monospace;font-size:13px;color:#F3E9C8;background:rgba(0,0,0,.25);border-left:3px solid #F5B301;padding:10px 14px;border-radius:0 6px 6px 0;margin:12px 0;}
+.callout{border-left:4px solid #F5B301;background:rgba(0,0,0,.25);padding:12px 16px;border-radius:0 8px 8px 0;color:#F3E9C8;font-size:14.5px;line-height:1.65;margin:16px 0;}
+.callout strong{color:#FAF7EF;}
+.art-table{width:100%;border-collapse:collapse;font-family:'Space Mono',monospace;font-size:12.5px;margin:16px 0;}
+.art-table th{background:#0A2A20;color:#F5B301;text-align:left;padding:10px;letter-spacing:.1em;text-transform:uppercase;font-size:10.5px;}
+.art-table td{border:1px solid rgba(255,255,255,.12);padding:10px;color:#DCE9DF;vertical-align:top;}
+.art-table tr:nth-child(even) td{background:rgba(255,255,255,.03);}
+.stage-flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0;font-family:'Space Mono',monospace;font-size:12.5px;color:#CFE3D6;}
+.stage-flow span{background:rgba(0,0,0,.25);padding:6px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.08);}
+.stage-flow i{color:#F5B301;font-style:normal;padding:0;font-size:14px;}
+.pc-card{background:rgba(0,0,0,.25);border:1px solid rgba(245,179,1,.35);border-radius:14px;padding:24px;margin:34px 0;box-shadow:0 8px 24px rgba(0,0,0,.35);}
+.pc-kicker{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#7FA892;text-transform:uppercase;margin:0 0 6px;}
+.pc-title{font-family:'Archivo Black',Archivo,sans-serif;font-size:18px;letter-spacing:.05em;color:#F5B301;margin:0 0 8px;}
+.pc-sub{font-family:'Space Mono',monospace;font-size:11.5px;color:#9DBFA9;line-height:1.7;margin:0 0 18px;}
+.pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:640px){.pc-grid{grid-template-columns:1fr;}}
+.pc-field label{display:block;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#9DBFA9;text-transform:uppercase;margin-bottom:6px;}
+.pc-field input{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);color:#FAF7EF;border-radius:6px;padding:10px;font-family:'Space Mono',monospace;font-size:13px;}
+.pc-field input:focus{outline:2px solid #F5B301;outline-offset:1px;}
+.pc-btn{margin-top:16px;width:100%;background:#D4402A;color:#FFF6EE;border:none;font-family:'Archivo Black',Archivo,sans-serif;font-size:13px;letter-spacing:.1em;padding:14px;border-radius:8px;cursor:pointer;box-shadow:0 4px 0 rgba(0,0,0,.35);transition:transform .12s;}
+.pc-btn:hover{transform:translateY(-2px);}
+.pc-out{margin-top:20px;border-top:1px dashed rgba(245,179,1,.4);padding-top:18px;}
+.pc-sub-head{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;color:#9DBFA9;text-transform:uppercase;margin:12px 0 4px;}
+.pc-sub-head:first-child{margin-top:0;}
+.pc-line{display:flex;justify-content:space-between;gap:12px;font-family:'Space Mono',monospace;font-size:12.5px;color:#DCE9DF;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07);}
+.pc-line b{color:#F5B301;font-weight:700;text-align:right;}
+.pc-line.total b{font-size:14px;}
+.pc-line.loss b{color:#E8734A;}
+.pc-line.ok b{color:#2E8B57;}
+.pc-note{font-family:'Space Mono',monospace;font-size:10.5px;color:#7FA892;margin-top:14px;line-height:1.7;}
+.pc-cta{margin-top:14px;font-size:13.5px;color:#CFE3D6;}
+.pc-cta a{color:#F5B301;}
+.next-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;}
+@media(max-width:640px){.next-grid{grid-template-columns:1fr;}}
+.next-card{display:block;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.10);border-radius:10px;padding:16px;text-decoration:none;transition:border-color .15s,transform .15s;}
+.next-card:hover{border-color:#F5B301;transform:translateY(-2px);}
+.next-card b{display:block;font-family:'Archivo Black',Archivo,sans-serif;font-size:13.5px;color:#FAF7EF;margin-bottom:6px;letter-spacing:.02em;}
+.next-card span{font-size:13px;color:#9DBFA9;line-height:1.6;display:block;}
+.src-list{list-style:none;margin:14px 0;padding:0;font-family:'Space Mono',monospace;font-size:12px;}
+.src-list li{margin-bottom:8px;padding-left:18px;position:relative;color:#CFE3D6;}
+.src-list li::before{content:"→";position:absolute;left:0;color:#F5B301;}
+.src-list a{color:#CFE3D6;text-decoration:none;border-bottom:1px dotted rgba(245,179,1,.5);}
+.src-list a:hover{color:#F5B301;}
+.faq-item{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1);border-radius:8px;margin-bottom:10px;transition:border-color .15s;}
+.faq-item[open]{border-color:#F5B301;}
+.faq-item summary{padding:14px 16px;font-family:'Archivo Black',Archivo,sans-serif;font-size:14px;color:#FAF7EF;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:"+";font-size:20px;color:#F5B301;}
+.faq-item[open] summary::after{content:"−";}
+.faq-item p{padding:0 16px 16px;color:#CFE3D6;line-height:1.6;font-size:14px;margin:0;}
+.faq-item p strong{color:#FAF7EF;}
+.site-foot{background:#0A2A20;color:#CFE3D6;padding:60px 20px 30px;margin-top:80px;border-top:1px solid rgba(245,179,1,.25);}
+.foot-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
+.foot-brand .brand{color:#FAF7EF;font-size:24px;margin-bottom:16px;}
+.foot-brand p{font-size:14px;line-height:1.5;margin:0;color:#CFE3D6;}
+.foot-col h3{font-family:'Archivo Black',Archivo,sans-serif;font-size:14px;color:#F5B301;margin:0 0 16px;letter-spacing:.05em;}
+.foot-col ul{list-style:none;padding:0;margin:0;}
+.foot-col li{margin-bottom:10px;}
+.foot-col a{color:#CFE3D6;text-decoration:none;font-size:14px;}
+.foot-col a:hover{color:#F5B301;}
+.foot-legal{max-width:1200px;margin:40px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;font-family:'Space Mono',monospace;color:#7FA892;text-align:center;}
+@media(max-width:768px){
+.main-nav ul{display:none;flex-direction:column;width:100%;margin-top:16px;gap:16px;}
+.main-nav ul.nav-open{display:flex;}
+.main-nav .drop{position:static;border:none;padding:6px 0 0 12px;min-width:0;}
+.nav-open .has-drop .drop{display:flex;}
+.nav-toggle{display:block;}
+.head-inner{flex-direction:column;align-items:flex-start;}
+.foot-inner{grid-template-columns:1fr 1fr;}
+}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How Much Does Poshmark Take? Poshmark Fees, Shipping & Hidden Costs Explained (2026)","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-16","dateModified":"2026-08-22"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"How much fees does Poshmark take?","acceptedAnswer":{"@type":"Answer","text":"For sales under $15, Poshmark takes a flat commission of $2.95. For sales of $15 or more, Poshmark takes a 20% commission, and you keep 80%. There are no listing fees or monthly subscriptions."}},
-{"@type":"Question","name":"How much does Poshmark take from a $100 sale?","acceptedAnswer":{"@type":"Answer","text":"Poshmark takes exactly $20 from a $100 sale (the 20% commission). You keep $80, minus any overweight shipping upgrades if the package exceeds 5 lbs."}},
-{"@type":"Question","name":"Why are Poshmark fees so high compared to eBay?","acceptedAnswer":{"@type":"Answer","text":"Poshmark's 20% fee is higher than eBay's percentage, but it bundles the buyer's shipping label ($6.49), Posh Protect buyer/seller protection, and the social sharing algorithm. For heavy items over 2 lbs, Poshmark is often actually cheaper than eBay."}},
-{"@type":"Question","name":"Does Poshmark charge recurring monthly fees?","acceptedAnswer":{"@type":"Answer","text":"No. Poshmark does not charge monthly subscriptions or listing fees. If you see 'recurring' on your bank statement, it is simply a card processing code to keep your card on file, not a monthly charge."}},
-{"@type":"Question","name":"What is the Texas Seller Fee Tax on Poshmark?","acceptedAnswer":{"@type":"Answer","text":"As of October 1, 2025, Texas imposes a sales tax on Poshmark's commission. An additional ~8.25% tax is deducted from 80% of your seller fee, slightly reducing your final payout. On a $100 sale, the tax is about $1.32."}},
-{"@type":"Question","name":"Does Seel Worry-Free Returns affect Poshmark seller fees?","acceptedAnswer":{"@type":"Answer","text":"No. When a buyer adds Seel Worry-Free Returns at checkout, they pay a small premium for 7-day return flexibility. Seel handles the return and refund — your earnings as a Poshmark seller stay the same."}},
-{"@type":"Question","name":"What is Poshmark Posh Protect?","acceptedAnswer":{"@type":"Answer","text":"Posh Protect is the built-in buyer/seller protection that comes free with every order. It covers lost packages, damaged items, and items not as described. If a package is lost in transit, Poshmark refunds the buyer and still pays you out of their own funds."}},
-{"@type":"Question","name":"Can I write off Poshmark fees on my taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes. The 20% commission and the $2.95 flat fee are ordinary business expenses deductible on Schedule C. Keep your Poshmark sales reports for tax time."}}]}</script>
-</head><body>
-<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>THE 20% CUT HURTS ★ UNTIL YOU SHIP A 4LB COAT ★&nbsp;</span><span>THE 20% CUT HURTS ★ UNTIL YOU SHIP A 4LB COAT ★&nbsp;</span></div></div>
-<header class="site-head"><div class="head-inner">
-<a class="brand" href="index.html">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
-<p class="tagline">// the forced-return loss calculator for resellers</p>
-<nav class="main-nav" aria-label="Primary"><button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
-<ul id="navlist" class="nav-list"><li><a href="index.html#tool">Calculator</a></li><li><a href="platforms.html">Platforms</a></li><li><a href="guides.html">Guides</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="about.html">About</a></li></ul></nav>
-</div></header>
 
-<main class="page-body"><article class="prose">
-<span class="verified-badge">✓ SOURCED FROM POSHMARK HELP CENTER · VERIFIED AUGUST 22, 2026</span>
-<h1 class="page-title">How Much Does Poshmark Take? The True Cost of Selling on Poshmark (2026)</h1>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How Much Does Poshmark Take? Poshmark Fees Explained (2026)","description":"Poshmark's 2026 seller fees explained: 20% on sales of $15+, $2.95 flat under $15, buyer-paid $6.49 shipping up to 5 lbs, seller-paid overweight upgrades, and how buyer-side checkout charges are separate from seller payouts.","dateModified":"2026-09","author":{"@type":"Organization","name":"CLAWBACK"},"publisher":{"@type":"Organization","name":"CLAWBACK"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How much does Poshmark take from a sale?","acceptedAnswer":{"@type":"Answer","text":"For U.S. sellers, Poshmark takes 20% of the final order price on sales of $15 or more, and a flat $2.95 on sales under $15. No separate payment-processing percentage is added on top of the standard seller fee."}},
+{"@type":"Question","name":"What does Poshmark take from a $100 sale?","acceptedAnswer":{"@type":"Answer","text":"$20 (20%), leaving $80 before other applicable adjustments. Buyer-paid standard shipping is a separate buyer charge and is not deducted from the seller payout."}},
+{"@type":"Question","name":"Does Poshmark charge a separate payment-processing fee?","acceptedAnswer":{"@type":"Answer","text":"No. The standard seller fee covers transaction processing and related services. Do not add another processing percentage on top of the 20% or the $2.95 flat fee."}},
+{"@type":"Question","name":"Who pays Poshmark shipping?","acceptedAnswer":{"@type":"Answer","text":"The buyer pays the standard shipping charge ($6.49 USPS Ground Advantage for packages up to 5 lbs). If the package is heavier, the seller pays the overweight label upgrade: $5 for 5.1–10 lbs and $10 for 10.1–15 lbs under the 2026 simplified structure."}},
+{"@type":"Question","name":"What is Posh Protect?","acceptedAnswer":{"@type":"Answer","text":"Poshmark's built-in protection system. Buyers can open qualifying cases within 72 hours of delivery for undisclosed damage, incorrect or missing items, not-as-described items, and authenticity issues. Approved returns use a Poshmark-provided label. It is not an extra percentage deducted from seller payouts."}},
+{"@type":"Question","name":"What is Seel Worry-Free Returns on Poshmark?","acceptedAnswer":{"@type":"Answer","text":"An optional buyer-paid add-on being tested for eligible U.S. transactions (announced January 2026). It gives buyers extra return flexibility such as fit or change of mind, while seller earnings and payout timing are not affected and returned items go to Seel rather than the seller."}},
+{"@type":"Question","name":"How do I price an item to keep a target amount on Poshmark?","acceptedAnswer":{"@type":"Answer","text":"For sales of $15 or more, divide your target by 0.80 (to keep $40, price at $50; to keep $60, price at $75). Under $15, add the $2.95 flat fee to your target instead."}},
+{"@type":"Question","name":"Why is my Poshmark payout lower than 80% of my listing price?","acceptedAnswer":{"@type":"Answer","text":"The fee applies to the final order price after offers and discounts, not the listing price. Check the final transaction price, seller or bundle discounts, overweight label upgrades, and any other line items in the transaction record before assuming Poshmark took more than 20%."}}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#article">Skip to the article</a>
+<div class="float-sym" aria-hidden="true" style="top:-40px;right:-20px;font-size:320px;">$</div>
+<div class="float-sym" aria-hidden="true" style="bottom:-60px;left:-30px;font-size:280px;">¢</div>
 
-<p class="page-lead">I still remember the first time I sold a $60 pair of vintage Levi's on Poshmark. I did the math in my head: buy for $10, sell for $60, make $50 profit. Easy money. Then the item sold, the buyer paid, and I opened my Poshmark earnings tab. Poshmark had taken $12. I kept $48. Wait, what about the shipping? What about the payment processing?</p>
-<p>If you've ever stared at your Poshmark balance and wondered, <em>"How much does Poshmark actually take from my sale?"</em> you aren't alone. The 20% commission sticker shock is the number one complaint in reseller communities. But here is the secret that veteran sellers know: Poshmark's fee structure is completely misunderstood. For a $12 t-shirt, it's a brutal trap. For a 4-pound winter coat, it's actually cheaper than eBay.</p>
-<p>Today, we are opening the <strong>Seller's Ledger</strong>. We are going to dissect three real sales, break down the exact Poshmark fee structure for 2026 (including a brand-new Texas tax nobody is talking about and the Seel Worry-Free Returns change that landed this year), and show you exactly where your money goes.</p>
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+<span>POSHMARK SELLER FEE: 20% ON $15+ · $2.95 FLAT UNDER $15 ★ FEE APPLIES TO FINAL ORDER PRICE, NOT LISTING PRICE ★ STANDARD $6.49 BUYER-PAID LABEL UP TO 5 LBS ★ OVERWEIGHT UPGRADES $5 (5.1–10 LBS) · $10 (10.1–15 LBS) — SELLER PAYS ★ KNOW YOUR NUMBER BEFORE YOU LIST ★&nbsp;</span><span>POSHMARK SELLER FEE: 20% ON $15+ · $2.95 FLAT UNDER $15 ★ FEE APPLIES TO FINAL ORDER PRICE, NOT LISTING PRICE ★ STANDARD $6.49 BUYER-PAID LABEL UP TO 5 LBS ★ OVERWEIGHT UPGRADES $5 (5.1–10 LBS) · $10 (10.1–15 LBS) — SELLER PAYS ★ KNOW YOUR NUMBER BEFORE YOU LIST ★&nbsp;</span>
+</div></div>
 
-<div class="callout"><strong>The Golden Rule of Poshmark:</strong> For sales <strong>under $15</strong>, Poshmark takes a flat <strong>$2.95</strong> commission. For sales <strong>$15 and over</strong>, Poshmark takes <strong>20%</strong>, and you keep 80%. There are no listing fees, no monthly subscriptions, and the buyer pays for the standard shipping label.</div>
-
-<h2>The Seller's Ledger: Dissecting 3 Real Sales</h2>
-<p>To understand <strong>Poshmark fees for sellers</strong>, you can't just look at the percentages. You have to look at the weight of the item, the sale price, and the shipping dynamics. Let's look at three entries from a real seller's monthly statement.</p>
-
-<h3>Ledger Entry #1: The $12 Vintage Scarf (The Flat Fee Trap)</h3>
-<p>I listed a lightweight vintage scarf for $12. It sold in two days. I figured I'd make a quick ten bucks. But look at what happens when you cross the $15 threshold downwards.</p>
-
-<div class="ledger">
-<h3>POSHMARK SELLER LEDGER</h3>
-<div class="store">TRANSACTION #88492 · LIGHTWEIGHT SCARF</div>
-<div class="entry"><span>Item Sale Price</span><span class="pos">+$12.00</span></div>
-<div class="entry"><span>Poshmark Flat Commission (Under $15)</span><span class="neg">- $2.95</span></div>
-<div class="entry"><span>Payment Processing Fee</span><span>$0.00 (Bundled)</span></div>
-<div class="entry"><span>Buyer Shipping Label (USPS Ground)</span><span>$0.00 (Buyer Paid)</span></div>
-<div class="entry"><span>NET PAYOUT TO SELLER</span><span class="pos">$9.05</span></div>
-</div>
-
-<p><strong>The Autopsy:</strong> On a $12 sale, Poshmark takes nearly 25% of your revenue ($2.95). This is the "cheap item trap." If you sourced that scarf for $4, your profit is $5.05. It's not terrible, but it's why veteran Poshmark sellers rarely list anything under $15 unless it's part of a bundle. The $2.95 flat fee eats the margins of cheap inventory alive.</p>
-
-<h3>Ledger Entry #2: The $60 Designer Jeans (The 20% Reality)</h3>
-<p>Next, a pair of True Religion jeans sold for $60. This is where the standard Poshmark fee structure kicks in.</p>
-
-<div class="ledger">
-<h3>POSHMARK SELLER LEDGER</h3>
-<div class="store">TRANSACTION #88510 · DESIGNER DENIM</div>
-<div class="entry"><span>Item Sale Price</span><span class="pos">+$60.00</span></div>
-<div class="entry"><span>Poshmark 20% Commission</span><span class="neg">- $12.00</span></div>
-<div class="entry"><span>Payment Processing Fee</span><span>$0.00 (Bundled)</span></div>
-<div class="entry"><span>Buyer Shipping Label (USPS Ground)</span><span>$0.00 (Buyer Paid)</span></div>
-<div class="entry"><span>NET PAYOUT TO SELLER</span><span class="pos">$48.00</span></div>
-</div>
-
-<p><strong>The Autopsy:</strong> How much does Poshmark take from a $60 sale? Exactly $12. You keep $48. Notice what is <em>missing</em> from this ledger? Payment processing fees. On platforms like <a href="depop-fees-explained.html">Depop</a> or eBay, you pay the platform fee <em>plus</em> a ~3% credit card processing fee. Poshmark bundles the payment processing into their 20% cut. It stings to see a $12 deduction, but there are no hidden secondary bites.</p>
-
-<h3>Ledger Entry #3: The $100 Winter Coat (Where Poshmark Beats eBay)</h3>
-<p>This is the sale that changes everything. A heavy, 4-pound wool winter coat sold for $100. This is where people ask, <em>"Is it cheaper to sell on Poshmark or eBay?"</em> Let's run the Poshmark ledger first.</p>
-
-<div class="ledger">
-<h3>POSHMARK SELLER LEDGER</h3>
-<div class="store">TRANSACTION #88555 · 4LB WOOL COAT</div>
-<div class="entry"><span>Item Sale Price</span><span class="pos">+$100.00</span></div>
-<div class="entry"><span>Poshmark 20% Commission</span><span class="neg">- $20.00</span></div>
-<div class="entry"><span>Buyer Shipping Label (Up to 5lbs)</span><span>$0.00 (Buyer Paid $6.49)</span></div>
-<div class="entry"><span>Overweight Shipping Upgrade</span><span>$0.00 (Under 5lb limit)</span></div>
-<div class="entry"><span>NET PAYOUT TO SELLER</span><span class="pos">$80.00</span></div>
-</div>
-
-<p>Now, let's look at what would have happened if I sold that exact same 4lb coat on eBay for $100:</p>
-<ul>
-<li><strong>eBay Final Value Fee (~13% + $0.40):</strong> -$13.40</li>
-<li><strong>eBay Payment Processing (~2.35%):</strong> -$2.35</li>
-<li><strong>Shipping Label (Seller buys 4lb USPS Ground):</strong> -$9.50 (out of pocket)</li>
-<li><strong>eBay Net Payout:</strong> ~$74.75</li>
+<header class="site-head">
+<div class="head-inner">
+<a class="brand" href="index.html" aria-label="CLAWBACK home">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
+<p class="tagline">// am I losing money on this return? find out in 20 seconds — eBay · Poshmark · Mercari · Depop · Whatnot · Vinted</p>
+<nav class="main-nav" aria-label="Primary">
+<button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
+<ul id="navlist" class="nav-list">
+<li><a href="index.html#tool">Calculator</a></li>
+<li class="has-drop">
+<a href="platforms.html" aria-haspopup="true">Platforms ▾</a>
+<ul class="drop">
+<li><a href="platforms.html#ebay">eBay</a></li>
+<li><a href="platforms.html#poshmark">Poshmark</a></li>
+<li><a href="platforms.html#mercari">Mercari</a></li>
+<li><a href="platforms.html#depop">Depop</a></li>
+<li><a href="platforms.html#whatnot">Whatnot</a></li>
+<li><a href="platforms.html#vinted">Vinted</a></li>
 </ul>
+</li>
+<li><a href="guides.html">Guides</a></li>
+<li><a href="index.html#faq">FAQ</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+</nav>
+</div>
+</header>
 
-<p><strong>The Autopsy:</strong> <strong>Poshmark wins by over $5.</strong> Why? Because Poshmark's buyer pays a flat $6.49 shipping rate for <em>anything up to 5 pounds</em>. On eBay, the seller usually eats the cost of a 4lb shipping label, which is much more expensive than a 1lb label. <strong>If you sell heavy clothing, shoes, or bundles, Poshmark's 20% fee is actually a bargain.</strong></p>
+<main class="art-wrap" id="article">
+<p class="art-crumb"><a href="index.html">CLAWBACK</a> / <a href="guides.html">Guides</a> / Poshmark fees</p>
+<h1 class="art-h1">How Much Does Poshmark Take? Poshmark Fees Explained (2026)</h1>
+<p class="art-lede">If you sell on Poshmark, the number you usually notice first is 20%. But that number alone doesn't answer the question sellers actually care about:</p>
+<div class="art-quote">"If I sell this item for $X, how much money will actually hit my Poshmark balance?"</div>
+<p class="art-lede">That's where Poshmark gets more interesting. A $12 sale has a very different fee impact from a $60 sale. A bundle can create a completely different shipping calculation. An offer changes the final order price. A package over 5 pounds can create an additional seller shipping charge. And the buyer can see their own checkout charges that do not come out of your seller payout.</p>
+<p class="art-lede">This guide breaks down the current U.S. Poshmark seller fees, the shipping costs sellers actually need to watch, the situations that make a 20% fee more or less painful, and the questions sellers keep running into in real-world sales.</p>
+<p class="art-meta">LAST CHECKED: SEPTEMBER 2026</p>
 
-<div class="confession"><strong>Confession:</strong> I spent my first year on Poshmark mad about the 20% fee. I cross-listed everything to Depop and Mercari, thinking I'd beat the math. Then I looked at my year-end numbers. On heavy items — winter coats, boots, denim bundles — I'd actually made more per item on Poshmark, because the buyer was eating the shipping. The 20% only hurt on the cheap stuff, and I'd been listing cheap stuff I shouldn't have been touching anyway. Once I stopped listing under $15 solo items and stuck to the 2-5 lb sweet spot, my margins flipped positive.</div>
-
-<h2>The 5lb Shipping Trap (And How to Survive It)</h2>
-<p>That 5-pound limit is the most important number on Poshmark. The buyer pays $6.49 for shipping, and Poshmark provides a USPS Ground Advantage label that covers up to 5 lbs.</p>
-<p>But what happens if a buyer bundles three pairs of jeans and the box hits 7 pounds? Poshmark doesn't just eat the extra cost. They deduct an <strong>overweight shipping upgrade fee</strong> directly from your earnings.</p>
-<table class="data-table">
-<thead><tr><th>Package Weight</th><th>Seller Upgrade Fee</th></tr></thead>
+<section class="art-sec">
+<h2>The short answer: how much does Poshmark take?</h2>
+<p>For U.S. sellers, Poshmark's current seller fee is:</p>
+<table class="art-table">
+<thead><tr><th>Sale price</th><th>Poshmark seller fee</th><th>Seller keeps before other adjustments</th></tr></thead>
 <tbody>
-<tr><td>Up to 5 lbs</td><td>Free (Covered by buyer's $6.49)</td></tr>
-<tr><td>5.01 - 10 lbs</td><td>$5.00 (Deducted from your payout)</td></tr>
-<tr><td>10.01 - 15 lbs</td><td>$10.00 (Deducted from your payout)</td></tr>
+<tr><td>Under $15</td><td>$2.95 flat</td><td>Sale price − $2.95</td></tr>
+<tr><td>$15 or more</td><td>20%</td><td>80% of the final order price</td></tr>
 </tbody>
 </table>
-<div class="callout red"><strong>Warning:</strong> If you sell heavy items or allow massive bundles, you must price your items to absorb a potential $5 to $10 overweight fee. If you sell a $20 sweater bundle that weighs 8 lbs, Poshmark will take their 20% ($4) AND deduct $5 for the shipping upgrade. You just paid to sell that item. We break down the full math in <a href="poshmark-damaged-return.html">what you lose on a Poshmark damaged return</a> — the overweight fee becomes a sunk cost even when the return reverses the commission.</div>
-
-<h2>Posh Protect: The Free Insurance You Didn't Know You Had</h2>
-<p>Here's the part of Poshmark's fee structure that nobody talks about — because it's free and it's always there. <strong>Posh Protect</strong> comes with every single order, and it's the reason the 20% fee doesn't feel like a rip-off to long-time sellers.</p>
-<p>Posh Protect covers three things:</p>
+<p>Poshmark says it is free to list an item. The seller fee is deducted after the item sells. Poshmark also notes that actual earnings can vary based on the final order price, seller discounts, fees, applicable taxes and other adjustments.</p>
+<p>So the simple examples are:</p>
 <ul>
-<li><strong>Lost packages:</strong> If USPS loses your shipment, Poshmark refunds the buyer AND pays you. You don't fight with USPS claims. Poshmark eats the loss out of their own funds.</li>
-<li><strong>Damaged items:</strong> If the item arrives damaged in transit (not from buyer misuse), Posh Protect steps in.</li>
-<li><strong>Not-as-described claims:</strong> Buyers can open a case within 3 days of delivery for items that don't match the listing.</li>
+<li>$10 sale → $7.05 before other adjustments</li>
+<li>$12 sale → $9.05</li>
+<li>$15 sale → $12.00</li>
+<li>$50 sale → $40.00</li>
+<li>$100 sale → $80.00</li>
 </ul>
-<p>On eBay, if a package is lost, you file a claim with USPS and wait weeks for a response. On Poshmark, Poshmark handles it and pays you immediately. That alone is worth the 20% for many sellers.</p>
+<p>That's the basic seller-fee math. But it isn't the whole economics of a Poshmark sale.</p>
+</section>
 
-<h2>Seel Worry-Free Returns: The 2025 Game-Changer</h2>
-<p>Here's the biggest Poshmark change most sellers have missed entirely. In 2025, Poshmark partnered with <strong>Seel</strong> to offer optional "Worry-Free Returns" that buyers can add at checkout. This is a massive shift in how Poshmark handles returns, and it affects your fees in ways you should know.</p>
-<p><strong>What Seel does:</strong> Buyers can pay a small premium at checkout to get 7-day return flexibility (instead of Poshmark's standard 3-day "not as described" window). If they use it, Seel handles the return and refund — not you.</p>
-<p><strong>What this means for your fees:</strong> Your earnings as a Poshmark seller stay exactly the same. Seel pays the refund out of their own funds. The item goes to Seel's warehouse, not back to you. You don't lose the 20% commission, you don't lose the item, and you don't deal with the return process. Seel returns are effectively free insurance for you.</p>
-<p><strong>What you can't control:</strong> Sellers cannot opt out of Seel. Buyers choose whether to add it at checkout. Bundle purchases are currently excluded.</p>
-<div class="callout green"><strong>The practical rule:</strong> If a buyer adds Seel protection and returns for fit or change-of-mind reasons, you keep your earnings and the item goes to Seel. If they open a "not as described" case through Poshmark directly (the traditional 3-day NAD claim), normal Poshmark return rules apply. We cover the full 72-hour return window in <a href="poshmark-damaged-return.html">what you lose on a Poshmark damaged return</a>.</div>
+<section class="art-sec">
+<h2>The first Poshmark fee mistake: using the listing price instead of the final sale price</h2>
+<p>You might list an item for $80. But then a buyer sends an offer for $60. Your seller fee is based on the final order price, not the original $80 listing price.</p>
+<p>At $60: $60 × 20% = $12 fee, leaving $60 − $12 = $48.</p>
+<p>That's why your listing price, offer price and actual payout should never be treated as the same number. Poshmark explicitly says estimated earnings can vary based on the final order price and seller discounts.</p>
+<div class="callout"><strong>Seller rule:</strong> Calculate your margin from the price you actually expect to sell for — not the price you typed into the listing box.</div>
+</section>
 
-<h2>The "Recurring Fee" Panic (A Bank Statement Myth)</h2>
-<p>Let's address the biggest panic in the Poshmark seller forums: <em>"Why did Poshmark charge me $10? Does Poshmark charge recurring monthly fees?"</em></p>
-<p>If you look at your credit card statement, you might see a charge from Poshmark labeled with the word <strong>"Recurring."</strong> Sellers freak out, thinking they accidentally signed up for a $10/month subscription.</p>
-<p><strong>Take a breath. You didn't.</strong> Poshmark does not charge recurring fees, listing fees, or monthly store subscriptions. The word "recurring" is simply a backend credit card processing code. It tells your bank, "Keep this card on file so the user doesn't have to type the numbers in every time they buy shipping supplies or upgrade a label." If you see a random $10 charge, it's because you bought closet covers, or you clicked "Upgrade Shipping Label" on a heavy bundle. It is not a subscription.</p>
+<section class="art-sec">
+<h2>What does Poshmark take from a $100 sale?</h2>
+<p>Sale price: $100. Poshmark fee: 20% = $20. Seller amount remaining: $80.</p>
+<p>You keep $80 from a $100 sale.</p>
+<p>The buyer's shipping charge is not another $6.49 deducted from that $80. Standard Poshmark shipping is paid by the buyer. Poshmark currently uses a $6.49 flat-rate USPS Ground Advantage label for packages up to 5 pounds in the U.S.</p>
+<p>Sellers sometimes look at the buyer's checkout total and assume all of those charges affect the seller payout. They don't.</p>
+</section>
 
-<h2>The 2026 Texas Seller Fee Tax (What Nobody Is Telling You)</h2>
-<p>If you live in Texas, your Poshmark ledger just got a new line item. As of October 1, 2025, the state of Texas imposed a <strong>Seller Fee Tax</strong> on marketplace commissions.</p>
-<p>This is not a sales tax on the buyer. This is a tax on <em>Poshmark's fee</em>, which Texas law now requires Poshmark to pass on to you. Texas applies an ~8.25% tax to 80% of the seller fee.</p>
-<blockquote class="voice">"Wait, they are taxing my fee?" Yes. If you sell a $100 item in Texas, Poshmark takes their $20 fee. Texas taxes 80% of that fee ($16) at 8.25%, resulting in a $1.32 deduction from your earnings. It's small, but if you do high volume in Texas, it adds up. The tax shows up separately in your My Sales Report under "Texas Seller Fee Tax." (Always consult a tax professional regarding your specific state laws).</blockquote>
+<section class="art-sec">
+<h2>What about a sale under $15?</h2>
+<p>This is where the percentage can look surprisingly high. Suppose you sell something for $5. Poshmark takes $2.95. You keep $2.05 — an effective seller-fee rate of 59% of the sale price.</p>
+<table class="art-table">
+<thead><tr><th>Sale price</th><th>Flat fee</th><th>Effective fee rate</th></tr></thead>
+<tbody>
+<tr><td>$5</td><td>$2.95</td><td>59.0%</td></tr>
+<tr><td>$10</td><td>$2.95</td><td>29.5%</td></tr>
+<tr><td>$12</td><td>$2.95</td><td>24.6%</td></tr>
+<tr><td>$14</td><td>$2.95</td><td>21.1%</td></tr>
+<tr><td>$15</td><td>$3.00 (20%)</td><td>20.0%</td></tr>
+</tbody>
+</table>
+<p>The flat $2.95 fee matters much more on cheap individual sales. That's why low-dollar inventory deserves a different pricing strategy from $50–$100 inventory — and recent seller discussions include sellers saying they avoid very low-priced individual sales because the economics don't work for them.</p>
+</section>
 
-<h2>Why Are Poshmark Fees So High? (The Hidden Value)</h2>
-<p>People constantly ask, <em>"Why are Poshmark fees so high compared to Mercari or eBay?"</em> Because you aren't just paying for a marketplace. You are paying for three massive things:</p>
+<section class="art-sec">
+<h2>The Poshmark fee calculator sellers actually need</h2>
+<p>Instead of memorizing percentages, use this quick table:</p>
+<table class="art-table">
+<thead><tr><th>Sale price</th><th>Seller fee</th><th>You keep</th></tr></thead>
+<tbody>
+<tr><td>$5</td><td>$2.95</td><td>$2.05</td></tr>
+<tr><td>$10</td><td>$2.95</td><td>$7.05</td></tr>
+<tr><td>$12</td><td>$2.95</td><td>$9.05</td></tr>
+<tr><td>$15</td><td>$3.00</td><td>$12.00</td></tr>
+<tr><td>$20</td><td>$4.00</td><td>$16.00</td></tr>
+<tr><td>$30</td><td>$6.00</td><td>$24.00</td></tr>
+<tr><td>$40</td><td>$8.00</td><td>$32.00</td></tr>
+<tr><td>$50</td><td>$10.00</td><td>$40.00</td></tr>
+<tr><td>$75</td><td>$15.00</td><td>$60.00</td></tr>
+<tr><td>$100</td><td>$20.00</td><td>$80.00</td></tr>
+<tr><td>$150</td><td>$30.00</td><td>$120.00</td></tr>
+<tr><td>$200</td><td>$40.00</td><td>$160.00</td></tr>
+</tbody>
+</table>
+<p>These figures are the basic seller-fee calculation before other applicable seller-side adjustments.</p>
+</section>
+
+<section class="art-sec">
+<h2>Does Poshmark charge a separate payment-processing fee?</h2>
+<p>For the normal U.S. seller fee structure, you don't add a separate credit-card processing percentage on top of the 20% seller fee. Poshmark describes its seller fee as covering the transaction processing and other services associated with the sale.</p>
+<p>Don't calculate "20% Poshmark fee + another 3% payment-processing fee" for an ordinary Poshmark sale. That would double-count the fee.</p>
+</section>
+
+<section class="art-sec">
+<h2>Does Poshmark take 20% of the buyer's $6.49 shipping?</h2>
+<p>For the standard U.S. setup, the buyer pays the standard shipping charge separately. The $6.49 shipping charge is not another 20% seller deduction from your item price.</p>
+<p>So for a normal $100 sale under the standard shipping limit: item sale $100, seller fee −$20, seller amount $80, buyer shipping a separate buyer charge.</p>
+</section>
+
+<section class="art-sec">
+<h2>The 5-pound number that can change your seller economics</h2>
+<p>The standard Poshmark shipping label covers packages up to 5 pounds — the total package being shipped, not simply the clothing item's advertised weight. If your bundle or package is heavier, you need a heavier label. And this changed in 2026 with a simplified overweight structure:</p>
+<table class="art-table">
+<thead><tr><th>Package weight</th><th>Label</th><th>Seller-paid upgrade</th></tr></thead>
+<tbody>
+<tr><td>Up to 5 lbs</td><td>Standard label</td><td>$0</td></tr>
+<tr><td>5.1–10 lbs</td><td>Upgraded label</td><td>$5</td></tr>
+<tr><td>10.1–15 lbs</td><td>Upgraded label</td><td>$10</td></tr>
+</tbody>
+</table>
+<p>Poshmark says the seller pays the difference for the heavier label.</p>
+<h3>Example</h3>
+<p>A buyer purchases a bundle for $60. Seller fee: $12. The package weighs 7 lbs, so the overweight upgrade is $5. Seller amount before other costs: $60 − $12 − $5 = $43 — very different from simply doing $60 × 80% = $48. The shipping weight created the additional $5 seller cost.</p>
+</section>
+
+<section class="art-sec">
+<h2>Why bundles can surprise sellers</h2>
+<p>Bundles are attractive because multiple items can ship together under the same standard shipping charge when the package remains within the supported weight. That's useful — until the combined package crosses the threshold.</p>
+<p>Imagine jeans (2 lbs) + shoes (3 lbs) + sweater (2 lbs) = a 7 lbs package. The buyer doesn't simply get another standard label for the same package. You need to account for the heavier shipment.</p>
+<p>Before accepting a large bundle, ask: "What will the final package actually weigh?" Not: "What does each individual listing weigh?"</p>
+</section>
+
+<section class="art-sec">
+<h2>The hidden Poshmark fee problem: discounts</h2>
+<p>A seller can list something at $80 and still receive substantially less than $64 if other seller-side adjustments apply, because sellers can accept buyer offers, send offers, apply bundle discounts, participate in promotions, or offer shipping discounts in eligible situations.</p>
+<p>The fee calculation should start from the actual transaction, not the original listing price. Poshmark itself warns that estimated earnings can change based on the final order price, seller discounts, fees and applicable taxes/discounts.</p>
+<div class="stage-flow">
+<span>Expected selling price</span><i>→</i><span>seller fee</span><i>→</i><span>applicable seller costs</span><i>→</i><span>sourcing cost</span><i>→</i><span>actual profit</span>
+</div>
+<p>…rather than: listing price − 20%.</p>
+</section>
+
+<section class="art-sec">
+<h2>Why your Poshmark payout can feel "lower than 80%"</h2>
+<p>Sellers often compare: "I sold it for $50. Why didn't I get exactly $40?" The first thing to check is the actual final order price. Then check for seller discounts, bundle discounts, shipping-label upgrades, other applicable fees or adjustments, and taxes or governmental charges that may apply.</p>
+<h3>The right troubleshooting order</h3>
 <ol>
-<li><strong>The $6.49 Flat Rate Shipping:</strong> Buyers love Poshmark because they know exactly what shipping will cost, whether they are buying a silk blouse or a 4lb pair of boots. This increases conversion rates.</li>
-<li><strong>Posh Protect:</strong> Poshmark holds the funds in escrow. If a package is lost in transit, Poshmark refunds the buyer <em>and</em> pays you out of their own pocket. You don't have to fight with USPS claims.</li>
-<li><strong>The Social Algorithm:</strong> Poshmark is a social network. The "Posh Parties," the sharing, the followers — that infrastructure costs money to run. You are paying a 20% marketing fee to have your items pushed to millions of active scrollers.</li>
+<li>What was the final sale price?</li>
+<li>What seller fee was deducted?</li>
+<li>Was a shipping upgrade required?</li>
+<li>Was a seller discount involved?</li>
+<li>Are there any other line items in the transaction record?</li>
 </ol>
+<p>Don't start by assuming Poshmark "took more than 20%." Reconcile the transaction first.</p>
+</section>
 
-<h2>The 3-Day Return Guillotine</h2>
-<p>We cannot talk about Poshmark fees without talking about how you lose them. Poshmark has the strictest return policy in the resale game.</p>
-<p>Unlike eBay, where buyers can sometimes return items for "remorse," <strong>all Poshmark sales are final</strong> unless the item is Not As Described (NAD). But here is the catch: The buyer only has <strong>3 days</strong> from delivery to open an NAD case. If they wait 4 days, or if they click "Accept Order," the funds are instantly released to you, and the sale is locked forever.</p>
-<p>However, if they <em>do</em> open a valid NAD case within 3 days, Poshmark will force the return. The commission reverses, the buyer gets their money back, and you get the item back — hopefully in the same condition you sent it. If it comes back damaged or swapped, you fight that battle next. We cover the full 72-hour return countdown and how to win appeals in <a href="poshmark-damaged-return.html">what you lose on a Poshmark damaged return</a>.</p>
-<p>The one exception to the 3-day rule: buyers who added Seel Worry-Free Returns at checkout get 7 days, and Seel handles the return independently. Your earnings stay intact either way.</p>
+<section class="art-sec">
+<h2>What is Posh Protect and does it change my 20% fee?</h2>
+<p>Posh Protect is Poshmark's built-in protection system. It isn't a second percentage deducted from your seller payout. Current rules allow buyers to open qualifying cases within 72 hours of delivery for issues including undisclosed damage, incorrect or missing item, item not as described, and authenticity issues. The buyer must provide supporting photos. If Poshmark approves the return, Poshmark provides a return label.</p>
+<p>For sellers, this matters because a return can create a separate problem if the item comes back damaged or materially different from the condition in which it was shipped. That's why we built a separate guide for that: <a href="poshmark-damaged-returns.html">Poshmark Damaged Returns: What Sellers Lose When an Item Comes Back Worse</a>.</p>
+</section>
 
-<h2>Can I Write Off Poshmark Fees on My Taxes?</h2>
-<p>Yes — and this is where a lot of sellers leave money on the table. The 20% commission and the $2.95 flat fee are both <strong>ordinary business expenses</strong> deductible on Schedule C. So are any overweight bundle fees you paid and the Texas Seller Fee Tax if you live in Texas.</p>
-<p>The key is documentation. Poshmark provides a My Sales Report that shows every fee deducted. Export it at year-end and hand it to your tax professional. We explain the full tax write-off process for resellers in <a href="guides.html#taxes">how to write off forced-return losses</a>.</p>
+<section class="art-sec">
+<h2>Seel Worry-Free Returns are different</h2>
+<p>Poshmark has also been testing Worry-Free Returns powered by Seel for U.S. sellers. This is not the same thing as Posh Protect. Poshmark announced in January 2026 that the program was being tested as an optional buyer-paid add-on: buyers can receive additional return flexibility (including fit or change of mind), while sellers' earnings and payout timing are not affected and returned items go to Seel rather than the seller.</p>
+<div class="callout"><strong>Posh Protect:</strong> Poshmark's standard protection and qualifying return process.<br><strong>Seel Worry-Free Returns:</strong> an optional buyer-paid program being tested for eligible U.S. transactions.<br>Don't write "Poshmark now accepts seven-day returns" — that's too broad.</div>
+</section>
 
-<h2>Poshmark vs eBay vs Depop vs Mercari: Fee Comparison</h2>
-<p>Every reseller eventually asks: which platform takes the smallest cut? Here's the honest 2026 breakdown across a $60 sale:</p>
-<table class="data-table">
-<thead><tr><th>Platform</th><th>Base Fee</th><th>Processing</th><th>Who pays shipping</th><th>You keep on $60</th></tr></thead>
+<section class="art-sec">
+<h2>The $20 sale that looks fine until you calculate the whole business</h2>
+<p>Sell an item for $20: Poshmark fee $4, you keep $16. But suppose you bought the item for $6 — your gross margin before supplies and operating costs is $10. If you also absorb a seller-side shipping upgrade or another applicable cost, that margin gets smaller.</p>
+<p>The useful question is: "What do I actually make after Poshmark takes its fee and I account for my own costs?"</p>
+</section>
+
+<section class="art-sec">
+<h2>Your Poshmark fee is not your profit</h2>
+<table class="art-table">
+<thead><tr><th>Line</th><th>Amount</th></tr></thead>
 <tbody>
-<tr><td><strong>Poshmark</strong></td><td>20%</td><td>Bundled</td><td>Buyer ($6.49 flat)</td><td>$48.00</td></tr>
-<tr><td><strong>eBay</strong></td><td>~13.6%</td><td>Included</td><td>Usually seller</td><td>~$40-50 (depends on shipping)</td></tr>
-<tr><td><strong>Depop</strong></td><td>10%</td><td>~2.9% + $0.30</td><td>Buyer or seller</td><td>~$44-52</td></tr>
-<tr><td><strong>Mercari</strong></td><td>10%</td><td>None (since 2025)</td><td>Buyer</td><td>~$54</td></tr>
+<tr><td>Sale price</td><td>$50.00</td></tr>
+<tr><td>Poshmark seller fee</td><td>−$10.00</td></tr>
+<tr><td>Seller payout before other adjustments</td><td>$40.00</td></tr>
+<tr><td>Your sourcing cost</td><td>−$12.00</td></tr>
+<tr><td>Packaging / operating costs</td><td>−$2.00</td></tr>
+<tr><td>Approximate profit</td><td>$26.00</td></tr>
 </tbody>
 </table>
-<p>The winner depends on weight. On lightweight items under 2 lbs, Mercari wins. On heavy items 3+ lbs, Poshmark often wins because the buyer's flat $6.49 covers shipping you'd otherwise pay out of pocket on eBay. We break down the full matrix for every category in <a href="platform-comparison-2026.html">The 2026 Reseller's Matrix</a>.</p>
+<p>That's why two sellers can both sell an item for $50 and have completely different profits. The platform fee is only one line.</p>
+</section>
 
-<h2>Conclusion: Stop Fighting the 20%, Start Using It</h2>
-<p>Is it really worth it to sell on Poshmark? Yes, if you play to its strengths. Stop listing $10 t-shirts and getting eaten by the $2.95 flat fee. Stop selling 8-pound bundles without upgrading your shipping. Start sourcing heavy denim, winter coats, and leather jackets. Let the buyer pay the flat $6.49 shipping rate, let Poshmark handle the payment processing, and let the social algorithm do the marketing.</p>
-<p>The 20% cut only hurts if you don't know the math. Now you do. Run your own numbers below before you list your next item — because the difference between a profit and a loss on Poshmark is almost always the weight of the package.</p>
+<section class="art-sec">
+<h2>A better way to price Poshmark items</h2>
+<p>Instead of asking "What should I list this for?", start with "What do I need to keep?" For sales of $15 or more, because you keep approximately 80% after the standard seller fee:</p>
+<ul>
+<li>Keep $40 → $40 ÷ 0.80 = $50 final sale</li>
+<li>Keep $60 → $60 ÷ 0.80 = $75</li>
+<li>Keep $80 → $80 ÷ 0.80 = $100</li>
+</ul>
+<p>This is much more useful than simply thinking "Poshmark takes 20%."</p>
+</section>
 
-<h2>FAQ</h2>
-<dl>
-<dt>How much fees does Poshmark take?</dt><dd>$2.95 flat for sales under $15; 20% commission for sales $15 and over. No listing fees, no monthly subscriptions.</dd>
+<!-- ============ MINI CALC ============ -->
+<section class="pc-card" id="poshFeeCalc" aria-labelledby="pfeTitle">
+<p class="pc-kicker">Free mini tool · no signup</p>
+<h2 class="pc-title" id="pfeTitle">POSHMARK PAYOUT &amp; FEE CHECKER</h2>
+<p class="pc-sub">Enter the FINAL transaction price (after offers/discounts), your package weight and your own costs. The tool applies the $2.95 flat fee under $15 / 20% at $15+ and adds seller-paid overweight upgrades.</p>
+<div class="pc-grid">
+<div class="pc-field"><label for="pfeSale">Final sale price (after offers/discounts)</label>
+<input type="number" id="pfeSale" min="0" step="0.01" inputmode="decimal" placeholder="50.00"></div>
+<div class="pc-field"><label for="pfeWeight">Finished package weight (lbs)</label>
+<input type="number" id="pfeWeight" min="0" step="0.1" inputmode="decimal" placeholder="3" value="3"></div>
+<div class="pc-field"><label for="pfePromo">Seller-paid shipping promo / adjustment (optional)</label>
+<input type="number" id="pfePromo" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0"></div>
+<div class="pc-field"><label for="pfeSourcing">Your sourcing cost (optional)</label>
+<input type="number" id="pfeSourcing" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0"></div>
+<div class="pc-field"><label for="pfePackaging">Packaging / other direct costs (optional)</label>
+<input type="number" id="pfePackaging" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0"></div>
+</div>
+<button type="button" class="pc-btn" id="pfeRun">CALCULATE MY POSHMARK NUMBER</button>
+<div class="pc-out" id="pfeOut" hidden></div>
+<p class="pc-cta">Dealing with a return that came back worse? Read <a href="poshmark-damaged-returns.html">Poshmark Damaged Returns</a> or run the full loss through the <a href="index.html#tool">CLAWBACK calculator</a>.</p>
+</section>
 
-<dt>How much does Poshmark take from a $100 sale?</dt><dd>Exactly $20. You keep $80, assuming the package weighs under 5 lbs.</dd>
+<section class="art-sec">
+<h2>What Reddit sellers keep running into</h2>
+<ol>
+<li><strong>"The fee is painful on low-dollar sales."</strong><br>Recent sellers discuss avoiding very low-price items because the flat $2.95 fee consumes a large percentage of the sale.</li>
+<li><strong>"Why does my payout look different from my listing price?"</strong><br>The answer often starts with the final transaction price, discounts and other applicable adjustments rather than the original listing price. Poshmark itself warns that estimated earnings can vary.</li>
+<li><strong>"Why did my bundle become more expensive?"</strong><br>Weight. The standard label covers up to 5 lbs, while heavier packages require a heavier label. Poshmark simplified those upgrade tiers in 2026.</li>
+<li><strong>"Are buyers seeing extra fees?"</strong><br>Buyers may still see shipping and applicable taxes at checkout, but those buyer-side charges are separate from the seller fee and are not deducted from your seller payout.</li>
+<li><strong>"Does a Poshmark sale really leave me with 80%?"</strong><br>For a $15+ sale the standard seller fee is 20%, but the actual transaction can differ from a simple 80% calculation because Poshmark says estimated earnings vary with final order price, seller discounts, fees, taxes and other applicable adjustments.</li>
+</ol>
+</section>
 
-<dt>Why are Poshmark fees so high?</dt><dd>The 20% bundles payment processing, Posh Protect insurance, and a subsidized flat-rate shipping label for the buyer.</dd>
+<section class="art-sec">
+<h2>Poshmark fees: the seller checklist</h2>
+<p>Before accepting an offer, check:</p>
+<ul>
+<li>Final offer price</li>
+<li>Expected Poshmark seller fee</li>
+<li>Your sourcing cost</li>
+<li>Bundle discount, if applicable</li>
+<li>Shipping weight</li>
+<li>Whether the package could exceed 5 lbs</li>
+<li>Any seller-paid shipping promotion or adjustment</li>
+<li>Expected profit after your own costs</li>
+</ul>
+<h3>For bundles:</h3>
+<ul>
+<li>Add the item weights</li>
+<li>Include packaging</li>
+<li>Check the combined package weight</li>
+<li>Account for the heavier-label tier if necessary</li>
+</ul>
+<h3>For low-priced items:</h3>
+<ul>
+<li>Compare the $2.95 flat fee with your sale price</li>
+<li>Consider whether bundling makes more economic sense</li>
+</ul>
+</section>
 
-<dt>Does Poshmark charge recurring fees?</dt><dd>No. "Recurring" on your bank statement is just a card-saving code, not a monthly subscription.</dd>
+<section class="art-sec">
+<h2>Poshmark fee myths worth ignoring</h2>
+<ul>
+<li><strong>"Poshmark takes 20% plus another 3% processing fee."</strong> Not as a standard separate seller charge. Don't double-count.</li>
+<li><strong>"The buyer's $6.49 shipping comes out of my payout."</strong> No. Standard shipping is paid by the buyer.</li>
+<li><strong>"Every $50 listing means I receive $40."</strong> Not necessarily. $40 is the basic 80% calculation on a $50 final sale, before other applicable seller-side adjustments.</li>
+<li><strong>"A bundle is automatically cheaper to ship for the seller."</strong> The standard label can cover multiple items up to 5 lbs, but the combined package weight matters.</li>
+<li><strong>"The original listing price determines my fee."</strong> The transaction's final order price and applicable adjustments matter.</li>
+</ul>
+</section>
 
-<dt>Is it cheaper to sell on Poshmark or eBay?</dt><dd>For items over 2 lbs, Poshmark is usually cheaper because the buyer pays a flat $6.49 shipping rate, whereas eBay sellers must buy expensive heavy-weight labels out of pocket.</dd>
+<section class="art-sec">
+<h2>Poshmark fees vs. your actual profit</h2>
+<p>Sell an item for $75: Poshmark fee $15, seller amount $60. With cost of goods $20 and packaging/other direct costs $3, approximate profit is $37. Now imagine another seller sells the same $75 item but sourced it for $45 — their approximate profit is only $12. Same Poshmark fee. Completely different business result.</p>
+<p>That's why CLAWBACK is built around the number you actually keep, not just the platform's advertised percentage.</p>
+</section>
 
-<dt>Does Seel Worry-Free Returns affect my seller fees?</dt><dd>No. When a buyer adds Seel protection, Seel handles the return and refund out of their own funds. Your earnings stay intact.</dd>
+<section class="art-sec">
+<h2>The Poshmark fee rule that actually matters</h2>
+<p>Don't memorize "Poshmark takes 20%." Memorize this instead:</p>
+<div class="callout"><strong>Your final sale price is only the starting point.</strong></div>
+<p>Check the final transaction price. Check the seller fee. Check the package weight. Check for discounts. Check for other applicable adjustments. Then calculate what you actually keep. That's the number that determines whether the sale made sense.</p>
+</section>
 
-<dt>What is Posh Protect?</dt><dd>Posh Protect is the free buyer/seller protection built into every Poshmark order. It covers lost packages, damaged items, and not-as-described claims within 3 days of delivery.</dd>
+<section class="art-sec faq" id="faq">
+<h2>Frequently asked questions</h2>
+<details class="faq-item" open><summary>How much does Poshmark take from a sale?</summary><p>For U.S. sellers, Poshmark takes 20% of the final order price on sales of $15 or more, and a flat $2.95 on sales under $15. No separate payment-processing percentage is added on top of the standard seller fee.</p></details>
+<details class="faq-item" open><summary>What does Poshmark take from a $100 sale?</summary><p>$20 (20%), leaving $80 before other applicable adjustments. Buyer-paid standard shipping is a separate buyer charge and is not deducted from the seller payout.</p></details>
+<details class="faq-item" open><summary>Does Poshmark charge a separate payment-processing fee?</summary><p>No. The standard seller fee covers transaction processing and related services. Do not add another processing percentage on top of the 20% or the $2.95 flat fee.</p></details>
+<details class="faq-item" open><summary>Who pays Poshmark shipping?</summary><p>The buyer pays the standard shipping charge ($6.49 USPS Ground Advantage for packages up to 5 lbs). If the package is heavier, the seller pays the overweight label upgrade: $5 for 5.1–10 lbs and $10 for 10.1–15 lbs under the 2026 simplified structure.</p></details>
+<details class="faq-item" open><summary>What is Posh Protect?</summary><p>Poshmark's built-in protection system. Buyers can open qualifying cases within 72 hours of delivery for undisclosed damage, incorrect or missing items, not-as-described items, and authenticity issues. Approved returns use a Poshmark-provided label. It is not an extra percentage deducted from seller payouts.</p></details>
+<details class="faq-item" open><summary>What is Seel Worry-Free Returns on Poshmark?</summary><p>An optional buyer-paid add-on being tested for eligible U.S. transactions (announced January 2026). It gives buyers extra return flexibility such as fit or change of mind, while seller earnings and payout timing are not affected and returned items go to Seel rather than the seller.</p></details>
+<details class="faq-item" open><summary>How do I price an item to keep a target amount on Poshmark?</summary><p>For sales of $15 or more, divide your target by 0.80 (to keep $40, price at $50; to keep $60, price at $75). Under $15, add the $2.95 flat fee to your target instead.</p></details>
+<details class="faq-item" open><summary>Why is my Poshmark payout lower than 80% of my listing price?</summary><p>The fee applies to the final order price after offers and discounts, not the listing price. Check the final transaction price, seller or bundle discounts, overweight label upgrades, and any other line items in the transaction record before assuming Poshmark took more than 20%.</p></details>
+</section>
 
-<dt>Can I write off Poshmark fees on my taxes?</dt><dd>Yes. The 20% commission, $2.95 flat fee, and any overweight bundle fees are ordinary business expenses deductible on Schedule C.</dd>
-</dl>
+<section class="art-sec">
+<h2>Read next</h2>
+<div class="next-grid">
+<a class="next-card" href="poshmark-damaged-returns.html"><b>Poshmark Damaged Returns</b><span>What sellers lose when an item comes back worse than it shipped.</span></a>
+<a class="next-card" href="depop-fees-explained.html"><b>How Much Does Depop Take? Depop Fees Explained (2026)</b><span>0% selling fee in the US, plus processing and Boosting — and what reverses on refund.</span></a>
+<a class="next-card" href="platform-comparison-2026.html"><b>The 2026 Reseller's Matrix</b><span>Compare Poshmark with the other major resale platforms.</span></a>
+<a class="next-card" href="index.html#tool"><b>Calculate My True Profit</b><span>See what a sale actually leaves you after platform costs and your own costs.</span></a>
+<a class="next-card" href="guides.html"><b>All Guides</b><span>Browse the rest of CLAWBACK's seller guides.</span></a>
+</div>
+</section>
 
-<h2>Sources & Official Policy Pages</h2>
-<p class="sources">Figures verified against official Poshmark help center articles (August 2026): <a href="https://poshmark.com/help" rel="noopener" target="_blank">Poshmark Help Center</a> · <a href="https://poshmark.com/selling-fees" rel="noopener" target="_blank">Selling Fees</a> · <a href="https://poshmark.com/shipping" rel="noopener" target="_blank">Shipping & Labels</a> · <a href="https://poshmark.com/posh-protect" rel="noopener" target="_blank">Posh Protect</a> · <a href="https://poshmark.com/seel" rel="noopener" target="_blank">Worry-Free Returns (Seel)</a>. Texas Seller Fee Tax verified against October 2025 policy update. See the full list at <a href="sources.html">our sources page</a>. Policies change — always confirm in-app before listing.</p>
+<section class="art-sec">
+<h2>Official Poshmark sources</h2>
+<ul class="src-list">
+<li><a href="https://help.poshmark.com/" rel="noopener nofollow">Poshmark — Seller fees &amp; earnings</a></li>
+<li><a href="https://help.poshmark.com/" rel="noopener nofollow">Poshmark — Shipping (standard $6.49 label, up to 5 lbs)</a></li>
+<li><a href="https://help.poshmark.com/" rel="noopener nofollow">Poshmark — 2026 simplified overweight shipping tiers</a></li>
+<li><a href="https://help.poshmark.com/" rel="noopener nofollow">Poshmark — Posh Protect (72-hour case window)</a></li>
+<li><a href="https://help.poshmark.com/" rel="noopener nofollow">Poshmark — Seel Worry-Free Returns announcement (Jan 2026)</a></li>
+</ul>
+<p class="art-meta">LAST UPDATED: SEPTEMBER 2026</p>
+<p class="art-lede" style="font-size:13.5px;color:#9DBFA9;">Disclaimer: CLAWBACK is independent and not affiliated with Poshmark. Poshmark's fees, shipping terms and seller policies can change. Your current Poshmark transaction record and the official Poshmark Help Center/Legal Center are the final references for an individual sale. Community experiences cited in this article are anecdotal and do not establish how Poshmark will handle any individual transaction. This article is informational and is not legal or tax advice.</p>
+</section>
+</main>
 
-<p><strong>Read next:</strong> <a href="poshmark-damaged-return.html">What do I lose on a Poshmark damaged return?</a> · <a href="depop-fees-explained.html">Depop Fees Explained</a> · <a href="ebay-per-order-fee-return.html">eBay Per-Order Fees</a> · <a href="platform-comparison-2026.html">The 2026 Reseller's Matrix</a> · <a href="guides.html">All guides</a></p>
+<footer class="site-foot">
+<div class="foot-inner">
+<div class="foot-brand"><div class="brand small">CLAW<span class="slash">BACK</span></div><p>The forced-return loss calculator for resellers. Know your number before you appeal.</p></div>
+<nav class="foot-col" aria-label="Platforms"><h3>Platforms</h3><ul>
+<li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li>
+<li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li>
+<li><a href="platforms.html#whatnot">Whatnot</a></li><li><a href="platforms.html#vinted">Vinted</a></li>
+</ul></nav>
+<nav class="foot-col" aria-label="Guides"><h3>Guides</h3><ul>
+<li><a href="guides.html">All guides</a></li><li><a href="guides.html#dispute">Win a return dispute</a></li>
+<li><a href="guides.html#taxes">Tax write-offs</a></li>
+</ul></nav>
+<nav class="foot-col" aria-label="Company"><h3>Company</h3><ul>
+<li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms &amp; Disclaimer</a></li><li><a href="contact.html">Contact</a></li>
+</ul></nav>
+<nav class="foot-col" aria-label="Resources"><h3>Resources</h3><ul>
+<li><a href="index.html#faq">FAQ</a></li><li><a href="sources.html">Sources</a></li><li><a href="sitemap.html">Sitemap</a></li>
+</ul></nav>
+</div>
+<div class="foot-legal">
+<p class="verified">Fee data last verified: <strong>August 2026</strong> · sourced from official platform help pages.</p>
+<p class="disclaimer">⚠ Estimates only — not legal or tax advice. Platforms change their fees; verify current rates before you appeal. CLAWBACK is an independent tool and is not affiliated with eBay, Poshmark, Mercari, Depop, Whatnot, or Vinted.</p>
+</div>
+</footer>
 
-<div class="cta-box"><h3 style="margin-top:0">Know your true profit before you list.</h3>
-<p style="margin-bottom:14px">Factor in the 20% cut, the 5lb shipping trap, and the return risk. Free and instant.</p>
-<a class="btn-primary" href="index.html#tool">CALCULATE MY POSHMARK PROFIT</a></div>
-</article></main>
-
-<footer class="site-foot"><div class="foot-inner">
-<div class="foot-brand"><div class="brand small">CLAW<span class="slash">BACK</span></div><p>The forced-return loss calculator for resellers. Know your number before you list.</p></div>
-<nav class="foot-col" aria-label="Guides"><h3>More</h3><ul><li><a href="poshmark-damaged-return.html">Poshmark damaged returns</a></li><li><a href="depop-fees-explained.html">Depop fees explained</a></li><li><a href="platform-comparison-2026.html">2026 Matrix</a></li><li><a href="guides.html">Guides</a></li></ul></nav>
-<nav class="foot-col" aria-label="Company"><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
-</div><div class="foot-legal"><p class="verified">Fee data last verified: <strong>August 22, 2026</strong> · sourced from official Poshmark help pages.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with Poshmark.</p></div></footer>
 <script src="nav.js"></script>
+
+<!-- ========== MINI CALC LOGIC (seller-fee math unchanged; BPF block removed) ========== -->
+<script>
+(function(){
+function el(id){ return document.getElementById(id); }
+function num(id){ var v = parseFloat(el(id).value); return isNaN(v) ? 0 : v; }
+function fmt(n){ return '$' + (Math.round((+n||0)*100)/100).toFixed(2); }
+
+el('pfeRun').addEventListener('click', function(){
+  var out = el('pfeOut');
+  var price = num('pfeSale');
+  if(price <= 0){ out.hidden = false; out.innerHTML = '<p class="pc-note">Enter the final sale price first.</p>'; return; }
+  var weight = num('pfeWeight');
+  var promo = num('pfePromo');
+  var sourcing = num('pfeSourcing');
+  var packaging = num('pfePackaging');
+
+  var fee = price < 15 ? 2.95 : price * 0.20;
+  var upgrade = weight <= 5 ? 0 : (weight <= 10 ? 5 : 10);
+  var payout = price - fee - upgrade - promo;
+  var profit = payout - sourcing - packaging;
+
+  var h = '';
+  h += '<div class="pc-sub-head">Seller side</div>';
+  h += '<div class="pc-line loss"><span>Poshmark seller fee (' + (price < 15 ? '$2.95 flat' : '20%') + ')</span><b>-' + fmt(fee) + '</b></div>';
+  if(upgrade > 0) h += '<div class="pc-line loss"><span>Overweight label upgrade</span><b>-' + fmt(upgrade) + '</b></div>';
+  if(promo > 0) h += '<div class="pc-line loss"><span>Seller-paid promo / adjustment</span><b>-' + fmt(promo) + '</b></div>';
+  h += '<div class="pc-line total"><span>SELLER PAYOUT</span><b>' + fmt(payout) + '</b></div>';
+  h += '<div class="pc-sub-head">Your business costs</div>';
+  if(sourcing > 0) h += '<div class="pc-line loss"><span>Sourcing cost</span><b>-' + fmt(sourcing) + '</b></div>';
+  if(packaging > 0) h += '<div class="pc-line loss"><span>Packaging / other direct costs</span><b>-' + fmt(packaging) + '</b></div>';
+  h += '<div class="pc-line total"><span>APPROXIMATE PROFIT</span><b>' + fmt(profit) + '</b></div>';
+  h += '<p class="pc-note">Estimates only. Seller fee is based on the applicable Poshmark fee structure and the transaction details entered. Buyer-paid shipping and applicable buyer-side taxes are separate from your seller payout. Confirm every figure from your Poshmark transaction record.</p>';
+
+  out.hidden = false;
+  out.innerHTML = h;
+});
+})();
+</script>
 
 <script>
 CookieConsent.run({
-  guiOptions: {
-    consentModal: {
-      layout: "box",
-      position: "bottom right",
-      equalWeightButtons: true,
-      flipButtons: false
-    },
-    preferencesModal: {
-      layout: "box",
-      position: "right",
-      equalWeightButtons: true,
-      flipButtons: false
-    }
-  },
-  categories: {
-    necessary: {
-      enabled: true,
-      readOnly: true
-    },
-    analytics: {
-      enabled: false,
-      readOnly: false
-    },
-    advertising: {
-      enabled: false,
-      readOnly: false
-    }
-  },
-  language: {
-    default: "en",
-    autoDetect: "browser",
-    translations: {
-      en: {
-        consentModal: {
-          title: "We use cookies",
-          description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
-          acceptAllBtn: "Accept all",
-          acceptNecessaryBtn: "Reject all",
-          showPreferencesBtn: "Manage preferences"
-        },
-        preferencesModal: {
-          title: "Cookie preferences",
-          acceptAllBtn: "Accept all",
-          acceptNecessaryBtn: "Reject all",
-          savePreferencesBtn: "Save preferences",
-          sections: [
-            {
-              title: "Necessary cookies",
-              description: "These cookies are required for the site to function.",
-              linkedCategory: "necessary"
-            },
-            {
-              title: "Analytics cookies",
-              description: "Help us understand how visitors use our site (Google Analytics).",
-              linkedCategory: "analytics"
-            },
-            {
-              title: "Advertising cookies",
-              description: "Used to show relevant ads (Google AdSense, when enabled).",
-              linkedCategory: "advertising"
-            }
-          ]
-        }
-      }
-    }
-  }
+guiOptions: {
+consentModal: { layout: "box", position: "bottom right", equalWeightButtons: true, flipButtons: false },
+preferencesModal: { layout: "box", position: "right", equalWeightButtons: true, flipButtons: false }
+},
+categories: {
+necessary: { enabled: true, readOnly: true },
+analytics: { enabled: false, readOnly: false },
+advertising: { enabled: false, readOnly: false }
+},
+language: {
+default: "en",
+autoDetect: "browser",
+translations: {
+en: {
+consentModal: {
+title: "We use cookies",
+description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
+acceptAllBtn: "Accept all",
+acceptNecessaryBtn: "Reject all",
+showPreferencesBtn: "Manage preferences"
+},
+preferencesModal: {
+title: "Cookie preferences",
+acceptAllBtn: "Accept all",
+acceptNecessaryBtn: "Reject all",
+savePreferencesBtn: "Save preferences",
+sections: [
+{ title: "Necessary cookies", description: "These cookies are required for the site to function.", linkedCategory: "necessary" },
+{ title: "Analytics cookies", description: "Help us understand how visitors use our site (Google Analytics).", linkedCategory: "analytics" },
+{ title: "Advertising cookies", description: "Used to show relevant ads (Google AdSense, when enabled).", linkedCategory: "advertising" }
+]
+}
+}
+}
+}
 });
 </script>
-
 </body>
 </html>
