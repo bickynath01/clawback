@@ -1,11 +1,11 @@
 /* CLAWBACK — intel.js : Platform Intel panel (fills the left column, updates with platform) */
 const INTEL = {
   ebay:{title:'eBay',bullets:[
-    'Final value fee 13.6% on most categories (books 15.3%, cards/coins 13.25%); per-order fee $0.30 (≤$10) / $0.40 (>$10).',
-    'On a "not as described / damaged / wrong item" return, eBay refunds the 13.6% but KEEPS the per-order fee.',
-    'If the buyer simply changed their mind, BOTH are refunded. If eBay stepped in and ruled against you, NEITHER is.',
-    'You pay return shipping on "not as described" claims — often $8–$15 out of pocket.'],
-    example:'A $60 not-as-described return with an $8.50 label and a ruined item ≈ <b>$43.90</b> lost.'},
+    'Final value fee: 13.6% in most categories; 15.3% in Books/Magazines/Movies & TV/Music; 13.25% in Coins & Paper Money (except Bullion). Per-order fee: $0.30 on orders $10 or less / $0.40 over $10.',
+    'For an eligible full refund involving an item not as described, damaged/defective item, or wrong item, eBay may credit the variable final value fee, but the per-order fee is not credited.',
+    'For an eligible full buyer-remorse refund processed through eBay, both the variable final value fee and per-order fee may be credited. If eBay steps in and closes the case with a refund, normal fee credits don\u2019t apply.',
+    'Return shipping: seller generally pays for damaged, faulty, or not-as-described returns; buyer-remorse shipping depends on the seller\u2019s return policy.'],
+    example:'A forced return can turn a profitable sale into a loss when you refund the buyer, pay return shipping, lose non-refundable fees, and get back an item worth less than the original sale.'},
   poshmark:{title:'Poshmark',bullets:[
     'Commission 20% (or $2.95 flat under $15); reversed on an approved return, and a prepaid label is provided.',
     'Fit / change-of-mind returns run through Seel (Worry-Free): Seel refunds the buyer, the item goes to Seel, you keep your earnings — $0 loss.',
