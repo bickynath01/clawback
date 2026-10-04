@@ -1,321 +1,631 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eBay Returns for Sellers: What They Really Cost, Who Pays, and How to Protect Yourself [2026] | CLAWBACK</title>
+<meta name="description" content="eBay returns explained for sellers: who pays return shipping, which fees get credited (and which don't), damaged-return deductions, what happens when eBay steps in, and how to calculate your real seller loss.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.gotclawback.com/ebay-return-policy-sellers.html">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
 <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
 <script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-CPRC739GBN"></script>
 <script type="text/plain" data-category="analytics">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CPRC739GBN');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CPRC739GBN');
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>eBay Return Policy for Sellers: 12 Hidden Costs (2026)</title><meta name="description" content="eBay return policy for sellers explained: who pays return shipping, which fees refund, and the 12 hidden costs sellers miss after holiday returns."><link rel="canonical" href="https://www.gotclawback.com/ebay-return-policy-sellers.html">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
 <style>
-.casefile{background:#FAF7F0;color:#282828;border:1px dashed #999;padding:18px;margin:26px 0;box-shadow:0 6px 18px rgba(0,0,0,.3);}
-.casefile .day{display:inline-block;background:#0E3B2C;color:#F5B301;font-family:'Space Mono',monospace;font-size:11px;padding:3px 10px;letter-spacing:1px;margin-bottom:8px;}
-.casefile h3{font-family:'Archivo Black';margin:0 0 8px;color:#0E3B2C;}
-.casefile .miss{font-size:13px;color:#777;margin:0 0 8px;font-style:italic;}
-.casefile .rule{border-left:3px solid #1E7A3F;background:rgba(30,122,63,.07);padding:8px 12px;font-size:13px;margin:10px 0;}
-.casefile .fix{border-left:3px solid #F5B301;background:rgba(245,179,1,.08);padding:8px 12px;font-size:13px;margin:10px 0;}
-.casefile .cost{font-family:'Space Mono',monospace;color:#C43C2C;font-weight:700;}
-table.data-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;}
-table.data-table th,table.data-table td{border:1px solid rgba(0,0,0,.15);padding:8px 10px;text-align:left;}
-table.data-table th{background:rgba(0,0,0,.06);}
-.callout{border-left:4px solid #F5B301;background:rgba(245,179,1,.08);padding:12px 16px;margin:18px 0;}
-.callout.red{border-left-color:#C43C2C;background:rgba(196,60,44,.08);}
-.callout.green{border-left-color:#1E7A3F;background:rgba(30,122,63,.08);}
-.cta-box{background:#0E3B2C;border:1px solid #F5B301;padding:20px;margin:28px 0;text-align:center;}
-.confession{background:#282828;color:#FAF7F0;border-left:4px solid #F5B301;padding:14px 16px;margin:18px 0;font-size:14px;line-height:1.6;}
-.verified-badge{display:inline-block;background:#0E3B2C;border:1px solid #F5B301;color:#FAF7F0;font-family:'Space Mono',monospace;font-size:11px;padding:4px 12px;border-radius:20px;letter-spacing:1px;margin:0 0 14px;}
+body{background-color:#0E3B2C;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;color:#CFE3D6;font-family:'Archivo',system-ui,sans-serif;margin:0;}
+.float-sym{position:fixed;z-index:0;pointer-events:none;user-select:none;font-family:'Archivo Black',Archivo,sans-serif;color:rgba(251,247,238,.05);line-height:1;}
+.ticker,.site-head,main,.site-foot{position:relative;z-index:1;}
+.ticker{background:#F5B301;color:#0E3B2C;font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.05em;overflow:hidden;white-space:nowrap;padding:8px 0;border-bottom:2px solid #0E3B2C;}
+.ticker-track{display:inline-block;animation:tick 40s linear infinite;}
+@keyframes tick{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.site-head{padding:28px 0 18px;border-bottom:1px solid rgba(245,179,1,.25);background:rgba(14,59,44,.92);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100;}
+.head-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.brand{font-family:'Archivo Black',Archivo,sans-serif;font-size:34px;color:#FAF7EF;text-decoration:none;display:flex;align-items:center;gap:8px;}
+.brand .slash{color:#D4402A;}
+.badge{background:#F5B301;color:#0E3B2C;font-family:'Space Mono',monospace;font-weight:700;font-size:10px;padding:4px 8px;border-radius:3px;letter-spacing:.1em;transform:translateY(-10px) rotate(-2deg);}
+.tagline{font-family:'Space Mono',monospace;font-size:12px;color:#9DBFA9;margin:0;width:100%;}
+.main-nav ul{list-style:none;padding:0;margin:0;display:flex;gap:24px;}
+.main-nav a{font-family:'Space Mono',monospace;font-weight:700;font-size:14px;color:#FAF7EF;text-decoration:none;}
+.main-nav a:hover{color:#F5B301;}
+.nav-toggle{display:none;cursor:pointer;background:none;border:1px solid #F5B301;color:#F5B301;padding:8px 16px;font-family:'Archivo Black',Archivo,sans-serif;font-size:12px;border-radius:4px;}
+.has-drop{position:relative;}
+.main-nav .drop{display:none;position:absolute;top:100%;left:0;background:#0A2A20;border:1px solid rgba(245,179,1,.3);border-radius:8px;padding:10px 14px;min-width:170px;flex-direction:column;gap:10px;z-index:120;}
+.has-drop:hover .drop,.has-drop:focus-within .drop{display:flex;}
+.art-wrap{max-width:880px;margin:0 auto;padding:36px 18px 70px;}
+.art-crumb{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#7FA892;text-transform:uppercase;margin-bottom:16px;}
+.art-crumb a{color:#F5B301;text-decoration:none;}
+h1.art-h1{font-family:'Archivo Black',Archivo,sans-serif;font-size:clamp(26px,4.6vw,40px);line-height:1.15;color:#FAF7EF;margin:0 0 14px;}
+.art-lede{font-size:16.5px;line-height:1.75;color:#CFE3D6;margin:0 0 10px;}
+.art-lede strong{color:#FAF7EF;}
+.art-meta{font-family:'Space Mono',monospace;font-size:11px;color:#7FA892;letter-spacing:.1em;margin:10px 0 0;}
+.art-sec{margin:36px 0;}
+.art-sec h2{font-family:'Archivo Black',Archivo,sans-serif;font-size:22px;letter-spacing:.02em;color:#FAF7EF;margin:0 0 12px;border-left:4px solid #F5B301;padding-left:12px;}
+.art-sec h3{font-family:'Space Mono',monospace;font-size:12.5px;letter-spacing:.12em;color:#F5B301;text-transform:uppercase;margin:20px 0 8px;}
+.art-sec p{color:#CFE3D6;line-height:1.75;margin:0 0 12px;font-size:15.5px;}
+.art-sec p strong{color:#FAF7EF;}
+.art-sec ul,.art-sec ol{color:#CFE3D6;line-height:1.75;margin:0 0 12px;padding-left:22px;font-size:15px;}
+.art-sec li{margin-bottom:6px;}
+.art-sec li strong{color:#FAF7EF;}
+.art-sec a{color:#F5B301;}
+.art-quote{font-family:'Space Mono',monospace;font-size:13px;color:#F3E9C8;background:rgba(0,0,0,.25);border-left:3px solid #F5B301;padding:10px 14px;border-radius:0 6px 6px 0;margin:12px 0;}
+.callout{border-left:4px solid #F5B301;background:rgba(0,0,0,.25);padding:12px 16px;border-radius:0 8px 8px 0;color:#F3E9C8;font-size:14.5px;line-height:1.65;margin:16px 0;}
+.callout strong{color:#FAF7EF;}
+.art-table{width:100%;border-collapse:collapse;font-family:'Space Mono',monospace;font-size:12.5px;margin:16px 0;}
+.art-table th{background:#0A2A20;color:#F5B301;text-align:left;padding:10px;letter-spacing:.1em;text-transform:uppercase;font-size:10.5px;}
+.art-table td{border:1px solid rgba(255,255,255,.12);padding:10px;color:#DCE9DF;vertical-align:top;}
+.art-table tr:nth-child(even) td{background:rgba(255,255,255,.03);}
+.stage-flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0;font-family:'Space Mono',monospace;font-size:12.5px;color:#CFE3D6;}
+.stage-flow span{background:rgba(0,0,0,.25);padding:6px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.08);}
+.stage-flow i{color:#F5B301;font-style:normal;padding:0;font-size:14px;}
+.pc-card{background:rgba(0,0,0,.25);border:1px solid rgba(245,179,1,.35);border-radius:14px;padding:24px;margin:34px 0;box-shadow:0 8px 24px rgba(0,0,0,.35);}
+.pc-kicker{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2em;color:#7FA892;text-transform:uppercase;margin:0 0 6px;}
+.pc-title{font-family:'Archivo Black',Archivo,sans-serif;font-size:18px;letter-spacing:.05em;color:#F5B301;margin:0 0 8px;}
+.pc-sub{font-family:'Space Mono',monospace;font-size:11.5px;color:#9DBFA9;line-height:1.7;margin:0 0 18px;}
+.pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:640px){.pc-grid{grid-template-columns:1fr;}}
+.pc-field label{display:block;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#9DBFA9;text-transform:uppercase;margin-bottom:6px;}
+.pc-field select,.pc-field input{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);color:#FAF7EF;border-radius:6px;padding:10px;font-family:'Space Mono',monospace;font-size:13px;}
+.pc-field select{color-scheme:dark;}
+.pc-field select option{background:#0E3B2C;color:#FBF7EE;}
+.pc-field select option:checked{background:#0E3B2C;color:#F5B301;}
+.pc-field select:focus,.pc-field input:focus{outline:2px solid #F5B301;outline-offset:1px;}
+.pc-hint{font-family:'Space Mono',monospace;font-size:10px;color:#7FA892;margin-top:5px;line-height:1.5;}
+.pc-btn{margin-top:16px;width:100%;background:#D4402A;color:#FFF6EE;border:none;font-family:'Archivo Black',Archivo,sans-serif;font-size:13px;letter-spacing:.1em;padding:14px;border-radius:8px;cursor:pointer;box-shadow:0 4px 0 rgba(0,0,0,.35);transition:transform .12s;}
+.pc-btn:hover{transform:translateY(-2px);}
+.pc-out{margin-top:20px;border-top:1px dashed rgba(245,179,1,.4);padding-top:18px;}
+.pc-sub-head{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;color:#9DBFA9;text-transform:uppercase;margin:12px 0 4px;}
+.pc-sub-head:first-child{margin-top:0;}
+.pc-line{display:flex;justify-content:space-between;gap:12px;font-family:'Space Mono',monospace;font-size:12.5px;color:#DCE9DF;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07);}
+.pc-line b{color:#F5B301;font-weight:700;text-align:right;}
+.pc-line.total b{font-size:14px;}
+.pc-line.loss b{color:#E8734A;}
+.pc-line.ok b{color:#2E8B57;}
+.pc-verdict{margin:14px 0 0;font-size:14.5px;line-height:1.7;color:#FAF7EF;background:rgba(14,59,44,.55);border:1px solid rgba(46,139,87,.4);border-radius:8px;padding:12px 14px;}
+.pc-note{font-family:'Space Mono',monospace;font-size:10.5px;color:#7FA892;margin-top:14px;line-height:1.7;}
+.pc-cta{margin-top:14px;font-size:13.5px;color:#CFE3D6;}
+.pc-cta a{color:#F5B301;}
+.next-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;}
+@media(max-width:640px){.next-grid{grid-template-columns:1fr;}}
+.next-card{display:block;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.10);border-radius:10px;padding:16px;text-decoration:none;transition:border-color .15s,transform .15s;}
+.next-card:hover{border-color:#F5B301;transform:translateY(-2px);}
+.next-card b{display:block;font-family:'Archivo Black',Archivo,sans-serif;font-size:13.5px;color:#FAF7EF;margin-bottom:6px;letter-spacing:.02em;}
+.next-card span{font-size:13px;color:#9DBFA9;line-height:1.6;display:block;}
+.src-list{list-style:none;margin:14px 0;padding:0;font-family:'Space Mono',monospace;font-size:12px;}
+.src-list li{margin-bottom:8px;padding-left:18px;position:relative;color:#CFE3D6;}
+.src-list li::before{content:"→";position:absolute;left:0;color:#F5B301;}
+.src-list a{color:#CFE3D6;text-decoration:none;border-bottom:1px dotted rgba(245,179,1,.5);}
+.src-list a:hover{color:#F5B301;}
+.faq-item{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1);border-radius:8px;margin-bottom:10px;transition:border-color .15s;}
+.faq-item[open]{border-color:#F5B301;}
+.faq-item summary{padding:14px 16px;font-family:'Archivo Black',Archivo,sans-serif;font-size:14px;color:#FAF7EF;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:"+";font-size:20px;color:#F5B301;}
+.faq-item[open] summary::after{content:"−";}
+.faq-item p{padding:0 16px 16px;color:#CFE3D6;line-height:1.6;font-size:14px;margin:0;}
+.faq-item p strong{color:#FAF7EF;}
+.site-foot{background:#0A2A20;color:#CFE3D6;padding:60px 20px 30px;margin-top:80px;border-top:1px solid rgba(245,179,1,.25);}
+.foot-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
+.foot-brand .brand{color:#FAF7EF;font-size:24px;margin-bottom:16px;}
+.foot-brand p{font-size:14px;line-height:1.5;margin:0;color:#CFE3D6;}
+.foot-col h3{font-family:'Archivo Black',Archivo,sans-serif;font-size:14px;color:#F5B301;margin:0 0 16px;letter-spacing:.05em;}
+.foot-col ul{list-style:none;padding:0;margin:0;}
+.foot-col li{margin-bottom:10px;}
+.foot-col a{color:#CFE3D6;text-decoration:none;font-size:14px;}
+.foot-col a:hover{color:#F5B301;}
+.foot-legal{max-width:1200px;margin:40px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;font-family:'Space Mono',monospace;color:#7FA892;text-align:center;}
+@media(max-width:768px){
+.main-nav ul{display:none;flex-direction:column;width:100%;margin-top:16px;gap:16px;}
+.main-nav ul.nav-open{display:flex;}
+.main-nav .drop{position:static;border:none;padding:6px 0 0 12px;min-width:0;}
+.nav-open .has-drop .drop{display:flex;}
+.nav-toggle{display:block;}
+.head-inner{flex-direction:column;align-items:flex-start;}
+.foot-inner{grid-template-columns:1fr 1fr;}
+}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"eBay Return Policy for Sellers Explained: 12 Hidden Costs You Miss After Holiday Returns","author":{"@type":"Person","name":"CLAWBACK Team"},"datePublished":"2026-08-22","dateModified":"2026-08-22"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Does eBay refund the per-order fee on a return?","acceptedAnswer":{"@type":"Answer","text":"No. eBay credits the final value fee on the refunded amount but keeps the per-order fee ($0.30 for orders $10 or less, $0.40 for orders over $10) on every return. It is only credited on cancellations."}},
-{"@type":"Question","name":"Can an eBay seller refuse a return?","acceptedAnswer":{"@type":"Answer","text":"For changed-mind returns, sometimes. But not-as-described claims override most no-return policies under eBay Money Back Guarantee, so sellers usually can't refuse those."}},
-{"@type":"Question","name":"Who pays return shipping on eBay not as described?","acceptedAnswer":{"@type":"Answer","text":"Usually the seller. eBay generates a return label and typically deducts its cost from the seller's funds. On changed-mind returns with free returns disabled, the buyer pays."}},
-{"@type":"Question","name":"Does eBay refund the final value fee on a return?","acceptedAnswer":{"@type":"Answer","text":"Yes. The final value fee (13.6% in most categories, 15.3% for books, 13.25% for coins/cards) is credited proportionally on the refunded amount when the return completes."}},
-{"@type":"Question","name":"What happens if a buyer returns a used or different item?","acceptedAnswer":{"@type":"Answer","text":"That's return abuse. Document it with photos and open a case within the return window. Itemized evidence with side-by-side comparison photos gives you the best chance of a partial refund or case reversal."}},
-{"@type":"Question","name":"Do too many returns hurt my eBay seller account?","acceptedAnswer":{"@type":"Answer","text":"Yes. A high Item Not As Described return rate can trigger a Very High service metric evaluation, adding a 5% penalty fee on your final value fees in affected categories for the following month."}},
-{"@type":"Question","name":"How long do I have to respond to an eBay return request?","acceptedAnswer":{"@type":"Answer","text":"You have 3 business days to respond with a resolution after a buyer opens a request. After that, either party can ask eBay to step in. You generally have up to 21 business days after the request was opened to ask eBay for help."}},
-{"@type":"Question","name":"What is the eBay dispute fee?","acceptedAnswer":{"@type":"Answer","text":"If you are found responsible for a disputed amount (chargeback), eBay charges a $20 dispute fee per dispute, in addition to the refund amount."}}]}</script>
-</head><body>
-<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>THE POLICY IS 40 PAGES ★ YOUR LOSS IS ON PAGE 31 ★ THE $0.40 NEVER COMES BACK ★&nbsp;</span><span>THE POLICY IS 40 PAGES ★ YOUR LOSS IS ON PAGE 31 ★ THE $0.40 NEVER COMES BACK ★&nbsp;</span></div></div>
-<header class="site-head"><div class="head-inner">
-<a class="brand" href="index.html">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
-<p class="tagline">// the forced-return loss calculator for resellers</p>
-<nav class="main-nav" aria-label="Primary"><button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
-<ul id="navlist" class="nav-list"><li><a href="index.html#tool">Calculator</a></li><li><a href="platforms.html#ebay">eBay</a></li><li><a href="guides.html">Guides</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="about.html">About</a></li></ul></nav>
-</div></header>
 
-<main class="page-body"><article class="prose">
-<span class="verified-badge">✓ SOURCED FROM EBAY HELP CENTER · VERIFIED AUGUST 22, 2026</span>
-<h1 class="page-title">eBay Return Policy for Sellers Explained: 12 Hidden Costs You Miss After Holiday Returns</h1>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"eBay Returns for Sellers: What They Really Cost, Who Pays, and How to Protect Yourself [2026]","description":"eBay returns explained for sellers: who pays return shipping, which fees get credited (and which don't), damaged-return deductions, what happens when eBay steps in, and how to calculate your real seller loss.","dateModified":"2026-09","author":{"@type":"Organization","name":"CLAWBACK"},"publisher":{"@type":"Organization","name":"CLAWBACK"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Does eBay refund seller fees when a buyer returns an item?","acceptedAnswer":{"@type":"Answer","text":"Sometimes. Eligible fee credits depend on the reason for the return and how the refund was handled. Buyer-remorse full refunds can qualify for both eligible final value and per-order fee credits, while item-problem refunds generally qualify for the final value fee but not the per-order fixed fee."}},
+{"@type":"Question","name":"Does the seller pay return shipping on eBay?","acceptedAnswer":{"@type":"Answer","text":"Generally, if the item is damaged, faulty, or doesn't match the listing, the seller is responsible for return shipping. For buyer-remorse returns, responsibility depends on the seller's return policy."}},
+{"@type":"Question","name":"Can an eBay seller deduct money from a refund?","acceptedAnswer":{"@type":"Answer","text":"Eligible sellers may be able to deduct up to 50% when an item is returned used or damaged, subject to eBay's seller-protection requirements. The deduction should reflect the item's actual lost value."}},
+{"@type":"Question","name":"What happens if eBay steps in?","acceptedAnswer":{"@type":"Answer","text":"eBay reviews the information and decides the outcome. If eBay determines the seller must refund the buyer, eBay can issue the refund and seek reimbursement from the seller. eBay says fee credits aren't provided in that situation."}},
+{"@type":"Question","name":"What if the buyer says the item was not as described?","acceptedAnswer":{"@type":"Answer","text":"Treat the claim seriously and compare the buyer's complaint with your original listing, photographs, description, messages, and other evidence. Don't assume the claim is automatically fraudulent or automatically valid."}},
+{"@type":"Question","name":"What if the returned item is damaged?","acceptedAnswer":{"@type":"Answer","text":"Document the condition immediately and compare it with your original evidence. If you qualify for the applicable seller protection, eBay may allow a deduction from the refund, subject to its requirements."}},
+{"@type":"Question","name":"Does a partial refund return all my eBay fees?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. Eligible fee credits are proportional to the total amount refunded to the buyer, while the per-order fixed fee isn't eligible for the partial-refund credit."}}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#article">Skip to the article</a>
+<div class="float-sym" aria-hidden="true" style="top:-40px;right:-20px;font-size:320px;">$</div>
+<div class="float-sym" aria-hidden="true" style="bottom:-60px;left:-30px;font-size:280px;">¢</div>
 
-<p class="page-lead">January 3rd, 7:04 a.m. Maya — a vintage-clothing seller who did great numbers in December — wakes up to a notification: <em>"Return requested: item doesn't fit."</em> By January 10th she has nine open returns and a sinking feeling that the holiday season, which looked so profitable, is quietly giving the money back.</p>
-<p>Here's the thing about the <strong>eBay return policy for sellers</strong>: nobody reads it. It's dozens of pages of legalese, and sellers skim it once when they open a store, then never again. So the costs don't arrive as one big bill — they arrive as twelve small surprises, each one normal, each one real. This guide walks through Maya's January, case file by case file, and names every hidden cost she didn't know she was paying. If you sell on eBay, at least five of these are happening to you right now.</p>
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+<span>EBAY KEEPS THE $0.30–$0.40 PER-ORDER FEE ON "NOT AS DESCRIBED" RETURNS ★ SELLERS PAY RETURN SHIPPING ON INAD CLAIMS ★ WHATNOT TAKES 2.9% ON BUYER SHIPPING &amp; TAX — MONEY YOU NEVER SEE ★ MERCARI CHARGES A 10% SELLING FEE AGAIN (2025) ★ DEPOP REFUNDS ALL FEES ON A REFUND ★ VINTED CHARGES $0 IN SELLER SELLING FEES ★ KNOW YOUR NUMBER BEFORE YOU APPEAL ★&nbsp;</span><span>EBAY KEEPS THE $0.30–$0.40 PER-ORDER FEE ON "NOT AS DESCRIBED" RETURNS ★ SELLERS PAY RETURN SHIPPING ON INAD CLAIMS ★ WHATNOT TAKES 2.9% ON BUYER SHIPPING &amp; TAX — MONEY YOU NEVER SEE ★ MERCARI CHARGES A 10% SELLING FEE AGAIN (2025) ★ DEPOP REFUNDS ALL FEES ON A REFUND ★ VINTED CHARGES $0 IN SELLER SELLING FEES ★ KNOW YOUR NUMBER BEFORE YOU APPEAL ★&nbsp;</span>
+</div></div>
 
-<div class="callout"><strong>How to read this:</strong> each case file is one thing sellers miss. You'll see the real scenario, the <em>official rule</em> (linked to eBay's own help pages), what it cost Maya, and the fix. Read it like a story — because it is one.</div>
-
-<h2>Case File #01 — Does eBay refund the per-order fee on a return? (No.)</h2>
-<div class="casefile"><span class="day">JAN 3</span>
-<h3>The $0.40 that never comes back</h3>
-<p class="miss">You missed it if: you assumed a full refund means all fees reverse.</p>
-<p>Maya's first return was a $28 sweater. eBay refunded the buyer and credited the final value fee — but the <strong>per-order fee stayed gone</strong>. eBay charges <strong>$0.30 for orders $10 or less</strong> and <strong>$0.40 for orders over $10</strong>. It's charged per order, not per dollar, so a refund doesn't cancel it. The per-order fee is only credited on <em>cancellations</em>, not returns — a distinction most sellers never learn until they see it in their transaction history.</p>
-<p>On its own it's nothing. Across Maya's nine January returns it was $3.60 of pure margin, gone for nothing. Scale that to a year of returns and you're looking at real money evaporating.</p>
-<div class="rule">Official line: eBay's <a href="https://www.ebay.com/help/selling/fees-credits-invoices/selling-fees" rel="noopener" target="_blank">selling fees page</a> describes the per-order fee as a per-order charge. Fee credits policy confirms it is not refunded on returns, only on cancellations.</div>
-<p class="cost">Maya's cost: $0.40 × 9 returns = $3.60</p>
-<div class="fix">The fix: treat the per-order fee as shrinkage and price it in. It's the quiet killer nobody warns you about.</div>
+<header class="site-head">
+<div class="head-inner">
+<a class="brand" href="index.html" aria-label="CLAWBACK home">CLAW<span class="slash">BACK</span><span class="badge">100% FREE</span></a>
+<p class="tagline">// am I losing money on this return? find out in 20 seconds — eBay · Poshmark · Mercari · Depop · Whatnot · Vinted</p>
+<nav class="main-nav" aria-label="Primary">
+<button class="nav-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
+<ul id="navlist" class="nav-list">
+<li><a href="index.html#tool">Calculator</a></li>
+<li class="has-drop">
+<a href="platforms.html" aria-haspopup="true">Platforms ▾</a>
+<ul class="drop">
+<li><a href="platforms.html#ebay">eBay</a></li>
+<li><a href="platforms.html#poshmark">Poshmark</a></li>
+<li><a href="platforms.html#mercari">Mercari</a></li>
+<li><a href="platforms.html#depop">Depop</a></li>
+<li><a href="platforms.html#whatnot">Whatnot</a></li>
+<li><a href="platforms.html#vinted">Vinted</a></li>
+</ul>
+</li>
+<li><a href="guides.html">Guides</a></li>
+<li><a href="index.html#faq">FAQ</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+</nav>
 </div>
+</header>
 
-<h2>Case File #02 — Can an eBay seller refuse a return? (Not for "not as described.")</h2>
-<div class="casefile"><span class="day">JAN 4</span>
-<h3>The no-returns policy that isn't</h3>
-<p class="miss">You missed it if: you thought "No Returns Accepted" was a shield.</p>
-<p>Maya lists most items "no returns." Then a buyer claimed a jacket was "not as described." Maya's policy didn't matter — <strong>not-as-described claims override no-return settings</strong> under eBay Money Back Guarantee. The return came through anyway, shipping on her. Her "no returns" only ever applied to the easy cases (changed mind, doesn't fit). For anything where the buyer claims the item doesn't match the listing, you're exposed.</p>
-<div class="rule">Official line: eBay's <a href="https://www.ebay.com/help/selling/returns-refunds/" rel="noopener" target="_blank">returns &amp; refunds help</a> gives buyers Money Back Guarantee protection for items that don't match the listing, regardless of your stated policy.</div>
-<p class="cost">Maya's cost: one forced return + $8.50 shipping</p>
-<div class="fix">The fix: stop relying on "no returns." Rely on accurate listings and documentation instead. Your real shield is photos, not policy settings.</div>
-</div>
+<main class="art-wrap" id="article">
+<p class="art-crumb"><a href="index.html">CLAWBACK</a> / <a href="guides.html">Guides</a> / eBay returns for sellers</p>
+<h1 class="art-h1">eBay Returns for Sellers: What They Really Cost, Who Pays, and How to Protect Yourself</h1>
+<p class="art-lede">An eBay return can look simple on the screen: the buyer sends the item back, you issue the refund, and the transaction is over. For sellers, it usually isn't that simple.</p>
+<p class="art-lede">The real questions are often: Do I have to accept this return? Who pays for the return shipping? Do I get my eBay fees back? What if the buyer damaged the item? Can I deduct money from the refund? What happens if eBay steps in? And most importantly: <strong>how much money did I actually lose?</strong></p>
+<p class="art-lede">This guide focuses on those questions — not just what eBay's policy says, but what the policy means for your money as a seller.</p>
+<div class="callout"><strong>Quick answer:</strong> Your cost depends heavily on <em>why</em> the buyer is returning the item, whether you handle the refund yourself, what happens to the item when it comes back, and whether you're eligible for seller protections.</div>
+<p class="art-meta">LAST REVIEWED: SEPTEMBER 2026</p>
 
-<h2>Case File #03 — Who pays return shipping on eBay "not as described"? (Usually you.)</h2>
-<div class="casefile"><span class="day">JAN 5</span>
-<h3>The label deducted before you see the refund</h3>
-<p class="miss">You missed it if: you expected the buyer to pay to send it back.</p>
-<p>On the "not as described" case, eBay generated a return label and <strong>deducted its cost from Maya's refund</strong>. She was paying to get her own item back, on top of losing the sale. This is the single most common shock for new sellers. On changed-mind returns with free returns disabled, the buyer pays. But on anything where they claim the item doesn't match — damage, wrong item, not as described — the label lands on you.</p>
-<div class="rule">Official line: on not-as-described returns, the seller is generally responsible for return shipping per eBay's <a href="https://www.ebay.com/help/selling/returns-refunds/" rel="noopener" target="_blank">return rules</a>.</div>
-<p class="cost">Maya's cost: $8.50</p>
-<div class="fix">The fix: price fragile/high-value items assuming you'll eat return shipping, because you probably will. Build it into your minimum acceptable margin.</div>
-</div>
-
-<h2>Case File #04 — Does eBay refund the final value fee on a return? (Yes — mostly.)</h2>
-<div class="casefile"><span class="day">JAN 6</span>
-<h3>The good news you can count on</h3>
-<p class="miss">You missed it if: you assumed all fees are kept.</p>
-<p>Not everything is a leak. When Maya's returns completed, eBay <strong>credited the final value fee</strong> on the refunded amount. The big percentage mostly comes back: <strong>13.6% in most categories</strong>, 15.3% for books/movies/music, 13.25% for coins and trading cards. Knowing this is what lets you separate the real loss (shipping, per-order fee, value drop) from the noise.</p>
-<div class="rule">Official line: final value fees are credited on refunded amounts, per eBay's <a href="https://www.ebay.com/help/selling/fees-credits-invoices/selling-fees" rel="noopener" target="_blank">fees page</a>.</div>
-<p class="cost">Maya's cost: $0 (this one comes back)</p>
-<div class="fix">The fix: don't fight the FVF — it refunds. Fight the lines that don't.</div>
-</div>
-
-<h2>Case File #05 — What happens if a buyer returns a used item? (Wardrobing.)</h2>
-<div class="casefile"><span class="day">JAN 8</span>
-<h3>The dress that came back worn</h3>
-<p class="miss">You missed it if: you didn't photograph the item before shipping.</p>
-<p>After the holidays, Maya got back a dress she'd sold in December — worn, with a faint makeup mark on the collar. Classic <strong>wardrobing</strong>: bought for a party, returned after. Without pre-shipment photos, it was her word against the buyer's. She absorbed the value drop. With photos showing the collar was clean when it shipped, she'd have had a case.</p>
-<div class="rule">Official line: items must be returned in the same condition; sellers can report abuse via eBay's <a href="https://www.ebay.com/help/selling/returns-refunds/" rel="noopener" target="_blank">returns process</a>, but evidence decides it.</div>
-<p class="cost">Maya's cost: $35 value drop</p>
-<div class="fix">The fix: photograph condition + tags before shipping, every time. It's your only weapon against wardrobing.</div>
-</div>
-
-<h2>Case File #06 — Buyer returned a different item (the swap scam)</h2>
-<div class="casefile"><span class="day">JAN 9</span>
-<h3>That's not my serial number</h3>
-<p class="miss">You missed it if: you don't record serial numbers or unique marks.</p>
-<p>The returned "camera" wasn't Maya's — the serial didn't match her photo. A swap. Because she had photographed the serial number at listing, she opened a case with side-by-side images and won a reversal. Documentation, again, is the whole game. For anything over ~$50, the serial photo is the cheapest insurance you'll ever buy.</p>
-<div class="rule">Official line: report suspected return abuse through eBay's <a href="https://www.ebay.com/help/selling/returns-refunds/" rel="noopener" target="_blank">returns &amp; refunds</a> channel with evidence.</div>
-<p class="cost">Maya's cost: $0 (she won — because she had photos)</p>
-<div class="fix">The fix: for anything over ~$50, photograph the serial number at listing. For clothing, photograph any unique tags or marks.</div>
-</div>
-
-<h2>Case File #07 — Do too many returns hurt my seller account? (Yes — and it's expensive.)</h2>
-<div class="casefile"><span class="day">JAN 11</span>
-<h3>The defect rate that bills you next month</h3>
-<p class="miss">You missed it if: you only count money, not standing.</p>
-<p>Nine returns in January nudged Maya's <strong>Item Not As Described return rate</strong> up. Here's what most sellers don't know: if your INAD rate is evaluated as <strong>"Very High" on the 20th of the month</strong>, eBay charges you an <strong>additional 5% on final value fees</strong> for sales in those categories the following month. Four consecutive months of Very High bumps it to 6%. Returns cost you twice: once in cash, once in penalty fees on next month's sales.</p>
-<div class="rule">Official line: eBay's <a href="https://www.ebay.com/help/selling/performance-standards/" rel="noopener" target="_blank">additional final value fees page</a> describes the Very High INAD penalty explicitly.</div>
-<p class="cost">Maya's cost: potentially 5% extra FVF on next month's category sales</p>
-<div class="fix">The fix: reduce not-as-described claims with better photos/measurements; that's the metric that hurts most. Check your Service Metrics dashboard monthly.</div>
-</div>
-
-<div class="callout red"><strong>The Below Standard trap:</strong> If your overall account is evaluated as Below Standard on the 20th, you're hit with an <strong>additional 6% on ALL final value fees</strong> the following month (7% after four consecutive months). Returns feed this directly. One bad month can cost you hundreds in penalty fees on the next month's sales.</div>
-
-<h2>Case File #08 — Are partial refunds allowed on eBay? (Yes, and they're smart.)</h2>
-<div class="casefile"><span class="day">JAN 13</span>
-<h3>The $15 that saved a $60 sale</h3>
-<p class="miss">You missed it if: you think every return is all-or-nothing.</p>
-<p>For a coat with a minor undisclosed loose button, Maya offered a <strong>$15 partial refund</strong> instead of a full return. The buyer accepted. Maya kept the sale, avoided the $9 return label, avoided the value drop, and kept her INAD rate clean. Partial refunds are an underused tool that turns a loss into a discount. The best part: when you deduct an amount from a refund, eBay recommends you tell the buyer why ("deducted 5% because item was returned used"). Transparency builds trust.</p>
-<div class="rule">Official line: sellers may offer partial refunds as a resolution within eBay's <a href="https://www.ebay.com/help/selling/returns-refunds/" rel="noopener" target="_blank">returns process</a>.</div>
-<p class="cost">Maya's cost: $15 (instead of ~$24 in label + value drop + INAD hit)</p>
-<div class="fix">The fix: offer a partial refund early for minor issues. It's usually cheaper than a full return, and it protects your metrics.</div>
-</div>
-
-<h2>Case File #09 — Does "free returns" change who pays? (Yes — you.)</h2>
-<div class="casefile"><span class="day">JAN 15</span>
-<h3>The badge that bills you</h3>
-<p class="miss">You missed it if: you enabled free returns for the ranking boost and forgot.</p>
-<p>Maya turned on <strong>free returns</strong> months ago for the search-visibility boost. That means even "changed mind" returns come back on <em>her</em> label. The badge buys visibility but silently shifts all return shipping onto her. It's a trade, not a free feature. For heavy items, the math often doesn't work: a $7 label on a $30 item with thin margins can wipe your profit.</p>
-<div class="rule">Official line: with free returns enabled, the seller covers return shipping for eligible returns, per eBay's <a href="https://www.ebay.com/help/selling/returns-refunds/" rel="noopener" target="_blank">return rules</a>.</div>
-<p class="cost">Maya's cost: ~$7 × each remorse return</p>
-<div class="fix">The fix: run the math — if the visibility boost doesn't out-earn the labels, turn it off for heavy/fragile items. Keep it on for lightweight, high-margin items where returns are rare.</div>
-</div>
-
-<h2>Case File #10 — Do return windows extend after the holidays? (Yes.)</h2>
-<div class="casefile"><span class="day">JAN 17</span>
-<h3>The December sale that returns in February</h3>
-<p class="miss">You missed it if: you thought December sales closed in January.</p>
-<p>eBay's <strong>extended holiday return window</strong> means items bought in Nov–Dec can be returned well into January/February. Maya's January return flood was literally her December success coming home. Holiday sales carry a long tail of returns — price for it in December, not January. Every holiday seller should have a returns reserve funded from December profits.</p>
-<div class="rule">Official line: eBay publishes extended holiday return windows for items bought during the holiday season; see its <a href="https://www.ebay.com/help/selling/returns-refunds/" rel="noopener" target="_blank">returns help</a>.</div>
-<p class="cost">Maya's cost: the whole January flood</p>
-<div class="fix">The fix: set aside a returns reserve from December profit instead of treating January returns as a surprise. A good rule: 10% of December revenue, held until end of February.</div>
-</div>
-
-<h2>Case File #11 — Are eBay return losses tax deductible? (Mostly yes.)</h2>
-<div class="casefile"><span class="day">JAN 20</span>
-<h3>The deduction Maya never tracked</h3>
-<p class="miss">You missed it if: you never write down return shipping and kept fees.</p>
-<p>The return shipping Maya paid and the non-refunded per-order fees are <strong>ordinary business expenses</strong> — deductible on Schedule C. Because she never tracked them, she was overpaying taxes on money she lost. Tracking turns a leak into a deduction. At year-end, that $69.60 January leak is a real write-off — but only if you documented it.</p>
-<div class="rule">Reference: IRS Schedule C allows ordinary &amp; necessary business expenses; see the <a href="reseller-tax-writeoffs-returns.html">reseller write-off guide</a> for how resellers apply it.</div>
-<p class="cost">Maya's cost: taxes on phantom profit</p>
-<div class="fix">The fix: run every return through the <a href="index.html#tool">calculator</a> and keep the "copy for taxes" line. One line per return, timestamped, makes January painless.</div>
-</div>
-
-<h2>Case File #12 — How do I win an eBay case as a seller? (Itemize.)</h2>
-<div class="casefile"><span class="day">JAN 24</span>
-<h3>The appeal that actually worked</h3>
-<p class="miss">You missed it if: you appeal with feelings instead of numbers.</p>
-<p>For the worn dress, Maya sent a calm, itemized message: original sale, return shipping, value drop, photos. <strong>Itemized beats emotional.</strong> She won a partial refund. Sellers who show the math get taken seriously; sellers who type in caps don't. The secret: you have <strong>3 business days</strong> to respond with a resolution after a buyer opens a request, and up to <strong>21 business days</strong> to ask eBay to step in if things don't resolve. Use both windows.</p>
-<div class="rule">Official line: disputes are handled through eBay's <a href="https://www.ebay.com/help/selling/returns-refunds/" rel="noopener" target="_blank">resolution process</a>; evidence and clarity decide outcomes. When eBay steps in, they aim to respond within 48 hours.</div>
-<p class="cost">Maya's recovery: +$20</p>
-<div class="fix">The fix: always appeal with an itemized loss. (<a href="ebay-returns-for-sellers.html">Steal the script here.</a>)</div>
-</div>
-
-<div class="confession"><strong>Confession time:</strong> I used to appeal eBay cases with paragraphs of angry text. I lost every single one. Then I switched to three lines: original sale price, return shipping I paid, value drop on return, with photos attached. I've won 7 of my last 10. Itemized math is the only language eBay's resolution team speaks. Feelings get you nowhere; receipts get you refunds.</div>
-
-<h2>Myth vs. reality</h2>
-<table class="data-table">
-<thead><tr><th>What sellers believe</th><th>Reality</th></tr></thead>
+<section class="art-sec">
+<h2>The first thing to figure out: why is the buyer returning it?</h2>
+<p>This matters more than almost anything else. A buyer saying <strong>"I changed my mind"</strong> is not financially equivalent to a buyer saying <strong>"the item doesn't match the description."</strong></p>
+<table class="art-table">
+<thead><tr><th>Return situation</th><th>Return shipping</th><th>Fee treatment</th><th>Main seller risk</th></tr></thead>
 <tbody>
-<tr><td>"No returns" protects me.</td><td>Not-as-described overrides it under Money Back Guarantee.</td></tr>
-<tr><td>The buyer pays return shipping.</td><td>On NAD, usually you. Label deducted from your funds.</td></tr>
-<tr><td>All fees refund on a return.</td><td>FVF yes (13.6%); per-order fee ($0.30/$0.40) no.</td></tr>
-<tr><td>December sales are done in January.</td><td>Holiday window extends returns into Feb.</td></tr>
-<tr><td>Returns only cost the refund.</td><td>They cost shipping + fees + value drop + standing + potential 5% penalty next month.</td></tr>
-<tr><td>I can appeal with an angry message.</td><td>Itemized math wins. Emotion loses every time.</td></tr>
+<tr><td>Buyer changed their mind</td><td>Depends on your return policy</td><td>Eligible fees may be credited on an eligible full refund</td><td>Shipping/value loss depending on policy</td></tr>
+<tr><td>Item arrived damaged</td><td>Generally seller responsibility</td><td>Final value fee may be credited; per-order fee isn't</td><td>Return shipping + item loss</td></tr>
+<tr><td>Item is defective</td><td>Generally seller responsibility</td><td>Final value fee may be credited; per-order fee isn't</td><td>Return shipping + item loss</td></tr>
+<tr><td>Item doesn't match listing</td><td>Generally seller responsibility</td><td>Final value fee may be credited; per-order fee isn't</td><td>Return shipping + item loss</td></tr>
+<tr><td>Item not received</td><td>Depends on tracking/eBay resolution</td><td>Eligible final value fee may be credited in qualifying situations</td><td>Refund if delivery can't be established</td></tr>
+<tr><td>Partial refund</td><td>No return required in that scenario</td><td>Eligible fee credit is proportional</td><td>Money refunded while buyer keeps item</td></tr>
+<tr><td>eBay steps in</td><td>eBay determines the outcome</td><td>No fee credits if eBay refunds the buyer after stepping in</td><td>Potentially the entire transaction</td></tr>
 </tbody>
 </table>
+<p>eBay's current seller guidance says that when a buyer reports an item as damaged, faulty, or not matching the listing, the seller generally has to cover return shipping. For a buyer-remorse return, who pays depends on the seller's return policy.</p>
+</section>
 
-<h2>Maya's January: the total leak</h2>
-<table class="data-table">
-<thead><tr><th>Leak</th><th>Amount</th></tr></thead>
-<tbody>
-<tr><td>Per-order fees kept (9 × $0.40)</td><td>$3.60</td></tr>
-<tr><td>Return shipping paid (5 × $8.20 avg)</td><td>$41.00</td></tr>
-<tr><td>Value drop (worn/damaged items)</td><td>$60.00</td></tr>
-<tr><td>Recovered via appeals/partials</td><td>-$35.00</td></tr>
-<tr><td><strong>Net January leak</strong></td><td><strong>$69.60</strong></td></tr>
-</tbody>
-</table>
-<p>$69.60 — on a "good" month. That's the number the policy never shows you, and the number the <a href="index.html#tool">calculator</a> exists to reveal. And that's before you count the potential 5% Very High INAD penalty on next month's sales if her rate tipped the wrong way.</p>
+<section class="art-sec">
+<h2>Does the seller lose money on eBay returns?</h2>
+<p><strong>Sometimes, yes — but the loss isn't necessarily the full sale price.</strong> This is where sellers often get confused. Suppose you sold an item for $100. The buyer returns it. That doesn't automatically mean:</p>
+<div class="art-quote">"I lost $100."</div>
+<p>You need to separate the transaction into its individual pieces. Your actual exposure can include:</p>
+<ul>
+<li>the amount refunded to the buyer</li>
+<li>return shipping you had to pay</li>
+<li>seller fees that weren't credited</li>
+<li>a reduction in the item's resale value</li>
+<li>other transaction-specific costs</li>
+</ul>
+<p>And you may recover some of the original fees through eBay's fee-credit system. That's why a simple <strong>sale price minus refund</strong> calculation isn't always enough.</p>
+</section>
 
-<h2>How to read a 40-page policy in 10 minutes</h2>
-<p>You don't need to read all of it. You need the five pages that cost you money: <strong>who pays return shipping, what fees refund, the not-as-described override, the holiday window, and performance standards (especially the Very High INAD penalty).</strong> Skim those, bookmark the official pages, and re-check twice a year when eBay publishes seller updates. That's it. The rest is legalese.</p>
+<section class="art-sec">
+<h2>What happens to your eBay fees after a refund?</h2>
+<p>This is one of the most important parts of an eBay return. eBay currently distinguishes between different types of refunds.</p>
+<h3>Buyer-remorse full refund</h3>
+<p>If you fully refund an eligible buyer-remorse return — for example: ordered by mistake, don't like it, changed my mind, doesn't fit, found a better price — eBay says the eligible <strong>final value fee and per-order fixed fee can be credited</strong> when the requirements are met.</p>
+<h3>Item-problem full refund</h3>
+<p>If the buyer says the item arrived damaged, is defective, is missing parts, is the wrong item, doesn't match the description/photos, or another covered item-problem reason, eBay says the <strong>category/final value fee can be credited</strong>, but the <strong>per-order fixed amount is not credited</strong>. That tiny fixed fee can therefore become part of your loss even when the larger percentage-based fee is credited.</p>
+<h3>Partial refund</h3>
+<p>This works differently again. For an eligible partial refund, eBay calculates the fee credit proportionally to the amount the buyer actually receives back. eBay's published example uses:</p>
+<ul>
+<li>$50 item price · $12 buyer-paid shipping · $6.05 tax = <strong>$68.05 total sale</strong></li>
+<li>$5 seller refund + $0.49 tax refund = <strong>$5.49 total refund</strong></li>
+</ul>
+<p>The $5.49 refund is 8.1% of the $68.05 original sale, so eBay credits 8.1% of the eligible final value fee. The $0.40 per-order fee isn't eligible for that credit.</p>
+<p>This is why a partial refund should not simply be calculated as "refund ÷ item price." The ratio is total refund to buyer ÷ total original sale amount (price + shipping + tax).</p>
+</section>
 
-<h2>Conclusion: the policy isn't the enemy — the unread policy is</h2>
-<p>eBay's rules aren't a conspiracy; they're just long, and the expensive lines are buried. Maya's January wasn't bad luck — it was twelve unread paragraphs coming due. Read the five pages that cost you money, document everything, itemize every appeal, and track every leak. That's the whole game. And when you're done, run your numbers through the calculator so next January, the leak is a line item you planned for — not a surprise that eats your Q1.</p>
+<section class="art-sec">
+<h2>Who pays return shipping on eBay?</h2>
+<h3>If the buyer says the item is damaged, faulty, or not as described</h3>
+<p>The seller is generally responsible for the return shipping cost — even if the seller normally doesn't accept returns.</p>
+<h3>If the buyer simply changed their mind</h3>
+<p>The answer depends on your return policy. If your policy requires the buyer to pay return shipping, the buyer may be responsible. If you've offered free returns, you generally take that cost yourself.</p>
+<p>So don't look only at the words <strong>"returns accepted."</strong> Look at:</p>
+<div class="stage-flow">
+<span>Return reason</span><i>+</i><span>Your return policy</span><i>+</i><span>eBay's case instructions</span>
+</div>
+</section>
 
-<h2>FAQ</h2>
-<dl>
-<dt>Does eBay refund the per-order fee on a return?</dt><dd>No. eBay credits the final value fee but keeps the per-order fee ($0.30 for orders $10 or less, $0.40 for orders over $10) on every return. It's only credited on cancellations.</dd>
-<dt>Can an eBay seller refuse a return?</dt><dd>For changed-mind, sometimes. Not-as-described overrides most no-return policies under Money Back Guarantee.</dd>
-<dt>Who pays return shipping on eBay not as described?</dt><dd>Usually the seller. eBay generates a return label and typically deducts its cost from the seller's funds.</dd>
-<dt>Does eBay refund the final value fee?</dt><dd>Yes. The 13.6% (most categories) is credited proportionally on the refunded amount.</dd>
-<dt>What if a buyer returns a used or different item?</dt><dd>Document with photos and open a case. Itemized evidence with side-by-side comparison photos gives you the best chance of reversal.</dd>
-<dt>Do too many returns hurt my account?</dt><dd>Yes. A Very High Item Not As Described rate triggers a 5% additional final value fee on sales in affected categories the following month.</dd>
-<dt>How long do I have to respond to an eBay return request?</dt><dd>3 business days to respond with a resolution. After that, either party can ask eBay to step in. You have up to 21 business days to ask for eBay's help.</dd>
-<dt>What is the eBay dispute fee?</dt><dd>$20 per dispute if you're found responsible (e.g., on chargebacks), on top of the refund amount.</dd>
-</dl>
+<section class="art-sec">
+<h2>What if the buyer returned the item damaged?</h2>
+<p>This is where a normal return can turn into a real loss. Imagine you sold a $150 jacket, shipped with clear photographs showing a clean zipper, no stains, intact stitching and no tears. The buyer returns it — and now the zipper is broken.</p>
+<p>The seller's problem isn't simply "Do I refund the buyer?" The real question is:</p>
+<div class="art-quote">"How much value did the item lose while it was with the buyer?"</div>
+<p>For eligible Top Rated Sellers, eBay says a seller may be able to deduct up to 50% from the buyer's refund when an item is returned used or damaged, subject to the applicable requirements. eBay also says the deduction should reflect the actual lost value and that sellers can lose eligibility if they misuse the protection.</p>
+<div class="callout"><strong>Important catch:</strong> if eBay steps in, you can no longer use that deduction option for an item returned used or damaged. So documentation matters.</div>
+</section>
 
-<h2>Sources & Official Policy Pages</h2>
-<p>Figures verified against official eBay help center articles (August 2026): <a href="https://www.ebay.com/help/selling/fees-credits-invoices/selling-fees" rel="noopener" target="_blank">Selling fees</a> · <a href="https://www.ebay.com/help/selling/fees-credits-invoices/fee-credits" rel="noopener" target="_blank">Fee credits</a> · <a href="https://www.ebay.com/help/selling/returns-refunds/" rel="noopener" target="_blank">Returns &amp; refunds</a> · <a href="https://www.ebay.com/help/selling/performance-standards/" rel="noopener" target="_blank">Performance standards</a>. See the full list at <a href="sources.html">our sources page</a>. Policies change — always confirm in-app before appealing.</p>
+<section class="art-sec">
+<h2>What evidence should an eBay seller keep?</h2>
+<p>You don't need to photograph your entire warehouse every time you make a sale. But for higher-value or condition-sensitive items, documentation can make a major difference.</p>
+<h3>Before shipping</h3>
+<ul>
+<li>Original listing photos and item description</li>
+<li>Photos of important condition details</li>
+<li>Serial numbers or identifying marks where appropriate</li>
+<li>Photos of packaging for valuable or fragile items</li>
+</ul>
+<h3>During the return</h3>
+<ul>
+<li>Buyer's stated return reason</li>
+<li>Messages exchanged through eBay</li>
+<li>Photos uploaded by the buyer</li>
+<li>Return tracking and your return label information</li>
+<li>Any eBay case instructions</li>
+</ul>
+<h3>When the item arrives</h3>
+<ul>
+<li>Photos of the package before opening when appropriate</li>
+<li>Photos of the item immediately after opening</li>
+<li>Close-ups of new damage</li>
+<li>Photos comparing the returned item with the original listing</li>
+<li>Notes about missing parts or changed condition</li>
+</ul>
+<p>The point isn't to build a mountain of paperwork. It's to make the condition of the transaction <strong>easy to demonstrate if something goes wrong.</strong></p>
+</section>
 
-<p><strong>Read next:</strong> <a href="ebay-per-order-fee-return.html">Does eBay refund the per-order fee on a return?</a> · <a href="ebay-not-as-described-shipping.html">Who pays return shipping on eBay "not as described"?</a> · <a href="platform-comparison-2026.html">The 2026 Reseller's Matrix</a> · <a href="guides.html">All guides</a></p>
+<section class="art-sec">
+<h2>What if you think the buyer is abusing the return system?</h2>
+<p>Don't immediately assume that every difficult return is fraud. Instead, separate the possibilities. Ask yourself:</p>
+<ul>
+<li><strong>Does the buyer's stated reason match the evidence?</strong></li>
+<li><strong>Does the returned item match the item I shipped?</strong></li>
+<li><strong>Is the damage genuinely new?</strong></li>
+<li><strong>Did I describe the item accurately in the listing?</strong></li>
+<li><strong>Do my original photographs show the condition clearly?</strong></li>
+<li><strong>Have I kept everything inside eBay's system?</strong></li>
+</ul>
+<p>If you believe a buyer has made a false claim or abused the return process, eBay provides seller-protection and buyer-reporting mechanisms. For qualifying Top Rated Sellers, eBay says protections can include help with return-label costs for certain false "not as described" claims and protections involving items returned used or damaged.</p>
+<p>Don't rely on a community post saying <strong>"eBay always sides with buyers"</strong> or <strong>"eBay always protects sellers."</strong> The outcome depends on the transaction, evidence, seller eligibility, and eBay's determination.</p>
+</section>
 
-<div class="cta-box"><h3 style="margin-top:0">See your exact January leak in 20 seconds.</h3>
-<p style="margin-bottom:14px">Free. No signup. Itemized like a receipt.</p>
-<a class="btn-primary" href="index.html#tool">CALCULATE MY RETURN LOSS</a></div>
-</article></main>
+<section class="art-sec">
+<h2>What if eBay steps in?</h2>
+<p>This is an important point to understand before you escalate a case. When a buyer reports a problem, eBay currently gives sellers <strong>3 business days to resolve the issue</strong>. If the issue isn't resolved, the buyer or seller can ask eBay to step in.</p>
+<p>If eBay determines that the seller is responsible for the refund, eBay says it can issue the refund and seek reimbursement from the seller. And there's a financial consequence:</p>
+<div class="callout"><strong>eBay says you won't receive fee credits when eBay steps in and refunds the buyer.</strong> That's why it's important to understand what you're agreeing to before a case reaches that stage.</div>
+</section>
 
-<footer class="site-foot"><div class="foot-inner">
+<section class="art-sec">
+<h2>Can you deduct money from a buyer's refund?</h2>
+<p>Sometimes — but this is <strong>not</strong> a general "charge the buyer for whatever annoyed me" option. For eligible sellers dealing with an item returned used or damaged, eBay says you may be able to deduct up to 50% of the refund to recover lost value. The deduction should correspond to the actual reduction in the item's value.</p>
+<p>For example: you sold an item for <strong>$100</strong>. The buyer returns it. You determine that the item's resale value has fallen to <strong>$60</strong> because of damage. The financial loss associated with the condition change is approximately <strong>$40</strong>.</p>
+<p>That's very different from simply deciding:</p>
+<div class="art-quote">"I'll deduct $50 because eBay allows up to 50%."</div>
+<p>The percentage is a ceiling under the applicable protection — not a guaranteed amount you can automatically deduct.</p>
+</section>
+
+<section class="art-sec">
+<h2>What if the buyer keeps the item after a partial refund?</h2>
+<p>This is another situation sellers often overlook. A partial refund can mean: <strong>buyer keeps the item + seller gives back part of the money.</strong> There's no returned item to resell.</p>
+<p>So the seller's financial exposure becomes <strong>partial refund + any unrecovered fees</strong>, rather than <strong>full refund + returned inventory</strong>. And eBay's fee-credit system treats eligible partial refunds proportionally. For that reason, a partial refund should be evaluated as a separate scenario rather than lumped together with ordinary returns.</p>
+</section>
+
+<section class="art-sec">
+<h2>So how much did your eBay return actually cost you?</h2>
+<p>This is the number sellers usually want. Let's say:</p>
+<ul>
+<li><strong>Sale price:</strong> $100</li>
+<li><strong>Buyer refund:</strong> $100</li>
+<li><strong>Return shipping paid by seller:</strong> $8</li>
+<li><strong>Uncredited per-order fee:</strong> $0.40</li>
+<li><strong>Recovered item value:</strong> $70</li>
+</ul>
+<p>The transaction doesn't have one simple "return cost." You've got several moving pieces. That's exactly why CLAWBACK separates the transaction into: refund/exposure, seller-paid shipping, fee impact, recovered item value, protection/compensation, and final seller loss.</p>
+</section>
+
+<!-- ============ MINI CALC ============ -->
+<section class="pc-card" id="ebayReturnCalc" aria-labelledby="ercTitle">
+<p class="pc-kicker">Free mini tool · no signup</p>
+<h2 class="pc-title" id="ercTitle">EBAY RETURN LOSS CHECKER</h2>
+<p class="pc-sub">Mirrors the CLAWBACK eBay engine: tiered final value fee (13.6% / 2.35% over $7,500), $0.30/$0.40 per-order fee, reason-based fee credits, proportional partial-refund credit (total refund ÷ total sale), and no credits when eBay steps in or you refund outside eBay.</p>
+<div class="pc-grid">
+<div class="pc-field"><label for="erSale">Original sale price</label>
+<input type="number" id="erSale" min="0" step="0.01" inputmode="decimal" placeholder="100.00"></div>
+<div class="pc-field"><label for="erShip">Buyer-paid shipping</label>
+<input type="number" id="erShip" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0"></div>
+<div class="pc-field"><label for="erTax">Buyer-paid sales tax</label>
+<input type="number" id="erTax" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0"></div>
+<div class="pc-field"><label for="erReason">Return reason</label>
+<select id="erReason">
+<option value="remorse" selected>Buyer changed mind / doesn't fit / ordered by mistake</option>
+<option value="item">Damaged / defective / wrong item / not as described</option>
+<option value="notreceived">Item not received</option>
+</select></div>
+<div class="pc-field"><label for="erHandler">How was the refund handled?</label>
+<select id="erHandler">
+<option value="on_ebay" selected>I refunded the buyer on eBay</option>
+<option value="stepped_in">eBay stepped in</option>
+<option value="outside">I refunded outside eBay</option>
+</select></div>
+<div class="pc-field"><label for="erType">Refund type</label>
+<select id="erType">
+<option value="full" selected>Full refund</option>
+<option value="partial">Partial refund (buyer keeps item)</option>
+</select></div>
+<div class="pc-field"><label for="erRefund">Total refunded to buyer (incl. tax, if any)</label>
+<input type="number" id="erRefund" min="0" step="0.01" inputmode="decimal" placeholder="leave blank on full = sale price">
+<p class="pc-hint">On partial refunds, use the total amount the buyer received back (including any tax refund). eBay's credit ratio = total refund ÷ total sale (price + shipping + tax).</p></div>
+<div class="pc-field"><label for="erReturned">Did the item come back?</label>
+<select id="erReturned">
+<option value="yes" selected>Yes</option>
+<option value="no">No</option>
+</select></div>
+<div class="pc-field" id="erValueWrap"><label for="erValue">Current resale value of returned item</label>
+<input type="number" id="erValue" min="0" step="0.01" inputmode="decimal" placeholder="70.00" value="0"></div>
+<div class="pc-field"><label for="erReturnShip">Return shipping you paid</label>
+<input type="number" id="erReturnShip" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0"></div>
+<div class="pc-field"><label for="erDed">Deduction you kept from the refund (optional)</label>
+<input type="number" id="erDed" min="0" step="0.01" inputmode="decimal" placeholder="0.00" value="0">
+<p class="pc-hint">Only count an amount you actually deducted. A deduction also removes normal fee credits on a full refund.</p></div>
+</div>
+<button type="button" class="pc-btn" id="erRun">CALCULATE MY EBAY RETURN LOSS</button>
+<div class="pc-out" id="erOut" hidden></div>
+<p class="pc-cta">Need category-precise fees (Books 15.3%, Coins 13.25%, Shoes 8% over $150…) with an appeal letter? Use the <a href="index.html#tool">full CLAWBACK calculator</a> (eBay mode).</p>
+</section>
+
+<section class="art-sec">
+<h2>What should you do when an eBay return request arrives?</h2>
+<ol>
+<li><strong>Read the buyer's stated reason.</strong> Don't treat every return as the same.</li>
+<li><strong>Check your return policy.</strong> Especially for buyer-remorse returns.</li>
+<li><strong>Check whether the issue is covered by eBay's Money Back Guarantee.</strong> Damaged, faulty, not-as-described, and not-received situations can be treated differently from buyer-remorse returns.</li>
+<li><strong>Save your evidence.</strong> Before the situation becomes complicated.</li>
+<li><strong>Keep communication on eBay.</strong> That gives you a record of what was said and when.</li>
+<li><strong>Watch the deadlines.</strong> eBay currently says sellers have 3 business days to resolve a reported issue.</li>
+<li><strong>When the item returns, inspect it carefully.</strong> Don't rush through the inspection if condition matters.</li>
+<li><strong>Calculate the financial impact.</strong> Don't guess. Separate the refund, fees, shipping, and change in item value.</li>
+</ol>
+</section>
+
+<section class="art-sec">
+<h2>A return can cost you even when you technically "got the item back"</h2>
+<p>This is probably the most important financial idea in the whole article. Suppose you sold an item for $100 and it comes back. You might think:</p>
+<div class="art-quote">"I still have the item, so I didn't really lose $100."</div>
+<p>Correct. But you may still have lost: return shipping, an unrecovered fee, time, packaging costs, marketplace costs, and resale value if the item came back damaged or less desirable. And if the item's resale value fell from $100 to $65, that <strong>$35 drop matters</strong>.</p>
+<p>This is why CLAWBACK focuses on <strong>seller loss</strong>, rather than simply asking whether a refund happened.</p>
+</section>
+
+<section class="art-sec faq" id="faq">
+<h2>eBay Return Problems: What Sellers Usually Want to Know</h2>
+<details class="faq-item" open><summary>Does eBay refund seller fees when a buyer returns an item?</summary><p>Sometimes. Eligible fee credits depend on the reason for the return and how the refund was handled. Buyer-remorse full refunds can qualify for both eligible final value and per-order fee credits, while item-problem refunds generally qualify for the final value fee but not the per-order fixed fee.</p></details>
+<details class="faq-item" open><summary>Does the seller pay return shipping on eBay?</summary><p>Generally, if the item is damaged, faulty, or doesn't match the listing, the seller is responsible for return shipping. For buyer-remorse returns, responsibility depends on the seller's return policy.</p></details>
+<details class="faq-item" open><summary>Can an eBay seller deduct money from a refund?</summary><p>Eligible sellers may be able to deduct up to 50% when an item is returned used or damaged, subject to eBay's seller-protection requirements. The deduction should reflect the item's actual lost value.</p></details>
+<details class="faq-item" open><summary>What happens if eBay steps in?</summary><p>eBay reviews the information and decides the outcome. If eBay determines the seller must refund the buyer, eBay can issue the refund and seek reimbursement from the seller. eBay says fee credits aren't provided in that situation.</p></details>
+<details class="faq-item" open><summary>What if the buyer says the item was not as described?</summary><p>Treat the claim seriously and compare the buyer's complaint with your original listing, photographs, description, messages, and other evidence. Don't assume the claim is automatically fraudulent or automatically valid.</p></details>
+<details class="faq-item" open><summary>What if the returned item is damaged?</summary><p>Document the condition immediately and compare it with your original evidence. If you qualify for the applicable seller protection, eBay may allow a deduction from the refund, subject to its requirements.</p></details>
+<details class="faq-item" open><summary>Does a partial refund return all my eBay fees?</summary><p>Not necessarily. Eligible fee credits are proportional to the total amount refunded to the buyer, while the per-order fixed fee isn't eligible for the partial-refund credit.</p></details>
+</section>
+
+<section class="art-sec">
+<h2>Before you close this page</h2>
+<p>If you're dealing with an eBay return right now, don't start by asking:</p>
+<div class="art-quote">"How much am I going to refund?"</div>
+<p>Ask:</p>
+<div class="art-quote">"What is this transaction actually going to cost me?"</div>
+<p>Those are two different questions. A $100 refund doesn't necessarily equal a $100 seller loss. And getting the item back doesn't necessarily mean the transaction cost you nothing.</p>
+<h3>Find your situation</h3>
+<ul>
+<li><strong>Buyer changed their mind?</strong> → See how eBay buyer-remorse returns affect your fees.</li>
+<li><strong>Item came back damaged?</strong> → Learn how eBay's damaged-return deduction works.</li>
+<li><strong>Buyer says the item wasn't as described?</strong> → See what sellers should document before responding.</li>
+<li><strong>eBay stepped in?</strong> → Understand what happens to your fees and seller protection.</li>
+<li><strong>You already refunded the buyer?</strong> → Calculate your estimated eBay loss with CLAWBACK.</li>
+</ul>
+</section>
+
+<section class="art-sec">
+<h2>The bottom line</h2>
+<p>eBay returns aren't simply a question of <strong>"refund or no refund."</strong> Your actual exposure depends on the return reason, shipping responsibility, fee credits, item condition, seller protections, and how the case is resolved.</p>
+<p>The safest approach is to understand the specific situation, document what happened, follow eBay's current case instructions, and calculate the financial impact instead of guessing.</p>
+<div class="callout"><strong>And if you're staring at a return and thinking, "Okay, but how much did this actually cost me?" — that's exactly what CLAWBACK is built to answer.</strong></div>
+</section>
+
+<section class="art-sec">
+<h2>Sources</h2>
+<ul class="src-list">
+<li><a href="https://www.ebay.com/help/selling/selling-fees/selling-fees?id=4822" rel="noopener nofollow">eBay — Selling fees (final value fee &amp; per-order fee)</a></li>
+<li><a href="https://www.ebay.com/help/selling/fees-credits-invoices/selling-fees?id=4128" rel="noopener nofollow">eBay — Fee credits on refunds (reason-based credit rules)</a></li>
+<li><a href="https://www.ebay.com/help/" rel="noopener nofollow">eBay — Returns for sellers &amp; return shipping responsibility</a></li>
+<li><a href="https://www.ebay.com/help/" rel="noopener nofollow">eBay — Seller protections (deduction up to 50% for used/damaged returns)</a></li>
+<li><a href="https://www.ebay.com/help/" rel="noopener nofollow">eBay — Money Back Guarantee &amp; asking eBay to step in</a></li>
+</ul>
+<p class="art-meta">LAST REVIEWED: SEPTEMBER 2026</p>
+<p class="art-lede" style="font-size:13.5px;color:#9DBFA9;"><strong>Disclaimer:</strong> CLAWBACK is independent and not affiliated with eBay. eBay's policies can change. Your current return case instructions and the official eBay Help pages are the final references for an individual transaction. This article is informational and is not legal or tax advice.</p>
+</section>
+
+<section class="art-sec">
+<h2>Read next</h2>
+<div class="next-grid">
+<a class="next-card" href="depop-payout-time.html">
+  <b>When Do You Get Paid on Depop? The 2-10 Day Rule + Payout Calculator (2026)</b>
+  <span>Understand when Depop releases seller payouts, how long the payout process takes, and what can delay your money.</span>
+</a>
+<a class="next-card" href="mercari-returns-explained.html"><b>Mercari Returns Explained</b><span>The 72-hour rule, 50-lb label limits and damaged-return deadlines.</span></a>
+<a class="next-card" href="platform-comparison-2026.html"><b>The 2026 Reseller's Matrix</b><span>Compare return rules, seller fees and loss scenarios across six platforms.</span></a>
+<a class="next-card" href="index.html#tool"><b>Calculate My True Profit</b><span>See what a sale actually leaves you after fees, shipping and returns.</span></a>
+</div>
+</section>
+</main>
+
+<footer class="site-foot">
+<div class="foot-inner">
 <div class="foot-brand"><div class="brand small">CLAW<span class="slash">BACK</span></div><p>The forced-return loss calculator for resellers. Know your number before you appeal.</p></div>
-<nav class="foot-col" aria-label="Guides"><h3>More</h3><ul><li><a href="ebay-per-order-fee-return.html">Per-order fee refund</a></li><li><a href="ebay-not-as-described-shipping.html">NAD return shipping</a></li><li><a href="guides.html">Guides</a></li></ul></nav>
-<nav class="foot-col" aria-label="Company"><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
-</div><div class="foot-legal"><p class="verified">Fee data last verified: <strong>August 22, 2026</strong> · sourced from official eBay help pages.</p><p class="disclaimer">⚠ Estimates only — not legal or tax advice. CLAWBACK is independent and not affiliated with eBay.</p></div></footer>
+<nav class="foot-col" aria-label="Platforms"><h3>Platforms</h3><ul>
+<li><a href="platforms.html#ebay">eBay</a></li><li><a href="platforms.html#poshmark">Poshmark</a></li>
+<li><a href="platforms.html#mercari">Mercari</a></li><li><a href="platforms.html#depop">Depop</a></li>
+<li><a href="platforms.html#whatnot">Whatnot</a></li><li><a href="platforms.html#vinted">Vinted</a></li>
+</ul></nav>
+<nav class="foot-col" aria-label="Guides"><h3>Guides</h3><ul>
+<li><a href="guides.html">All guides</a></li><li><a href="guides.html#dispute">Win a return dispute</a></li>
+<li><a href="guides.html#taxes">Tax write-offs</a></li>
+</ul></nav>
+<nav class="foot-col" aria-label="Company"><h3>Company</h3><ul>
+<li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms &amp; Disclaimer</a></li><li><a href="contact.html">Contact</a></li>
+</ul></nav>
+<nav class="foot-col" aria-label="Resources"><h3>Resources</h3><ul>
+<li><a href="index.html#faq">FAQ</a></li><li><a href="sources.html">Sources</a></li><li><a href="sitemap.html">Sitemap</a></li>
+</ul></nav>
+</div>
+<div class="foot-legal">
+<p class="verified">Fee data last verified: <strong>August 2026</strong> · sourced from official platform help pages.</p>
+<p class="disclaimer">⚠ Estimates only — not legal or tax advice. Platforms change their fees; verify current rates before you appeal. CLAWBACK is an independent tool and is not affiliated with eBay, Poshmark, Mercari, Depop, Whatnot, or Vinted.</p>
+</div>
+</footer>
+
 <script src="nav.js"></script>
+
+<!-- ========== MINI CALC LOGIC (mirrors locked ebay-calc.js rules) ========== -->
+<script>
+(function(){
+function el(id){ return document.getElementById(id); }
+function num(id){ var v = parseFloat(el(id).value); return isNaN(v) ? 0 : v; }
+function money(n){ return '$' + (Math.round((+n||0)*100)/100).toFixed(2); }
+function fvf(base){ var f = Math.min(base, 7500) * 0.136; if(base > 7500) f += (base - 7500) * 0.0235; return Math.round(f*100)/100; }
+function perOrder(base){ return base <= 10 ? 0.30 : 0.40; }
+
+function sync(){ el('erValueWrap').hidden = (el('erReturned').value !== 'yes'); }
+
+function run(){
+  var out = el('erOut');
+  var sale = num('erSale');
+  if(sale <= 0){ out.hidden = false; out.innerHTML = '<p class="pc-note">Enter the original sale price first.</p>'; return; }
+  var ship = num('erShip'), tax = num('erTax');
+  var reason = el('erReason').value;
+  var handler = el('erHandler').value;
+  var type = el('erType').value;
+  var refundRaw = el('erRefund').value;
+  var returned = el('erReturned').value;
+  var value = num('erValue');
+  var returnShip = num('erReturnShip');
+  var ded = num('erDed');
+
+  var base = sale + ship + tax;
+  var variableFee = fvf(base);
+  var perFee = perOrder(base);
+
+  var varLost, perLost, exposure;
+  if(type === 'partial'){
+    var rAmt = num('erRefund');
+    if(rAmt <= 0){ out.hidden = false; out.innerHTML = '<p class="pc-note">For a partial refund, enter the total amount refunded to the buyer (including any tax refund).</p>'; return; }
+    exposure = rAmt;
+    var p = base > 0 ? Math.min(1, rAmt / base) : 0;
+    varLost = Math.round(variableFee * (1 - p) * 100) / 100;
+    perLost = perFee;
+  } else {
+    exposure = (refundRaw !== '') ? num('erRefund') : sale;
+    if(handler !== 'on_ebay'){ varLost = variableFee; perLost = perFee; }
+    else if(ded > 0){ varLost = variableFee; perLost = perFee; }
+    else { varLost = 0; perLost = (reason === 'remorse') ? 0 : perFee; }
+  }
+
+  var valueLost = (returned === 'yes') ? Math.max(0, exposure - value) : exposure;
+  if(type === 'full' && ded > 0) valueLost = Math.max(0, valueLost - ded);
+
+  var total = Math.max(0, varLost + perLost + returnShip + valueLost);
+
+  var h = '';
+  h += '<div class="pc-sub-head">Fee impact</div>';
+  h += '<div class="pc-line ' + (varLost < 0.005 ? 'ok' : 'loss') + '"><span>Final value fee (' + (varLost < 0.005 ? 'credited' : 'kept') + ')</span><b>' + (varLost < 0.005 ? '$0.00' : money(varLost)) + '</b></div>';
+  h += '<div class="pc-line ' + (perLost < 0.005 ? 'ok' : 'loss') + '"><span>Per-order fee (' + (perLost < 0.005 ? 'credited' : 'kept') + ')</span><b>' + (perLost < 0.005 ? '$0.00' : money(perLost)) + '</b></div>';
+  h += '<div class="pc-sub-head">Money out / recovered</div>';
+  h += '<div class="pc-line loss"><span>Refund exposure</span><b>' + money(exposure) + '</b></div>';
+  if(returnShip > 0) h += '<div class="pc-line loss"><span>Return shipping you paid</span><b>' + money(returnShip) + '</b></div>';
+  if(returned === 'yes' && value > 0) h += '<div class="pc-line ok"><span>Recovered item value</span><b>-' + money(value) + '</b></div>';
+  if(returned === 'no') h += '<div class="pc-line loss"><span>Item not recovered</span><b>' + money(exposure) + ' exposure</b></div>';
+  if(type === 'full' && ded > 0) h += '<div class="pc-line ok"><span>Deduction kept from refund</span><b>-' + money(ded) + '</b></div>';
+  h += '<div class="pc-line total"><span>ESTIMATED SELLER LOSS</span><b>' + money(total) + '</b></div>';
+
+  var verdict = '';
+  if(handler === 'stepped_in' || handler === 'outside') verdict = 'Because the refund was handled ' + (handler === 'stepped_in' ? 'after eBay stepped in' : 'outside eBay') + ', no fee credits apply — the full ' + money(varLost + perLost) + ' in fees stays in your loss.';
+  else if(type === 'partial') verdict = 'Partial refund: the eligible final value fee credit is proportional (' + Math.round((num('erRefund') / base) * 1000) / 10 + '% of the fee). The ' + money(perFee) + ' per-order fee is never prorated or credited.';
+  else if(ded > 0) verdict = 'A deduction was kept, so normal fee credits do not apply; the deduction offsets the item-value loss instead.';
+  else if(reason === 'remorse') verdict = 'Buyer-remorse full refund handled on eBay: both the final value fee and the per-order fee can be credited, so your loss is limited to shipping and any drop in item value.';
+  else verdict = 'Item-problem full refund: the final value fee can be credited, but the ' + money(perFee) + ' per-order fee stays with eBay as part of your loss.';
+  h += '<p class="pc-verdict">' + verdict + '</p>';
+  h += '<p class="pc-note">Rates shown are Most Categories (13.6% / 2.35% over $7,500) with the $0.30/$0.40 per-order fee on price + shipping + tax. Credits and deductions are estimates; eBay\'s case decision is final. Other categories differ — use the full calculator for category-precise math.</p>';
+
+  out.hidden = false;
+  out.innerHTML = h;
+}
+
+el('erReturned').addEventListener('change', sync);
+el('erRun').addEventListener('click', run);
+sync();
+})();
+</script>
 
 <script>
 CookieConsent.run({
-  guiOptions: {
-    consentModal: {
-      layout: "box",
-      position: "bottom right",
-      equalWeightButtons: true,
-      flipButtons: false
-    },
-    preferencesModal: {
-      layout: "box",
-      position: "right",
-      equalWeightButtons: true,
-      flipButtons: false
-    }
-  },
-  categories: {
-    necessary: {
-      enabled: true,
-      readOnly: true
-    },
-    analytics: {
-      enabled: false,
-      readOnly: false
-    },
-    advertising: {
-      enabled: false,
-      readOnly: false
-    }
-  },
-  language: {
-    default: "en",
-    autoDetect: "browser",
-    translations: {
-      en: {
-        consentModal: {
-          title: "We use cookies",
-          description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
-          acceptAllBtn: "Accept all",
-          acceptNecessaryBtn: "Reject all",
-          showPreferencesBtn: "Manage preferences"
-        },
-        preferencesModal: {
-          title: "Cookie preferences",
-          acceptAllBtn: "Accept all",
-          acceptNecessaryBtn: "Reject all",
-          savePreferencesBtn: "Save preferences",
-          sections: [
-            {
-              title: "Necessary cookies",
-              description: "These cookies are required for the site to function.",
-              linkedCategory: "necessary"
-            },
-            {
-              title: "Analytics cookies",
-              description: "Help us understand how visitors use our site (Google Analytics).",
-              linkedCategory: "analytics"
-            },
-            {
-              title: "Advertising cookies",
-              description: "Used to show relevant ads (Google AdSense, when enabled).",
-              linkedCategory: "advertising"
-            }
-          ]
-        }
-      }
-    }
-  }
+guiOptions: {
+consentModal: { layout: "box", position: "bottom right", equalWeightButtons: true, flipButtons: false },
+preferencesModal: { layout: "box", position: "right", equalWeightButtons: true, flipButtons: false }
+},
+categories: {
+necessary: { enabled: true, readOnly: true },
+analytics: { enabled: false, readOnly: false },
+advertising: { enabled: false, readOnly: false }
+},
+language: {
+default: "en",
+autoDetect: "browser",
+translations: {
+en: {
+consentModal: {
+title: "We use cookies",
+description: "We use cookies to improve your experience and analyze traffic. You can choose which cookies to allow.",
+acceptAllBtn: "Accept all",
+acceptNecessaryBtn: "Reject all",
+showPreferencesBtn: "Manage preferences"
+},
+preferencesModal: {
+title: "Cookie preferences",
+acceptAllBtn: "Accept all",
+acceptNecessaryBtn: "Reject all",
+savePreferencesBtn: "Save preferences",
+sections: [
+{ title: "Necessary cookies", description: "These cookies are required for the site to function.", linkedCategory: "necessary" },
+{ title: "Analytics cookies", description: "Help us understand how visitors use our site (Google Analytics).", linkedCategory: "analytics" },
+{ title: "Advertising cookies", description: "Used to show relevant ads (Google AdSense, when enabled).", linkedCategory: "advertising" }
+]
+}
+}
+}
+}
 });
 </script>
-
-</body></html>
+</body>
+</html>
