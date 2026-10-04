@@ -1,114 +1,96 @@
 {
   "_meta": {
-    "lastVerified": "2026-08",
+    "lastVerified": "2026-10",
     "currency": "USD",
     "scope": "US sellers, full returns where the item comes back. Includes eBay, Poshmark, Mercari, Depop, Whatnot, and Vinted. Partial refunds are v2.",
     "_note": "Keys beginning with _ are NOTES for the owner and are NEVER shown or used in math. Edit the numbers here when a platform changes fees; re-check quarterly."
   },
-
   "ebay": {
     "label": "eBay",
     "finalValuePct": 13.6,
     "finalValuePctOver7500": 2.35,
     "flatFee": 0,
     "flatFeeUnder": 0,
-    "perOrderFee": 0.40,
-    "perOrderFeeLow": 0.30,
+    "perOrderFee": 0.4,
+    "perOrderFeeLow": 0.3,
     "perOrderThreshold": 10,
     "processingPct": 0,
     "processingFixed": 0,
     "disputeFee": 20,
-    "refund": { "finalValue": true, "perOrder": false, "processing": true },
-    "_note": "eBay US 2026: 13.6% final value fee on MOST categories (books 15.3%, trading cards/coins 13.25%) on the part up to $7,500, then 2.35%. Per-order fee is $0.30 for orders of $10 or less and $0.40 above $10."
-  },
-
-  "poshmark": {
-    "label": "Poshmark",
-    "finalValuePct": 20,
-    "flatFee": 2.95,
-    "flatFeeUnder": 15,
-    "perOrderFee": 0,
-    "processingPct": 0,
-    "processingFixed": 0,
-    "refund": { "finalValue": true, "perOrder": false, "processing": true },
-    "_note": "Poshmark 2026: 20% commission on sales of $15+, or a flat $2.95 under $15; buyer pays $6.49 flat shipping; no recurring fees."
-  },
-
-  "mercari": {
-    "label": "Mercari",
-    "finalValuePct": 10,
-    "flatFee": 0,
-    "flatFeeUnder": 0,
-    "perOrderFee": 0,
-    "processingPct": 0,
-    "processingFixed": 0,
-    "refund": { "finalValue": true, "perOrder": false, "processing": true },
-    "_note": "Mercari US 2026: 10% selling fee (back since Jan 6, 2025). There is NO separate seller payment-processing fee."
-  },
-
-  "depop": {
-    "label": "Depop",
-    "finalValuePct": 0,
-    "flatFee": 0,
-    "flatFeeUnder": 0,
-    "perOrderFee": 0,
-    "processingPct": 3.3,
-    "processingFixed": 0.45,
-    "refund": { "finalValue": true, "perOrder": false, "processing": true },
-    "_note": "Depop US 2026: NO selling fee for US/UK/AUS sellers. Payment processing is 3.3% + $0.45 via Depop Payments (Stripe)."
-  },
-
-  "whatnot": {
-    "label": "Whatnot",
-    "finalValuePct": 8,
-    "flatFee": 0,
-    "flatFeeUnder": 0,
-    "perOrderFee": 0,
-    "processingPct": 2.9,
-    "processingFixed": 0.30,
-    "processingBase": "gross_order_value",
-    "separateCheckoutFixedFee": true,
-    "highValueCap": {
-      "enabled": true,
-      "threshold": 1500
+    "refund": {
+      "finalValue": true,
+      "perOrder": false,
+      "processing": true
     },
-    "categories": {
-      "std": {
-        "label": "Comics / TCG / Toys / Bags / Jewelry — 8% (cap $1,500)",
-        "commissionPct": 8,
-        "capEligible": true
-      },
-      "coins": {
-        "label": "Coins & Money — 4% (cap $1,500)",
-        "commissionPct": 4,
-        "capEligible": true
-      },
-      "pallets": {
-        "label": "Pallets — 4% (no cap)",
-        "commissionPct": 4,
-        "capEligible": false
-      },
-      "other": {
-        "label": "All other categories — 8% (no cap)",
-        "commissionPct": 8,
-        "capEligible": false
-      }
+    "_note": "eBay US: 13.6% final value fee on most categories; Books, Magazines, Movies & TV and certain Music categories are 15.3%, while most Coins & Paper Money and select collectives are 13.25%. The per-order fee is $0.30 for orders of $10 or less and $0.40 for orders over $10. eBay calculates the final value fee on the total amount of the sale, which can include the item price, shipping, sales tax, and other applicable amounts. There is no separate seller payment-processing fee. Whether fees are credited after a refund depends on the reason and circumstances — use the “what happened” selector.",
+    "schema_version": 1,
+    "fee_base": [
+      "sale_price",
+      "buyer_paid_shipping",
+      "buyer_paid_sales_tax"
+    ],
+    "fee_base_exclusions": [
+      "seller_inventory_cost",
+      "seller_paid_outbound_shipping",
+      "return_shipping",
+      "optional_account_specific_fees"
+    ],
+    "per_order_fee": {
+      "type": "threshold",
+      "threshold": 10,
+      "currency": "USD",
+      "tiers": [
+        {
+          "max": 10,
+          "fee": 0.3
+        },
+        {
+          "min": 10.01,
+          "fee": 0.4
+        }
+      ],
+      "notes": "Fixed per-order fee applied on top of the variable final value fee for applicable categories. Athletic Shoes at $150+ has no per-order fee."
     },
-    "refund": { "finalValue": true, "perOrder": false, "processing": true },
-    "_note": "Whatnot US 2026: 8% commission (4% Coins & Money, 4% Pallets). Payment processing is 2.9% + $0.30 on gross order value (item + shipping + tax). The $0.30 fixed fee is charged per CHECKOUT. High-value promo: 0% commission on portion above $1,500 in eligible categories."
-  },
-
-  "vinted": {
-    "label": "Vinted",
-    "finalValuePct": 0,
-    "flatFee": 0,
-    "flatFeeUnder": 0,
-    "perOrderFee": 0,
-    "processingPct": 0,
-    "processingFixed": 0,
-    "buyerProtectionPct": 5,
-    "buyerProtectionFixed": 0.70,
-    "refund": { "finalValue": true, "perOrder": false, "processing": true },
-    "_note": "Vinted US 2026: $0 seller fees. Buyer pays $0.70 + 5% protection fee plus shipping."
-  }
-}
+    "categories": [
+      {
+        "id": "most_categories",
+        "label": "Most categories",
+        "fee_type": "tiered_percentage",
+        "per_order_fee_applies": true,
+        "tiers": [
+          {
+            "min": 0,
+            "max": 7500,
+            "rate_pct": 13.6
+          },
+          {
+            "min": 7500,
+            "max": null,
+            "rate_pct": 2.35
+          }
+        ]
+      },
+      {
+        "id": "books_media",
+        "label": "Books / Magazines / Movies & TV / Music",
+        "fee_type": "tiered_percentage",
+        "per_order_fee_applies": true,
+        "tiers": [
+          {
+            "min": 0,
+            "max": 7500,
+            "rate_pct": 15.3
+          },
+          {
+            "min": 7500,
+            "max": null,
+            "rate_pct": 2.35
+          }
+        ]
+      },
+      {
+        "id": "coins_paper_money",
+        "label": "Coins & Paper Money",
+        "fee_type": "tiered_percentage",
+        "per_order_fee_applies": true,
+        "tiers": [
