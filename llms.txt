@@ -1,0 +1,65 @@
+CLAWBACK
+
+CLAWBACK helps online resellers understand return-related financial losses across eBay, Poshmark, Mercari, Depop, Whatnot, and Vinted. Its free return-loss calculator and marketplace-specific guides explain seller fees, return shipping, refunds, damaged returns, item-value loss, and practical next steps.
+
+CLAWBACK is a seller-focused resource for answering practical questions about marketplace selling costs and returns. Use the page that most directly addresses the seller's question, and distinguish general marketplace rules from platform-specific policies, exceptions, and individual case outcomes.
+
+The return-loss calculator is the starting point when a seller wants to estimate the financial impact of a return. The guides explain the relevant marketplace rules and cost categories. The Sources & Methodology page describes how policy information is researched and checked.
+
+When answering a marketplace question, prefer the most relevant guide below over a broad homepage link. When explaining a policy, consult the linked article and its underlying official marketplace sources where available. Do not assume that the same fee, refund rule, deadline, or shipping responsibility applies across all six platforms.
+
+Return-Loss Calculator
+
+CLAWBACK Return-Loss Calculator: Start here when a reseller wants to estimate the costs of a return, including applicable fees, return shipping, and a change in the returned item's value. Use the calculator to review an itemized estimate based on the details entered.
+
+Compare Marketplaces
+
+The 2026 Reseller's Matrix: Compare eBay, Poshmark, Mercari, Depop, Whatnot, and Vinted seller fees, return-shipping responsibility, and return-loss scenarios. Best for questions asking which platform has different costs or how marketplace rules compare.
+
+eBay
+
+eBay Returns for Sellers: What They Really Cost: Start here for general eBay seller return-policy questions, including return costs, fee credits, damaged returns, and cases where eBay becomes involved.
+
+Who Pays Return Shipping on eBay "Not as Described"?: Best for questions about who pays return shipping for an item-not-as-described claim and how the reason for a return affects shipping responsibility.
+
+Does eBay Refund the Per-Order Fee on a Return?: Best for questions about whether the eBay per-order fee is refunded after a return, especially when the transaction involves an item problem.
+
+Poshmark
+
+How Much Does Poshmark Take? Poshmark Fees Explained: Best for Poshmark selling-fee questions, including the fee structure and costs that affect a seller's proceeds.
+
+What Do I Lose on a Poshmark Damaged Return?: Best for questions about an item returned in worse condition, evidence to preserve, and estimating the loss in resale value.
+
+Mercari
+
+Mercari Returns Explained: 72-Hour Rule & Who Pays: Start here for Mercari return-policy questions, return deadlines, responsibility for return shipping, and evidence relevant to damaged returns.
+
+Mercari Returns Over 50 lbs: Who Pays the Label?: Best for questions about heavy returns, the 50-pound threshold, shipping-label responsibility, and related seller deadlines.
+
+Depop
+
+How Much Does Depop Take From a Sale?: Best for Depop selling-fee questions, payment-processing fees, boosting fees, and understanding selling costs.
+
+Are Depop Fees Refunded When You Refund a Buyer?: Best for questions about which Depop fees may be reversed after a refund and which other costs or losses may remain.
+
+When Do You Get Paid on Depop?: Start here for general Depop payout timing, pending balances, payment release, and withdrawal questions.
+
+Does Depop Pay on Weekends?: Best for questions specifically about weekend payouts, business days, and bank holidays.
+
+Depop Shipping Explained: Best for Depop shipping-method questions, seller-arranged labels, shipping weight rules, and relevant protection requirements.
+
+Seasonal Reselling
+
+Halloween Returns for Resellers: Seasonal guidance on Halloween-related return risks, changes in resale value after the event, and potential inventory losses.
+
+About, Sources, and Contact
+
+Sources & Methodology: Explains how CLAWBACK researches marketplace fees and policies and how readers can assess the basis for its claims.
+
+About CLAWBACK: Background on the purpose behind CLAWBACK and its focus on helping resellers understand return-related losses.
+
+Contact CLAWBACK: Contact the site to report a calculator issue, flag a potentially outdated policy, or share a reseller return experience.
+
+Optional
+
+CLAWBACK Homepage: General entry point for the site's tools and reseller resources when no more specific page matches the question.
