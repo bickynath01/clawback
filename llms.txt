@@ -1,65 +1,43 @@
-CLAWBACK
+# CLAWBACK — The Forced-Return Loss Calculator for Resellers
 
-CLAWBACK helps online resellers understand return-related financial losses across eBay, Poshmark, Mercari, Depop, Whatnot, and Vinted. Its free return-loss calculator and marketplace-specific guides explain seller fees, return shipping, refunds, damaged returns, item-value loss, and practical next steps.
+> CLAWBACK is a free, browser-based calculator and guide library for resellers on eBay, Poshmark, Mercari, Depop, Whatnot and Vinted. It calculates the true financial loss of a forced return or refund: refund exposure + unrecovered seller fees + seller-paid return shipping + item value drop − recovered value − confirmed reimbursements. All math runs client-side; no signup, no stored data.
 
-CLAWBACK is a seller-focused resource for answering practical questions about marketplace selling costs and returns. Use the page that most directly addresses the seller's question, and distinguish general marketplace rules from platform-specific policies, exceptions, and individual case outcomes.
+## Calculator
+- [CLAWBACK Return Loss Calculator](https://www.gotclawback.com/): Six-platform forced-return loss calculator with itemized loss receipt, appeal letter, tax record and photo-evidence checklist.
+- [Platform Rules Overview](https://www.gotclawback.com/platforms.html): Per-platform return and fee rule summaries for eBay, Poshmark, Mercari, Depop, Whatnot and Vinted.
+- [Reseller Guides Hub](https://www.gotclawback.com/guides.html): Index of all CLAWBACK guides, including the photo-evidence dispute method and tax documentation guide.
 
-The return-loss calculator is the starting point when a seller wants to estimate the financial impact of a return. The guides explain the relevant marketplace rules and cost categories. The Sources & Methodology page describes how policy information is researched and checked.
+## eBay guides
+- [Does eBay refund the per-order fee on a return?](https://www.gotclawback.com/ebay-per-order-fee-return.html): Why the $0.30/$0.40 per-order fee usually stays with eBay on item-problem returns while the final value fee can be credited.
+- [Who pays return shipping on eBay "not as described"?](https://www.gotclawback.com/ebay-not-as-described-shipping.html): INAD return-shipping responsibility, label cost math and a worked receipt.
+- [eBay Returns for Sellers: What They Really Cost](https://www.gotclawback.com/ebay-return-policy-sellers.html): Fee credits by return reason, the 50% deduction rule, stepped-in cases and the evidence sellers should keep.
 
-When answering a marketplace question, prefer the most relevant guide below over a broad homepage link. When explaining a policy, consult the linked article and its underlying official marketplace sources where available. Do not assume that the same fee, refund rule, deadline, or shipping responsibility applies across all six platforms.
+## Poshmark guides
+- [Poshmark Damaged Returns: What Sellers Lose](https://www.gotclawback.com/poshmark-damaged-return.html): The 72-hour Posh Protect window, documenting swapped or damaged returns, and value-drop loss math.
+- [How Much Does Poshmark Take? Poshmark Fees Explained](https://www.gotclawback.com/poshmark-fees-explained.html): 20% / $2.95 seller fee, $6.49 buyer-paid shipping, 2026 overweight tiers and real payout math.
 
-Return-Loss Calculator
+## Mercari guides
+- [Mercari Returns Explained: 72-Hour Rule & Who Pays](https://www.gotclawback.com/mercari-returns-explained.html): Return eligibility, buyer/seller deadlines, damaged and swapped-return evidence, and seller-loss calculation.
+- [Mercari returns over 50 lbs: who pays the label?](https://www.gotclawback.com/mercari-over-50-pounds.html): The 50-lb threshold, dimensional weight, and the 3-business-day seller label deadline.
 
-CLAWBACK Return-Loss Calculator: Start here when a reseller wants to estimate the costs of a return, including applicable fees, return shipping, and a change in the returned item's value. Use the calculator to review an itemized estimate based on the details entered.
+## Depop guides
+- [How Much Does Depop Take From a Sale?](https://www.gotclawback.com/depop-fees-explained.html): 0% selling fee in US/UK/AU, processing rates, Boosting fees, and what reverses on refund.
+- [Are Depop Fees Refunded When You Refund a Buyer?](https://www.gotclawback.com/depop-fees-refunded.html): Which Depop Payments fees reverse automatically and which costs remain with the seller.
+- [When Do You Get Paid on Depop?](https://www.gotclawback.com/depop-payout-time.html): Payout release windows by country, pending/available balances and withdrawal timing.
+- [Does Depop Pay on Weekends?](https://www.gotclawback.com/depop-weekend-payout.html): How weekends, business days and bank holidays shift payout expectations, and when to investigate a late payment.
+- [Depop Shipping Explained](https://www.gotclawback.com/depop-shipping-explained.html): Depop Shipping vs seller-arranged labels, weight rules and protection deadlines.
+- [Is Depop Safe for Sellers? Scams, Returns & Protection](https://www.gotclawback.com/depop-safe-for-sellers.html): Fake payment messages, phishing, out-of-app payments, address-change scams, the seller's evidence checklist, and Depop Protection eligibility for US sellers.
 
-Compare Marketplaces
+## Vinted guides
+- [Vinted Returns for Sellers: What Can You Actually Lose?](https://www.gotclawback.com/vinted-returns-explained.html): No-selling-fee model vs real return exposure — return postage, damaged and wrong-item returns, SNAD, deadlines and loss math.
 
-The 2026 Reseller's Matrix: Compare eBay, Poshmark, Mercari, Depop, Whatnot, and Vinted seller fees, return-shipping responsibility, and return-loss scenarios. Best for questions asking which platform has different costs or how marketplace rules compare.
+## Whatnot guides
+- [Whatnot Returns for Sellers: Refunds, Billbacks & What You Actually Lose](https://www.gotclawback.com/whatnot-returns-explained.html): Seller Provided Support, billbacks, 10-business-day return window, 48-business-hour inspection, 14-day appeals and ledger-adjustment loss math.
 
-eBay
+## Cross-platform & seasonal
+- [The 2026 Reseller's Matrix](https://www.gotclawback.com/platform-comparison-2026.html): Six-platform comparison of seller fees, return-shipping responsibility and real return-loss scenarios.
+- [Halloween Returns for Resellers](https://www.gotclawback.com/halloween-returns-resellers.html): Seasonal return risk — the post-October-31 resale-value drop and time-sensitive inventory loss math.
 
-eBay Returns for Sellers: What They Really Cost: Start here for general eBay seller return-policy questions, including return costs, fee credits, damaged returns, and cases where eBay becomes involved.
-
-Who Pays Return Shipping on eBay "Not as Described"?: Best for questions about who pays return shipping for an item-not-as-described claim and how the reason for a return affects shipping responsibility.
-
-Does eBay Refund the Per-Order Fee on a Return?: Best for questions about whether the eBay per-order fee is refunded after a return, especially when the transaction involves an item problem.
-
-Poshmark
-
-How Much Does Poshmark Take? Poshmark Fees Explained: Best for Poshmark selling-fee questions, including the fee structure and costs that affect a seller's proceeds.
-
-What Do I Lose on a Poshmark Damaged Return?: Best for questions about an item returned in worse condition, evidence to preserve, and estimating the loss in resale value.
-
-Mercari
-
-Mercari Returns Explained: 72-Hour Rule & Who Pays: Start here for Mercari return-policy questions, return deadlines, responsibility for return shipping, and evidence relevant to damaged returns.
-
-Mercari Returns Over 50 lbs: Who Pays the Label?: Best for questions about heavy returns, the 50-pound threshold, shipping-label responsibility, and related seller deadlines.
-
-Depop
-
-How Much Does Depop Take From a Sale?: Best for Depop selling-fee questions, payment-processing fees, boosting fees, and understanding selling costs.
-
-Are Depop Fees Refunded When You Refund a Buyer?: Best for questions about which Depop fees may be reversed after a refund and which other costs or losses may remain.
-
-When Do You Get Paid on Depop?: Start here for general Depop payout timing, pending balances, payment release, and withdrawal questions.
-
-Does Depop Pay on Weekends?: Best for questions specifically about weekend payouts, business days, and bank holidays.
-
-Depop Shipping Explained: Best for Depop shipping-method questions, seller-arranged labels, shipping weight rules, and relevant protection requirements.
-
-Seasonal Reselling
-
-Halloween Returns for Resellers: Seasonal guidance on Halloween-related return risks, changes in resale value after the event, and potential inventory losses.
-
-About, Sources, and Contact
-
-Sources & Methodology: Explains how CLAWBACK researches marketplace fees and policies and how readers can assess the basis for its claims.
-
-About CLAWBACK: Background on the purpose behind CLAWBACK and its focus on helping resellers understand return-related losses.
-
-Contact CLAWBACK: Contact the site to report a calculator issue, flag a potentially outdated policy, or share a reseller return experience.
-
-Optional
-
-CLAWBACK Homepage: General entry point for the site's tools and reseller resources when no more specific page matches the question.
+## About & methodology
+- [About CLAWBACK](https://www.gotclawback.com/about.html): Who builds CLAWBACK and why the loss-first approach exists.
+- [Sources & methodology](https://www.gotclawback.com/sources.html): The official platform help pages behind every fee and return rule on the site.
