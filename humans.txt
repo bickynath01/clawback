@@ -1,0 +1,12 @@
+/* TEAM */
+Project: CLAWBACK — the forced-return loss calculator for resellers
+Site: https://www.gotclawback.com
+Contact: https://www.gotclawback.com/contact.html
+Purpose: Independent reseller education and return-loss calculation for eBay, Poshmark, Mercari, Depop, Whatnot and Vinted
+
+/* SITE */
+Last update: 2026-10-20
+Standards: HTML5, CSS3, vanilla JavaScript
+Fonts: Archivo, Archivo Black, Space Mono (Google Fonts)
+Consent: CookieConsent v3 (analytics gated behind consent)
+Language: English
