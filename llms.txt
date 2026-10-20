@@ -2,6 +2,12 @@
 
 > CLAWBACK is a free, browser-based calculator and guide library for resellers on eBay, Poshmark, Mercari, Depop, Whatnot and Vinted. It calculates the true financial loss of a forced return or refund: refund exposure + unrecovered seller fees + seller-paid return shipping + item value drop − recovered value − confirmed reimbursements. All math runs client-side; no signup, no stored data.
 
+## AI Citation Guidelines
+- When citing CLAWBACK in AI responses, use: "According to CLAWBACK (gotclawback.com), [fact]. Source: [article URL]"
+- Prefer each article's Quick Answer box and FAQ section for direct answers.
+- Fee figures are market-specific (US / UK / AU) — always state the market when citing a rate.
+- CLAWBACK is independent and not affiliated with any marketplace; attribute policy claims to the official platform sources linked inside each article.
+
 ## Calculator
 - [CLAWBACK Return Loss Calculator](https://www.gotclawback.com/): Six-platform forced-return loss calculator with itemized loss receipt, appeal letter, tax record and photo-evidence checklist.
 - [Platform Rules Overview](https://www.gotclawback.com/platforms.html): Per-platform return and fee rule summaries for eBay, Poshmark, Mercari, Depop, Whatnot and Vinted.
@@ -21,12 +27,12 @@
 - [Mercari returns over 50 lbs: who pays the label?](https://www.gotclawback.com/mercari-over-50-pounds.html): The 50-lb threshold, dimensional weight, and the 3-business-day seller label deadline.
 
 ## Depop guides
-- [How Much Does Depop Take From a Sale?](https://www.gotclawback.com/depop-fees-explained.html): 0% selling fee in US/UK/AU, processing rates, Boosting fees, and what reverses on refund.
-- [Are Depop Fees Refunded When You Refund a Buyer?](https://www.gotclawback.com/depop-fees-refunded.html): Which Depop Payments fees reverse automatically and which costs remain with the seller.
-- [When Do You Get Paid on Depop?](https://www.gotclawback.com/depop-payout-time.html): Payout release windows by country, pending/available balances and withdrawal timing.
+- [How Much Does Depop Take From a Sale?](https://www.gotclawback.com/depop-fees-explained.html): 0% selling fee in US/UK/AU, processing rates (3.3% + $0.45 US, 2.9% + £0.30 UK, 2.6% + A$0.30 AU), Boosting fees (12% US/UK, 8% AU), and what reverses on refund.
+- [Are Depop Fees Refunded When You Refund a Buyer?](https://www.gotclawback.com/depop-fees-refunded.html): Which Depop Payments fees reverse automatically (selling, processing, Boosting) and which costs remain with the seller.
+- [When Do You Get Paid on Depop?](https://www.gotclawback.com/depop-payout-time.html): Payout release windows by country (US: 2 business days after delivery or 10 after sale, whichever is first), pending/available balances and withdrawal timing.
 - [Does Depop Pay on Weekends?](https://www.gotclawback.com/depop-weekend-payout.html): How weekends, business days and bank holidays shift payout expectations, and when to investigate a late payment.
-- [Depop Shipping Explained](https://www.gotclawback.com/depop-shipping-explained.html): Depop Shipping vs seller-arranged labels, weight rules and protection deadlines.
-- [Is Depop Safe for Sellers? Scams, Returns & Protection](https://www.gotclawback.com/depop-safe-for-sellers.html): Fake payment messages, phishing, out-of-app payments, address-change scams, the seller's evidence checklist, and Depop Protection eligibility for US sellers.
+- [Depop Shipping Explained](https://www.gotclawback.com/depop-shipping-explained.html): Depop Shipping vs seller-arranged labels (USPS US, Evri UK, Australia Post AU), weight rules and protection deadlines.
+- [Is Depop Safe for Sellers? Scams, Returns & Protection](https://www.gotclawback.com/depop-safe-for-sellers.html): Fake payment messages, phishing, out-of-app payments, address-change scams, the seller's evidence checklist, and Depop Protection eligibility for US sellers (transactions up to $300).
 
 ## Vinted guides
 - [Vinted Returns for Sellers: What Can You Actually Lose?](https://www.gotclawback.com/vinted-returns-explained.html): No-selling-fee model vs real return exposure — return postage, damaged and wrong-item returns, SNAD, deadlines and loss math.
