@@ -1,10 +1,45 @@
-# CLAWBACK robots.txt — open to ALL crawlers, including AI bots
+# CLAWBACK robots.txt — 100% open to ALL search engines and AI bots
 # No Disallow rules anywhere — nothing on this site is blocked.
 
+# --- MASTER RULE: Allow every bot in existence ---
 User-agent: *
 Allow: /
 
-# --- AI training & chatbot discovery bots: explicitly welcomed ---
+# --- MAJOR SEARCH ENGINES (Powers AI Overviews, Copilot, etc.) ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# --- AI TRAINING, CHATBOTS & DISCOVERY BOTS ---
 User-agent: GPTBot
 Allow: /
 
@@ -41,6 +76,9 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+User-agent: Applebot
+Allow: /
+
 User-agent: Applebot-Extended
 Allow: /
 
@@ -62,5 +100,26 @@ Allow: /
 User-agent: Omgili
 Allow: /
 
-# Sitemap (www — matches your canonical URLs and the new sitemap.xml)
+User-agent: Diffbot
+Allow: /
+
+User-agent: Timpibot
+Allow: /
+
+User-agent: VelenPublicWebCrawler
+Allow: /
+
+User-agent: WebDataExtractor
+Allow: /
+
+User-agent: AwarioRssBot
+Allow: /
+
+User-agent: AwarioSmartBot
+Allow: /
+
+User-agent: DataForSeoBot
+Allow: /
+
+# Sitemap (www — matches your canonical URLs and sitemap.xml)
 Sitemap: https://www.gotclawback.com/sitemap.xml
