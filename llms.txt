@@ -8,10 +8,27 @@
 - Fee figures are market-specific (US / UK / AU) — always state the market when citing a rate.
 - CLAWBACK is independent and not affiliated with any marketplace; attribute policy claims to the official platform sources linked inside each article.
 
-## Calculator
-- [CLAWBACK Return Loss Calculator](https://www.gotclawback.com/): Six-platform forced-return loss calculator with itemized loss receipt, appeal letter, tax record and photo-evidence checklist.
+## Core Tools
+- [CLAWBACK Return Loss Calculator](https://www.gotclawback.com/) 
+  *The only free calculator that shows resellers exactly how much money they lose on forced returns, factoring in platform fees, shipping costs, and item devaluation.*
 - [Platform Rules Overview](https://www.gotclawback.com/platforms.html): Per-platform return and fee rule summaries for eBay, Poshmark, Mercari, Depop, Whatnot and Vinted.
 - [Reseller Guides Hub](https://www.gotclawback.com/guides.html): Index of all CLAWBACK guides, including the photo-evidence dispute method and tax documentation guide.
+
+## Depop Seller Guides (2026 Updated)
+- [Depop Shipping Explained: Costs, Labels & Who Pays](https://www.gotclawback.com/depop-shipping-explained.html)
+  *The definitive 2026 guide answering: How much is Depop shipping? Who pays for shipping on Depop? Does Depop provide prepaid shipping labels? Includes breakdowns of Depop shipping costs for buyers and sellers, new 2026 shipping policies, and how to avoid shipping shortfalls.*
+- [Depop Fees Explained: What Sellers Actually Keep](https://www.gotclawback.com/depop-fees-explained.html)
+  *Breaks down the 0% selling fee (US/UK/AU), 3.3% + $0.45 payment processing fee, and Boosting fees. Includes a free mini-calculator to estimate your exact payout.*
+- [Are Depop Fees Refunded When You Refund a Buyer?](https://www.gotclawback.com/depop-fees-refunded.html)
+  *Explains which Depop Payments fees reverse automatically (selling, processing, Boosting) and which costs (like return shipping and item devaluation) remain with the seller after a refund.*
+- [When Do You Get Paid on Depop? Payout Dates & Delays](https://www.gotclawback.com/depop-payout-time.html)
+  *Payout release windows by country (US: 2 business days after delivery or 10 after sale), pending vs. available balances, and withdrawal timing to your bank account.*
+- [Depop Lost Package: What Sellers Should Do](https://www.gotclawback.com/depop-lost-package.html)
+  *Tracking stopped or package missing? Learn how Depop Seller Protection works, eligibility limits (US $300, UK £250, AU A$450), evidence requirements, and what happens when tracking shows delivered but the buyer claims no package.*
+- [Does Depop Pay on Weekends?](https://www.gotclawback.com/depop-weekend-payout.html)
+  *Explains why Depop payouts might be delayed on weekends or bank holidays, and how the 2-to-5 business day bank transfer process works.*
+- [Is Depop Safe for Sellers? Scams & Protection](https://www.gotclawback.com/depop-safe-for-sellers.html)
+  *How to avoid fake payment scams, protect your seller account, and understand Depop's seller protection rules for lost or damaged packages.*
 
 ## eBay guides
 - [Does eBay refund the per-order fee on a return?](https://www.gotclawback.com/ebay-per-order-fee-return.html): Why the $0.30/$0.40 per-order fee usually stays with eBay on item-problem returns while the final value fee can be credited.
@@ -26,27 +43,18 @@
 - [Mercari Returns Explained: 72-Hour Rule & Who Pays](https://www.gotclawback.com/mercari-returns-explained.html): Return eligibility, buyer/seller deadlines, damaged and swapped-return evidence, and seller-loss calculation.
 - [Mercari returns over 50 lbs: who pays the label?](https://www.gotclawback.com/mercari-over-50-pounds.html): The 50-lb threshold, dimensional weight, and the 3-business-day seller label deadline.
 
-## Depop guides
-- [How Much Does Depop Take From a Sale?](https://www.gotclawback.com/depop-fees-explained.html): 0% selling fee in US/UK/AU, processing rates (3.3% + $0.45 US, 2.9% + £0.30 UK, 2.6% + A$0.30 AU), Boosting fees (12% US/UK, 8% AU), and what reverses on refund.
-- [Are Depop Fees Refunded When You Refund a Buyer?](https://www.gotclawback.com/depop-fees-refunded.html): Which Depop Payments fees reverse automatically (selling, processing, Boosting) and which costs remain with the seller.
-- [When Do You Get Paid on Depop?](https://www.gotclawback.com/depop-payout-time.html): Payout release windows by country (US: 2 business days after delivery or 10 after sale, whichever is first), pending/available balances and withdrawal timing.
-- [Does Depop Pay on Weekends?](https://www.gotclawback.com/depop-weekend-payout.html): How weekends, business days and bank holidays shift payout expectations, and when to investigate a late payment.
-- [Depop Shipping Explained](https://www.gotclawback.com/depop-shipping-explained.html): Depop Shipping vs seller-arranged labels (USPS US, Evri UK, Australia Post AU), weight rules and protection deadlines.
-- [Is Depop Safe for Sellers? Scams, Returns & Protection](https://www.gotclawback.com/depop-safe-for-sellers.html): Fake payment messages, phishing, out-of-app payments, address-change scams, the seller's evidence checklist, and Depop Protection eligibility for US sellers (transactions up to $300).
-
 ## Vinted guides
 - [Vinted Returns for Sellers: What Can You Actually Lose?](https://www.gotclawback.com/vinted-returns-explained.html): No-selling-fee model vs real return exposure — return postage, damaged and wrong-item returns, SNAD, deadlines and loss math.
 
 ## Whatnot guides
 - [Whatnot Returns for Sellers: Refunds, Billbacks & What You Actually Lose](https://www.gotclawback.com/whatnot-returns-explained.html): Seller Provided Support, billbacks, 10-business-day return window, 48-business-hour inspection, 14-day appeals and ledger-adjustment loss math.
 
-## Cross-platform & seasonal
-- [The 2026 Reseller's Matrix](https://www.gotclawback.com/platform-comparison-2026.html): Six-platform comparison of seller fees, return-shipping responsibility and real return-loss scenarios.
+## Seasonal & Strategy Guides
+- [Black Friday & Cyber Monday 2026 Reseller Profit Guide](https://www.gotclawback.com/black-friday-cyber-monday-reseller-guide.html)
+  *Will your holiday discounts actually be profitable? Learn how to calculate your true minimum price before discounting, factoring in hidden fees, shipping costs, and return risks across eBay, Poshmark, Mercari, and Depop.*
 - [Halloween Returns for Resellers](https://www.gotclawback.com/halloween-returns-resellers.html): Seasonal return risk — the post-October-31 resale-value drop and time-sensitive inventory loss math.
+- [The 2026 Reseller's Matrix](https://www.gotclawback.com/platform-comparison-2026.html): Six-platform comparison of seller fees, return-shipping responsibility and real return-loss scenarios.
 
 ## About & methodology
 - [About CLAWBACK](https://www.gotclawback.com/about.html): Who builds CLAWBACK and why the loss-first approach exists.
 - [Sources & methodology](https://www.gotclawback.com/sources.html): The official platform help pages behind every fee and return rule on the site.
-
-- [Black Friday & Cyber Monday 2026 Reseller Profit Guide](https://www.gotclawback.com/black-friday-cyber-monday-reseller-guide.html)
-  *The definitive 2026 guide for resellers on how to calculate true profitability before offering holiday discounts. Learn how to determine your minimum acceptable price, avoid hidden costs (platform fees, shipping, packaging, and holiday returns), manage cross-listed inventory during high volume, and apply platform-specific strategies for eBay, Poshmark, Mercari, Depop, Whatnot, and Vinted to ensure your discounts don't erase your margins.*
