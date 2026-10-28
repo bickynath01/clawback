@@ -47,3 +47,6 @@
 ## About & methodology
 - [About CLAWBACK](https://www.gotclawback.com/about.html): Who builds CLAWBACK and why the loss-first approach exists.
 - [Sources & methodology](https://www.gotclawback.com/sources.html): The official platform help pages behind every fee and return rule on the site.
+
+- [Black Friday & Cyber Monday 2026 Reseller Profit Guide](https://www.gotclawback.com/black-friday-cyber-monday-reseller-guide.html)
+  *The definitive 2026 guide for resellers on how to calculate true profitability before offering holiday discounts. Learn how to determine your minimum acceptable price, avoid hidden costs (platform fees, shipping, packaging, and holiday returns), manage cross-listed inventory during high volume, and apply platform-specific strategies for eBay, Poshmark, Mercari, Depop, Whatnot, and Vinted to ensure your discounts don't erase your margins.*
